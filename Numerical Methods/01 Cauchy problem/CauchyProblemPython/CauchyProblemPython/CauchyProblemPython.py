@@ -1,6 +1,7 @@
 import numpy as np
 import math as mt
 import matplotlib.pyplot as plt
+from rungeKutta import rungeKutta
 
 def f(t, y):
     f = np.zeros((2),'float')
@@ -12,6 +13,7 @@ t0 = 0.
 tEnd = 4. * np.pi
 y0 = np.array([1., 0.])
 tau = 0.25
+t, y = rungeKutta(f, t0, y0, tEnd, tau)
 
 for n in range(0, 2):
     r = y[:, n]
