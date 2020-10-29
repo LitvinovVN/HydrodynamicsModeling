@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CauchyProblemPython", "CauchyProblemPython\CauchyProblemPython.pyproj", "{3AD3558F-1A4E-42D0-A1AC-D41C9977981E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AD3558F-1A4E-42D0-A1AC-D41C9977981E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD3558F-1A4E-42D0-A1AC-D41C9977981E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10FE0005-2D78-4C0C-B904-09E4F466CAA3}
+	EndGlobalSection
+EndGlobal
