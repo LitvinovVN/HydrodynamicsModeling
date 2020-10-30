@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3ad3558f-1a4e-42d0-a1ac-d41c9977981e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CauchyProblemPython.py</StartupFile>
+    <StartupFile>CauchyProblemEulerDE1primer3.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,10 +21,22 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CauchyProblemPython.py" />
-    <Compile Include="rungeKutta.py">
+    <Compile Include="CauchyProblemEulerDE1primer3.py" />
+    <Compile Include="CauchyProblemEulerDE1primer2.py" />
+    <Compile Include="CauchyProblemEulerDE1primer1.py" />
+    <Compile Include="CauchyProblemEulerDE1.py" />
+    <Compile Include="CauchyProblemRungeKutta4DE1.py" />
+    <Compile Include="CauchyProblemRungeKutta4DE2.py" />
+    <Compile Include="Euler.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="rungeKutta4.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dataSin.txt" />
+    <Content Include="Info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

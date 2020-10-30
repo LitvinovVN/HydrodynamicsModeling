@@ -1,6 +1,7 @@
 import numpy as np
 
-def rungeKutta(f, t0, y0, tEnd, tau):
+""" Метод Рунге-Кутта 4 порядка для ОДУ 2го порядка """
+def rungeKutta4(f, t0, y0, tEnd, tau):
     def increment(f, t, y, tau):
         k0 = tau * f(t, y)
         k1 = tau * f(t + tau/2., y + k0 / 2.)

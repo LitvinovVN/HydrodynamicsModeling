@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CauchyProblemPython", "CauchyProblemPython\CauchyProblemPython.pyproj", "{3AD3558F-1A4E-42D0-A1AC-D41C9977981E}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CauchyProblemPython", "CauchyProblem\CauchyProblemPython.pyproj", "{3AD3558F-1A4E-42D0-A1AC-D41C9977981E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
