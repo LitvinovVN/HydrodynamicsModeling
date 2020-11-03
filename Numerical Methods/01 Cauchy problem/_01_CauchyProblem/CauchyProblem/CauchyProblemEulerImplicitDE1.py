@@ -2,29 +2,29 @@
 import numpy as np
 import math as mt
 import matplotlib.pyplot as plt
-from Euler import euler
+from Euler import eulerImplicit
 
 """ Функция правой части ОДУ """
-def f(t, y):
-    return -y*y*(1+t*t)
+def f(t):
+    return -mt.sin(t)
     
 # t0 - начальное значение независимой переменной (первая точка расчетной сетки)
 # tEnd - конечное значениe независимой переменной
 # y0 - начальное условие
 # tau - шаг расчетной сетки
 # f - функция правой части
-# euler(f, t0, y0, tEnd, tau) - вызов явного метода Эйлера
+# eulerImplicit(f, t0, y0, tEnd, tau) - вызов неявного метода Эйлера
 # yp - вектор значений погрешности
 # yd - вектор значений точных решений
 t0 = 0.
-tEnd = 2.0
+tEnd = 4. * np.pi
 y0 = 1
-tau = 0.125
-t, y = euler(f, t0, y0, tEnd, tau)
+tau = 0.25
+t, y = eulerImplicit(f, t0, y0, tEnd, tau)
 
 yp = []
 for i in range(0, len(t)):
-    yp.append(3./(3*t[i] + mt.pow(t[i], 3) +3) - y[i])
+    yp.append(mt.cos(t[i]) - y[i])
     
 
 ti = t0
@@ -34,7 +34,7 @@ yd = []
 yd.append(y0)
 while ti < tEnd:
     tau = min(tau, tEnd - ti)
-    yd.append(3./(3*ti + mt.pow(ti, 3) +3))
+    yd.append(mt.cos(ti))
     td.append(ti)
     ti = ti + 0.125
 

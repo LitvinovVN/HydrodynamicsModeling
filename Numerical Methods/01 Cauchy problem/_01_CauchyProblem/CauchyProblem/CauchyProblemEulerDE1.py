@@ -1,4 +1,4 @@
-"""Решение задачи Коши методом Эйлера для ОДУ 1го порядка"""
+"""Решение задачи Коши методом Эйлера - левая производная для ОДУ 1го порядка"""
 import numpy as np
 import math as mt
 import matplotlib.pyplot as plt
@@ -8,7 +8,14 @@ from Euler import euler
 def f(t, y):
     return -mt.sin(t)
     
-
+# t0 - начальное значение независимой переменной (первая точка расчетной сетки)
+# tEnd - конечное значениe независимой переменной
+# y0 - начальное условие
+# tau - шаг расчетной сетки
+# f - функция правой части
+# euler(f, t0, y0, tEnd, tau) - вызов явного метода Эйлера
+# yp - вектор значений погрешности
+# yd - вектор точных решений
 t0 = 0.
 tEnd = 4. * np.pi
 y0 = 1
@@ -34,12 +41,12 @@ while ti < tEnd:
 st = '$y$'
 sg = '-'
 
-#st1 = '$yd$'
-#sg1 = '-'
+st1 = '$yd$'
+sg1 = '-'
     
-#plt.plot(t, y, sg, label = st)
-#plt.plot(td, yd, sg1, label = st1) 
-plt.plot(t, yp, sg, label = st) 
+plt.plot(t, y, sg, label = st)
+plt.plot(td, yd, sg1, label = st1) 
+#plt.plot(t, yp, sg, label = st) 
 plt.legend(loc = 0)
 plt.xlabel('$t$')
 plt.grid(True)

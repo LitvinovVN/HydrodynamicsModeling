@@ -4,8 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3ad3558f-1a4e-42d0-a1ac-d41c9977981e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>CauchyProblemEulerRightDE1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CauchyProblemEulerRightDE1.py" />
+    <Compile Include="CauchyProblemEulerimplicitDE1primer3.py" />
+    <Compile Include="CauchyProblemEulerImplicitDE1.py" />
     <Compile Include="CauchyProblemEulerDE1primer3.py" />
     <Compile Include="CauchyProblemEulerDE1primer2.py" />
     <Compile Include="CauchyProblemEulerDE1primer1.py" />
@@ -31,6 +33,7 @@
     <Compile Include="Euler.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Gauss.py" />
     <Compile Include="rungeKutta4.py">
       <SubType>Code</SubType>
     </Compile>
