@@ -1,6 +1,7 @@
 import numpy as np
 import Gauss
 import math as mt
+import Iteration
 
 """ Явный метод Эйлера - левая производная"""
 

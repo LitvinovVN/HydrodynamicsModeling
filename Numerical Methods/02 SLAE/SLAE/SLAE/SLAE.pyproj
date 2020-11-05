@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f68732b6-e4fe-48b4-b745-6106788a7eea</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>testGauss.py</StartupFile>
+    <StartupFile>testIteration.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Iteration.py" />
     <Compile Include="Gauss.py" />
+    <Compile Include="testIteration.py" />
     <Compile Include="testGauss.py">
       <SubType>Code</SubType>
     </Compile>

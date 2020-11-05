@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3ad3558f-1a4e-42d0-a1ac-d41c9977981e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CauchyProblemEulerRightDE1.py</StartupFile>
+    <StartupFile>CauchyProblemEulerimplicitDE1primer3.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -34,6 +34,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Gauss.py" />
+    <Compile Include="Iteration.py" />
     <Compile Include="rungeKutta4.py">
       <SubType>Code</SubType>
     </Compile>
