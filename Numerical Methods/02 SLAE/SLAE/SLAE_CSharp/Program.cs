@@ -6,17 +6,36 @@ namespace SLAE_CSharp
     {
         public static void Main(string[] args)
         {
+            //var a = new double[,]
+            //    {
+            //        { 1, 2, 1 },
+            //        { 1, 3, 1 },
+            //        { 0, 1, 1 }
+            //    };
+
+            //var b = new double[] { 1, 1, 2 };
+
             var a = new double[,]
                 {
-                    { 2, 10, -3 },
-                    { -3, -24, 5 },
-                    { 1, 3, -5 }
+                    { 1, 0.6, -0.4 },
+                    { 0, 1, -1.5 },
+                    { 0, 0, 1 }
                 };
 
-            var b = new double[] { 38, -86, 27 };
+            var b = new double[] { 0.4, 1.5, 1 };
+
+
+            //var a = new double[,]
+            //    {
+            //        { 2, 10, -3 },
+            //        { -3, -24, 5 },
+            //        { 1, 3, -5 }
+            //    };
+
+            //var b = new double[] { 38, -86, 27 };
 
             //var x = Gauss(a, b);
-            var x = SimpleIteration(a, b, 0.025);
+            var x = SimpleIteration(a, b, 0.25);
 
         }
 
@@ -143,7 +162,7 @@ namespace SLAE_CSharp
             {
                 for (int col = 0; col < razm; col++)
                 {
-                    r[row] += a[row, col] * x[row];
+                    r[row] += a[row, col] * x[col];
                 }
             }
 
