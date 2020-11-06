@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage[unicode, pdftex]{hyperref}
+
+\begin{document}
+
+\section{Методы решения СЛАУ}
+
+\subsection{Метод Гаусса}
+
+Пусть исходная система выглядит следующим образом:
+
+\begin{equation}
+	\begin{cases}
+		a_{11}x_1 + ... + a_{1n}x_n = b_1\\
+		...\\
+		a_{m1}x_1 + ... + a_{mn}x_n = b_m
+	\end{cases}
+\end{equation}
+
+Её можно записать в следующем виде:
+
+\begin{equation}
+	\mathbf{Ax = b},
+\end{equation}
+
+где
+\textbf{A} - основная матрица системы (коэффициенты левой части уравнения), \textbf{x} - вектор решений,
+\textbf{b} - вектор свободных членов (правая часть уравнения)
+
+\begin{equation}
+	\mathbf{A} = 
+	\begin{pmatrix}
+		a_{11} & \dots & a_{1n} \\
+		\vdots & \ddots & \vdots \\
+		a_{m1} & \dots & a_{mn}
+	\end{pmatrix}
+	,
+	\;\;
+	\mathbf{x} = 
+	\begin{pmatrix}
+		x_1 \\
+		\vdots \\
+		x_n
+	\end{pmatrix}
+	\;\;
+	\mathbf{b} = 
+	\begin{pmatrix}
+		b_1 \\
+		\vdots \\
+		b_n
+	\end{pmatrix}
+	.
+\end{equation}
+
+\href{https://zaochnik.com/spravochnik/matematika/issledovanie-slau/metod-gaussa/}{Метод Гаусса: основные понятия}
+
+\paragraph{Алгоритм "Метод Гаусса".}
+
+\paragraph{Реализация алгоритма на языке Python.}
+
+\paragraph{Реализация алгоритма на языке C++.}
+
+\paragraph{Реализация алгоритма на языке C\#.}
+
+\subsection{Метод простой итерации}
+
+\href{https://zaochnik.com/spravochnik/matematika/issledovanie-slau/iteratsionnye-metody-reshenija-slau/}{Метод простой итерации: основные понятия}
+
+
+\end{document}
