@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SLAE", "SLAE\SLAE.pyproj", "{F68732B6-E4FE-48B4-B745-6106788A7EEA}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SLAE_Python", "SLAE\SLAE_Python.pyproj", "{F68732B6-E4FE-48B4-B745-6106788A7EEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLAE_CSharp", "SLAE_CSharp\SLAE_CSharp.csproj", "{8A8CF8A2-364D-4FD9-A072-2E021E961A43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F68732B6-E4FE-48B4-B745-6106788A7EEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F68732B6-E4FE-48B4-B745-6106788A7EEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8CF8A2-364D-4FD9-A072-2E021E961A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8CF8A2-364D-4FD9-A072-2E021E961A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8CF8A2-364D-4FD9-A072-2E021E961A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8CF8A2-364D-4FD9-A072-2E021E961A43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
