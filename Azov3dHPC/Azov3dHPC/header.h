@@ -6,12 +6,35 @@
 #include <stdio.h>
 #include <conio.h>
 
-
+/// <summary>
+/// Функция для ввода данных
+/// </summary>
+/// <param name="">u</param>
+/// <param name="">v</param>
+/// <param name="">w</param>
+/// <param name="">a</param>
+/// <param name="">a1</param>
+/// <param name="">mu</param>
+/// <param name="">nu</param>
+/// <param name="">o</param>
+/// <param name="">o_max</param>
+/// <param name="">h</param>
+/// <param name="">s1</param>
 void vvod(double*, double*, double*,
 	double*, double*, double*,
 	double*, double*, double*,
 	double*, int*);
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name=""></param>
+/// <param name=""></param>
+/// <param name=""></param>
+/// <param name=""></param>
+/// <param name=""></param>
+/// <param name=""></param>
+/// <param name=""></param>
 void vvodmask(double*, double*, double*,
 	double*, double*, double*, int*);
 

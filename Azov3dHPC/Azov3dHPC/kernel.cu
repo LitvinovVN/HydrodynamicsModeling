@@ -3,36 +3,36 @@
 
 #pragma region √лобальные переменные
 
-int n1 = 355;
-int n2 = 233;
-int n3 = 36;
+int n1 = 355;// количество точек по оси X
+int n2 = 233;// количество точек по оси Y
+int n3 = 36;// количество точек по оси Z
 
-int n = n1 * n2 * n3;
-int n2d = n1 * n2;
+int n = n1 * n2 * n3;// количество точек
+int n2d = n1 * n2;// количество точек в плоскости XY
 
-double      dt = 500;
-double      t = 0;
-double      dx = 1000;//6800/n1;
-double      dy = 1000;//280/n2;
-double      dz = 0.5;//280/n2;
-double      t0 = 1000;//1000000;
-double      pa = 1.29;
-double      po = 1000;
-double      pv = 2700;
-double      ev = 0.00000000001;
-double      ep = 0.00000000001;
-double      ek = 0.000001;
-double      kor = 0.000103;
-double      cp_v = 0.0088;
-double      cp_a = 0.0026;
-double      g = 9.81;
+double      dt = 500;// шаг по времени ???????
+double      t = 0;// начало моделировани€ по времени
+double      dx = 1000;//6800/n1;// шаг по X ????
+double      dy = 1000;//280/n2; // шаг по Y ????
+double      dz = 0.5; //280/n2; // шаг по Z ????
+double      t0 = 1000;//1000000; // расчетный отрезок времени
+double      pa = 1.29;// плотность атмосферы
+double      po = 1000;// плотность водной среды
+double      pv = 2700;// плотность взвеси
+double      ev = 0.00000000001;// ???
+double      ep = 0.00000000001;// ??
+double      ek = 0.000001;// ??
+double      kor = 0.000103;// коэффициент силы  ориолиса
+double      cp_v = 0.0088;//????
+double      cp_a = 0.0026;//????
+double      g = 9.81;// ускорение сободного падени€
 
-double      sk_u = 0;//-0.1;
-double      sk_v = -40;
+double      sk_u = 0;//-0.1; компонента скорости ветра (проекци€ скорости ветра на ось X)
+double      sk_v = -40;// компонента скорости ветра (проекци€ скорости ветра на ось Y)
 
-double      ca = pa * cp_a / po;
-double      cv = pv * cp_v / po;
-double      isp = 606 / (38869 * dx * dy);
+double      ca = pa * cp_a / po;// коэффициент силы трени€ о воздух
+double      cv = pv * cp_v / po;// коэффициент силы трени€ о дно
+double      isp = 606 / (38869 * dx * dy);// коэффициент испарени€
 #pragma endregion
 
 #pragma region CUDA-€дра
@@ -45,18 +45,18 @@ __global__ void addKernel(int* c, const int* a, const int* b)
 
 int main()
 {
-    double* u = new double[n];
-    double* v = new double[n];
-    double* w = new double[n];
-    double* a = new double[n];
-    double* a1 = new double[n2d];
-    double* mu = new double[n];
-    double* nu = new double[n];
+    double* u = new double[n];// массив проекций вектора скорости водного потока на ось X
+    double* v = new double[n];// массив проекций вектора скорости водного потока на ось Y
+    double* w = new double[n];// массив проекций вектора скорости водного потока на ось Z
+    double* a = new double[n];// массив значений давлени€ (поле давлени€)
+    double* a1 = new double[n2d];// массив значений гидростатического давлени€ (поле гидростатического давлени€)
+    double* mu = new double[n];// массив значений вертикальной составл€ющей пол€ коэффициента турбулентного обмена
+    double* nu = new double[n];// массив значений горизонтальной составл€ющей пол€ коэффициента турбулентного обмена
     double* o_max = new double[n];//????????????????????????????????????????????????
-    double* o = new double[n];
-    double* h = new double[n2d];
+    double* o = new double[n];// ????
+    double* h = new double[n2d];// массив значений глубины
 
-    int* s1 = new int[n];
+    int* s1 = new int[n];// массив маркеров типа €чейки (0 - €чейка не входит в расчетную область, 1 - €чейка входит в расчетную область, 2 - ??????)
 
     int k1;
 
