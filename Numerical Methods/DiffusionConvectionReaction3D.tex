@@ -4,26 +4,167 @@
 \usepackage[english,russian]{babel}
 \usepackage{amsmath}
 \usepackage[unicode, pdftex]{hyperref}
+\usepackage[usenames]{color}
+\usepackage{colortbl}
 
 \begin{document}
 
-\section{Нестационарное уравнение диффузии-конвекции-реакции}
+\section{Нестационарное уравнение диффузии-конвекции-реакции для трехмерной расчетной области}
 
-Текст....
+\subsection{Постановка задачи}
 
-\begin{equation}
-	\begin{cases}
-		a_{11}x_1 + ... + a_{1n}x_n = b_1\\
-		...\\
-		a_{m1}x_1 + ... + a_{mn}x_n = b_m
-	\end{cases}
-\end{equation}
+Уравнение диффузии-конвекции-реакции:
 
-Её можно записать в следующем виде:
 
 \begin{equation}
-	\mathbf{Ax = b},
+	c_t' + uc_x' + vc_y' + wc_z' = (\mu c_x')_x' + (\mu c_y')_y' + (\nu c_z')_z' + f,	
 \end{equation}
+
+с граничными условиями:
+
+\begin{equation}
+	c_n'(x, y, z, t) = \alpha_n c + \beta_n,
+\end{equation}
+
+где
+\textit{u, v, w} - составляющие вектора скорости,
+\textit{f} - функция, описывающая интенсивность и распределение источников,
+${\mu}$ - горизонтальная проекция коэффициента диффузионного (турбулентного) обмена,
+${\nu}$ - вертикальная проекция коэффициента диффузионного (турбулентного) обмена.
+
+\subsection{Построение дискретной модели}
+
+Расчетная область вписана в прямоугольный параллелепипед. Для программной реализации математической модели транспорта веществ вводим равномерную расчетную сетку:
+
+\begin{displaymath}
+	\begin{split}
+	w_h = \{t^n = n \tau, x_i = ih_x, y_j = jh_y, z_k = kh_z, n = \overline{0..N_x}, i = \overline{0..N_x},  \nonumber\\
+	j = \overline{0..N_y}, k = \overline{0..N_z}, N_t \tau = l_x, N_yh_y = l_y, N_zh_z = l_z \}, \nonumber\\
+	\end{split}
+\end{displaymath}
+
+где
+${\tau}$ - шаг по временному направлению,
+${h_x, h_y, h_z}$ - шаги по координатным осям пространства,
+${N_t, N_x, N_y, N_z}$ - границы по времени и пространству.
+
+Аппроксимация уравнения (1) по временной переменной выполняется на основе схем с весами. 
+
+\begin{equation}
+	\frac{\hat c - c}{\tau} + u\bar{c}_x' + v\bar{c}_y' + w\bar{c}_z' = (\mu\bar{c}_x')_x' + (\mu\bar{c}_y')_y' + (\mu\bar{c}_z')_z' + f ,		
+\end{equation}
+
+где  
+
+$\bar{c} = \sigma\hat c + (1 - \sigma) с , \sigma \in [0,1] $ - вес схемы $(\sigma = 0,5; 0.75; 1)$
+
+$c=c(x, y, z, t);$ $ $ $\hat c = (x, y, z, t + \tau)  $
+
+\begin{center}
+Рисунок 1
+Разностный шаблон
+\end{center}
+
+
+\begin{center}
+Рисунок 2
+Параллилепипед с центром i, j, k
+\end{center}
+
+Ячейки представлены прямоугольными параллелипипедами, которые могут быть заполненными, пустыми или частично заполненными. 
+
+Заполненность ячеек:
+Центры ячеек и расчетные узлы сетки разнесены на $ \frac{h_x}{2}, \frac{h_y}{2}, \frac{h_z}{2}, $ по координатным направлениям $x, y, z$ соответственно.
+
+Обозначим $O_{i,j,k}$ - степень заполненности объемной ячейки. 
+
+\begin{center}
+	Рисунок 3
+	Вершины объемной ячейки
+\end{center}
+
+Получается, что окрестными ячейками узла ${i,j,k}$ являются 8 ячеек (см. рисунок 2).
+
+Обозначим эти ячейки через координаты главных диагоналей (т. к. ячейки - это прямоугольные параллелепипеды).
+
+Внизу:
+
+1) ${(i-1,j+1,k-1)}$ - ${(i,j,k)}$ 
+
+2) ${(i-1,j,k-1)}$ - ${(i,j-1,k)}$ 
+
+3) ${(i,j,k-1)}$ - ${(i+1,j-1,k)}$ 
+
+4) ${(i,j+1,k-1)}$ - ${(i+1,j,k)}$ 
+
+Вверху:
+
+1) ${(i-1,j+1,k)}$ - ${(i,j,k+1)}$ 
+
+2) ${(i-1,j,k)}$ - ${(i,j-1,k+1)}$ 
+
+3) ${(i,j,k)}$ - ${(i+1,j-1,k+1)}$ 
+
+4) ${(i,j+1,k)}$ - ${(i+1,j,k+1)}$ 
+
+{\color{red}{Читай метод конечных объемов (Рояк)}}
+
+
+Для описания геометрии расчетного объема введем коэффициенты ${q_0, q_1,q_2,q_3,q_4,q_5,q_6}$ заполненности контрольных "объемов" ячейки ${(i,j,k)}$.
+
+Значение ${q_0}$ характеризует степень заполненности объема ${V_0}$.
+
+${q_0} - {V_0}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+
+${q_6} - {V_1}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_k )$
+
+${q_5} - {V_2}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_k, z_{k+\frac{1}{2} } )$
+
+${q_2} - {V_3}: x\in (x_{i-\frac{1}{2} }, x_i ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+
+${q_1} - {V_4}: x\in (x_i, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+
+${q_4} - {V_5}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_j ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+
+${q_3} - {V_6}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_j, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+
+Будем называть $\Omega$ заполненные части объемов $V_m$, где $m=\overline{0...6}$. 
+Таким образом, коэффициенты $g_m$ вычисляются по формулам:
+
+$(q_0)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j+1,k}+O_{i+1,j+1,k}+O_{i,j,k+1}+O_{i+1,j,k+1}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{8};$
+
+$(q_6)_{i,j,k}=\frac{O_{i,j,k+1}+O_{i+1,j,k+1}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4};$
+
+$(q_5)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j+1,k}+O_{i+1,j+1,k}}{4};$
+
+$(q_2)_{i,j,k}=\frac{O_{i,j,k+1}+O_{i,j+1,k}+O_{i,j,k+1}+O_{i,j+1,k+1}}{4};$
+
+$(q_1)_{i,j,k}=\frac{O_{i+1,j,k}+O_{i+1,j+1,k}+O_{i+1,j,k+1}+O_{i+1,j+1,k+1}}{4};$
+
+$(q_4)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j,k+1}+O_{i+1,j,k+1}}{4};$
+
+$(q_3)_{i,j,k}=\frac{O_{i,j+1,k}+O_{i+1,j+1,k}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4};$
+
+Проинтегрируем по объему $\Omega_0$ уравнение (2), воспользуемся свойством линейности интеграла, в результате чего получим:
+
+\begin{multline}
+\iiint\limits_{\Omega_0} \frac{\hat c - c}{\tau}\,dxdydz + \iiint\limits_{\Omega_0} u\bar{c}_x'{\tau}\,dxdydz + \iiint\limits_{\Omega_0} v\bar{c}_y'{\tau}\,dxdydz + \iiint\limits_{\Omega_0} w\bar{c}_z'{\tau}\,dxdydz = \\
+\iiint\limits_{\Omega_0} (\mu\bar{c}_x')_x'\,dxdydz + \iiint\limits_{\Omega_0} (\mu\bar{c}_y')_y'\,dxdydz + \iiint\limits_{\Omega_0} (\mu\bar{c}_z')_z'\,dxdydz + \iiint\limits_{\Omega_0} f\,dxdydz  
+\end{multline}
+
+Вычислим отдельно каждый из полученных интегралов.
+
+\begin{equation}
+	\iiint\limits_{\Omega_0} \frac{\hat c - c}{\tau}\,dxdydz \simeq (q_0)_{i,j,k}\iiint\limits_{V_0} \frac{\hat c - c}{\tau}\,dxdydz = (q_0)_{i,j,k}\frac{\hat c - c}{\tau}h_xh_yh_z
+\end{equation}
+Второй интеграл в формуле (4) принимает вид:
+
+\begin{multline}
+\iiint\limits_{\Omega_0} u\bar{c}_x'{\tau}\,dxdydz \simeq \iiint\limits_{\Omega_1} u\bar{c}_x'{\tau}\,dxdydz + \iiint\limits_{\Omega_2} u\bar{c}_x'{\tau}\,dxdydz \\ = (q_1)_{i,j,k}\iiint\limits_{V_1} u\bar{c}_x'{\tau}\,dxdydz + (q_2)_{i,j,k}\iiint\limits_{V_2} u\bar{c}_x'{\tau}\,dxdydz
+\end{multline}
+
+
+
 
 
 
