@@ -114,41 +114,69 @@ $c=c(x, y, z, t);$ $ $ $\hat c = (x, y, z, t + \tau)  $
 
 Значение ${q_0}$ характеризует степень заполненности объема ${V_0}$.
 
-${q_0} - {V_0}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+\begin{equation*}
+{q_0} - {V_0}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )
+\end{equation*}
 
-${q_6} - {V_1}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_k )$
+\begin{equation*}
+{q_6} - {V_1}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_k )
+\end{equation*}
 
-${q_5} - {V_2}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_k, z_{k+\frac{1}{2} } )$
+\begin{equation*}
+{q_5} - {V_2}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_k, z_{k+\frac{1}{2} } )
+\end{equation*}
 
-${q_2} - {V_3}: x\in (x_{i-\frac{1}{2} }, x_i ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+\begin{equation*}
+{q_2} - {V_3}: x\in (x_{i-\frac{1}{2} }, x_i ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )
+\end{equation*}
 
-${q_1} - {V_4}: x\in (x_i, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+\begin{equation*}
+{q_1} - {V_4}: x\in (x_i, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )
+\end{equation*}
 
-${q_4} - {V_5}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_j ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+\begin{equation*}
+{q_4} - {V_5}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_{j-\frac{1}{2} }, y_j ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )
+\end{equation*}
 
-${q_3} - {V_6}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_j, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )$
+\begin{equation*}
+{q_3} - {V_6}: x\in (x_{i-\frac{1}{2} }, x_{i+\frac{1}{2} } ),  y\in (y_j, y_{j+\frac{1}{2} } ),  z\in (z_{k-\frac{1}{2} }, z_{k+\frac{1}{2} } )
+\end{equation*}
 
 Будем называть $\Omega$ заполненные части объемов $V_m$, где $m=\overline{0...6}$. 
 Таким образом, коэффициенты $g_m$ вычисляются по формулам:
 
-$(q_0)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j+1,k}+O_{i+1,j+1,k}+O_{i,j,k+1}+O_{i+1,j,k+1}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{8};$
+\begin{equation*}
+(q_0)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j+1,k}+O_{i+1,j+1,k}+O_{i,j,k+1}+O_{i+1,j,k+1}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{8};
+\end{equation*}
 
-$(q_6)_{i,j,k}=\frac{O_{i,j,k+1}+O_{i+1,j,k+1}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4};$
+\begin{equation*}
+(q_6)_{i,j,k}=\frac{O_{i,j,k+1}+O_{i+1,j,k+1}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4};
+\end{equation*}
 
-$(q_5)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j+1,k}+O_{i+1,j+1,k}}{4};$
+\begin{equation*}
+(q_5)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j+1,k}+O_{i+1,j+1,k}}{4};
+\end{equation*}
 
-$(q_2)_{i,j,k}=\frac{O_{i,j,k+1}+O_{i,j+1,k}+O_{i,j,k+1}+O_{i,j+1,k+1}}{4};$
+\begin{equation*}
+(q_2)_{i,j,k}=\frac{O_{i,j,k+1}+O_{i,j+1,k}+O_{i,j,k+1}+O_{i,j+1,k+1}}{4};
+\end{equation*}
 
-$(q_1)_{i,j,k}=\frac{O_{i+1,j,k}+O_{i+1,j+1,k}+O_{i+1,j,k+1}+O_{i+1,j+1,k+1}}{4};$
+\begin{equation*}
+(q_1)_{i,j,k}=\frac{O_{i+1,j,k}+O_{i+1,j+1,k}+O_{i+1,j,k+1}+O_{i+1,j+1,k+1}}{4};
+\end{equation*}
 
-$(q_4)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j,k+1}+O_{i+1,j,k+1}}{4};$
+\begin{equation*}
+(q_4)_{i,j,k}=\frac{O_{i,j,k}+O_{i+1,j,k}+O_{i,j,k+1}+O_{i+1,j,k+1}}{4};
+\end{equation*}
 
-$(q_3)_{i,j,k}=\frac{O_{i,j+1,k}+O_{i+1,j+1,k}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4};$
+\begin{equation*}
+(q_3)_{i,j,k}=\frac{O_{i,j+1,k}+O_{i+1,j+1,k}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4};
+\end{equation*}
 
 Проинтегрируем по объему $\Omega_0$ уравнение (2), воспользуемся свойством линейности интеграла, в результате чего получим:
 
 \begin{multline}
-\iiint\limits_{\Omega_0} \frac{\hat c - c}{\tau}\,dxdydz + \iiint\limits_{\Omega_0} u\bar{c}_x'{\tau}\,dxdydz + \iiint\limits_{\Omega_0} v\bar{c}_y'{\tau}\,dxdydz + \iiint\limits_{\Omega_0} w\bar{c}_z'{\tau}\,dxdydz = \\
+\iiint\limits_{\Omega_0} \frac{\hat c - c}{\tau}\,dxdydz + \iiint\limits_{\Omega_0} u\bar{c}_x'\,dxdydz + \iiint\limits_{\Omega_0} v\bar{c}_y'\,dxdydz + \iiint\limits_{\Omega_0} w\bar{c}_z'\,dxdydz = \\
 \iiint\limits_{\Omega_0} (\mu\bar{c}_x')_x'\,dxdydz + \iiint\limits_{\Omega_0} (\mu\bar{c}_y')_y'\,dxdydz + \iiint\limits_{\Omega_0} (\mu\bar{c}_z')_z'\,dxdydz + \iiint\limits_{\Omega_0} f\,dxdydz  
 \end{multline}
 
@@ -159,11 +187,50 @@ $(q_3)_{i,j,k}=\frac{O_{i,j+1,k}+O_{i+1,j+1,k}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4}
 \end{equation}
 Второй интеграл в формуле (4) принимает вид:
 
-\begin{multline}
-\iiint\limits_{\Omega_0} u\bar{c}_x'{\tau}\,dxdydz \simeq \iiint\limits_{\Omega_1} u\bar{c}_x'{\tau}\,dxdydz + \iiint\limits_{\Omega_2} u\bar{c}_x'{\tau}\,dxdydz \\ = (q_1)_{i,j,k}\iiint\limits_{V_1} u\bar{c}_x'{\tau}\,dxdydz + (q_2)_{i,j,k}\iiint\limits_{V_2} u\bar{c}_x'{\tau}\,dxdydz
-\end{multline}
+\begin{multline*}
+\iiint\limits_{\Omega_0} u\bar{c}_x'\,dxdydz \simeq \iiint\limits_{\Omega_1} u\bar{c}_x'\,dxdydz + \iiint\limits_{\Omega_2} u\bar{c}_x'\,dxdydz \\  
+= (q_1)_{i,j,k}\iiint\limits_{V_1} u\bar{c}_x'\,dxdydz + (q_2)_{i,j,k}\iiint\limits_{V_2} u\bar{c}_x'\,dxdydz
+\end{multline*}
 
+Вычислим интегралы по $V_1$ и $V_2$:
 
+\begin{equation*}
+	\iiint\limits_{V_2} u\bar{c}_x'\,dxdydz = \int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz \int\limits_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}dy   \int\limits_{x_{i-\frac{1}{2}}}^{x_{i}}u\bar{c}_x'dx \simeq u_{{i-\frac{1}{2}},j,k}\frac{\bar{c}_{i,j,k}-\bar{c}_{i-1,j,k}}{2}h_yh_z
+\end{equation*}
+
+\begin{equation*}
+\iiint\limits_{V_1} u\bar{c}_x'\,dxdydz = \int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz \int\limits_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}dy   \int\limits_{x_i}^{x_{i+\frac{1}{2}}}u\bar{c}_x'dx \simeq u_{{i+\frac{1}{2}},j,k}\frac{\bar{c}_{i+1,j,k}-\bar{c}_{i,j,k}}{2}h_yh_z
+\end{equation*}
+
+Следовательно,
+
+\begin{equation}
+	\iiint\limits_{\Omega_0} u\bar{c}_x'\,dxdydz = (q_2)_{i,j,k}u_{{i-\frac{1}{2}},j,k}\frac{\bar{c}_{i,j,k}-\bar{c}_{i-1,j,k}}{2}h_yh_z +
+	(q_1)_{i,j,k}u_{{i+\frac{1}{2}},j,k}\frac{\bar{c}_{i+1,j,k}-\bar{c}_{i,j,k}}{2}h_yh_z,
+\end{equation}
+
+где 
+\begin{equation*} 
+	u_{{i+\frac{1}{2}},j,k} = \frac{u_{i+1,j,k}+u_{i,j,k}}{2};
+\end{equation*}
+
+\begin{equation*} 
+	u_{{i-\frac{1}{2}},j,k} = \frac{u_{i-1,j,k}+u_{i,j,k}}{2};
+\end{equation*}
+
+Аналогично вычислим
+
+\begin{multline*}
+	\iiint\limits_{\Omega_0} v\bar{c}_y'\,dxdydz = 
+	\iiint\limits_{\Omega_3} v\bar{c}_y'\,dxdydz + 
+	\iiint\limits_{\Omega_4} v\bar{c}_y'\,dxdydz \\  
+	= (q_5)_{i,j,k}\iiint\limits_{V_3} v\bar{c}_y'\,dxdydz +
+	 (q_4)_{i,j,k}\iiint\limits_{V_4} v\bar{c}_y'\,dxdydz = \\
+	 (q_4)_{i,j,k}\int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dx\int\limits_{y_{j-\frac{1}{2}}}^yv\bar{c}_y'dy + (q_3)_{i,j,k}\int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dx\int\limits_{y_j}^{y+\frac{1}{2}}v\bar{c}_y'dy = \\
+	 (q_4)_{i,j,k}v_{i,j-\frac{1}{2},k}\frac{\bar{c}_{i,j-1,k}+\bar{c}_{i,j,k}}{2}h_xh_z + (q_3)_{i,j,k}v_{i,j+\frac{1}{2},k}\frac{\bar{c}_{i,j+1,k}+\bar{c}_{i,j,k}}{2}h_xh_z,
+\end{multline*}
+
+где 
 
 
 
