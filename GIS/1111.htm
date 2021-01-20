@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_850c5714a05643aa8a4aad33b14d5c2b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_850c5714a05643aa8a4aad33b14d5c2b" ></div>
+        
+</body>
+<script>    
+    
+            var map_850c5714a05643aa8a4aad33b14d5c2b = L.map(
+                "map_850c5714a05643aa8a4aad33b14d5c2b",
+                {
+                    center: [47.06, 39.2],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b0cc02f2273d4457be1cf0111965c570 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_850c5714a05643aa8a4aad33b14d5c2b);
+        
+    
+            var marker_336c0fd3a33f4c14b3661f9d3ad28139 = L.marker(
+                [47.055, 39.25],
+                {}
+            ).addTo(map_850c5714a05643aa8a4aad33b14d5c2b);
+        
+    
+            var icon_5c69414e2da44f8a949d389bc6d89e43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_336c0fd3a33f4c14b3661f9d3ad28139.setIcon(icon_5c69414e2da44f8a949d389bc6d89e43);
+        
+    
+        var popup_71133d8669074ccb959f7d8efa00df31 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_50dad276396c491c8cc70f83b8498e6b = $(`<div id="html_50dad276396c491c8cc70f83b8498e6b" style="width: 100.0%; height: 100.0%;">Coordinates: 47.055, 39.25</div>`)[0];
+            popup_71133d8669074ccb959f7d8efa00df31.setContent(html_50dad276396c491c8cc70f83b8498e6b);
+        
+
+        marker_336c0fd3a33f4c14b3661f9d3ad28139.bindPopup(popup_71133d8669074ccb959f7d8efa00df31)
+        ;
+
+        
+    
+    
+            var marker_146183df1f3b4ce3b1dc5db5501ee264 = L.marker(
+                [47.05, 39.2],
+                {}
+            ).addTo(map_850c5714a05643aa8a4aad33b14d5c2b);
+        
+    
+            var icon_a7ad7beea8ca43f98e7c49c83b62cb43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_146183df1f3b4ce3b1dc5db5501ee264.setIcon(icon_a7ad7beea8ca43f98e7c49c83b62cb43);
+        
+    
+            var marker_6ec066ff5aa4489c8bc7815c59644ab6 = L.marker(
+                [47.045, 39.2],
+                {}
+            ).addTo(map_850c5714a05643aa8a4aad33b14d5c2b);
+        
+    
+            var icon_7cd00bd9def14152a6658874e5243aa1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6ec066ff5aa4489c8bc7815c59644ab6.setIcon(icon_7cd00bd9def14152a6658874e5243aa1);
+        
+    
+            var circle_a902b2878ff94cb99297b7bafa7606f9 = L.circle(
+                [47.055, 39.28],
+                {"bubblingMouseEvents": true, "color": "crimson", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "crimson", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100, "stroke": true, "weight": 3}
+            ).addTo(map_850c5714a05643aa8a4aad33b14d5c2b);
+        
+    
+        var popup_f9ba10b2be2a49e7b8001dcc275f86af = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6889a71c855f4f0481c51387634a922b = $(`<div id="html_6889a71c855f4f0481c51387634a922b" style="width: 100.0%; height: 100.0%;">The Waterfront</div>`)[0];
+            popup_f9ba10b2be2a49e7b8001dcc275f86af.setContent(html_6889a71c855f4f0481c51387634a922b);
+        
+
+        circle_a902b2878ff94cb99297b7bafa7606f9.bindPopup(popup_f9ba10b2be2a49e7b8001dcc275f86af)
+        ;
+
+        
+    
+    
+            var circle_marker_bea02d2c22f64503a03d5a41dd88bf4c = L.circleMarker(
+                [47.0, 39.1],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50, "stroke": true, "weight": 3}
+            ).addTo(map_850c5714a05643aa8a4aad33b14d5c2b);
+        
+    
+        var popup_d7068fd588664197a2a874a28941c9e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ea8f720066954936b72d1d8219b2951d = $(`<div id="html_ea8f720066954936b72d1d8219b2951d" style="width: 100.0%; height: 100.0%;">Laurelhurst Park</div>`)[0];
+            popup_d7068fd588664197a2a874a28941c9e3.setContent(html_ea8f720066954936b72d1d8219b2951d);
+        
+
+        circle_marker_bea02d2c22f64503a03d5a41dd88bf4c.bindPopup(popup_d7068fd588664197a2a874a28941c9e3)
+        ;
+
+        
+    
+    
+            var poly_line_15c2fe82bfe340b988b9ce171c580d60 = L.polyline(
+                [[47.03, 39.01], [47.06, 39.01], [47.06, 39.1]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_850c5714a05643aa8a4aad33b14d5c2b);
+        
+    
+            var rectangle_531b074536904584944f0bcdfd1d3512 = L.rectangle(
+                [[47.0, 39.0], [47.1, 39.3]],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_850c5714a05643aa8a4aad33b14d5c2b);
+        
+    
+            map_850c5714a05643aa8a4aad33b14d5c2b.fitBounds(
+                [[47.0, 39.0], [47.1, 39.3]],
+                {}
+            );
+        
+</script>
