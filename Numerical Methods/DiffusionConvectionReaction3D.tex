@@ -218,6 +218,7 @@ $c=c(x, y, z, t);$ $ $ $\hat c = (x, y, z, t + \tau)  $
 	u_{{i-\frac{1}{2}},j,k} = \frac{u_{i-1,j,k}+u_{i,j,k}}{2};
 \end{equation*}
 
+
 Аналогично вычислим
 
 \begin{multline*}
@@ -226,11 +227,71 @@ $c=c(x, y, z, t);$ $ $ $\hat c = (x, y, z, t + \tau)  $
 	\iiint\limits_{\Omega_4} v\bar{c}_y'\,dxdydz \\  
 	= (q_5)_{i,j,k}\iiint\limits_{V_3} v\bar{c}_y'\,dxdydz +
 	 (q_4)_{i,j,k}\iiint\limits_{V_4} v\bar{c}_y'\,dxdydz = \\
-	 (q_4)_{i,j,k}\int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dx\int\limits_{y_{j-\frac{1}{2}}}^yv\bar{c}_y'dy + (q_3)_{i,j,k}\int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dx\int\limits_{y_j}^{y+\frac{1}{2}}v\bar{c}_y'dy = \\
+	 (q_4)_{i,j,k}\int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dx\int\limits_{y_{j-\frac{1}{2}}}^{y_j}v\bar{c}_y'dy + (q_3)_{i,j,k}\int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dx\int\limits_{y_j}^{y+\frac{1}{2}}v\bar{c}_y'dy = \\
 	 (q_4)_{i,j,k}v_{i,j-\frac{1}{2},k}\frac{\bar{c}_{i,j-1,k}+\bar{c}_{i,j,k}}{2}h_xh_z + (q_3)_{i,j,k}v_{i,j+\frac{1}{2},k}\frac{\bar{c}_{i,j+1,k}+\bar{c}_{i,j,k}}{2}h_xh_z,
 \end{multline*}
 
 где 
+\begin{equation*} 
+	v_{{i,j+\frac{1}{2}},k} = \frac{v_{i,j+1,k}+v_{i,j,k}}{2};
+\end{equation*}
+
+\begin{equation*} 
+	v_{{i,j-\frac{1}{2}},k} = \frac{v_{i,j-1,k}+v_{i,j,k}}{2};
+\end{equation*}
+
+Аналогично вычислим:
+
+\begin{multline*}
+	\iiint\limits_{\Omega_0} w\bar{c}_x'\,dxdydz = \iiint\limits_{\Omega_5} w\bar{c}_x'\,dxdydz + \iiint\limits_{\Omega_6} w\bar{c}_x'\,dxdydz = \\
+	(q_5)_{i,j,k}\iiint\limits_{V_5} w\bar{c}_z'\,dxdydz +
+	(q_6)_{i,j,k}\iiint\limits_{V_6} w\bar{c}_z'\,dxdydz = \\
+	(q_6)_{i,j,k}\int\limits_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}dy\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dx\int\limits_{z_{k-\frac{1}{2}}}^{z_k}w\bar{c}_z'dz + (q_5)_{i,j,k}\int\limits_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}dy\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dx\int\limits_{z_k}^{z_{k+\frac{1}{2}}}w\bar{c}_z'dz = \\
+	(q_6)_{i,j,k}w_{i,j,k-\frac{1}{2}}\frac{\bar{c}_{i,j,k-\frac{1}{2}}+\bar{c}_{i,j,k}}{2}h_xh_y + (q_5)_{i,j,k}w_{i,j,k+\frac{1}{2}}\frac{\bar{c}_{i,j,k+\frac{1}{2}}+\bar{c}_{i,j,k}}{2}h_xh_y,
+\end{multline*}
+
+где 
+\begin{equation*} 
+	w_{{i,j},k+\frac{1}{2}} = \frac{w_{i,j,k+1}+w_{i,j,k}}{2};
+\end{equation*}
+
+\begin{equation*} 
+	w_{{i,j},k-\frac{1}{2}} = \frac{w_{i,j,k-1}+w_{i,j,k}}{2};
+\end{equation*}
+
+Вычислим интеграл, стоящий в правой части формулы (1):
+
+\begin{equation*} 
+	\iiint\limits_{\Omega_0} (\mu\bar{c}_x')_x'\,dxdydz = \iiint\limits_{\Omega_1} (\mu\bar{c}_x')_x'\,dxdydz + \iiint\limits_{\Omega_2} (\mu\bar{c}_x')_x'\,dxdydz
+\end{equation*}
+
+Рассмотрим случай: $V_{\Omega1}>V_{\Omega1}$, выделим из  $\Omega_1$ фрагмент $\Omega_{1,2}$ смежный  с областью $\Omega_2$,  при этом   $V_{\Omega2}=V_{\Omega{1,2}}$
+
+\begin{multline*} 
+	\iiint\limits_{\Omega_0} (\mu\bar{c}_x')_x'\,dxdydz = \iiint\limits_{\Omega_1\setminus\Omega_{1,2}} (\mu\bar{c}_x')_x'\,dxdydz + \iiint\limits_{\Omega_{1,2}\cup\Omega_2}(\mu\bar{c}_x')_x'\,dxdydz = \\
+	((q_1)_{i,j,k} - (q_2)_{i,j,k})\iiint\limits_{V_1} (\mu\bar{c}_x')_x'\,dxdydz + (q_2)_{i,j,k}\iiint\limits_{V_0} (\mu\bar{c}_x')_x'\,dxdydz
+\end{multline*}
+
+Вычислим инртеграл:
+\begin{equation*}
+\iiint\limits_{V_0} (\mu\bar{c}_x')_x'\,dxdydz = \int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz \int\limits_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}dy\int\limits_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}(\mu\bar{c}_x')_x'dx = \int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz \int\limits_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}(\mu\bar{c}_x')\bigg|_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dy
+\end{equation*}
+
+Введем замену:
+$W=\mu\bar{c}_x'$
+
+\begin{equation*}
+	\int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz \int\limits_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}W\bigg|_{x_{i-\frac{1}{2}}}^{x_{i+\frac{1}{2}}}dy = \int\limits_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz \int\limits_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}(W_{i+\frac{1}{2}}- W_{i-\frac{1}{2}})dy = (W_{i+\frac{1}{2}}- W_{i-\frac{1}{2}})h_yh_z
+\end{equation*}	
+	
+	Вычислим $W_{i+\frac{1}{2}}$ на отрезке $[x_{i+1},x_i]$:
+	
+\begin{equation*}
+	\int_{x_i}^{x_{i+1}}\frac{W}{\mu}dx = \int_{x_i}^{x_{i+1}}\bar{c}_x'dx
+\end{equation*}
+
+или
+
 
 
 
