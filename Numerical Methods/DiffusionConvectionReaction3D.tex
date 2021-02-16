@@ -265,7 +265,7 @@ $c=c(x, y, z, t);$ $ $ $\hat c = (x, y, z, t + \tau)  $
 	\iiint\limits_{\Omega_0} (\mu\bar{c}_x')_x'\,dxdydz = \iiint\limits_{\Omega_1} (\mu\bar{c}_x')_x'\,dxdydz + \iiint\limits_{\Omega_2} (\mu\bar{c}_x')_x'\,dxdydz
 \end{equation*}
 
-Рассмотрим случай: $V_{\Omega1}>V_{\Omega1}$, выделим из  $\Omega_1$ фрагмент $\Omega_{1,2}$ смежный  с областью $\Omega_2$,  при этом   $V_{\Omega2}=V_{\Omega{1,2}}$
+Рассмотрим случай: $V_{\Omega1}>V_{\Omega2}$, выделим из  $\Omega_1$ фрагмент $\Omega_{1,2}$ смежный  с областью $\Omega_2$,  при этом   $V_{\Omega2}=V_{\Omega{1,2}}$
 
 \begin{multline*} 
 	\iiint\limits_{\Omega_0} (\mu\bar{c}_x')_x'\,dxdydz = \iiint\limits_{\Omega_1\setminus\Omega_{1,2}} (\mu\bar{c}_x')_x'\,dxdydz + \iiint\limits_{\Omega_{1,2}\cup\Omega_2}(\mu\bar{c}_x')_x'\,dxdydz = \\
@@ -292,6 +292,49 @@ $W=\mu\bar{c}_x'$
 
 или
 
+\begin{equation*}
+	\int_{x_i}^{x_{i+1}}W\frac{1}{\mu}dx = \int_{x_i}^{x_{i+1}}\bar{c}_x'dx,
+\end{equation*}
+следовательно, по теореме о среднем
+
+\begin{equation*}
+	W_{i+\frac{1}{2}}\int_{x_i}^{x_{i+1}}\frac{dx}{\mu}=\int_{x_i}^{x_{i+1}}\bar{c}_x'dx,
+\end{equation*}
+следовательно, $W_{i+\frac{1}{2}}$ вычисляется в точке $x_{i+\frac{1}{2}}$, так как считаем, что функция $W(x)$ - линейная. 
+В противном случае, это будет не середина отрезка  $[x_{i+1},x_i]$.
+ 
+Поделим обе части равенства на $\int_{x_i}^{x_{i+1}}\frac{dx}{\mu}$ и получим:
+
+\begin{equation*}
+	W_{i+\frac{1}{2}}=\left(\int_{x_i}^{x_{i+1}}\frac{dx}{\mu}\right)^{-1}\cdot\int_{x_i}^{x_{i+1}}\bar{c}_x'dx,
+\end{equation*}
+
+проинтегрируем $\bar{c}_x'$ и получим 
+
+\begin{equation*}
+	W_{i+\frac{1}{2}}=\frac{\bar{c}_{i+1} - \bar{c}_{i}}{\int_{x_i}^{x_{i+1}}\frac{dx}{\mu}}=\frac{\bar{c}_{i+1} - \bar{c}_{i}}{\frac{1}{\mu_{i+\frac{1}{2}}}\int_{x_i}^{x_{i+1}}dx} = \frac{\bar{c}_{i+1}-\bar{c}_{i}} {\frac{1}{\mu_{i+\frac{1}{2}}}x\bigg|_{x_{i}}^{x_{i+1}}} = \frac{\bar{c}_{i+1} - \bar{c}_{i}} {\frac{1}{\mu_{i+\frac{1}{2}}} (x_{i+1} - x_i)} =\mu_{i+\frac{1}{2}} \frac{\bar{c}_{i+1} - \bar{c}_{i}} {h_{x}},
+\end{equation*}
+где $h_{x}=x_{i+1}- x_i$.
+
+Теперь вычислим $W_{i-\frac{1}{2}}$  на отрезке $[x_{i-1}, x_i]$.
+
+\begin{equation*}
+\int_{x_{i-1}}^{x_{i}}\frac{W}{\mu}dx = \int_{x_{i-1}}^{x_{i}}\bar{c}_x'dx
+\end{equation*}
+
+Вычисления для $W_{i-\frac{1}{2}}$ выполняем аналогично, как для $W_{i+\frac{1}{2}}$. Поэтому получим:
+
+\begin{equation*}
+	W_{i-\frac{1}{2}} = \mu_{i-\frac{1}{2}} \frac{\bar{c}_{i} -\bar{c}_{i-1} }{h_{x}}	
+\end{equation*}
+
+В результате получим:
+
+\begin{multline*} 
+	\iiint\limits_{V_0} (\mu\bar{c}_x')_x'\,dxdydz = (W_{i+\frac{1}{2}} - W_{i-\frac{1}{2}})h_yh_z=  \\   \left(\mu_{i+\frac{1}{2},j,k}\frac{(\bar{c}_{i+1,j,k}- \bar{c}_{i,j,k})}{h_x} - \mu_{i-\frac{1}{2},j,k}\frac{(\bar{c}_{i,j,k}- \bar{c}_{i-1,j,k})}{h_x}\right)h_yh_z
+\end{multline*} 
+
+Вычислим интеграл по $V_1$:
 
 
 

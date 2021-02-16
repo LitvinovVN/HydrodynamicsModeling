@@ -25,12 +25,14 @@ def func_A(M, n, m, kol, kn, km):
         V = np.zeros((n, m))            
         for i in range(n):
             for j in range(m):                 
-                S1 = 0                             
+                S1 = 0                                           
                 for k1 in range(kn):
+                    S2 = 0                    
                     for k2 in range(km):
                         i1 = kn * i + nfirst * (k+1) + k1
                         i2 = km * j + mfirst + k2
-                        S1 = S1 + M[i2+i1*m]
+                        S2 = S2 + M[i2+i1*n]
+                    S1 = S1 + S2
                 n1 = n-i-1
                 n2 = j
                 V[n1,n2] = S1/(kn*km)
@@ -72,6 +74,6 @@ B = func_A(B1, n, m, kol, kn, km)
 E = func_A(E1, n, m, kol, kn, km)
 C = func_A(C1, n, m, kol, kn, km)
  
-print(A)
+print(A[0][17])
 
 
