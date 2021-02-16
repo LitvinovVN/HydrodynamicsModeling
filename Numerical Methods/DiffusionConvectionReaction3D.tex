@@ -336,7 +336,69 @@ $W=\mu\bar{c}_x'$
 
 Вычислим интеграл по $V_1$:
 
+\begin{multline*} 
+	\iiint\limits_{V_1} (\mu\bar{c}_x')_x'\,dxdydz = \int_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz    
+	\int_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}dy  
+	\int_{x_{i}}^{x_{i+1}}(\mu\bar{c}_x')_x'dx = 
+	\int_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz    
+	\int_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}\mu\bar{c}_x'
+	\bigg|_{x_{i}}^{x_{i+\frac{1}{2}}}dy =  \\
+	\left(\mu_{i+\frac{1}{2},j,k} \frac{\bar{c}_{i+1,j,k}- \bar{c}_{i,j,k}}{h_x} - 
+	\mu_{i,j,k}(\alpha_x\bar{c}_{i,j,k}+\beta_x) \right)h_yh_z 	    
+\end{multline*} 
+
+Граничные условия:
+$c_n'(x,y,t)=\alpha_n\cdot c+\beta_n$
+
+В интеграле по объему $V_1$ учитываются граничные условия.
+
+\begin{multline*} 
+    \int_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz    
+	\int_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}dy  
+	\int_{x_{i}}^{x_{i+1}}(\mu\bar{c}_x')_x'dx = 
+	\int_{z_{k-\frac{1}{2}}}^{z_{k+\frac{1}{2}}}dz    
+	\int_{y_{j-\frac{1}{2}}}^{y_{j+\frac{1}{2}}}(\mu\bar{c}_x')
+	\bigg|_{x_{i}}^{x_{i+\frac{1}{2}}}dy = 	\\
+	\left(\mu\bar{c}_x'\bigg|_{x_{i+\frac{1}{2}}} - \mu\bar{c}_x'\bigg|_{x_i}    	\right)h_yh_z = \left(\mu_{i+\frac{1}{2},j,k} \frac{\bar{c}_{i+1,j,k}- \bar{c}_{i,j,k}}{h_x} - \mu_{i,j,k}(\alpha_x\bar{c}_{i,j,k} + \beta_x)  \right)h_yh_z
+\end{multline*} 
+Здесь  обозначим $A=\mu\bar{c}_x'\bigg|_{x_i}  $
+
+Слагаемое А для внутренних узлов будет выглядеть так: 
+
+ $A=\mu_{i,l,k}\cdot\bar{c}_{i,j,k}$
+
+Для граничных узлов:
+
+ $A=\mu_{i,l,k}\cdot( \alpha\bar{c}_{i,j,k}+\beta)$
 
 
+Т.о., приведя подобные при сложении вычесленных интегралов по $V_0$ и $V_2$, получим:
+
+\begin{multline} 
+	\iiint\limits_{\Omega_0} (\mu\bar{c}_x')_x'\,dxdydz =    ((q_1)_{i,j,k}\cdot\mu_{i+\frac{1}{2},j,k}\cdot\frac{\bar{c}_{i+1,j,k}-\bar{c}_{i,j,k}}{h_x} - (q_2)_{i,j,k}\cdot\mu_{i-\frac{1}{2},j,k}\cdot\frac{\bar{c}_{i,j,k}-\bar{c}_{i-1,j,k}}{h_x} -     \\
+	((q_1)_{i,j,k}-(q_2)_{i,j,k})\cdot\mu_{i,j,k}(\alpha_x\bar{c}_{i,j,k} + 
+	\beta_x) )\cdot h_yh_z   
+\end{multline} 
+
+В случае $S_{\Omega_2}>S_{\Omega_1}$ результат аналогичен.
+
+Т.о., уравнение  (4) с учетом уравнение (5), (6), (7) запишем в следующем виде:
+
+\begin{multline} 
+	(q_0)_{i,j,k}\frac{\hat{c}-c}{\tau}h_xh_yh_z + (q_1)_{i,j,k}u_{i+\frac{1}{2},j,k} \cdot\frac{\bar{c}_{i+1,j,k}-\bar{c}_{i,j,k}}{2}\cdot h_yh_z + (q_2)_{i,j,k}u_{i-\frac{1}{2},j,k}\cdot\frac{\bar{c}_{i,j,k}-\bar{c}_{i-1,j,k}}{2}\cdot h_yh_z \\
+	+ (q_3)_{i,j,k}v_{i,,j+\frac{1}{2},k}\cdot\frac{\bar{c}_{i,j+1,k}-\bar{c}_{i,j,k}}{2}\cdot h_xh_z + 
+	(q_4)_{i,j,k}v_{i,,j-\frac{1}{2},k}\cdot\frac{\bar{c}_{i,j,k}-\bar{c}_{i,j-1,k}}{2}\cdot h_xh_z + \\
+	(q_5)_{i,j,k}w_{i,,j,k+\frac{1}{2}}\cdot\frac{\bar{c}_{i,j,k+1}-\bar{c}_{i,j,k}}{2}\cdot h_xh_y + 
+	(q_6)_{i,j,k}w_{i,,j,k-\frac{1}{2}}\cdot\frac{\bar{c}_{i,j,k}-\bar{c}_{i,j,k-1}}{2}\cdot h_xh_y = \\
+	((q_1)_{i,j,k}\cdot\mu_{i+\frac{1}{2},j,k}\cdot \frac{\bar{c}_{i+1,j,k}-\bar{c}_{i,j,k}}{h_x} -  (q_2)_{i,j,k}\cdot\mu_{i-\frac{1}{2},j,k}\cdot \frac{\bar{c}_{i,j,k}-\bar{c}_{i-1,j,k}}{h_x} - \\
+	 |(q_1)_{i,j,k}-(q_2)_{i,j,k}|\cdot\mu_{i,j,k}\cdot(\alpha_x\cdot\bar{c}_{i,j,k}+\beta_x))h_yh_z + \\
+	 ((q_3)_{i,j,k}\cdot\mu_{i,j+\frac{1}{2},k}\cdot \frac{\bar{c}_{i,j+1,k}-\bar{c}_{i,j,k}}{h_y} -  (q_4)_{i,j,k}\cdot\mu_{i,j-\frac{1}{2},k}\cdot \frac{\bar{c}_{i,j,k}-\bar{c}_{i,j-1,k}}{h_y} - \\
+	 |(q_3)_{i,j,k}-(q_4)_{i,j,k}|\cdot\mu_{i,j,k}\cdot(\alpha_y\cdot\bar{c}_{i,j,k}+\beta_y))h_xh_z + \\
+	 ((q_5)_{i,j,k}\cdot\nu_{i,j,k+\frac{1}{2}}\cdot \frac{\bar{c}_{i,j,k+1}-\bar{c}_{i,j,k}}{h_z} -  (q_6)_{i,j,k}\cdot\nu_{i,j,k-\frac{1}{2}}\cdot \frac{\bar{c}_{i,j,k}-\bar{c}_{i,j,k-1}}{h_z} - \\
+	 |(q_5)_{i,j,k}-(q_6)_{i,j,k}|\cdot\nu_{i,j,k}\cdot(\alpha_z\cdot\bar{c}_{i,j,k}+\beta_z))h_xh_y + (q_5)_{i,j,k}\cdot f_{i,j,k}h_xh_yh_z
+	\end{multline} 
+
+Разделим уравнение (8) на объем ячейки $h_xh_yh_z$, получим дискретный аналог уравнения диффузии-конвекции-реакции (1) с граничными условиями третьего рода:
+ 
 
 \end{document}
