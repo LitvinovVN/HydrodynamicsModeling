@@ -1,7 +1,11 @@
 import numpy as np
+import seaborn as sns
 import math
 import sys
 import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.axes_grid1.inset_locator import InsetPosition
+from matplotlib.colors import ListedColormap
 
 # Функция func_open(file_name, r): считывание данных из файла file_name
 # и запись данных в массив M_array_of_strings, состоящий их строк
@@ -74,6 +78,29 @@ def norm(A_array, B_array):
                     V[i,j,k] = A_array[i,j,k]*math.pow(B_array[i,j,k],1./3)/B_array[i,j,k]
     return V
 
+# construct cmap
+#flatui = ["#ffffff", "#ff8c00", "#ffff00", "#adff2f", "#00ff00", "#40e0d0", "#0000ff", "#00008b",]
+#flatui = ["#9b59b6", "#3498db", "#95a5a6", "#e74c3c", "#34495e", "#2ecc71"]
+#my_cmap = ListedColormap(sns.color_palette(flatui).as_hex())
+my_cmap = sns.light_palette("Navy", as_cmap=True)
+cmap = ListedColormap(sns.color_palette("Spectral",256))
+
+# Функция для построения графиков 2D, входные данные: массив A,
+# цветовая карта - 'CMRmap', имя файла - 'imshow_C.png'
+def graph_2D(A_array, cmap_use, file_name):
+    data = A_array[:,:,0]
+    fig, (ax, cax) = plt.subplots(ncols=2,figsize=(7,3), 
+                        gridspec_kw={"width_ratios":[1,0.05]})
+    fig.subplots_adjust(wspace=0.3)
+    im  = ax.imshow(data, cmap=cmap_use, origin='lower')
+    ax.set_ylabel("Ось Y")
+    ax.set_xlabel("Ось Х")
+    fig.colorbar(im, cax=cax, ax=ax)
+    plt.savefig(file_name, format='png', dpi=1200, transparent = True)
+    return
+
+
+
 # Данные из файлов записываем в списки массивов, состоящих из строк
 A1_array_of_strings = func_open('u.txt', 'r') 
 B1_array_of_strings = func_open('v.txt', 'r')
@@ -86,14 +113,17 @@ B1_array = func_listStr_to_Array(B1_array_of_strings)
 E1_array = func_listStr_to_Array(E1_array_of_strings)
 C1_array = func_listStr_to_Array(C1_array_of_strings)
 
-kol = 14
-kn = 3 
-km = 4
-n = len(A1_array)//(kol*kn) #77
-m = len(A1_array[0])//(km) #87
-print(len(A1_array))
-print(len(A1_array[0]))
-print("n=", n, "m=", m)
+gridX = 353
+gridY = 233
+gridZ = 14
+kol = gridZ
+kn = 1
+km = 1
+n = gridY//kn #77
+m = gridX//km #87
+#print(len(A1_array))
+#print(len(A1_array[0]))
+#print("n=", n, "m=", m)
 nfirst = 233
 mfirst = 0
 i = 1j
@@ -117,7 +147,6 @@ D = mod(A, B)
 A2 = norm(A, D)
 B2 = norm(B, D)
 
-data = C[:,:,0]
-#data = data.transpose()
-plt.imshow(data, origin='lower')
-plt.savefig('imshow_1.png', format='png', dpi=1200, transparent = True)
+#graph_2D(C, 'CMRmap', 'imshow_C.png')
+graph_2D(D, 'gnuplot', 'imshow_D.png')
+
