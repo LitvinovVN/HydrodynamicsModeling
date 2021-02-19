@@ -6,6 +6,8 @@
 \usepackage[unicode, pdftex]{hyperref}
 \usepackage[usenames]{color}
 \usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage[left=2.5cm, top=2cm, right=1cm, bottom=20mm, nohead, nofoot]{geometry}
 
 \begin{document}
 
@@ -150,7 +152,7 @@ $c=c(x, y, z, t);$ $ $ $\hat c = (x, y, z, t + \tau)  $
 \end{equation*}
 
 \begin{equation*}
-(q_6)_{i,j,k}=\frac{O_{i,j,k+1}+O_{i+1,j,k+1}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4};
+ (q_6)_{i,j,k}=\frac{O_{i,j,k+1}+O_{i+1,j,k+1}+O_{i,j+1,k+1}+O_{i+1,j+1,k+1}}{4};
 \end{equation*}
 
 \begin{equation*}
@@ -396,9 +398,138 @@ $c_n'(x,y,t)=\alpha_n\cdot c+\beta_n$
 	 |(q_3)_{i,j,k}-(q_4)_{i,j,k}|\cdot\mu_{i,j,k}\cdot(\alpha_y\cdot\bar{c}_{i,j,k}+\beta_y))h_xh_z + \\
 	 ((q_5)_{i,j,k}\cdot\nu_{i,j,k+\frac{1}{2}}\cdot \frac{\bar{c}_{i,j,k+1}-\bar{c}_{i,j,k}}{h_z} -  (q_6)_{i,j,k}\cdot\nu_{i,j,k-\frac{1}{2}}\cdot \frac{\bar{c}_{i,j,k}-\bar{c}_{i,j,k-1}}{h_z} - \\
 	 |(q_5)_{i,j,k}-(q_6)_{i,j,k}|\cdot\nu_{i,j,k}\cdot(\alpha_z\cdot\bar{c}_{i,j,k}+\beta_z))h_xh_y + (q_5)_{i,j,k}\cdot f_{i,j,k}h_xh_yh_z
-	\end{multline} 
+\end{multline} 
 
 Разделим уравнение (8) на объем ячейки $h_xh_yh_z$, получим дискретный аналог уравнения диффузии-конвекции-реакции (1) с граничными условиями третьего рода:
+
+\begin{multline} 
+	(q_0)_{i,j,k}\frac{\hat{c}-c}{\tau} + (q_2)_{i,j,k}\cdot u_{i+\frac{1}{2},j,k} \cdot \frac{\bar{c}_{i+1,j,k}-\bar{c}_{i,j,k}}{2h_x}   + (q_1)_{i,j,k}\cdot u_{i-\frac{1}{2},j,k} \cdot \frac{\bar{c}_{i,j,k}-\bar{c}_{i-1,j,k}}{2h_x} + \\ (q_4)_{i,j,k}v_{i,,j+\frac{1}{2},k}\cdot\frac{\bar{c}_{i,j+1,k}-\bar{c}_{i,j,k}}{2h_y} + (q_3)_{i,j,k}v_{i,,j-\frac{1}{2},k}\cdot\frac{\bar{c}_{i,j,k}-\bar{c}_{i,j-1,k}}{2h_y} + (q_6)_{i,j,k}w_{i,,j,k+\frac{1}{2}}\cdot\frac{\bar{c}_{i,j,k+1}-\bar{c}_{i,j,k}}{2h_z} + \\ (q_5)_{i,j,k}w_{i,,j,k-\frac{1}{2}}\cdot\frac{\bar{c}_{i,j,k}-\bar{c}_{i,j,k-1}}{2h_z} = ( (q_2)_{i,j,k}\cdot\mu_{i+\frac{1}{2},j,k}\cdot \frac{\bar{c}_{i+1,j,k}-\bar{c}_{i,j,k}}{h_x^2} -  (q_1)_{i,j,k}\cdot\mu_{i-\frac{1}{2},j,k}\cdot \frac{\bar{c}_{i,j,k}-\bar{c}_{i-1,j,k}}{h_x^2} - \\
+	|(q_2)_{i,j,k}-(q_1)_{i,j,k}| \cdot \mu_{i,j,k}\cdot \frac{(\alpha_x\cdot\bar{c}_{i,j,k}+\beta_x)}{h_x} ) + ((q_4)_{i,j,k}\cdot\mu_{i,j+\frac{1}{2},k}\cdot \frac{\bar{c}_{i,j+1,k}-\bar{c}_{i,j,k}}{h_y^2} - \\ (q_3)_{i,j,k}\cdot\mu_{i,j-\frac{1}{2},k}\cdot \frac{\bar{c}_{i,j,k}-\bar{c}_{i,j-1,k}}{h_y^2} - |(q_4)_{i,j,k} - (q_3)_{i,j,k}| \cdot \mu_{i,j,k}\cdot \frac{(\alpha_y\cdot\bar{c}_{i,j,k}+\beta_y)}{h_y} ) + \\
+	( (q_6)_{i,j,k}\cdot\mu_{i,j,k+\frac{1}{2}}\cdot \frac{\bar{c}_{i,j,k+1}-\bar{c}_{i,j,k}}{h_z^2} - 	 (q_5)_{i,j,k}\cdot\mu_{i,j,k-\frac{1}{2}}\cdot \frac{\bar{c}_{i,j,k-1}-\bar{c}_{i,j,k}}{h_z^2} - \\ |(q_6)_{i,j,k} - (q_5)_{i,j,k}| \cdot\mu_{i,j,k}\cdot \frac{(\alpha_z\cdot\bar{c}_{i,j,k}+\beta_z)}{h_z} ) + (q_0)_{i,j,k}\cdot f_{i,j,k}
+\end{multline} 
+
+ Т.о., получим дискретные аналоги операторов конвективного и диффузного переноса в случае частичной заполненности ячеек:
  
+\begin{multline*} 
+	(q_0)_{i,j,k}\cdot uc_x'\simeq (q_1)_{i,j,k}u_{i+\frac{1}{2},j,k}\frac{c_{i+1,j,k}-c_{i,j,k}}{2h_x} + (q_2)_{i,j,k}u_{i-\frac{1}{2},j,k}\frac{c_{i,j,k}-c_{i-1,j,k}}{2h_x}
+\end{multline*} 	
+ 
+ \begin{multline*} 
+ 	(q_0)_{i,j,k}\cdot (\mu c_x')_x'\simeq (q_1)_{i,j,k}\mu _{i+\frac{1}{2},j,k}\frac{c_{i+1,j,k}-c_{i,j,k}}{h_x^2} - (q_2)_{i,j,k}\mu _{i-\frac{1}{2},j,k}\frac{c_{i,j,k}-c_{i-1,j,k}}{h_x^2} - \\
+ 	|(q_1)_{i,j,k}-(q_2)_{i,j,k}| \cdot \mu_{i,j,k}\cdot \frac{(\alpha_x\cdot\bar{c}_{i,j,k}+\beta_x)}{h_x} 
+ \end{multline*} 
+ 
+ В случае внутреннего узла (ячейка заполнена полностью) $q_0=1, q_1=q_2=1$, следовательно, дискретные аналоги  операторов конвективного и диффузного переноса запишем в виде:
+ 
+\begin{equation*}
+	uc_x'=u_{i+\frac{1}{2},j,k}\frac{c_{i+1,j,k}-c_{i,j,k}}{2h_x} + u_{i-\frac{1}{2},j,k}\frac{c_{i,j,k}-c_{i-1,j,k}}{2h_x}  
+\end{equation*}
+ 
+\begin{equation*}
+    (\mu c_x')_x'=\mu_{i+\frac{1}{2},j,k}\frac{c_{i+1,j,k}-c_{i,j,k}}{h_x^2} - \mu_{i-\frac{1}{2},j,k}\frac{c_{i,j,k}-c_{i-1,j,k}}{h_x^2}
+\end{equation*}
+
+ \center \textbf  {Сеточные уравнения для задачи диффузии-конвекции-реакции}
+
+Запишем дискретную модель транспорта веществ в канонической форме сеточных уравнений:
+
+
+\begin{equation}
+	L(c(p)) = A(p)\cdot c(p)-\sum_{Q\in \Psi'(P)}B(P,Q)\cdot c(Q) = F(P),
+\end{equation}
+где $L$ - некоторый сеточный оператор,
+
+$P\equiv(x_i,y_j,z_k)$ - центр шаблона,
+
+$\Psi'(P)=\{Q_1(x_{i+1},y_j,z_k), Q_2(x_{i-1},y_j,z_k), Q_3(x_i,y_{j+1},z_k), Q_4(x_i,y_{j-1},z_k),$ $ Q_5(x_i,y_j,z_{k+1}), Q_6(x_i,y_j,z_{k-1})\} $  - окрестность центра шаблона.
+
+Выделим семейство сеточных уравнений, для которых коэффициенты удовлетворяют свойствам:
+
+\begin{equation}
+A(P)>0, B(P,Q)>0, D(p)=A(P) - \sum_{Q\in \Psi'(P)}B(P,Q)   
+\end{equation}
+
+\begin{flushleft} Преобразуем уравнение (2):
+перенесем $ \frac{\bar{c}}{\tau} $ в правую часть и домножим обе части уравнения на $(q_0)_{i,j,k}$.
+\end{flushleft}
+
+\begin{multline}
+ \frac{(q_0)_{i,j,k}}{\tau}\hat{c}_{i,j,k} + \frac{(q_1)_{i,j,k}\cdot u_{i+\frac{1}{2},j,k}}{2h_x} \cdot \bar{c}_{i+1,j,k} - \frac{(q_1)_{i,j,k}\cdot u_{i+\frac{1}{2},j,k}}{2h_x} \cdot \bar{c}_{i,j,k} + \\
+ \frac{(q_2)_{i,j,k}\cdot u_{i-\frac{1}{2},j,k}}{2h_x} \cdot \bar{c}_{i,j,k} - \frac{(q_2)_{i,j,k}\cdot u_{i-\frac{1}{2},j,k}}{2h_x} \cdot \bar{c}_{i-1,j,k} + 
+ \frac{(q_3)_{i,j,k}\cdot v_{i,j+\frac{1}{2},k}}{2h_y} \cdot \bar{c}_{i,j+1,k} - 
+ \frac{(q_3)_{i,j,k}\cdot v_{i,j+\frac{1}{2},k}}{2h_y} \cdot \bar{c}_{i,j,k} + \\
+ \frac{(q_4)_{i,j,k}\cdot v_{i,j-\frac{1}{2},k}}{2h_y} \cdot \bar{c}_{i,j,k} - \frac{(q_4)_{i,j,k}\cdot v_{i,j-\frac{1}{2},k}}{2h_y} \cdot \bar{c}_{i,j-1,k} + 
+ \frac{(q_5)_{i,j,k}\cdot w_{i,j,k+\frac{1}{2}}}{2h_z} \cdot \bar{c}_{i,j,k+1} - 
+ \frac{(q_5)_{i,j,k}\cdot w_{i,j,k+\frac{1}{2}}}{2h_z} \cdot \bar{c}_{i,j,k} + \\
+ \frac{(q_6)_{i,j,k}\cdot w_{i,j,k-\frac{1}{2}}}{2h_z} \cdot \bar{c}_{i,j,k} - 
+ \frac{(q_6)_{i,j,k}\cdot w_{i,j,k-\frac{1}{2}}}{2h_z} \cdot \bar{c}_{i,j,k-1} =  
+ \frac{(q_0)_{i,j,k}}{\tau}\hat{c}_{i,j,k} \\
+  + \frac{(q_1)_{i,j,k}\cdot \mu_{i+\frac{1}{2},j,k}}{h_x^2} \cdot \bar{c}_{i+1,j,k} -  \frac{(q_1)_{i,j,k}\cdot \mu_{i+\frac{1}{2},j,k}}{h_x^2} \cdot \bar{c}_{i,j,k} - 
+ \frac{(q_2)_{i,j,k}\cdot \mu_{i-\frac{1}{2},j,k}}{h_x^2} \cdot \bar{c}_{i,j,k} + 
+ \frac{(q_2)_{i,j,k}\cdot \mu_{i-\frac{1}{2},j,k}}{h_x^2} \cdot \bar{c}_{i-1,j,k} - \\
+ \frac{|(q_1)_{i,j,k} - (q_2)_{i,j,k}| \cdot \mu_{i,j,k} \cdot \alpha_x}{h_x} \cdot \bar{c}_{i,j,k} - \frac{|(q_1)_{i,j,k} - (q_2)_{i,j,k}| \cdot \mu_{i,j,k} \cdot \beta_x}{h_x}  + 
+ \frac{(q_3)_{i,j,k}\cdot \mu_{i,j+\frac{1}{2},k}}{h_y^2} \cdot \bar{c}_{i,j+1,k} -\\
+ \frac{(q_3)_{i,j,k}\cdot \mu_{i,j+\frac{1}{2},k}}{h_y^2} \cdot \bar{c}_{i,j,k} - 
+ \frac{(q_4)_{i,j,k}\cdot \mu_{i,j-\frac{1}{2},k}}{h_y^2} \cdot \bar{c}_{i,j,k} + 
+ \frac{(q_4)_{i,j,k}\cdot \mu_{i,j-\frac{1}{2},k}}{h_y^2} \cdot \bar{c}_{i,j-1,k} -\\
+ \frac{|(q_3)_{i,j,k} - (q_4)_{i,j,k}| \cdot \mu_{i,j,k} \cdot \alpha_y}{h_y} \cdot \bar{c}_{i,j,k} - 
+ \frac{|(q_3)_{i,j,k} - (q_4)_{i,j,k}| \cdot \mu_{i,j,k} \cdot \beta_y}{h_y} + 
+ \frac{(q_5)_{i,j,k}\cdot \nu_{i,j,k+\frac{1}{2}}}{h_z^2} \cdot \bar{c}_{i,j,k+1} - \\
+ \frac{(q_5)_{i,j,k}\cdot \nu_{i,j,k+\frac{1}{2}}}{h_z^2} \cdot \bar{c}_{i,j,k} - 
+ \frac{(q_6)_{i,j,k}\cdot \nu_{i,j,k-\frac{1}{2}}}{h_z^2} \cdot \bar{c}_{i,j,k} +
+ \frac{(q_6)_{i,j,k}\cdot \nu_{i,j,k-\frac{1}{2}}}{h_z^2} \cdot \bar{c}_{i,j,k-1} - \\
+  \frac{|(q_5)_{i,j,k} - (q_6)_{i,j,k}| \cdot \nu_{i,j,k} \cdot \alpha_y}{h_z} \cdot \bar{c}_{i,j,k} - \frac{|(q_5)_{i,j,k} - (q_6)_{i,j,k}| \cdot \nu_{i,j,k} \cdot \beta_z}{h_z} + {(q_0)_{i,j,k}}\cdot f_{i,j,k}
+\end{multline}
+
+Запишем сеточный аналог уравнения диффузии-конвекции-реакции (12) в канонической форме (10): 
+
+\begin{multline*}
+\frac{(q_0)_{i,j,k}}{\tau}\cdot \hat{c}_{i,j,k} + \\
+ \left[ \left( | (q_1)_{i,j,k} - (q_2)_{i,j,k}| \cdot \frac{\alpha_x}{h_x} + | (q_3)_{i,j,k} - (q_4)_{i,j,k}| \cdot \frac{\alpha_y}{h_y} \right) \cdot \mu_{i,j,k} + |(q_5)_{i,j,k} - (q_6)_{i,j,k}| \cdot \frac{\alpha_z}{h_z}\cdot \nu_{i,j,k} \right] \bar{c}_{i,j,k} + \\
+(q_1)_{i,j,k} \left( -\frac{u_{i+\frac{1}{2},j,k}}{2h_x}  + \frac{\mu_{i+\frac{1}{2},j,k}}{h_x^2} \right) \bar{c}_{i,j,k} + 
+(q_2)_{i,j,k} \left( \frac{u_{i-\frac{1}{2},j,k}}{2h_x}  + \frac{\mu_{i-\frac{1}{2},j,k}}{h_x^2} \right) \bar{c}_{i,j,k} +
+(q_3)_{i,j,k} \left( -\frac{v_{i,j+\frac{1}{2},k}}{2h_y}  + \frac{\mu_{i,j+\frac{1}{2},k}}{h_y^2} \right) \bar{c}_{i,j,k} \\
++ (q_4)_{i,j,k} \left( \frac{v_{i,j-\frac{1}{2},k}}{2h_y}  + \frac{\mu_{i,j-\frac{1}{2},k}}{h_y^2} \right) \bar{c}_{i,j,k} +
+(q_5)_{i,j,k} \left( \frac{w_{i,j,k+\frac{1}{2}}}{2h_z}  + \frac{\nu_{i,j,k+\frac{1}{2}}}{h_z^2} \right) \bar{c}_{i,j,k} +
+(q_6)_{i,j,k} \left( \frac{w_{i,j,k-\frac{1}{2}}}{2h_z}  + \frac{\nu_{i,j,k-\frac{1}{2}}}{h_z^2} \right) \bar{c}_{i,j,k} - \\
+(q_1)_{i,j,k} \left( -\frac{u_{i+\frac{1}{2},j,k}}{2h_x}  + \frac{\mu_{i+\frac{1}{2},j,k}}{h_x^2} \right) \bar{c}_{i+1,j,k} -
+(q_2)_{i,j,k} \left( \frac{u_{i-\frac{1}{2},j,k}}{2h_x}  + \frac{\mu_{i-\frac{1}{2},j,k}}{h_x^2} \right) \bar{c}_{i-1,j,k} - \\
+(q_3)_{i,j,k} \left( -\frac{v_{i,j+\frac{1}{2},k}}{2h_y}  + \frac{\mu_{i,j+\frac{1}{2},k}}{h_y^2} \right) \bar{c}_{i,j+1,k} -
+(q_4)_{i,j,k} \left( \frac{v_{i,j-\frac{1}{2},k}}{2h_y}  + \frac{\mu_{i,j-\frac{1}{2},k}}{h_y^2} \right) \bar{c}_{i,j-1,k} - \\
+(q_5)_{i,j,k} \left(- \frac{w_{i,j,k+\frac{1}{2}}}{2h_z}  + \frac{\nu_{i,j,k+\frac{1}{2}}}{h_z^2} \right) \bar{c}_{i,j,k+1} -
+(q_6)_{i,j,k} \left(- \frac{w_{i,j,k-\frac{1}{2}}}{2h_z}  + \frac{\nu_{i,j,k-\frac{1}{2}}}{h_z^2} \right) \bar{c}_{i,j,k-1} = 
+\end{multline*}
+
+В правой части ураснения (12) находятся известные величины, в левой - искомые
+
+\begin{multline}
+= (q_0)_{i,j,k} \cdot\frac{\bar c_{i,j,k}}{\tau} + (q_0)_{i,j,k} \cdot f_{i,j,k} - |(q_1)_{i,j,k}-(q_2)_{i,j,k}|\cdot \mu_{i,j,k}\cdot \frac{\beta_x}{h_x} - |(q_3)_{i,j,k}-(q_4)_{i,j,k}|\cdot \mu_{i,j,k}\cdot \frac{\beta_y}{h_y} - \\
+|(q_5)_{i,j,k}-(q_6)_{i,j,k}|\cdot \nu_{i,j,k}\cdot \frac{\beta_z}{h_z} 
+\end{multline}
+
+Учитывая, что 
+
+\begin{equation*}
+u_{i+\frac{1}{2},j,k}=\frac{u_{i+1,j,k} + u_{i,j,k}}{2}  ,
+\end{equation*}
+
+\begin{equation*}
+	u_{i-\frac{1}{2},j,k}=\frac{u_{i,j,k} + u_{i-1,j,k}}{2}  ,
+\end{equation*}
+
+\begin{equation*}
+	\mu_{i+\frac{1}{2},j,k}=\frac{\mu_{i+1,j,k} + \mu_{i,j,k}}{2}  ,
+\end{equation*}
+
+\begin{equation*}
+	\mu_{i-\frac{1}{2},j,k}=\frac{\mu_{i,j,k} + \mu_{i-1,j,k}}{2}  ,
+\end{equation*}
+
+аналогично для j, k, получим (14):
+
+
+
+
+
 
 \end{document}
