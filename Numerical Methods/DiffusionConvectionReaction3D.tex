@@ -527,9 +527,143 @@ u_{i+\frac{1}{2},j,k}=\frac{u_{i+1,j,k} + u_{i,j,k}}{2}  ,
 
 аналогично для j, k, получим (14):
 
+\begin{multline}
+	\frac{(q_0)_{i,j,k}}{\tau}\cdot \hat{c}_{i,j,k} + \\
+	\left[ \left( | (q_1)_{i,j,k} - (q_2)_{i,j,k}| \cdot \frac{\alpha_x}{h_x} + | (q_3)_{i,j,k} - (q_4)_{i,j,k}| \cdot \frac{\alpha_y}{h_y} \right) \cdot \mu_{i,j,k} + |(q_5)_{i,j,k} - (q_6)_{i,j,k}| \cdot \frac{\alpha_z}{h_z}\cdot \nu_{i,j,k} \right] \bar{c}_{i,j,k} + \\	
+	(q_1)_{i,j,k} \left( \frac{-u_{i+1,j,k}- u_{i,j,k}  }{4h_x}  +	
+	 \frac{\mu_{i+1,j,k}+ \mu_{i,j,k}}{2h_x^2} \right) \bar{c}_{i,j,k} + 
+	 (q_2)_{i,j,k} \left( \frac{u_{i,j,k}+u_{i-1,j,k}}{4h_x} +	
+	 \frac{\mu_{i,j,k}+\mu_{i-1,j,k}}{2h_x^2} \right) \bar{c}_{i,j,k} +	 \\
+	(q_3)_{i,j,k} \left( \frac{-v_{i,j+1,k}-v_{i,j,k}}{4h_y}  + \frac{\mu_{i,j+1,k}+\mu_{i,j,k}}{2h_y^2} \right) \bar{c}_{i,j,k} + 	
+	(q_4)_{i,j,k} \left( \frac{v_{i,j,k}+v_{i,j-1,k}}{4h_y}  + \frac{\mu_{i,j,k}+\mu_{i,j-1,k}}{2h_y^2} \right) \bar{c}_{i,j,k} +	\\
+	(q_5)_{i,j,k} \left( \frac{w_{i,j,k+1}+w_{i,j,k}}{4h_z}  + \frac{\nu_{i,j,k+1}+\nu_{i,j,k}}{2h_z^2} \right) \bar{c}_{i,j,k} + 
+	(q_6)_{i,j,k} \left( \frac{w_{i,j,k}+w_{i,j,k-1}}{4h_z}  + \frac{\nu_{i,j,k}+\nu_{i,j,k-1}}{2h_z^2} \right) \bar{c}_{i,j,k} - \\	
+	(q_1)_{i,j,k} \left( \frac{-u_{i+1,j,k}-u_{i,j,k}}{4h_x}  + \frac{\mu_{i+1,j,k}+\mu_{i,j,k}}{2h_x^2} \right) \bar{c}_{i+1,j,k} -	
+	(q_2)_{i,j,k} \left( \frac{u_{i,j,k}+u_{i-1,j,k}}{4h_x}  + \frac{\mu_{i,j,k}+\mu_{i-1,j,k}}{2h_x^2} \right) \bar{c}_{i-1,j,k} - \\	
+	(q_3)_{i,j,k} \left( \frac{-v_{i,j+1,k}-v_{i,j,k}}{4h_y}  + \frac{\mu_{i,j+1,k}+\mu_{i,j,k}}{2h_y^2} \right) \bar{c}_{i,j+1,k} -		
+	(q_4)_{i,j,k} \left( \frac{v_{i,j,k}+v_{i,j-1,k}}{4h_y}  + \frac{\mu_{i,j,k}+\mu_{i,j-1,k}}{2h_y^2} \right) \bar{c}_{i,j-1,k} - \\	
+	(q_5)_{i,j,k} \left(\frac{w_{i,j,k+1}+w_{i,j,k}}{4h_z}  + \frac{\nu_{i,j,k+1}+\nu_{i,j,k}}{2h_z^2} \right) \bar{c}_{i,j,k+1} -	
+	(q_6)_{i,j,k} \left(\frac{w_{i,j,k}+w_{i,j,k-1}}{4h_z}  + \frac{\nu_{i,j,k}+\nu_{i,j,k-1}}{2h_z^2} \right) \bar{c}_{i,j,k-1} = \\
+	(q_0)_{i,j,k}\cdot \frac{\bar{c}_{i,j,k}}{\tau} + (q_0)_{i,j,k}\cdot f_{i,j,k} -
+	| (q_1)_{i,j,k} - (q_2)_{i,j,k}| \cdot \mu_{i,j,k}\cdot \frac{\beta_x}{h_x} - 
+	| (q_3)_{i,j,k} - (q_4)_{i,j,k}| \cdot \mu_{i,j,k}\cdot \frac{\beta_y}{h_y} - \\
+	| (q_5)_{i,j,k} - (q_6)_{i,j,k}| \cdot \nu_{i,j,k}\cdot \frac{\beta_z}{h_z}
+\end{multline}
 
+Учитывая выражение $\bar{c}=\sigma\hat{c}+(1-\sigma)c $ покажем преобразование для одного элемента левой части уравнения (14):
 
+\begin{multline}
+	(q_1)_{i,j,k} \left( \frac{-u_{i+1,j,k}- u_{i,j,k}  }{4h_x}  +	
+\frac{\mu_{i+1,j,k}+ \mu_{i,j,k}}{2h_x^2} \right) \bar{c}_{i,j,k} = \\
+(q_1)_{i,j,k} \left( \frac{-u_{i+1,j,k}- u_{i,j,k}  }{4h_x}  +	
+\frac{\mu_{i+1,j,k}+ \mu_{i,j,k}}{2h_x^2} \right) \cdot (\sigma\hat{c}+(1-\sigma)c) = \\ 
+\sigma\cdot \left( -\frac{u_{i+1,j,k} + u_{i,j,k}  }{4h_x}  +	
+\frac{\mu_{i+1,j,k}+ \mu_{i,j,k}}{2h_x^2} \right) \cdot (q_1)_{i,j,k} \cdot \hat{c} +
+(1-\sigma)\cdot \left( -\frac{u_{i+1,j,k} + u_{i,j,k}  }{4h_x}  +	
+\frac{\mu_{i+1,j,k}+ \mu_{i,j,k}}{2h_x^2} \right) \cdot (q_1)_{i,j,k} \cdot c
+\end{multline}
 
+или
 
+\begin{equation}
+	B(P, Q_1) = \sigma \cdot \left( -\frac{u(Q_1) + u(P) }{4h_x}  +	
+	\frac{\mu(Q_1)+ \mu(P)}{2h_x^2} \right) \cdot q_1(P) 
+\end{equation}	
+
+\begin{equation}
+	B(P, Q_7) = (1-\sigma) \cdot \left( -\frac{u(Q_1) + u(P) }{4h_x}  +	
+	\frac{\mu(Q_1)+ \mu(P)}{2h_x^2} \right) \cdot q_1(P) 
+\end{equation}
+
+С учетом выражений (15), (16), (17) коэффициенты сеточных уравнений, находящиеся в окрестномти центра шаблона примут  вид:
+
+\begin{equation*}
+	B(P, Q_1) = \sigma \cdot \left( -\frac{u(Q_1) + u(P) }{4h_x}  +	
+	\frac{\mu(Q_1)+ \mu(P)}{2h_x^2} \right) \cdot q_1(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_2) = \sigma \cdot \left( \frac{u(Q_2) + u(P) }{4h_x}  +	
+	\frac{\mu(Q_2)+ \mu(P)}{2h_x^2} \right) \cdot q_2(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_3) = \sigma \cdot \left( -\frac{v(Q_3) + v(P) }{4h_y}  +	
+	\frac{\mu(Q_3)+ \mu(P)}{2h_y^2} \right) \cdot q_3(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_4) = \sigma \cdot \left( \frac{v(Q_4) + v(P) }{4h_y}  +	
+	\frac{\mu(Q_4)+ \mu(P)}{2h_y^2} \right) \cdot q_4(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_5) = \sigma \cdot \left( \frac{w(Q_5) + w(P) }{4z_y}  +	
+	\frac{v(Q_5)+ v(P)}{2h_z^2} \right) \cdot q_5(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_6) = \sigma \cdot \left( \frac{w(Q_6) + w(P) }{4z_y}  +	
+	\frac{v(Q_6)+ v(P)}{2h_z^2} \right) \cdot q_6(P) 
+\end{equation*}
+
+Коэффициент, стоящий в центре шаблона, запишем в виде:
+
+\begin{multline*}
+	A(P)=\frac{q_0(P)}{\tau} + B(P, Q_1) + 	B(P, Q_2) + B(P, Q_3) + B(P, Q_4) + B(P, Q_5) + B(P, Q_6) + \\
+	\sigma \left[ \left( | q_1(P) - q_2(P)| \cdot \frac{\alpha_x}{h_x} + 
+	| q_3(P) - q_4(P)| \cdot \frac{\alpha_y}{h_y}  \right) \cdot \mu(P) + | q_5(P) - q_6(P)| \cdot \frac{\alpha_z}{h_z} \cdot \nu(P) \right] 
+\end{multline*}	
+
+Для записи правой части сеточвного уравнения понадобятся вспомогательные коэффициенты:
+
+\begin{equation*}
+	B(P, Q_8) = (1-\sigma) \cdot \left( -\frac{u(Q_1) + u(P) }{4h_x}  +	
+	\frac{\mu(Q_1)+ \mu(P)}{2h_x^2} \right) \cdot q_1(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_9) = (1-\sigma) \cdot \left( \frac{u(Q_2) + u(P) }{4h_x}  +	
+	\frac{\mu(Q_2)+ \mu(P)}{2h_x^2} \right) \cdot q_2(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_{10}) = (1-\sigma) \cdot \left( -\frac{v(Q_3) + v(P) }{4h_y}  +	
+	\frac{\mu(Q_3)+ \mu(P)}{2h_y^2} \right) \cdot q_3(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_{11}) = (1-\sigma) \cdot \left( \frac{v(Q_4) + v(P) }{4h_y}  +	
+	\frac{\mu(Q_4)+ \mu(P)}{2h_y^2} \right) \cdot q_4(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_{12}) = (1-\sigma) \cdot \left( \frac{w(Q_5) + w(P) }{4z_y}  +	
+	\frac{v(Q_5)+ v(P)}{2h_z^2} \right) \cdot q_5(P), 
+\end{equation*}
+
+\begin{equation*}
+	B(P, Q_{13}) = (1-\sigma) \cdot \left( \frac{w(Q_6) + w(P) }{4z_y}  +	
+	\frac{v(Q_6)+ v(P)}{2h_z^2} \right) \cdot q_6(P) 
+\end{equation*}
+
+\begin{multline*}
+	B(P, Q_7)=\frac{q_0(P)}{\tau} - B(P, Q_8) -	B(P, Q_9) - B(P, Q_{10}) - B(P, Q_{11}) - B(P, Q_{12}) - B(P, Q_{13}) + \\
+	(1+\sigma) \cdot \left[ \left( | q_1(P) - q_2(P)| \cdot \frac{\alpha_x}{h_x} + 
+	| q_3(P) - q_4(P)| \cdot \frac{\alpha_y}{h_y}  \right) \cdot \mu(P) + | q_5(P) - q_6(P)| \cdot \frac{\alpha_z}{h_z} \cdot \nu(P) \right] 
+\end{multline*}	
+
+При этом правые части сеточных уравнений примут вид:
+
+\begin{multline*}
+	F(P)=q_0(P)\cdot f(P) - | q_1(P) - q_2(P)| \cdot \mu(P) \cdot \frac{\beta_x}{h_x} - | q_3(P) - q_4(P)| \cdot \mu(P) \cdot \frac{\beta_y}{h_y} - | q_5(P) - q_6(P)| \cdot \nu(P) \cdot  \frac{\beta_z}{h_z} + \\
+	B(P, Q_7)\cdot c(P) + 	B(P, Q_8)\cdot c(Q_1) + B(P, Q_9)\cdot c(Q_2) + B(P, Q_{10})\cdot c(Q_3) + B(P, Q_{110})\cdot c(Q_4) +B(P, Q_{12})\cdot c(Q_5) + \\ 
+	B(P, Q_{13})\cdot c(Q_6)
+\end{multline*}	
+
+\begin{multline*}
+\sum_{Q\in \Psi'(P)}B(P,Q) \cdot c(Q) = B(P, Q_1) \cdot c(Q_1) + B(P, Q_2) \cdot c(Q_2) + B(P, Q_3) \cdot c(Q_3) + B(P, Q_4) \cdot c(Q_4) + \\
+B(P, Q_5) \cdot c(Q_5) + B(P, Q_6) \cdot c(Q_6)
+\end{multline*}
 
 \end{document}
