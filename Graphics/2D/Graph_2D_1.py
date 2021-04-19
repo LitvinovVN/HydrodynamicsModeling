@@ -18,7 +18,7 @@ def func_open(file_name, r):
 def func_listStr_to_Array(M_list_of_strings):
     result = []
     for row in M_list_of_strings:
-        M_list_numbersAsStrings = row.split('\t')
+        M_list_numbersAsStrings = row.split('   ')
         M1 = []
         for item in M_list_numbersAsStrings:
             try:
@@ -29,7 +29,8 @@ def func_listStr_to_Array(M_list_of_strings):
         result.append(M2)       
     return result  
 
-# Функция func_convert_array_to_numpyArray(M_array) преобразует список одномерных массивов M_array в двумерный массив numpy
+# Функция func_convert_array_to_numpyArray(M_array) преобразует список одномерных массивов M_array в двумерный
+# массив numpy
 def func_convert_array_to_numpyArray(M_array):
     n = len(M_array)
     m = len(M_array[0])
@@ -88,7 +89,7 @@ cmap = ListedColormap(sns.color_palette("Spectral",256))
 # Функция для построения графиков 2D, входные данные: массив A,
 # цветовая карта - 'CMRmap', имя файла - 'imshow_C.png'
 def graph_2D(A_array, cmap_use, file_name):
-    data = A_array[:,:,0]
+    data = A_array[:,:]
     fig, (ax, cax) = plt.subplots(ncols=2,figsize=(7,3), 
                         gridspec_kw={"width_ratios":[1,0.05]})
     fig.subplots_adjust(wspace=0.3)
@@ -102,53 +103,26 @@ def graph_2D(A_array, cmap_use, file_name):
 
 
 # Данные из файлов записываем в списки массивов, состоящих из строк
-A1_array_of_strings = func_open('u.txt', 'r')
-B1_array_of_strings = func_open('v.txt', 'r')
-E1_array_of_strings = func_open('w.txt', 'r')   
-C1_array_of_strings = func_open('a.txt', 'r')    
+A1_array_of_strings = func_open('writed_4.txt', 'r') 
 
 # Преобразует списки массивов, состоящие из строк в списки одномерных массивов чисел
 A1_array = func_listStr_to_Array(A1_array_of_strings)
-print("1", A1_array)
-B1_array = func_listStr_to_Array(B1_array_of_strings)
-E1_array = func_listStr_to_Array(E1_array_of_strings)
-C1_array = func_listStr_to_Array(C1_array_of_strings)
 
-gridX = 353
-gridY = 233
-gridZ = 14
+gridX = 38
+gridY = 38
+gridZ = 1
 kol = gridZ
 kn = 1
 km = 1
-n = gridY//kn #77
-m = gridX//km #87
-#print(len(A1_array))
-#print(len(A1_array[0]))
-#print("n=", n, "m=", m)
-nfirst = 233
+n = gridY//kn
+m = gridX//km
+nfirst = 38
 mfirst = 0
 i = 1j
 
 # Преобразует списки массивов, состоящие из строк в двумерные массивы numpy
-A1_numpyArray2D = func_convert_array_to_numpyArray(A1_array)
-B1_numpyArray2D = func_convert_array_to_numpyArray(B1_array)
-E1_numpyArray2D = func_convert_array_to_numpyArray(E1_array)
-C1_numpyArray2D = func_convert_array_to_numpyArray(C1_array)
+A = func_convert_array_to_numpyArray(A1_array)
 
-# Создаем трехмерные массивы numpy
-A = func_A(A1_numpyArray2D, n, m, kol, kn, km)
-B = func_A(B1_numpyArray2D, n, m, kol, kn, km)
-E = func_A(E1_numpyArray2D, n, m, kol, kn, km)
-C = func_A(C1_numpyArray2D, n, m, kol, kn, km)
-
-# Вычисляем двумерный массив D - длина вектора скорости водного потока в проекции на плоскость XOY
-D = mod(A, B)
-
-#
-A2 = norm(A, D)
-B2 = norm(B, D)
-
-#graph_2D(C, 'CMRmap', 'imshow_C.png')
 graph_2D(A, 'jet', 'imshow_D.png')
 
 plt.show()
