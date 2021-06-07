@@ -8,6 +8,11 @@
 \usepackage{colortbl}
 \usepackage{amssymb}
 \usepackage[left=2.5cm, top=2cm, right=1cm, bottom=20mm, nohead, nofoot]{geometry}
+\usepackage{svg}
+\usepackage{graphicx}%Вставка картинок правильная
+\usepackage{xcolor} % поддержка цвета
+\graphicspath{{figs/}} % путь, где искать картинки
+\usepackage{listings}
 
 \begin{document}
 
@@ -62,16 +67,18 @@ $\bar{c} = \sigma\hat c + (1 - \sigma) с , \sigma \in [0,1] $ - вес схем
 
 $c=c(x, y, z, t);$ $ $ $\hat c = (x, y, z, t + \tau)  $
 
-\begin{center}
-Рисунок 1
-Разностный шаблон
-\end{center}
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics {figs/shablon}
+	\caption{ Разностный шаблон}
+\end{figure}
 
-\begin{center}
-Рисунок 2
-Параллилепипед с центром i, j, k
-\end{center}
+\begin{figure}[h!]
+	\centering
+	\includegraphics {figs/ris2}
+	\caption{ Параллилепипед с центром i, j, k}
+\end{figure}
 
 Ячейки представлены прямоугольными параллелипипедами, которые могут быть заполненными, пустыми или частично заполненными. 
 
@@ -80,15 +87,18 @@ $c=c(x, y, z, t);$ $ $ $\hat c = (x, y, z, t + \tau)  $
 
 Обозначим $O_{i,j,k}$ - степень заполненности объемной ячейки. 
 
-\begin{center}
-	Рисунок 3
-	Вершины объемной ячейки
-\end{center}
+\begin{figure}[h!]
+	\centering
+	\includegraphics {figs/ris3}
+	\caption{ Вершины объемной ячейки}
+\end{figure}
+
 
 Получается, что окрестными ячейками узла ${i,j,k}$ являются 8 ячеек (см. рисунок 2).
 
 Обозначим эти ячейки через координаты главных диагоналей (т. к. ячейки - это прямоугольные параллелепипеды).
-
+\\*
+\newpage
 Внизу:
 
 1) ${(i-1,j+1,k-1)}$ - ${(i,j,k)}$ 
@@ -487,9 +497,9 @@ A(P)>0, B(P,Q)>0, D(p)=A(P) - \sum_{Q\in \Psi'(P)}B(P,Q)
 \frac{(q_0)_{i,j,k}}{\tau}\cdot \hat{c}_{i,j,k} + \\
  \left[ \left( | (q_1)_{i,j,k} - (q_2)_{i,j,k}| \cdot \frac{\alpha_x}{h_x} + | (q_3)_{i,j,k} - (q_4)_{i,j,k}| \cdot \frac{\alpha_y}{h_y} \right) \cdot \mu_{i,j,k} + |(q_5)_{i,j,k} - (q_6)_{i,j,k}| \cdot \frac{\alpha_z}{h_z}\cdot \nu_{i,j,k} \right] \bar{c}_{i,j,k} + \\
 (q_1)_{i,j,k} \left( -\frac{u_{i+\frac{1}{2},j,k}}{2h_x}  + \frac{\mu_{i+\frac{1}{2},j,k}}{h_x^2} \right) \bar{c}_{i,j,k} + 
-(q_2)_{i,j,k} \left( \frac{u_{i-\frac{1}{2},j,k}}{2h_x}  + \frac{\mu_{i-\frac{1}{2},j,k}}{h_x^2} \right) \bar{c}_{i,j,k} +
-(q_3)_{i,j,k} \left( -\frac{v_{i,j+\frac{1}{2},k}}{2h_y}  + \frac{\mu_{i,j+\frac{1}{2},k}}{h_y^2} \right) \bar{c}_{i,j,k} \\
-+ (q_4)_{i,j,k} \left( \frac{v_{i,j-\frac{1}{2},k}}{2h_y}  + \frac{\mu_{i,j-\frac{1}{2},k}}{h_y^2} \right) \bar{c}_{i,j,k} +
+(q_2)_{i,j,k} \left( \frac{u_{i-\frac{1}{2},j,k}}{2h_x}  + \frac{\mu_{i-\frac{1}{2},j,k}}{h_x^2} \right) \bar{c}_{i,j,k} +\\
+(q_3)_{i,j,k} \left( -\frac{v_{i,j+\frac{1}{2},k}}{2h_y}  + \frac{\mu_{i,j+\frac{1}{2},k}}{h_y^2} \right) \bar{c}_{i,j,k} 
++ (q_4)_{i,j,k} \left( \frac{v_{i,j-\frac{1}{2},k}}{2h_y}  + \frac{\mu_{i,j-\frac{1}{2},k}}{h_y^2} \right) \bar{c}_{i,j,k} +\\
 (q_5)_{i,j,k} \left( \frac{w_{i,j,k+\frac{1}{2}}}{2h_z}  + \frac{\nu_{i,j,k+\frac{1}{2}}}{h_z^2} \right) \bar{c}_{i,j,k} +
 (q_6)_{i,j,k} \left( \frac{w_{i,j,k-\frac{1}{2}}}{2h_z}  + \frac{\nu_{i,j,k-\frac{1}{2}}}{h_z^2} \right) \bar{c}_{i,j,k} - \\
 (q_1)_{i,j,k} \left( -\frac{u_{i+\frac{1}{2},j,k}}{2h_x}  + \frac{\mu_{i+\frac{1}{2},j,k}}{h_x^2} \right) \bar{c}_{i+1,j,k} -
