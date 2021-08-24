@@ -9,9 +9,15 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="ris3.svg"
+<<<<<<< HEAD
    viewBox="0 0 561.33331 464"
    height="464"
    width="561.33331"
+=======
+   viewBox="0 0 230 220"
+   height="220"
+   width="230"
+>>>>>>> 7f08de0ad0f7ca17b5bd5dccabc93e1c3458492e
    xml:space="preserve"
    id="svg2"
    version="1.1"><metadata
@@ -23,9 +29,15 @@
      inkscape:window-maximized="1"
      inkscape:window-y="21"
      inkscape:window-x="-8"
+<<<<<<< HEAD
      inkscape:cy="232"
      inkscape:cx="290.3019"
      inkscape:zoom="1.6008364"
+=======
+     inkscape:cy="206.7483"
+     inkscape:cx="430.28298"
+     inkscape:zoom="1.5840517"
+>>>>>>> 7f08de0ad0f7ca17b5bd5dccabc93e1c3458492e
      showgrid="false"
      id="namedview4"
      inkscape:window-height="1017"
@@ -42,7 +54,11 @@
      inkscape:label="ink_ext_XXXXXX"
      inkscape:groupmode="layer"
      id="g10"><g
+<<<<<<< HEAD
        transform="scale(0.1)"
+=======
+       transform="matrix(0.03903437,0,0,0.04181491,2.2978055,196.27217)"
+>>>>>>> 7f08de0ad0f7ca17b5bd5dccabc93e1c3458492e
        id="g12"><path
          id="path14"
          style="fill:none;stroke:#000000;stroke-width:24.5513;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -108,8 +124,13 @@
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          d="m 1100.86,3246.13 c 0,-24.26 -13.09,-43.94 -29.22,-43.94 -16.17,0 -29.26,19.68 -29.26,43.94 0,24.26 13.09,43.95 29.26,43.95 16.13,0 29.22,-19.69 29.22,-43.95" /><path
          id="path56"
+<<<<<<< HEAD
          style="fill:none;stroke:#000000;stroke-width:1.28385;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 1100.86,3255 c 0,-19.38 -13.09,-35.08 -29.22,-35.08 -16.17,0 -29.26,15.7 -29.26,35.08 0,19.37 13.09,35.08 29.26,35.08 16.13,0 29.22,-15.71 29.22,-35.08" /><path
+=======
+         style="fill:none;stroke:#000000;stroke-width:1.43703;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 1100.86,3246.13 c 0,-24.26 -13.09,-43.94 -29.22,-43.94 -16.17,0 -29.26,19.68 -29.26,43.94 0,24.26 13.09,43.95 29.26,43.95 16.13,0 29.22,-19.69 29.22,-43.95" /><path
+>>>>>>> 7f08de0ad0f7ca17b5bd5dccabc93e1c3458492e
          id="path58"
          style="fill:none;stroke:#000000;stroke-width:2.6606;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 3169.1,2507.07 c 0,-38.83 -28.08,-70.27 -62.69,-70.27 -34.65,0 -62.7,31.44 -62.7,70.27 0,38.79 28.05,70.27 62.7,70.27 34.61,0 62.69,-31.48 62.69,-70.27" /><path
@@ -134,6 +155,7 @@
              id="tspan70"
              sodipodi:role="line"
              y="-95.985199"
+<<<<<<< HEAD
              x="93.316597 99.282898 104.26376 108.74297 113.72384 119.69013 128.64853 133.12773 142.08614 148.05243 157.01082">(i,j-1,k-1)</tspan><tspan
              id="tspan72"
              sodipodi:role="line"
@@ -249,3 +271,30 @@
          y="-220.48169"
          x="467.21878"
          id="tspan138">Центр расчетной ячейки</tspan></text></g></svg>
+=======
+             x="93.317001 99.283295 104.26417 108.74336 113.72424 119.69053 128.64893 133.12813 142.08653 148.05283 157.01123">(i,j-1,k-1)</tspan><tspan
+             id="tspan72"
+             sodipodi:role="line"
+             y="-99.875427"
+             x="-251.82001 -245.8537 -240.87283 -234.90654 -225.94814 -221.46895 -216.48807 -210.52177 -201.56337 -197.08418 -188.12578 -182.10573 -173.14732">(i-1,j-1,k-1)</tspan><tspan
+             id="tspan74"
+             sodipodi:role="line"
+             y="2.2395699"
+             x="-357.59 -351.62372 -346.64282 -340.67654 -331.71814 -327.23895 -322.25806 -317.77887 -308.82047 -302.85419 -293.89578">(i-1,j,k-1)</tspan><tspan
+             id="tspan76"
+             sodipodi:role="line"
+             y="-244.97443"
+             x="-393.89081 -387.9245 -382.94363 -376.97736 -368.01895 -363.53973 -358.55887 -354.07968 -345.12128">(i-1,j,k)</tspan><tspan
+             id="tspan78"
+             sodipodi:role="line"
+             y="-329.22214"
+             x="-300.29669 -294.33041 -289.34955 -283.38324 -274.42484 -269.94565 -264.96478 -258.99847 -250.04007 -245.56088 -236.60248">(i-1,j-1,k)</tspan><tspan
+             id="tspan80"
+             sodipodi:role="line"
+             y="-324.74323"
+             x="52.257301 58.223595 63.204464 67.683662 72.664536 78.630829 87.589233 92.068428 101.02683">(i,j-1,k)</tspan><tspan
+             id="tspan82"
+             sodipodi:role="line"
+             y="-252.21352"
+             x="-29.304899 -23.338606 -18.357735 -13.878535 -8.897665 -4.4184647 4.5399351">(i,j,k)</tspan></text></g></g></g></svg>
+>>>>>>> 7f08de0ad0f7ca17b5bd5dccabc93e1c3458492e
