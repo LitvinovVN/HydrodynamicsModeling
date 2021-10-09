@@ -3,7 +3,7 @@ git pull
 cat description.md
 echo ''
 echo '------- Compiling MatmAlgsTesting.cpp into MatmAlgsTesting.o: mpicxx -O3 -c MatmAlgsTesting.cpp ------'
-mpicxx -O3 -c MatmAlgsTesting.cpp
+mpicxx --std=c++11 -O3 -c MatmAlgsTesting.cpp
 echo '-------- mpicxx -o myapp MatmAlgsTesting.o -----'
 mpicxx -o myapp MatmAlgsTesting.o
 echo '-------------'
