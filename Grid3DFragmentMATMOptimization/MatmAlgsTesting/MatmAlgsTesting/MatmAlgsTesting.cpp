@@ -642,11 +642,11 @@ void alg3(LinearArray3D* linAr)
 				int m4 = m0 - nx;
 				int m6 = m0 - nx * ny;
 
-				double val2 = linAr->GetElement(i - 1, j, k);
-				double val0 = linAr->GetElement(i, j, k);
+				double val2 = linAr->data[m2];
+				double val0 = linAr->data[m0];
 
-				double val4 = linAr->GetElement(i, j - 1, k);
-				double val6 = linAr->GetElement(i, j, k - 1);
+				double val4 = linAr->data[m4];
+				double val6 = linAr->data[m6];
 				double newVal = val0 + val2 + val4 + val6;
 				linAr->SetElement(i, j, k, newVal);
 			}
