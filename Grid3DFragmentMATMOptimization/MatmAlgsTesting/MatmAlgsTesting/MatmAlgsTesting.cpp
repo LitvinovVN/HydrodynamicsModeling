@@ -106,6 +106,175 @@ struct LinearArray1D
 
 };
 
+struct LinearArray2D
+{
+	size_t nx;             // число узлов в фрагменте по оси Ox
+	size_t ny;             // число узлов в фрагменте по оси Oy	
+	double* data;          // указатель на массив данных
+
+	// Конструктор
+	LinearArray2D(size_t Nx, size_t Ny) :
+		nx(Nx), ny(Ny)
+	{
+		size_t n = nx * ny;
+		size_t dataSize = n * sizeof(double);
+		data = (double*)malloc(dataSize);
+
+		for (int i = 0; i < n; i++)
+		{
+			data[i] = 0;
+		}
+	}
+
+	// Деструктор
+	~LinearArray2D()
+	{
+		free(data);
+	}
+
+	// Методы
+
+	/// <summary>
+	/// Возвращает индекс элемента массива данных по индексам элемента в фрагменте
+	/// </summary>
+	/// <param name="IndX"></param>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <returns></returns>
+	size_t GetIndex(size_t IndX, size_t IndY)
+	{
+		return IndX + IndY * nx;
+	}
+
+	/// <summary>
+	/// Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
+	/// </summary>
+	/// <param name="IndX"></param>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <returns></returns>
+	double GetElement(size_t IndX, size_t IndY, size_t IndZ)
+	{
+		if ((IndX > nx) || (IndY > ny))
+		{
+			throw - 1;
+		}
+		size_t indx = GetIndex(IndX, IndY);
+
+		return data[indx];
+	}
+
+	/// <summary>
+	/// Заполняет объект LinearArray1D данными, расположенными вдоль оси Ox по указанной координате Oy
+	/// </summary>
+	/// <param name="IndY"></param>	
+	/// <param name="linAr1D"></param>
+	void GetLineX(size_t IndY, LinearArray1D* linAr1D)
+	{
+		size_t indStart = GetIndex(0, IndY);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			linAr1D->data[cnt++] = data[i];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет массив данными, расположенными вдоль оси Ox по указанной координате Oy
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="linArray"></param>
+	void GetLineX(size_t IndY, double* linArray)
+	{
+		size_t indStart = GetIndex(0, IndY);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			linArray[cnt++] = data[i];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из LinearArray1D
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="linAr1D"></param>
+	void SetLineX(size_t IndY, LinearArray1D* linAr1D)
+	{
+		size_t indStart = GetIndex(0, IndY);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			data[i] = linAr1D->data[cnt++];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из LinearArray1D
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="linAr1D"></param>
+	void SetLineX(size_t IndY, double* linArray)
+	{
+		size_t indStart = GetIndex(0, IndY);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			data[i] = linArray[cnt++];
+		}
+	}
+		
+	/// <summary>
+	/// Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
+	/// </summary>
+	/// <param name="IndX"></param>
+	/// <param name="IndY"></param>
+	/// <param name="Value"></param>
+	/// <returns></returns>
+	double SetElement(size_t IndX, size_t IndY, double Value)
+	{
+		if ((IndX > nx) || (IndY > ny))
+		{
+			throw - 1;
+		}
+		size_t indx = GetIndex(IndX, IndY);
+
+		data[indx] = Value;
+	}
+
+	/// <summary>
+	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArray2D
+	/// </summary>
+	/// <returns></returns>
+	double GetDataSizeInMb()
+	{
+		double result = (double)nx * ny * sizeof(double) / 1024 / 1024;
+		return result;
+	}
+
+	/// <summary>
+	/// Вывод элементов фрагмента в консоль
+	/// </summary>
+	void Print()
+	{
+		std::cout << "=================PrintArray=================" << std::endl;		
+		for (int j = 0; j < ny; j++)
+		{
+			std::cout << "y = " << j << ": ";
+			for (int i = 0; i < nx; i++)
+			{
+				std::cout << data[GetIndex(i, j)] << " ";
+			}
+			std::cout << std::endl;
+		}
+	}
+
+};
+
 struct LinearArray3D
 {
 	size_t nx;             // число узлов в фрагменте по оси Ox
@@ -183,6 +352,23 @@ struct LinearArray3D
 	}
 
 	/// <summary>
+	/// Заполняет массив данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <param name="linArray"></param>
+	void GetLineX(size_t IndY, size_t IndZ, double* linArray)
+	{
+		size_t indStart = GetIndex(0, IndY, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			linArray[cnt++] = data[i];
+		}
+	}
+
+	/// <summary>
 	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из LinearArray1D
 	/// </summary>
 	/// <param name="IndY"></param>
@@ -200,24 +386,30 @@ struct LinearArray3D
 	}
 
 	/// <summary>
+	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из LinearArray1D
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <param name="linAr1D"></param>
+	void SetLineX(size_t IndY, size_t IndZ, double* linArray)
+	{
+		size_t indStart = GetIndex(0, IndY, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			data[i] = linArray[cnt++];
+		}
+	}
+
+	/// <summary>
 	/// Заполняет двумерный массив layerZ значениями указанного слоя z
 	/// </summary>
 	/// <param name="IndZ"></param>
 	/// <param name="layerZ"></param>
 	void GetLayerZ(size_t IndZ, double* layerZ)
 	{
-		size_t indStart = GetIndex(0, 0, IndZ);
-
-		/*size_t cnt = indStart;
-		for (size_t j = 0; j < ny; j++)
-		{
-			for (size_t i = 0; i < nx; i++)
-			{
-				layerZ[i, j] = data[cnt++];
-				std::cout << layerZ[i, j] << " ";
-			}
-			std::cout << std::endl;
-		}*/
+		size_t indStart = GetIndex(0, 0, IndZ);			
 
 		size_t cnt = 0;
 		for (size_t i = indStart; i < indStart + nx*ny; i++)
@@ -225,6 +417,23 @@ struct LinearArray3D
 			layerZ[cnt++] = data[i];
 		}
 			
+	}
+
+	/// <summary>
+	/// Заполняет двумерный массив layerZ значениями указанного слоя z
+	/// </summary>
+	/// <param name="IndZ"></param>
+	/// <param name="layerZ"></param>
+	void GetLayerZ(size_t IndZ, LinearArray2D* layerZ)
+	{
+		size_t indStart = GetIndex(0, 0, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx * ny; i++)
+		{
+			layerZ->data[cnt++] = data[i];
+		}
+
 	}
 
 	/// <summary>
@@ -240,6 +449,22 @@ struct LinearArray3D
 		for (size_t i = indStart; i < indStart + nx * ny; i++)
 		{
 			data[i] = layerZ[cnt++];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет указанный слой z значениями двумерного массива layerZ
+	/// </summary>
+	/// <param name="IndZ"></param>
+	/// <param name="layerZ"></param>
+	void SetLayerZ(size_t IndZ, LinearArray2D* layerZ)
+	{
+		size_t indStart = GetIndex(0, 0, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx * ny; i++)
+		{
+			data[i] = layerZ->data[cnt++];
 		}
 	}
 
@@ -379,23 +604,23 @@ void alg2Start(LinearArray3D* linAr)
 
 	aTimer.start();
 	alg2(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg2(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg2(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg2(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg2(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
 }
 
 
@@ -436,23 +661,23 @@ void alg3Start(LinearArray3D* linAr)
 
 	aTimer.start();
 	alg3(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg3(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg3(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg3(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg3(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
 }
 
 // alg4
@@ -523,23 +748,23 @@ void alg4Start(LinearArray3D* linAr)
 
 	aTimer.start();
 	alg4(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg4(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg4(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg4(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg4(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
 }
 
 // alg5
@@ -599,25 +824,168 @@ void alg5Start(LinearArray3D* linAr)
 
 	aTimer.start();
 	alg5(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg5(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg5(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg5(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
 
 	aTimer.start();
 	alg5(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
+	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
 }
 
+// alg6
+void alg6(LinearArray3D* linAr)
+{
+	size_t nx = linAr->nx;
+	size_t ny = linAr->ny;
+	size_t nz = linAr->nz;
+		
+	auto layerZprev = new LinearArray2D(nx, ny);
+	auto layerZcurr = new LinearArray2D(nx, ny);
+	linAr->GetLayerZ(0, layerZprev);	
+
+	for (int k = 1; k < nz - 1; k++)
+	{
+		linAr->GetLayerZ(k, layerZcurr);
+		for (int j = 1; j < ny - 1; j++)
+		{
+			for (int i = 1; i < nx - 1; i++)
+			{
+				int m0 = i + j * nx;
+				int m2 = m0 - 1;
+				int m4 = m0 - nx;
+				int m6 = m0;
+
+				double val2 = layerZcurr->data[m2];
+				double val0 = layerZcurr->data[m0];
+
+				double val4 = layerZcurr->data[m4];
+				double val6 = layerZprev->data[m6];
+				double newVal = val0 + val2 + val4 + val6;
+				layerZcurr->data[m0] = newVal;
+			}
+		}
+
+		linAr->SetLayerZ(k, layerZcurr);
+
+		auto tmp = layerZprev;
+		layerZprev = layerZcurr;
+		layerZcurr = tmp;
+	}
+}
+
+void alg6Start(LinearArray3D* linAr)
+{
+	timer<std::chrono::microseconds> aTimer;
+	//timer<ch::milliseconds> aTimer;
+
+	aTimer.start();
+	alg6(linAr);
+	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
+
+	aTimer.start();
+	alg6(linAr);
+	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
+
+	aTimer.start();
+	alg6(linAr);
+	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
+
+	aTimer.start();
+	alg6(linAr);
+	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
+
+	aTimer.start();
+	alg6(linAr);
+	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
+}
+
+// alg7
+void alg7(LinearArray3D* linAr)
+{
+	size_t nx = linAr->nx;
+	size_t ny = linAr->ny;
+	size_t nz = linAr->nz;
+
+	auto layerZprev = new LinearArray2D(nx, ny);
+	auto layerZcurr = new LinearArray2D(nx, ny);
+	linAr->GetLayerZ(0, layerZprev);
+
+	LinearArray1D* b20 = new LinearArray1D(nx);
+	LinearArray1D* b4  = new LinearArray1D(nx);
+	//LinearArray1D* b6  = new LinearArray1D(nx);
+
+	for (int k = 1; k < nz - 1; k++)
+	{
+		linAr->GetLayerZ(k, layerZcurr);
+		layerZcurr->GetLineX(0, b4);
+		for (int j = 1; j < ny - 1; j++)
+		{
+			layerZcurr->GetLineX(j, b20);			
+			//layerZprev->GetLineX(j, b6);
+			for (int i = 1; i < nx - 1; i++)
+			{
+				double val2 = b20->data[i-1];
+				double val0 = b20->data[i];
+
+				double val4 = b4->data[i];
+				double val6 = layerZprev->data[i+j*nx];
+				double newVal = val0 + val2 + val4 + val6;
+				b20->data[i] = newVal;
+			}
+
+			//Сохранение b20
+			layerZcurr->SetLineX(j, b20);			
+
+			//Перестановка указателя с b20 на b4
+			auto* tmp = b4;
+			b4 = b20;
+			b20 = tmp;
+		}
+
+		linAr->SetLayerZ(k, layerZcurr);
+
+		auto tmp = layerZprev;
+		layerZprev = layerZcurr;
+		layerZcurr = tmp;
+	}
+}
+
+void alg7Start(LinearArray3D* linAr)
+{
+	timer<std::chrono::microseconds> aTimer;
+	//timer<ch::milliseconds> aTimer;
+
+	aTimer.start();
+	alg7(linAr);
+	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
+
+	aTimer.start();
+	alg7(linAr);
+	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
+
+	aTimer.start();
+	alg7(linAr);
+	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
+
+	aTimer.start();
+	alg7(linAr);
+	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
+
+	aTimer.start();
+	alg7(linAr);
+	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
+}
 
 void initLinearArray3DByGlobalIndexes(LinearArray3D* linAr)
 {
@@ -631,16 +999,15 @@ void initLinearArray3DByGlobalIndexes(LinearArray3D* linAr)
 
 int main()
 {
-	int nx = 10;
+	int nx = 100;
 	int ny = 50;
 	int nz = 40;
 	auto linAr1 = new LinearArray3D(nx, ny, nz);
 	
-
 	std::cout << "---alg1---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
 	alg1Start(linAr1);
-
+		
 	std::cout << "---alg2---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
 	alg2Start(linAr1);
@@ -656,6 +1023,14 @@ int main()
 	std::cout << "---alg5---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
 	alg5Start(linAr1);
+
+	std::cout << "---alg6---\n";
+	initLinearArray3DByGlobalIndexes(linAr1);
+	alg6Start(linAr1);
+
+	std::cout << "---alg7---\n";
+	initLinearArray3DByGlobalIndexes(linAr1);
+	alg7Start(linAr1);
 
 	//linAr1->Print();
 
