@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 #include <chrono>
+#include <vector>
+#include <algorithm>    // std::sort
 
 template <typename duration = std::chrono::seconds, typename clock = std::chrono::high_resolution_clock>
 class timer
@@ -18,6 +20,94 @@ public:
 	std::ostream& print() const
 	{
 		return std::cout << "Time running: [" << get_time() << "]";
+	}
+
+	double get_time_as_double()
+	{
+		double time = get_time();
+		return time;
+	}
+};
+
+/// <summary>
+/// Структура для сохранения результатов измерений и вычисления простых статистик
+/// </summary>
+struct SimpleStatistics
+{	
+	bool isSorted;// Признак отсортированности массивов
+	std::vector<double> data;// Массив с результатами экспериментов
+
+	/// <summary>
+	/// Добавляет новый элемент в массив данных
+	/// </summary>
+	void add(double value)
+	{
+		data.push_back(value);
+		isSorted = false;
+	}
+
+	/// <summary>
+	/// Сортирует массив данных
+	/// </summary>
+	void sort()
+	{
+		std::sort(data.begin(), data.end());
+	}
+
+	/// <summary>
+	/// Возвращает минимальное значение
+	/// </summary>
+	/// <returns></returns>
+	double getMin()
+	{
+		if (!isSorted) sort();
+		return data[0];
+	}
+
+	/// <summary>
+	/// Возвращает максимальное значение
+	/// </summary>
+	double getMax()
+	{
+		if (!isSorted) sort();
+		return data[data.size()-1];		
+	}
+
+	/// <summary>
+	/// Возвращает медиану
+	/// </summary>	
+	double getMedian()
+	{
+		auto size = data.size();
+		if (size == 0)
+			throw std::domain_error("median of an empty vector");
+
+		if (!isSorted) sort();
+		auto mid = size / 2;
+		return size % 2 == 0 ? (data[mid] + data[mid - 1]) / 2 : data[mid];
+	}
+
+	/// <summary>
+	/// Выводит в стандартный поток вывода элементы массива данных, разделённые пробелами.
+	/// </summary>
+	void printData()
+	{
+		if (!isSorted) sort();
+		for (size_t i = 0; i < data.size(); i++)
+		{
+			std::cout << data[i] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	void print()
+	{
+		std::cout << "data: ";
+		printData();
+		std::cout << "data.size() = " << data.size() << std::endl;
+		std:: cout << "min = " << getMin() << std::endl;
+		std::cout << "max = " << getMax() << std::endl;
+		std::cout << "median = " << getMedian() << std::endl;		
 	}
 };
 
@@ -305,6 +395,23 @@ struct LinearArray3D
 	// Методы
 
 	/// <summary>
+	/// Проверяет массивы на равенство (поэлементно)
+	/// </summary>
+	/// <param name="linAr"></param>
+	/// <returns></returns>
+	bool IsEqual(LinearArray3D* linAr)
+	{		
+		for (size_t i = 0; i < nx*ny*nz; i++)
+		{
+			if ((data[i] - linAr->data[i]) > 0.000001)
+				return false;
+		}
+
+		return true;
+	}
+
+
+	/// <summary>
 	/// Возвращает индекс элемента массива данных по индексам элемента в фрагменте
 	/// </summary>
 	/// <param name="IndX"></param>
@@ -477,14 +584,9 @@ struct LinearArray3D
 	/// <param name="IndZ"></param>
 	/// <param name="Value"></param>
 	/// <returns></returns>
-	double SetElement(size_t IndX, size_t IndY, size_t IndZ, double Value)
-	{
-		if ((IndX > nx) || (IndY > ny) || (IndZ > nz))
-		{
-			throw - 1;
-		}
+	void SetElement(size_t IndX, size_t IndY, size_t IndZ, double Value)
+	{		
 		size_t indx = GetIndex(IndX, IndY, IndZ);
-
 		data[indx] = Value;
 	}
 
@@ -521,6 +623,26 @@ struct LinearArray3D
 
 };
 
+
+void algStart(void (*algFunPntr)(LinearArray3D*), LinearArray3D* linAr, LinearArray3D* arrayForVerification, int numberOfLaunches)
+{
+	timer<std::chrono::microseconds> aTimer;
+
+	SimpleStatistics statistics{};
+
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		aTimer.start();
+		algFunPntr(linAr);
+		auto elapsed = aTimer.stop();		
+		bool isEqual = arrayForVerification->IsEqual(linAr);
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+
+	statistics.print();
+}
+
+
 void alg1(LinearArray3D* linAr)
 {
 	int nx = linAr->nx;
@@ -543,33 +665,6 @@ void alg1(LinearArray3D* linAr)
 		}
 	}
 }
-
-void alg1Start(LinearArray3D* linAr)
-{
-	timer<std::chrono::microseconds> aTimer;
-	//timer<ch::milliseconds> aTimer;
-
-	aTimer.start();
-	alg1(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg1(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg1(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg1(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg1(linAr);
-	std::cout << "alg1: "; aTimer.stop().print() << " microseconds" << std::endl;
-}
-
 
 // alg2
 void alg2(LinearArray3D* linAr)
@@ -596,51 +691,28 @@ void alg2(LinearArray3D* linAr)
 	}
 }
 
-
-void alg2Start(LinearArray3D* linAr)
-{
-	timer<std::chrono::microseconds> aTimer;
-	//timer<ch::milliseconds> aTimer;
-
-	aTimer.start();
-	alg2(linAr);
-	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg2(linAr);
-	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg2(linAr);
-	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg2(linAr);
-	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg2(linAr);
-	std::cout << "alg2: "; aTimer.stop().print() << " microseconds" << std::endl;
-}
-
-
 // alg3
 void alg3(LinearArray3D* linAr)
 {
-	int nx = linAr->nx;
-	int ny = linAr->ny;
-	int nz = linAr->nz;
+	auto nx = linAr->nx;
+	auto ny = linAr->ny;
+	auto nz = linAr->nz;
 
-	for (int k = 1; k < nz - 1; k++)
+	auto nxy = nx * ny;
+
+	for (auto k = 1; k < nz - 1; k++)
 	{
-		for (int j = 1; j < ny - 1; j++)
+		auto zOffset = k * nx * ny;
+		for (auto j = 1; j < ny - 1; j++)
 		{
-			for (int i = 1; i < nx - 1; i++)
+			auto yOffset = j * nx;
+			auto yzOffset = zOffset + yOffset;
+			for (auto i = 1; i < nx - 1; i++)
 			{
-				int m0 = i + j * nx + k * nx * ny;
+				int m0 = i + yzOffset;
 				int m2 = m0 - 1;
 				int m4 = m0 - nx;
-				int m6 = m0 - nx * ny;
+				int m6 = m0 - nxy;
 
 				double val2 = linAr->data[m2];
 				double val0 = linAr->data[m0];
@@ -652,32 +724,6 @@ void alg3(LinearArray3D* linAr)
 			}
 		}
 	}
-}
-
-void alg3Start(LinearArray3D* linAr)
-{
-	timer<std::chrono::microseconds> aTimer;
-	//timer<ch::milliseconds> aTimer;
-
-	aTimer.start();
-	alg3(linAr);
-	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg3(linAr);
-	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg3(linAr);
-	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg3(linAr);
-	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg3(linAr);
-	std::cout << "alg3: "; aTimer.stop().print() << " microseconds" << std::endl;
 }
 
 // alg4
@@ -741,32 +787,6 @@ void alg4(LinearArray3D* linAr)
 	}	
 }
 
-void alg4Start(LinearArray3D* linAr)
-{
-	timer<std::chrono::microseconds> aTimer;
-	//timer<ch::milliseconds> aTimer;
-
-	aTimer.start();
-	alg4(linAr);
-	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg4(linAr);
-	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg4(linAr);
-	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg4(linAr);
-	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg4(linAr);
-	std::cout << "alg4: "; aTimer.stop().print() << " microseconds" << std::endl;
-}
-
 // alg5
 void alg5(LinearArray3D* linAr)
 {
@@ -817,32 +837,6 @@ void alg5(LinearArray3D* linAr)
 	}
 }
 
-void alg5Start(LinearArray3D* linAr)
-{
-	timer<std::chrono::microseconds> aTimer;
-	//timer<ch::milliseconds> aTimer;
-
-	aTimer.start();
-	alg5(linAr);
-	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg5(linAr);
-	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg5(linAr);
-	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg5(linAr);
-	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg5(linAr);
-	std::cout << "alg5: "; aTimer.stop().print() << " microseconds" << std::endl;
-}
-
 // alg6
 void alg6(LinearArray3D* linAr)
 {
@@ -882,32 +876,6 @@ void alg6(LinearArray3D* linAr)
 		layerZprev = layerZcurr;
 		layerZcurr = tmp;
 	}
-}
-
-void alg6Start(LinearArray3D* linAr)
-{
-	timer<std::chrono::microseconds> aTimer;
-	//timer<ch::milliseconds> aTimer;
-
-	aTimer.start();
-	alg6(linAr);
-	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg6(linAr);
-	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg6(linAr);
-	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg6(linAr);
-	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg6(linAr);
-	std::cout << "alg6: "; aTimer.stop().print() << " microseconds" << std::endl;
 }
 
 // alg7
@@ -961,32 +929,6 @@ void alg7(LinearArray3D* linAr)
 	}
 }
 
-void alg7Start(LinearArray3D* linAr)
-{
-	timer<std::chrono::microseconds> aTimer;
-	//timer<ch::milliseconds> aTimer;
-
-	aTimer.start();
-	alg7(linAr);
-	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg7(linAr);
-	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg7(linAr);
-	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg7(linAr);
-	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
-
-	aTimer.start();
-	alg7(linAr);
-	std::cout << "alg7: "; aTimer.stop().print() << " microseconds" << std::endl;
-}
-
 void initLinearArray3DByGlobalIndexes(LinearArray3D* linAr)
 {
 	size_t nx = linAr->nx;
@@ -1003,39 +945,41 @@ int main()
 	int ny = 50;
 	int nz = 40;
 	auto linAr1 = new LinearArray3D(nx, ny, nz);
+	int numberOfLaunches = 10;// Количество запусков алгоритма
 	
+	// Массив для верификации
+	auto arrayForVerification = new LinearArray3D(nx, ny, nz);
+	initLinearArray3DByGlobalIndexes(arrayForVerification);
+	alg1(arrayForVerification);
+	//arrayForVerification->Print();
+	///////////////////////////////////////////////////////////
+
 	std::cout << "---alg1---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
-	alg1Start(linAr1);
+	algStart(alg1, linAr1, arrayForVerification, numberOfLaunches);
 		
 	std::cout << "---alg2---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
-	alg2Start(linAr1);
+	algStart(alg2, linAr1, arrayForVerification, numberOfLaunches);
 
 	std::cout << "---alg3---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
-	alg3Start(linAr1);
+	algStart(alg3, linAr1, arrayForVerification, numberOfLaunches);
 
 	std::cout << "---alg4---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
-	alg4Start(linAr1);
+	algStart(alg4, linAr1, arrayForVerification, numberOfLaunches);
 
 	std::cout << "---alg5---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
-	alg5Start(linAr1);
+	algStart(alg5, linAr1, arrayForVerification, numberOfLaunches);
 
 	std::cout << "---alg6---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
-	alg6Start(linAr1);
+	algStart(alg6, linAr1, arrayForVerification, numberOfLaunches);
 
 	std::cout << "---alg7---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
-	alg7Start(linAr1);
-
-	//linAr1->Print();
-
-    //std::cout << "Hello World!\n";
-
-	
+	algStart(alg7, linAr1, arrayForVerification, numberOfLaunches);	
 }
 
