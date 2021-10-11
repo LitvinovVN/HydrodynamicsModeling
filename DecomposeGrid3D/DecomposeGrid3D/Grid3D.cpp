@@ -43,6 +43,15 @@ enum Grid3DPrintDetalisation		// Перечисление уровней детализации вывода метода 
 	ARRAYS
 };
 
+enum Fragment3DPlane		// Перечисление плоскостей для передачи между фрагментами
+{
+	XOZ_Prev,
+	XOZ_Next,
+	XOY_Prev,
+	XOY_Next,
+	YOZ_Prev,
+	YOZ_Next	
+};
 
 
 
@@ -237,6 +246,8 @@ struct LinearArray3D
 		data[indx] = Value;
 	}
 
+
+
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D
 	/// </summary>
@@ -267,6 +278,108 @@ struct LinearArray3D
 			}
 		}
 	}
+
+	/// <summary>
+	/// Выводит в консоль элементы массива данных data
+	/// </summary>
+	void PrintData()
+	{
+		size_t n = nx*ny*nz;
+		for (int i = 0; i < n; i++)
+		{
+			std::cout << data[i] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	/// <summary>
+	/// Выводит в консоль значения массива data для плоскости fragment3DPlane фрагмента
+	/// </summary>
+	/// <param name="fragment3DPlane"></param>
+	/// <param name="Ind1_1"></param>
+	/// <param name="Ind1_2"></param>
+	/// <param name="Ind2_1"></param>
+	/// <param name="Ind2_2"></param>
+	void Print(Fragment3DPlane fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)
+	{
+		if (fragment3DPlane == YOZ_Prev)
+		{
+			for (int k = Ind1_2; k <= Ind2_2; k++)
+			{
+				std::cout << "z = " << k << std::endl;
+				for (int j = Ind1_1; j <= Ind2_1; j++)
+				{					
+					std::cout << data[GetIndex(nx-1, j, k)] << " ";
+				}
+				std::cout << std::endl;
+			}
+		}
+
+		if (fragment3DPlane == YOZ_Next)
+		{
+			for (int k = Ind1_2; k <= Ind2_2; k++)
+			{
+				std::cout << "z = " << k << std::endl;
+				for (int j = Ind1_1; j <= Ind2_1; j++)
+				{
+					std::cout << data[GetIndex(0, j, k)] << " ";
+				}
+				std::cout << std::endl;
+			}
+		}
+
+		if (fragment3DPlane == XOZ_Prev)
+		{
+			for (int k = Ind1_2; k <= Ind2_2; k++)
+			{
+				std::cout << "z = " << k << std::endl;
+				for (int i = Ind1_1; i <= Ind2_1; i++)
+				{
+					std::cout << data[GetIndex(i, ny-1, k)] << " ";
+				}
+				std::cout << std::endl;
+			}
+		}
+
+		if (fragment3DPlane == XOZ_Next)
+		{
+			for (int k = Ind1_2; k <= Ind2_2; k++)
+			{
+				std::cout << "z = " << k << std::endl;
+				for (int i = Ind1_1; i <= Ind2_1; i++)
+				{
+					std::cout << data[GetIndex(i, 0, k)] << " ";
+				}
+				std::cout << std::endl;
+			}
+		}
+
+		if (fragment3DPlane == XOY_Prev)
+		{
+			for (int j = Ind1_2; j <= Ind2_2; j++)
+			{
+				std::cout << "y = " << j << std::endl;
+				for (int i = Ind1_1; i <= Ind2_1; i++)
+				{
+					std::cout << data[GetIndex(i, j, nz-1)] << " ";
+				}
+				std::cout << std::endl;
+			}
+		}
+
+		if (fragment3DPlane == XOY_Next)
+		{
+			for (int j = Ind1_2; j <= Ind2_2; j++)
+			{
+				std::cout << "y = " << j << std::endl;
+				for (int i = Ind1_1; i <= Ind2_1; i++)
+				{
+					std::cout << data[GetIndex(i, j, 0)] << " ";
+				}
+				std::cout << std::endl;
+			}
+		}
+	}		
 
 };
 
@@ -334,6 +447,7 @@ struct LinearArrays2D
 		LinearArray2D& linearArrayObj = linearArrays.at(modelDataName);
 		linearArrayObj.Print();
 	}
+
 };
 
 /// <summary>
@@ -983,7 +1097,7 @@ struct Grid2DFragmentYZ
 	}
 
 	/// <summary>
-	/// ------------
+	/// Выделяет память и создает двумерный массив данных типа ModelDataName размерами fragmentNy на fragmentNz
 	/// </summary>
 	/// <param name="modelDataName"></param>
 	void LinearArrayCreate(ModelDataName modelDataName)
@@ -992,7 +1106,7 @@ struct Grid2DFragmentYZ
 	}
 
 	/// <summary>
-	/// ------------
+	/// Возвращает указатель на объект linearArray2D типа ModelDataName
 	/// </summary>
 	/// <param name="modelDataName"></param>
 	/// <returns></returns>
@@ -1001,8 +1115,34 @@ struct Grid2DFragmentYZ
 		LinearArray2D* linearArray2D = &(linearArrays2D.linearArrays.at(modelDataName));
 		return linearArray2D;
 	}
-
 	
+	/// <summary>
+	/// Возвращает элемент массива данных типа ModelDataName по указанным координатам IndX и IndZ
+	/// </summary>
+	/// <param name="IndX"></param>
+	/// <param name="IndZ"></param>
+	/// <param name="modelDataName"></param>
+	/// <returns></returns>
+	double GetElement(size_t IndX, size_t IndZ, ModelDataName modelDataName)
+	{
+		LinearArray2D* linearArray2D = GetLinearArray2D(modelDataName);
+		return linearArray2D->GetElement(IndX, IndZ);
+	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="IndX"></param>
+	/// <param name="IndZ"></param>
+	/// <param name="modelDataName"></param>
+	/// <param name="Value"></param>
+	/// <returns></returns>
+	double SetElement(size_t IndX, size_t IndZ, ModelDataName modelDataName, double Value)
+	{
+		LinearArray2D* linearArray2D = GetLinearArray2D(modelDataName);
+		linearArray2D->SetElement(IndX, IndZ, Value);
+	}
+
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый фрагментом
 	/// </summary>
@@ -1073,7 +1213,7 @@ struct Grid2DFragmentXZ
 	}
 
 	/// <summary>
-	/// -------------
+	/// Создание массива указанного типа
 	/// </summary>
 	/// <param name="modelDataName"></param>
 	void LinearArrayCreate(ModelDataName modelDataName)
@@ -1082,7 +1222,7 @@ struct Grid2DFragmentXZ
 	}
 
 	/// <summary>
-	/// -----------
+	/// Возвращает указатель на двумерный массив указанного типа ModelDataName
 	/// </summary>
 	/// <param name="modelDataName"></param>
 	/// <returns></returns>
@@ -1156,9 +1296,9 @@ struct Grid2DTransferPlaneXZ
 	// Методы
 
 	/// <summary>
-	/// ----------------
+	/// Создание массива данных указанного типа ModelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Тип создаваемого массива</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentsNumZ; k++)
@@ -1172,6 +1312,9 @@ struct Grid2DTransferPlaneXZ
 			}			
 		}
 	}
+
+
+
 		
 	/// <summary>
 	/// Вывод в консоль фрагмента переходного слоя заданного типа
@@ -1198,6 +1341,7 @@ struct Grid2DTransferPlaneXZ
 	}
 
 };
+
 
 
 /// <summary>
@@ -1246,8 +1390,8 @@ struct Grid3DFragment
 	}
 
 	// Методы
-	// Указатели на смежные двумерные плоскости для передачи данных
 	
+	// Указатели на смежные двумерные плоскости для передачи данных
 	/// <summary>
 	/// Возвращает указатель на первую плоскость XY фрагмента по оси Oz (нижняя плоскость 3D-фрагмента)
 	/// </summary>
@@ -1265,6 +1409,14 @@ struct Grid3DFragment
 
 		return grid2DFragmentXY;
 	}
+	------------------------------------------------------------------------------------------------------------------------------
+	/*void TransferPlaneXZ(ModelDataName modelDataName, Grid2DFragmentXY*)
+	{
+
+		linearArrays3D.GetLinearArray3D(modelDataName);
+
+
+	}*/
 
 	/// <summary>
 	/// Возвращает указатель на последнюю плоскость XY фрагмента по оси Oz (верхняя плоскость 3D-фрагмента)
@@ -1285,7 +1437,7 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// Возвращает указатель на первую плоскость YZ фрагмента по оси Ox (левая плоскость 3D-фрагмента)
+	/// Возвращает указатель на первую плоскость YZ фрагмента по оси Ox (левая плоскость 3D-фрагмента----)
 	/// </summary>
 	/// <returns></returns>
 	Grid2DFragmentYZ* GetGrid2DFragmentYZFirst(ModelDataName modelDataName)
@@ -1303,7 +1455,7 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// Возвращает указатель на последнюю плоскость YZ фрагмента по оси Ox (правая плоскость 3D-фрагмента)
+	/// Возвращает указатель на последнюю плоскость YZ фрагмента по оси Ox (правая плоскость 3D-фрагмента-----)
 	/// </summary>
 	/// <returns></returns>
 	Grid2DFragmentYZ* GetGrid2DFragmentYZLast(ModelDataName modelDataName)
@@ -1469,12 +1621,19 @@ struct Grid3DFragment
 			}
 		}
 	}
-
+	
+	/// <summary>
+	/// ----------------
+	/// </summary>
 	void PrintGrid3DFragmentIndex()
 	{
 		std::cout << "(" << fragmentIndX << ", " << fragmentIndY << ", " << fragmentIndZ << ")";
 	}
 
+	/// <summary>
+	/// -------------------
+	/// </summary>
+	/// <param name="fragment"></param>
 	void PrintGrid3DFragmentIndex(Grid3DFragment* fragment)
 	{
 		if (fragment == NULL)
@@ -1497,6 +1656,10 @@ struct Grid3DFragment
 		return result;
 	}
 
+	/// <summary>
+	/// ------------------
+	/// </summary>
+	/// <param name="grid3DPrintDetalisation"></param>
 	void PrintFragment(Grid3DPrintDetalisation grid3DPrintDetalisation)
 	{
 		std::cout << " \t\t\t-----------------FRAGMENT ";
@@ -1529,6 +1692,46 @@ struct Grid3DFragment
 		std::cout << std::endl;
 
 	}
+
+	/// <summary>
+	/// Вывод на печать всех элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDataName
+	/// </summary>
+	/// <param name="modelDataName"></param>
+	/// <param name="fragment3DPlane"></param>
+	void PrintFragmentPlane(ModelDataName modelDataName, Fragment3DPlane fragment3DPlane)
+	{
+		if (fragment3DPlane == XOZ_Prev || fragment3DPlane == XOZ_Next)
+		{
+			PrintFragmentPlane(modelDataName, fragment3DPlane, 0, 0, fragmentNx-1, fragmentNz-1);
+		}
+		
+		if (fragment3DPlane == XOY_Prev || fragment3DPlane == XOY_Next)
+		{
+			PrintFragmentPlane(modelDataName, fragment3DPlane, 0, 0, fragmentNx-1, fragmentNy-1);
+		}
+		
+		if (fragment3DPlane == YOZ_Prev || fragment3DPlane == YOZ_Next)
+		{
+			PrintFragmentPlane(modelDataName, fragment3DPlane, 0, 0, fragmentNy-1, fragmentNz-1);
+		}
+	}
+
+	/// <summary>
+	/// Вывод на печать части элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDataName, часть размером (Ind1_1, Ind1_2) на (Ind2_1, Ind2_2)
+	/// </summary>
+	/// <param name="modelDataName"></param>
+	/// <param name="fragment3DPlane"></param>
+	/// <param name="Ind1_1"></param>
+	/// <param name="Ind1_2"></param>
+	/// <param name="Ind2_1"></param>
+	/// <param name="Ind2_2"></param>
+	void PrintFragmentPlane(ModelDataName modelDataName, Fragment3DPlane fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)
+	{
+		LinearArray3D* linearArray3D = GetLinearArray3D(modelDataName);
+		linearArray3D->Print(fragment3DPlane, Ind1_1, Ind1_2, Ind2_1, Ind2_2);
+	}
+
+	
 };
 
 /// <summary>

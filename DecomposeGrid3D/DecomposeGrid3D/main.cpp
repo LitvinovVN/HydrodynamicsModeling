@@ -173,7 +173,7 @@ void Grid3DTest01()
 
 #pragma endregion
 
-// Тест создания смежной двумерной плоскости XZ для передачи данных между устройствами внутри узла
+#pragma region Тест создания смежной двумерной плоскости XZ для передачи данных между устройствами внутри узла
 void Grid2DTransferPlaneXZTest01()
 {
     std::cout << std::endl;
@@ -238,6 +238,97 @@ void Grid2DTransferPlaneXZTest01()
     std::cout << "------------------------------------------------------------------" << std::endl;
     std::cout << std::endl;
 }
+#pragma endregion
+
+#pragma region Тест создания плоскости YOZ элементов для передачи данных между соседними фрагментами
+void Grid2DTransferPlaneYZFragmentTest02()
+{
+    // параметры fragment_prev
+    size_t fragmentNx_prev = 3;
+    size_t fragmentNy_prev = 4;
+    size_t fragmentNz_prev = 4;
+    size_t fragmentIndX_prev = 1;
+    size_t fragmentIndY_prev = 2;
+    size_t fragmentIndZ_prev = 2;
+    size_t fragmentOffsetXByDevice_prev = 0;
+    size_t fragmentOffsetYByDevice_prev = 0;
+    size_t fragmentOffsetZByDevice_prev = 0;
+    size_t fragmentOffsetXByNode_prev = 0;
+    size_t fragmentOffsetYByNode_prev = 0;
+    size_t fragmentOffsetZByNode_prev = 0;
+    size_t fragmentOffsetX_prev = 0;
+    size_t fragmentOffsetY_prev = 0;
+    size_t fragmentOffsetZ_prev = 0;
+
+    // параметры fragment_next
+    size_t fragmentNx_next = 3;
+    size_t fragmentNy_next = 4;
+    size_t fragmentNz_next = 4;
+    size_t fragmentIndX_next = 2;
+    size_t fragmentIndY_next = 2;
+    size_t fragmentIndZ_next = 2;
+    size_t fragmentOffsetXByDevice_next = 48;
+    size_t fragmentOffsetYByDevice_next = 0;
+    size_t fragmentOffsetZByDevice_next = 0;
+    size_t fragmentOffsetXByNode_next = 48;
+    size_t fragmentOffsetYByNode_next = 0;
+    size_t fragmentOffsetZByNode_next = 0;
+    size_t fragmentOffsetX_next = 48;
+    size_t fragmentOffsetY_next = 0;
+    size_t fragmentOffsetZ_next = 0;
+    
+
+    Grid3DFragment fragment_prev(fragmentNx_prev, fragmentNy_prev, fragmentNz_prev, fragmentIndX_prev, fragmentIndY_prev, fragmentIndZ_prev, fragmentOffsetXByDevice_prev,
+        fragmentOffsetYByDevice_prev, fragmentOffsetZByDevice_prev, fragmentOffsetXByNode_prev, fragmentOffsetYByNode_prev, fragmentOffsetZByNode_prev, fragmentOffsetX_prev,
+        fragmentOffsetY_prev, fragmentOffsetZ_prev);
+    Grid3DFragment fragment_next(fragmentNx_next, fragmentNy_next, fragmentNz_next, fragmentIndX_next, fragmentIndY_next, fragmentIndZ_next, fragmentOffsetXByDevice_next,
+        fragmentOffsetYByDevice_next, fragmentOffsetZByDevice_next, fragmentOffsetXByNode_next, fragmentOffsetYByNode_next, fragmentOffsetZByNode_next, fragmentOffsetX_next,
+        fragmentOffsetY_next, fragmentOffsetZ_next);
+
+    fragment_prev.linearArrays3D.LinearArrayCreate(fragmentNx_prev, fragmentNy_prev, fragmentNz_prev, U);
+    fragment_next.linearArrays3D.LinearArrayCreate(fragmentNx_next, fragmentNy_next, fragmentNz_next, U);
+
+    size_t globalIndx = 0;
+    LinearArray3D* linearArray_prev = fragment_prev.GetLinearArray3D(U);
+    //double arr = 0;
+
+    for (int k = 0; k < fragmentNz_prev; k++)
+    {
+        for (int j = 0; j < fragmentNy_prev; j++)
+        {
+            for (int i = 0; i < fragmentNx_prev; i++)
+            {                              
+                linearArray_prev->SetElement(i, j, k, globalIndx);
+                //arr = linearArray_prev->GetElement(i, j, k);
+                //std::cout << arr << " ";
+                globalIndx += 1;
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    LinearArray3D* linearArray_next = fragment_next.GetLinearArray3D(U); 
+
+    for (int k = 0; k < fragmentNz_next; k++)
+    {
+        for (int j = 0; j < fragmentNy_next; j++)
+        {
+            for (int i = 0; i < fragmentNx_next; i++)
+            {                               
+                linearArray_next->SetElement(i, j, k, 0);                
+            }
+        }
+    }
+
+    
+
+    //linearArray_prev->PrintData();
+    fragment_prev.PrintFragment(Grid3DPrintDetalisation::ARRAYS);
+    fragment_prev.PrintFragmentPlane(U, XOY_Prev);
+    fragment_next.PrintFragment(Grid3DPrintDetalisation::ARRAYS);
+    fragment_next.PrintFragmentPlane(U, XOY_Next);
+}
+#pragma endregion
 
 #pragma region Тест скорости обработки одного фрагмента и передачи данных о значениях в смежных плоскостях
 void FragmentCalculationAndDataTransferTests()
@@ -257,7 +348,10 @@ int main()
 #pragma endregion
 
     // Тест создания смежной двумерной плоскости XZ для передачи данных между устройствами внутри узла
-    Grid2DTransferPlaneXZTest01();
+    //Grid2DTransferPlaneXZTest01();
+
+    // Тест создания плоскости YOZ элементов для передачи данных между соседними фрагментами
+    Grid2DTransferPlaneYZFragmentTest02();
 
 //// ----- Не готово
 #pragma region Тест скорости обработки одного фрагмента и передачи данных о значениях в смежных плоскостях

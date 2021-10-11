@@ -199,6 +199,8 @@ package "Grid"
 			LinearArray2D* : GetLinearArray2D(ModelDataName modelDataName)		
 			double : GetDataSizeInMb()
 			void : PrintFragment()
+
+
 		}
 
 		'Класс Grid2DTransferPlaneXZ - описывает смежную двумерную плоскость XZ для передачи данных между устройствами
