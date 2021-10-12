@@ -696,11 +696,11 @@ void alg1(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D*
 }
 
 // alg2
-void alg2(LinearArray3D* linAr)
+void alg2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
 {
-	int nx = linAr->nx;
-	int ny = linAr->ny;
-	int nz = linAr->nz;
+	int nx = r->nx;
+	int ny = r->ny;
+	int nz = r->nz;
 
 	for (int k = 1; k < nz - 1; k++)
 	{
@@ -708,13 +708,22 @@ void alg2(LinearArray3D* linAr)
 		{
 			for (int i = 1; i < nx - 1; i++)
 			{
-				double val2 = linAr->GetElement(i - 1, j, k);
-				double val0 = linAr->GetElement(i, j, k);
-				
-				double val4 = linAr->GetElement(i, j - 1, k);
-				double val6 = linAr->GetElement(i, j, k - 1);
-				double newVal = val0 + val2 + val4 + val6;
-				linAr->SetElement(i, j, k, newVal);
+				double s0 = s->GetElement(i, j, k);
+				if (s0 > (1 - 0.001) && s0 < (1 + 0.001))
+				{
+					double rm0 = r->GetElement(i, j, k);
+					double rm2 = r->GetElement(i - 1, j, k);
+					double rm4 = r->GetElement(i, j - 1, k);
+					double rm6 = r->GetElement(i, j, k - 1);
+
+					double c0m0 = c0->GetElement(i, j, k);
+					double c2m0 = c2->GetElement(i, j, k);
+					double c4m0 = c4->GetElement(i, j, k);
+					double c6m0 = c6->GetElement(i, j, k);
+
+					double newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+					r->SetElement(i, j, k, newVal);
+				}
 			}
 		}
 	}
@@ -991,11 +1000,11 @@ int main()
 	r->initLinearArray3DByValue(10);
 	algStart(alg1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 		
-	/*std::cout << "---alg2---\n";
-	initLinearArray3DByGlobalIndexes(linAr1);
-	algStart(alg2, linAr1, arrayForVerification, numberOfLaunches);
+	std::cout << "---alg2---\n";
+	r->initLinearArray3DByValue(10);
+	algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 
-	std::cout << "---alg3---\n";
+	/*std::cout << "---alg3---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
 	algStart(alg3, linAr1, arrayForVerification, numberOfLaunches);
 
