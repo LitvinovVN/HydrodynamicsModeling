@@ -164,11 +164,6 @@ struct LinearArray1D
 	/// <returns></returns>
 	double GetElement(size_t IndX)
 	{
-		if (IndX > nx)
-		{
-			throw - 1;
-		}		
-
 		return data[IndX];
 	}
 		
@@ -180,11 +175,6 @@ struct LinearArray1D
 	/// <returns></returns>
 	double SetElement(size_t IndX, double Value)
 	{
-		if (IndX > nx)
-		{
-			throw - 1;
-		}		
-
 		data[IndX] = Value;
 	}
 
@@ -262,10 +252,6 @@ struct LinearArray2D
 	/// <returns></returns>
 	double GetElement(size_t IndX, size_t IndY, size_t IndZ)
 	{
-		if ((IndX > nx) || (IndY > ny))
-		{
-			throw - 1;
-		}
 		size_t indx = GetIndex(IndX, IndY);
 
 		return data[indx];
@@ -412,6 +398,24 @@ struct LinearArray3D
 	// Методы
 
 	/// <summary>
+	/// Инициализирует массив data указанным значением
+	/// </summary>
+	void initLinearArray3DByValue(double value)
+	{
+		for (int gi = 0; gi < nx * ny * nz; gi++)
+			data[gi] = value;
+	}
+
+	/// <summary>
+	/// Инициализирует массив data глобальными индексами
+	/// </summary>
+	void initLinearArray3DByGlobalIndexes()
+	{
+		for (int gi = 0; gi < nx * ny * nz; gi++)
+			data[gi] = gi;
+	}
+
+	/// <summary>
 	/// Проверяет массивы на равенство (поэлементно)
 	/// </summary>
 	/// <param name="linAr"></param>
@@ -448,11 +452,7 @@ struct LinearArray3D
 	/// <param name="IndZ"></param>
 	/// <returns></returns>
 	double GetElement(size_t IndX, size_t IndY, size_t IndZ)
-	{
-		if ((IndX > nx) || (IndY > ny) || (IndZ > nz))
-		{
-			throw - 1;
-		}
+	{		
 		size_t indx = GetIndex(IndX, IndY, IndZ);
 
 		return data[indx];
@@ -641,7 +641,9 @@ struct LinearArray3D
 };
 
 
-void algStart(void (*algFunPntr)(LinearArray3D*), LinearArray3D* linAr, LinearArray3D* arrayForVerification, int numberOfLaunches)
+void algStart(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, double),
+	LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w,
+	LinearArray3D* arrayForVerification, int numberOfLaunches)
 {
 	timer<std::chrono::microseconds> aTimer;
 
@@ -650,34 +652,44 @@ void algStart(void (*algFunPntr)(LinearArray3D*), LinearArray3D* linAr, LinearAr
 	for (size_t i = 0; i < numberOfLaunches; i++)
 	{
 		aTimer.start();
-		algFunPntr(linAr);
+		algFunPntr(r,c0,c2,c4,c6,s,w);
 		auto elapsed = aTimer.stop();		
-		bool isEqual = arrayForVerification->IsEqual(linAr);
+		bool isEqual = arrayForVerification->IsEqual(r);
 		if (isEqual) statistics.add(elapsed.get_time_as_double());
 	}
 
 	statistics.print();
 }
 
-
-void alg1(LinearArray3D* linAr)
+// alg1
+void alg1(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
 {
-	int nx = linAr->nx;
-	int ny = linAr->ny;
-	int nz = linAr->nz;
+	int nx = r->nx;
+	int ny = r->ny;
+	int nz = r->nz;
 
-	for (int k = 1; k < nz-1; k++)
+	for (int k = 1; k < nz - 1; k++)
 	{
-		for (int j = 1; j < ny-1; j++)
+		for (int j = 1; j < ny - 1; j++)
 		{
-			for (int i = 1; i < nx-1; i++)
+			for (int i = 1; i < nx - 1; i++)
 			{
-				double val0 = linAr->GetElement(i, j, k);
-				double val2 = linAr->GetElement(i-1, j, k);
-				double val4 = linAr->GetElement(i, j-1, k);
-				double val6 = linAr->GetElement(i, j, k-1);
-				double newVal = val0 + val2 + val4 + val6;
-				linAr->SetElement(i, j, k, newVal);
+				double s0 = s->GetElement(i, j, k);
+				if (s0 > (1-0.001) && s0 < (1 + 0.001))
+				{
+					double rm0 = r->GetElement(i, j, k);
+					double rm2 = r->GetElement(i - 1, j, k);
+					double rm4 = r->GetElement(i, j - 1, k);
+					double rm6 = r->GetElement(i, j, k - 1);
+
+					double c0m0 = c0->GetElement(i, j, k);
+					double c2m0 = c2->GetElement(i, j, k);
+					double c4m0 = c4->GetElement(i, j, k);
+					double c6m0 = c6->GetElement(i, j, k);					
+
+					double newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+					r->SetElement(i, j, k, newVal);
+				}				
 			}
 		}
 	}
@@ -946,36 +958,40 @@ void alg7(LinearArray3D* linAr)
 	}
 }
 
-void initLinearArray3DByGlobalIndexes(LinearArray3D* linAr)
-{
-	size_t nx = linAr->nx;
-	size_t ny = linAr->ny;
-	size_t nz = linAr->nz;
-
-	for (int gi = 0; gi < nx * ny * nz; gi++)
-		linAr->data[gi] = gi;
-}
-
 int main()
 {
 	int nx = 100;
 	int ny = 50;
 	int nz = 40;
-	auto linAr1 = new LinearArray3D(nx, ny, nz);
+	auto r = new LinearArray3D(nx, ny, nz);
+	auto c0 = new LinearArray3D(nx, ny, nz);
+	auto c2 = new LinearArray3D(nx, ny, nz);
+	auto c4 = new LinearArray3D(nx, ny, nz);
+	auto c6 = new LinearArray3D(nx, ny, nz);
+	auto s = new LinearArray3D(nx, ny, nz);
+	double w = 0.5;
 	int numberOfLaunches = 10;// Количество запусков алгоритма
 	
+	// Инициализация массивов
+	r->initLinearArray3DByValue(10);
+	c0->initLinearArray3DByValue(1);
+	c2->initLinearArray3DByValue(2);
+	c4->initLinearArray3DByValue(4);
+	c6->initLinearArray3DByValue(6);
+	s->initLinearArray3DByValue(1);
+
 	// Массив для верификации
 	auto arrayForVerification = new LinearArray3D(nx, ny, nz);
-	initLinearArray3DByGlobalIndexes(arrayForVerification);
-	alg1(arrayForVerification);
+	arrayForVerification->initLinearArray3DByValue(10);
+	alg1(arrayForVerification, c0, c2, c4, c6, s, w);
 	//arrayForVerification->Print();
 	///////////////////////////////////////////////////////////
 
 	std::cout << "---alg1---\n";
-	initLinearArray3DByGlobalIndexes(linAr1);
-	algStart(alg1, linAr1, arrayForVerification, numberOfLaunches);
+	r->initLinearArray3DByValue(10);
+	algStart(alg1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 		
-	std::cout << "---alg2---\n";
+	/*std::cout << "---alg2---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
 	algStart(alg2, linAr1, arrayForVerification, numberOfLaunches);
 
@@ -997,6 +1013,6 @@ int main()
 
 	std::cout << "---alg7---\n";
 	initLinearArray3DByGlobalIndexes(linAr1);
-	algStart(alg7, linAr1, arrayForVerification, numberOfLaunches);	
+	algStart(alg7, linAr1, arrayForVerification, numberOfLaunches);*/	
 }
 
