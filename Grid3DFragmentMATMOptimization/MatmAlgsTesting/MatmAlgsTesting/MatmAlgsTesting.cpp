@@ -88,6 +88,22 @@ struct SimpleStatistics
 	}
 
 	/// <summary>
+	/// Возвращает указанный процентиль
+	/// </summary>
+	/// <param name="percentile"></param>
+	/// <returns></returns>
+	double getPercentile(double percentile)
+	{
+		auto size = data.size();
+		if (size == 0)
+			throw std::domain_error("percentile of an empty vector");
+
+		auto index = int(round(percentile * size / 100))-1;
+		double result = data[index];
+		return result;
+	}
+
+	/// <summary>
 	/// Выводит в стандартный поток вывода элементы массива данных, разделённые пробелами.
 	/// </summary>
 	void printData()
@@ -104,10 +120,11 @@ struct SimpleStatistics
 	{
 		std::cout << "data: ";
 		printData();
-		std::cout << "data.size() = " << data.size() << std::endl;
-		std:: cout << "min = " << getMin() << std::endl;
-		std::cout << "max = " << getMax() << std::endl;
-		std::cout << "median = " << getMedian() << std::endl;		
+		std::cout << "data.size() = " << data.size() << "; ";
+		std:: cout << "min = " << getMin() << "; ";
+		std::cout << "max = " << getMax() << "; ";
+		std::cout << "median = " << getMedian() << "; ";
+		std::cout << "90 perc = " << getPercentile(90) << std::endl;
 	}
 };
 
