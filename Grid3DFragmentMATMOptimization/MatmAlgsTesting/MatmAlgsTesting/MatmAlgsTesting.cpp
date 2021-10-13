@@ -39,8 +39,8 @@ public:
 /// </summary>
 struct SimpleStatistics
 {	
-	bool isSorted;// Признак отсортированности массивов
-	std::vector<double> data;// Массив с результатами экспериментов
+	bool isSorted;///< Признак отсортированности массивов
+	std::vector<double> data;///< Массив с результатами экспериментов
 
 	/// <summary>
 	/// Добавляет новый элемент в массив данных
@@ -133,6 +133,9 @@ struct SimpleStatistics
 	}
 };
 
+/// <summary>
+/// Линейный одномерный массив
+/// </summary>
 struct LinearArray1D
 {
 	size_t nx;             // число узлов в фрагменте по оси Ox	

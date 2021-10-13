@@ -1,0 +1,97 @@
+\hypertarget{struct_linear_array1_d}{}\doxysection{Структура Linear\+Array1D}
+\label{struct_linear_array1_d}\index{LinearArray1D@{LinearArray1D}}
+
+
+Линейный одномерный массив  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_linear_array1_d_a6a7937a71569703f1adc28bd97ac85ff}\label{struct_linear_array1_d_a6a7937a71569703f1adc28bd97ac85ff}} 
+{\bfseries Linear\+Array1D} (size\+\_\+t Nx)
+\item 
+double \mbox{\hyperlink{struct_linear_array1_d_a186c1669dd59e7c692176fda802b036b}{Get\+Element}} (size\+\_\+t IndX)
+\begin{DoxyCompactList}\small\item\em Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_linear_array1_d_ac5d01affe013d1ee28a6fe3ac748837f}{Set\+Element}} (size\+\_\+t IndX, double Value)
+\begin{DoxyCompactList}\small\item\em Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_linear_array1_d_a60ad48d3fd5648c3e44ff60f878054d4}{Get\+Data\+Size\+In\+Mb}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_linear_array1_d_ab90a1079fae16be1b48de68dd018cea5}\label{struct_linear_array1_d_ab90a1079fae16be1b48de68dd018cea5}} 
+void {\bfseries Print} ()
+\begin{DoxyCompactList}\small\item\em Вывод элементов фрагмента по слоям XY в консоль \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_linear_array1_d_a22ab376f38a1b5edbed600342e756e0a}\label{struct_linear_array1_d_a22ab376f38a1b5edbed600342e756e0a}} 
+size\+\_\+t {\bfseries nx}
+\item 
+\mbox{\Hypertarget{struct_linear_array1_d_a0876da3d695f7f3f8edce82baecf3470}\label{struct_linear_array1_d_a0876da3d695f7f3f8edce82baecf3470}} 
+double $\ast$ {\bfseries data}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Линейный одномерный массив 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{struct_linear_array1_d_a60ad48d3fd5648c3e44ff60f878054d4}\label{struct_linear_array1_d_a60ad48d3fd5648c3e44ff60f878054d4}} 
+\index{LinearArray1D@{LinearArray1D}!GetDataSizeInMb@{GetDataSizeInMb}}
+\index{GetDataSizeInMb@{GetDataSizeInMb}!LinearArray1D@{LinearArray1D}}
+\doxysubsubsection{\texorpdfstring{GetDataSizeInMb()}{GetDataSizeInMb()}}
+{\footnotesize\ttfamily double Linear\+Array1\+D\+::\+Get\+Data\+Size\+In\+Mb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}} 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_linear_array1_d_a186c1669dd59e7c692176fda802b036b}\label{struct_linear_array1_d_a186c1669dd59e7c692176fda802b036b}} 
+\index{LinearArray1D@{LinearArray1D}!GetElement@{GetElement}}
+\index{GetElement@{GetElement}!LinearArray1D@{LinearArray1D}}
+\doxysubsubsection{\texorpdfstring{GetElement()}{GetElement()}}
+{\footnotesize\ttfamily double Linear\+Array1\+D\+::\+Get\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndX }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndX} & \\
+\hline
+{\em IndY} & \\
+\hline
+{\em IndZ} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_linear_array1_d_ac5d01affe013d1ee28a6fe3ac748837f}\label{struct_linear_array1_d_ac5d01affe013d1ee28a6fe3ac748837f}} 
+\index{LinearArray1D@{LinearArray1D}!SetElement@{SetElement}}
+\index{SetElement@{SetElement}!LinearArray1D@{LinearArray1D}}
+\doxysubsubsection{\texorpdfstring{SetElement()}{SetElement()}}
+{\footnotesize\ttfamily double Linear\+Array1\+D\+::\+Set\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndX,  }\item[{double}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndX} & \\
+\hline
+{\em Value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Matm\+Algs\+Testing/Matm\+Algs\+Testing.\+cpp\end{DoxyCompactItemize}

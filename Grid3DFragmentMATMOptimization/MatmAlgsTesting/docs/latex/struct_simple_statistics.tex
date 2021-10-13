@@ -1,0 +1,93 @@
+\hypertarget{struct_simple_statistics}{}\doxysection{Структура Simple\+Statistics}
+\label{struct_simple_statistics}\index{SimpleStatistics@{SimpleStatistics}}
+
+
+Структура для сохранения результатов измерений и вычисления простых статистик  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_simple_statistics_a393d8b4c275987d2a004489873146652}\label{struct_simple_statistics_a393d8b4c275987d2a004489873146652}} 
+void {\bfseries add} (double value)
+\begin{DoxyCompactList}\small\item\em Добавляет новый элемент в массив данных \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_simple_statistics_acee3acfeb29d148d5fa9c7f2e7c4e6ae}\label{struct_simple_statistics_acee3acfeb29d148d5fa9c7f2e7c4e6ae}} 
+void {\bfseries sort} ()
+\begin{DoxyCompactList}\small\item\em Сортирует массив данных \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_simple_statistics_ae80e3fe00de1140bf92c6f74a90ae085}{get\+Min}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает минимальное значение \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_simple_statistics_aaf8d6fe217b14dc60e8e06725e8a7bfe}\label{struct_simple_statistics_aaf8d6fe217b14dc60e8e06725e8a7bfe}} 
+double {\bfseries get\+Max} ()
+\begin{DoxyCompactList}\small\item\em Возвращает максимальное значение \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_simple_statistics_a97e074975bd800b6456b7b0c2f95a3ad}{get\+Median}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает медиану \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_simple_statistics_a5c979894a6c583a8a554832a0da33773}{get\+Percentile}} (double percentile)
+\begin{DoxyCompactList}\small\item\em Возвращает указанный процентиль \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_simple_statistics_afdc4f954463d3a928fafe0539f963bf1}\label{struct_simple_statistics_afdc4f954463d3a928fafe0539f963bf1}} 
+void {\bfseries print\+Data} ()
+\begin{DoxyCompactList}\small\item\em Выводит в стандартный поток вывода элементы массива данных, разделённые пробелами. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_simple_statistics_ab44cce92bcfcab6b66607631c8fe6a26}\label{struct_simple_statistics_ab44cce92bcfcab6b66607631c8fe6a26}} 
+void {\bfseries print} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_simple_statistics_a4cd5d94feb9d29e9b0b3358ee60ecf9c}\label{struct_simple_statistics_a4cd5d94feb9d29e9b0b3358ee60ecf9c}} 
+bool {\bfseries is\+Sorted}
+\begin{DoxyCompactList}\small\item\em Признак отсортированности массивов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_simple_statistics_a80ffd8295ffb9d93bb84bd81f3db49dc}\label{struct_simple_statistics_a80ffd8295ffb9d93bb84bd81f3db49dc}} 
+std\+::vector$<$ double $>$ {\bfseries data}
+\begin{DoxyCompactList}\small\item\em Массив с результатами экспериментов \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Структура для сохранения результатов измерений и вычисления простых статистик 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{struct_simple_statistics_a97e074975bd800b6456b7b0c2f95a3ad}\label{struct_simple_statistics_a97e074975bd800b6456b7b0c2f95a3ad}} 
+\index{SimpleStatistics@{SimpleStatistics}!getMedian@{getMedian}}
+\index{getMedian@{getMedian}!SimpleStatistics@{SimpleStatistics}}
+\doxysubsubsection{\texorpdfstring{getMedian()}{getMedian()}}
+{\footnotesize\ttfamily double Simple\+Statistics\+::get\+Median (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает медиану 
+
+~\newline
+ \mbox{\Hypertarget{struct_simple_statistics_ae80e3fe00de1140bf92c6f74a90ae085}\label{struct_simple_statistics_ae80e3fe00de1140bf92c6f74a90ae085}} 
+\index{SimpleStatistics@{SimpleStatistics}!getMin@{getMin}}
+\index{getMin@{getMin}!SimpleStatistics@{SimpleStatistics}}
+\doxysubsubsection{\texorpdfstring{getMin()}{getMin()}}
+{\footnotesize\ttfamily double Simple\+Statistics\+::get\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает минимальное значение 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_simple_statistics_a5c979894a6c583a8a554832a0da33773}\label{struct_simple_statistics_a5c979894a6c583a8a554832a0da33773}} 
+\index{SimpleStatistics@{SimpleStatistics}!getPercentile@{getPercentile}}
+\index{getPercentile@{getPercentile}!SimpleStatistics@{SimpleStatistics}}
+\doxysubsubsection{\texorpdfstring{getPercentile()}{getPercentile()}}
+{\footnotesize\ttfamily double Simple\+Statistics\+::get\+Percentile (\begin{DoxyParamCaption}\item[{double}]{percentile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает указанный процентиль 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em percentile} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Matm\+Algs\+Testing/Matm\+Algs\+Testing.\+cpp\end{DoxyCompactItemize}
