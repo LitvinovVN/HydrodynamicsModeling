@@ -361,7 +361,7 @@ struct LinearArray2D
 		size_t indStart = GetIndex(0, IndY);
 
 		size_t cnt = 0;
-		for (size_t i = indStart; i < indStart + nx; i++)
+		for (size_t i = indStart; i < indStart + n1; i++)
 		{
 			linAr1D->data[cnt++] = data[i];
 		}
@@ -377,7 +377,7 @@ struct LinearArray2D
 		size_t indStart = GetIndex(0, IndY);
 
 		size_t cnt = 0;
-		for (size_t i = indStart; i < indStart + nx; i++)
+		for (size_t i = indStart; i < indStart + n1; i++)
 		{
 			linArray[cnt++] = data[i];
 		}
@@ -393,7 +393,7 @@ struct LinearArray2D
 		size_t indStart = GetIndex(0, IndY);
 
 		size_t cnt = 0;
-		for (size_t i = indStart; i < indStart + nx; i++)
+		for (size_t i = indStart; i < indStart + n1; i++)
 		{
 			data[i] = linAr1D->data[cnt++];
 		}
@@ -409,7 +409,7 @@ struct LinearArray2D
 		size_t indStart = GetIndex(0, IndY);
 
 		size_t cnt = 0;
-		for (size_t i = indStart; i < indStart + nx; i++)
+		for (size_t i = indStart; i < indStart + n1; i++)
 		{
 			data[i] = linArray[cnt++];
 		}
@@ -447,16 +447,16 @@ struct LinearArray2D
 };
 
 /// <summary>
-/// &&&&------------
+/// Линейный массив, описывающий трёхмерную область
 /// </summary>
 struct LinearArray3D
 {
-	size_t nx;             // число узлов в фрагменте по оси Ox
-	size_t ny;             // число узлов в фрагменте по оси Oy
-	size_t nz;             // число узлов в фрагменте по оси Oz
-	double* data;          // указатель на массив данных
+	size_t nx;             ///< число узлов в фрагменте по оси Ox
+	size_t ny;             ///< число узлов в фрагменте по оси Oy
+	size_t nz;             ///< число узлов в фрагменте по оси Oz
+	double* data;          ///< указатель на массив данных
 
-	// Конструктор
+	/// Конструктор
 	LinearArray3D(size_t Nx, size_t Ny, size_t Nz) :
 		nx(Nx), ny(Ny), nz(Nz)
 	{
@@ -470,13 +470,47 @@ struct LinearArray3D
 		}
 	}
 
-	// Деструктор
+	/// Деструктор
 	~LinearArray3D()
 	{
 		free(data);
 	}
 
 	// Методы
+
+	/// <summary>
+	/// Инициализирует массив data указанным значением
+	/// </summary>
+	void InitLinearArray3DByValue(double value)
+	{
+		for (int gi = 0; gi < nx * ny * nz; gi++)
+			data[gi] = value;
+	}
+
+	/// <summary>
+	/// Инициализирует массив data глобальными индексами
+	/// </summary>
+	void InitLinearArray3DByGlobalIndexes()
+	{
+		for (int gi = 0; gi < nx * ny * nz; gi++)
+			data[gi] = gi;
+	}
+
+	/// <summary>
+	/// Проверяет массивы на равенство (поэлементно)
+	/// </summary>
+	/// <param name="linAr"></param>
+	/// <returns></returns>
+	bool IsEqual(LinearArray3D* linAr)
+	{
+		for (size_t i = 0; i < nx * ny * nz; i++)
+		{
+			if ((data[i] - linAr->data[i]) > 0.000001)
+				return false;
+		}
+
+		return true;
+	}
 
 	/// <summary>
 	/// Возвращает индекс элемента массива данных по индексам элемента в фрагменте
@@ -525,6 +559,140 @@ struct LinearArray3D
 		size_t indx = GetIndex(IndX, IndY, IndZ);
 
 		data[indx] = Value;
+	}
+
+	/// <summary>
+	/// Заполняет объект LinearArray1D данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <param name="linAr1D"></param>
+	void GetLineX(size_t IndY, size_t IndZ, LinearArray1D* linAr1D)
+	{
+		size_t indStart = GetIndex(0, IndY, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			linAr1D->data[cnt++] = data[i];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет массив данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <param name="linArray"></param>
+	void GetLineX(size_t IndY, size_t IndZ, double* linArray)
+	{
+		size_t indStart = GetIndex(0, IndY, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			linArray[cnt++] = data[i];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из LinearArray1D
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <param name="linAr1D"></param>
+	void SetLineX(size_t IndY, size_t IndZ, LinearArray1D* linAr1D)
+	{
+		size_t indStart = GetIndex(0, IndY, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			data[i] = linAr1D->data[cnt++];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из LinearArray1D
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <param name="linAr1D"></param>
+	void SetLineX(size_t IndY, size_t IndZ, double* linArray)
+	{
+		size_t indStart = GetIndex(0, IndY, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			data[i] = linArray[cnt++];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет двумерный массив layerZ значениями указанного слоя z
+	/// </summary>
+	/// <param name="IndZ"></param>
+	/// <param name="layerZ"></param>
+	void GetLayerZ(size_t IndZ, double* layerZ)
+	{
+		size_t indStart = GetIndex(0, 0, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx * ny; i++)
+		{
+			layerZ[cnt++] = data[i];
+		}
+
+	}
+
+	/// <summary>
+	/// Заполняет двумерный массив layerZ значениями указанного слоя z
+	/// </summary>
+	/// <param name="IndZ"></param>
+	/// <param name="layerZ"></param>
+	void GetLayerZ(size_t IndZ, LinearArray2D* layerZ)
+	{
+		size_t indStart = GetIndex(0, 0, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx * ny; i++)
+		{
+			layerZ->data[cnt++] = data[i];
+		}
+
+	}
+
+	/// <summary>
+	/// Заполняет указанный слой z значениями двумерного массива layerZ
+	/// </summary>
+	/// <param name="IndZ"></param>
+	/// <param name="layerZ"></param>
+	void SetLayerZ(size_t IndZ, double* layerZ)
+	{
+		size_t indStart = GetIndex(0, 0, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx * ny; i++)
+		{
+			data[i] = layerZ[cnt++];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет указанный слой z значениями двумерного массива layerZ
+	/// </summary>
+	/// <param name="IndZ"></param>
+	/// <param name="layerZ"></param>
+	void SetLayerZ(size_t IndZ, LinearArray2D* layerZ)
+	{
+		size_t indStart = GetIndex(0, 0, IndZ);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx * ny; i++)
+		{
+			data[i] = layerZ->data[cnt++];
+		}
 	}
 
 	/// <summary>
