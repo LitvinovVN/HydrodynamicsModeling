@@ -4,6 +4,8 @@
 #include <functional> // std::ref
 #include <map>
 #include <vector>
+#include <chrono>
+#include <algorithm>    // std::sort
 
 /// <summary>
 /// Вспомогательные вычислительные методы для Grid
@@ -58,6 +60,135 @@ enum Fragment3DPlane		// Перечисление плоскостей для п
 	XOY_Next,
 	YOZ_Prev,
 	YOZ_Next	
+};
+
+
+
+
+template <typename duration = std::chrono::seconds, typename clock = std::chrono::high_resolution_clock>
+class timer
+{
+	/// Старт, стоп
+	typename clock::time_point m_start, m_stop;
+
+	typename clock::rep get_time() const
+	{
+		return std::chrono::duration_cast<duration>(m_stop - m_start).count();
+	}
+
+public:
+	void         start() { m_start = clock::now(); }
+	const timer& stop() { m_stop = clock::now(); return *this; }
+
+	std::ostream& print() const
+	{
+		return std::cout << "Time running: [" << get_time() << "]";
+	}
+
+	double get_time_as_double()
+	{
+		double time = get_time();
+		return time;
+	}
+};
+
+/// <summary>
+/// Структура для сохранения результатов измерений и вычисления простых статистик
+/// </summary>
+struct SimpleStatistics
+{
+	bool isSorted;///< Признак отсортированности массивов
+	std::vector<double> data;///< Массив с результатами экспериментов
+
+	/// <summary>
+	/// Добавляет новый элемент в массив данных
+	/// </summary>
+	void add(double value)
+	{
+		data.push_back(value);
+		isSorted = false;
+	}
+
+	/// <summary>
+	/// Сортирует массив данных
+	/// </summary>
+	void sort()
+	{
+		std::sort(data.begin(), data.end());
+	}
+
+	/// <summary>
+	/// Возвращает минимальное значение
+	/// </summary>
+	/// <returns></returns>
+	double getMin()
+	{
+		if (!isSorted) sort();
+		return data[0];
+	}
+
+	/// <summary>
+	/// Возвращает максимальное значение
+	/// </summary>
+	double getMax()
+	{
+		if (!isSorted) sort();
+		return data[data.size() - 1];
+	}
+
+	/// <summary>
+	/// Возвращает медиану
+	/// </summary>	
+	double getMedian()
+	{
+		auto size = data.size();
+		if (size == 0)
+			throw std::domain_error("median of an empty vector");
+
+		if (!isSorted) sort();
+		auto mid = size / 2;
+		return size % 2 == 0 ? (data[mid] + data[mid - 1]) / 2 : data[mid];
+	}
+
+	/// <summary>
+	/// Возвращает указанный процентиль
+	/// </summary>
+	/// <param name="percentile"></param>
+	/// <returns></returns>
+	double getPercentile(double percentile)
+	{
+		auto size = data.size();
+		if (size == 0)
+			throw std::domain_error("percentile of an empty vector");
+
+		auto index = int(round(percentile * size / 100)) - 1;
+		double result = data[index];
+		return result;
+	}
+
+	/// <summary>
+	/// Выводит в стандартный поток вывода элементы массива данных, разделённые пробелами.
+	/// </summary>
+	void printData()
+	{
+		if (!isSorted) sort();
+		for (size_t i = 0; i < data.size(); i++)
+		{
+			std::cout << data[i] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+	void print()
+	{
+		std::cout << "data: ";
+		printData();
+		std::cout << "data.size() = " << data.size() << "; ";
+		std::cout << "min = " << getMin() << "; ";
+		std::cout << "max = " << getMax() << "; ";
+		std::cout << "median = " << getMedian() << "; ";
+		std::cout << "90 perc = " << getPercentile(90) << std::endl;
+	}
 };
 
 
