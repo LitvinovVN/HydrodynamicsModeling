@@ -3,9 +3,14 @@
 #include <vector>
 #include <algorithm>    // std::sort
 
+/**
+* Таймер
+* 
+*/
 template <typename duration = std::chrono::seconds, typename clock = std::chrono::high_resolution_clock>
 class timer
 {
+	/// Старт, стоп
 	typename clock::time_point m_start, m_stop;
 
 	typename clock::rep get_time() const
