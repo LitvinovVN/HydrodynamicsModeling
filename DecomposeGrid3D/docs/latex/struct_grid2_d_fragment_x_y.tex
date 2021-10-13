@@ -1,0 +1,190 @@
+\hypertarget{struct_grid2_d_fragment_x_y}{}\doxysection{Структура Grid2\+DFragment\+XY}
+\label{struct_grid2_d_fragment_x_y}\index{Grid2DFragmentXY@{Grid2DFragmentXY}}
+
+
+Двумерный фрагмент расчетной сетки -\/ плоскость XY(грань трехмерного фрагмента)  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a8f9eb6ece38306ffc7cc6aebbb068aab}\label{struct_grid2_d_fragment_x_y_a8f9eb6ece38306ffc7cc6aebbb068aab}} 
+{\bfseries Grid2\+DFragment\+XY} (size\+\_\+t Fragment\+Nx, size\+\_\+t Fragment\+Ny, size\+\_\+t Fragment\+IndX, size\+\_\+t Fragment\+IndY, size\+\_\+t Fragment\+IndZ, size\+\_\+t Fragment\+Offset\+XBy\+Device, size\+\_\+t Fragment\+Offset\+YBy\+Device, size\+\_\+t Fragment\+Offset\+ZBy\+Device, size\+\_\+t Fragment\+Offset\+XBy\+Node, size\+\_\+t Fragment\+Offset\+YBy\+Node, size\+\_\+t Fragment\+Offset\+ZBy\+Node, size\+\_\+t Fragment\+OffsetX, size\+\_\+t Fragment\+OffsetY, size\+\_\+t Fragment\+OffsetZ)
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_y_a364b0b8bbb76df228d54d540194b5bc6}{Get\+Nodes\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает число узлов в фрагменте расчетной сетки \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid2_d_fragment_x_y_ac000c7db5e261d9e44d6aa815154c936}{Linear\+Array\+Create}} (Model\+Data\+Name model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ \mbox{\hyperlink{struct_grid2_d_fragment_x_y_a7e2a1e3217aa4c0be421e8b5e35cdfc3}{Get\+Linear\+Array2D}} (Model\+Data\+Name model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid2_d_fragment_x_y_a27697f077a041f971812da4e39843e54}{Assign\+Data}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, Model\+Data\+Name model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid2_d_fragment_x_y_ac441c9f6504a13fe74b688b3e3c746f5}{Сompose}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nz, Model\+Data\+Name model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em \&\&\&\&-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_grid2_d_fragment_x_y_a2e45a90f649e11eab51d2850ba845f99}{Get\+Data\+Size\+In\+Mb}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый фрагментом \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a941e1dac2c8b368cf4b54f047a0807a8}\label{struct_grid2_d_fragment_x_y_a941e1dac2c8b368cf4b54f047a0807a8}} 
+void {\bfseries Print\+Fragment} ()
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/--- \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a4ea66a074a6e5bea10a4dbe5f0ec519a}\label{struct_grid2_d_fragment_x_y_a4ea66a074a6e5bea10a4dbe5f0ec519a}} 
+size\+\_\+t {\bfseries fragment\+Nx}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_ac363ef5228fd147aa080c99804bd1474}\label{struct_grid2_d_fragment_x_y_ac363ef5228fd147aa080c99804bd1474}} 
+size\+\_\+t {\bfseries fragment\+Ny}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a2ecaf6ebe648e7fda1f883c164c7bdf7}\label{struct_grid2_d_fragment_x_y_a2ecaf6ebe648e7fda1f883c164c7bdf7}} 
+size\+\_\+t {\bfseries fragment\+IndX}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a68751b3ef3311ada7d858b47f85cd93f}\label{struct_grid2_d_fragment_x_y_a68751b3ef3311ada7d858b47f85cd93f}} 
+size\+\_\+t {\bfseries fragment\+IndY}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a9a15262f3207092074f57d8faca1fdef}\label{struct_grid2_d_fragment_x_y_a9a15262f3207092074f57d8faca1fdef}} 
+size\+\_\+t {\bfseries fragment\+IndZ}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_ac8f92f1b170f1094395aba724aa03b07}\label{struct_grid2_d_fragment_x_y_ac8f92f1b170f1094395aba724aa03b07}} 
+size\+\_\+t {\bfseries fragment\+Offset\+XBy\+Device}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a066d852fb31d813226430b0941a8490b}\label{struct_grid2_d_fragment_x_y_a066d852fb31d813226430b0941a8490b}} 
+size\+\_\+t {\bfseries fragment\+Offset\+YBy\+Device}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a2791cbb9a06fe951eedb5431a7b755e3}\label{struct_grid2_d_fragment_x_y_a2791cbb9a06fe951eedb5431a7b755e3}} 
+size\+\_\+t {\bfseries fragment\+Offset\+ZBy\+Device}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a44ac42375594cf830bc532cbd30539d0}\label{struct_grid2_d_fragment_x_y_a44ac42375594cf830bc532cbd30539d0}} 
+size\+\_\+t {\bfseries fragment\+Offset\+XBy\+Node}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a4dbf11f65672e3ed1095eabc17263eab}\label{struct_grid2_d_fragment_x_y_a4dbf11f65672e3ed1095eabc17263eab}} 
+size\+\_\+t {\bfseries fragment\+Offset\+YBy\+Node}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a8bb3ca4624351075abb5a534da096e5e}\label{struct_grid2_d_fragment_x_y_a8bb3ca4624351075abb5a534da096e5e}} 
+size\+\_\+t {\bfseries fragment\+Offset\+ZBy\+Node}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_aa48d9f4c243883aafecc63a4759adb47}\label{struct_grid2_d_fragment_x_y_aa48d9f4c243883aafecc63a4759adb47}} 
+size\+\_\+t {\bfseries fragment\+OffsetX}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a96309470593a56c7aed4f081a42e1a27}\label{struct_grid2_d_fragment_x_y_a96309470593a56c7aed4f081a42e1a27}} 
+size\+\_\+t {\bfseries fragment\+OffsetY}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a9805f4a1b3131545c414568f40af46b2}\label{struct_grid2_d_fragment_x_y_a9805f4a1b3131545c414568f40af46b2}} 
+size\+\_\+t {\bfseries fragment\+OffsetZ}
+\item 
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a00c80134fd475355ae8cb56064640cdb}\label{struct_grid2_d_fragment_x_y_a00c80134fd475355ae8cb56064640cdb}} 
+\mbox{\hyperlink{struct_linear_arrays2_d}{Linear\+Arrays2D}} {\bfseries linear\+Arrays2D}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Двумерный фрагмент расчетной сетки -\/ плоскость XY(грань трехмерного фрагмента) 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a27697f077a041f971812da4e39843e54}\label{struct_grid2_d_fragment_x_y_a27697f077a041f971812da4e39843e54}} 
+\index{Grid2DFragmentXY@{Grid2DFragmentXY}!AssignData@{AssignData}}
+\index{AssignData@{AssignData}!Grid2DFragmentXY@{Grid2DFragmentXY}}
+\doxysubsubsection{\texorpdfstring{AssignData()}{AssignData()}}
+{\footnotesize\ttfamily void Grid2\+DFragment\+XY\+::\+Assign\+Data (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/--- 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & \\
+\hline
+{\em nx} & \\
+\hline
+{\em ny} & \\
+\hline
+{\em model\+Data\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a2e45a90f649e11eab51d2850ba845f99}\label{struct_grid2_d_fragment_x_y_a2e45a90f649e11eab51d2850ba845f99}} 
+\index{Grid2DFragmentXY@{Grid2DFragmentXY}!GetDataSizeInMb@{GetDataSizeInMb}}
+\index{GetDataSizeInMb@{GetDataSizeInMb}!Grid2DFragmentXY@{Grid2DFragmentXY}}
+\doxysubsubsection{\texorpdfstring{GetDataSizeInMb()}{GetDataSizeInMb()}}
+{\footnotesize\ttfamily double Grid2\+DFragment\+XY\+::\+Get\+Data\+Size\+In\+Mb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает объём оперативной памяти, занимаемый фрагментом 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a7e2a1e3217aa4c0be421e8b5e35cdfc3}\label{struct_grid2_d_fragment_x_y_a7e2a1e3217aa4c0be421e8b5e35cdfc3}} 
+\index{Grid2DFragmentXY@{Grid2DFragmentXY}!GetLinearArray2D@{GetLinearArray2D}}
+\index{GetLinearArray2D@{GetLinearArray2D}!Grid2DFragmentXY@{Grid2DFragmentXY}}
+\doxysubsubsection{\texorpdfstring{GetLinearArray2D()}{GetLinearArray2D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ Grid2\+DFragment\+XY\+::\+Get\+Linear\+Array2D (\begin{DoxyParamCaption}\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$-\/-\/-\/-\/-\/--- 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em model\+Data\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_a364b0b8bbb76df228d54d540194b5bc6}\label{struct_grid2_d_fragment_x_y_a364b0b8bbb76df228d54d540194b5bc6}} 
+\index{Grid2DFragmentXY@{Grid2DFragmentXY}!GetNodesNumber@{GetNodesNumber}}
+\index{GetNodesNumber@{GetNodesNumber}!Grid2DFragmentXY@{Grid2DFragmentXY}}
+\doxysubsubsection{\texorpdfstring{GetNodesNumber()}{GetNodesNumber()}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XY\+::\+Get\+Nodes\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает число узлов в фрагменте расчетной сетки 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_ac000c7db5e261d9e44d6aa815154c936}\label{struct_grid2_d_fragment_x_y_ac000c7db5e261d9e44d6aa815154c936}} 
+\index{Grid2DFragmentXY@{Grid2DFragmentXY}!LinearArrayCreate@{LinearArrayCreate}}
+\index{LinearArrayCreate@{LinearArrayCreate}!Grid2DFragmentXY@{Grid2DFragmentXY}}
+\doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
+{\footnotesize\ttfamily void Grid2\+DFragment\+XY\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$-\/-\/-\/-\/-\/--- 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em model\+Data\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_y_ac441c9f6504a13fe74b688b3e3c746f5}\label{struct_grid2_d_fragment_x_y_ac441c9f6504a13fe74b688b3e3c746f5}} 
+\index{Grid2DFragmentXY@{Grid2DFragmentXY}!Сompose@{Сompose}}
+\index{Сompose@{Сompose}!Grid2DFragmentXY@{Grid2DFragmentXY}}
+\doxysubsubsection{\texorpdfstring{Сompose()}{Сompose()}}
+{\footnotesize\ttfamily void Grid2\+DFragment\+XY\+::Сompose (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nz,  }\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\&\&\&\&-\/-\/-\/-\/-\/-\/-\/--- 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & \\
+\hline
+{\em nx} & \\
+\hline
+{\em ny} & \\
+\hline
+{\em nz} & \\
+\hline
+{\em model\+Data\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Decompose\+Grid3\+D/Grid3\+D.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,213 @@
+\hypertarget{struct_grid_block3_d_by_device}{}\doxysection{Структура Grid\+Block3\+DBy\+Device}
+\label{struct_grid_block3_d_by_device}\index{GridBlock3DByDevice@{GridBlock3DByDevice}}
+
+
+Трехмерный блок расчетной сетки вычислительного устройства  
+
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a65d4a720d4a69018168f7e3bcc304ce9}\label{struct_grid_block3_d_by_device_a65d4a720d4a69018168f7e3bcc304ce9}} 
+{\bfseries Grid\+Block3\+DBy\+Device} (size\+\_\+t Block\+Nx, size\+\_\+t Block\+Ny, size\+\_\+t Block\+Nz, size\+\_\+t Device\+Index, std\+::string Device\+Name, size\+\_\+t Fragments\+NumX, size\+\_\+t Fragments\+NumY, size\+\_\+t Fragments\+NumZ, size\+\_\+t Device\+Offset\+YBy\+Node, size\+\_\+t Device\+OffsetY, \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$Device\+Prev=NULL, \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$Device\+Next=NULL)
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a1399452c}\label{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a1399452c}} 
+void {\bfseries Create\+Grid2\+DTransfer\+Planes\+XZ} ()
+\begin{DoxyCompactList}\small\item\em Создаёт двумерные плоскости XZ для передачи данных между вычислителями \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}{Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Create}} (Model\+Data\+Name model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e}\label{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e}} 
+\mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} $\ast$ {\bfseries Get\+Grid3\+DFragment} (size\+\_\+t indX, size\+\_\+t indY, size\+\_\+t indZ)
+\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa}{Linear\+Array\+Create}} (Model\+Data\+Name model\+Data\+Name)
+\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}{Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Print}} (size\+\_\+t transfer\+Plane\+XZIndex, size\+\_\+t fragment\+IndX, size\+\_\+t fragment\+IndZ, Model\+Data\+Name model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Выводит в консоль объект двумерной плоскости XZ для передачи данных \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1}{Assign\+Data}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nz, Model\+Data\+Name model\+Data\+Name)
+\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_a86fba401759de5197a97c7a79efac1cb}{Сompose}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nz, Model\+Data\+Name model\+Data\+Name)
+\item 
+double \mbox{\hyperlink{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c}{Get\+Data\+Size\+In\+Mb}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a9c7cb50c07cd6b06c11272b0dd2a077e}\label{struct_grid_block3_d_by_device_a9c7cb50c07cd6b06c11272b0dd2a077e}} 
+void {\bfseries Print\+Device\+Name} (\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$grid\+Block3\+DBy\+Device)
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97}\label{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97}} 
+void {\bfseries Print\+Device} (Grid3\+DPrint\+Detalisation grid3\+DPrint\+Detalisation)
+\end{DoxyCompactItemize}
+\doxysubsection*{Открытые атрибуты}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ae25747d82190507e7134ad363c65e758}\label{struct_grid_block3_d_by_device_ae25747d82190507e7134ad363c65e758}} 
+size\+\_\+t {\bfseries block\+Nx}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ab4c339d9f8519a1b83a98c807b0f4d29}\label{struct_grid_block3_d_by_device_ab4c339d9f8519a1b83a98c807b0f4d29}} 
+size\+\_\+t {\bfseries block\+Ny}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_aecd539b05ae53c0e28f4f96496ab0f75}\label{struct_grid_block3_d_by_device_aecd539b05ae53c0e28f4f96496ab0f75}} 
+size\+\_\+t {\bfseries block\+Nz}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a8355c69faffe60d5506a2296931ef359}\label{struct_grid_block3_d_by_device_a8355c69faffe60d5506a2296931ef359}} 
+size\+\_\+t {\bfseries device\+Index}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_adf66f0b8da35e4860c720d4c382b7d72}\label{struct_grid_block3_d_by_device_adf66f0b8da35e4860c720d4c382b7d72}} 
+std\+::string {\bfseries device\+Name}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a61edbadd98f1be9ebb9500ea710aa6f0}\label{struct_grid_block3_d_by_device_a61edbadd98f1be9ebb9500ea710aa6f0}} 
+size\+\_\+t {\bfseries fragments\+NumX}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ac50d1af068c6a907a243bcb7938d708e}\label{struct_grid_block3_d_by_device_ac50d1af068c6a907a243bcb7938d708e}} 
+size\+\_\+t {\bfseries fragments\+NumY}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a660d9be95afe3caf38d721f824bf8e00}\label{struct_grid_block3_d_by_device_a660d9be95afe3caf38d721f824bf8e00}} 
+size\+\_\+t {\bfseries fragments\+NumZ}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a90c3d94997c781b17862673d49566ccc}\label{struct_grid_block3_d_by_device_a90c3d94997c781b17862673d49566ccc}} 
+size\+\_\+t {\bfseries device\+Offset\+YBy\+Node}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a9507d699102838b035c9b29eb24a55d9}\label{struct_grid_block3_d_by_device_a9507d699102838b035c9b29eb24a55d9}} 
+size\+\_\+t {\bfseries device\+OffsetY}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ab448c919f7e659dc1cbba1fe238a3908}\label{struct_grid_block3_d_by_device_ab448c919f7e659dc1cbba1fe238a3908}} 
+\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$ {\bfseries device\+Prev}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a7f787a27764ee7ffcbf7cd164becdd86}\label{struct_grid_block3_d_by_device_a7f787a27764ee7ffcbf7cd164becdd86}} 
+\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$ {\bfseries device\+Next}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a48527d2bba9f068bd721914015661766}\label{struct_grid_block3_d_by_device_a48527d2bba9f068bd721914015661766}} 
+size\+\_\+t {\bfseries fragment\+Nx}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ad94f255008969b401006658993505834}\label{struct_grid_block3_d_by_device_ad94f255008969b401006658993505834}} 
+size\+\_\+t {\bfseries fragment\+Ny}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a493d5d0247a55a7fe507b973b9c36f3c}\label{struct_grid_block3_d_by_device_a493d5d0247a55a7fe507b973b9c36f3c}} 
+size\+\_\+t {\bfseries fragment\+Nz}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a292cf7543098a0e480f0fdc9c849c676}\label{struct_grid_block3_d_by_device_a292cf7543098a0e480f0fdc9c849c676}} 
+size\+\_\+t {\bfseries fragment\+Nxl}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a40c17647ff2b48288fa3cd552806dc1b}\label{struct_grid_block3_d_by_device_a40c17647ff2b48288fa3cd552806dc1b}} 
+size\+\_\+t {\bfseries fragment\+Nyl}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_abb49ed4e4b74659dc0a9be1cb58d581e}\label{struct_grid_block3_d_by_device_abb49ed4e4b74659dc0a9be1cb58d581e}} 
+size\+\_\+t {\bfseries fragment\+Nzl}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_af522dd79f2468d3360ed7f91ba57a93d}\label{struct_grid_block3_d_by_device_af522dd79f2468d3360ed7f91ba57a93d}} 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} $>$ $>$ $>$ {\bfseries fragments}
+\item 
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ae8b082b95ebc81cc9649a6587d15cf0f}\label{struct_grid_block3_d_by_device_ae8b082b95ebc81cc9649a6587d15cf0f}} 
+std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTransfer\+Plane\+XZ}} $>$ {\bfseries grid2\+DTransfer\+Planes\+XZ}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Трехмерный блок расчетной сетки вычислительного устройства 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1}\label{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!AssignData@{AssignData}}
+\index{AssignData@{AssignData}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{AssignData()}{AssignData()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Assign\+Data (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nz,  }\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{struct_grid_block3_d_by_device_autotoc_md8}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid_block3_d_by_device_autotoc_md8}
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & \\
+\hline
+{\em nx} & \\
+\hline
+{\em ny} & \\
+\hline
+{\em nz} & \\
+\hline
+{\em model\+Data\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c}\label{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!GetDataSizeInMb@{GetDataSizeInMb}}
+\index{GetDataSizeInMb@{GetDataSizeInMb}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{GetDataSizeInMb()}{GetDataSizeInMb()}}
+{\footnotesize\ttfamily double Grid\+Block3\+DBy\+Device\+::\+Get\+Data\+Size\+In\+Mb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} 
+
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}\label{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!Grid2DTransferPlanesXZLinearArrayCreate@{Grid2DTransferPlanesXZLinearArrayCreate}}
+\index{Grid2DTransferPlanesXZLinearArrayCreate@{Grid2DTransferPlanesXZLinearArrayCreate}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{Grid2DTransferPlanesXZLinearArrayCreate()}{Grid2DTransferPlanesXZLinearArrayCreate()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Create (\begin{DoxyParamCaption}\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em model\+Data\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}\label{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!Grid2DTransferPlanesXZLinearArrayPrint@{Grid2DTransferPlanesXZLinearArrayPrint}}
+\index{Grid2DTransferPlanesXZLinearArrayPrint@{Grid2DTransferPlanesXZLinearArrayPrint}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{Grid2DTransferPlanesXZLinearArrayPrint()}{Grid2DTransferPlanesXZLinearArrayPrint()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Print (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{transfer\+Plane\+XZIndex,  }\item[{size\+\_\+t}]{fragment\+IndX,  }\item[{size\+\_\+t}]{fragment\+IndZ,  }\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит в консоль объект двумерной плоскости XZ для передачи данных 
+
+~\newline
+ 
+\begin{DoxyParams}{Аргументы}
+{\em transfer\+Plane\+XZIndex} & Индекс переходного слоя\\
+\hline
+{\em fragment\+IndX} & Индекс фрагмента переходного слоя по OX\\
+\hline
+{\em fragment\+IndZ} & Индекс фрагмента переходного слоя по OZ\\
+\hline
+{\em model\+Data\+Name} & Тип массива данных\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa}\label{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!LinearArrayCreate@{LinearArrayCreate}}
+\index{LinearArrayCreate@{LinearArrayCreate}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{struct_grid_block3_d_by_device_autotoc_md7}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid_block3_d_by_device_autotoc_md7}
+
+\begin{DoxyParams}{Аргументы}
+{\em model\+Data\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a86fba401759de5197a97c7a79efac1cb}\label{struct_grid_block3_d_by_device_a86fba401759de5197a97c7a79efac1cb}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!Сompose@{Сompose}}
+\index{Сompose@{Сompose}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{Сompose()}{Сompose()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::Сompose (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nz,  }\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\hypertarget{struct_grid_block3_d_by_device_autotoc_md9}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid_block3_d_by_device_autotoc_md9}
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & \\
+\hline
+{\em nx} & \\
+\hline
+{\em ny} & \\
+\hline
+{\em nz} & \\
+\hline
+{\em model\+Data\+Name} & \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+Decompose\+Grid3\+D/Grid3\+D.\+cpp\end{DoxyCompactItemize}

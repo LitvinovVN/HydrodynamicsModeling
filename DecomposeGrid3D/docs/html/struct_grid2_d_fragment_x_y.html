@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DecomposeGrid3D: Структура Grid2DFragmentXY</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DecomposeGrid3D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Декомпозиция расчетной сетки</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="struct_grid2_d_fragment_x_y-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Структура Grid2DFragmentXY</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Двумерный фрагмент расчетной сетки - плоскость XY(грань трехмерного фрагмента)  
+ <a href="struct_grid2_d_fragment_x_y.html#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a8f9eb6ece38306ffc7cc6aebbb068aab"><td class="memItemLeft" align="right" valign="top"><a id="a8f9eb6ece38306ffc7cc6aebbb068aab" name="a8f9eb6ece38306ffc7cc6aebbb068aab"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Grid2DFragmentXY</b> (size_t FragmentNx, size_t FragmentNy, size_t FragmentIndX, size_t FragmentIndY, size_t FragmentIndZ, size_t FragmentOffsetXByDevice, size_t FragmentOffsetYByDevice, size_t FragmentOffsetZByDevice, size_t FragmentOffsetXByNode, size_t FragmentOffsetYByNode, size_t FragmentOffsetZByNode, size_t FragmentOffsetX, size_t FragmentOffsetY, size_t FragmentOffsetZ)</td></tr>
+<tr class="separator:a8f9eb6ece38306ffc7cc6aebbb068aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364b0b8bbb76df228d54d540194b5bc6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_x_y.html#a364b0b8bbb76df228d54d540194b5bc6">GetNodesNumber</a> ()</td></tr>
+<tr class="memdesc:a364b0b8bbb76df228d54d540194b5bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает число узлов в фрагменте расчетной сетки  <a href="struct_grid2_d_fragment_x_y.html#a364b0b8bbb76df228d54d540194b5bc6">Подробнее...</a><br /></td></tr>
+<tr class="separator:a364b0b8bbb76df228d54d540194b5bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac000c7db5e261d9e44d6aa815154c936"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_x_y.html#ac000c7db5e261d9e44d6aa815154c936">LinearArrayCreate</a> (ModelDataName modelDataName)</td></tr>
+<tr class="memdesc:ac000c7db5e261d9e44d6aa815154c936"><td class="mdescLeft">&#160;</td><td class="mdescRight">$$$$-----&mdash;  <a href="struct_grid2_d_fragment_x_y.html#ac000c7db5e261d9e44d6aa815154c936">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac000c7db5e261d9e44d6aa815154c936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e2a1e3217aa4c0be421e8b5e35cdfc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linear_array2_d.html">LinearArray2D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_x_y.html#a7e2a1e3217aa4c0be421e8b5e35cdfc3">GetLinearArray2D</a> (ModelDataName modelDataName)</td></tr>
+<tr class="memdesc:a7e2a1e3217aa4c0be421e8b5e35cdfc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">$$$$-----&mdash;  <a href="struct_grid2_d_fragment_x_y.html#a7e2a1e3217aa4c0be421e8b5e35cdfc3">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7e2a1e3217aa4c0be421e8b5e35cdfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27697f077a041f971812da4e39843e54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_x_y.html#a27697f077a041f971812da4e39843e54">AssignData</a> (double *data, size_t nx, size_t ny, ModelDataName modelDataName)</td></tr>
+<tr class="memdesc:a27697f077a041f971812da4e39843e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">$$$$------&mdash;  <a href="struct_grid2_d_fragment_x_y.html#a27697f077a041f971812da4e39843e54">Подробнее...</a><br /></td></tr>
+<tr class="separator:a27697f077a041f971812da4e39843e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac441c9f6504a13fe74b688b3e3c746f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_x_y.html#ac441c9f6504a13fe74b688b3e3c746f5">Сompose</a> (double *data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)</td></tr>
+<tr class="memdesc:ac441c9f6504a13fe74b688b3e3c746f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">&amp;&amp;&amp;&amp;-------&mdash;  <a href="struct_grid2_d_fragment_x_y.html#ac441c9f6504a13fe74b688b3e3c746f5">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac441c9f6504a13fe74b688b3e3c746f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e45a90f649e11eab51d2850ba845f99"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_x_y.html#a2e45a90f649e11eab51d2850ba845f99">GetDataSizeInMb</a> ()</td></tr>
+<tr class="memdesc:a2e45a90f649e11eab51d2850ba845f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает объём оперативной памяти, занимаемый фрагментом  <a href="struct_grid2_d_fragment_x_y.html#a2e45a90f649e11eab51d2850ba845f99">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2e45a90f649e11eab51d2850ba845f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941e1dac2c8b368cf4b54f047a0807a8"><td class="memItemLeft" align="right" valign="top"><a id="a941e1dac2c8b368cf4b54f047a0807a8" name="a941e1dac2c8b368cf4b54f047a0807a8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintFragment</b> ()</td></tr>
+<tr class="memdesc:a941e1dac2c8b368cf4b54f047a0807a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">$$$$----&mdash; <br /></td></tr>
+<tr class="separator:a941e1dac2c8b368cf4b54f047a0807a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a4ea66a074a6e5bea10a4dbe5f0ec519a"><td class="memItemLeft" align="right" valign="top"><a id="a4ea66a074a6e5bea10a4dbe5f0ec519a" name="a4ea66a074a6e5bea10a4dbe5f0ec519a"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentNx</b></td></tr>
+<tr class="separator:a4ea66a074a6e5bea10a4dbe5f0ec519a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac363ef5228fd147aa080c99804bd1474"><td class="memItemLeft" align="right" valign="top"><a id="ac363ef5228fd147aa080c99804bd1474" name="ac363ef5228fd147aa080c99804bd1474"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentNy</b></td></tr>
+<tr class="separator:ac363ef5228fd147aa080c99804bd1474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ecaf6ebe648e7fda1f883c164c7bdf7"><td class="memItemLeft" align="right" valign="top"><a id="a2ecaf6ebe648e7fda1f883c164c7bdf7" name="a2ecaf6ebe648e7fda1f883c164c7bdf7"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentIndX</b></td></tr>
+<tr class="separator:a2ecaf6ebe648e7fda1f883c164c7bdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68751b3ef3311ada7d858b47f85cd93f"><td class="memItemLeft" align="right" valign="top"><a id="a68751b3ef3311ada7d858b47f85cd93f" name="a68751b3ef3311ada7d858b47f85cd93f"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentIndY</b></td></tr>
+<tr class="separator:a68751b3ef3311ada7d858b47f85cd93f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a15262f3207092074f57d8faca1fdef"><td class="memItemLeft" align="right" valign="top"><a id="a9a15262f3207092074f57d8faca1fdef" name="a9a15262f3207092074f57d8faca1fdef"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentIndZ</b></td></tr>
+<tr class="separator:a9a15262f3207092074f57d8faca1fdef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8f92f1b170f1094395aba724aa03b07"><td class="memItemLeft" align="right" valign="top"><a id="ac8f92f1b170f1094395aba724aa03b07" name="ac8f92f1b170f1094395aba724aa03b07"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetXByDevice</b></td></tr>
+<tr class="separator:ac8f92f1b170f1094395aba724aa03b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a066d852fb31d813226430b0941a8490b"><td class="memItemLeft" align="right" valign="top"><a id="a066d852fb31d813226430b0941a8490b" name="a066d852fb31d813226430b0941a8490b"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetYByDevice</b></td></tr>
+<tr class="separator:a066d852fb31d813226430b0941a8490b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2791cbb9a06fe951eedb5431a7b755e3"><td class="memItemLeft" align="right" valign="top"><a id="a2791cbb9a06fe951eedb5431a7b755e3" name="a2791cbb9a06fe951eedb5431a7b755e3"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetZByDevice</b></td></tr>
+<tr class="separator:a2791cbb9a06fe951eedb5431a7b755e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44ac42375594cf830bc532cbd30539d0"><td class="memItemLeft" align="right" valign="top"><a id="a44ac42375594cf830bc532cbd30539d0" name="a44ac42375594cf830bc532cbd30539d0"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetXByNode</b></td></tr>
+<tr class="separator:a44ac42375594cf830bc532cbd30539d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dbf11f65672e3ed1095eabc17263eab"><td class="memItemLeft" align="right" valign="top"><a id="a4dbf11f65672e3ed1095eabc17263eab" name="a4dbf11f65672e3ed1095eabc17263eab"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetYByNode</b></td></tr>
+<tr class="separator:a4dbf11f65672e3ed1095eabc17263eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb3ca4624351075abb5a534da096e5e"><td class="memItemLeft" align="right" valign="top"><a id="a8bb3ca4624351075abb5a534da096e5e" name="a8bb3ca4624351075abb5a534da096e5e"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetZByNode</b></td></tr>
+<tr class="separator:a8bb3ca4624351075abb5a534da096e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48d9f4c243883aafecc63a4759adb47"><td class="memItemLeft" align="right" valign="top"><a id="aa48d9f4c243883aafecc63a4759adb47" name="aa48d9f4c243883aafecc63a4759adb47"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetX</b></td></tr>
+<tr class="separator:aa48d9f4c243883aafecc63a4759adb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96309470593a56c7aed4f081a42e1a27"><td class="memItemLeft" align="right" valign="top"><a id="a96309470593a56c7aed4f081a42e1a27" name="a96309470593a56c7aed4f081a42e1a27"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetY</b></td></tr>
+<tr class="separator:a96309470593a56c7aed4f081a42e1a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9805f4a1b3131545c414568f40af46b2"><td class="memItemLeft" align="right" valign="top"><a id="a9805f4a1b3131545c414568f40af46b2" name="a9805f4a1b3131545c414568f40af46b2"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>fragmentOffsetZ</b></td></tr>
+<tr class="separator:a9805f4a1b3131545c414568f40af46b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00c80134fd475355ae8cb56064640cdb"><td class="memItemLeft" align="right" valign="top"><a id="a00c80134fd475355ae8cb56064640cdb" name="a00c80134fd475355ae8cb56064640cdb"></a>
+<a class="el" href="struct_linear_arrays2_d.html">LinearArrays2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>linearArrays2D</b></td></tr>
+<tr class="separator:a00c80134fd475355ae8cb56064640cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Двумерный фрагмент расчетной сетки - плоскость XY(грань трехмерного фрагмента) </p>
+</div><h2 class="groupheader">Методы</h2>
+<a id="a27697f077a041f971812da4e39843e54" name="a27697f077a041f971812da4e39843e54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27697f077a041f971812da4e39843e54">&#9670;&nbsp;</a></span>AssignData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid2DFragmentXY::AssignData </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ny</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ModelDataName&#160;</td>
+          <td class="paramname"><em>modelDataName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>$$$$------&mdash; </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">nx</td><td></td></tr>
+    <tr><td class="paramname">ny</td><td></td></tr>
+    <tr><td class="paramname">modelDataName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e45a90f649e11eab51d2850ba845f99" name="a2e45a90f649e11eab51d2850ba845f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e45a90f649e11eab51d2850ba845f99">&#9670;&nbsp;</a></span>GetDataSizeInMb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Grid2DFragmentXY::GetDataSizeInMb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает объём оперативной памяти, занимаемый фрагментом </p>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a7e2a1e3217aa4c0be421e8b5e35cdfc3" name="a7e2a1e3217aa4c0be421e8b5e35cdfc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e2a1e3217aa4c0be421e8b5e35cdfc3">&#9670;&nbsp;</a></span>GetLinearArray2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_linear_array2_d.html">LinearArray2D</a> * Grid2DFragmentXY::GetLinearArray2D </td>
+          <td>(</td>
+          <td class="paramtype">ModelDataName&#160;</td>
+          <td class="paramname"><em>modelDataName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>$$$$-----&mdash; </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">modelDataName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a364b0b8bbb76df228d54d540194b5bc6" name="a364b0b8bbb76df228d54d540194b5bc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364b0b8bbb76df228d54d540194b5bc6">&#9670;&nbsp;</a></span>GetNodesNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Grid2DFragmentXY::GetNodesNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает число узлов в фрагменте расчетной сетки </p>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ac000c7db5e261d9e44d6aa815154c936" name="ac000c7db5e261d9e44d6aa815154c936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac000c7db5e261d9e44d6aa815154c936">&#9670;&nbsp;</a></span>LinearArrayCreate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid2DFragmentXY::LinearArrayCreate </td>
+          <td>(</td>
+          <td class="paramtype">ModelDataName&#160;</td>
+          <td class="paramname"><em>modelDataName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>$$$$-----&mdash; </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">modelDataName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac441c9f6504a13fe74b688b3e3c746f5" name="ac441c9f6504a13fe74b688b3e3c746f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac441c9f6504a13fe74b688b3e3c746f5">&#9670;&nbsp;</a></span>Сompose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid2DFragmentXY::Сompose </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>ny</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ModelDataName&#160;</td>
+          <td class="paramname"><em>modelDataName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>&amp;&amp;&amp;&amp;-------&mdash; </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">nx</td><td></td></tr>
+    <tr><td class="paramname">ny</td><td></td></tr>
+    <tr><td class="paramname">nz</td><td></td></tr>
+    <tr><td class="paramname">modelDataName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>DecomposeGrid3D/Grid3D.cpp</li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>
