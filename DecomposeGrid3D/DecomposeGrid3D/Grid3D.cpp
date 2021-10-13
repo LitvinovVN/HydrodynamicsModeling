@@ -1852,15 +1852,8 @@ struct Grid3DFragment
 		}
 	}
 
-	/// <summary>
-	/// ----------------------
-	/// </summary>
-	/// <param name="data"></param>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="nz"></param>
-	/// <param name="modelDataName"></param>
-	void Сompose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+	
+	void Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentNz; k++)
 		{
