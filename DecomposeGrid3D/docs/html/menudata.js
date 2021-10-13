@@ -36,8 +36,10 @@ var menudata={children:[
 {text:"g",url:"functions.html#index_g"},
 {text:"i",url:"functions.html#index_i"},
 {text:"l",url:"functions.html#index_l"},
+{text:"n",url:"functions.html#index_n"},
 {text:"p",url:"functions.html#index_p"},
-{text:"s",url:"functions.html#index_s"}]},
+{text:"s",url:"functions.html#index_s"},
+{text:"~",url:"functions.html#index__7E"}]},
 {text:"Функции",url:"functions_func.html",children:[
 {text:"a",url:"functions_func.html#index_a"},
 {text:"c",url:"functions_func.html#index_c"},
@@ -46,4 +48,6 @@ var menudata={children:[
 {text:"i",url:"functions_func.html#index_i"},
 {text:"l",url:"functions_func.html#index_l"},
 {text:"p",url:"functions_func.html#index_p"},
-{text:"s",url:"functions_func.html#index_s"}]}]}]}]}
+{text:"s",url:"functions_func.html#index_s"},
+{text:"~",url:"functions_func.html#index__7E"}]},
+{text:"Переменные",url:"functions_vars.html"}]}]}]}

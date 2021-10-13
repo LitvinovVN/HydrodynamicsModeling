@@ -1,4 +1,15 @@
 var searchData=
 [
-  ['сompose_0',['Сompose',['../struct_grid2_d_fragment_x_y.html#ac441c9f6504a13fe74b688b3e3c746f5',1,'Grid2DFragmentXY::Сompose()'],['../struct_grid3_d_fragment.html#a8a1315100b7646fecf3269304a22fdb3',1,'Grid3DFragment::Сompose()'],['../struct_grid_block3_d_by_device.html#a86fba401759de5197a97c7a79efac1cb',1,'GridBlock3DByDevice::Сompose()'],['../struct_grid_block3_d_by_node.html#abdd30106f7b9ceb4e11302d3a8c789d2',1,'GridBlock3DByNode::Сompose()'],['../struct_grid3_d.html#aa36116fb954935fa8834a9379797853b',1,'Grid3D::Сompose()']]]
+  ['setelement_0',['SetElement',['../struct_linear_array1_d.html#ac5d01affe013d1ee28a6fe3ac748837f',1,'LinearArray1D::SetElement()'],['../struct_linear_array2_d.html#a66950746a6b4db014d536fc4c1c7b1b2',1,'LinearArray2D::SetElement()'],['../struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494',1,'LinearArray3D::SetElement()'],['../struct_grid2_d_fragment_y_z.html#a2c7ef6b1339ebc5fb1565d7fa60d8319',1,'Grid2DFragmentYZ::SetElement()']]],
+  ['setlayerz_1',['SetLayerZ',['../struct_linear_array3_d.html#a8644628c0a94491c0a500ebc2f18ad43',1,'LinearArray3D::SetLayerZ(size_t IndZ, double *layerZ)'],['../struct_linear_array3_d.html#ae60959d99663da6fdd105156a3a3da1a',1,'LinearArray3D::SetLayerZ(size_t IndZ, LinearArray2D *layerZ)']]],
+  ['setlinex_2',['SetLineX',['../struct_linear_array2_d.html#a7cb21e4f68165bbb4ab35a98d4052f66',1,'LinearArray2D::SetLineX(size_t IndY, LinearArray1D *linAr1D)'],['../struct_linear_array2_d.html#ab13ccd01e7f046921b0a52fad9bcd146',1,'LinearArray2D::SetLineX(size_t IndY, double *linArray)'],['../struct_linear_array3_d.html#ace7454ea25ff6bd4a42984226722ef77',1,'LinearArray3D::SetLineX(size_t IndY, size_t IndZ, LinearArray1D *linAr1D)'],['../struct_linear_array3_d.html#aa481194b84e9e6452c472a952edaba5c',1,'LinearArray3D::SetLineX(size_t IndY, size_t IndZ, double *linArray)']]],
+  ['setplanexoyfirst_3',['SetPlaneXOYFirst',['../struct_linear_array3_d.html#adc32b6dcf56e9258d7935b455d409b1c',1,'LinearArray3D']]],
+  ['setplanexoylast_4',['SetPlaneXOYLast',['../struct_linear_array3_d.html#a2b22c06d1e4538c5359298e99fff8b7d',1,'LinearArray3D']]],
+  ['setplanexozfirst_5',['SetPlaneXOZFirst',['../struct_linear_array3_d.html#aae69f2ee7b19dd2546fd93b69b614e10',1,'LinearArray3D']]],
+  ['setplanexozlast_6',['SetPlaneXOZLast',['../struct_linear_array3_d.html#a360a8130de7a752f262ad3f04cbe43a3',1,'LinearArray3D']]],
+  ['setplaneyozfirst_7',['SetPlaneYOZFirst',['../struct_linear_array3_d.html#a053cded1f842783be9f700a9fad9a660',1,'LinearArray3D']]],
+  ['setplaneyozlast_8',['SetPlaneYOZLast',['../struct_linear_array3_d.html#aa627c8d40744fe943da24dd0352067a2',1,'LinearArray3D']]],
+  ['setprevnextpointersfordeviceblocks_9',['SetPrevNextPointersForDeviceBlocks',['../struct_grid3_d.html#aecb5acb358038cb804276bc887649d22',1,'Grid3D']]],
+  ['simplestatistics_10',['SimpleStatistics',['../struct_simple_statistics.html',1,'']]],
+  ['sort_11',['sort',['../struct_simple_statistics.html#acee3acfeb29d148d5fa9c7f2e7c4e6ae',1,'SimpleStatistics']]]
 ];

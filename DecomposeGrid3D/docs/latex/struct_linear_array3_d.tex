@@ -2,7 +2,7 @@
 \label{struct_linear_array3_d}\index{LinearArray3D@{LinearArray3D}}
 
 
-\&\&\&\&-\/-\/-\/-\/-\/-\/-\/-\/-\/---  
+Линейный массив, описывающий трёхмерную область  
 
 
 \doxysubsection*{Открытые члены}
@@ -10,13 +10,40 @@
 \item 
 \mbox{\Hypertarget{struct_linear_array3_d_a9d568f0f1e93dca24e1ad31feb8c6c3b}\label{struct_linear_array3_d_a9d568f0f1e93dca24e1ad31feb8c6c3b}} 
 {\bfseries Linear\+Array3D} (size\+\_\+t Nx, size\+\_\+t Ny, size\+\_\+t Nz)
-\item 
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_linear_array3_d_acf867819aebce938c3939d24b97d8dc7}\label{struct_linear_array3_d_acf867819aebce938c3939d24b97d8dc7}} 
+{\bfseries $\sim$\+Linear\+Array3D} ()
+\begin{DoxyCompactList}\small\item\em Деструктор \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_linear_array3_d_ac85d2681f17ec448cbb6bd718467fc43}\label{struct_linear_array3_d_ac85d2681f17ec448cbb6bd718467fc43}} 
+void {\bfseries Init\+Linear\+Array3\+DBy\+Value} (double value)
+\begin{DoxyCompactList}\small\item\em Инициализирует массив data указанным значением \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_linear_array3_d_a9ef9ae0a2ee367e585eb7aae988809b2}\label{struct_linear_array3_d_a9ef9ae0a2ee367e585eb7aae988809b2}} 
+void {\bfseries Init\+Linear\+Array3\+DBy\+Global\+Indexes} ()
+\begin{DoxyCompactList}\small\item\em Инициализирует массив data глобальными индексами \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_linear_array3_d_ad93ba8b8757779f0fd84dac0e376fe94}{Is\+Equal}} (\mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}} $\ast$lin\+Ar)
+\begin{DoxyCompactList}\small\item\em Проверяет массивы на равенство (поэлементно) \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{struct_linear_array3_d_a45e4284f3fba85b6052c60a9a7987c60}{Get\+Index}} (size\+\_\+t IndX, size\+\_\+t IndY, size\+\_\+t IndZ)
 \begin{DoxyCompactList}\small\item\em Возвращает индекс элемента массива данных по индексам элемента в фрагменте \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_linear_array3_d_a4bf71d4d7abd65c68edc96b782e4b87b}{Get\+Element}} (size\+\_\+t IndX, size\+\_\+t IndY, size\+\_\+t IndZ)
 \begin{DoxyCompactList}\small\item\em Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_linear_array3_d_a9cccbfdc509fa40807ba9b0be9d3d494}{Set\+Element}} (size\+\_\+t IndX, size\+\_\+t IndY, size\+\_\+t IndZ, double Value)
 \begin{DoxyCompactList}\small\item\em Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array3_d_ad24888523c27843fd804b48bfb589f7f}{Get\+LineX}} (size\+\_\+t IndY, size\+\_\+t IndZ, \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} $\ast$lin\+Ar1D)
+\begin{DoxyCompactList}\small\item\em Заполняет объект \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array3_d_ada8a96b00f998dbf866a3943ab4ebf6e}{Get\+LineX}} (size\+\_\+t IndY, size\+\_\+t IndZ, double $\ast$lin\+Array)
+\begin{DoxyCompactList}\small\item\em Заполняет массив данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array3_d_ace7454ea25ff6bd4a42984226722ef77}{Set\+LineX}} (size\+\_\+t IndY, size\+\_\+t IndZ, \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} $\ast$lin\+Ar1D)
+\begin{DoxyCompactList}\small\item\em Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array3_d_aa481194b84e9e6452c472a952edaba5c}{Set\+LineX}} (size\+\_\+t IndY, size\+\_\+t IndZ, double $\ast$lin\+Array)
+\begin{DoxyCompactList}\small\item\em Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array3_d_a91f3d4c8513571292fbe2c42a3ea427b}{Get\+LayerZ}} (size\+\_\+t IndZ, double $\ast$layerZ)
+\begin{DoxyCompactList}\small\item\em Заполняет двумерный массив layerZ значениями указанного слоя z \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array3_d_a57e108487cb0988eaf229cc54ad907d9}{Get\+LayerZ}} (size\+\_\+t IndZ, \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$layerZ)
+\begin{DoxyCompactList}\small\item\em Заполняет двумерный массив layerZ значениями указанного слоя z \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array3_d_a8644628c0a94491c0a500ebc2f18ad43}{Set\+LayerZ}} (size\+\_\+t IndZ, double $\ast$layerZ)
+\begin{DoxyCompactList}\small\item\em Заполняет указанный слой z значениями двумерного массива layerZ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array3_d_ae60959d99663da6fdd105156a3a3da1a}{Set\+LayerZ}} (size\+\_\+t IndZ, \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$layerZ)
+\begin{DoxyCompactList}\small\item\em Заполняет указанный слой z значениями двумерного массива layerZ \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_linear_array3_d_ac5039a8b58b25c1831826ed25dad982e}{Linear\+Array3\+DTrasfer\+XOYForward}} (\mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}} $\ast$linear\+Array3\+DNext)
 \begin{DoxyCompactList}\small\item\em Передает массив данных (плоскость XOY) между фрагментами вперед \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_linear_array3_d_ad6113116ad0c13d1f7b55ed9dfb93fbe}{Linear\+Array3\+DTrasfer\+XOYBack}} (\mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}} $\ast$linear\+Array3\+DPrev)
@@ -68,20 +95,20 @@ void \mbox{\hyperlink{struct_linear_array3_d_aa8d7e043df8ebb822c0b9342f9c87a59}{
 \item 
 \mbox{\Hypertarget{struct_linear_array3_d_a24bf915713fe836739e225eb668c640a}\label{struct_linear_array3_d_a24bf915713fe836739e225eb668c640a}} 
 size\+\_\+t {\bfseries nx}
-\item 
+\begin{DoxyCompactList}\small\item\em число узлов в фрагменте по оси Ox \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{struct_linear_array3_d_a555ff840006b4f5ab75a4a99b95a44e5}\label{struct_linear_array3_d_a555ff840006b4f5ab75a4a99b95a44e5}} 
 size\+\_\+t {\bfseries ny}
-\item 
+\begin{DoxyCompactList}\small\item\em число узлов в фрагменте по оси Oy \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{struct_linear_array3_d_a15c968b5cf739e8a6920e4afa73edebe}\label{struct_linear_array3_d_a15c968b5cf739e8a6920e4afa73edebe}} 
 size\+\_\+t {\bfseries nz}
-\item 
+\begin{DoxyCompactList}\small\item\em число узлов в фрагменте по оси Oz \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{struct_linear_array3_d_a818286812c34c98d0fbf651ef092d445}\label{struct_linear_array3_d_a818286812c34c98d0fbf651ef092d445}} 
 double $\ast$ {\bfseries data}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em указатель на массив данных \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-\&\&\&\&-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+Линейный массив, описывающий трёхмерную область 
 
 \doxysubsection{Методы}
 \mbox{\Hypertarget{struct_linear_array3_d_a25b92f1c301b79b48b9b11b8fd7521d2}\label{struct_linear_array3_d_a25b92f1c301b79b48b9b11b8fd7521d2}} 
@@ -141,6 +168,78 @@ double $\ast$ {\bfseries data}
 \begin{DoxyReturn}{Возвращает}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{struct_linear_array3_d_a91f3d4c8513571292fbe2c42a3ea427b}\label{struct_linear_array3_d_a91f3d4c8513571292fbe2c42a3ea427b}} 
+\index{LinearArray3D@{LinearArray3D}!GetLayerZ@{GetLayerZ}}
+\index{GetLayerZ@{GetLayerZ}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{GetLayerZ()}{GetLayerZ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Linear\+Array3\+D\+::\+Get\+LayerZ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndZ,  }\item[{double $\ast$}]{layerZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет двумерный массив layerZ значениями указанного слоя z 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndZ} & \\
+\hline
+{\em layerZ} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array3_d_a57e108487cb0988eaf229cc54ad907d9}\label{struct_linear_array3_d_a57e108487cb0988eaf229cc54ad907d9}} 
+\index{LinearArray3D@{LinearArray3D}!GetLayerZ@{GetLayerZ}}
+\index{GetLayerZ@{GetLayerZ}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{GetLayerZ()}{GetLayerZ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Linear\+Array3\+D\+::\+Get\+LayerZ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndZ,  }\item[{\mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$}]{layerZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет двумерный массив layerZ значениями указанного слоя z 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndZ} & \\
+\hline
+{\em layerZ} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array3_d_ada8a96b00f998dbf866a3943ab4ebf6e}\label{struct_linear_array3_d_ada8a96b00f998dbf866a3943ab4ebf6e}} 
+\index{LinearArray3D@{LinearArray3D}!GetLineX@{GetLineX}}
+\index{GetLineX@{GetLineX}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{GetLineX()}{GetLineX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Linear\+Array3\+D\+::\+Get\+LineX (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndY,  }\item[{size\+\_\+t}]{IndZ,  }\item[{double $\ast$}]{lin\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет массив данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndY} & \\
+\hline
+{\em IndZ} & \\
+\hline
+{\em lin\+Array} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array3_d_ad24888523c27843fd804b48bfb589f7f}\label{struct_linear_array3_d_ad24888523c27843fd804b48bfb589f7f}} 
+\index{LinearArray3D@{LinearArray3D}!GetLineX@{GetLineX}}
+\index{GetLineX@{GetLineX}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{GetLineX()}{GetLineX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Linear\+Array3\+D\+::\+Get\+LineX (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndY,  }\item[{size\+\_\+t}]{IndZ,  }\item[{\mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} $\ast$}]{lin\+Ar1D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет объект \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndY} & \\
+\hline
+{\em IndZ} & \\
+\hline
+{\em lin\+Ar1D} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_ae130db9dca6bede6b88bfbe399f65b57}\label{struct_linear_array3_d_ae130db9dca6bede6b88bfbe399f65b57}} 
 \index{LinearArray3D@{LinearArray3D}!GetPlaneXOYFirst@{GetPlaneXOYFirst}}
 \index{GetPlaneXOYFirst@{GetPlaneXOYFirst}!LinearArray3D@{LinearArray3D}}
@@ -231,6 +330,24 @@ double $\ast$ {\bfseries data}
 {\em plane\+YOZ} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array3_d_ad93ba8b8757779f0fd84dac0e376fe94}\label{struct_linear_array3_d_ad93ba8b8757779f0fd84dac0e376fe94}} 
+\index{LinearArray3D@{LinearArray3D}!IsEqual@{IsEqual}}
+\index{IsEqual@{IsEqual}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{IsEqual()}{IsEqual()}}
+{\footnotesize\ttfamily bool Linear\+Array3\+D\+::\+Is\+Equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}} $\ast$}]{lin\+Ar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверяет массивы на равенство (поэлементно) 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em lin\+Ar} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{struct_linear_array3_d_ad6113116ad0c13d1f7b55ed9dfb93fbe}\label{struct_linear_array3_d_ad6113116ad0c13d1f7b55ed9dfb93fbe}} 
 \index{LinearArray3D@{LinearArray3D}!LinearArray3DTrasferXOYBack@{LinearArray3DTrasferXOYBack}}
 \index{LinearArray3DTrasferXOYBack@{LinearArray3DTrasferXOYBack}!LinearArray3D@{LinearArray3D}}
@@ -368,6 +485,78 @@ double $\ast$ {\bfseries data}
 \begin{DoxyReturn}{Возвращает}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{struct_linear_array3_d_a8644628c0a94491c0a500ebc2f18ad43}\label{struct_linear_array3_d_a8644628c0a94491c0a500ebc2f18ad43}} 
+\index{LinearArray3D@{LinearArray3D}!SetLayerZ@{SetLayerZ}}
+\index{SetLayerZ@{SetLayerZ}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{SetLayerZ()}{SetLayerZ()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Linear\+Array3\+D\+::\+Set\+LayerZ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndZ,  }\item[{double $\ast$}]{layerZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет указанный слой z значениями двумерного массива layerZ 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndZ} & \\
+\hline
+{\em layerZ} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array3_d_ae60959d99663da6fdd105156a3a3da1a}\label{struct_linear_array3_d_ae60959d99663da6fdd105156a3a3da1a}} 
+\index{LinearArray3D@{LinearArray3D}!SetLayerZ@{SetLayerZ}}
+\index{SetLayerZ@{SetLayerZ}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{SetLayerZ()}{SetLayerZ()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Linear\+Array3\+D\+::\+Set\+LayerZ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndZ,  }\item[{\mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$}]{layerZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет указанный слой z значениями двумерного массива layerZ 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndZ} & \\
+\hline
+{\em layerZ} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array3_d_aa481194b84e9e6452c472a952edaba5c}\label{struct_linear_array3_d_aa481194b84e9e6452c472a952edaba5c}} 
+\index{LinearArray3D@{LinearArray3D}!SetLineX@{SetLineX}}
+\index{SetLineX@{SetLineX}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{SetLineX()}{SetLineX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Linear\+Array3\+D\+::\+Set\+LineX (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndY,  }\item[{size\+\_\+t}]{IndZ,  }\item[{double $\ast$}]{lin\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndY} & \\
+\hline
+{\em IndZ} & \\
+\hline
+{\em lin\+Ar1D} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array3_d_ace7454ea25ff6bd4a42984226722ef77}\label{struct_linear_array3_d_ace7454ea25ff6bd4a42984226722ef77}} 
+\index{LinearArray3D@{LinearArray3D}!SetLineX@{SetLineX}}
+\index{SetLineX@{SetLineX}!LinearArray3D@{LinearArray3D}}
+\doxysubsubsection{\texorpdfstring{SetLineX()}{SetLineX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Linear\+Array3\+D\+::\+Set\+LineX (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndY,  }\item[{size\+\_\+t}]{IndZ,  }\item[{\mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} $\ast$}]{lin\+Ar1D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndY} & \\
+\hline
+{\em IndZ} & \\
+\hline
+{\em lin\+Ar1D} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_adc32b6dcf56e9258d7935b455d409b1c}\label{struct_linear_array3_d_adc32b6dcf56e9258d7935b455d409b1c}} 
 \index{LinearArray3D@{LinearArray3D}!SetPlaneXOYFirst@{SetPlaneXOYFirst}}
 \index{SetPlaneXOYFirst@{SetPlaneXOYFirst}!LinearArray3D@{LinearArray3D}}

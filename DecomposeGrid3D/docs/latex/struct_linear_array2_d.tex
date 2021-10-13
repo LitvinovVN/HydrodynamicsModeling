@@ -17,6 +17,14 @@ double \mbox{\hyperlink{struct_linear_array2_d_ac038fe7cd30819c6c3c873f0f110f23e
 \begin{DoxyCompactList}\small\item\em Возвращает значения элемента массива с индексом, вычисленным по индексам элемента в фрагменте \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_linear_array2_d_a66950746a6b4db014d536fc4c1c7b1b2}{Set\+Element}} (size\+\_\+t Ind1, size\+\_\+t Ind2, double Value)
 \begin{DoxyCompactList}\small\item\em Сохраняет значения элемента массива с индексом, вычисленным по индексам элемента в фрагменте \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array2_d_a9d2ca6f361da3a80bc308c8111239cd4}{Get\+LineX}} (size\+\_\+t IndY, \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} $\ast$lin\+Ar1D)
+\begin{DoxyCompactList}\small\item\em Заполняет объект \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} данными, расположенными вдоль оси Ox по указанной координате Oy \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array2_d_a78ade0d1da4384b6545ab700b16bb396}{Get\+LineX}} (size\+\_\+t IndY, double $\ast$lin\+Array)
+\begin{DoxyCompactList}\small\item\em Заполняет массив данными, расположенными вдоль оси Ox по указанной координате Oy \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array2_d_a7cb21e4f68165bbb4ab35a98d4052f66}{Set\+LineX}} (size\+\_\+t IndY, \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} $\ast$lin\+Ar1D)
+\begin{DoxyCompactList}\small\item\em Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_array2_d_ab13ccd01e7f046921b0a52fad9bcd146}{Set\+LineX}} (size\+\_\+t IndY, double $\ast$lin\+Array)
+\begin{DoxyCompactList}\small\item\em Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_linear_array2_d_a6240f035a005cd701dc8fe41f4adeeb5}{Get\+Data\+Size\+In\+Mb}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{struct_linear_array2_d_a3ac6571f6aa613225ac5c8e5b79bb30e}\label{struct_linear_array2_d_a3ac6571f6aa613225ac5c8e5b79bb30e}} 
@@ -93,6 +101,40 @@ double $\ast$ {\bfseries data}
 \begin{DoxyReturn}{Возвращает}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{struct_linear_array2_d_a78ade0d1da4384b6545ab700b16bb396}\label{struct_linear_array2_d_a78ade0d1da4384b6545ab700b16bb396}} 
+\index{LinearArray2D@{LinearArray2D}!GetLineX@{GetLineX}}
+\index{GetLineX@{GetLineX}!LinearArray2D@{LinearArray2D}}
+\doxysubsubsection{\texorpdfstring{GetLineX()}{GetLineX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Linear\+Array2\+D\+::\+Get\+LineX (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndY,  }\item[{double $\ast$}]{lin\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет массив данными, расположенными вдоль оси Ox по указанной координате Oy 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndY} & \\
+\hline
+{\em lin\+Array} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array2_d_a9d2ca6f361da3a80bc308c8111239cd4}\label{struct_linear_array2_d_a9d2ca6f361da3a80bc308c8111239cd4}} 
+\index{LinearArray2D@{LinearArray2D}!GetLineX@{GetLineX}}
+\index{GetLineX@{GetLineX}!LinearArray2D@{LinearArray2D}}
+\doxysubsubsection{\texorpdfstring{GetLineX()}{GetLineX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Linear\+Array2\+D\+::\+Get\+LineX (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndY,  }\item[{\mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} $\ast$}]{lin\+Ar1D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет объект \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} данными, расположенными вдоль оси Ox по указанной координате Oy 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndY} & \\
+\hline
+{\em lin\+Ar1D} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array2_d_a66950746a6b4db014d536fc4c1c7b1b2}\label{struct_linear_array2_d_a66950746a6b4db014d536fc4c1c7b1b2}} 
 \index{LinearArray2D@{LinearArray2D}!SetElement@{SetElement}}
 \index{SetElement@{SetElement}!LinearArray2D@{LinearArray2D}}
@@ -115,6 +157,40 @@ double $\ast$ {\bfseries data}
 \begin{DoxyReturn}{Возвращает}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{struct_linear_array2_d_ab13ccd01e7f046921b0a52fad9bcd146}\label{struct_linear_array2_d_ab13ccd01e7f046921b0a52fad9bcd146}} 
+\index{LinearArray2D@{LinearArray2D}!SetLineX@{SetLineX}}
+\index{SetLineX@{SetLineX}!LinearArray2D@{LinearArray2D}}
+\doxysubsubsection{\texorpdfstring{SetLineX()}{SetLineX()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Linear\+Array2\+D\+::\+Set\+LineX (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndY,  }\item[{double $\ast$}]{lin\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndY} & \\
+\hline
+{\em lin\+Ar1D} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_linear_array2_d_a7cb21e4f68165bbb4ab35a98d4052f66}\label{struct_linear_array2_d_a7cb21e4f68165bbb4ab35a98d4052f66}} 
+\index{LinearArray2D@{LinearArray2D}!SetLineX@{SetLineX}}
+\index{SetLineX@{SetLineX}!LinearArray2D@{LinearArray2D}}
+\doxysubsubsection{\texorpdfstring{SetLineX()}{SetLineX()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Linear\+Array2\+D\+::\+Set\+LineX (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndY,  }\item[{\mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} $\ast$}]{lin\+Ar1D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}} 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em IndY} & \\
+\hline
+{\em lin\+Ar1D} & \\
+\hline
+\end{DoxyParams}
 
 
 Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}

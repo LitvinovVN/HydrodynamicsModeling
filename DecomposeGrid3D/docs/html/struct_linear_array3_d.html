@@ -71,14 +71,30 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>&amp;&amp;&amp;&amp;---------&mdash;  
+<p>Линейный массив, описывающий трёхмерную область  
  <a href="struct_linear_array3_d.html#details">Подробнее...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
 <tr class="memitem:a9d568f0f1e93dca24e1ad31feb8c6c3b"><td class="memItemLeft" align="right" valign="top"><a id="a9d568f0f1e93dca24e1ad31feb8c6c3b" name="a9d568f0f1e93dca24e1ad31feb8c6c3b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>LinearArray3D</b> (size_t Nx, size_t Ny, size_t Nz)</td></tr>
+<tr class="memdesc:a9d568f0f1e93dca24e1ad31feb8c6c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор <br /></td></tr>
 <tr class="separator:a9d568f0f1e93dca24e1ad31feb8c6c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf867819aebce938c3939d24b97d8dc7"><td class="memItemLeft" align="right" valign="top"><a id="acf867819aebce938c3939d24b97d8dc7" name="acf867819aebce938c3939d24b97d8dc7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~LinearArray3D</b> ()</td></tr>
+<tr class="memdesc:acf867819aebce938c3939d24b97d8dc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор <br /></td></tr>
+<tr class="separator:acf867819aebce938c3939d24b97d8dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85d2681f17ec448cbb6bd718467fc43"><td class="memItemLeft" align="right" valign="top"><a id="ac85d2681f17ec448cbb6bd718467fc43" name="ac85d2681f17ec448cbb6bd718467fc43"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitLinearArray3DByValue</b> (double value)</td></tr>
+<tr class="memdesc:ac85d2681f17ec448cbb6bd718467fc43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует массив data указанным значением <br /></td></tr>
+<tr class="separator:ac85d2681f17ec448cbb6bd718467fc43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef9ae0a2ee367e585eb7aae988809b2"><td class="memItemLeft" align="right" valign="top"><a id="a9ef9ae0a2ee367e585eb7aae988809b2" name="a9ef9ae0a2ee367e585eb7aae988809b2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InitLinearArray3DByGlobalIndexes</b> ()</td></tr>
+<tr class="memdesc:a9ef9ae0a2ee367e585eb7aae988809b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует массив data глобальными индексами <br /></td></tr>
+<tr class="separator:a9ef9ae0a2ee367e585eb7aae988809b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93ba8b8757779f0fd84dac0e376fe94"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#ad93ba8b8757779f0fd84dac0e376fe94">IsEqual</a> (<a class="el" href="struct_linear_array3_d.html">LinearArray3D</a> *linAr)</td></tr>
+<tr class="memdesc:ad93ba8b8757779f0fd84dac0e376fe94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет массивы на равенство (поэлементно)  <a href="struct_linear_array3_d.html#ad93ba8b8757779f0fd84dac0e376fe94">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad93ba8b8757779f0fd84dac0e376fe94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45e4284f3fba85b6052c60a9a7987c60"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60">GetIndex</a> (size_t IndX, size_t IndY, size_t IndZ)</td></tr>
 <tr class="memdesc:a45e4284f3fba85b6052c60a9a7987c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает индекс элемента массива данных по индексам элемента в фрагменте  <a href="struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60">Подробнее...</a><br /></td></tr>
 <tr class="separator:a45e4284f3fba85b6052c60a9a7987c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -88,6 +104,30 @@ $(function() {
 <tr class="memitem:a9cccbfdc509fa40807ba9b0be9d3d494"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494">SetElement</a> (size_t IndX, size_t IndY, size_t IndZ, double Value)</td></tr>
 <tr class="memdesc:a9cccbfdc509fa40807ba9b0be9d3d494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте  <a href="struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494">Подробнее...</a><br /></td></tr>
 <tr class="separator:a9cccbfdc509fa40807ba9b0be9d3d494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad24888523c27843fd804b48bfb589f7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#ad24888523c27843fd804b48bfb589f7f">GetLineX</a> (size_t IndY, size_t IndZ, <a class="el" href="struct_linear_array1_d.html">LinearArray1D</a> *linAr1D)</td></tr>
+<tr class="memdesc:ad24888523c27843fd804b48bfb589f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет объект <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a> данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz  <a href="struct_linear_array3_d.html#ad24888523c27843fd804b48bfb589f7f">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad24888523c27843fd804b48bfb589f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8a96b00f998dbf866a3943ab4ebf6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#ada8a96b00f998dbf866a3943ab4ebf6e">GetLineX</a> (size_t IndY, size_t IndZ, double *linArray)</td></tr>
+<tr class="memdesc:ada8a96b00f998dbf866a3943ab4ebf6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет массив данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz  <a href="struct_linear_array3_d.html#ada8a96b00f998dbf866a3943ab4ebf6e">Подробнее...</a><br /></td></tr>
+<tr class="separator:ada8a96b00f998dbf866a3943ab4ebf6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace7454ea25ff6bd4a42984226722ef77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#ace7454ea25ff6bd4a42984226722ef77">SetLineX</a> (size_t IndY, size_t IndZ, <a class="el" href="struct_linear_array1_d.html">LinearArray1D</a> *linAr1D)</td></tr>
+<tr class="memdesc:ace7454ea25ff6bd4a42984226722ef77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a>  <a href="struct_linear_array3_d.html#ace7454ea25ff6bd4a42984226722ef77">Подробнее...</a><br /></td></tr>
+<tr class="separator:ace7454ea25ff6bd4a42984226722ef77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa481194b84e9e6452c472a952edaba5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#aa481194b84e9e6452c472a952edaba5c">SetLineX</a> (size_t IndY, size_t IndZ, double *linArray)</td></tr>
+<tr class="memdesc:aa481194b84e9e6452c472a952edaba5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a>  <a href="struct_linear_array3_d.html#aa481194b84e9e6452c472a952edaba5c">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa481194b84e9e6452c472a952edaba5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91f3d4c8513571292fbe2c42a3ea427b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#a91f3d4c8513571292fbe2c42a3ea427b">GetLayerZ</a> (size_t IndZ, double *layerZ)</td></tr>
+<tr class="memdesc:a91f3d4c8513571292fbe2c42a3ea427b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет двумерный массив layerZ значениями указанного слоя z  <a href="struct_linear_array3_d.html#a91f3d4c8513571292fbe2c42a3ea427b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a91f3d4c8513571292fbe2c42a3ea427b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e108487cb0988eaf229cc54ad907d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#a57e108487cb0988eaf229cc54ad907d9">GetLayerZ</a> (size_t IndZ, <a class="el" href="struct_linear_array2_d.html">LinearArray2D</a> *layerZ)</td></tr>
+<tr class="memdesc:a57e108487cb0988eaf229cc54ad907d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет двумерный массив layerZ значениями указанного слоя z  <a href="struct_linear_array3_d.html#a57e108487cb0988eaf229cc54ad907d9">Подробнее...</a><br /></td></tr>
+<tr class="separator:a57e108487cb0988eaf229cc54ad907d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8644628c0a94491c0a500ebc2f18ad43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#a8644628c0a94491c0a500ebc2f18ad43">SetLayerZ</a> (size_t IndZ, double *layerZ)</td></tr>
+<tr class="memdesc:a8644628c0a94491c0a500ebc2f18ad43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет указанный слой z значениями двумерного массива layerZ  <a href="struct_linear_array3_d.html#a8644628c0a94491c0a500ebc2f18ad43">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8644628c0a94491c0a500ebc2f18ad43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60959d99663da6fdd105156a3a3da1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#ae60959d99663da6fdd105156a3a3da1a">SetLayerZ</a> (size_t IndZ, <a class="el" href="struct_linear_array2_d.html">LinearArray2D</a> *layerZ)</td></tr>
+<tr class="memdesc:ae60959d99663da6fdd105156a3a3da1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет указанный слой z значениями двумерного массива layerZ  <a href="struct_linear_array3_d.html#ae60959d99663da6fdd105156a3a3da1a">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae60959d99663da6fdd105156a3a3da1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5039a8b58b25c1831826ed25dad982e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#ac5039a8b58b25c1831826ed25dad982e">LinearArray3DTrasferXOYForward</a> (<a class="el" href="struct_linear_array3_d.html">LinearArray3D</a> *linearArray3DNext)</td></tr>
 <tr class="memdesc:ac5039a8b58b25c1831826ed25dad982e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Передает массив данных (плоскость XOY) между фрагментами вперед  <a href="struct_linear_array3_d.html#ac5039a8b58b25c1831826ed25dad982e">Подробнее...</a><br /></td></tr>
 <tr class="separator:ac5039a8b58b25c1831826ed25dad982e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,7 +183,7 @@ $(function() {
 <tr class="memdesc:a821810e8ce0ff56cfcc393c2f88381fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Передает массив данных от плоскости planeYOZ первой по оси OX плоскости фрагмента  <a href="struct_linear_array3_d.html#a821810e8ce0ff56cfcc393c2f88381fa">Подробнее...</a><br /></td></tr>
 <tr class="separator:a821810e8ce0ff56cfcc393c2f88381fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25b92f1c301b79b48b9b11b8fd7521d2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#a25b92f1c301b79b48b9b11b8fd7521d2">GetDataSizeInMb</a> ()</td></tr>
-<tr class="memdesc:a25b92f1c301b79b48b9b11b8fd7521d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает объём оперативной памяти, занимаемый объектом <a class="el" href="struct_linear_array3_d.html" title="&amp;&amp;&amp;&amp;---------—">LinearArray3D</a>  <a href="struct_linear_array3_d.html#a25b92f1c301b79b48b9b11b8fd7521d2">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:a25b92f1c301b79b48b9b11b8fd7521d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает объём оперативной памяти, занимаемый объектом <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a>  <a href="struct_linear_array3_d.html#a25b92f1c301b79b48b9b11b8fd7521d2">Подробнее...</a><br /></td></tr>
 <tr class="separator:a25b92f1c301b79b48b9b11b8fd7521d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051ae0fd7c5c689052f8451989f12db2"><td class="memItemLeft" align="right" valign="top"><a id="a051ae0fd7c5c689052f8451989f12db2" name="a051ae0fd7c5c689052f8451989f12db2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Print</b> ()</td></tr>
@@ -161,19 +201,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintData</b> ()</td>
 Открытые атрибуты</h2></td></tr>
 <tr class="memitem:a24bf915713fe836739e225eb668c640a"><td class="memItemLeft" align="right" valign="top"><a id="a24bf915713fe836739e225eb668c640a" name="a24bf915713fe836739e225eb668c640a"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>nx</b></td></tr>
+<tr class="memdesc:a24bf915713fe836739e225eb668c640a"><td class="mdescLeft">&#160;</td><td class="mdescRight">число узлов в фрагменте по оси Ox <br /></td></tr>
 <tr class="separator:a24bf915713fe836739e225eb668c640a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a555ff840006b4f5ab75a4a99b95a44e5"><td class="memItemLeft" align="right" valign="top"><a id="a555ff840006b4f5ab75a4a99b95a44e5" name="a555ff840006b4f5ab75a4a99b95a44e5"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>ny</b></td></tr>
+<tr class="memdesc:a555ff840006b4f5ab75a4a99b95a44e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">число узлов в фрагменте по оси Oy <br /></td></tr>
 <tr class="separator:a555ff840006b4f5ab75a4a99b95a44e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15c968b5cf739e8a6920e4afa73edebe"><td class="memItemLeft" align="right" valign="top"><a id="a15c968b5cf739e8a6920e4afa73edebe" name="a15c968b5cf739e8a6920e4afa73edebe"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>nz</b></td></tr>
+<tr class="memdesc:a15c968b5cf739e8a6920e4afa73edebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">число узлов в фрагменте по оси Oz <br /></td></tr>
 <tr class="separator:a15c968b5cf739e8a6920e4afa73edebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a818286812c34c98d0fbf651ef092d445"><td class="memItemLeft" align="right" valign="top"><a id="a818286812c34c98d0fbf651ef092d445" name="a818286812c34c98d0fbf651ef092d445"></a>
 double *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="memdesc:a818286812c34c98d0fbf651ef092d445"><td class="mdescLeft">&#160;</td><td class="mdescRight">указатель на массив данных <br /></td></tr>
 <tr class="separator:a818286812c34c98d0fbf651ef092d445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p >&amp;&amp;&amp;&amp;---------&mdash; </p>
+<div class="textblock"><p >Линейный массив, описывающий трёхмерную область </p>
 </div><h2 class="groupheader">Методы</h2>
 <a id="a25b92f1c301b79b48b9b11b8fd7521d2" name="a25b92f1c301b79b48b9b11b8fd7521d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25b92f1c301b79b48b9b11b8fd7521d2">&#9670;&nbsp;</a></span>GetDataSizeInMb()</h2>
@@ -198,7 +242,7 @@ double *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr
 </table>
 </div><div class="memdoc">
 
-<p>Возвращает объём оперативной памяти, занимаемый объектом <a class="el" href="struct_linear_array3_d.html" title="&amp;&amp;&amp;&amp;---------—">LinearArray3D</a> </p>
+<p>Возвращает объём оперативной памяти, занимаемый объектом <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a> </p>
 <dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
 
 </div>
@@ -306,6 +350,200 @@ double *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a91f3d4c8513571292fbe2c42a3ea427b" name="a91f3d4c8513571292fbe2c42a3ea427b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91f3d4c8513571292fbe2c42a3ea427b">&#9670;&nbsp;</a></span>GetLayerZ() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearArray3D::GetLayerZ </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>layerZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет двумерный массив layerZ значениями указанного слоя z </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IndZ</td><td></td></tr>
+    <tr><td class="paramname">layerZ</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a57e108487cb0988eaf229cc54ad907d9" name="a57e108487cb0988eaf229cc54ad907d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e108487cb0988eaf229cc54ad907d9">&#9670;&nbsp;</a></span>GetLayerZ() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearArray3D::GetLayerZ </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_linear_array2_d.html">LinearArray2D</a> *&#160;</td>
+          <td class="paramname"><em>layerZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет двумерный массив layerZ значениями указанного слоя z </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IndZ</td><td></td></tr>
+    <tr><td class="paramname">layerZ</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ada8a96b00f998dbf866a3943ab4ebf6e" name="ada8a96b00f998dbf866a3943ab4ebf6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8a96b00f998dbf866a3943ab4ebf6e">&#9670;&nbsp;</a></span>GetLineX() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearArray3D::GetLineX </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>linArray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет массив данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IndY</td><td></td></tr>
+    <tr><td class="paramname">IndZ</td><td></td></tr>
+    <tr><td class="paramname">linArray</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad24888523c27843fd804b48bfb589f7f" name="ad24888523c27843fd804b48bfb589f7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad24888523c27843fd804b48bfb589f7f">&#9670;&nbsp;</a></span>GetLineX() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearArray3D::GetLineX </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_linear_array1_d.html">LinearArray1D</a> *&#160;</td>
+          <td class="paramname"><em>linAr1D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет объект <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a> данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IndY</td><td></td></tr>
+    <tr><td class="paramname">IndZ</td><td></td></tr>
+    <tr><td class="paramname">linAr1D</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -510,6 +748,41 @@ double *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ad93ba8b8757779f0fd84dac0e376fe94" name="ad93ba8b8757779f0fd84dac0e376fe94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93ba8b8757779f0fd84dac0e376fe94">&#9670;&nbsp;</a></span>IsEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LinearArray3D::IsEqual </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_linear_array3_d.html">LinearArray3D</a> *&#160;</td>
+          <td class="paramname"><em>linAr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет массивы на равенство (поэлементно) </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">linAr</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -840,6 +1113,200 @@ double *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr
   </dd>
 </dl>
 <dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a8644628c0a94491c0a500ebc2f18ad43" name="a8644628c0a94491c0a500ebc2f18ad43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8644628c0a94491c0a500ebc2f18ad43">&#9670;&nbsp;</a></span>SetLayerZ() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearArray3D::SetLayerZ </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>layerZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет указанный слой z значениями двумерного массива layerZ </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IndZ</td><td></td></tr>
+    <tr><td class="paramname">layerZ</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae60959d99663da6fdd105156a3a3da1a" name="ae60959d99663da6fdd105156a3a3da1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60959d99663da6fdd105156a3a3da1a">&#9670;&nbsp;</a></span>SetLayerZ() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearArray3D::SetLayerZ </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_linear_array2_d.html">LinearArray2D</a> *&#160;</td>
+          <td class="paramname"><em>layerZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет указанный слой z значениями двумерного массива layerZ </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IndZ</td><td></td></tr>
+    <tr><td class="paramname">layerZ</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa481194b84e9e6452c472a952edaba5c" name="aa481194b84e9e6452c472a952edaba5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa481194b84e9e6452c472a952edaba5c">&#9670;&nbsp;</a></span>SetLineX() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearArray3D::SetLineX </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>linArray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a> </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IndY</td><td></td></tr>
+    <tr><td class="paramname">IndZ</td><td></td></tr>
+    <tr><td class="paramname">linAr1D</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ace7454ea25ff6bd4a42984226722ef77" name="ace7454ea25ff6bd4a42984226722ef77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace7454ea25ff6bd4a42984226722ef77">&#9670;&nbsp;</a></span>SetLineX() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearArray3D::SetLineX </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>IndZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_linear_array1_d.html">LinearArray1D</a> *&#160;</td>
+          <td class="paramname"><em>linAr1D</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a> </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IndY</td><td></td></tr>
+    <tr><td class="paramname">IndZ</td><td></td></tr>
+    <tr><td class="paramname">linAr1D</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

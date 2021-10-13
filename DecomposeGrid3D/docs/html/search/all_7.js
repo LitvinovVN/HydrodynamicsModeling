@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['setelement_0',['SetElement',['../struct_linear_array2_d.html#a66950746a6b4db014d536fc4c1c7b1b2',1,'LinearArray2D::SetElement()'],['../struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494',1,'LinearArray3D::SetElement()'],['../struct_grid2_d_fragment_y_z.html#a2c7ef6b1339ebc5fb1565d7fa60d8319',1,'Grid2DFragmentYZ::SetElement()']]],
-  ['setplanexoyfirst_1',['SetPlaneXOYFirst',['../struct_linear_array3_d.html#adc32b6dcf56e9258d7935b455d409b1c',1,'LinearArray3D']]],
-  ['setplanexoylast_2',['SetPlaneXOYLast',['../struct_linear_array3_d.html#a2b22c06d1e4538c5359298e99fff8b7d',1,'LinearArray3D']]],
-  ['setplanexozfirst_3',['SetPlaneXOZFirst',['../struct_linear_array3_d.html#aae69f2ee7b19dd2546fd93b69b614e10',1,'LinearArray3D']]],
-  ['setplanexozlast_4',['SetPlaneXOZLast',['../struct_linear_array3_d.html#a360a8130de7a752f262ad3f04cbe43a3',1,'LinearArray3D']]],
-  ['setplaneyozfirst_5',['SetPlaneYOZFirst',['../struct_linear_array3_d.html#a053cded1f842783be9f700a9fad9a660',1,'LinearArray3D']]],
-  ['setplaneyozlast_6',['SetPlaneYOZLast',['../struct_linear_array3_d.html#aa627c8d40744fe943da24dd0352067a2',1,'LinearArray3D']]],
-  ['setprevnextpointersfordeviceblocks_7',['SetPrevNextPointersForDeviceBlocks',['../struct_grid3_d.html#aecb5acb358038cb804276bc887649d22',1,'Grid3D']]]
+  ['print_0',['Print',['../struct_linear_array1_d.html#ab90a1079fae16be1b48de68dd018cea5',1,'LinearArray1D::Print()'],['../struct_linear_array2_d.html#a3ac6571f6aa613225ac5c8e5b79bb30e',1,'LinearArray2D::Print()'],['../struct_linear_array3_d.html#a051ae0fd7c5c689052f8451989f12db2',1,'LinearArray3D::Print()'],['../struct_linear_array3_d.html#aa8d7e043df8ebb822c0b9342f9c87a59',1,'LinearArray3D::Print(Fragment3DPlane fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)'],['../struct_linear_arrays2_d.html#aa010d4d566d3be1bfb6d6354216390b6',1,'LinearArrays2D::Print()'],['../struct_linear_arrays2_d.html#a6c8c0c2ce19520ed3fd5db469ea63191',1,'LinearArrays2D::Print(ModelDataName modelDataName)'],['../struct_linear_arrays3_d.html#a5d0743f5f7e8451b0f543c9033051461',1,'LinearArrays3D::Print()']]],
+  ['printdata_1',['printData',['../struct_simple_statistics.html#afdc4f954463d3a928fafe0539f963bf1',1,'SimpleStatistics']]],
+  ['printdata_2',['PrintData',['../struct_linear_array3_d.html#ac763a152a6ff8d1590171da6d781d803',1,'LinearArray3D']]],
+  ['printfragment_3',['PrintFragment',['../struct_grid2_d_fragment_x_y.html#a941e1dac2c8b368cf4b54f047a0807a8',1,'Grid2DFragmentXY::PrintFragment()'],['../struct_grid3_d_fragment.html#a701dc6ad1175b9440ac83b62753d1454',1,'Grid3DFragment::PrintFragment(Grid3DPrintDetalisation grid3DPrintDetalisation)']]],
+  ['printfragmentplane_4',['PrintFragmentPlane',['../struct_grid3_d_fragment.html#a4b116d128f41e47c96b526471e925d51',1,'Grid3DFragment::PrintFragmentPlane(ModelDataName modelDataName, Fragment3DPlane fragment3DPlane)'],['../struct_grid3_d_fragment.html#ad85e99719e0d356cc897f3c74489a7aa',1,'Grid3DFragment::PrintFragmentPlane(ModelDataName modelDataName, Fragment3DPlane fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)']]],
+  ['printgrid2dtransferplanexz_5',['PrintGrid2DTransferPlaneXZ',['../struct_grid2_d_transfer_plane_x_z.html#a8de7fcefc09c4affb17fe0c3e04c8eb7',1,'Grid2DTransferPlaneXZ']]],
+  ['printgrid3dfragmentindex_6',['PrintGrid3DFragmentIndex',['../struct_grid3_d_fragment.html#ad490818c034cb28996783882bd268acd',1,'Grid3DFragment::PrintGrid3DFragmentIndex()'],['../struct_grid3_d_fragment.html#a5bcff5dfc5a5f01d66e1a6409965b967',1,'Grid3DFragment::PrintGrid3DFragmentIndex(Grid3DFragment *fragment)']]]
 ];
