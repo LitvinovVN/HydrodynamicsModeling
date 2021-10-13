@@ -5,14 +5,14 @@
 #include <map>
 #include <vector>
 
-//static struct GridHelper		// Вспомогательные вычислительные методы для Grid
-//{
-//	static size_t CountN(size_t nx, size_t ny, size_t nz)
-//	{
-//		size_t N = nx * ny * nz;
-//		return N;
-//	}
-//};
+static struct GridHelper		// Вспомогательные вычислительные методы для Grid
+{
+	static size_t CountN(size_t nx, size_t ny, size_t nz)
+	{
+		size_t N = nx * ny * nz;
+		return N;
+	}
+};
 
 enum ModelDataName     // Перечисление наименований массивов данных модели
 {
