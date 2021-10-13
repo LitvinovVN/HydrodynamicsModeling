@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DecomposeGrid3D: Файл DecomposeGrid3D/Grid3D.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DecomposeGrid3D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Декомпозиция расчетной сетки</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_51f497d137ab44b76856c4c3475d080f.html">DecomposeGrid3D</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#enum-members">Перечисления</a>  </div>
+  <div class="headertitle"><div class="title">Файл Grid3D.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для Grid3D.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="_grid3_d_8cpp__incl.png" border="0" usemap="#a_decompose_grid3_d_2_grid3_d_8cpp" alt=""/></div>
+<map name="a_decompose_grid3_d_2_grid3_d_8cpp" id="a_decompose_grid3_d_2_grid3_d_8cpp">
+<area shape="rect" title=" " alt="" coords="164,5,364,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,77,107"/>
+<area shape="rect" title=" " alt="" coords="101,80,179,107"/>
+<area shape="rect" title=" " alt="" coords="203,80,250,107"/>
+<area shape="rect" title=" " alt="" coords="275,80,331,107"/>
+<area shape="rect" title=" " alt="" coords="355,80,416,107"/>
+<area shape="rect" title=" " alt="" coords="440,80,515,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="_grid3_d_8cpp__dep__incl.png" border="0" usemap="#a_decompose_grid3_d_2_grid3_d_8cppdep" alt=""/></div>
+<map name="a_decompose_grid3_d_2_grid3_d_8cppdep" id="a_decompose_grid3_d_2_grid3_d_8cppdep">
+<area shape="rect" title=" " alt="" coords="5,5,205,32"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="11,80,199,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><b>GridHelper</b></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вспомогательные вычислительные методы для Grid <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtimer.html">timer&lt; duration, clock &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таймер  <a href="classtimer.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_simple_statistics.html">SimpleStatistics</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Структура для сохранения результатов измерений и вычисления простых статистик  <a href="struct_simple_statistics.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array1_d.html">LinearArray1D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Линейный одномерный массив  <a href="struct_linear_array1_d.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array2_d.html">LinearArray2D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Класс для работы с двумерным массивом, сохраняемым как одномерный  <a href="struct_linear_array2_d.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html">LinearArray3D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Линейный массив, описывающий трёхмерную область  <a href="struct_linear_array3_d.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_arrays2_d.html">LinearArrays2D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">$$$$--------&mdash;  <a href="struct_linear_arrays2_d.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_arrays3_d.html">LinearArrays3D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">$$$$--------&mdash;  <a href="struct_linear_arrays3_d.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_computing_device.html">ComputingDevice</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_computing_device_g_p_u.html">ComputingDeviceGPU</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_computing_device_c_p_u.html">ComputingDeviceCPU</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_computing_node.html">ComputingNode</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_computing_cluster.html">ComputingCluster</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computing cluster describing - Вычислительный кластер  <a href="struct_computing_cluster.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_x_y.html">Grid2DFragmentXY</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Двумерный фрагмент расчетной сетки - плоскость XY(грань трехмерного фрагмента)  <a href="struct_grid2_d_fragment_x_y.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_y_z.html">Grid2DFragmentYZ</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Двумерный фрагмент расчетной сетки - плоскость YZ(грань трехмерного фрагмента)  <a href="struct_grid2_d_fragment_y_z.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_fragment_x_z.html">Grid2DFragmentXZ</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Двумерный фрагмент расчетной сетки - плоскость XZ(грань трехмерного фрагмента)  <a href="struct_grid2_d_fragment_x_z.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid2_d_transfer_plane_x_z.html">Grid2DTransferPlaneXZ</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Смежная двумерная плоскость XZ для передачи данных между устройствами  <a href="struct_grid2_d_transfer_plane_x_z.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid3_d_fragment.html">Grid3DFragment</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Трехмерный фрагмент блока расчетной сетки вычислительного устройства  <a href="struct_grid3_d_fragment.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid_block3_d_by_device.html">GridBlock3DByDevice</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Трехмерный блок расчетной сетки вычислительного устройства  <a href="struct_grid_block3_d_by_device.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid_block3_d_by_node.html">GridBlock3DByNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Трехмерный блок расчетной сетки вычислительного узла  <a href="struct_grid_block3_d_by_node.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_grid3_d.html">Grid3D</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Трехмерная расчетная сетка  <a href="struct_grid3_d.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:aab32bb3560559492481476c3581bdb4b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4b">ModelDataName</a> { <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4bac461e84f27bbb236874e1011cd66031f">U</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4ba28f41f1144eee94834387e9a6a088bc1">V</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4bab722ceeb601c72cd78fbd35f3581fdf7">W</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4ba82f05f38f6a17b117cdd2b83227912c6">P</a>
+, <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4baa1803642d3771f8cb9bf7b914c702a63">MU</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4baa34b618d8d56f50c859b67f66b508095">NU</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4ba3cfe003699c7dba25680d9a50f432b02">C0</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4bae54c31a855b907f263d49edcdbe677bd">C1</a>
+, <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4ba5e602f1d68586231698bda7be6af7d2e">C2</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4bada966660d95922946f59862d9ce54b1c">C3</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4ba24727389909cb6406ed9483df7810c78">C4</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4ba26c0a10a3dc0a69747539541f4a82172">C5</a>
+, <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4bae138d2e0243a8b4dcca22738eebc2197">C6</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4ba5afea46882b06768ac8563d462999735">F1</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4baa3c13a70de6599f4470373ec46d4f6bf">F2</a>
+, <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4ba10a5417c8e696606af65ec28c5fb2495">F3</a>
+, <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4baf1ce01387d2348f8b858721a7db81670">S</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:aab32bb3560559492481476c3581bdb4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перечисление наименований массивов данных модели  <a href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4b">Подробнее...</a><br /></td></tr>
+<tr class="separator:aab32bb3560559492481476c3581bdb4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85710a4d27ce4a3fec67b009c8910ead"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_grid3_d_8cpp.html#a85710a4d27ce4a3fec67b009c8910ead">Grid3DPrintDetalisation</a> { <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#a85710a4d27ce4a3fec67b009c8910eadafbf4fa9eb81ba842a80a29b45064e348">GRID</a>
+, <a class="el" href="_grid3_d_8cpp.html#a85710a4d27ce4a3fec67b009c8910eada0fe4c6464fdc5e7d04f0efd11d4ded8d">NODES</a>
+, <a class="el" href="_grid3_d_8cpp.html#a85710a4d27ce4a3fec67b009c8910eadae970a48a6437d7244885f845de170c4e">DEVICES</a>
+, <a class="el" href="_grid3_d_8cpp.html#a85710a4d27ce4a3fec67b009c8910eadac022f476966835e9af07d4149758bcd7">FRAGMENTS</a>
+, <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#a85710a4d27ce4a3fec67b009c8910eadafc64baa766f2c50ed01350d66b45f67f">ARRAYS</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a85710a4d27ce4a3fec67b009c8910ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перечисление уровней детализации вывода метода Print класса <a class="el" href="struct_grid3_d.html" title="Трехмерная расчетная сетка">Grid3D</a>  <a href="_grid3_d_8cpp.html#a85710a4d27ce4a3fec67b009c8910ead">Подробнее...</a><br /></td></tr>
+<tr class="separator:a85710a4d27ce4a3fec67b009c8910ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a464c44948734b5d4e9c9957f13838b90"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90">Fragment3DPlane</a> { <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90ad0a75160fe45610aef1393b293b4bf61">XOZ_Prev</a>
+, <a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90a961645d8e167d712c0f9c5615e2bce6a">XOZ_Next</a>
+, <a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90a66bc4199205c454ce795b89ec7e25087">XOY_Prev</a>
+, <a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90a40ebc04e50a4776039471e61916ad035">XOY_Next</a>
+, <br />
+&#160;&#160;<a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90afa1babf811dfe61167879f1729eea546">YOZ_Prev</a>
+, <a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90ad4714bd8367f5f4bb3a4ea29044fbcc8">YOZ_Next</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a464c44948734b5d4e9c9957f13838b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перечисление плоскостей для передачи между фрагментами  <a href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90">Подробнее...</a><br /></td></tr>
+<tr class="separator:a464c44948734b5d4e9c9957f13838b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a464c44948734b5d4e9c9957f13838b90" name="a464c44948734b5d4e9c9957f13838b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a464c44948734b5d4e9c9957f13838b90">&#9670;&nbsp;</a></span>Fragment3DPlane</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90">Fragment3DPlane</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перечисление плоскостей для передачи между фрагментами </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a464c44948734b5d4e9c9957f13838b90ad0a75160fe45610aef1393b293b4bf61" name="a464c44948734b5d4e9c9957f13838b90ad0a75160fe45610aef1393b293b4bf61"></a>XOZ_Prev&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a464c44948734b5d4e9c9957f13838b90a961645d8e167d712c0f9c5615e2bce6a" name="a464c44948734b5d4e9c9957f13838b90a961645d8e167d712c0f9c5615e2bce6a"></a>XOZ_Next&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a464c44948734b5d4e9c9957f13838b90a66bc4199205c454ce795b89ec7e25087" name="a464c44948734b5d4e9c9957f13838b90a66bc4199205c454ce795b89ec7e25087"></a>XOY_Prev&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a464c44948734b5d4e9c9957f13838b90a40ebc04e50a4776039471e61916ad035" name="a464c44948734b5d4e9c9957f13838b90a40ebc04e50a4776039471e61916ad035"></a>XOY_Next&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a464c44948734b5d4e9c9957f13838b90afa1babf811dfe61167879f1729eea546" name="a464c44948734b5d4e9c9957f13838b90afa1babf811dfe61167879f1729eea546"></a>YOZ_Prev&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a464c44948734b5d4e9c9957f13838b90ad4714bd8367f5f4bb3a4ea29044fbcc8" name="a464c44948734b5d4e9c9957f13838b90ad4714bd8367f5f4bb3a4ea29044fbcc8"></a>YOZ_Next&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a85710a4d27ce4a3fec67b009c8910ead" name="a85710a4d27ce4a3fec67b009c8910ead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85710a4d27ce4a3fec67b009c8910ead">&#9670;&nbsp;</a></span>Grid3DPrintDetalisation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_grid3_d_8cpp.html#a85710a4d27ce4a3fec67b009c8910ead">Grid3DPrintDetalisation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перечисление уровней детализации вывода метода Print класса <a class="el" href="struct_grid3_d.html" title="Трехмерная расчетная сетка">Grid3D</a> </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a85710a4d27ce4a3fec67b009c8910eadafbf4fa9eb81ba842a80a29b45064e348" name="a85710a4d27ce4a3fec67b009c8910eadafbf4fa9eb81ba842a80a29b45064e348"></a>GRID&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a85710a4d27ce4a3fec67b009c8910eada0fe4c6464fdc5e7d04f0efd11d4ded8d" name="a85710a4d27ce4a3fec67b009c8910eada0fe4c6464fdc5e7d04f0efd11d4ded8d"></a>NODES&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a85710a4d27ce4a3fec67b009c8910eadae970a48a6437d7244885f845de170c4e" name="a85710a4d27ce4a3fec67b009c8910eadae970a48a6437d7244885f845de170c4e"></a>DEVICES&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a85710a4d27ce4a3fec67b009c8910eadac022f476966835e9af07d4149758bcd7" name="a85710a4d27ce4a3fec67b009c8910eadac022f476966835e9af07d4149758bcd7"></a>FRAGMENTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a85710a4d27ce4a3fec67b009c8910eadafc64baa766f2c50ed01350d66b45f67f" name="a85710a4d27ce4a3fec67b009c8910eadafc64baa766f2c50ed01350d66b45f67f"></a>ARRAYS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="aab32bb3560559492481476c3581bdb4b" name="aab32bb3560559492481476c3581bdb4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab32bb3560559492481476c3581bdb4b">&#9670;&nbsp;</a></span>ModelDataName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_grid3_d_8cpp.html#aab32bb3560559492481476c3581bdb4b">ModelDataName</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Перечисление наименований массивов данных модели </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4bac461e84f27bbb236874e1011cd66031f" name="aab32bb3560559492481476c3581bdb4bac461e84f27bbb236874e1011cd66031f"></a>U&#160;</td><td class="fielddoc"><p >fgsdfg </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4ba28f41f1144eee94834387e9a6a088bc1" name="aab32bb3560559492481476c3581bdb4ba28f41f1144eee94834387e9a6a088bc1"></a>V&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4bab722ceeb601c72cd78fbd35f3581fdf7" name="aab32bb3560559492481476c3581bdb4bab722ceeb601c72cd78fbd35f3581fdf7"></a>W&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4ba82f05f38f6a17b117cdd2b83227912c6" name="aab32bb3560559492481476c3581bdb4ba82f05f38f6a17b117cdd2b83227912c6"></a>P&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4baa1803642d3771f8cb9bf7b914c702a63" name="aab32bb3560559492481476c3581bdb4baa1803642d3771f8cb9bf7b914c702a63"></a>MU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4baa34b618d8d56f50c859b67f66b508095" name="aab32bb3560559492481476c3581bdb4baa34b618d8d56f50c859b67f66b508095"></a>NU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4ba3cfe003699c7dba25680d9a50f432b02" name="aab32bb3560559492481476c3581bdb4ba3cfe003699c7dba25680d9a50f432b02"></a>C0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4bae54c31a855b907f263d49edcdbe677bd" name="aab32bb3560559492481476c3581bdb4bae54c31a855b907f263d49edcdbe677bd"></a>C1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4ba5e602f1d68586231698bda7be6af7d2e" name="aab32bb3560559492481476c3581bdb4ba5e602f1d68586231698bda7be6af7d2e"></a>C2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4bada966660d95922946f59862d9ce54b1c" name="aab32bb3560559492481476c3581bdb4bada966660d95922946f59862d9ce54b1c"></a>C3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4ba24727389909cb6406ed9483df7810c78" name="aab32bb3560559492481476c3581bdb4ba24727389909cb6406ed9483df7810c78"></a>C4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4ba26c0a10a3dc0a69747539541f4a82172" name="aab32bb3560559492481476c3581bdb4ba26c0a10a3dc0a69747539541f4a82172"></a>C5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4bae138d2e0243a8b4dcca22738eebc2197" name="aab32bb3560559492481476c3581bdb4bae138d2e0243a8b4dcca22738eebc2197"></a>C6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4ba5afea46882b06768ac8563d462999735" name="aab32bb3560559492481476c3581bdb4ba5afea46882b06768ac8563d462999735"></a>F1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4baa3c13a70de6599f4470373ec46d4f6bf" name="aab32bb3560559492481476c3581bdb4baa3c13a70de6599f4470373ec46d4f6bf"></a>F2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4ba10a5417c8e696606af65ec28c5fb2495" name="aab32bb3560559492481476c3581bdb4ba10a5417c8e696606af65ec28c5fb2495"></a>F3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aab32bb3560559492481476c3581bdb4baf1ce01387d2348f8b858721a7db81670" name="aab32bb3560559492481476c3581bdb4baf1ce01387d2348f8b858721a7db81670"></a>S&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

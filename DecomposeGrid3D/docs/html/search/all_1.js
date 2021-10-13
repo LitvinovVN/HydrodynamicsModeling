@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['compose_0',['Compose',['../struct_grid3_d.html#a47b38c1c851787ee967451474e0d5195',1,'Grid3D']]],
-  ['computingcluster_1',['ComputingCluster',['../struct_computing_cluster.html',1,'']]],
-  ['computingdevice_2',['ComputingDevice',['../struct_computing_device.html',1,'']]],
-  ['computingdevicecpu_3',['ComputingDeviceCPU',['../struct_computing_device_c_p_u.html',1,'']]],
-  ['computingdevicegpu_4',['ComputingDeviceGPU',['../struct_computing_device_g_p_u.html',1,'']]],
-  ['computingnode_5',['ComputingNode',['../struct_computing_node.html',1,'']]],
-  ['creategrid2dtransferplanesxz_6',['CreateGrid2DTransferPlanesXZ',['../struct_grid_block3_d_by_device.html#ac60663d0c9378e2cb6eb1a4a1399452c',1,'GridBlock3DByDevice::CreateGrid2DTransferPlanesXZ()'],['../struct_grid_block3_d_by_node.html#a7dd0b59be692fec232511556f20f12dd',1,'GridBlock3DByNode::CreateGrid2DTransferPlanesXZ()'],['../struct_grid3_d.html#ac1784b53388aa752069b439e8d853eb9',1,'Grid3D::CreateGrid2DTransferPlanesXZ()']]]
+  ['blocknx_0',['blockNx',['../struct_grid_block3_d_by_device.html#ae25747d82190507e7134ad363c65e758',1,'GridBlock3DByDevice']]],
+  ['blockny_1',['blockNy',['../struct_grid_block3_d_by_device.html#ab4c339d9f8519a1b83a98c807b0f4d29',1,'GridBlock3DByDevice']]],
+  ['blocknz_2',['blockNz',['../struct_grid_block3_d_by_device.html#aecd539b05ae53c0e28f4f96496ab0f75',1,'GridBlock3DByDevice']]]
 ];

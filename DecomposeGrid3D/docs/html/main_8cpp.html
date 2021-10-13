@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DecomposeGrid3D: Файл DecomposeGrid3D/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DecomposeGrid3D<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Декомпозиция расчетной сетки</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_51f497d137ab44b76856c4c3475d080f.html">DecomposeGrid3D</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="_grid3_d_8cpp.html">Grid3D.cpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для main.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#a_decompose_grid3_d_2main_8cpp" alt=""/></div>
+<map name="a_decompose_grid3_d_2main_8cpp" id="a_decompose_grid3_d_2main_8cpp">
+<area shape="rect" title=" " alt="" coords="39,5,227,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,77,181"/>
+<area shape="rect" href="_grid3_d_8cpp.html" title=" " alt="" coords="183,80,270,107"/>
+<area shape="rect" title=" " alt="" coords="101,155,179,181"/>
+<area shape="rect" title=" " alt="" coords="203,155,250,181"/>
+<area shape="rect" title=" " alt="" coords="275,155,331,181"/>
+<area shape="rect" title=" " alt="" coords="355,155,416,181"/>
+<area shape="rect" title=" " alt="" coords="440,155,515,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a0a25c5e0dd60d2f4d561c416795100ab"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0a25c5e0dd60d2f4d561c416795100ab">CreateArrayDouble</a> (size_t numElements)</td></tr>
+<tr class="separator:a0a25c5e0dd60d2f4d561c416795100ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e35ebd7a32eea1136b6fb852c2c5a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a77e35ebd7a32eea1136b6fb852c2c5a9">InitArrayByIndexes</a> (double *data, size_t numElements)</td></tr>
+<tr class="separator:a77e35ebd7a32eea1136b6fb852c2c5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dffd7f1b235f2ba193e86f743b57064"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1dffd7f1b235f2ba193e86f743b57064">PrintArrayElement</a> (double *data, size_t numX, size_t numY, size_t numZ, size_t indX, size_t indY, size_t indZ)</td></tr>
+<tr class="separator:a1dffd7f1b235f2ba193e86f743b57064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab940a87bcfb3db1b6b0c4144a4abdf12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab940a87bcfb3db1b6b0c4144a4abdf12">PrintArrayFragment</a> (double *data, size_t startIndex, size_t endIndex)</td></tr>
+<tr class="separator:ab940a87bcfb3db1b6b0c4144a4abdf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9756690a6f7eb88431e67d7e997f24d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9756690a6f7eb88431e67d7e997f24d2">ComparingArrays</a> (double *data1, double *data2, size_t numElements)</td></tr>
+<tr class="separator:a9756690a6f7eb88431e67d7e997f24d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696c8489ed28cd0b84e067888a4f959b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a696c8489ed28cd0b84e067888a4f959b">Grid3DTest01</a> ()</td></tr>
+<tr class="separator:a696c8489ed28cd0b84e067888a4f959b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af477ccfb4c09aa2c0f12092c97be2c25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af477ccfb4c09aa2c0f12092c97be2c25">Grid2DTransferPlaneXZTest01</a> ()</td></tr>
+<tr class="separator:af477ccfb4c09aa2c0f12092c97be2c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a178cadc61d85819b3d2410cfaf795091"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a178cadc61d85819b3d2410cfaf795091">Grid2DTransferPlaneFragmentTest02</a> ()</td></tr>
+<tr class="separator:a178cadc61d85819b3d2410cfaf795091"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a99e015be228ddf9a863686d778ded4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4a99e015be228ddf9a863686d778ded4">Grid2DTransferPlaneFragmentTest03</a> ()</td></tr>
+<tr class="separator:a4a99e015be228ddf9a863686d778ded4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4a349516581d52cd26013e93fea1304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad4a349516581d52cd26013e93fea1304">FragmentCalculationAndDataTransferTests</a> ()</td></tr>
+<tr class="separator:ad4a349516581d52cd26013e93fea1304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a9756690a6f7eb88431e67d7e997f24d2" name="a9756690a6f7eb88431e67d7e997f24d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9756690a6f7eb88431e67d7e997f24d2">&#9670;&nbsp;</a></span>ComparingArrays()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ComparingArrays </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>data1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>data2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numElements</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a25c5e0dd60d2f4d561c416795100ab" name="a0a25c5e0dd60d2f4d561c416795100ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a25c5e0dd60d2f4d561c416795100ab">&#9670;&nbsp;</a></span>CreateArrayDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * CreateArrayDouble </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numElements</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4a349516581d52cd26013e93fea1304" name="ad4a349516581d52cd26013e93fea1304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4a349516581d52cd26013e93fea1304">&#9670;&nbsp;</a></span>FragmentCalculationAndDataTransferTests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FragmentCalculationAndDataTransferTests </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a178cadc61d85819b3d2410cfaf795091" name="a178cadc61d85819b3d2410cfaf795091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a178cadc61d85819b3d2410cfaf795091">&#9670;&nbsp;</a></span>Grid2DTransferPlaneFragmentTest02()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid2DTransferPlaneFragmentTest02 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a99e015be228ddf9a863686d778ded4" name="a4a99e015be228ddf9a863686d778ded4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a99e015be228ddf9a863686d778ded4">&#9670;&nbsp;</a></span>Grid2DTransferPlaneFragmentTest03()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid2DTransferPlaneFragmentTest03 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af477ccfb4c09aa2c0f12092c97be2c25" name="af477ccfb4c09aa2c0f12092c97be2c25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af477ccfb4c09aa2c0f12092c97be2c25">&#9670;&nbsp;</a></span>Grid2DTransferPlaneXZTest01()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid2DTransferPlaneXZTest01 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a696c8489ed28cd0b84e067888a4f959b" name="a696c8489ed28cd0b84e067888a4f959b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a696c8489ed28cd0b84e067888a4f959b">&#9670;&nbsp;</a></span>Grid3DTest01()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Grid3DTest01 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a77e35ebd7a32eea1136b6fb852c2c5a9" name="a77e35ebd7a32eea1136b6fb852c2c5a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77e35ebd7a32eea1136b6fb852c2c5a9">&#9670;&nbsp;</a></span>InitArrayByIndexes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InitArrayByIndexes </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numElements</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1dffd7f1b235f2ba193e86f743b57064" name="a1dffd7f1b235f2ba193e86f743b57064"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dffd7f1b235f2ba193e86f743b57064">&#9670;&nbsp;</a></span>PrintArrayElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PrintArrayElement </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>indX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>indY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>indZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab940a87bcfb3db1b6b0c4144a4abdf12" name="ab940a87bcfb3db1b6b0c4144a4abdf12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab940a87bcfb3db1b6b0c4144a4abdf12">&#9670;&nbsp;</a></span>PrintArrayFragment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PrintArrayFragment </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>startIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>endIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>

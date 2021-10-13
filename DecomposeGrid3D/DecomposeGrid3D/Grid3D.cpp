@@ -19,12 +19,10 @@ static struct GridHelper
 	}
 } GridHelper;
 
-/// <summary>
 /// Перечисление наименований массивов данных модели
-/// </summary>
 enum ModelDataName
 {
-	U,
+	U,///< fgsdfg 
 	V,
 	W,
 	P,
@@ -43,7 +41,10 @@ enum ModelDataName
 	S
 };
 
-enum Grid3DPrintDetalisation		// Перечисление уровней детализации вывода метода Print класса Grid3D
+/// <summary>
+/// Перечисление уровней детализации вывода метода Print класса Grid3D
+/// </summary>
+enum Grid3DPrintDetalisation
 {
 	GRID,
 	NODES,
@@ -52,7 +53,10 @@ enum Grid3DPrintDetalisation		// Перечисление уровней дет�
 	ARRAYS
 };
 
-enum Fragment3DPlane		// Перечисление плоскостей для передачи между фрагментами
+/// <summary>
+/// Перечисление плоскостей для передачи между фрагментами
+/// </summary>
+enum Fragment3DPlane
 {
 	XOZ_Prev,
 	XOZ_Next,
@@ -64,7 +68,11 @@ enum Fragment3DPlane		// Перечисление плоскостей для п
 
 
 
-
+/// <summary>
+/// Таймер
+/// </summary>
+/// <typeparam name="duration">Единица измерения</typeparam>
+/// <typeparam name="clock">Настройки часов</typeparam>
 template <typename duration = std::chrono::seconds, typename clock = std::chrono::high_resolution_clock>
 class timer
 {
@@ -226,12 +234,10 @@ struct LinearArray1D
 	// Методы	
 
 	/// <summary>
-	/// Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
+	/// Возвращает значение элемента массива по указанному индексу
 	/// </summary>
-	/// <param name="IndX"></param>
-	/// <param name="IndY"></param>
-	/// <param name="IndZ"></param>
-	/// <returns></returns>
+	/// <param name="IndX">Индекс элемента массива</param>
+	/// <returns>Значение элемента массива по указанному индексу</returns>
 	double GetElement(size_t IndX)
 	{
 		return data[IndX];
@@ -240,10 +246,9 @@ struct LinearArray1D
 	/// <summary>
 	/// Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
 	/// </summary>
-	/// <param name="IndX"></param>	
-	/// <param name="Value"></param>
-	/// <returns></returns>
-	double SetElement(size_t IndX, double Value)
+	/// <param name="IndX">Индекс элемента массива</param>	
+	/// <param name="Value">Значение элемента массива</param>	
+	void SetElement(size_t IndX, double Value)
 	{
 		data[IndX] = Value;
 	}
@@ -307,20 +312,20 @@ struct LinearArray2D
 	/// <summary>
 	/// Возвращает индекс элемента массива данных по индексам элемента в фрагменте
 	/// </summary>
-	/// <param name="Ind1"></param>
-	/// <param name="Ind2"></param>
-	/// <returns></returns>
+	/// <param name="Ind1">Первый индекс элемента в фрагменте</param>
+	/// <param name="Ind2">Второй индекс элемента в фрагменте</param>
+	/// <returns>Индекс элемента массива данных по индексам элемента в фрагменте</returns>
 	size_t GetIndex(size_t Ind1, size_t Ind2)
 	{
 		return Ind1 + Ind2 * n1;
 	}
 
 	/// <summary>
-	/// Возвращает значения элемента массива с индексом, вычисленным по индексам элемента в фрагменте
+	/// Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
 	/// </summary>
-	/// <param name="Ind1"></param>
-	/// <param name="Ind2"></param>
-	/// <returns></returns>
+	/// <param name="Ind1">Первый индекс элемента в фрагменте</param>
+	/// <param name="Ind2">Второй индекс элемента в фрагменте</param>
+	/// <returns>Значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте</returns>
 	double GetElement(size_t Ind1, size_t Ind2)
 	{
 		if ((Ind1 > n1) || (Ind2 > n2))
@@ -335,9 +340,9 @@ struct LinearArray2D
 	/// <summary>
 	/// Сохраняет значения элемента массива с индексом, вычисленным по индексам элемента в фрагменте
 	/// </summary>
-	/// <param name="Ind1"></param>
-	/// <param name="Ind2"></param>
-	/// <param name="Value"></param>
+	/// <param name="Ind1">Первый индекс элемента в фрагменте</param>
+	/// <param name="Ind2">Второй индекс элемента в фрагменте</param>
+	/// <param name="Value">Значения элемента массива</param>
 	/// <returns></returns>
 	double SetElement(size_t Ind1, size_t Ind2, double Value)
 	{
@@ -350,12 +355,11 @@ struct LinearArray2D
 		data[indx] = Value;
 	}
 
-
 	/// <summary>
 	/// Заполняет объект LinearArray1D данными, расположенными вдоль оси Ox по указанной координате Oy
 	/// </summary>
-	/// <param name="IndY"></param>	
-	/// <param name="linAr1D"></param>
+	/// <param name="IndY">Индекс по оси OY</param>	
+	/// <param name="linAr1D">Указатель на объект класса LinearArray1D</param>
 	void GetLineX(size_t IndY, LinearArray1D* linAr1D)
 	{
 		size_t indStart = GetIndex(0, IndY);
@@ -370,8 +374,8 @@ struct LinearArray2D
 	/// <summary>
 	/// Заполняет массив данными, расположенными вдоль оси Ox по указанной координате Oy
 	/// </summary>
-	/// <param name="IndY"></param>
-	/// <param name="linArray"></param>
+	/// <param name="IndY">Индекс по оси OY</param>
+	/// <param name="linArray">Указатель на массив типа double</param>
 	void GetLineX(size_t IndY, double* linArray)
 	{
 		size_t indStart = GetIndex(0, IndY);
@@ -386,8 +390,8 @@ struct LinearArray2D
 	/// <summary>
 	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из LinearArray1D
 	/// </summary>
-	/// <param name="IndY"></param>
-	/// <param name="linAr1D"></param>
+	/// <param name="IndY">Индекс по оси OY</param>
+	/// <param name="linAr1D">Указатель на объект класса LinearArray1D</param>
 	void SetLineX(size_t IndY, LinearArray1D* linAr1D)
 	{
 		size_t indStart = GetIndex(0, IndY);
@@ -402,8 +406,8 @@ struct LinearArray2D
 	/// <summary>
 	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из LinearArray1D
 	/// </summary>
-	/// <param name="IndY"></param>
-	/// <param name="linAr1D"></param>
+	/// <param name="IndY">Индекс по оси OY</param>
+	/// <param name="linAr1D">Указатель на массив типа double</param>
 	void SetLineX(size_t IndY, double* linArray)
 	{
 		size_t indStart = GetIndex(0, IndY);
@@ -415,11 +419,10 @@ struct LinearArray2D
 		}
 	}
 
-
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArray2D
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый объектом LinearArray2D</returns>
 	double GetDataSizeInMb()
 	{
 		double result = (double)n1 * n2 * sizeof(double) / 1024 / 1024;
@@ -499,8 +502,8 @@ struct LinearArray3D
 	/// <summary>
 	/// Проверяет массивы на равенство (поэлементно)
 	/// </summary>
-	/// <param name="linAr"></param>
-	/// <returns></returns>
+	/// <param name="linAr">Указатель на объект класса LinearArray3D</param>
+	/// <returns>Результат сравнения двух массивов (true - массивы равны, false - массивы не равны)</returns>
 	bool IsEqual(LinearArray3D* linAr)
 	{
 		for (size_t i = 0; i < nx * ny * nz; i++)
@@ -515,10 +518,10 @@ struct LinearArray3D
 	/// <summary>
 	/// Возвращает индекс элемента массива данных по индексам элемента в фрагменте
 	/// </summary>
-	/// <param name="IndX"></param>
-	/// <param name="IndY"></param>
-	/// <param name="IndZ"></param>
-	/// <returns></returns>
+	/// <param name="IndX">Первый индекс элемента в фрагменте</param>
+	/// <param name="IndY">Второй индекс элемента в фрагменте</param>
+	/// <param name="IndZ">Третий индекс элемента в фрагменте</param>
+	/// <returns>Индекс элемента массива данных по индексам элемента в фрагменте</returns>
 	size_t GetIndex(size_t IndX, size_t IndY, size_t IndZ)
 	{
 		return IndX + IndY * nx + IndZ * nx * ny;
@@ -527,10 +530,10 @@ struct LinearArray3D
 	/// <summary>
 	/// Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
 	/// </summary>
-	/// <param name="IndX"></param>
-	/// <param name="IndY"></param>
-	/// <param name="IndZ"></param>
-	/// <returns></returns>
+	/// <param name="IndX">Первый индекс элемента в фрагменте</param>
+	/// <param name="IndY">Второй индекс элемента в фрагменте</param>
+	/// <param name="IndZ">Третий индекс элемента в фрагменте</param>
+	/// <returns>Значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте</returns>
 	double GetElement(size_t IndX, size_t IndY, size_t IndZ)
 	{
 		if ((IndX > nx) || (IndY > ny) || (IndZ > nz))
@@ -545,11 +548,11 @@ struct LinearArray3D
 	/// <summary>
 	/// Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
 	/// </summary>
-	/// <param name="IndX"></param>
-	/// <param name="IndY"></param>
-	/// <param name="IndZ"></param>
-	/// <param name="Value"></param>
-	/// <returns></returns>
+	/// <param name="IndX">Первый индекс элемента в фрагменте</param>
+	/// <param name="IndY">Второй индекс элемента в фрагменте</param>
+	/// <param name="IndZ">Третий индекс элемента в фрагменте</param>
+	/// <param name="Value">Значение элемента массива</param>
+	/// <returns>Значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте</returns>
 	double SetElement(size_t IndX, size_t IndY, size_t IndZ, double Value)
 	{
 		if ((IndX > nx) || (IndY > ny) || (IndZ > nz))
@@ -564,9 +567,9 @@ struct LinearArray3D
 	/// <summary>
 	/// Заполняет объект LinearArray1D данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz
 	/// </summary>
-	/// <param name="IndY"></param>
-	/// <param name="IndZ"></param>
-	/// <param name="linAr1D"></param>
+	/// <param name="IndY">Индекс по оси OY</param>
+	/// <param name="IndZ">Индекс по оси OZ</param>
+	/// <param name="linAr1D">Указатель на объект класса LinearArray1D</param>
 	void GetLineX(size_t IndY, size_t IndZ, LinearArray1D* linAr1D)
 	{
 		size_t indStart = GetIndex(0, IndY, IndZ);
@@ -581,9 +584,9 @@ struct LinearArray3D
 	/// <summary>
 	/// Заполняет массив данными, расположенными вдоль оси Ox по указанным координатам Oy, Oz
 	/// </summary>
-	/// <param name="IndY"></param>
-	/// <param name="IndZ"></param>
-	/// <param name="linArray"></param>
+	/// <param name="IndY">Индекс по оси OY</param>
+	/// <param name="IndZ">Индекс по оси OZ</param>
+	/// <param name="linArray">Указатель на массив типа double</param>
 	void GetLineX(size_t IndY, size_t IndZ, double* linArray)
 	{
 		size_t indStart = GetIndex(0, IndY, IndZ);
@@ -598,9 +601,9 @@ struct LinearArray3D
 	/// <summary>
 	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из LinearArray1D
 	/// </summary>
-	/// <param name="IndY"></param>
-	/// <param name="IndZ"></param>
-	/// <param name="linAr1D"></param>
+	/// <param name="IndY">Индекс по оси OY</param>
+	/// <param name="IndZ">Индекс по оси OZ</param>
+	/// <param name="linAr1D">Указатель на объект класса LinearArray1D</param>
 	void SetLineX(size_t IndY, size_t IndZ, LinearArray1D* linAr1D)
 	{
 		size_t indStart = GetIndex(0, IndY, IndZ);
@@ -615,9 +618,9 @@ struct LinearArray3D
 	/// <summary>
 	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из LinearArray1D
 	/// </summary>
-	/// <param name="IndY"></param>
-	/// <param name="IndZ"></param>
-	/// <param name="linAr1D"></param>
+	/// <param name="IndY">Индекс по оси OY</param>
+	/// <param name="IndZ">Индекс по оси OZ</param>
+	/// <param name="linAr1D">Указатель на массив типа double</param>
 	void SetLineX(size_t IndY, size_t IndZ, double* linArray)
 	{
 		size_t indStart = GetIndex(0, IndY, IndZ);
@@ -632,8 +635,8 @@ struct LinearArray3D
 	/// <summary>
 	/// Заполняет двумерный массив layerZ значениями указанного слоя z
 	/// </summary>
-	/// <param name="IndZ"></param>
-	/// <param name="layerZ"></param>
+	/// <param name="IndZ">Индекс по оси OZ</param>
+	/// <param name="layerZ">Указатель на массив типа double</param>
 	void GetLayerZ(size_t IndZ, double* layerZ)
 	{
 		size_t indStart = GetIndex(0, 0, IndZ);
@@ -649,8 +652,8 @@ struct LinearArray3D
 	/// <summary>
 	/// Заполняет двумерный массив layerZ значениями указанного слоя z
 	/// </summary>
-	/// <param name="IndZ"></param>
-	/// <param name="layerZ"></param>
+	/// <param name="IndZ">Индекс по оси OZ</param>
+	/// <param name="layerZ">Указатель на объект класса LinearArray2D</param>
 	void GetLayerZ(size_t IndZ, LinearArray2D* layerZ)
 	{
 		size_t indStart = GetIndex(0, 0, IndZ);
@@ -666,8 +669,8 @@ struct LinearArray3D
 	/// <summary>
 	/// Заполняет указанный слой z значениями двумерного массива layerZ
 	/// </summary>
-	/// <param name="IndZ"></param>
-	/// <param name="layerZ"></param>
+	/// <param name="IndZ">Индекс по оси OZ</param>
+	/// <param name="layerZ">Указатель на массив типа double</param>
 	void SetLayerZ(size_t IndZ, double* layerZ)
 	{
 		size_t indStart = GetIndex(0, 0, IndZ);
@@ -682,8 +685,8 @@ struct LinearArray3D
 	/// <summary>
 	/// Заполняет указанный слой z значениями двумерного массива layerZ
 	/// </summary>
-	/// <param name="IndZ"></param>
-	/// <param name="layerZ"></param>
+	/// <param name="IndZ">Индекс по оси OZ</param>
+	/// <param name="layerZ">Указатель на объект класса LinearArray2D</param>
 	void SetLayerZ(size_t IndZ, LinearArray2D* layerZ)
 	{
 		size_t indStart = GetIndex(0, 0, IndZ);
@@ -698,7 +701,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных (плоскость XOY) между фрагментами вперед
 	/// </summary>
-	/// <param name="linearArray3DNext"></param>
+	/// <param name="linearArray3DNext">Указатель на объект класса LinearArray3D</param>
 	void LinearArray3DTrasferXOYForward(LinearArray3D* linearArray3DNext)
 	{		
 		for (int i = 0; i < nx; i++)
@@ -713,7 +716,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных (плоскость XOY) между фрагментами назад
 	/// </summary>
-	/// <param name="linearArray3DPrev"></param>
+	/// <param name="linearArray3DPrev">Указатель на объект класса LinearArray3D</param>
 	void LinearArray3DTrasferXOYBack(LinearArray3D* linearArray3DPrev)
 	{
 		for (int i = 0; i < nx; i++)
@@ -728,7 +731,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных (плоскость XOZ) между фрагментами вперед
 	/// </summary>
-	/// <param name="linearArray3DNext"></param>
+	/// <param name="linearArray3DNext">Указатель на объект класса LinearArray3D</param>
 	void LinearArray3DTrasferXOZForward(LinearArray3D* linearArray3DNext)
 	{
 		for (int i = 0; i < nx; i++)
@@ -743,7 +746,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных (плоскость XOZ) между фрагментами назад
 	/// </summary>
-	/// <param name="linearArray3DPrev"></param>
+	/// <param name="linearArray3DPrev">Указатель на объект класса LinearArray3D</param>
 	void LinearArray3DTrasferXOZBack(LinearArray3D* linearArray3DPrev)
 	{
 		for (int i = 0; i < nx; i++)
@@ -758,7 +761,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных (плоскость YOZ) между фрагментами вперед
 	/// </summary>
-	/// <param name="linearArray3DNext"></param>
+	/// <param name="linearArray3DNext">Указатель на объект класса LinearArray3D</param>
 	void LinearArray3DTrasferYOZForward(LinearArray3D* linearArray3DNext)
 	{
 		for (int j = 0; j < ny; j++)
@@ -773,7 +776,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных (плоскость YOZ) между фрагментами назад
 	/// </summary>
-	/// <param name="linearArray3DPrev"></param>
+	/// <param name="linearArray3DPrev">Указатель на объект класса LinearArray3D</param>
 	void LinearArray3DTrasferYOZBack(LinearArray3D* linearArray3DPrev)
 	{
 		for (int j = 0; j < ny; j++)
@@ -788,7 +791,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных фрагмента (последняя по оси OZ плоскость XOY) плоскости planeXOY
 	/// </summary>
-	/// <param name="planeXOY"></param>
+	/// <param name="planeXOY">Указатель на объект класса LinearArray2D</param>
 	void SetPlaneXOYLast(LinearArray2D* planeXOY)
 	{
 		for (int i = 0; i < nx; i++)
@@ -803,7 +806,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных фрагмента (первая по оси OZ плоскость XOY) плоскости planeXOY
 	/// </summary>
-	/// <param name="planeXOY"></param>
+	/// <param name="planeXOY">Указатель на объект класса LinearArray2D</param>
 	void SetPlaneXOYFirst(LinearArray2D* planeXOY)
 	{
 		for (int i = 0; i < nx; i++)
@@ -818,7 +821,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных фрагмента (последняя по оси OY плоскость XOZ) плоскости planeXOZ
 	/// </summary>
-	/// <param name="planeXOZ"></param>
+	/// <param name="planeXOZ">Указатель на объект класса LinearArray2D</param>
 	void SetPlaneXOZLast(LinearArray2D* planeXOZ)
 	{
 		for (int i = 0; i < nx; i++)
@@ -833,7 +836,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных фрагмента (первая по оси OY плоскость XOZ) плоскости planeXOZ
 	/// </summary>
-	/// <param name="planeXOZ"></param>
+	/// <param name="planeXOZ">Указатель на объект класса LinearArray2D</param>
 	void SetPlaneXOZFirst(LinearArray2D* planeXOZ)
 	{
 		for (int i = 0; i < nx; i++)
@@ -848,7 +851,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных фрагмента (последняя по оси OX плоскость YOZ) плоскости planeYOZ
 	/// </summary>
-	/// <param name="planeYOZ"></param>
+	/// <param name="planeYOZ">Указатель на объект класса LinearArray2D</param>
 	void SetPlaneYOZLast(LinearArray2D* planeYOZ)
 	{
 		for (int j = 0; j < ny; j++)
@@ -863,7 +866,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных фрагмента (первая по оси OX плоскость YOZ) плоскости planeYOZ
 	/// </summary>
-	/// <param name="planeYOZ"></param>
+	/// <param name="planeYOZ">Указатель на объект класса LinearArray2D</param>
 	void SetPlaneYOZFirst(LinearArray2D* planeYOZ)
 	{
 		for (int j = 0; j < ny; j++)
@@ -878,7 +881,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных от плоскости planeXOY последней по оси OZ плоскости фрагмента
 	/// </summary>
-	/// <param name="planeXOY"></param>
+	/// <param name="planeXOY">Указатель на объект класса LinearArray2D</param>
 	void GetPlaneXOYLast(LinearArray2D* planeXOY)
 	{
 		for (int i = 0; i < nx; i++)
@@ -893,7 +896,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных от плоскости planeXOY первой по оси OZ плоскости фрагмента
 	/// </summary>
-	/// <param name="planeXOY"></param>
+	/// <param name="planeXOY">Указатель на объект класса LinearArray2D</param>
 	void GetPlaneXOYFirst(LinearArray2D* planeXOY)
 	{
 		for (int i = 0; i < nx; i++)
@@ -908,7 +911,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных от плоскости плоскости planeXOZ последней по оси OY плоскости фрагмента
 	/// </summary>
-	/// <param name="planeXOZ"></param>
+	/// <param name="planeXOZ">Указатель на объект класса LinearArray2D</param>
 	void GetPlaneXOZLast(LinearArray2D* planeXOZ)
 	{
 		for (int i = 0; i < nx; i++)
@@ -923,7 +926,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных от плоскости planeXOZ первой по оси OY плоскости фрагмента
 	/// </summary>
-	/// <param name="planeXOZ"></param>
+	/// <param name="planeXOZ">Указатель на объект класса LinearArray2D</param>
 	void GetPlaneXOZFirst(LinearArray2D* planeXOZ)
 	{
 		for (int i = 0; i < nx; i++)
@@ -938,7 +941,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных от плоскости planeYOZ последней по оси OX плоскости фрагмента
 	/// </summary>
-	/// <param name="planeYOZ"></param>
+	/// <param name="planeYOZ">Указатель на объект класса LinearArray2D</param>
 	void GetPlaneYOZLast(LinearArray2D* planeYOZ)
 	{
 		for (int j = 0; j < ny; j++)
@@ -953,7 +956,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Передает массив данных от плоскости planeYOZ первой по оси OX плоскости фрагмента
 	/// </summary>
-	/// <param name="planeYOZ"></param>
+	/// <param name="planeYOZ">Указатель на объект класса LinearArray2D</param>
 	void GetPlaneYOZFirst(LinearArray2D* planeYOZ)
 	{
 		for (int j = 0; j < ny; j++)
@@ -968,7 +971,7 @@ struct LinearArray3D
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый объектом LinearArray3D</returns>
 	double GetDataSizeInMb()
 	{
 		double result = (double)nx * ny * nz * sizeof(double) / 1024 / 1024;
@@ -1008,15 +1011,17 @@ struct LinearArray3D
 		}
 		std::cout << std::endl;
 	}
-
+	
+	// FIX!!!
 	/// <summary>
-	/// Выводит в консоль значения массива data для плоскости fragment3DPlane фрагмента
+	/// Выводит в консоль значения массива data для плоскости fragment3DPlane фрагмента, в котором указаны размеры
+	/// (координаты двух противоположных вершин прямоугольника) прямоугольной области для вывода
 	/// </summary>
-	/// <param name="fragment3DPlane"></param>
-	/// <param name="Ind1_1"></param>
-	/// <param name="Ind1_2"></param>
-	/// <param name="Ind2_1"></param>
-	/// <param name="Ind2_2"></param>
+	/// <param name="fragment3DPlane">Элемент перечисления Fragment3DPlane</param>
+	/// <param name="Ind1_1">Первая координата первой вершины прямоугольника</param>
+	/// <param name="Ind1_2">Вторая координата первой вершины прямоугольника</param>
+	/// <param name="Ind2_1">Первая координата второй вершины прямоугольника</param>
+	/// <param name="Ind2_2">Вторая координата второй вершины прямоугольника</param>
 	void Print(Fragment3DPlane fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)
 	{
 		if (fragment3DPlane == YOZ_Prev)

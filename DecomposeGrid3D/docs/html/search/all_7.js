@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['print_0',['Print',['../struct_linear_array1_d.html#ab90a1079fae16be1b48de68dd018cea5',1,'LinearArray1D::Print()'],['../struct_linear_array2_d.html#a3ac6571f6aa613225ac5c8e5b79bb30e',1,'LinearArray2D::Print()'],['../struct_linear_array3_d.html#a051ae0fd7c5c689052f8451989f12db2',1,'LinearArray3D::Print()'],['../struct_linear_array3_d.html#aa8d7e043df8ebb822c0b9342f9c87a59',1,'LinearArray3D::Print(Fragment3DPlane fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)'],['../struct_linear_arrays2_d.html#aa010d4d566d3be1bfb6d6354216390b6',1,'LinearArrays2D::Print()'],['../struct_linear_arrays2_d.html#a6c8c0c2ce19520ed3fd5db469ea63191',1,'LinearArrays2D::Print(ModelDataName modelDataName)'],['../struct_linear_arrays3_d.html#a5d0743f5f7e8451b0f543c9033051461',1,'LinearArrays3D::Print()']]],
-  ['printdata_1',['printData',['../struct_simple_statistics.html#afdc4f954463d3a928fafe0539f963bf1',1,'SimpleStatistics']]],
-  ['printdata_2',['PrintData',['../struct_linear_array3_d.html#ac763a152a6ff8d1590171da6d781d803',1,'LinearArray3D']]],
-  ['printfragment_3',['PrintFragment',['../struct_grid2_d_fragment_x_y.html#a941e1dac2c8b368cf4b54f047a0807a8',1,'Grid2DFragmentXY::PrintFragment()'],['../struct_grid3_d_fragment.html#a701dc6ad1175b9440ac83b62753d1454',1,'Grid3DFragment::PrintFragment(Grid3DPrintDetalisation grid3DPrintDetalisation)']]],
-  ['printfragmentplane_4',['PrintFragmentPlane',['../struct_grid3_d_fragment.html#a4b116d128f41e47c96b526471e925d51',1,'Grid3DFragment::PrintFragmentPlane(ModelDataName modelDataName, Fragment3DPlane fragment3DPlane)'],['../struct_grid3_d_fragment.html#ad85e99719e0d356cc897f3c74489a7aa',1,'Grid3DFragment::PrintFragmentPlane(ModelDataName modelDataName, Fragment3DPlane fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)']]],
-  ['printgrid2dtransferplanexz_5',['PrintGrid2DTransferPlaneXZ',['../struct_grid2_d_transfer_plane_x_z.html#a8de7fcefc09c4affb17fe0c3e04c8eb7',1,'Grid2DTransferPlaneXZ']]],
-  ['printgrid3dfragmentindex_6',['PrintGrid3DFragmentIndex',['../struct_grid3_d_fragment.html#ad490818c034cb28996783882bd268acd',1,'Grid3DFragment::PrintGrid3DFragmentIndex()'],['../struct_grid3_d_fragment.html#a5bcff5dfc5a5f01d66e1a6409965b967',1,'Grid3DFragment::PrintGrid3DFragmentIndex(Grid3DFragment *fragment)']]]
+  ['initarraybyindexes_0',['InitArrayByIndexes',['../main_8cpp.html#a77e35ebd7a32eea1136b6fb852c2c5a9',1,'main.cpp']]],
+  ['initlineararray3dbyglobalindexes_1',['InitLinearArray3DByGlobalIndexes',['../struct_linear_array3_d.html#a9ef9ae0a2ee367e585eb7aae988809b2',1,'LinearArray3D']]],
+  ['initlineararray3dbyvalue_2',['InitLinearArray3DByValue',['../struct_linear_array3_d.html#ac85d2681f17ec448cbb6bd718467fc43',1,'LinearArray3D']]],
+  ['iscontain_3',['IsContain',['../struct_linear_arrays3_d.html#adca2d28834d70ea300d88328d3e52bd7',1,'LinearArrays3D']]],
+  ['isequal_4',['IsEqual',['../struct_linear_array3_d.html#ad93ba8b8757779f0fd84dac0e376fe94',1,'LinearArray3D']]],
+  ['issorted_5',['isSorted',['../struct_simple_statistics.html#a4cd5d94feb9d29e9b0b3358ee60ecf9c',1,'SimpleStatistics']]]
 ];

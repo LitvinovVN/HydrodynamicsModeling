@@ -1,4 +1,4 @@
 <map id="Grid2DFragmentYZ" name="Grid2DFragmentYZ">
-<area shape="rect" id="node1" title="Äâóìåðíûé ôðàãìåíò ðàñ÷åòíîé ñåòêè &#45; ïëîñêîñòü YZ(ãðàíü òðåõìåðíîãî ôðàãìåíòà)" alt="" coords="5,95,139,121"/>
+<area shape="rect" id="node1" title="Двумерный фрагмент расчетной сетки &#45; плоскость YZ(грань трехмерного фрагмента)" alt="" coords="5,95,139,121"/>
 <area shape="rect" id="node2" href="$struct_linear_arrays2_d.html" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="17,5,127,32"/>
 </map>

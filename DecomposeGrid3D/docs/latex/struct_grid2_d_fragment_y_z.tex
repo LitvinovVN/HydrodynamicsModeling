@@ -5,79 +5,80 @@
 Двумерный фрагмент расчетной сетки -\/ плоскость YZ(грань трехмерного фрагмента)  
 
 
+
+
+Граф связей класса Grid2\+DFragment\+YZ\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{struct_grid2_d_fragment_y_z__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a0ae1629c6a1176345543528ef3378f0a}\label{struct_grid2_d_fragment_y_z_a0ae1629c6a1176345543528ef3378f0a}} 
-{\bfseries Grid2\+DFragment\+YZ} (size\+\_\+t Fragment\+Ny, size\+\_\+t Fragment\+Nz, size\+\_\+t Fragment\+IndX, size\+\_\+t Fragment\+IndY, size\+\_\+t Fragment\+IndZ, size\+\_\+t Fragment\+Offset\+XBy\+Device, size\+\_\+t Fragment\+Offset\+YBy\+Device, size\+\_\+t Fragment\+Offset\+ZBy\+Device, size\+\_\+t Fragment\+Offset\+XBy\+Node, size\+\_\+t Fragment\+Offset\+YBy\+Node, size\+\_\+t Fragment\+Offset\+ZBy\+Node, size\+\_\+t Fragment\+OffsetX, size\+\_\+t Fragment\+OffsetY, size\+\_\+t Fragment\+OffsetZ)
+\mbox{\hyperlink{struct_grid2_d_fragment_y_z_a0ae1629c6a1176345543528ef3378f0a}{Grid2\+DFragment\+YZ}} (size\+\_\+t Fragment\+Ny, size\+\_\+t Fragment\+Nz, size\+\_\+t Fragment\+IndX, size\+\_\+t Fragment\+IndY, size\+\_\+t Fragment\+IndZ, size\+\_\+t Fragment\+Offset\+XBy\+Device, size\+\_\+t Fragment\+Offset\+YBy\+Device, size\+\_\+t Fragment\+Offset\+ZBy\+Device, size\+\_\+t Fragment\+Offset\+XBy\+Node, size\+\_\+t Fragment\+Offset\+YBy\+Node, size\+\_\+t Fragment\+Offset\+ZBy\+Node, size\+\_\+t Fragment\+OffsetX, size\+\_\+t Fragment\+OffsetY, size\+\_\+t Fragment\+OffsetZ)
 \item 
 size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a0e1f3a84a13914d7294702a0e17de1d8}{Get\+Nodes\+Number}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает число узлов в фрагменте расчетной сетки \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a2f164f95b6a296e6d8ba78ea4eff140f}{Linear\+Array\+Create}} (Model\+Data\+Name model\+Data\+Name)
+void \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a2f164f95b6a296e6d8ba78ea4eff140f}{Linear\+Array\+Create}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
 \begin{DoxyCompactList}\small\item\em Выделяет память и создает двумерный массив данных типа Model\+Data\+Name размерами fragment\+Ny на fragment\+Nz \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a5d2d03947b4f7d4b61f2cdcebb164ad7}{Get\+Linear\+Array2D}} (Model\+Data\+Name model\+Data\+Name)
+\mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a5d2d03947b4f7d4b61f2cdcebb164ad7}{Get\+Linear\+Array2D}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
 \begin{DoxyCompactList}\small\item\em Возвращает указатель на объект linear\+Array2D типа Model\+Data\+Name \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{struct_grid2_d_fragment_y_z_aa915702df9de1ddf6b75c541735e9f45}{Get\+Element}} (size\+\_\+t IndX, size\+\_\+t IndZ, Model\+Data\+Name model\+Data\+Name)
+double \mbox{\hyperlink{struct_grid2_d_fragment_y_z_aa915702df9de1ddf6b75c541735e9f45}{Get\+Element}} (size\+\_\+t IndX, size\+\_\+t IndZ, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
 \begin{DoxyCompactList}\small\item\em Возвращает элемент массива данных типа Model\+Data\+Name по указанным координатам IndX и IndZ \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a2c7ef6b1339ebc5fb1565d7fa60d8319}{Set\+Element}} (size\+\_\+t IndX, size\+\_\+t IndZ, Model\+Data\+Name model\+Data\+Name, double Value)
+double \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a2c7ef6b1339ebc5fb1565d7fa60d8319}{Set\+Element}} (size\+\_\+t IndX, size\+\_\+t IndZ, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name, double Value)
 \item 
 double \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a6c85204beeb33031f6b718ac0a8fcdf6}{Get\+Data\+Size\+In\+Mb}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый фрагментом \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a7f1e9e31e7faa61b06dfbbaec75a6cf7}\label{struct_grid2_d_fragment_y_z_a7f1e9e31e7faa61b06dfbbaec75a6cf7}} 
-void {\bfseries Print\+Fragment} ()
+void \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a7f1e9e31e7faa61b06dfbbaec75a6cf7}{Print\+Fragment}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a002aa343d7750c56992b35efa1e7479b}\label{struct_grid2_d_fragment_y_z_a002aa343d7750c56992b35efa1e7479b}} 
-size\+\_\+t {\bfseries fragment\+Ny}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a002aa343d7750c56992b35efa1e7479b}{fragment\+Ny}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a8c190eba75dc8a8a366c89c599e4850e}\label{struct_grid2_d_fragment_y_z_a8c190eba75dc8a8a366c89c599e4850e}} 
-size\+\_\+t {\bfseries fragment\+Nz}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a8c190eba75dc8a8a366c89c599e4850e}{fragment\+Nz}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_af241c377523bf8d0c1c995bdf74de4d0}\label{struct_grid2_d_fragment_y_z_af241c377523bf8d0c1c995bdf74de4d0}} 
-size\+\_\+t {\bfseries fragment\+IndX}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_af241c377523bf8d0c1c995bdf74de4d0}{fragment\+IndX}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_afc1883a6b048ce6fdc7b9d9d021800de}\label{struct_grid2_d_fragment_y_z_afc1883a6b048ce6fdc7b9d9d021800de}} 
-size\+\_\+t {\bfseries fragment\+IndY}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_afc1883a6b048ce6fdc7b9d9d021800de}{fragment\+IndY}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a3194b82d057fbc23c0ffd3cda57af684}\label{struct_grid2_d_fragment_y_z_a3194b82d057fbc23c0ffd3cda57af684}} 
-size\+\_\+t {\bfseries fragment\+IndZ}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a3194b82d057fbc23c0ffd3cda57af684}{fragment\+IndZ}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_abfc4da06b31733fcae2203c27dc75cd0}\label{struct_grid2_d_fragment_y_z_abfc4da06b31733fcae2203c27dc75cd0}} 
-size\+\_\+t {\bfseries fragment\+Offset\+XBy\+Device}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_abfc4da06b31733fcae2203c27dc75cd0}{fragment\+Offset\+XBy\+Device}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a2be6b0ad14a01e494c6fec58ddbf123e}\label{struct_grid2_d_fragment_y_z_a2be6b0ad14a01e494c6fec58ddbf123e}} 
-size\+\_\+t {\bfseries fragment\+Offset\+YBy\+Device}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a2be6b0ad14a01e494c6fec58ddbf123e}{fragment\+Offset\+YBy\+Device}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a1e6bce6466f28fde25b66a6d214d13aa}\label{struct_grid2_d_fragment_y_z_a1e6bce6466f28fde25b66a6d214d13aa}} 
-size\+\_\+t {\bfseries fragment\+Offset\+ZBy\+Device}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a1e6bce6466f28fde25b66a6d214d13aa}{fragment\+Offset\+ZBy\+Device}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a9b67eb17b84ec46541d4f0ab45f9376b}\label{struct_grid2_d_fragment_y_z_a9b67eb17b84ec46541d4f0ab45f9376b}} 
-size\+\_\+t {\bfseries fragment\+Offset\+XBy\+Node}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a9b67eb17b84ec46541d4f0ab45f9376b}{fragment\+Offset\+XBy\+Node}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_af519690dc1df88d9446320c63a901590}\label{struct_grid2_d_fragment_y_z_af519690dc1df88d9446320c63a901590}} 
-size\+\_\+t {\bfseries fragment\+Offset\+YBy\+Node}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_af519690dc1df88d9446320c63a901590}{fragment\+Offset\+YBy\+Node}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a8bbaae23939562e4a37d9899005dd324}\label{struct_grid2_d_fragment_y_z_a8bbaae23939562e4a37d9899005dd324}} 
-size\+\_\+t {\bfseries fragment\+Offset\+ZBy\+Node}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a8bbaae23939562e4a37d9899005dd324}{fragment\+Offset\+ZBy\+Node}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a0777764d92a5280687bfbb0602ad996b}\label{struct_grid2_d_fragment_y_z_a0777764d92a5280687bfbb0602ad996b}} 
-size\+\_\+t {\bfseries fragment\+OffsetX}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a0777764d92a5280687bfbb0602ad996b}{fragment\+OffsetX}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a42d2d4279eb792e820900020e47a602b}\label{struct_grid2_d_fragment_y_z_a42d2d4279eb792e820900020e47a602b}} 
-size\+\_\+t {\bfseries fragment\+OffsetY}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a42d2d4279eb792e820900020e47a602b}{fragment\+OffsetY}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa3d1565ec9f}\label{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa3d1565ec9f}} 
-size\+\_\+t {\bfseries fragment\+OffsetZ}
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa3d1565ec9f}{fragment\+OffsetZ}}
 \item 
-\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_ad942af108e95b60d5c38bd25020594b4}\label{struct_grid2_d_fragment_y_z_ad942af108e95b60d5c38bd25020594b4}} 
-\mbox{\hyperlink{struct_linear_arrays2_d}{Linear\+Arrays2D}} {\bfseries linear\+Arrays2D}
+\mbox{\hyperlink{struct_linear_arrays2_d}{Linear\+Arrays2D}} \mbox{\hyperlink{struct_grid2_d_fragment_y_z_ad942af108e95b60d5c38bd25020594b4}{linear\+Arrays2D}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
 Двумерный фрагмент расчетной сетки -\/ плоскость YZ(грань трехмерного фрагмента) 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a0ae1629c6a1176345543528ef3378f0a}\label{struct_grid2_d_fragment_y_z_a0ae1629c6a1176345543528ef3378f0a}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{Grid2DFragmentYZ()}{Grid2DFragmentYZ()}}
+{\footnotesize\ttfamily Grid2\+DFragment\+YZ\+::\+Grid2\+DFragment\+YZ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{Fragment\+Ny,  }\item[{size\+\_\+t}]{Fragment\+Nz,  }\item[{size\+\_\+t}]{Fragment\+IndX,  }\item[{size\+\_\+t}]{Fragment\+IndY,  }\item[{size\+\_\+t}]{Fragment\+IndZ,  }\item[{size\+\_\+t}]{Fragment\+Offset\+XBy\+Device,  }\item[{size\+\_\+t}]{Fragment\+Offset\+YBy\+Device,  }\item[{size\+\_\+t}]{Fragment\+Offset\+ZBy\+Device,  }\item[{size\+\_\+t}]{Fragment\+Offset\+XBy\+Node,  }\item[{size\+\_\+t}]{Fragment\+Offset\+YBy\+Node,  }\item[{size\+\_\+t}]{Fragment\+Offset\+ZBy\+Node,  }\item[{size\+\_\+t}]{Fragment\+OffsetX,  }\item[{size\+\_\+t}]{Fragment\+OffsetY,  }\item[{size\+\_\+t}]{Fragment\+OffsetZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
 
 \doxysubsection{Методы}
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a6c85204beeb33031f6b718ac0a8fcdf6}\label{struct_grid2_d_fragment_y_z_a6c85204beeb33031f6b718ac0a8fcdf6}} 
@@ -97,7 +98,7 @@ size\+\_\+t {\bfseries fragment\+OffsetZ}
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!GetElement@{GetElement}}
 \index{GetElement@{GetElement}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
 \doxysubsubsection{\texorpdfstring{GetElement()}{GetElement()}}
-{\footnotesize\ttfamily double Grid2\+DFragment\+YZ\+::\+Get\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndX,  }\item[{size\+\_\+t}]{IndZ,  }\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double Grid2\+DFragment\+YZ\+::\+Get\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndX,  }\item[{size\+\_\+t}]{IndZ,  }\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -119,7 +120,7 @@ size\+\_\+t {\bfseries fragment\+OffsetZ}
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!GetLinearArray2D@{GetLinearArray2D}}
 \index{GetLinearArray2D@{GetLinearArray2D}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
 \doxysubsubsection{\texorpdfstring{GetLinearArray2D()}{GetLinearArray2D()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ Grid2\+DFragment\+YZ\+::\+Get\+Linear\+Array2D (\begin{DoxyParamCaption}\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ Grid2\+DFragment\+YZ\+::\+Get\+Linear\+Array2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -150,7 +151,7 @@ size\+\_\+t {\bfseries fragment\+OffsetZ}
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!LinearArrayCreate@{LinearArrayCreate}}
 \index{LinearArrayCreate@{LinearArrayCreate}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
 \doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
-{\footnotesize\ttfamily void Grid2\+DFragment\+YZ\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{Model\+Data\+Name}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Grid2\+DFragment\+YZ\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -161,11 +162,17 @@ size\+\_\+t {\bfseries fragment\+OffsetZ}
 {\em model\+Data\+Name} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a7f1e9e31e7faa61b06dfbbaec75a6cf7}\label{struct_grid2_d_fragment_y_z_a7f1e9e31e7faa61b06dfbbaec75a6cf7}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!PrintFragment@{PrintFragment}}
+\index{PrintFragment@{PrintFragment}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{PrintFragment()}{PrintFragment()}}
+{\footnotesize\ttfamily void Grid2\+DFragment\+YZ\+::\+Print\+Fragment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a2c7ef6b1339ebc5fb1565d7fa60d8319}\label{struct_grid2_d_fragment_y_z_a2c7ef6b1339ebc5fb1565d7fa60d8319}} 
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!SetElement@{SetElement}}
 \index{SetElement@{SetElement}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
 \doxysubsubsection{\texorpdfstring{SetElement()}{SetElement()}}
-{\footnotesize\ttfamily double Grid2\+DFragment\+YZ\+::\+Set\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndX,  }\item[{size\+\_\+t}]{IndZ,  }\item[{Model\+Data\+Name}]{model\+Data\+Name,  }\item[{double}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double Grid2\+DFragment\+YZ\+::\+Set\+Element (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{IndX,  }\item[{size\+\_\+t}]{IndZ,  }\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name,  }\item[{double}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -187,6 +194,99 @@ size\+\_\+t {\bfseries fragment\+OffsetZ}
 \end{DoxyReturn}
 
 
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_af241c377523bf8d0c1c995bdf74de4d0}\label{struct_grid2_d_fragment_y_z_af241c377523bf8d0c1c995bdf74de4d0}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentIndX@{fragmentIndX}}
+\index{fragmentIndX@{fragmentIndX}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentIndX}{fragmentIndX}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+IndX}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_afc1883a6b048ce6fdc7b9d9d021800de}\label{struct_grid2_d_fragment_y_z_afc1883a6b048ce6fdc7b9d9d021800de}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentIndY@{fragmentIndY}}
+\index{fragmentIndY@{fragmentIndY}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentIndY}{fragmentIndY}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+IndY}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a3194b82d057fbc23c0ffd3cda57af684}\label{struct_grid2_d_fragment_y_z_a3194b82d057fbc23c0ffd3cda57af684}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentIndZ@{fragmentIndZ}}
+\index{fragmentIndZ@{fragmentIndZ}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentIndZ}{fragmentIndZ}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+IndZ}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a002aa343d7750c56992b35efa1e7479b}\label{struct_grid2_d_fragment_y_z_a002aa343d7750c56992b35efa1e7479b}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentNy@{fragmentNy}}
+\index{fragmentNy@{fragmentNy}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentNy}{fragmentNy}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+Ny}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a8c190eba75dc8a8a366c89c599e4850e}\label{struct_grid2_d_fragment_y_z_a8c190eba75dc8a8a366c89c599e4850e}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentNz@{fragmentNz}}
+\index{fragmentNz@{fragmentNz}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentNz}{fragmentNz}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+Nz}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a0777764d92a5280687bfbb0602ad996b}\label{struct_grid2_d_fragment_y_z_a0777764d92a5280687bfbb0602ad996b}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetX@{fragmentOffsetX}}
+\index{fragmentOffsetX@{fragmentOffsetX}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetX}{fragmentOffsetX}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+OffsetX}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_abfc4da06b31733fcae2203c27dc75cd0}\label{struct_grid2_d_fragment_y_z_abfc4da06b31733fcae2203c27dc75cd0}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetXByDevice@{fragmentOffsetXByDevice}}
+\index{fragmentOffsetXByDevice@{fragmentOffsetXByDevice}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetXByDevice}{fragmentOffsetXByDevice}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+Offset\+XBy\+Device}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a9b67eb17b84ec46541d4f0ab45f9376b}\label{struct_grid2_d_fragment_y_z_a9b67eb17b84ec46541d4f0ab45f9376b}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetXByNode@{fragmentOffsetXByNode}}
+\index{fragmentOffsetXByNode@{fragmentOffsetXByNode}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetXByNode}{fragmentOffsetXByNode}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+Offset\+XBy\+Node}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a42d2d4279eb792e820900020e47a602b}\label{struct_grid2_d_fragment_y_z_a42d2d4279eb792e820900020e47a602b}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetY@{fragmentOffsetY}}
+\index{fragmentOffsetY@{fragmentOffsetY}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetY}{fragmentOffsetY}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+OffsetY}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a2be6b0ad14a01e494c6fec58ddbf123e}\label{struct_grid2_d_fragment_y_z_a2be6b0ad14a01e494c6fec58ddbf123e}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetYByDevice@{fragmentOffsetYByDevice}}
+\index{fragmentOffsetYByDevice@{fragmentOffsetYByDevice}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetYByDevice}{fragmentOffsetYByDevice}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+Offset\+YBy\+Device}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_af519690dc1df88d9446320c63a901590}\label{struct_grid2_d_fragment_y_z_af519690dc1df88d9446320c63a901590}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetYByNode@{fragmentOffsetYByNode}}
+\index{fragmentOffsetYByNode@{fragmentOffsetYByNode}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetYByNode}{fragmentOffsetYByNode}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+Offset\+YBy\+Node}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa3d1565ec9f}\label{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa3d1565ec9f}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetZ@{fragmentOffsetZ}}
+\index{fragmentOffsetZ@{fragmentOffsetZ}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetZ}{fragmentOffsetZ}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+OffsetZ}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a1e6bce6466f28fde25b66a6d214d13aa}\label{struct_grid2_d_fragment_y_z_a1e6bce6466f28fde25b66a6d214d13aa}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetZByDevice@{fragmentOffsetZByDevice}}
+\index{fragmentOffsetZByDevice@{fragmentOffsetZByDevice}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetZByDevice}{fragmentOffsetZByDevice}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+Offset\+ZBy\+Device}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a8bbaae23939562e4a37d9899005dd324}\label{struct_grid2_d_fragment_y_z_a8bbaae23939562e4a37d9899005dd324}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!fragmentOffsetZByNode@{fragmentOffsetZByNode}}
+\index{fragmentOffsetZByNode@{fragmentOffsetZByNode}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetZByNode}{fragmentOffsetZByNode}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+YZ\+::fragment\+Offset\+ZBy\+Node}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_y_z_ad942af108e95b60d5c38bd25020594b4}\label{struct_grid2_d_fragment_y_z_ad942af108e95b60d5c38bd25020594b4}} 
+\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!linearArrays2D@{linearArrays2D}}
+\index{linearArrays2D@{linearArrays2D}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
+\doxysubsubsection{\texorpdfstring{linearArrays2D}{linearArrays2D}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linear_arrays2_d}{Linear\+Arrays2D}} Grid2\+DFragment\+YZ\+::linear\+Arrays2D}
+
+
+
 Объявления и описания членов структуры находятся в файле\+:\begin{DoxyCompactItemize}
 \item 
-Decompose\+Grid3\+D/Grid3\+D.\+cpp\end{DoxyCompactItemize}
+Decompose\+Grid3\+D/\mbox{\hyperlink{_grid3_d_8cpp}{Grid3\+D.\+cpp}}\end{DoxyCompactItemize}
