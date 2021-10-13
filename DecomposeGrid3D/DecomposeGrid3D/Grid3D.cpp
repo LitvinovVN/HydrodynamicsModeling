@@ -195,6 +195,83 @@ struct SimpleStatistics
 
 
 #pragma region LinearArrays
+/// <summary>
+/// Линейный одномерный массив
+/// </summary>
+struct LinearArray1D
+{
+	size_t nx;             // число узлов в фрагменте по оси Ox	
+	double* data;          // указатель на массив данных
+
+	// Конструктор
+	LinearArray1D(size_t Nx) :
+		nx(Nx)
+	{
+		size_t n = nx;
+		size_t dataSize = n * sizeof(double);
+		data = (double*)malloc(dataSize);
+
+		for (int i = 0; i < n; i++)
+		{
+			data[i] = 0;
+		}
+	}
+
+	// Деструктор
+	~LinearArray1D()
+	{
+		free(data);
+	}
+
+	// Методы	
+
+	/// <summary>
+	/// Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
+	/// </summary>
+	/// <param name="IndX"></param>
+	/// <param name="IndY"></param>
+	/// <param name="IndZ"></param>
+	/// <returns></returns>
+	double GetElement(size_t IndX)
+	{
+		return data[IndX];
+	}
+
+	/// <summary>
+	/// Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
+	/// </summary>
+	/// <param name="IndX"></param>	
+	/// <param name="Value"></param>
+	/// <returns></returns>
+	double SetElement(size_t IndX, double Value)
+	{
+		data[IndX] = Value;
+	}
+
+	/// <summary>
+	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D
+	/// </summary>
+	/// <returns></returns>
+	double GetDataSizeInMb()
+	{
+		double result = (double)nx * sizeof(double) / 1024 / 1024;
+		return result;
+	}
+
+	/// <summary>
+	/// Вывод элементов фрагмента по слоям XY в консоль
+	/// </summary>
+	void Print()
+	{
+		std::cout << "=================PrintArray=================" << std::endl;
+		for (int i = 0; i < nx; i++)
+		{
+			std::cout << data[i] << " ";
+		}
+		std::cout << std::endl;
+	}
+
+};
 
 /// <summary>
 /// Класс для работы с двумерным массивом, сохраняемым как одномерный
@@ -272,6 +349,72 @@ struct LinearArray2D
 
 		data[indx] = Value;
 	}
+
+
+	/// <summary>
+	/// Заполняет объект LinearArray1D данными, расположенными вдоль оси Ox по указанной координате Oy
+	/// </summary>
+	/// <param name="IndY"></param>	
+	/// <param name="linAr1D"></param>
+	void GetLineX(size_t IndY, LinearArray1D* linAr1D)
+	{
+		size_t indStart = GetIndex(0, IndY);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			linAr1D->data[cnt++] = data[i];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет массив данными, расположенными вдоль оси Ox по указанной координате Oy
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="linArray"></param>
+	void GetLineX(size_t IndY, double* linArray)
+	{
+		size_t indStart = GetIndex(0, IndY);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			linArray[cnt++] = data[i];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из LinearArray1D
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="linAr1D"></param>
+	void SetLineX(size_t IndY, LinearArray1D* linAr1D)
+	{
+		size_t indStart = GetIndex(0, IndY);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			data[i] = linAr1D->data[cnt++];
+		}
+	}
+
+	/// <summary>
+	/// Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy, данными из LinearArray1D
+	/// </summary>
+	/// <param name="IndY"></param>
+	/// <param name="linAr1D"></param>
+	void SetLineX(size_t IndY, double* linArray)
+	{
+		size_t indStart = GetIndex(0, IndY);
+
+		size_t cnt = 0;
+		for (size_t i = indStart; i < indStart + nx; i++)
+		{
+			data[i] = linArray[cnt++];
+		}
+	}
+
 
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArray2D
