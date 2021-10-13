@@ -2601,15 +2601,8 @@ struct GridBlock3DByNode
 		}
 	}
 
-	/// <summary>
-	/// ------------------
-	/// </summary>
-	/// <param name="data"></param>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="nz"></param>
-	/// <param name="modelDataName"></param>
-	void Сompose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+	
+	void Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (auto itByDevices = gridBlock3DByDevices.begin(); itByDevices != gridBlock3DByDevices.end(); itByDevices++)
 		{
@@ -2895,7 +2888,7 @@ struct Grid3D
 		{
 			auto nodeKey = itByNodes->first;
 			GridBlock3DByNode* nodeObj = &(itByNodes->second);
-			nodeObj->Сompose(data, gridNx, gridNy, gridNz, modelDataName);
+			nodeObj->Compose(data, gridNx, gridNy, gridNz, modelDataName);
 		}
 
 		return data;
