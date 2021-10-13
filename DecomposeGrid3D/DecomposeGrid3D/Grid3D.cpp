@@ -5,7 +5,10 @@
 #include <map>
 #include <vector>
 
-static struct GridHelper		// Вспомогательные вычислительные методы для Grid
+/// <summary>
+/// Вспомогательные вычислительные методы для Grid
+/// </summary>
+static struct GridHelper
 {
 	static size_t CountN(size_t nx, size_t ny, size_t nz)
 	{
@@ -14,7 +17,10 @@ static struct GridHelper		// Вспомогательные вычислител
 	}
 } GridHelper;
 
-enum ModelDataName     // Перечисление наименований массивов данных модели
+/// <summary>
+/// Перечисление наименований массивов данных модели
+/// </summary>
+enum ModelDataName
 {
 	U,
 	V,
