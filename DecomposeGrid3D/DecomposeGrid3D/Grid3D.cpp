@@ -2288,16 +2288,8 @@ struct GridBlock3DByDevice
 			}
 		}
 	}
-
-	/// <summary>
-	/// -----------------
-	/// </summary>
-	/// <param name="data"></param>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="nz"></param>
-	/// <param name="modelDataName"></param>
-	void Сompose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+		
+	void Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentsNumZ; k++)
 		{
@@ -2306,7 +2298,7 @@ struct GridBlock3DByDevice
 				for (size_t i = 0; i < fragmentsNumX; i++)
 				{
 					Grid3DFragment* fragment = GetGrid3DFragment(i, j, k);
-					fragment->Сompose(data, nx, ny, nz, modelDataName);
+					fragment->Compose(data, nx, ny, nz, modelDataName);
 				}
 			}
 		}
@@ -2623,7 +2615,7 @@ struct GridBlock3DByNode
 		{
 			auto deviceKey = itByDevices->first;
 			GridBlock3DByDevice* deviceObj = &(itByDevices->second);
-			deviceObj->Сompose(data, nx, ny, nz, modelDataName);
+			deviceObj->Compose(data, nx, ny, nz, modelDataName);
 		}
 	}
 
@@ -2894,7 +2886,7 @@ struct Grid3D
 	/// </summary>
 	/// <param name="modelDataName"></param>
 	/// <returns></returns>
-	double* Сompose(ModelDataName modelDataName)	//	Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки
+	double* Compose(ModelDataName modelDataName)	//	Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки
 	{
 		long ram = sizeof(double) * gridNx * gridNy * gridNz;
 		double* data = (double*)malloc(ram);

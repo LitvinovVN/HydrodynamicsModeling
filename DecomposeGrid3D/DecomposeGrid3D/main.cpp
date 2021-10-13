@@ -131,7 +131,7 @@ void Grid3DTest01()
     std::cout << "-------------END Grid3D decompose by fragments----------------" << std::endl << std::endl;
 
     std::cout << "------------Comparing arrays-------------" << std::endl;
-    double* data_out = grid3D.Сompose(U);
+    double* data_out = grid3D.Compose(U);
     bool isEquals = ComparingArrays(data, data_out, gridNx * gridNy * gridNz);
     std::cout << "isEquals = " << isEquals;
 
@@ -230,7 +230,7 @@ void Grid2DTransferPlaneXZTest01()
     std::cout << "-------------END Grid3D decompose by fragments----------------" << std::endl << std::endl;
 
     std::cout << "------------Comparing arrays-------------" << std::endl;
-    double* data_out = grid3D.Сompose(U);
+    double* data_out = grid3D.Compose(U);
     bool isEquals = ComparingArrays(data, data_out, gridNx * gridNy * gridNz);
     std::cout << "isEquals = " << isEquals;
 
