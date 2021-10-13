@@ -246,7 +246,275 @@ struct LinearArray3D
 		data[indx] = Value;
 	}
 
+	/// <summary>
+	/// Передает массив данных (плоскость XOY) между фрагментами вперед
+	/// </summary>
+	/// <param name="linearArray3DNext"></param>
+	void LinearArray3DTrasferXOYForward(LinearArray3D* linearArray3DNext)
+	{		
+		for (int i = 0; i < nx; i++)
+		{
+			for (int j = 0; j < ny; j++)
+			{
+				linearArray3DNext->data[GetIndex(i, j, 0)] = data[GetIndex(i, j, nz - 1)];
+			}
+		}
+	}
 
+	/// <summary>
+	/// Передает массив данных (плоскость XOY) между фрагментами назад
+	/// </summary>
+	/// <param name="linearArray3DPrev"></param>
+	void LinearArray3DTrasferXOYBack(LinearArray3D* linearArray3DPrev)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int j = 0; j < ny; j++)
+			{
+				linearArray3DPrev->data[GetIndex(i, j, nz - 1)] = data[GetIndex(i, j, 0)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных (плоскость XOZ) между фрагментами вперед
+	/// </summary>
+	/// <param name="linearArray3DNext"></param>
+	void LinearArray3DTrasferXOZForward(LinearArray3D* linearArray3DNext)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				linearArray3DNext->data[GetIndex(i, 0, k)] = data[GetIndex(i, ny - 1, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных (плоскость XOZ) между фрагментами назад
+	/// </summary>
+	/// <param name="linearArray3DPrev"></param>
+	void LinearArray3DTrasferXOZBack(LinearArray3D* linearArray3DPrev)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				linearArray3DPrev->data[GetIndex(i, ny - 1, k)] = data[GetIndex(i, 0, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных (плоскость YOZ) между фрагментами вперед
+	/// </summary>
+	/// <param name="linearArray3DNext"></param>
+	void LinearArray3DTrasferYOZForward(LinearArray3D* linearArray3DNext)
+	{
+		for (int j = 0; j < ny; j++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				linearArray3DNext->data[GetIndex(0, j, k)] = data[GetIndex(nx - 1, j, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных (плоскость YOZ) между фрагментами назад
+	/// </summary>
+	/// <param name="linearArray3DPrev"></param>
+	void LinearArray3DTrasferYOZBack(LinearArray3D* linearArray3DPrev)
+	{
+		for (int j = 0; j < ny; j++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				linearArray3DPrev->data[GetIndex(nx - 1, j, k)] = data[GetIndex(0, j, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных фрагмента (последняя по оси OZ плоскость XOY) плоскости planeXOY
+	/// </summary>
+	/// <param name="planeXOY"></param>
+	void SetPlaneXOYLast(LinearArray2D* planeXOY)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int j = 0; j < ny; j++)
+			{
+				planeXOY->data[planeXOY->GetIndex(i, j)] = data[GetIndex(i, j, nz - 1)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных фрагмента (первая по оси OZ плоскость XOY) плоскости planeXOY
+	/// </summary>
+	/// <param name="planeXOY"></param>
+	void SetPlaneXOYFirst(LinearArray2D* planeXOY)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int j = 0; j < ny; j++)
+			{
+				planeXOY->data[planeXOY->GetIndex(i, j)] = data[GetIndex(i, j, 0)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных фрагмента (последняя по оси OY плоскость XOZ) плоскости planeXOZ
+	/// </summary>
+	/// <param name="planeXOZ"></param>
+	void SetPlaneXOZLast(LinearArray2D* planeXOZ)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				planeXOZ->data[planeXOZ->GetIndex(i, k)] = data[GetIndex(i, ny - 1, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных фрагмента (первая по оси OY плоскость XOZ) плоскости planeXOZ
+	/// </summary>
+	/// <param name="planeXOZ"></param>
+	void SetPlaneXOZFirst(LinearArray2D* planeXOZ)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				planeXOZ->data[planeXOZ->GetIndex(i, k)] = data[GetIndex(i, 0, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных фрагмента (последняя по оси OX плоскость YOZ) плоскости planeYOZ
+	/// </summary>
+	/// <param name="planeYOZ"></param>
+	void SetPlaneYOZLast(LinearArray2D* planeYOZ)
+	{
+		for (int j = 0; j < ny; j++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				planeYOZ->data[planeYOZ->GetIndex(j, k)] = data[GetIndex(nx - 1, j, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных фрагмента (первая по оси OX плоскость YOZ) плоскости planeYOZ
+	/// </summary>
+	/// <param name="planeYOZ"></param>
+	void SetPlaneYOZFirst(LinearArray2D* planeYOZ)
+	{
+		for (int j = 0; j < ny; j++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				planeYOZ->data[planeYOZ->GetIndex(j, k)] = data[GetIndex(0, j, k)];
+			}
+		}
+	}
+	
+	/// <summary>
+	/// Передает массив данных от плоскости planeXOY последней по оси OZ плоскости фрагмента
+	/// </summary>
+	/// <param name="planeXOY"></param>
+	void GetPlaneXOYLast(LinearArray2D* planeXOY)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int j = 0; j < ny; j++)
+			{
+				data[GetIndex(i, j, nz - 1)] = planeXOY->data[planeXOY->GetIndex(i, j)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных от плоскости planeXOY первой по оси OZ плоскости фрагмента
+	/// </summary>
+	/// <param name="planeXOY"></param>
+	void GetPlaneXOYFirst(LinearArray2D* planeXOY)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int j = 0; j < ny; j++)
+			{
+				data[GetIndex(i, j, 0)] = planeXOY->data[planeXOY->GetIndex(i, j)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных от плоскости плоскости planeXOZ последней по оси OY плоскости фрагмента
+	/// </summary>
+	/// <param name="planeXOZ"></param>
+	void GetPlaneXOZLast(LinearArray2D* planeXOZ)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				data[GetIndex(i, ny - 1, k)] = planeXOZ->data[planeXOZ->GetIndex(i, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных от плоскости planeXOZ первой по оси OY плоскости фрагмента
+	/// </summary>
+	/// <param name="planeXOZ"></param>
+	void GetPlaneXOZFirst(LinearArray2D* planeXOZ)
+	{
+		for (int i = 0; i < nx; i++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				data[GetIndex(i, 0, k)] = planeXOZ->data[planeXOZ->GetIndex(i, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных от плоскости planeYOZ последней по оси OX плоскости фрагмента
+	/// </summary>
+	/// <param name="planeYOZ"></param>
+	void GetPlaneYOZLast(LinearArray2D* planeYOZ)
+	{
+		for (int j = 0; j < ny; j++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				data[GetIndex(nx - 1, j, k)] = planeYOZ->data[planeYOZ->GetIndex(j, k)];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Передает массив данных от плоскости planeYOZ первой по оси OX плоскости фрагмента
+	/// </summary>
+	/// <param name="planeYOZ"></param>
+	void GetPlaneYOZFirst(LinearArray2D* planeYOZ)
+	{
+		for (int j = 0; j < ny; j++)
+		{
+			for (int k = 0; k < nz; k++)
+			{
+				data[GetIndex(0, j, k)] = planeYOZ->data[planeYOZ->GetIndex(j, k)];
+			}
+		}
+	}
 
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D
@@ -1409,14 +1677,7 @@ struct Grid3DFragment
 
 		return grid2DFragmentXY;
 	}
-	------------------------------------------------------------------------------------------------------------------------------
-	/*void TransferPlaneXZ(ModelDataName modelDataName, Grid2DFragmentXY*)
-	{
-
-		linearArrays3D.GetLinearArray3D(modelDataName);
-
-
-	}*/
+	
 
 	/// <summary>
 	/// Возвращает указатель на последнюю плоскость XY фрагмента по оси Oz (верхняя плоскость 3D-фрагмента)
