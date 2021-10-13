@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <functional> // std::ref
 #include <map>
 #include <vector>
 
