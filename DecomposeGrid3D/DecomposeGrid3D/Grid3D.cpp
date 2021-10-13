@@ -12,7 +12,7 @@ static struct GridHelper		// Вспомогательные вычислител
 		size_t N = nx * ny * nz;
 		return N;
 	}
-};
+} GridHelper;
 
 enum ModelDataName     // Перечисление наименований массивов данных модели
 {
