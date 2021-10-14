@@ -188,7 +188,7 @@ $(function() {
 <tr class="memdesc:ac763a152a6ff8d1590171da6d781d803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль элементы массива данных data  <a href="struct_linear_array3_d.html#ac763a152a6ff8d1590171da6d781d803">Подробнее...</a><br /></td></tr>
 <tr class="separator:ac763a152a6ff8d1590171da6d781d803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8d7e043df8ebb822c0b9342f9c87a59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linear_array3_d.html#aa8d7e043df8ebb822c0b9342f9c87a59">Print</a> (<a class="el" href="_grid3_d_8cpp.html#a464c44948734b5d4e9c9957f13838b90">Fragment3DPlane</a> fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)</td></tr>
-<tr class="memdesc:aa8d7e043df8ebb822c0b9342f9c87a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль значения массива data для плоскости fragment3DPlane фрагмента  <a href="struct_linear_array3_d.html#aa8d7e043df8ebb822c0b9342f9c87a59">Подробнее...</a><br /></td></tr>
+<tr class="memdesc:aa8d7e043df8ebb822c0b9342f9c87a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль значения массива data для плоскости fragment3DPlane фрагмента, в котором указаны размеры (координаты двух противоположных вершин прямоугольника) прямоугольной области для вывода  <a href="struct_linear_array3_d.html#aa8d7e043df8ebb822c0b9342f9c87a59">Подробнее...</a><br /></td></tr>
 <tr class="separator:aa8d7e043df8ebb822c0b9342f9c87a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -305,7 +305,7 @@ $(function() {
 </div><div class="memdoc">
 
 <p>Возвращает объём оперативной памяти, занимаемый объектом <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a> </p>
-<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Объём оперативной памяти, занимаемый объектом <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a></dd></dl>
 
 </div>
 </div>
@@ -452,8 +452,8 @@ $(function() {
 <p>Заполняет двумерный массив layerZ значениями указанного слоя z </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">IndZ</td><td></td></tr>
-    <tr><td class="paramname">layerZ</td><td></td></tr>
+    <tr><td class="paramname">IndZ</td><td>Индекс по оси OZ</td></tr>
+    <tr><td class="paramname">layerZ</td><td>Указатель на массив типа double</td></tr>
   </table>
   </dd>
 </dl>
@@ -497,8 +497,8 @@ $(function() {
 <p>Заполняет двумерный массив layerZ значениями указанного слоя z </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">IndZ</td><td></td></tr>
-    <tr><td class="paramname">layerZ</td><td></td></tr>
+    <tr><td class="paramname">IndZ</td><td>Индекс по оси OZ</td></tr>
+    <tr><td class="paramname">layerZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -636,7 +636,7 @@ $(function() {
 <p>Передает массив данных от плоскости planeXOY первой по оси OZ плоскости фрагмента </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeXOY</td><td></td></tr>
+    <tr><td class="paramname">planeXOY</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -670,7 +670,7 @@ $(function() {
 <p>Передает массив данных от плоскости planeXOY последней по оси OZ плоскости фрагмента </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeXOY</td><td></td></tr>
+    <tr><td class="paramname">planeXOY</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -704,7 +704,7 @@ $(function() {
 <p>Передает массив данных от плоскости planeXOZ первой по оси OY плоскости фрагмента </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeXOZ</td><td></td></tr>
+    <tr><td class="paramname">planeXOZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -738,7 +738,7 @@ $(function() {
 <p>Передает массив данных от плоскости плоскости planeXOZ последней по оси OY плоскости фрагмента </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeXOZ</td><td></td></tr>
+    <tr><td class="paramname">planeXOZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -772,7 +772,7 @@ $(function() {
 <p>Передает массив данных от плоскости planeYOZ первой по оси OX плоскости фрагмента </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeYOZ</td><td></td></tr>
+    <tr><td class="paramname">planeYOZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -806,7 +806,7 @@ $(function() {
 <p>Передает массив данных от плоскости planeYOZ последней по оси OX плоскости фрагмента </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeYOZ</td><td></td></tr>
+    <tr><td class="paramname">planeYOZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -930,7 +930,7 @@ $(function() {
 <p>Передает массив данных (плоскость XOY) между фрагментами назад </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">linearArray3DPrev</td><td></td></tr>
+    <tr><td class="paramname">linearArray3DPrev</td><td>Указатель на объект класса <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -964,7 +964,7 @@ $(function() {
 <p>Передает массив данных (плоскость XOY) между фрагментами вперед </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">linearArray3DNext</td><td></td></tr>
+    <tr><td class="paramname">linearArray3DNext</td><td>Указатель на объект класса <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -998,7 +998,7 @@ $(function() {
 <p>Передает массив данных (плоскость XOZ) между фрагментами назад </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">linearArray3DPrev</td><td></td></tr>
+    <tr><td class="paramname">linearArray3DPrev</td><td>Указатель на объект класса <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1032,7 +1032,7 @@ $(function() {
 <p>Передает массив данных (плоскость XOZ) между фрагментами вперед </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">linearArray3DNext</td><td></td></tr>
+    <tr><td class="paramname">linearArray3DNext</td><td>Указатель на объект класса <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1066,7 +1066,7 @@ $(function() {
 <p>Передает массив данных (плоскость YOZ) между фрагментами назад </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">linearArray3DPrev</td><td></td></tr>
+    <tr><td class="paramname">linearArray3DPrev</td><td>Указатель на объект класса <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1100,7 +1100,7 @@ $(function() {
 <p>Передает массив данных (плоскость YOZ) между фрагментами вперед </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">linearArray3DNext</td><td></td></tr>
+    <tr><td class="paramname">linearArray3DNext</td><td>Указатель на объект класса <a class="el" href="struct_linear_array3_d.html" title="Линейный массив, описывающий трёхмерную область">LinearArray3D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1186,14 +1186,14 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p>Выводит в консоль значения массива data для плоскости fragment3DPlane фрагмента </p>
+<p>Выводит в консоль значения массива data для плоскости fragment3DPlane фрагмента, в котором указаны размеры (координаты двух противоположных вершин прямоугольника) прямоугольной области для вывода </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fragment3DPlane</td><td></td></tr>
-    <tr><td class="paramname">Ind1_1</td><td></td></tr>
-    <tr><td class="paramname">Ind1_2</td><td></td></tr>
-    <tr><td class="paramname">Ind2_1</td><td></td></tr>
-    <tr><td class="paramname">Ind2_2</td><td></td></tr>
+    <tr><td class="paramname">fragment3DPlane</td><td>Элемент перечисления Fragment3DPlane</td></tr>
+    <tr><td class="paramname">Ind1_1</td><td>Первая координата первой вершины прямоугольника</td></tr>
+    <tr><td class="paramname">Ind1_2</td><td>Вторая координата первой вершины прямоугольника</td></tr>
+    <tr><td class="paramname">Ind2_1</td><td>Первая координата второй вершины прямоугольника</td></tr>
+    <tr><td class="paramname">Ind2_2</td><td>Вторая координата второй вершины прямоугольника</td></tr>
   </table>
   </dd>
 </dl>
@@ -1324,8 +1324,8 @@ $(function() {
 <p>Заполняет указанный слой z значениями двумерного массива layerZ </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">IndZ</td><td></td></tr>
-    <tr><td class="paramname">layerZ</td><td></td></tr>
+    <tr><td class="paramname">IndZ</td><td>Индекс по оси OZ</td></tr>
+    <tr><td class="paramname">layerZ</td><td>Указатель на массив типа double</td></tr>
   </table>
   </dd>
 </dl>
@@ -1369,8 +1369,8 @@ $(function() {
 <p>Заполняет указанный слой z значениями двумерного массива layerZ </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">IndZ</td><td></td></tr>
-    <tr><td class="paramname">layerZ</td><td></td></tr>
+    <tr><td class="paramname">IndZ</td><td>Индекс по оси OZ</td></tr>
+    <tr><td class="paramname">layerZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1420,9 +1420,9 @@ $(function() {
 <p>Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a> </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">IndY</td><td></td></tr>
-    <tr><td class="paramname">IndZ</td><td></td></tr>
-    <tr><td class="paramname">linAr1D</td><td></td></tr>
+    <tr><td class="paramname">IndY</td><td>Индекс по оси OY</td></tr>
+    <tr><td class="paramname">IndZ</td><td>Индекс по оси OZ</td></tr>
+    <tr><td class="paramname">linAr1D</td><td>Указатель на массив типа double</td></tr>
   </table>
   </dd>
 </dl>
@@ -1472,9 +1472,9 @@ $(function() {
 <p>Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy, Oz, данными из <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a> </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">IndY</td><td></td></tr>
-    <tr><td class="paramname">IndZ</td><td></td></tr>
-    <tr><td class="paramname">linAr1D</td><td></td></tr>
+    <tr><td class="paramname">IndY</td><td>Индекс по оси OY</td></tr>
+    <tr><td class="paramname">IndZ</td><td>Индекс по оси OZ</td></tr>
+    <tr><td class="paramname">linAr1D</td><td>Указатель на объект класса <a class="el" href="struct_linear_array1_d.html" title="Линейный одномерный массив">LinearArray1D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1508,7 +1508,7 @@ $(function() {
 <p>Передает массив данных фрагмента (первая по оси OZ плоскость XOY) плоскости planeXOY </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeXOY</td><td></td></tr>
+    <tr><td class="paramname">planeXOY</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1542,7 +1542,7 @@ $(function() {
 <p>Передает массив данных фрагмента (последняя по оси OZ плоскость XOY) плоскости planeXOY </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeXOY</td><td></td></tr>
+    <tr><td class="paramname">planeXOY</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1576,7 +1576,7 @@ $(function() {
 <p>Передает массив данных фрагмента (первая по оси OY плоскость XOZ) плоскости planeXOZ </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeXOZ</td><td></td></tr>
+    <tr><td class="paramname">planeXOZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1610,7 +1610,7 @@ $(function() {
 <p>Передает массив данных фрагмента (последняя по оси OY плоскость XOZ) плоскости planeXOZ </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeXOZ</td><td></td></tr>
+    <tr><td class="paramname">planeXOZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1644,7 +1644,7 @@ $(function() {
 <p>Передает массив данных фрагмента (первая по оси OX плоскость YOZ) плоскости planeYOZ </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeYOZ</td><td></td></tr>
+    <tr><td class="paramname">planeYOZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -1678,7 +1678,7 @@ $(function() {
 <p>Передает массив данных фрагмента (последняя по оси OX плоскость YOZ) плоскости planeYOZ </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">planeYOZ</td><td></td></tr>
+    <tr><td class="paramname">planeYOZ</td><td>Указатель на объект класса <a class="el" href="struct_linear_array2_d.html" title="Класс для работы с двумерным массивом, сохраняемым как одномерный">LinearArray2D</a></td></tr>
   </table>
   </dd>
 </dl>

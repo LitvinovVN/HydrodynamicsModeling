@@ -2,7 +2,7 @@
 \label{struct_grid2_d_fragment_x_z}\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}}
 
 
-Двумерный фрагмент расчетной сетки -\/ плоскость XZ(грань трехмерного фрагмента)  
+Описывает двумерный фрагмент расчетной сетки -\/ плоскость XZ(грань трехмерного фрагмента)  
 
 
 
@@ -22,13 +22,13 @@
 size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a7c1aea63b7019475432148c0ebd1a3a8}{Get\+Nodes\+Number}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает число узлов в фрагменте расчетной сетки \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a66f94321717789c8770cfc4e032d457d}{Linear\+Array\+Create}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\begin{DoxyCompactList}\small\item\em Создание массива указанного типа \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Выделяет память и создает двумерный массив данных model\+Data\+Name размером (fragment\+Nx, fragment\+Nz) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ \mbox{\hyperlink{struct_grid2_d_fragment_x_z_ab4e9f2abbb1835b1ba6ec9ce152795b7}{Get\+Linear\+Array2D}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\begin{DoxyCompactList}\small\item\em Возвращает указатель на двумерный массив указанного типа Model\+Data\+Name \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Возвращает указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a3842407ea6745fec80df68c0d5906a1b}{Get\+Data\+Size\+In\+Mb}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый фрагментом \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a7c6ec0906e795b7fb39e102e98e7def8}{Print\+Fragment}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость XZ – грань трехмерного фрагмента) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
@@ -65,7 +65,7 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa23507682965bb168535af
 
 
 \doxysubsection{Подробное описание}
-Двумерный фрагмент расчетной сетки -\/ плоскость XZ(грань трехмерного фрагмента) 
+Описывает двумерный фрагмент расчетной сетки -\/ плоскость XZ(грань трехмерного фрагмента) 
 
 \doxysubsection{Конструктор(ы)}
 \mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a1213092e0bf5d553bf38131e51b374ed}\label{struct_grid2_d_fragment_x_z_a1213092e0bf5d553bf38131e51b374ed}} 
@@ -88,7 +88,7 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa23507682965bb168535af
 Возвращает объём оперативной памяти, занимаемый фрагментом 
 
 \begin{DoxyReturn}{Возвращает}
-
+Объём оперативной памяти, занимаемый фрагментом
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid2_d_fragment_x_z_ab4e9f2abbb1835b1ba6ec9ce152795b7}\label{struct_grid2_d_fragment_x_z_ab4e9f2abbb1835b1ba6ec9ce152795b7}} 
 \index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!GetLinearArray2D@{GetLinearArray2D}}
@@ -98,15 +98,15 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa23507682965bb168535af
 
 
 
-Возвращает указатель на двумерный массив указанного типа Model\+Data\+Name 
+Возвращает указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name 
 
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-
+Указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a7c1aea63b7019475432148c0ebd1a3a8}\label{struct_grid2_d_fragment_x_z_a7c1aea63b7019475432148c0ebd1a3a8}} 
 \index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!GetNodesNumber@{GetNodesNumber}}
@@ -119,7 +119,7 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa23507682965bb168535af
 Возвращает число узлов в фрагменте расчетной сетки 
 
 \begin{DoxyReturn}{Возвращает}
-
+Число узлов в фрагменте расчетной сетки
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a66f94321717789c8770cfc4e032d457d}\label{struct_grid2_d_fragment_x_z_a66f94321717789c8770cfc4e032d457d}} 
 \index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!LinearArrayCreate@{LinearArrayCreate}}
@@ -129,11 +129,11 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa23507682965bb168535af
 
 
 
-Создание массива указанного типа 
+Выделяет память и создает двумерный массив данных model\+Data\+Name размером (fragment\+Nx, fragment\+Nz) 
 
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a7c6ec0906e795b7fb39e102e98e7def8}\label{struct_grid2_d_fragment_x_z_a7c6ec0906e795b7fb39e102e98e7def8}} 
@@ -141,6 +141,10 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa23507682965bb168535af
 \index{PrintFragment@{PrintFragment}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
 \doxysubsubsection{\texorpdfstring{PrintFragment()}{PrintFragment()}}
 {\footnotesize\ttfamily void Grid2\+DFragment\+XZ\+::\+Print\+Fragment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость XZ – грань трехмерного фрагмента) 
 
 
 

@@ -2,18 +2,18 @@
 \label{struct_computing_cluster}\index{ComputingCluster@{ComputingCluster}}
 
 
-Computing cluster describing -\/ Вычислительный кластер  
+Описывает характеристики вычислительного кластера  
 
 
 \doxysubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{struct_computing_cluster_a0563b75544e0488616eb8fcd5c584797}{Count\+Nodes}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Возвращает количество вычислительных узлов computing\+Node на кластере \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_computing_cluster_ac3bcc93db0fef87c0c43735c7dc9b450}{Get\+Cluster\+Perfomance}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Возвращает производительность кластера \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_computing_cluster_a1eefb79e93dca78b55b6e6bb64395c2b}{Print}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Выводит в консоль характеристики кластера (характеристики вычислительных узлов и их устройств) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,7 +22,7 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_computing_node}{Computing\+
 
 
 \doxysubsection{Подробное описание}
-Computing cluster describing -\/ Вычислительный кластер 
+Описывает характеристики вычислительного кластера 
 
 \doxysubsection{Методы}
 \mbox{\Hypertarget{struct_computing_cluster_a0563b75544e0488616eb8fcd5c584797}\label{struct_computing_cluster_a0563b75544e0488616eb8fcd5c584797}} 
@@ -31,17 +31,35 @@ Computing cluster describing -\/ Вычислительный кластер
 \doxysubsubsection{\texorpdfstring{CountNodes()}{CountNodes()}}
 {\footnotesize\ttfamily int Computing\+Cluster\+::\+Count\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Возвращает количество вычислительных узлов computing\+Node на кластере 
+
+\begin{DoxyReturn}{Возвращает}
+Количество вычислительных узлов computing\+Node на кластере
+\end{DoxyReturn}
 \mbox{\Hypertarget{struct_computing_cluster_ac3bcc93db0fef87c0c43735c7dc9b450}\label{struct_computing_cluster_ac3bcc93db0fef87c0c43735c7dc9b450}} 
 \index{ComputingCluster@{ComputingCluster}!GetClusterPerfomance@{GetClusterPerfomance}}
 \index{GetClusterPerfomance@{GetClusterPerfomance}!ComputingCluster@{ComputingCluster}}
 \doxysubsubsection{\texorpdfstring{GetClusterPerfomance()}{GetClusterPerfomance()}}
 {\footnotesize\ttfamily double Computing\+Cluster\+::\+Get\+Cluster\+Perfomance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Возвращает производительность кластера 
+
+\begin{DoxyReturn}{Возвращает}
+Производительность кластера
+\end{DoxyReturn}
 \mbox{\Hypertarget{struct_computing_cluster_a1eefb79e93dca78b55b6e6bb64395c2b}\label{struct_computing_cluster_a1eefb79e93dca78b55b6e6bb64395c2b}} 
 \index{ComputingCluster@{ComputingCluster}!Print@{Print}}
 \index{Print@{Print}!ComputingCluster@{ComputingCluster}}
 \doxysubsubsection{\texorpdfstring{Print()}{Print()}}
 {\footnotesize\ttfamily void Computing\+Cluster\+::\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит в консоль характеристики кластера (характеристики вычислительных узлов и их устройств) 
 
 
 

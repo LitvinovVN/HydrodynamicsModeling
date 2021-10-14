@@ -24,21 +24,21 @@ void \mbox{\hyperlink{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a13
 void \mbox{\hyperlink{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}{Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Create}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
 \begin{DoxyCompactList}\small\item\em Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} $\ast$ \mbox{\hyperlink{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e}{Get\+Grid3\+DFragment}} (size\+\_\+t indX, size\+\_\+t indY, size\+\_\+t indZ)
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Возвращает указатель на трехмерный фрагмент типа \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} по указанным индексам indX, indY, indZ \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa}{Linear\+Array\+Create}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Выделяет память и создает трехмерный массив данных размером (fragments\+NumX, fragments\+NumY, fragments\+NumZ) по указанному имени массива данных model\+Data\+Name \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}{Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Print}} (size\+\_\+t transfer\+Plane\+XZIndex, size\+\_\+t fragment\+IndX, size\+\_\+t fragment\+IndZ, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
 \begin{DoxyCompactList}\small\item\em Выводит в консоль объект двумерной плоскости XZ для передачи данных \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1}{Assign\+Data}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nz, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid_block3_d_by_device_a0858df5417b9f679bfe44f08af60c2c1}{Compose}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nz, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c}{Get\+Data\+Size\+In\+Mb}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid_block3_d_by_device_a9c7cb50c07cd6b06c11272b0dd2a077e}{Print\+Device\+Name}} (\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$grid\+Block3\+DBy\+Device)
-\item 
+\begin{DoxyCompactList}\small\item\em Выводит в консоль УИД и наименование вычислительного узла grid\+Block3\+DBy\+Device \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97}{Print\+Device}} (\mbox{\hyperlink{_grid3_d_8cpp_a85710a4d27ce4a3fec67b009c8910ead}{Grid3\+DPrint\+Detalisation}} grid3\+DPrint\+Detalisation)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Выводит в консоль сведения о блоках устройства вычислительного узла по указанному уровню детализации вывода grid3\+DPrint\+Detalisation \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
@@ -103,18 +103,21 @@ std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTra
 \doxysubsubsection{\texorpdfstring{AssignData()}{AssignData()}}
 {\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Assign\+Data (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nz,  }\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid_block3_d_by_device_autotoc_md7}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid_block3_d_by_device_autotoc_md7}
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
 
 \begin{DoxyParams}{Аргументы}
-{\em data} & \\
+{\em data} & Массив исходных данных data\\
 \hline
-{\em nx} & \\
+{\em nx} & Число узлов расчетной сетки по оси OX\\
 \hline
-{\em ny} & \\
+{\em ny} & Число узлов расчетной сетки по оси OY\\
 \hline
-{\em nz} & \\
+{\em nz} & Число узлов расчетной сетки по оси OZ\\
 \hline
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_grid_block3_d_by_device_a0858df5417b9f679bfe44f08af60c2c1}\label{struct_grid_block3_d_by_device_a0858df5417b9f679bfe44f08af60c2c1}} 
@@ -123,6 +126,23 @@ std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTra
 \doxysubsubsection{\texorpdfstring{Compose()}{Compose()}}
 {\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Compose (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nz,  }\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em data} & Массив исходных данных data\\
+\hline
+{\em nx} & Число узлов расчетной сетки по оси OX\\
+\hline
+{\em ny} & Число узлов расчетной сетки по оси OY\\
+\hline
+{\em nz} & Число узлов расчетной сетки по оси OZ\\
+\hline
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a1399452c}\label{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a1399452c}} 
 \index{GridBlock3DByDevice@{GridBlock3DByDevice}!CreateGrid2DTransferPlanesXZ@{CreateGrid2DTransferPlanesXZ}}
 \index{CreateGrid2DTransferPlanesXZ@{CreateGrid2DTransferPlanesXZ}!GridBlock3DByDevice@{GridBlock3DByDevice}}
@@ -144,7 +164,7 @@ std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTra
 Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} 
 
 \begin{DoxyReturn}{Возвращает}
-
+Объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}}
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e}\label{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e}} 
 \index{GridBlock3DByDevice@{GridBlock3DByDevice}!GetGrid3DFragment@{GetGrid3DFragment}}
@@ -152,6 +172,22 @@ std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTra
 \doxysubsubsection{\texorpdfstring{GetGrid3DFragment()}{GetGrid3DFragment()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} $\ast$ Grid\+Block3\+DBy\+Device\+::\+Get\+Grid3\+DFragment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indX,  }\item[{size\+\_\+t}]{indY,  }\item[{size\+\_\+t}]{indZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+\$\$\$\$Возвращает указатель на трехмерный фрагмент типа \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} по указанным индексам indX, indY, indZ 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em indX} & Индекс фрагмента по оси OX\\
+\hline
+{\em indY} & Индекс фрагмента по оси OX\\
+\hline
+{\em indZ} & Индекс фрагмента по оси OX\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Указатель на трехмерный фрагмент типа \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} по указанным индексам indX, indY, indZ
+\end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}\label{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}} 
 \index{GridBlock3DByDevice@{GridBlock3DByDevice}!Grid2DTransferPlanesXZLinearArrayCreate@{Grid2DTransferPlanesXZLinearArrayCreate}}
 \index{Grid2DTransferPlanesXZLinearArrayCreate@{Grid2DTransferPlanesXZLinearArrayCreate}!GridBlock3DByDevice@{GridBlock3DByDevice}}
@@ -164,7 +200,7 @@ std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTra
 
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}\label{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}} 
@@ -195,10 +231,13 @@ std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTra
 \doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
 {\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid_block3_d_by_device_autotoc_md6}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid_block3_d_by_device_autotoc_md6}
+
+
+Выделяет память и создает трехмерный массив данных размером (fragments\+NumX, fragments\+NumY, fragments\+NumZ) по указанному имени массива данных model\+Data\+Name 
+
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97}\label{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97}} 
@@ -207,12 +246,30 @@ std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTra
 \doxysubsubsection{\texorpdfstring{PrintDevice()}{PrintDevice()}}
 {\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Print\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid3_d_8cpp_a85710a4d27ce4a3fec67b009c8910ead}{Grid3\+DPrint\+Detalisation}}}]{grid3\+DPrint\+Detalisation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+\$\$\$\$Выводит в консоль сведения о блоках устройства вычислительного узла по указанному уровню детализации вывода grid3\+DPrint\+Detalisation 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em grid3\+DPrint\+Detalisation} & Уровень детализации вывода grid3\+DPrint\+Detalisation\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{struct_grid_block3_d_by_device_a9c7cb50c07cd6b06c11272b0dd2a077e}\label{struct_grid_block3_d_by_device_a9c7cb50c07cd6b06c11272b0dd2a077e}} 
 \index{GridBlock3DByDevice@{GridBlock3DByDevice}!PrintDeviceName@{PrintDeviceName}}
 \index{PrintDeviceName@{PrintDeviceName}!GridBlock3DByDevice@{GridBlock3DByDevice}}
 \doxysubsubsection{\texorpdfstring{PrintDeviceName()}{PrintDeviceName()}}
 {\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Print\+Device\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$}]{grid\+Block3\+DBy\+Device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Выводит в консоль УИД и наименование вычислительного узла grid\+Block3\+DBy\+Device 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em grid\+Block3\+DBy\+Device} & Трехмерный блок расчетной сетки вычислительного узла\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Данные класса}

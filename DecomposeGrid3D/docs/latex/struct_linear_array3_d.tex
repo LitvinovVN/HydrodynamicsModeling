@@ -83,7 +83,7 @@ void \mbox{\hyperlink{struct_linear_array3_d_a051ae0fd7c5c689052f8451989f12db2}{
 void \mbox{\hyperlink{struct_linear_array3_d_ac763a152a6ff8d1590171da6d781d803}{Print\+Data}} ()
 \begin{DoxyCompactList}\small\item\em Выводит в консоль элементы массива данных data \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_linear_array3_d_aa8d7e043df8ebb822c0b9342f9c87a59}{Print}} (\mbox{\hyperlink{_grid3_d_8cpp_a464c44948734b5d4e9c9957f13838b90}{Fragment3\+DPlane}} fragment3\+DPlane, size\+\_\+t Ind1\+\_\+1, size\+\_\+t Ind1\+\_\+2, size\+\_\+t Ind2\+\_\+1, size\+\_\+t Ind2\+\_\+2)
-\begin{DoxyCompactList}\small\item\em Выводит в консоль значения массива data для плоскости fragment3\+DPlane фрагмента \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Выводит в консоль значения массива data для плоскости fragment3\+DPlane фрагмента, в котором указаны размеры (координаты двух противоположных вершин прямоугольника) прямоугольной области для вывода \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
@@ -135,7 +135,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}} 
 
 \begin{DoxyReturn}{Возвращает}
-
+Объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}}
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_linear_array3_d_a4bf71d4d7abd65c68edc96b782e4b87b}\label{struct_linear_array3_d_a4bf71d4d7abd65c68edc96b782e4b87b}} 
 \index{LinearArray3D@{LinearArray3D}!GetElement@{GetElement}}
@@ -193,9 +193,9 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em IndZ} & \\
+{\em IndZ} & Индекс по оси OZ\\
 \hline
-{\em layerZ} & \\
+{\em layerZ} & Указатель на массив типа double\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a57e108487cb0988eaf229cc54ad907d9}\label{struct_linear_array3_d_a57e108487cb0988eaf229cc54ad907d9}} 
@@ -210,9 +210,9 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em IndZ} & \\
+{\em IndZ} & Индекс по оси OZ\\
 \hline
-{\em layerZ} & \\
+{\em layerZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_ada8a96b00f998dbf866a3943ab4ebf6e}\label{struct_linear_array3_d_ada8a96b00f998dbf866a3943ab4ebf6e}} 
@@ -265,7 +265,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+XOY} & \\
+{\em plane\+XOY} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a279a97a3ef806954535366b4e9fe5aaf}\label{struct_linear_array3_d_a279a97a3ef806954535366b4e9fe5aaf}} 
@@ -280,7 +280,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+XOY} & \\
+{\em plane\+XOY} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a369b9a0df30659171569250838032e58}\label{struct_linear_array3_d_a369b9a0df30659171569250838032e58}} 
@@ -295,7 +295,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+XOZ} & \\
+{\em plane\+XOZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a3bcd7c0feb985a97b23147d130d8897d}\label{struct_linear_array3_d_a3bcd7c0feb985a97b23147d130d8897d}} 
@@ -310,7 +310,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+XOZ} & \\
+{\em plane\+XOZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a821810e8ce0ff56cfcc393c2f88381fa}\label{struct_linear_array3_d_a821810e8ce0ff56cfcc393c2f88381fa}} 
@@ -325,7 +325,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+YOZ} & \\
+{\em plane\+YOZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a7bcd35b6bfb7847454f73712af587f01}\label{struct_linear_array3_d_a7bcd35b6bfb7847454f73712af587f01}} 
@@ -340,7 +340,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+YOZ} & \\
+{\em plane\+YOZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a9ef9ae0a2ee367e585eb7aae988809b2}\label{struct_linear_array3_d_a9ef9ae0a2ee367e585eb7aae988809b2}} 
@@ -393,7 +393,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em linear\+Array3\+DPrev} & \\
+{\em linear\+Array3\+DPrev} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_ac5039a8b58b25c1831826ed25dad982e}\label{struct_linear_array3_d_ac5039a8b58b25c1831826ed25dad982e}} 
@@ -408,7 +408,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em linear\+Array3\+DNext} & \\
+{\em linear\+Array3\+DNext} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_ad2a783ddbfccbaf0ab6e646a50a21f00}\label{struct_linear_array3_d_ad2a783ddbfccbaf0ab6e646a50a21f00}} 
@@ -423,7 +423,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em linear\+Array3\+DPrev} & \\
+{\em linear\+Array3\+DPrev} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a747c8f6b7561fd3a2c28f75ecbea6943}\label{struct_linear_array3_d_a747c8f6b7561fd3a2c28f75ecbea6943}} 
@@ -438,7 +438,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em linear\+Array3\+DNext} & \\
+{\em linear\+Array3\+DNext} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_afd9bb0b8adb885b7467f013561616bd4}\label{struct_linear_array3_d_afd9bb0b8adb885b7467f013561616bd4}} 
@@ -453,7 +453,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em linear\+Array3\+DPrev} & \\
+{\em linear\+Array3\+DPrev} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a17d85c5ef525e4c9e2aaeaf5c391e115}\label{struct_linear_array3_d_a17d85c5ef525e4c9e2aaeaf5c391e115}} 
@@ -468,7 +468,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em linear\+Array3\+DNext} & \\
+{\em linear\+Array3\+DNext} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array3_d}{Linear\+Array3D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a051ae0fd7c5c689052f8451989f12db2}\label{struct_linear_array3_d_a051ae0fd7c5c689052f8451989f12db2}} 
@@ -489,19 +489,19 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 
-Выводит в консоль значения массива data для плоскости fragment3\+DPlane фрагмента 
+Выводит в консоль значения массива data для плоскости fragment3\+DPlane фрагмента, в котором указаны размеры (координаты двух противоположных вершин прямоугольника) прямоугольной области для вывода 
 
 
 \begin{DoxyParams}{Аргументы}
-{\em fragment3\+DPlane} & \\
+{\em fragment3\+DPlane} & Элемент перечисления Fragment3\+DPlane\\
 \hline
-{\em Ind1\+\_\+1} & \\
+{\em Ind1\+\_\+1} & Первая координата первой вершины прямоугольника\\
 \hline
-{\em Ind1\+\_\+2} & \\
+{\em Ind1\+\_\+2} & Вторая координата первой вершины прямоугольника\\
 \hline
-{\em Ind2\+\_\+1} & \\
+{\em Ind2\+\_\+1} & Первая координата второй вершины прямоугольника\\
 \hline
-{\em Ind2\+\_\+2} & \\
+{\em Ind2\+\_\+2} & Вторая координата второй вершины прямоугольника\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_ac763a152a6ff8d1590171da6d781d803}\label{struct_linear_array3_d_ac763a152a6ff8d1590171da6d781d803}} 
@@ -550,9 +550,9 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em IndZ} & \\
+{\em IndZ} & Индекс по оси OZ\\
 \hline
-{\em layerZ} & \\
+{\em layerZ} & Указатель на массив типа double\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_ae60959d99663da6fdd105156a3a3da1a}\label{struct_linear_array3_d_ae60959d99663da6fdd105156a3a3da1a}} 
@@ -567,9 +567,9 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em IndZ} & \\
+{\em IndZ} & Индекс по оси OZ\\
 \hline
-{\em layerZ} & \\
+{\em layerZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_aa481194b84e9e6452c472a952edaba5c}\label{struct_linear_array3_d_aa481194b84e9e6452c472a952edaba5c}} 
@@ -584,11 +584,11 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em IndY} & \\
+{\em IndY} & Индекс по оси OY\\
 \hline
-{\em IndZ} & \\
+{\em IndZ} & Индекс по оси OZ\\
 \hline
-{\em lin\+Ar1D} & \\
+{\em lin\+Ar1D} & Указатель на массив типа double\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_ace7454ea25ff6bd4a42984226722ef77}\label{struct_linear_array3_d_ace7454ea25ff6bd4a42984226722ef77}} 
@@ -603,11 +603,11 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em IndY} & \\
+{\em IndY} & Индекс по оси OY\\
 \hline
-{\em IndZ} & \\
+{\em IndZ} & Индекс по оси OZ\\
 \hline
-{\em lin\+Ar1D} & \\
+{\em lin\+Ar1D} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array1_d}{Linear\+Array1D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_adc32b6dcf56e9258d7935b455d409b1c}\label{struct_linear_array3_d_adc32b6dcf56e9258d7935b455d409b1c}} 
@@ -622,7 +622,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+XOY} & \\
+{\em plane\+XOY} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a2b22c06d1e4538c5359298e99fff8b7d}\label{struct_linear_array3_d_a2b22c06d1e4538c5359298e99fff8b7d}} 
@@ -637,7 +637,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+XOY} & \\
+{\em plane\+XOY} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_aae69f2ee7b19dd2546fd93b69b614e10}\label{struct_linear_array3_d_aae69f2ee7b19dd2546fd93b69b614e10}} 
@@ -652,7 +652,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+XOZ} & \\
+{\em plane\+XOZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a360a8130de7a752f262ad3f04cbe43a3}\label{struct_linear_array3_d_a360a8130de7a752f262ad3f04cbe43a3}} 
@@ -667,7 +667,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+XOZ} & \\
+{\em plane\+XOZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_a053cded1f842783be9f700a9fad9a660}\label{struct_linear_array3_d_a053cded1f842783be9f700a9fad9a660}} 
@@ -682,7 +682,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+YOZ} & \\
+{\em plane\+YOZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_linear_array3_d_aa627c8d40744fe943da24dd0352067a2}\label{struct_linear_array3_d_aa627c8d40744fe943da24dd0352067a2}} 
@@ -697,7 +697,7 @@ double $\ast$ \mbox{\hyperlink{struct_linear_array3_d_a818286812c34c98d0fbf651ef
 
 
 \begin{DoxyParams}{Аргументы}
-{\em plane\+YOZ} & \\
+{\em plane\+YOZ} & Указатель на объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}\\
 \hline
 \end{DoxyParams}
 

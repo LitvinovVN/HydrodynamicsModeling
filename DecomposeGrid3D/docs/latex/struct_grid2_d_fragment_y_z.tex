@@ -2,7 +2,7 @@
 \label{struct_grid2_d_fragment_y_z}\index{Grid2DFragmentYZ@{Grid2DFragmentYZ}}
 
 
-Двумерный фрагмент расчетной сетки -\/ плоскость YZ(грань трехмерного фрагмента)  
+Описывает двумерный фрагмент расчетной сетки -\/ плоскость YZ(грань трехмерного фрагмента)  
 
 
 
@@ -22,17 +22,17 @@
 size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a0e1f3a84a13914d7294702a0e17de1d8}{Get\+Nodes\+Number}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает число узлов в фрагменте расчетной сетки \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a2f164f95b6a296e6d8ba78ea4eff140f}{Linear\+Array\+Create}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\begin{DoxyCompactList}\small\item\em Выделяет память и создает двумерный массив данных типа Model\+Data\+Name размерами fragment\+Ny на fragment\+Nz \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Выделяет память и создает двумерный массив данных model\+Data\+Name размером (fragment\+Ny, fragment\+Nz) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a5d2d03947b4f7d4b61f2cdcebb164ad7}{Get\+Linear\+Array2D}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\begin{DoxyCompactList}\small\item\em Возвращает указатель на объект linear\+Array2D типа Model\+Data\+Name \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Возвращает указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_grid2_d_fragment_y_z_aa915702df9de1ddf6b75c541735e9f45}{Get\+Element}} (size\+\_\+t IndX, size\+\_\+t IndZ, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\begin{DoxyCompactList}\small\item\em Возвращает элемент массива данных типа Model\+Data\+Name по указанным координатам IndX и IndZ \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Возвращает значение элемента массива с указанным именем массива данных model\+Data\+Name по указанным координатам IndX и IndZ \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a2c7ef6b1339ebc5fb1565d7fa60d8319}{Set\+Element}} (size\+\_\+t IndX, size\+\_\+t IndZ, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name, double Value)
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Сохраняет значение элемента массива с указанным именем массива данных model\+Data\+Name по указанным координатам IndX и IndZ \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a6c85204beeb33031f6b718ac0a8fcdf6}{Get\+Data\+Size\+In\+Mb}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый фрагментом \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a7f1e9e31e7faa61b06dfbbaec75a6cf7}{Print\+Fragment}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость YZ – грань трехмерного фрагмента) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
@@ -69,7 +69,7 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa
 
 
 \doxysubsection{Подробное описание}
-Двумерный фрагмент расчетной сетки -\/ плоскость YZ(грань трехмерного фрагмента) 
+Описывает двумерный фрагмент расчетной сетки -\/ плоскость YZ(грань трехмерного фрагмента) 
 
 \doxysubsection{Конструктор(ы)}
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a0ae1629c6a1176345543528ef3378f0a}\label{struct_grid2_d_fragment_y_z_a0ae1629c6a1176345543528ef3378f0a}} 
@@ -92,7 +92,7 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa
 Возвращает объём оперативной памяти, занимаемый фрагментом 
 
 \begin{DoxyReturn}{Возвращает}
-
+Объём оперативной памяти, занимаемый фрагментом
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_aa915702df9de1ddf6b75c541735e9f45}\label{struct_grid2_d_fragment_y_z_aa915702df9de1ddf6b75c541735e9f45}} 
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!GetElement@{GetElement}}
@@ -102,19 +102,19 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa
 
 
 
-Возвращает элемент массива данных типа Model\+Data\+Name по указанным координатам IndX и IndZ 
+\$\$\$\$Возвращает значение элемента массива с указанным именем массива данных model\+Data\+Name по указанным координатам IndX и IndZ 
 
 
 \begin{DoxyParams}{Аргументы}
-{\em IndX} & \\
+{\em IndX} & Индекс элемента массива в фрагменте по оси OX\\
 \hline
-{\em IndZ} & \\
+{\em IndZ} & Индекс элемента массива в фрагменте по оси OZ\\
 \hline
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-
+Значение элемента массива с указанным именем массива данных model\+Data\+Name по указанным координатам IndX и IndZ
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a5d2d03947b4f7d4b61f2cdcebb164ad7}\label{struct_grid2_d_fragment_y_z_a5d2d03947b4f7d4b61f2cdcebb164ad7}} 
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!GetLinearArray2D@{GetLinearArray2D}}
@@ -124,15 +124,15 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa
 
 
 
-Возвращает указатель на объект linear\+Array2D типа Model\+Data\+Name 
+Возвращает указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name 
 
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-
+Указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a0e1f3a84a13914d7294702a0e17de1d8}\label{struct_grid2_d_fragment_y_z_a0e1f3a84a13914d7294702a0e17de1d8}} 
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!GetNodesNumber@{GetNodesNumber}}
@@ -145,7 +145,7 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa
 Возвращает число узлов в фрагменте расчетной сетки 
 
 \begin{DoxyReturn}{Возвращает}
-
+Число узлов в фрагменте расчетной сетки
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a2f164f95b6a296e6d8ba78ea4eff140f}\label{struct_grid2_d_fragment_y_z_a2f164f95b6a296e6d8ba78ea4eff140f}} 
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!LinearArrayCreate@{LinearArrayCreate}}
@@ -155,11 +155,11 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa
 
 
 
-Выделяет память и создает двумерный массив данных типа Model\+Data\+Name размерами fragment\+Ny на fragment\+Nz 
+Выделяет память и создает двумерный массив данных model\+Data\+Name размером (fragment\+Ny, fragment\+Nz) 
 
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a7f1e9e31e7faa61b06dfbbaec75a6cf7}\label{struct_grid2_d_fragment_y_z_a7f1e9e31e7faa61b06dfbbaec75a6cf7}} 
@@ -167,6 +167,10 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa
 \index{PrintFragment@{PrintFragment}!Grid2DFragmentYZ@{Grid2DFragmentYZ}}
 \doxysubsubsection{\texorpdfstring{PrintFragment()}{PrintFragment()}}
 {\footnotesize\ttfamily void Grid2\+DFragment\+YZ\+::\+Print\+Fragment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость YZ – грань трехмерного фрагмента) 
 
 \mbox{\Hypertarget{struct_grid2_d_fragment_y_z_a2c7ef6b1339ebc5fb1565d7fa60d8319}\label{struct_grid2_d_fragment_y_z_a2c7ef6b1339ebc5fb1565d7fa60d8319}} 
 \index{Grid2DFragmentYZ@{Grid2DFragmentYZ}!SetElement@{SetElement}}
@@ -176,21 +180,21 @@ size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_y_z_a935ac3a63fc80816c6dbfa
 
 
 
-
+\$\$\$\$Сохраняет значение элемента массива с указанным именем массива данных model\+Data\+Name по указанным координатам IndX и IndZ 
 
 
 \begin{DoxyParams}{Аргументы}
-{\em IndX} & \\
+{\em IndX} & Индекс элемента массива в фрагменте по оси OX\\
 \hline
-{\em IndZ} & \\
+{\em IndZ} & Индекс элемента массива в фрагменте по оси OZ\\
 \hline
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
-{\em Value} & \\
+{\em Value} & Значение элемента массива данных data\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-
+Значение элемента массива с указанным именем массива данных model\+Data\+Name по указанным координатам IndX и IndZ
 \end{DoxyReturn}
 
 

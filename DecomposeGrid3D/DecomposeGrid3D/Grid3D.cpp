@@ -201,7 +201,6 @@ struct SimpleStatistics
 
 
 
-
 #pragma region LinearArrays
 /// <summary>
 /// Линейный одномерный массив
@@ -338,7 +337,7 @@ struct LinearArray2D
 	}
 
 	/// <summary>
-	/// Сохраняет значения элемента массива с индексом, вычисленным по индексам элемента в фрагменте
+	/// Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте
 	/// </summary>
 	/// <param name="Ind1">Первый индекс элемента в фрагменте</param>
 	/// <param name="Ind2">Второй индекс элемента в фрагменте</param>
@@ -1106,21 +1105,21 @@ struct LinearArray3D
 };
 
 /// <summary>
-/// $$$$-----------
+/// Реализует хранение объектов класса LinearArray2D с доступом к данным по имени массива данных ModelDataName
 /// </summary>
 struct LinearArrays2D
 {
-	std::vector<ModelDataName> modelDataNames;				//$$$$-----------
-	std::map<ModelDataName, LinearArray2D> linearArrays;	//$$$$-----------
+	std::vector<ModelDataName> modelDataNames;				// вектор элементов modelDataName
+	std::map<ModelDataName, LinearArray2D> linearArrays;	// контейнер, устанавливающий соотвествие между объектом LinearArray2D и именем ModelDataName
 
 	// Методы
 
 	/// <summary>
-	/// $$$$---------
+	/// Создает указатель на объект LinearArray2D размером (nx, ny) по указанному имени массива данных modelDataName
 	/// </summary>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="modelDataName"></param>
+	/// <param name="nx">Число узлов по первой оси</param>
+	/// <param name="ny">Число узлов по второй оси</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(size_t nx, size_t ny, ModelDataName modelDataName)
 	{
 		LinearArray2D* linearArray2D = new LinearArray2D(nx, ny);
@@ -1131,7 +1130,7 @@ struct LinearArrays2D
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArrays
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый объектом LinearArrays</returns>
 	double GetDataSizeInMb()
 	{
 		double result = 0;
@@ -1147,7 +1146,7 @@ struct LinearArrays2D
 	}
 
 	/// <summary>
-	/// $$$$---------
+	/// Выводит в консоль все объекты класса LinearArray2D
 	/// </summary>
 	void Print()
 	{
@@ -1161,9 +1160,9 @@ struct LinearArrays2D
 	}
 
 	/// <summary>
-	/// $$$$------------
+	/// Выводит в консоль объект класса LinearArray2D по указанному имени массива данных modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void Print(ModelDataName modelDataName)
 	{		
 		LinearArray2D& linearArrayObj = linearArrays.at(modelDataName);
@@ -1173,12 +1172,12 @@ struct LinearArrays2D
 };
 
 /// <summary>
-/// $$$$-----------
+/// Реализует хранение объектов класса LinearArray3D с доступом к данным по имени массива данных modelDataName
 /// </summary>
 struct LinearArrays3D
 {
-	std::vector<ModelDataName> modelDataNames;				//$$$$----------
-	std::map<ModelDataName, LinearArray3D> linearArrays;	//$$$$----------
+	std::vector<ModelDataName> modelDataNames;				// вектор элементов ModelDataName
+	std::map<ModelDataName, LinearArray3D> linearArrays;	// контейнер, устанавливающий соотвествие между объектом LinearArray3D и именем ModelDataName
 
 	~LinearArrays3D()
 	{
@@ -1188,10 +1187,10 @@ struct LinearArrays3D
 	// Методы
 
 	/// <summary>
-	/// $$$$$------------------
+	/// Проверяет: содержит ли объект массив данных с именем modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Результат проверки наличия массива данных с именем modelDataName (true - в наличии, false - отсутствует)</returns>
 	bool IsContain(ModelDataName modelDataName)
 	{
 		for (auto curModelDataName : modelDataNames)
@@ -1203,10 +1202,11 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// $$$$-----------------
+	/// $$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D
+	/// по имени массива данных ModelDataName (плоскость XOY для z=0)
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>$$$$Указатель на двумерный массив данных типа LinearArray2D</returns>
 	LinearArrays2D* GetLinearArrays2DXYFirst(ModelDataName modelDataName)
 	{
 		if (!IsContain(modelDataName))
@@ -1235,10 +1235,11 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// $$$$--------------
+	/// $$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D
+	/// по имени массива данных modelDataName (плоскость XOY для z=nz - 1)
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>$$$$Указатель на двумерный массив данных типа LinearArray2D</returns>
 	LinearArrays2D* GetLinearArrays2DXYLast(ModelDataName modelDataName)
 	{
 		if (!IsContain(modelDataName))
@@ -1267,10 +1268,11 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// $$$$---------------
+	/// $$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D
+	/// по имени массива данных modelDataName (плоскость YOZ для x=0)
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>$$$$Указатель на двумерный массив данных типа LinearArray2D</returns>
 	LinearArrays2D* GetLinearArrays2DYZFirst(ModelDataName modelDataName)
 	{
 		if (!IsContain(modelDataName))
@@ -1299,10 +1301,11 @@ struct LinearArrays3D
 	}
 	
 	/// <summary>
-	/// $$$$$--------------
+	/// $$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D
+	/// по имени массива данных modelDataName (плоскость YOZ для x=nx - 1)
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>$$$$Указатель на двумерный массив данных типа LinearArray2D</returns>
 	LinearArrays2D* GetLinearArrays2DYZLast(ModelDataName modelDataName)
 	{
 		if (!IsContain(modelDataName))
@@ -1331,10 +1334,11 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// $$$$-------------
+	/// $$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D
+	/// по имени массива данных modelDataName (плоскость XOZ для y=0)
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>$$$$Указатель на двумерный массив данных типа LinearArray2D</returns>
 	LinearArrays2D* GetLinearArrays2DXZFirst(ModelDataName modelDataName)
 	{
 		if (!IsContain(modelDataName))
@@ -1362,10 +1366,11 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// $$$$$-----------
+	/// $$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D
+	/// по имени массива данных modelDataName (плоскость XOZ для y=ny - 1)
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>$$$$Указатель на двумерный массив данных типа LinearArray2D</returns>
 	LinearArrays2D* GetLinearArrays2DXZLast(ModelDataName modelDataName)
 	{
 		if (!IsContain(modelDataName))
@@ -1393,10 +1398,10 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// $$$$----------
+	/// $$$$Возвращает указатель на трехмерный массив типа LinearArray3D по указанному имени массива данных modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на трехмерный массив типа LinearArray3D по указанному имени массива данных modelDataName</returns>
 	LinearArray3D* GetLinearArray3D(ModelDataName modelDataName)
 	{
 		LinearArray3D* linearArray3D = &linearArrays.at(modelDataName);
@@ -1404,12 +1409,12 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// $$$$-----
+	/// $$$$Создает трехмерный массив данных типа LinearArray3D(nx, ny, nz) для указанного имени массива данных modelDataName
 	/// </summary>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="nz"></param>
-	/// <param name="modelDataName"></param>
+	/// <param name="nx">Число узлов по оси OX</param>
+	/// <param name="ny">Число узлов по оси OY</param>
+	/// <param name="nz">Число узлов по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{		
 		LinearArray3D* linearArray3D = new LinearArray3D(nx, ny, nz);
@@ -1418,9 +1423,9 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArrays3D
+	/// Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый объектом LinearArray3D</returns>
 	double GetDataSizeInMb()
 	{
 		double result = 0;
@@ -1436,7 +1441,7 @@ struct LinearArrays3D
 	}
 
 	/// <summary>
-	/// $$$$------
+	/// $$$$Выводит в консоль все объекты класса LinearArray3D
 	/// </summary>
 	void Print()
 	{
@@ -1455,6 +1460,9 @@ struct LinearArrays3D
 
 #pragma region Devices
 
+/// <summary>
+/// Абстрактный класс, описывает общие характеристики устройств
+/// </summary>
 struct ComputingDevice
 {
 	std::string deviceId;			// уид устройства (CPU или GPU)
@@ -1468,17 +1476,27 @@ struct ComputingDevice
 
 	// Методы
 
+	/// <summary>
+	/// Возвращает количество потоков
+	/// </summary>
+	/// <returns>Количество потоков</returns>
 	virtual long GetNumThreads()
 	{
 		return 0;
 	}
 
+	/// <summary>
+	/// Выводит в консоль характеристики устройства
+	/// </summary>
 	virtual void PrintDevice()
 	{
 		std::cout << "\t" << deviceId << ": " << "\tdevicePerfomance = " << devicePerfomance;
 	}
 };
 
+/// <summary>
+/// Наследник абстрактного класса ComputingDevice, описывает характеристики GPU
+/// </summary>
 struct ComputingDeviceGPU : ComputingDevice
 {
 	long spNumber;				// количество мультипроцессоров SP
@@ -1493,11 +1511,18 @@ struct ComputingDeviceGPU : ComputingDevice
 
 	// Методы
 
-	long GetNumThreads() override	// Возвращает количество потоков
+	/// <summary>
+	/// Возвращает количество потоков, равное количеству мультипроцессоров GPU
+	/// </summary>
+	/// <returns>Количество потоков, равное количеству мультипроцессоров GPU</returns>
+	long GetNumThreads() override
 	{
 		return spNumber;
 	}
-
+	
+	/// <summary>
+	/// Выводит в консоль характеристики устройства (GPU)
+	/// </summary>
 	void PrintDevice() override
 	{
 		ComputingDevice::PrintDevice();
@@ -1505,6 +1530,9 @@ struct ComputingDeviceGPU : ComputingDevice
 	}
 };
 
+/// <summary>
+/// Наследник абстрактного класса ComputingDevice, описывает характеристики CPU
+/// </summary>
 struct ComputingDeviceCPU : ComputingDevice
 {
 	int coreNumber;			// число ядер CPU на вычислительном узле
@@ -1517,11 +1545,18 @@ struct ComputingDeviceCPU : ComputingDevice
 
 	// Методы
 
-	long GetNumThreads() override	// Возвращает количество потоков
+	/// <summary>
+	/// Возвращает количество потоков, равное количеству ядер CPU
+	/// </summary>
+	/// <returns>Количество потоков, равное количеству ядер CPU</returns>
+	long GetNumThreads() override
 	{
 		return coreNumber;
 	}
 
+	/// <summary>
+	/// Выводит в консоль характеристики устройства (CPU)
+	/// </summary>
 	void PrintDevice() override
 	{
 		ComputingDevice::PrintDevice();
@@ -1534,6 +1569,9 @@ struct ComputingDeviceCPU : ComputingDevice
 
 #pragma region Cluster
 
+/// <summary>
+/// Описывет характеристики вычислительного узла
+/// </summary>
 struct ComputingNode
 {
 	std::string nodeId;			// уид вычислительного узла
@@ -1549,7 +1587,11 @@ struct ComputingNode
 
 	// Методы
 
-	int CountDevices()	// вычисляет количество devices
+	/// <summary>
+	/// Возвращает количество устройств device на вычислительном узле
+	/// </summary>
+	/// <returns>Количество устройств device на вычислительном узле</returns>
+	int CountDevices()
 	{
 		int countDevices = 0;
 		for (auto itByDevices = computingDevices.begin(); itByDevices != computingDevices.end(); itByDevices++)
@@ -1562,7 +1604,11 @@ struct ComputingNode
 		return countDevices;
 	}
 
-	double GetSumDevicePerformance()	// вычисляет суммарную производительность всех устройств на вычислительном узле
+	/// <summary>
+	/// Возвращает суммарную производительность всех устройств на вычислительном узле
+	/// </summary>
+	/// <returns>Суммарную производительность всех устройств на вычислительном узле</returns>
+	double GetSumDevicePerformance()
 	{
 		double sumDevicePerfomance = 0;
 
@@ -1580,15 +1626,19 @@ struct ComputingNode
 };
 
 /// <summary>
-/// Computing cluster describing - Вычислительный кластер
+/// Описывает характеристики вычислительного кластера
 /// </summary>
 struct ComputingCluster
 {
-	std::map<std::string, ComputingNode> computingNodes;
+	std::map<std::string, ComputingNode> computingNodes;	// контейнер объектов computingNodes
 
 	// Методы
 
-	int CountNodes()	// вычисляет количество nodes на кластере
+	/// <summary>
+	/// Возвращает количество вычислительных узлов computingNode на кластере
+	/// </summary>
+	/// <returns>Количество вычислительных узлов computingNode на кластере</returns>
+	int CountNodes()
 	{
 		int countNodes = 0;
 		for (auto itByNodes = computingNodes.begin(); itByNodes != computingNodes.end(); itByNodes++)
@@ -1597,25 +1647,28 @@ struct ComputingCluster
 			ComputingNode* nodeObj = &(itByNodes->second);
 			countNodes += 1;
 		}
-
 		return countNodes;
 	}
 
-	double GetClusterPerfomance()	// вычисляет производительность кластера
+	/// <summary>
+	/// Возвращает производительность кластера
+	/// </summary>
+	/// <returns>Производительность кластера</returns>
+	double GetClusterPerfomance()
 	{
 		double sumPerfomance = 0;
-
 		for (auto itByNodes = computingNodes.begin(); itByNodes != computingNodes.end(); itByNodes++)
 			{
 				auto nodeKey = itByNodes->first;
 				auto nodeObj = itByNodes->second;
 				sumPerfomance += nodeObj.nodePerfomance;
 			}
-
 		return sumPerfomance;
 	}
 	
-
+	/// <summary>
+	/// Выводит в консоль характеристики кластера (характеристики вычислительных узлов и их устройств)
+	/// </summary>
 	void Print()
 	{
 		for (auto itByNodes = computingNodes.begin(); itByNodes != computingNodes.end(); itByNodes++) {	// выводим nodes
@@ -1630,7 +1683,6 @@ struct ComputingCluster
 				deviceObj.PrintDevice();
 			}
 		}
-
 	}
 };
 
@@ -1639,7 +1691,7 @@ struct ComputingCluster
 #pragma region Grid
 
 /// <summary>
-/// Двумерный фрагмент расчетной сетки - плоскость XY(грань трехмерного фрагмента)
+/// Описывает двумерный фрагмент расчетной сетки - плоскость XY(грань трехмерного фрагмента)
 /// </summary>
 struct Grid2DFragmentXY
 {
@@ -1675,7 +1727,7 @@ struct Grid2DFragmentXY
 	/// <summary>
 	/// Возвращает число узлов в фрагменте расчетной сетки
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Число узлов в фрагменте расчетной сетки</returns>
 	size_t GetNodesNumber()
 	{
 		size_t nodesNumber = fragmentNx * fragmentNy;
@@ -1683,19 +1735,19 @@ struct Grid2DFragmentXY
 	}		
 
 	/// <summary>
-	/// $$$$--------
+	/// $$$$Выделяет память и создает двумерный массив данных modelDataName размером (fragmentNx, fragmentNy)
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		linearArrays2D.LinearArrayCreate(fragmentNx, fragmentNy, modelDataName);
 	}
 
 	/// <summary>
-	/// $$$$--------
+	/// $$$$Возвращает указатель на двумерный массив LinearArray2D по указанному имени массива данных modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>$$$$Указатель на двумерный массив LinearArray2D по указанному имени массива данных modelDataName</returns>
 	LinearArray2D* GetLinearArray2D(ModelDataName modelDataName)
 	{
 		LinearArray2D* linearArray2D = &(linearArrays2D.linearArrays.at(modelDataName));
@@ -1703,12 +1755,12 @@ struct Grid2DFragmentXY
 	}
 
 	/// <summary>
-	/// $$$$---------
+	/// $$$$Заполняет двумерный массив данных фрагмента размером (nx, ny) элементами исходного одномерного массива data по указанному имени массива данных modelDataName
 	/// </summary>
-	/// <param name="data"></param>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="modelDataName"></param>
+	/// <param name="data">Массив исходных данных data</param>
+	/// <param name="nx">Число узлов расчетной сетки по оси OX</param>
+	/// <param name="ny">Число узлов расчетной сетки по оси OY</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void AssignData(double* data, size_t nx, size_t ny, ModelDataName modelDataName)
 	{
 		for (size_t j = 0; j < fragmentNy; j++)
@@ -1725,7 +1777,14 @@ struct Grid2DFragmentXY
 		}
 	}
 
-
+	/// <summary>
+	/// $$$$Заполняет одномерный массив исходных данных data данными из двумерных массивов данных фрагментов по указанному имени массива данных modelDataName
+	/// </summary>
+	/// <param name="data">Массив исходных данных data</param>
+	/// <param name="nx">Число узлов расчетной сетки по оси OX</param>
+	/// <param name="ny">Число узлов расчетной сетки по оси OY</param>
+	/// <param name="nz">Число узлов расчетной сетки по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (size_t j = 0; j < fragmentNy; j++)
@@ -1745,7 +1804,7 @@ struct Grid2DFragmentXY
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый фрагментом
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый фрагментом</returns>
 	double GetDataSizeInMb()
 	{
 		double result = linearArrays2D.GetDataSizeInMb();
@@ -1753,7 +1812,7 @@ struct Grid2DFragmentXY
 	}
 
 	/// <summary>
-	/// $$$$-------
+	/// $$$$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость XY – грань трехмерного фрагмента)
 	/// </summary>
 	void PrintFragment()
 	{
@@ -1771,7 +1830,7 @@ struct Grid2DFragmentXY
 };
 
 /// <summary>
-/// Двумерный фрагмент расчетной сетки - плоскость YZ(грань трехмерного фрагмента)
+/// Описывает двумерный фрагмент расчетной сетки - плоскость YZ(грань трехмерного фрагмента)
 /// </summary>
 struct Grid2DFragmentYZ
 {
@@ -1807,7 +1866,7 @@ struct Grid2DFragmentYZ
 	/// <summary>
 	/// Возвращает число узлов в фрагменте расчетной сетки
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Число узлов в фрагменте расчетной сетки</returns>
 	size_t GetNodesNumber()
 	{
 		size_t nodesNumber = fragmentNy * fragmentNz;
@@ -1815,19 +1874,19 @@ struct Grid2DFragmentYZ
 	}
 
 	/// <summary>
-	/// Выделяет память и создает двумерный массив данных типа ModelDataName размерами fragmentNy на fragmentNz
+	/// Выделяет память и создает двумерный массив данных modelDataName размером (fragmentNy, fragmentNz)
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		linearArrays2D.LinearArrayCreate(fragmentNy, fragmentNz, modelDataName);
 	}
 
 	/// <summary>
-	/// Возвращает указатель на объект linearArray2D типа ModelDataName
+	/// Возвращает указатель на объект linearArray2D по имени массива данных modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на объект linearArray2D по имени массива данных modelDataName</returns>
 	LinearArray2D* GetLinearArray2D(ModelDataName modelDataName)
 	{
 		LinearArray2D* linearArray2D = &(linearArrays2D.linearArrays.at(modelDataName));
@@ -1835,12 +1894,12 @@ struct Grid2DFragmentYZ
 	}
 	
 	/// <summary>
-	/// Возвращает элемент массива данных типа ModelDataName по указанным координатам IndX и IndZ
+	/// $$$$Возвращает значение элемента массива с указанным именем массива данных modelDataName по указанным координатам IndX и IndZ
 	/// </summary>
-	/// <param name="IndX"></param>
-	/// <param name="IndZ"></param>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="IndX">Индекс элемента массива в фрагменте по оси OX</param>
+	/// <param name="IndZ">Индекс элемента массива в фрагменте по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Значение элемента массива с указанным именем массива данных modelDataName по указанным координатам IndX и IndZ</returns>
 	double GetElement(size_t IndX, size_t IndZ, ModelDataName modelDataName)
 	{
 		LinearArray2D* linearArray2D = GetLinearArray2D(modelDataName);
@@ -1848,13 +1907,13 @@ struct Grid2DFragmentYZ
 	}
 
 	/// <summary>
-	/// 
+	/// $$$$Сохраняет значение элемента массива с указанным именем массива данных modelDataName по указанным координатам IndX и IndZ
 	/// </summary>
-	/// <param name="IndX"></param>
-	/// <param name="IndZ"></param>
-	/// <param name="modelDataName"></param>
-	/// <param name="Value"></param>
-	/// <returns></returns>
+	/// <param name="IndX">Индекс элемента массива в фрагменте по оси OX</param>
+	/// <param name="IndZ">Индекс элемента массива в фрагменте по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <param name="Value">Значение элемента массива данных data</param>
+	/// <returns>Значение элемента массива с указанным именем массива данных modelDataName по указанным координатам IndX и IndZ</returns>
 	double SetElement(size_t IndX, size_t IndZ, ModelDataName modelDataName, double Value)
 	{
 		LinearArray2D* linearArray2D = GetLinearArray2D(modelDataName);
@@ -1864,13 +1923,16 @@ struct Grid2DFragmentYZ
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый фрагментом
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый фрагментом</returns>
 	double GetDataSizeInMb()
 	{
 		double result = linearArrays2D.GetDataSizeInMb();
 		return result;
 	}
 
+	/// <summary>
+	/// $$$$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость YZ – грань трехмерного фрагмента)
+	/// </summary>
 	void PrintFragment()
 	{
 		std::cout << "-----------------2D-FRAGMENT YZ-------------------" << std::endl;
@@ -1887,7 +1949,7 @@ struct Grid2DFragmentYZ
 };
 
 /// <summary>
-/// Двумерный фрагмент расчетной сетки - плоскость XZ(грань трехмерного фрагмента)
+/// Описывает двумерный фрагмент расчетной сетки - плоскость XZ(грань трехмерного фрагмента)
 /// </summary>
 struct Grid2DFragmentXZ
 {
@@ -1923,7 +1985,7 @@ struct Grid2DFragmentXZ
 	/// <summary>
 	/// Возвращает число узлов в фрагменте расчетной сетки
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Число узлов в фрагменте расчетной сетки</returns>
 	size_t GetNodesNumber()
 	{
 		size_t nodesNumber = fragmentNx * fragmentNz;
@@ -1931,19 +1993,19 @@ struct Grid2DFragmentXZ
 	}
 
 	/// <summary>
-	/// Создание массива указанного типа
+	/// Выделяет память и создает двумерный массив данных modelDataName размером (fragmentNx, fragmentNz)
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		linearArrays2D.LinearArrayCreate(fragmentNx, fragmentNz, modelDataName);
 	}
 
 	/// <summary>
-	/// Возвращает указатель на двумерный массив указанного типа ModelDataName
+	/// Возвращает указатель на объект linearArray2D по имени массива данных modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на объект linearArray2D по имени массива данных modelDataName</returns>
 	LinearArray2D* GetLinearArray2D(ModelDataName modelDataName)
 	{
 		LinearArray2D* linearArray2D = &(linearArrays2D.linearArrays.at(modelDataName));
@@ -1953,13 +2015,16 @@ struct Grid2DFragmentXZ
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый фрагментом
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый фрагментом</returns>
 	double GetDataSizeInMb()
 	{
 		double result = linearArrays2D.GetDataSizeInMb();
 		return result;
 	}
 
+	/// <summary>
+	/// $$$$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость XZ – грань трехмерного фрагмента)
+	/// </summary>
 	void PrintFragment()
 	{
 		std::cout << "-----------------2D-FRAGMENT XZ-------------------" << std::endl;
@@ -1975,9 +2040,8 @@ struct Grid2DFragmentXZ
 	}
 };
 
-
 /// <summary>
-/// Смежная двумерная плоскость XZ для передачи данных между устройствами
+/// Описывает смежную двумерную плоскость XZ для передачи данных между устройствами
 /// </summary>
 struct Grid2DTransferPlaneXZ
 {
@@ -2014,9 +2078,9 @@ struct Grid2DTransferPlaneXZ
 	// Методы
 
 	/// <summary>
-	/// Создание массива данных указанного типа ModelDataName
+	/// Создание массива данных по имени массива данных modelDataName
 	/// </summary>
-	/// <param name="modelDataName">Тип создаваемого массива</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentsNumZ; k++)
@@ -2030,16 +2094,13 @@ struct Grid2DTransferPlaneXZ
 			}			
 		}
 	}
-
-
-
 		
 	/// <summary>
 	/// Вывод в консоль фрагмента переходного слоя заданного типа
 	/// </summary>
 	/// <param name="fragmentIndX">Индекс фрагмента переходного слоя по OX</param>
 	/// <param name="fragmentIndZ">Индекс фрагмента переходного слоя по OZ</param>
-	/// <param name="modelDataName">Тип массива данных</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void PrintGrid2DTransferPlaneXZ(size_t fragmentIndX, size_t fragmentIndZ, ModelDataName modelDataName)
 	{
 		std::cout << std::endl;
@@ -2059,8 +2120,6 @@ struct Grid2DTransferPlaneXZ
 	}
 
 };
-
-
 
 /// <summary>
 /// Трехмерный фрагмент блока расчетной сетки вычислительного устройства
@@ -2110,10 +2169,12 @@ struct Grid3DFragment
 	// Методы
 	
 	// Указатели на смежные двумерные плоскости для передачи данных
+	
 	/// <summary>
-	/// Возвращает указатель на первую плоскость XY фрагмента по оси Oz (нижняя плоскость 3D-фрагмента)
+	/// Возвращает указатель на первую плоскость XY фрагмента по оси Oz от начала координат по имени массива данных modelDataName
 	/// </summary>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на первую плоскость XY фрагмента по оси Oz от начала координат по имени массива данных modelDataName</returns>
 	Grid2DFragmentXY* GetGrid2DFragmentXYFirst(ModelDataName modelDataName)
 	{
 		Grid2DFragmentXY* grid2DFragmentXY = new Grid2DFragmentXY(fragmentNx, fragmentNy,
@@ -2126,13 +2187,13 @@ struct Grid3DFragment
 		grid2DFragmentXY->linearArrays2D = *linearArrays2D;
 
 		return grid2DFragmentXY;
-	}
-	
+	}	
 
 	/// <summary>
-	/// Возвращает указатель на последнюю плоскость XY фрагмента по оси Oz (верхняя плоскость 3D-фрагмента)
+	/// Возвращает указатель на последнюю плоскость XY фрагмента по оси Oz от начала координат по имени массива данных modelDataName
 	/// </summary>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на последнюю плоскость XY фрагмента по оси Oz от начала координат по имени массива данных modelDataName</returns>
 	Grid2DFragmentXY* GetGrid2DFragmentXYLast(ModelDataName modelDataName)
 	{
 		Grid2DFragmentXY* grid2DFragmentXY = new Grid2DFragmentXY(fragmentNx, fragmentNy,
@@ -2148,9 +2209,10 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// Возвращает указатель на первую плоскость YZ фрагмента по оси Ox (левая плоскость 3D-фрагмента----)
+	/// Возвращает указатель на первую плоскость YZ фрагмента по оси Ox от начала координат по имени массива данных modelDataName
 	/// </summary>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на первую плоскость YZ фрагмента по оси Ox от начала координат по имени массива данных modelDataName</returns>
 	Grid2DFragmentYZ* GetGrid2DFragmentYZFirst(ModelDataName modelDataName)
 	{
 		Grid2DFragmentYZ* grid2DFragmentYZ = new Grid2DFragmentYZ(fragmentNy, fragmentNz,
@@ -2166,9 +2228,10 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// Возвращает указатель на последнюю плоскость YZ фрагмента по оси Ox (правая плоскость 3D-фрагмента-----)
+	/// Возвращает указатель на последнюю плоскость YZ фрагмента по оси Ox от начала координат по имени массива данных modelDataName
 	/// </summary>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на последнюю плоскость YZ фрагмента по оси Ox от начала координат по имени массива данных modelDataName</returns>
 	Grid2DFragmentYZ* GetGrid2DFragmentYZLast(ModelDataName modelDataName)
 	{
 		Grid2DFragmentYZ* grid2DFragmentYZ = new Grid2DFragmentYZ(fragmentNy, fragmentNz,
@@ -2184,9 +2247,10 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// Возвращает указатель на первую плоскость XZ фрагмента по оси Oy от начала координат
+	/// Возвращает указатель на первую плоскость XZ фрагмента по оси Oy от начала координат по имени массива данных modelDataName
 	/// </summary>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на первую плоскость XZ фрагмента по оси Oy от начала координат по имени массива данных modelDataName</returns>
 	Grid2DFragmentXZ* GetGrid2DFragmentXZFirst(ModelDataName modelDataName)
 	{
 		Grid2DFragmentXZ* grid2DFragmentXZ = new Grid2DFragmentXZ(fragmentNx, fragmentNz,
@@ -2202,9 +2266,10 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// Возвращает указатель на последнюю плоскость XZ фрагмента по оси Oy от начала координат
+	/// Возвращает указатель на последнюю плоскость XZ фрагмента по оси Oy от начала координат по имени массива данных modelDataName
 	/// </summary>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на последнюю плоскость XZ фрагмента по оси Oy от начала координат по имени массива данных modelDataName</returns>
 	Grid2DFragmentXZ* GetGrid2DFragmentXZLast(ModelDataName modelDataName)
 	{
 		Grid2DFragmentXZ* grid2DFragmentXZ = new Grid2DFragmentXZ(fragmentNx, fragmentNz,
@@ -2222,7 +2287,7 @@ struct Grid3DFragment
 	/// <summary>
 	/// Возвращает число узлов в фрагменте расчетной сетки
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Число узлов в фрагменте расчетной сетки</returns>
 	size_t GetNodesNumber()
 	{
 		size_t nodesNumber = fragmentNx * fragmentNy * fragmentNz;
@@ -2232,7 +2297,7 @@ struct Grid3DFragment
 	/// <summary>
 	/// Возвращает число узлов в плоскости XY фрагмента расчетной сетки
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Число узлов в плоскости XY фрагмента расчетной сетки</returns>
 	size_t GetNodesNumberXY()
 	{
 		size_t nodesNumber = fragmentNx * fragmentNy;
@@ -2242,7 +2307,7 @@ struct Grid3DFragment
 	/// <summary>
 	/// Возвращает число узлов в плоскости XZ фрагмента расчетной сетки
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Число узлов в плоскости XZ фрагмента расчетной сетки</returns>
 	size_t GetNodesNumberXZ()
 	{
 		size_t nodesNumber = fragmentNx * fragmentNz;
@@ -2252,7 +2317,7 @@ struct Grid3DFragment
 	/// <summary>
 	/// Возвращает число узлов в плоскости YZ фрагмента расчетной сетки
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Число узлов в плоскости YZ фрагмента расчетной сетки</returns>
 	size_t GetNodesNumberYZ()
 	{
 		size_t nodesNumber = fragmentNy * fragmentNz;
@@ -2260,19 +2325,19 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// ---------------------
+	/// $$$$Выделяет память и создает трехмерный массив LinearArray3D по указаннному имени массива данных modelDataName размером (fragmentNx, fragmentNy, fragmentNz)
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		linearArrays3D.LinearArrayCreate(fragmentNx, fragmentNy, fragmentNz, modelDataName);
 	}
 
 	/// <summary>
-	/// --------------
+	/// $$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelDataName</returns>
 	LinearArray3D* GetLinearArray3D(ModelDataName modelDataName)
 	{
 		LinearArray3D* linearArray3D = &(linearArrays3D.linearArrays.at(modelDataName));
@@ -2280,13 +2345,13 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// ------------------
+	/// $$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерного массива data по указанному имени массива данных modelDataName
 	/// </summary>
-	/// <param name="data"></param>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="nz"></param>
-	/// <param name="modelDataName"></param>
+	/// <param name="data">Массив исходных данных data</param>
+	/// <param name="nx">Число узлов расчетной сетки по оси OX</param>
+	/// <param name="ny">Число узлов расчетной сетки по оси OY</param>
+	/// <param name="nz">Число узлов расчетной сетки по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void AssignData(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentNz; k++)
@@ -2306,7 +2371,14 @@ struct Grid3DFragment
 		}
 	}
 
-	
+	/// <summary>
+	/// $$$$Заполняет одномерный массив исходных данных data данными из трехмерных массивов данных фрагментов по указанному имени массива данных modelDataName
+	/// </summary>
+	/// <param name="data">Массив исходных данных data</param>
+	/// <param name="nx">Число узлов расчетной сетки по оси OX</param>
+	/// <param name="ny">Число узлов расчетной сетки по оси OY</param>
+	/// <param name="nz">Число узлов расчетной сетки по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentNz; k++)
@@ -2327,7 +2399,7 @@ struct Grid3DFragment
 	}
 	
 	/// <summary>
-	/// ----------------
+	/// $$$$Выводит в консоль индексы фрагмента в блоке устройства вычислительного узла
 	/// </summary>
 	void PrintGrid3DFragmentIndex()
 	{
@@ -2335,9 +2407,9 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// -------------------
+	/// $$$$Выводит в консоль фрагмент по индексам фрагмента в блоке устройства вычислительного узла
 	/// </summary>
-	/// <param name="fragment"></param>
+	/// <param name="fragment">Фрагмент</param>
 	void PrintGrid3DFragmentIndex(Grid3DFragment* fragment)
 	{
 		if (fragment == NULL)
@@ -2353,7 +2425,7 @@ struct Grid3DFragment
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый фрагментом
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый фрагментом</returns>
 	double GetDataSizeInMb()
 	{
 		double result = linearArrays3D.GetDataSizeInMb();
@@ -2361,9 +2433,9 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// ------------------
+	/// $$$$Выводит в консоль сведения о фрагменте в блоке устройства вычислительного узла по указанному уровню детализации вывода grid3DPrintDetalisation
 	/// </summary>
-	/// <param name="grid3DPrintDetalisation"></param>
+	/// <param name="grid3DPrintDetalisation">Уровень детализации вывода grid3DPrintDetalisation</param>
 	void PrintFragment(Grid3DPrintDetalisation grid3DPrintDetalisation)
 	{
 		std::cout << " \t\t\t-----------------FRAGMENT ";
@@ -2398,10 +2470,10 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// Вывод на печать всех элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDataName
+	/// Выводит в консоль все элементы плоскости Fragment3DPlane фрагмента для указанного типа ModelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <param name="fragment3DPlane"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <param name="fragment3DPlane">Плоскость для передачи данных между фрагментами</param>
 	void PrintFragmentPlane(ModelDataName modelDataName, Fragment3DPlane fragment3DPlane)
 	{
 		if (fragment3DPlane == XOZ_Prev || fragment3DPlane == XOZ_Next)
@@ -2421,21 +2493,19 @@ struct Grid3DFragment
 	}
 
 	/// <summary>
-	/// Вывод на печать части элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDataName, часть размером (Ind1_1, Ind1_2) на (Ind2_1, Ind2_2)
+	/// $$$$Выводит в консоль части элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDataName, часть размером (Ind1_1, Ind1_2) на (Ind2_1, Ind2_2)
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <param name="fragment3DPlane"></param>
-	/// <param name="Ind1_1"></param>
-	/// <param name="Ind1_2"></param>
-	/// <param name="Ind2_1"></param>
-	/// <param name="Ind2_2"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <param name="fragment3DPlane">Плоскость для передачи данных между фрагментами</param>
+	/// <param name="Ind1_1">Первый индекс по первой оси</param>
+	/// <param name="Ind1_2">Второй индекс по первой оси</param>
+	/// <param name="Ind2_1">Первый индекс по второй оси</param>
+	/// <param name="Ind2_2">Второй индекс по второй оси</param>
 	void PrintFragmentPlane(ModelDataName modelDataName, Fragment3DPlane fragment3DPlane, size_t Ind1_1, size_t Ind1_2, size_t Ind2_1, size_t Ind2_2)
 	{
 		LinearArray3D* linearArray3D = GetLinearArray3D(modelDataName);
 		linearArray3D->Print(fragment3DPlane, Ind1_1, Ind1_2, Ind2_1, Ind2_2);
-	}
-
-	
+	}	
 };
 
 /// <summary>
@@ -2670,7 +2740,7 @@ struct GridBlock3DByDevice
 	/// <summary>
 	/// Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void Grid2DTransferPlanesXZLinearArrayCreate(ModelDataName modelDataName)
 	{
 		for (size_t j = 0; j < fragmentsNumY - 1; j++)
@@ -2681,6 +2751,13 @@ struct GridBlock3DByDevice
 				
 	}
 
+	/// <summary>
+	/// $$$$Возвращает указатель на трехмерный фрагмент типа Grid3DFragment по указанным индексам indX, indY, indZ
+	/// </summary>
+	/// <param name="indX">Индекс фрагмента по оси OX</param>
+	/// <param name="indY">Индекс фрагмента по оси OX</param>
+	/// <param name="indZ">Индекс фрагмента по оси OX</param>
+	/// <returns>Указатель на трехмерный фрагмент типа Grid3DFragment по указанным индексам indX, indY, indZ</returns>
 	Grid3DFragment* GetGrid3DFragment(size_t indX, size_t indY, size_t indZ)
 	{
 		Grid3DFragment* fragment = &fragments[indZ][indY][indX];
@@ -2688,9 +2765,9 @@ struct GridBlock3DByDevice
 	}
 
 	/// <summary>
-	/// --------------
+	/// Выделяет память и создает трехмерный массив данных размером (fragmentsNumX, fragmentsNumY, fragmentsNumZ) по указанному имени массива данных modelDataName 
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentsNumZ; k++)
@@ -2721,13 +2798,13 @@ struct GridBlock3DByDevice
 	}
 
 	/// <summary>
-	/// -----------
+	/// $$$$----------------------
 	/// </summary>
-	/// <param name="data"></param>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="nz"></param>
-	/// <param name="modelDataName"></param>
+	/// <param name="data">Массив исходных данных data</param>
+	/// <param name="nx">Число узлов расчетной сетки по оси OX</param>
+	/// <param name="ny">Число узлов расчетной сетки по оси OY</param>
+	/// <param name="nz">Число узлов расчетной сетки по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void AssignData(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentsNumZ; k++)
@@ -2742,7 +2819,15 @@ struct GridBlock3DByDevice
 			}
 		}
 	}
-		
+	
+	/// <summary>
+	/// $$$$----------------------
+	/// </summary>
+	/// <param name="data">Массив исходных данных data</param>
+	/// <param name="nx">Число узлов расчетной сетки по оси OX</param>
+	/// <param name="ny">Число узлов расчетной сетки по оси OY</param>
+	/// <param name="nz">Число узлов расчетной сетки по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (size_t k = 0; k < fragmentsNumZ; k++)
@@ -2761,7 +2846,7 @@ struct GridBlock3DByDevice
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByDevice
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый объектом GridBlock3DByDevice</returns>
 	double GetDataSizeInMb()
 	{
 		double result = 0;
@@ -2779,7 +2864,10 @@ struct GridBlock3DByDevice
 		return result;
 	}
 
-	// Выводит в консоль УИД и наименование вычислительного узла
+	/// <summary>
+	/// Выводит в консоль УИД и наименование вычислительного узла gridBlock3DByDevice
+	/// </summary>
+	/// <param name="gridBlock3DByDevice">Трехмерный блок расчетной сетки вычислительного узла</param>
 	void PrintDeviceName(GridBlock3DByDevice* gridBlock3DByDevice)
 	{
 		if (gridBlock3DByDevice == NULL)
@@ -2794,6 +2882,10 @@ struct GridBlock3DByDevice
 		}
 	}
 
+	/// <summary>
+	/// $$$$Выводит в консоль сведения о блоках устройства вычислительного узла по указанному уровню детализации вывода grid3DPrintDetalisation
+	/// </summary>
+	/// <param name="grid3DPrintDetalisation">Уровень детализации вывода grid3DPrintDetalisation</param>
 	void PrintDevice(Grid3DPrintDetalisation grid3DPrintDetalisation)
 	{
 		std::cout << " \t\t-----------------DEVICE " << deviceIndex << ": " << deviceName << "-------------------" << std::endl;
@@ -2884,9 +2976,9 @@ struct GridBlock3DByNode
 	}
 
 	/// <summary>
-	/// Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа
+	/// Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void Grid2DTransferPlanesXZLinearArrayCreate(ModelDataName modelDataName)
 	{
 		// 1. Добавляем массивы для передачи данных между вычислительными устройствами
@@ -2916,12 +3008,12 @@ struct GridBlock3DByNode
 	}
 
 	/// <summary>
-	/// ---------------
+	/// Выполняет декомпозицию блока расчетной сетки вычислительного узла
 	/// </summary>
-	/// <param name="computingNode"></param>
-	/// <param name="fragmentsNumX"></param>
-	/// <param name="fragmentsNumZ"></param>
-	void Decompose(ComputingNode computingNode, size_t fragmentsNumX, size_t fragmentsNumZ)	//	Выполняет декомпозицию блока расчетной сетки вычислительного узла
+	/// <param name="computingNode">Вычислительный узел</param>
+	/// <param name="fragmentsNumX">Число фрагментов по оси OX</param>
+	/// <param name="fragmentsNumZ">Число фрагментов по оси OY</param>
+	void Decompose(ComputingNode computingNode, size_t fragmentsNumX, size_t fragmentsNumZ)	
 	{		
 		size_t indexStart = 0;
 		double sumDevicePerfomance = computingNode.GetSumDevicePerformance();
@@ -2962,9 +3054,9 @@ struct GridBlock3DByNode
 	}
 
 	/// <summary>
-	/// --------------
+	/// $$$$--------------
 	/// </summary>
-	/// <param name="deviceIndex"></param>
+	/// <param name="deviceIndex">$$$$</param>
 	/// <returns></returns>
 	GridBlock3DByDevice* GetGridBlock3DByDevice(size_t deviceIndex)
 	{
@@ -2974,17 +3066,19 @@ struct GridBlock3DByNode
 	}
 
 	/// <summary>
-	/// --------------
+	/// $$$$--------------
 	/// </summary>
-	/// <param name="deviceName"></param>
+	/// <param name="deviceName">$$$$</param>
 	/// <returns></returns>
 	GridBlock3DByDevice* GetGridBlock3DByDevice(std::string deviceName)
 	{
 		GridBlock3DByDevice* gridBlock3DByDevice = &(gridBlock3DByDevices.at(deviceName));
 		return gridBlock3DByDevice;
 	}
-
-	// Устанавливает указатели на соседние блоки
+		
+	/// <summary>
+	/// Устанавливает указатели на соседние блоки
+	/// </summary>
 	void SetPrevNextPointers()
 	{
 		GridBlock3DByDevice* prevGridBlock3DByDevice = NULL;
@@ -3008,7 +3102,10 @@ struct GridBlock3DByNode
 		//SetPrevNextPointersForDeviceBlocks();
 	}
 
-	// Выводит в консоль УИД и наименование вычислительного узла
+	/// <summary>
+	/// Выводит в консоль УИД и наименование вычислительного узла
+	/// </summary>
+	/// <param name="gridBlock3DByNode">Вычислительный узел</param>
 	void PrintNodeName(GridBlock3DByNode* gridBlock3DByNode)
 	{
 		if (gridBlock3DByNode == NULL)
@@ -3024,9 +3121,9 @@ struct GridBlock3DByNode
 	}
 
 	/// <summary>
-	/// -------------------
+	/// $$$$Создание массива данных по имени массива данных modelDataName
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		for (auto itByDevices = gridBlock3DByDevices.begin(); itByDevices != gridBlock3DByDevices.end(); itByDevices++)
@@ -3038,7 +3135,7 @@ struct GridBlock3DByNode
 	}
 
 	/// <summary>
-	/// -----------------
+	/// $$$$-----------------
 	/// </summary>
 	/// <param name="data"></param>
 	/// <param name="nx"></param>
@@ -3055,7 +3152,14 @@ struct GridBlock3DByNode
 		}
 	}
 
-	
+	/// <summary>
+	/// $$$$-----------------
+	/// </summary>
+	/// <param name="data">Массив исходных данных data</param>
+	/// <param name="nx">Число узлов расчетной сетки по оси OX</param>
+	/// <param name="ny">Число узлов расчетной сетки по оси OY</param>
+	/// <param name="nz">Число узлов расчетной сетки по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (auto itByDevices = gridBlock3DByDevices.begin(); itByDevices != gridBlock3DByDevices.end(); itByDevices++)
@@ -3069,7 +3173,7 @@ struct GridBlock3DByNode
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByNode
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый объектом GridBlock3DByNode</returns>
 	double GetDataSizeInMb()
 	{
 		double result = 0;
@@ -3084,6 +3188,10 @@ struct GridBlock3DByNode
 		return result;
 	}
 
+	/// <summary>
+	/// $$$$Выводит в консоль сведения о вычислительных узлах по указанному уровню детализации вывода grid3DPrintDetalisation
+	/// </summary>
+	/// <param name="grid3DPrintDetalisation">Уровень детализации вывода grid3DPrintDetalisation</param>
 	void PrintNode(Grid3DPrintDetalisation grid3DPrintDetalisation)
 	{
 		std::cout << " \t-----------------NODE " << nodeIndex << ": " << nodeName << "-------------------" << std::endl;
@@ -3154,7 +3262,7 @@ struct Grid3D
 	/// <summary>
 	/// Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void Grid2DTransferPlanesXZLinearArrayCreate(ModelDataName modelDataName)
 	{
 		// 1. Добавляем массивы для передачи данных между вычислительными узлами
@@ -3187,10 +3295,10 @@ struct Grid3D
 	}
 
 	/// <summary>
-	/// -----------
+	/// $$$$-----------
 	/// </summary>
-	/// <param name="nodeIndex"></param>
-	/// <returns></returns>
+	/// <param name="nodeIndex">$$$$</param>
+	/// <returns>$$$$</returns>
 	GridBlock3DByNode* GetGridBlock3DByNode(size_t nodeIndex)
 	{
 		auto nodeName = nodeNames[nodeIndex];
@@ -3199,10 +3307,10 @@ struct Grid3D
 	}
 
 	/// <summary>
-	/// ----------------
+	/// $$$$----------------
 	/// </summary>
-	/// <param name="nodeName"></param>
-	/// <returns></returns>
+	/// <param name="nodeName">$$$$</param>
+	/// <returns>$$$$</returns>
 	GridBlock3DByNode* GetGridBlock3DByNode(std::string nodeName)
 	{
 		GridBlock3DByNode* gridBlock3DByNode = &(gridBlock3DByNodes.at(nodeName));
@@ -3210,12 +3318,12 @@ struct Grid3D
 	}
 
 	/// <summary>
-	/// -------------
+	/// Выполняет декомпозицию расчетной сетки: делит сетку Grid на блоки для выч.устройств кластера (Nodes)
 	/// </summary>
-	/// <param name="cluster"></param>
-	/// <param name="fragmentsNumX"></param>
-	/// <param name="fragmentsNumZ"></param>
-	void Decompose(ComputingCluster cluster, size_t fragmentsNumX, size_t fragmentsNumZ)	//	Выполняет декомпозицию расчетной сетки: делит сетку Grid на блоки для выч.устройств кластера (Nodes)
+	/// <param name="cluster">$$$$</param>
+	/// <param name="fragmentsNumX">$$$$</param>
+	/// <param name="fragmentsNumZ">$$$$</param>
+	void Decompose(ComputingCluster cluster, size_t fragmentsNumX, size_t fragmentsNumZ)
 	{
 		double sumNyNode = 0;
 		double sumPerfomance = cluster.GetClusterPerfomance();
@@ -3284,7 +3392,7 @@ struct Grid3D
 	}
 	
 	/// <summary>
-	/// ------------------
+	/// $$$$------------------
 	/// </summary>
 	void SetPrevNextPointersForDeviceBlocks()
 	{
@@ -3297,9 +3405,9 @@ struct Grid3D
 	}
 
 	/// <summary>
-	/// -----------------
+	/// $$$$-----------------
 	/// </summary>
-	/// <param name="modelDataName"></param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void LinearArrayCreate(ModelDataName modelDataName)
 	{
 		for (auto itByNodes = gridBlock3DByNodes.begin(); itByNodes != gridBlock3DByNodes.end(); itByNodes++)
@@ -3311,13 +3419,13 @@ struct Grid3D
 	}
 
 	/// <summary>
-	/// --------------
+	/// $$$$--------------
 	/// </summary>
-	/// <param name="data"></param>
-	/// <param name="nx"></param>
-	/// <param name="ny"></param>
-	/// <param name="nz"></param>
-	/// <param name="modelDataName"></param>
+	/// <param name="data">Массив исходных данных data</param>
+	/// <param name="nx">Число узлов расчетной сетки по оси OX</param>
+	/// <param name="ny">Число узлов расчетной сетки по оси OY</param>
+	/// <param name="nz">Число узлов расчетной сетки по оси OZ</param>
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
 	void AssignData(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
 	{
 		for (auto itByNodes = gridBlock3DByNodes.begin(); itByNodes != gridBlock3DByNodes.end(); itByNodes++)
@@ -3329,11 +3437,11 @@ struct Grid3D
 	}
 
 	/// <summary>
-	/// ---------------------
+	/// Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки
 	/// </summary>
-	/// <param name="modelDataName"></param>
-	/// <returns></returns>
-	double* Compose(ModelDataName modelDataName)	//	Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки
+	/// <param name="modelDataName">Имя массива данных modelDataName</param>
+	/// <returns>Одномерный массив исходных данных data</returns>
+	double* Compose(ModelDataName modelDataName)	
 	{
 		long ram = sizeof(double) * gridNx * gridNy * gridNz;
 		double* data = (double*)malloc(ram);
@@ -3351,7 +3459,7 @@ struct Grid3D
 	/// <summary>
 	/// Возвращает объём оперативной памяти, занимаемый объектом Grid3D
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Объём оперативной памяти, занимаемый объектом Grid3D</returns>
 	double GetDataSizeInMb()
 	{
 		double result = 0;
@@ -3366,6 +3474,11 @@ struct Grid3D
 		return result;
 	}
 
+	/// <summary>
+	/// Выводит в консоль параметры расчетной сетки
+	/// </summary>
+	/// <param name="grid3DPrintDetalisation">	Уровень детализации вывода grid3DPrintDetalisation
+	</param>
 	void Print(Grid3DPrintDetalisation grid3DPrintDetalisation)
 	{
 		std::cout << "-----------------GRID-------------------" << std::endl;

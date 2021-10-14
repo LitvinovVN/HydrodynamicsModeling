@@ -17,25 +17,25 @@ void \mbox{\hyperlink{struct_grid3_d_a3819858562a16726d39d485a6645e414}{Grid2\+D
 void \mbox{\hyperlink{struct_grid3_d_a4db8233744296942d944f64b25588244}{Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Print}} (std\+::string node\+Name, std\+::string device\+Name, size\+\_\+t transfer\+Plane\+XZIndex, size\+\_\+t fragment\+IndX, size\+\_\+t fragment\+IndZ, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
 \begin{DoxyCompactList}\small\item\em Выводит в консоль объект двумерной плоскости XZ для передачи данных \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid\+Block3\+DBy\+Node}} $\ast$ \mbox{\hyperlink{struct_grid3_d_a1d45234170101a36ecc13e273397d2e7}{Get\+Grid\+Block3\+DBy\+Node}} (size\+\_\+t node\+Index)
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid\+Block3\+DBy\+Node}} $\ast$ \mbox{\hyperlink{struct_grid3_d_a218c89d44523da99adccc4b87f9b53c8}{Get\+Grid\+Block3\+DBy\+Node}} (std\+::string node\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid3_d_acc66881f49bb6596fe2bc2ab94fcbcc9}{Decompose}} (\mbox{\hyperlink{struct_computing_cluster}{Computing\+Cluster}} cluster, size\+\_\+t fragments\+NumX, size\+\_\+t fragments\+NumZ)
-\item 
+\begin{DoxyCompactList}\small\item\em Выполняет декомпозицию расчетной сетки\+: делит сетку Grid на блоки для выч.\+устройств кластера (Nodes) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid3_d_a225b9cadd31910063ffa3e307854ca69}{Set\+Prev\+Next\+Pointers}} ()
 \item 
 void \mbox{\hyperlink{struct_grid3_d_aecb5acb358038cb804276bc887649d22}{Set\+Prev\+Next\+Pointers\+For\+Device\+Blocks}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid3_d_a6fd196575bf56fa197e4ac5238634f4e}{Linear\+Array\+Create}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_grid3_d_a03f009444f2b6c37f6ed895313028360}{Assign\+Data}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nz, \mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
 double $\ast$ \mbox{\hyperlink{struct_grid3_d_a47b38c1c851787ee967451474e0d5195}{Compose}} (\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{struct_grid3_d_a2098869a82eb1e4fa6aba6ac5ebae74c}{Get\+Data\+Size\+In\+Mb}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid3_d}{Grid3D}} \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{struct_grid3_d_a503fc5d38d72448cedb61e5da632e65c}{Print}} (\mbox{\hyperlink{_grid3_d_8cpp_a85710a4d27ce4a3fec67b009c8910ead}{Grid3\+DPrint\+Detalisation}} grid3\+DPrint\+Detalisation)
-\end{DoxyCompactItemize}
+$<$/param $>$ void \mbox{\hyperlink{struct_grid3_d_a3ecd3b44106f588ba3d77659698b2076}{Print}} (\mbox{\hyperlink{_grid3_d_8cpp_a85710a4d27ce4a3fec67b009c8910ead}{Grid3\+DPrint\+Detalisation}} grid3\+DPrint\+Detalisation)
+\begin{DoxyCompactList}\small\item\em Выводит в консоль параметры расчетной сетки \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,18 +76,21 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 \doxysubsubsection{\texorpdfstring{AssignData()}{AssignData()}}
 {\footnotesize\ttfamily void Grid3\+D\+::\+Assign\+Data (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nz,  }\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid3_d_autotoc_md18}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid3_d_autotoc_md18}
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
 
 \begin{DoxyParams}{Аргументы}
-{\em data} & \\
+{\em data} & Массив исходных данных data\\
 \hline
-{\em nx} & \\
+{\em nx} & Число узлов расчетной сетки по оси OX\\
 \hline
-{\em ny} & \\
+{\em ny} & Число узлов расчетной сетки по оси OY\\
 \hline
-{\em nz} & \\
+{\em nz} & Число узлов расчетной сетки по оси OZ\\
 \hline
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_grid3_d_a47b38c1c851787ee967451474e0d5195}\label{struct_grid3_d_a47b38c1c851787ee967451474e0d5195}} 
@@ -96,14 +99,17 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 \doxysubsubsection{\texorpdfstring{Compose()}{Compose()}}
 {\footnotesize\ttfamily double $\ast$ Grid3\+D\+::\+Compose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid3_d_autotoc_md19}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid3_d_autotoc_md19}
+
+
+Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки 
+
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-
+Одномерный массив исходных данных data
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid3_d_ac1784b53388aa752069b439e8d853eb9}\label{struct_grid3_d_ac1784b53388aa752069b439e8d853eb9}} 
 \index{Grid3D@{Grid3D}!CreateGrid2DTransferPlanesXZ@{CreateGrid2DTransferPlanesXZ}}
@@ -121,14 +127,17 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 \doxysubsubsection{\texorpdfstring{Decompose()}{Decompose()}}
 {\footnotesize\ttfamily void Grid3\+D\+::\+Decompose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_computing_cluster}{Computing\+Cluster}}}]{cluster,  }\item[{size\+\_\+t}]{fragments\+NumX,  }\item[{size\+\_\+t}]{fragments\+NumZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid3_d_autotoc_md15}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid3_d_autotoc_md15}
+
+
+Выполняет декомпозицию расчетной сетки\+: делит сетку Grid на блоки для выч.\+устройств кластера (Nodes) 
+
 
 \begin{DoxyParams}{Аргументы}
-{\em cluster} & \\
+{\em cluster} & \$\$\$\$\\
 \hline
-{\em fragments\+NumX} & \\
+{\em fragments\+NumX} & \$\$\$\$\\
 \hline
-{\em fragments\+NumZ} & \\
+{\em fragments\+NumZ} & \$\$\$\$\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_grid3_d_a2098869a82eb1e4fa6aba6ac5ebae74c}\label{struct_grid3_d_a2098869a82eb1e4fa6aba6ac5ebae74c}} 
@@ -142,7 +151,7 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid3_d}{Grid3D}} 
 
 \begin{DoxyReturn}{Возвращает}
-
+Объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid3_d}{Grid3D}}
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid3_d_a1d45234170101a36ecc13e273397d2e7}\label{struct_grid3_d_a1d45234170101a36ecc13e273397d2e7}} 
 \index{Grid3D@{Grid3D}!GetGridBlock3DByNode@{GetGridBlock3DByNode}}
@@ -150,14 +159,17 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 \doxysubsubsection{\texorpdfstring{GetGridBlock3DByNode()}{GetGridBlock3DByNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid\+Block3\+DBy\+Node}} $\ast$ Grid3\+D\+::\+Get\+Grid\+Block3\+DBy\+Node (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{node\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid3_d_autotoc_md13}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid3_d_autotoc_md13}
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
 
 \begin{DoxyParams}{Аргументы}
-{\em node\+Index} & \\
+{\em node\+Index} & \$\$\$\$\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-
+\$\$\$\$
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid3_d_a218c89d44523da99adccc4b87f9b53c8}\label{struct_grid3_d_a218c89d44523da99adccc4b87f9b53c8}} 
 \index{Grid3D@{Grid3D}!GetGridBlock3DByNode@{GetGridBlock3DByNode}}
@@ -165,14 +177,17 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 \doxysubsubsection{\texorpdfstring{GetGridBlock3DByNode()}{GetGridBlock3DByNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid\+Block3\+DBy\+Node}} $\ast$ Grid3\+D\+::\+Get\+Grid\+Block3\+DBy\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{node\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid3_d_autotoc_md14}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid3_d_autotoc_md14}
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
 
 \begin{DoxyParams}{Аргументы}
-{\em node\+Name} & \\
+{\em node\+Name} & \$\$\$\$\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-
+\$\$\$\$
 \end{DoxyReturn}
 \mbox{\Hypertarget{struct_grid3_d_a3819858562a16726d39d485a6645e414}\label{struct_grid3_d_a3819858562a16726d39d485a6645e414}} 
 \index{Grid3D@{Grid3D}!Grid2DTransferPlanesXZLinearArrayCreate@{Grid2DTransferPlanesXZLinearArrayCreate}}
@@ -186,7 +201,7 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{struct_grid3_d_a4db8233744296942d944f64b25588244}\label{struct_grid3_d_a4db8233744296942d944f64b25588244}} 
@@ -220,18 +235,30 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 \doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
 {\footnotesize\ttfamily void Grid3\+D\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid3_d_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid3_d_autotoc_md17}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid3_d_autotoc_md17}
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
 
 \begin{DoxyParams}{Аргументы}
-{\em model\+Data\+Name} & \\
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{struct_grid3_d_a503fc5d38d72448cedb61e5da632e65c}\label{struct_grid3_d_a503fc5d38d72448cedb61e5da632e65c}} 
+\mbox{\Hypertarget{struct_grid3_d_a3ecd3b44106f588ba3d77659698b2076}\label{struct_grid3_d_a3ecd3b44106f588ba3d77659698b2076}} 
 \index{Grid3D@{Grid3D}!Print@{Print}}
 \index{Print@{Print}!Grid3D@{Grid3D}}
 \doxysubsubsection{\texorpdfstring{Print()}{Print()}}
-{\footnotesize\ttfamily void Grid3\+D\+::\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid3_d_8cpp_a85710a4d27ce4a3fec67b009c8910ead}{Grid3\+DPrint\+Detalisation}}}]{grid3\+DPrint\+Detalisation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily $<$/param $>$ void Grid3\+D\+::\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_grid3_d_8cpp_a85710a4d27ce4a3fec67b009c8910ead}{Grid3\+DPrint\+Detalisation}}}]{grid3\+DPrint\+Detalisation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Выводит в консоль параметры расчетной сетки 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em grid3\+DPrint\+Detalisation} & Уровень детализации вывода grid3\+DPrint\+Detalisation \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{struct_grid3_d_a225b9cadd31910063ffa3e307854ca69}\label{struct_grid3_d_a225b9cadd31910063ffa3e307854ca69}} 
 \index{Grid3D@{Grid3D}!SetPrevNextPointers@{SetPrevNextPointers}}
 \index{SetPrevNextPointers@{SetPrevNextPointers}!Grid3D@{Grid3D}}
@@ -244,7 +271,10 @@ std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_grid_block3_d_by_node}{Grid
 \doxysubsubsection{\texorpdfstring{SetPrevNextPointersForDeviceBlocks()}{SetPrevNextPointersForDeviceBlocks()}}
 {\footnotesize\ttfamily void Grid3\+D\+::\+Set\+Prev\+Next\+Pointers\+For\+Device\+Blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hypertarget{struct_grid3_d_autotoc_md16}{}\doxysubsubsection{$<$summary$>$}\label{struct_grid3_d_autotoc_md16}
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
 
 
 \doxysubsection{Данные класса}

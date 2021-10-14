@@ -2,6 +2,11 @@
 \label{struct_computing_device}\index{ComputingDevice@{ComputingDevice}}
 
 
+Абстрактный класс, описывает общие характеристики устройств  
+
+
+
+
 Граф наследования\+:Computing\+Device\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -15,9 +20,9 @@
 \mbox{\hyperlink{struct_computing_device_a98ef1c4710bee2bf5116f283f3149123}{Computing\+Device}} (std\+::string Device\+Id, double Device\+Perfomance)
 \item 
 virtual long \mbox{\hyperlink{struct_computing_device_a2d8f7075106bc9222adcf095520f2ea4}{Get\+Num\+Threads}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Возвращает количество потоков \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{struct_computing_device_ac227a03b119c3272de081604f46908f7}{Print\+Device}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Выводит в консоль характеристики устройства \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,6 +31,9 @@ std\+::string \mbox{\hyperlink{struct_computing_device_acfa2d952243d3d58c0309e7b
 double \mbox{\hyperlink{struct_computing_device_a2bdd0d050ea94c96adc02b46f56b9fd4}{device\+Perfomance}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Подробное описание}
+Абстрактный класс, описывает общие характеристики устройств 
 
 \doxysubsection{Конструктор(ы)}
 \mbox{\Hypertarget{struct_computing_device_a98ef1c4710bee2bf5116f283f3149123}\label{struct_computing_device_a98ef1c4710bee2bf5116f283f3149123}} 
@@ -45,6 +53,13 @@ double \mbox{\hyperlink{struct_computing_device_a2bdd0d050ea94c96adc02b46f56b9fd
 
 
 
+Возвращает количество потоков 
+
+\begin{DoxyReturn}{Возвращает}
+Количество потоков
+\end{DoxyReturn}
+
+
 Переопределяется в \mbox{\hyperlink{struct_computing_device_g_p_u_a9ab189f61ec6ed466b9936d302f47b3d}{Computing\+Device\+GPU}} и \mbox{\hyperlink{struct_computing_device_c_p_u_a1154551c35f048aca270915fab3865fe}{Computing\+Device\+CPU}}.
 
 \mbox{\Hypertarget{struct_computing_device_ac227a03b119c3272de081604f46908f7}\label{struct_computing_device_ac227a03b119c3272de081604f46908f7}} 
@@ -52,6 +67,10 @@ double \mbox{\hyperlink{struct_computing_device_a2bdd0d050ea94c96adc02b46f56b9fd
 \index{PrintDevice@{PrintDevice}!ComputingDevice@{ComputingDevice}}
 \doxysubsubsection{\texorpdfstring{PrintDevice()}{PrintDevice()}}
 {\footnotesize\ttfamily virtual void Computing\+Device\+::\+Print\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Выводит в консоль характеристики устройства 
 
 
 

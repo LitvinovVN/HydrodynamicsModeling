@@ -1,5 +1,5 @@
 <map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
-<area shape="rect" id="node1" href="$struct_computing_device.html" title=" " alt="" coords="5,31,128,57"/>
-<area shape="rect" id="node2" href="$struct_computing_device_c_p_u.html" title=" " alt="" coords="177,5,326,32"/>
-<area shape="rect" id="node3" href="$struct_computing_device_g_p_u.html" title=" " alt="" coords="176,56,327,83"/>
+<area shape="rect" id="node1" href="$struct_computing_device.html" title="Абстрактный класс, описывает общие характеристики устройств" alt="" coords="5,31,128,57"/>
+<area shape="rect" id="node2" href="$struct_computing_device_c_p_u.html" title="Наследник абстрактного класса ComputingDevice, описывает характеристики CPU" alt="" coords="177,5,326,32"/>
+<area shape="rect" id="node3" href="$struct_computing_device_g_p_u.html" title="Наследник абстрактного класса ComputingDevice, описывает характеристики GPU" alt="" coords="176,56,327,83"/>
 </map>

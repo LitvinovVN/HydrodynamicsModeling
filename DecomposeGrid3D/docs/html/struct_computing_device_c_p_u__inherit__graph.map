@@ -1,4 +1,4 @@
 <map id="ComputingDeviceCPU" name="ComputingDeviceCPU">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,155,107"/>
-<area shape="rect" id="node2" href="$struct_computing_device.html" title=" " alt="" coords="19,5,141,32"/>
+<area shape="rect" id="node1" title="Наследник абстрактного класса ComputingDevice, описывает характеристики CPU" alt="" coords="5,80,155,107"/>
+<area shape="rect" id="node2" href="$struct_computing_device.html" title="Абстрактный класс, описывает общие характеристики устройств" alt="" coords="19,5,141,32"/>
 </map>

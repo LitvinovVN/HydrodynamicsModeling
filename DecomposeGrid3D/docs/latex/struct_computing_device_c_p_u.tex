@@ -2,6 +2,11 @@
 \label{struct_computing_device_c_p_u}\index{ComputingDeviceCPU@{ComputingDeviceCPU}}
 
 
+Наследник абстрактного класса \mbox{\hyperlink{struct_computing_device}{Computing\+Device}}, описывает характеристики CPU  
+
+
+
+
 Граф наследования\+:Computing\+Device\+CPU\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -24,15 +29,18 @@
 \mbox{\hyperlink{struct_computing_device_c_p_u_a23b5f86c1f991d49b4e38d18085a53a5}{Computing\+Device\+CPU}} (std\+::string Device\+Id, double Device\+Perfomance, int Core\+Number)
 \item 
 long \mbox{\hyperlink{struct_computing_device_c_p_u_a1154551c35f048aca270915fab3865fe}{Get\+Num\+Threads}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Возвращает количество потоков, равное количеству ядер CPU \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_computing_device_c_p_u_ad474f65b48d421f934ca97b53140a351}{Print\+Device}} () override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Выводит в консоль характеристики устройства (CPU) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Открытые атрибуты}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{struct_computing_device_c_p_u_a70e95cfcb3bafb78518613f839af954c}{core\+Number}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Подробное описание}
+Наследник абстрактного класса \mbox{\hyperlink{struct_computing_device}{Computing\+Device}}, описывает характеристики CPU 
 
 \doxysubsection{Конструктор(ы)}
 \mbox{\Hypertarget{struct_computing_device_c_p_u_a23b5f86c1f991d49b4e38d18085a53a5}\label{struct_computing_device_c_p_u_a23b5f86c1f991d49b4e38d18085a53a5}} 
@@ -52,6 +60,13 @@ int \mbox{\hyperlink{struct_computing_device_c_p_u_a70e95cfcb3bafb78518613f839af
 
 
 
+Возвращает количество потоков, равное количеству ядер CPU 
+
+\begin{DoxyReturn}{Возвращает}
+Количество потоков, равное количеству ядер CPU
+\end{DoxyReturn}
+
+
 Переопределяет метод предка \mbox{\hyperlink{struct_computing_device_a2d8f7075106bc9222adcf095520f2ea4}{Computing\+Device}}.
 
 \mbox{\Hypertarget{struct_computing_device_c_p_u_ad474f65b48d421f934ca97b53140a351}\label{struct_computing_device_c_p_u_ad474f65b48d421f934ca97b53140a351}} 
@@ -59,6 +74,10 @@ int \mbox{\hyperlink{struct_computing_device_c_p_u_a70e95cfcb3bafb78518613f839af
 \index{PrintDevice@{PrintDevice}!ComputingDeviceCPU@{ComputingDeviceCPU}}
 \doxysubsubsection{\texorpdfstring{PrintDevice()}{PrintDevice()}}
 {\footnotesize\ttfamily void Computing\+Device\+CPU\+::\+Print\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Выводит в консоль характеристики устройства (CPU) 
 
 
 

@@ -1,4 +1,4 @@
 <map id="Grid2DFragmentXZ" name="Grid2DFragmentXZ">
-<area shape="rect" id="node1" title="Двумерный фрагмент расчетной сетки &#45; плоскость XZ(грань трехмерного фрагмента)" alt="" coords="5,95,136,121"/>
-<area shape="rect" id="node2" href="$struct_linear_arrays2_d.html" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="15,5,126,32"/>
+<area shape="rect" id="node1" title="Описывает двумерный фрагмент расчетной сетки &#45; плоскость XZ(грань трехмерного фрагмента)" alt="" coords="5,95,136,121"/>
+<area shape="rect" id="node2" href="$struct_linear_arrays2_d.html" title="Реализует хранение объектов класса LinearArray2D с доступом к данным по имени массива данных ModelDat..." alt="" coords="15,5,126,32"/>
 </map>
