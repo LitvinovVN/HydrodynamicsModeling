@@ -3477,8 +3477,7 @@ struct Grid3D
 	/// <summary>
 	/// Выводит в консоль параметры расчетной сетки
 	/// </summary>
-	/// <param name="grid3DPrintDetalisation">	Уровень детализации вывода grid3DPrintDetalisation
-	</param>
+	/// <param name="grid3DPrintDetalisation">Уровень детализации вывода grid3DPrintDetalisation</param>
 	void Print(Grid3DPrintDetalisation grid3DPrintDetalisation)
 	{
 		std::cout << "-----------------GRID-------------------" << std::endl;
