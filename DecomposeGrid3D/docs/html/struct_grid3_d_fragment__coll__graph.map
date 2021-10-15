@@ -1,4 +1,0 @@
-<map id="Grid3DFragment" name="Grid3DFragment">
-<area shape="rect" id="node1" title="Трехмерный фрагмент блока расчетной сетки вычислительного устройства" alt="" coords="5,125,123,152"/>
-<area shape="rect" id="node2" href="$struct_linear_arrays3_d.html" title="Реализует хранение объектов класса LinearArray3D с доступом к данным по имени массива данных modelDat..." alt="" coords="9,5,119,32"/>
-</map>

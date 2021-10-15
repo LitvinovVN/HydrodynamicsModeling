@@ -1,0 +1,373 @@
+@startuml
+
+package "LinearArrays"
+{
+	package "LinearArrays2D"
+	{
+		'Класс LinearArrays2D - класс-хранилище всех двумерных массивов данных
+		class LinearArrays2D #palegreen;line:green;line.dashed
+		{
+			modelDataNames : std::vector<ModelDataName>
+			linearArrays : std::map<ModelDataName, LinearArray2D>
+			void : LinearArrayCreate(size_t nx, size_t ny, ModelDataName modelDataName)
+			double : GetDataSizeInMb()
+			void : Print()
+			void : Print(ModelDataName modelDataName)
+		}
+
+		'Класс LinearArray2D - класс данных 
+		class LinearArray2D #palegreen;line:green;line.dashed
+		{
+			n1 : size_t 
+			n2 : size_t		
+			data : double*
+			size_t : GetIndex(size_t Ind1, size_t Ind2)
+			double : GetElement(size_t Ind1, size_t Ind2)
+			double : SetElement(size_t Ind1, size_t Ind2, double Value)
+			double : GetDataSizeInMb()
+			void : Print()
+		}
+	}
+	
+	package "LinearArrays3D"
+	{
+		'Класс LinearArrays3D - класс-хранилище всех трехмерных массивов данных
+		class LinearArrays3D #palegreen;line:green;line.dashed
+		{
+			modelDataNames : std::vector<ModelDataName>
+			linearArrays : std::map<ModelDataName, LinearArray3D>
+			bool : IsContain(ModelDataName modelDataName)
+			LinearArrays2D* : GetLinearArrays2DXYFirst(ModelDataName modelDataName)
+			LinearArrays2D* : GetLinearArrays2DXYLast(ModelDataName modelDataName)
+			LinearArrays2D* : GetLinearArrays2DYZFirst(ModelDataName modelDataName)
+			LinearArrays2D* : GetLinearArrays2DYZLast(ModelDataName modelDataName)
+			LinearArrays2D* : GetLinearArrays2DXZFirst(ModelDataName modelDataName)
+			LinearArrays2D* : GetLinearArrays2DXZLast(ModelDataName modelDataName)
+			LinearArray3D* : GetLinearArray3D(ModelDataName modelDataName)
+			void : LinearArrayCreate(size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+			double : GetDataSizeInMb()
+			void : Print()
+		}	
+
+	'Класс LinearArray3D - класс данных 
+		class LinearArray3D #palegreen;line:green;line.dashed
+		{
+			nx : size_t 
+			ny : size_t 
+			nz : size_t 
+			data : double*
+			size_t : GetIndex(size_t IndX, size_t IndY, size_t IndZ)
+			double : GetElement(size_t IndX, size_t IndY, size_t IndZ)
+			double : SetElement(size_t IndX, size_t IndY, size_t IndZ, double Value)
+			double : GetDataSizeInMb()
+			void : Print()	
+		}
+	}
+}
+
+
+package "Cluster"
+{
+	'Класс ComputingNode - описывает все характеристики вычислительного узла
+	class  ComputingNode #palegreen;line:green;line.dashed
+	{
+		nodeId : std::string
+		ramMemorySize : double
+		nodePerfomance : double
+		computingDevices : std::map<std::string, ComputingDevice&>
+		int : CountDevices()
+		double : GetSumDevicePerformance()
+	}
+
+	'Класс ComputingCluster - описывает все характеристики вычислительного кластера
+	class ComputingCluster #palegreen;line:green;line.dashed
+	{
+		computingNodes : std::map<std::string, ComputingNode>
+		int : CountNodes()
+		double : GetClusterPerfomance()
+		void : Print()
+	}
+
+	package "Devices"
+	{
+		'Абстрактный класс ComputingDevice - класс вычислительных устройств
+		abstract class  ComputingDevice
+		{
+			deviceId : std::string
+			devicePerfomance : double
+			virtual long : GetNumThreads()
+			virtual void : PrintDevice()
+		}
+	
+		'Класс ComputingDeviceGPU - описывает характеристики GPU
+		class  ComputingDeviceGPU #palegreen;line:green;line.dashed
+		{
+			spNumber : long
+			sharedMemory : long
+			globalMemory : long
+			long : GetNumThreads()
+			void : PrintDevice()		
+		}	
+
+		'Класс ComputingDeviceCPU - описывает характеристики CPU
+		class  ComputingDeviceCPU #palegreen;line:green;line.dashed
+		{
+			coreNumber : int
+			long : GetNumThreads()
+			void : PrintDevice()
+		}	
+	}
+}
+
+
+package "Grid"
+{
+	package "Transfer"
+	{
+		'Класс Grid2DFragmentXY - описывает двумерный фрагмент расчетной сетки - плоскость XY(грань трехмерного фрагмента)
+		class  Grid2DFragmentXY #palegreen;line:green;line.dashed
+		{	
+			fragmentNx : size_t
+			fragmentNy : size_t
+			fragmentIndX : size_t
+			fragmentIndY : size_t
+			fragmentIndZ : size_t
+			fragmentOffsetXByDevice : size_t
+			fragmentOffsetYByDevice : size_t
+			fragmentOffsetZByDevice : size_t
+			fragmentOffsetXByNode : size_t
+			fragmentOffsetYByNode : size_t
+			fragmentOffsetZByNode : size_t
+			fragmentOffsetX : size_t
+			fragmentOffsetY : size_t
+			fragmentOffsetZ : size_t
+			linearArrays2D : LinearArrays2D
+			size_t : GetNodesNumber()
+			void : LinearArrayCreate(ModelDataName modelDataName)
+			LinearArray2D* : GetLinearArray2D(ModelDataName modelDataName)
+			void : AssignData(double* data, size_t nx, size_t ny, ModelDataName modelDataName)
+			void : Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+			double : GetDataSizeInMb()
+			void : PrintFragment()
+		}
+
+		'Класс Grid2DFragmentYZ - описывает двумерный фрагмент расчетной сетки - плоскость YZ(грань трехмерного фрагмента)
+		class  Grid2DFragmentYZ #palegreen;line:green;line.dashed
+		{	
+			fragmentNy : size_t
+			fragmentNz : size_t
+			fragmentIndX : size_t
+			fragmentIndY : size_t
+			fragmentIndZ : size_t
+			fragmentOffsetXByDevice : size_t
+			fragmentOffsetYByDevice : size_t
+			fragmentOffsetZByDevice : size_t
+			fragmentOffsetXByNode : size_t
+			fragmentOffsetYByNode : size_t
+			fragmentOffsetZByNode : size_t
+			fragmentOffsetX : size_t
+			fragmentOffsetY : size_t
+			fragmentOffsetZ : size_t
+			linearArrays2D : LinearArrays2D
+			size_t : GetNodesNumber()
+			void : LinearArrayCreate(ModelDataName modelDataName)
+			LinearArray2D* : GetLinearArray2D(ModelDataName modelDataName)		
+			double : GetDataSizeInMb()
+			void : PrintFragment()
+		}
+		
+		'Класс Grid2DFragmentXZ - описывает двумерный фрагмент расчетной сетки - плоскость XZ(грань трехмерного фрагмента)
+		class  Grid2DFragmentXZ #palegreen;line:green;line.dashed
+		{	
+			fragmentNx : size_t
+			fragmentNz : size_t
+			fragmentIndX : size_t
+			fragmentIndY : size_t
+			fragmentIndZ : size_t
+			fragmentOffsetXByDevice : size_t
+			fragmentOffsetYByDevice : size_t
+			fragmentOffsetZByDevice : size_t
+			fragmentOffsetXByNode : size_t
+			fragmentOffsetYByNode : size_t
+			fragmentOffsetZByNode : size_t
+			fragmentOffsetX : size_t
+			fragmentOffsetY : size_t
+			fragmentOffsetZ : size_t
+			linearArrays2D : LinearArrays2D
+			size_t : GetNodesNumber()
+			void : LinearArrayCreate(ModelDataName modelDataName)
+			LinearArray2D* : GetLinearArray2D(ModelDataName modelDataName)		
+			double : GetDataSizeInMb()
+			void : PrintFragment()
+
+
+		}
+
+		'Класс Grid2DTransferPlaneXZ - описывает смежную двумерную плоскость XZ для передачи данных между устройствами
+		class  Grid2DTransferPlaneXZ #palegreen;line:green;line.dashed
+		{	
+			fragmentsNumX : size_t
+			fragmentsNumZ : size_t
+			fragmentNx : size_t
+			fragmentNz : size_t
+			fragmentNxl : size_t
+			fragmentNzl : size_t		
+			linearArrays2D : std::vector<std::vector<LinearArrays2D>>
+			void : LinearArrayCreate(ModelDataName modelDataName)
+			void : PrintGrid2DTransferPlaneXZ(size_t fragmentIndX, size_t fragmentIndZ, ModelDataName modelDataName)
+		}
+	}
+	
+
+	'Класс Grid3DFragment - содержит фрагмент блока трехмерной расчетной сетки вычислительного устройства
+	class Grid3DFragment #palegreen;line:green;line.dashed
+	{	
+		fragmentNx : size_t
+		fragmentNy : size_t
+		fragmentNz : size_t
+		fragmentIndX : size_t
+		fragmentIndY : size_t
+		fragmentIndZ : size_t
+		fragmentOffsetXByDevice : size_t
+		fragmentOffsetYByDevice : size_t
+		fragmentOffsetZByDevice : size_t
+		fragmentOffsetXByNode : size_t
+		fragmentOffsetYByNode : size_t
+		fragmentOffsetZByNode : size_t
+		fragmentOffsetX : size_t
+		fragmentOffsetY : size_t
+		fragmentOffsetZ : size_t		
+		fragmentXPrev : Grid3DFragment*
+		fragmentXNext : Grid3DFragment*		
+		fragmentYPrev : Grid3DFragment*
+		fragmentYNext : Grid3DFragment*		
+		fragmentZPrev : Grid3DFragment*
+		fragmentZNext : Grid3DFragment*
+		linearArrays3D : LinearArrays3D
+		Grid2DFragmentXY* : GetGrid2DFragmentXYFirst(ModelDataName modelDataName)
+		Grid2DFragmentXY* : GetGrid2DFragmentXYLast(ModelDataName modelDataName)
+		Grid2DFragmentYZ* : GetGrid2DFragmentYZFirst(ModelDataName modelDataName)
+		Grid2DFragmentYZ* : GetGrid2DFragmentYZLast(ModelDataName modelDataName)
+		Grid2DFragmentXZ* : GetGrid2DFragmentXZFirst(ModelDataName modelDataName)
+		Grid2DFragmentXZ* : GetGrid2DFragmentXZLast(ModelDataName modelDataName)
+		size_t : GetNodesNumber()
+		size_t : GetNodesNumberXY()
+		size_t : GetNodesNumberXZ()
+		size_t : GetNodesNumberYZ()
+		void : LinearArrayCreate(ModelDataName modelDataName)
+		LinearArray3D* : GetLinearArray3D(ModelDataName modelDataName)
+		void : AssignData(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+		void : Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+		void : PrintGrid3DFragmentIndex()
+		void : PrintGrid3DFragmentIndex(Grid3DFragment* fragment)
+		double : GetDataSizeInMb()
+		void : PrintFragment(Grid3DPrintDetalisation grid3DPrintDetalisation)
+	}
+
+	'Класс GridBlock3DByDevice - описывает трехмерный блок расчетной сетки вычислительного устройства
+	class GridBlock3DByDevice #palegreen;line:green;line.dashed
+	{	
+		blockNx : size_t
+		blockNy : size_t
+		blockNz : size_t
+		deviceIndex : size_t
+		deviceName : std::string		
+		fragmentsNumX : size_t
+		fragmentsNumY : size_t
+		fragmentsNumZ : size_t
+		deviceOffsetYByNode : size_t
+		deviceOffsetY : size_t
+		devicePrev : GridBlock3DByDevice*
+		deviceNext : GridBlock3DByDevice*		
+		fragmentNx : size_t
+		fragmentNy : size_t
+		fragmentNz : size_t
+		fragmentNxl : size_t
+		fragmentNyl : size_t
+		fragmentNzl : size_t
+		fragments : std::vector< std::vector <std::vector<Grid3DFragment> > >
+		grid2DTransferPlanesXZ : std::vector<Grid2DTransferPlaneXZ>
+		void : CreateGrid2DTransferPlanesXZ()
+		void : Grid2DTransferPlanesXZLinearArrayCreate(ModelDataName modelDataName)
+		Grid3DFragment* : GetGrid3DFragment(size_t indX, size_t indY, size_t indZ)
+		void : LinearArrayCreate(ModelDataName modelDataName)
+		void : Grid2DTransferPlanesXZLinearArrayPrint(size_t transferPlaneXZIndex, size_t fragmentIndX, size_t fragmentIndZ, ModelDataName modelDataName)
+		void : AssignData(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+		void : Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+		double : GetDataSizeInMb()
+		void : PrintDeviceName(GridBlock3DByDevice* gridBlock3DByDevice)
+		void : PrintDevice(Grid3DPrintDetalisation grid3DPrintDetalisation)
+	}
+
+	'Класс GridBlock3DByNode - описывает блок трехмерной расчетной сетки, расчитываемый на вычислительном узле
+	class GridBlock3DByNode #palegreen;line:green;line.dashed
+	{	
+		nodeNx : size_t
+		nodeNy : size_t
+		nodeNz : size_t
+		nodeIndex : size_t
+		nodeName : std::string
+		nodeOffsetY : size_t
+		nodePrev : GridBlock3DByNode*;
+		nodeNext : GridBlock3DByNode*;
+		deviceNames : std::vector<std::string>
+		gridBlock3DByDevices : std::map<std::string, GridBlock3DByDevice>
+		void : CreateGrid2DTransferPlanesXZ()
+		void : Grid2DTransferPlanesXZLinearArrayCreate(ModelDataName modelDataName)
+		void Grid2DTransferPlanesXZLinearArrayPrint(std::string deviceName, size_t transferPlaneXZIndex, size_t fragmentIndX, size_t fragmentIndZ, ModelDataName modelDataName)
+		void : Decompose(ComputingNode computingNode, size_t fragmentsNumX, size_t fragmentsNumZ)
+		GridBlock3DByDevice* : GetGridBlock3DByDevice(size_t deviceIndex)
+		void : SetPrevNextPointers()
+		void : PrintNodeName(GridBlock3DByNode* gridBlock3DByNode)
+		void : LinearArrayCreate(ModelDataName modelDataName)
+		void : AssignData(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+		void : Compose(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+		double : GetDataSizeInMb()
+		void : PrintNode(Grid3DPrintDetalisation grid3DPrintDetalisation)
+	}
+
+	'Класс Grid3D - описывает трехмерную расчетную сетку
+	class  Grid3D #palegreen;line:green;line.dashed
+	{	
+		gridNx : size_t
+		gridNy : size_t
+		gridNz : size_t
+		hx : double
+		hy : double
+		hz : double
+		nodeNames : std::vector<std::string>
+		gridBlock3DByNodes : std::map<std::string, GridBlock3DByNode>
+		void : CreateGrid2DTransferPlanesXZ()
+		void : Grid2DTransferPlanesXZLinearArrayCreate(ModelDataName modelDataName)
+		void : Grid2DTransferPlanesXZLinearArrayPrint(std::string nodeName, std::string deviceName, size_t transferPlaneXZIndex, size_t fragmentIndX, size_t fragmentIndZ,  ModelDataName modelDataName)
+		GridBlock3DByNode* : GetGridBlock3DByNode(size_t nodeIndex)
+		GridBlock3DByNode* : GetGridBlock3DByNode(std::string nodeName)
+		void : Decompose(ComputingCluster cluster, size_t fragmentsNumX, size_t fragmentsNumZ)
+		void : SetPrevNextPointers()
+		void : SetPrevNextPointersForDeviceBlocks()
+		void : LinearArrayCreate(ModelDataName modelDataName)
+		void : AssignData(double* data, size_t nx, size_t ny, size_t nz, ModelDataName modelDataName)
+		double* : Compose(ModelDataName modelDataName)
+		double : GetDataSizeInMb()
+		void : Print(Grid3DPrintDetalisation grid3DPrintDetalisation)
+	}
+		
+}
+
+LinearArrays2D *-- LinearArray2D
+LinearArrays3D *-- LinearArray3D
+ComputingDevice <|-- ComputingDeviceCPU
+ComputingDevice <|-- ComputingDeviceGPU
+ComputingCluster *-- ComputingNode
+ComputingNode *-- ComputingDevice
+Grid3D *-- GridBlock3DByNode
+GridBlock3DByNode *-- GridBlock3DByDevice
+GridBlock3DByDevice *-- Grid2DTransferPlaneXZ
+GridBlock3DByDevice *-- Grid3DFragment
+Grid2DFragmentXY *-- LinearArrays2D
+Grid2DFragmentYZ *-- LinearArrays2D
+Grid2DFragmentXZ *-- LinearArrays2D
+Grid2DTransferPlaneXZ *-- LinearArrays2D
+Grid3DFragment *-- LinearArrays3D
+
+@enduml
