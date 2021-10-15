@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('struct_linear_array3_d.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,7 +81,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -389,23 +409,26 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_linear_array3_d_a4bf71d4d7abd65c68edc96b782e4b87b_icgraph.png" border="0" usemap="#astruct_linear_array3_d_a4bf71d4d7abd65c68edc96b782e4b87b_icgraph" alt=""/></div>
 <map name="astruct_linear_array3_d_a4bf71d4d7abd65c68edc96b782e4b87b_icgraph" id="astruct_linear_array3_d_a4bf71d4d7abd65c68edc96b782e4b87b_icgraph">
-<area shape="rect" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="829,209,1011,235"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a87e6282d18167128a928184ed584a4f9" title="$$$$Заполняет одномерный массив исходных данных data данными из трехмерных массивов данных фрагментов..." alt="" coords="601,17,781,43"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#ab782f26fff07081f7cb3eb3b8eead723" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,71,779,112"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a30a14303c3ae37946c9e5c1c604cfb36" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,136,779,177"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a46447c592a6167b7926720b4fb124c49" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,201,779,243"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#aab2c71d76c17e81e6cdbd4c9364db7e3" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,267,779,308"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a3912e26ebc1856959511fbcc573aab00" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,332,779,373"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a77d8f994d4614fe05441c7cc17499dcd" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,397,779,439"/>
-<area shape="rect" href="struct_grid_block3_d_by_device.html#a0858df5417b9f679bfe44f08af60c2c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="390,5,539,47"/>
-<area shape="rect" href="struct_grid_block3_d_by_node.html#a0b2335fabdbd978e21b45e353c73d3fa" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="179,5,328,47"/>
-<area shape="rect" href="struct_grid3_d.html#a47b38c1c851787ee967451474e0d5195" title="Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки" alt="" coords="5,13,131,39"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#adba87598133dc5ceac23e4aea87c7b35" title="Возвращает указатель на первую плоскость XY фрагмента по оси Oz от начала координат по имени массива ..." alt="" coords="376,71,553,112"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a99e682cb23651912f1a7a41c821725ef" title="Возвращает указатель на последнюю плоскость XY фрагмента по оси Oz от начала координат по имени масси..." alt="" coords="376,136,553,177"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a3993574ffe78bed63bcaedda7c1026e7" title="Возвращает указатель на первую плоскость XZ фрагмента по оси Oy от начала координат по имени массива ..." alt="" coords="376,201,553,243"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a430ffcfe1af622b89d8a065f263dbc07" title="Возвращает указатель на последнюю плоскость XZ фрагмента по оси Oy от начала координат по имени масси..." alt="" coords="376,267,553,308"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#abc4d721d83825f4deac15024e64f874b" title="Возвращает указатель на первую плоскость YZ фрагмента по оси Ox от начала координат по имени массива ..." alt="" coords="376,332,553,373"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a803643081ccee4e3254e47b6f77f8ef0" title="Возвращает указатель на последнюю плоскость YZ фрагмента по оси Ox от начала координат по имени масси..." alt="" coords="376,397,553,439"/>
+<area shape="rect" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="829,228,1011,255"/>
+<area shape="rect" href="matm_algs_testing_8cpp.html#abbe5ab466a6710a777867c35f7dbe297" title=" " alt="" coords="668,12,715,39"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a87e6282d18167128a928184ed584a4f9" title="$$$$Заполняет одномерный массив исходных данных data данными из трехмерных массивов данных фрагментов..." alt="" coords="601,68,781,95"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#ab782f26fff07081f7cb3eb3b8eead723" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,122,779,163"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a30a14303c3ae37946c9e5c1c604cfb36" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,187,779,229"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a46447c592a6167b7926720b4fb124c49" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,253,779,294"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#aab2c71d76c17e81e6cdbd4c9364db7e3" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,318,779,359"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a3912e26ebc1856959511fbcc573aab00" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,383,779,425"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a77d8f994d4614fe05441c7cc17499dcd" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="604,449,779,490"/>
+<area shape="rect" href="matm_algs_testing_8cpp.html#a6b27c2bfaf6e87436d50ffc3720a76b7" title=" " alt="" coords="403,5,526,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="228,5,279,32"/>
+<area shape="rect" href="struct_grid_block3_d_by_device.html#a0858df5417b9f679bfe44f08af60c2c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="390,57,539,98"/>
+<area shape="rect" href="struct_grid_block3_d_by_node.html#a0b2335fabdbd978e21b45e353c73d3fa" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="179,57,328,98"/>
+<area shape="rect" href="struct_grid3_d.html#a47b38c1c851787ee967451474e0d5195" title="Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки" alt="" coords="5,64,131,91"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#adba87598133dc5ceac23e4aea87c7b35" title="Возвращает указатель на первую плоскость XY фрагмента по оси Oz от начала координат по имени массива ..." alt="" coords="376,122,553,163"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a99e682cb23651912f1a7a41c821725ef" title="Возвращает указатель на последнюю плоскость XY фрагмента по оси Oz от начала координат по имени масси..." alt="" coords="376,187,553,229"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a3993574ffe78bed63bcaedda7c1026e7" title="Возвращает указатель на первую плоскость XZ фрагмента по оси Oy от начала координат по имени массива ..." alt="" coords="376,253,553,294"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a430ffcfe1af622b89d8a065f263dbc07" title="Возвращает указатель на последнюю плоскость XZ фрагмента по оси Oy от начала координат по имени масси..." alt="" coords="376,318,553,359"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#abc4d721d83825f4deac15024e64f874b" title="Возвращает указатель на первую плоскость YZ фрагмента по оси Ox от начала координат по имени массива ..." alt="" coords="376,383,553,425"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a803643081ccee4e3254e47b6f77f8ef0" title="Возвращает указатель на последнюю плоскость YZ фрагмента по оси Ox от начала координат по имени масси..." alt="" coords="376,449,553,490"/>
 </map>
 </div>
 
@@ -466,56 +489,56 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_linear_array3_d_a45e4284f3fba85b6052c60a9a7987c60_icgraph.png" border="0" usemap="#astruct_linear_array3_d_a45e4284f3fba85b6052c60a9a7987c60_icgraph" alt=""/></div>
 <map name="astruct_linear_array3_d_a45e4284f3fba85b6052c60a9a7987c60_icgraph" id="astruct_linear_array3_d_a45e4284f3fba85b6052c60a9a7987c60_icgraph">
-<area shape="rect" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="1135,869,1299,895"/>
-<area shape="rect" href="struct_linear_array3_d.html#a4bf71d4d7abd65c68edc96b782e4b87b" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="887,209,1068,235"/>
-<area shape="rect" href="struct_linear_array3_d.html#a91f3d4c8513571292fbe2c42a3ea427b" title="Заполняет двумерный массив layerZ значениями указанного слоя z" alt="" coords="891,259,1063,286"/>
-<area shape="rect" href="struct_linear_array3_d.html#ad24888523c27843fd804b48bfb589f7f" title="Заполняет объект LinearArray1D данными, расположенными вдоль оси Ox по указанным координатам Oy,..." alt="" coords="895,310,1059,337"/>
-<area shape="rect" href="struct_linear_array3_d.html#ae130db9dca6bede6b88bfbe399f65b57" title="Передает массив данных от плоскости planeXOY первой по оси OZ плоскости фрагмента" alt="" coords="868,361,1087,387"/>
-<area shape="rect" href="struct_linear_array3_d.html#a279a97a3ef806954535366b4e9fe5aaf" title="Передает массив данных от плоскости planeXOY последней по оси OZ плоскости фрагмента" alt="" coords="869,411,1086,438"/>
-<area shape="rect" href="struct_linear_array3_d.html#a369b9a0df30659171569250838032e58" title="Передает массив данных от плоскости planeXOZ первой по оси OY плоскости фрагмента" alt="" coords="869,462,1085,489"/>
-<area shape="rect" href="struct_linear_array3_d.html#a3bcd7c0feb985a97b23147d130d8897d" title="Передает массив данных от плоскости плоскости planeXOZ последней по оси OY плоскости фрагмента" alt="" coords="870,513,1085,539"/>
-<area shape="rect" href="struct_linear_array3_d.html#a821810e8ce0ff56cfcc393c2f88381fa" title="Передает массив данных от плоскости planeYOZ первой по оси OX плоскости фрагмента" alt="" coords="868,563,1087,590"/>
-<area shape="rect" href="struct_linear_array3_d.html#a7bcd35b6bfb7847454f73712af587f01" title="Передает массив данных от плоскости planeYOZ последней по оси OX плоскости фрагмента" alt="" coords="869,614,1086,641"/>
-<area shape="rect" href="struct_linear_array3_d.html#ad6113116ad0c13d1f7b55ed9dfb93fbe" title="Передает массив данных (плоскость XOY) между фрагментами назад" alt="" coords="885,665,1070,707"/>
-<area shape="rect" href="struct_linear_array3_d.html#ac5039a8b58b25c1831826ed25dad982e" title="Передает массив данных (плоскость XOY) между фрагментами вперед" alt="" coords="885,731,1070,772"/>
-<area shape="rect" href="struct_linear_array3_d.html#ad2a783ddbfccbaf0ab6e646a50a21f00" title="Передает массив данных (плоскость XOZ) между фрагментами назад" alt="" coords="885,796,1070,837"/>
-<area shape="rect" href="struct_linear_array3_d.html#a747c8f6b7561fd3a2c28f75ecbea6943" title="Передает массив данных (плоскость XOZ) между фрагментами вперед" alt="" coords="885,861,1070,903"/>
-<area shape="rect" href="struct_linear_array3_d.html#afd9bb0b8adb885b7467f013561616bd4" title="Передает массив данных (плоскость YOZ) между фрагментами назад" alt="" coords="885,927,1070,968"/>
-<area shape="rect" href="struct_linear_array3_d.html#a17d85c5ef525e4c9e2aaeaf5c391e115" title="Передает массив данных (плоскость YOZ) между фрагментами вперед" alt="" coords="885,992,1070,1033"/>
-<area shape="rect" href="struct_linear_array3_d.html#a051ae0fd7c5c689052f8451989f12db2" title="Вывод элементов фрагмента по слоям XY в консоль" alt="" coords="908,1058,1047,1085"/>
-<area shape="rect" href="struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="887,1109,1067,1135"/>
-<area shape="rect" href="struct_linear_array3_d.html#a8644628c0a94491c0a500ebc2f18ad43" title="Заполняет указанный слой z значениями двумерного массива layerZ" alt="" coords="892,1159,1063,1186"/>
-<area shape="rect" href="struct_linear_array3_d.html#ace7454ea25ff6bd4a42984226722ef77" title="Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy,..." alt="" coords="896,1210,1059,1237"/>
-<area shape="rect" href="struct_linear_array3_d.html#adc32b6dcf56e9258d7935b455d409b1c" title="Передает массив данных фрагмента (первая по оси OZ плоскость XOY) плоскости planeXOY" alt="" coords="869,1261,1086,1287"/>
-<area shape="rect" href="struct_linear_array3_d.html#a2b22c06d1e4538c5359298e99fff8b7d" title="Передает массив данных фрагмента (последняя по оси OZ плоскость XOY) плоскости planeXOY" alt="" coords="869,1311,1085,1338"/>
-<area shape="rect" href="struct_linear_array3_d.html#aae69f2ee7b19dd2546fd93b69b614e10" title="Передает массив данных фрагмента (первая по оси OY плоскость XOZ) плоскости planeXOZ" alt="" coords="870,1362,1085,1389"/>
-<area shape="rect" href="struct_linear_array3_d.html#a360a8130de7a752f262ad3f04cbe43a3" title="Передает массив данных фрагмента (последняя по оси OY плоскость XOZ) плоскости planeXOZ" alt="" coords="870,1413,1085,1439"/>
-<area shape="rect" href="struct_linear_array3_d.html#a053cded1f842783be9f700a9fad9a660" title="Передает массив данных фрагмента (первая по оси OX плоскость YOZ) плоскости planeYOZ" alt="" coords="869,1463,1086,1490"/>
-<area shape="rect" href="struct_linear_array3_d.html#aa627c8d40744fe943da24dd0352067a2" title="Передает массив данных фрагмента (последняя по оси OX плоскость YOZ) плоскости planeYOZ" alt="" coords="869,1514,1085,1541"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a87e6282d18167128a928184ed584a4f9" title="$$$$Заполняет одномерный массив исходных данных data данными из трехмерных массивов данных фрагментов..." alt="" coords="627,15,807,42"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#ab782f26fff07081f7cb3eb3b8eead723" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="629,71,804,112"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a30a14303c3ae37946c9e5c1c604cfb36" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="629,136,804,177"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a46447c592a6167b7926720b4fb124c49" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="629,201,804,243"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#aab2c71d76c17e81e6cdbd4c9364db7e3" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="629,267,804,308"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a3912e26ebc1856959511fbcc573aab00" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="629,332,804,373"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a77d8f994d4614fe05441c7cc17499dcd" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="629,397,804,439"/>
-<area shape="rect" href="struct_grid_block3_d_by_device.html#a0858df5417b9f679bfe44f08af60c2c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="402,5,551,47"/>
-<area shape="rect" href="struct_grid_block3_d_by_node.html#a0b2335fabdbd978e21b45e353c73d3fa" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="191,5,340,47"/>
-<area shape="rect" href="struct_grid3_d.html#a47b38c1c851787ee967451474e0d5195" title="Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки" alt="" coords="11,13,137,39"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#adba87598133dc5ceac23e4aea87c7b35" title="Возвращает указатель на первую плоскость XY фрагмента по оси Oz от начала координат по имени массива ..." alt="" coords="388,71,565,112"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a99e682cb23651912f1a7a41c821725ef" title="Возвращает указатель на последнюю плоскость XY фрагмента по оси Oz от начала координат по имени масси..." alt="" coords="388,136,565,177"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a3993574ffe78bed63bcaedda7c1026e7" title="Возвращает указатель на первую плоскость XZ фрагмента по оси Oy от начала координат по имени массива ..." alt="" coords="388,201,565,243"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a430ffcfe1af622b89d8a065f263dbc07" title="Возвращает указатель на последнюю плоскость XZ фрагмента по оси Oy от начала координат по имени масси..." alt="" coords="388,267,565,308"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#abc4d721d83825f4deac15024e64f874b" title="Возвращает указатель на первую плоскость YZ фрагмента по оси Ox от начала координат по имени массива ..." alt="" coords="388,332,565,373"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#a803643081ccee4e3254e47b6f77f8ef0" title="Возвращает указатель на последнюю плоскость YZ фрагмента по оси Ox от начала координат по имени масси..." alt="" coords="388,397,565,439"/>
-<area shape="rect" href="struct_linear_arrays3_d.html#a5d0743f5f7e8451b0f543c9033051461" title="$$$$Выводит в консоль все объекты класса LinearArray3D" alt="" coords="643,978,790,1005"/>
-<area shape="rect" href="test_functions_8cpp.html#a65da81fb725a599a1ffd59262e8bfe63" title=" " alt="" coords="426,1003,527,1030"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#ad85e99719e0d356cc897f3c74489a7aa" title="$$$$Выводит в консоль части элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDa..." alt="" coords="613,1080,820,1121"/>
-<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="240,1003,291,1030"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#ac7a248dcbe59964f73028e084a774bf6" title="$$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерно..." alt="" coords="621,1146,813,1173"/>
-<area shape="rect" href="struct_grid_block3_d_by_device.html#a17ab9df11d079a1f9fbbe6b663bcc1c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="402,1139,551,1180"/>
-<area shape="rect" href="struct_grid_block3_d_by_node.html#ab9784c0c66209712eeb48359613a785d" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="191,1139,340,1180"/>
-<area shape="rect" href="struct_grid3_d.html#a03f009444f2b6c37f6ed895313028360" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,1146,143,1173"/>
+<area shape="rect" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="949,871,1113,897"/>
+<area shape="rect" href="struct_linear_array3_d.html#a4bf71d4d7abd65c68edc96b782e4b87b" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="701,341,883,368"/>
+<area shape="rect" href="struct_linear_array3_d.html#a91f3d4c8513571292fbe2c42a3ea427b" title="Заполняет двумерный массив layerZ значениями указанного слоя z" alt="" coords="706,392,878,419"/>
+<area shape="rect" href="struct_linear_array3_d.html#ad24888523c27843fd804b48bfb589f7f" title="Заполняет объект LinearArray1D данными, расположенными вдоль оси Ox по указанным координатам Oy,..." alt="" coords="710,443,874,469"/>
+<area shape="rect" href="struct_linear_array3_d.html#ae130db9dca6bede6b88bfbe399f65b57" title="Передает массив данных от плоскости planeXOY первой по оси OZ плоскости фрагмента" alt="" coords="683,493,901,520"/>
+<area shape="rect" href="struct_linear_array3_d.html#a279a97a3ef806954535366b4e9fe5aaf" title="Передает массив данных от плоскости planeXOY последней по оси OZ плоскости фрагмента" alt="" coords="683,544,901,571"/>
+<area shape="rect" href="struct_linear_array3_d.html#a369b9a0df30659171569250838032e58" title="Передает массив данных от плоскости planeXOZ первой по оси OY плоскости фрагмента" alt="" coords="684,595,900,621"/>
+<area shape="rect" href="struct_linear_array3_d.html#a3bcd7c0feb985a97b23147d130d8897d" title="Передает массив данных от плоскости плоскости planeXOZ последней по оси OY плоскости фрагмента" alt="" coords="685,645,899,672"/>
+<area shape="rect" href="struct_linear_array3_d.html#a821810e8ce0ff56cfcc393c2f88381fa" title="Передает массив данных от плоскости planeYOZ первой по оси OX плоскости фрагмента" alt="" coords="683,696,901,723"/>
+<area shape="rect" href="struct_linear_array3_d.html#a7bcd35b6bfb7847454f73712af587f01" title="Передает массив данных от плоскости planeYOZ последней по оси OX плоскости фрагмента" alt="" coords="683,747,901,773"/>
+<area shape="rect" href="struct_linear_array3_d.html#ad6113116ad0c13d1f7b55ed9dfb93fbe" title="Передает массив данных (плоскость XOY) между фрагментами назад" alt="" coords="699,798,885,839"/>
+<area shape="rect" href="struct_linear_array3_d.html#ac5039a8b58b25c1831826ed25dad982e" title="Передает массив данных (плоскость XOY) между фрагментами вперед" alt="" coords="699,863,885,905"/>
+<area shape="rect" href="struct_linear_array3_d.html#ad2a783ddbfccbaf0ab6e646a50a21f00" title="Передает массив данных (плоскость XOZ) между фрагментами назад" alt="" coords="699,929,885,970"/>
+<area shape="rect" href="struct_linear_array3_d.html#a747c8f6b7561fd3a2c28f75ecbea6943" title="Передает массив данных (плоскость XOZ) между фрагментами вперед" alt="" coords="699,994,885,1035"/>
+<area shape="rect" href="struct_linear_array3_d.html#afd9bb0b8adb885b7467f013561616bd4" title="Передает массив данных (плоскость YOZ) между фрагментами назад" alt="" coords="699,1059,885,1101"/>
+<area shape="rect" href="struct_linear_array3_d.html#a17d85c5ef525e4c9e2aaeaf5c391e115" title="Передает массив данных (плоскость YOZ) между фрагментами вперед" alt="" coords="699,1125,885,1166"/>
+<area shape="rect" href="struct_linear_array3_d.html#a051ae0fd7c5c689052f8451989f12db2" title="Вывод элементов фрагмента по слоям XY в консоль" alt="" coords="723,56,861,83"/>
+<area shape="rect" href="struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="702,195,882,221"/>
+<area shape="rect" href="struct_linear_array3_d.html#a8644628c0a94491c0a500ebc2f18ad43" title="Заполняет указанный слой z значениями двумерного массива layerZ" alt="" coords="707,1191,877,1217"/>
+<area shape="rect" href="struct_linear_array3_d.html#ace7454ea25ff6bd4a42984226722ef77" title="Заполняет элементы объекта, расположенные вдоль оси Ox по указанным координатам Oy,..." alt="" coords="711,1241,873,1268"/>
+<area shape="rect" href="struct_linear_array3_d.html#adc32b6dcf56e9258d7935b455d409b1c" title="Передает массив данных фрагмента (первая по оси OZ плоскость XOY) плоскости planeXOY" alt="" coords="683,1292,901,1319"/>
+<area shape="rect" href="struct_linear_array3_d.html#a2b22c06d1e4538c5359298e99fff8b7d" title="Передает массив данных фрагмента (последняя по оси OZ плоскость XOY) плоскости planeXOY" alt="" coords="684,1343,900,1369"/>
+<area shape="rect" href="struct_linear_array3_d.html#aae69f2ee7b19dd2546fd93b69b614e10" title="Передает массив данных фрагмента (первая по оси OY плоскость XOZ) плоскости planeXOZ" alt="" coords="685,1393,899,1420"/>
+<area shape="rect" href="struct_linear_array3_d.html#a360a8130de7a752f262ad3f04cbe43a3" title="Передает массив данных фрагмента (последняя по оси OY плоскость XOZ) плоскости planeXOZ" alt="" coords="685,1444,899,1471"/>
+<area shape="rect" href="struct_linear_array3_d.html#a053cded1f842783be9f700a9fad9a660" title="Передает массив данных фрагмента (первая по оси OX плоскость YOZ) плоскости planeYOZ" alt="" coords="683,1495,901,1521"/>
+<area shape="rect" href="struct_linear_array3_d.html#aa627c8d40744fe943da24dd0352067a2" title="Передает массив данных фрагмента (последняя по оси OX плоскость YOZ) плоскости planeYOZ" alt="" coords="684,1545,900,1572"/>
+<area shape="rect" href="matm_algs_testing_8cpp.html#abbe5ab466a6710a777867c35f7dbe297" title=" " alt="" coords="508,195,555,221"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a87e6282d18167128a928184ed584a4f9" title="$$$$Заполняет одномерный массив исходных данных data данными из трехмерных массивов данных фрагментов..." alt="" coords="441,312,621,339"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#ab782f26fff07081f7cb3eb3b8eead723" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="444,363,619,405"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a30a14303c3ae37946c9e5c1c604cfb36" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="444,429,619,470"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a46447c592a6167b7926720b4fb124c49" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="444,494,619,535"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#aab2c71d76c17e81e6cdbd4c9364db7e3" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="444,559,619,601"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a3912e26ebc1856959511fbcc573aab00" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="444,625,619,666"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a77d8f994d4614fe05441c7cc17499dcd" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="444,246,619,287"/>
+<area shape="rect" href="matm_algs_testing_8cpp.html#a6b27c2bfaf6e87436d50ffc3720a76b7" title=" " alt="" coords="230,181,353,208"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="55,181,105,208"/>
+<area shape="rect" href="struct_grid_block3_d_by_device.html#a0858df5417b9f679bfe44f08af60c2c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="217,298,366,339"/>
+<area shape="rect" href="struct_grid_block3_d_by_node.html#a0b2335fabdbd978e21b45e353c73d3fa" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,298,155,339"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#adba87598133dc5ceac23e4aea87c7b35" title="Возвращает указатель на первую плоскость XY фрагмента по оси Oz от начала координат по имени массива ..." alt="" coords="203,363,380,405"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a99e682cb23651912f1a7a41c821725ef" title="Возвращает указатель на последнюю плоскость XY фрагмента по оси Oz от начала координат по имени масси..." alt="" coords="203,429,380,470"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a3993574ffe78bed63bcaedda7c1026e7" title="Возвращает указатель на первую плоскость XZ фрагмента по оси Oy от начала координат по имени массива ..." alt="" coords="203,494,380,535"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a430ffcfe1af622b89d8a065f263dbc07" title="Возвращает указатель на последнюю плоскость XZ фрагмента по оси Oy от начала координат по имени масси..." alt="" coords="203,559,380,601"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#abc4d721d83825f4deac15024e64f874b" title="Возвращает указатель на первую плоскость YZ фрагмента по оси Ox от начала координат по имени массива ..." alt="" coords="203,625,380,666"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#a803643081ccee4e3254e47b6f77f8ef0" title="Возвращает указатель на последнюю плоскость YZ фрагмента по оси Ox от начала координат по имени масси..." alt="" coords="203,233,380,274"/>
+<area shape="rect" href="struct_linear_arrays3_d.html#a5d0743f5f7e8451b0f543c9033051461" title="$$$$Выводит в консоль все объекты класса LinearArray3D" alt="" coords="458,27,605,53"/>
+<area shape="rect" href="test_functions_8cpp.html#a65da81fb725a599a1ffd59262e8bfe63" title=" " alt="" coords="241,27,342,53"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#ad85e99719e0d356cc897f3c74489a7aa" title="$$$$Выводит в консоль части элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDa..." alt="" coords="428,78,635,119"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#ac7a248dcbe59964f73028e084a774bf6" title="$$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерно..." alt="" coords="435,144,627,171"/>
+<area shape="rect" href="struct_grid_block3_d_by_device.html#a17ab9df11d079a1f9fbbe6b663bcc1c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="217,115,366,157"/>
+<area shape="rect" href="struct_grid_block3_d_by_node.html#ab9784c0c66209712eeb48359613a785d" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,115,155,157"/>
 </map>
 </div>
 
@@ -1584,11 +1607,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_linear_array3_d_a9cccbfdc509fa40807ba9b0be9d3d494_icgraph.png" border="0" usemap="#astruct_linear_array3_d_a9cccbfdc509fa40807ba9b0be9d3d494_icgraph" alt=""/></div>
 <map name="astruct_linear_array3_d_a9cccbfdc509fa40807ba9b0be9d3d494_icgraph" id="astruct_linear_array3_d_a9cccbfdc509fa40807ba9b0be9d3d494_icgraph">
-<area shape="rect" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="825,13,1005,39"/>
-<area shape="rect" href="struct_grid3_d_fragment.html#ac7a248dcbe59964f73028e084a774bf6" title="$$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерно..." alt="" coords="585,13,777,39"/>
-<area shape="rect" href="struct_grid_block3_d_by_device.html#a17ab9df11d079a1f9fbbe6b663bcc1c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="388,5,537,47"/>
-<area shape="rect" href="struct_grid_block3_d_by_node.html#ab9784c0c66209712eeb48359613a785d" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="191,5,340,47"/>
-<area shape="rect" href="struct_grid3_d.html#a03f009444f2b6c37f6ed895313028360" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,13,143,39"/>
+<area shape="rect" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="825,35,1005,61"/>
+<area shape="rect" href="matm_algs_testing_8cpp.html#abbe5ab466a6710a777867c35f7dbe297" title=" " alt="" coords="658,8,705,35"/>
+<area shape="rect" href="struct_grid3_d_fragment.html#ac7a248dcbe59964f73028e084a774bf6" title="$$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерно..." alt="" coords="585,60,777,87"/>
+<area shape="rect" href="matm_algs_testing_8cpp.html#a6b27c2bfaf6e87436d50ffc3720a76b7" title=" " alt="" coords="401,5,524,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="240,5,291,32"/>
+<area shape="rect" href="struct_grid_block3_d_by_device.html#a17ab9df11d079a1f9fbbe6b663bcc1c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="388,57,537,98"/>
+<area shape="rect" href="struct_grid_block3_d_by_node.html#ab9784c0c66209712eeb48359613a785d" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="191,57,340,98"/>
+<area shape="rect" href="struct_grid3_d.html#a03f009444f2b6c37f6ed895313028360" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,64,143,91"/>
 </map>
 </div>
 
@@ -2157,9 +2183,13 @@ Here is the call graph for this function:</div>
 <li>src/Grid3DSrc/<a class="el" href="_linear_array3_d_8cpp.html">LinearArray3D.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_linear_array3_d.html">LinearArray3D</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
 </body>
 </html>

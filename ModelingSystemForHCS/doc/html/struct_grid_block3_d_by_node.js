@@ -1,0 +1,27 @@
+var struct_grid_block3_d_by_node =
+[
+    [ "GridBlock3DByNode", "struct_grid_block3_d_by_node.html#acea5bbfd397668533528661b6be348ae", null ],
+    [ "AssignData", "struct_grid_block3_d_by_node.html#ab9784c0c66209712eeb48359613a785d", null ],
+    [ "Compose", "struct_grid_block3_d_by_node.html#a0b2335fabdbd978e21b45e353c73d3fa", null ],
+    [ "CreateGrid2DTransferPlanesXZ", "struct_grid_block3_d_by_node.html#a7dd0b59be692fec232511556f20f12dd", null ],
+    [ "Decompose", "struct_grid_block3_d_by_node.html#ac130a90425517c8b2a3472f4a94cbeb0", null ],
+    [ "GetDataSizeInMb", "struct_grid_block3_d_by_node.html#a3315bfef05a205cf77dce526df53b842", null ],
+    [ "GetGridBlock3DByDevice", "struct_grid_block3_d_by_node.html#aaaba533a04bd25467fbec436fef028bd", null ],
+    [ "GetGridBlock3DByDevice", "struct_grid_block3_d_by_node.html#a9a6f026bf286cc1ffd5acd56ff546526", null ],
+    [ "Grid2DTransferPlanesXZLinearArrayCreate", "struct_grid_block3_d_by_node.html#a6fe4bc6180f1271bcc4599c92b9f0a74", null ],
+    [ "Grid2DTransferPlanesXZLinearArrayPrint", "struct_grid_block3_d_by_node.html#a34f63b98334119725dac3d400f5fa735", null ],
+    [ "LinearArrayCreate", "struct_grid_block3_d_by_node.html#a84cbd90b6d346d748fd68f46d70d98cb", null ],
+    [ "PrintNode", "struct_grid_block3_d_by_node.html#a31ea314d5ed7de33cd1476d5df0057a2", null ],
+    [ "PrintNodeName", "struct_grid_block3_d_by_node.html#a78db920312e7cf1027a8214c84c30745", null ],
+    [ "SetPrevNextPointers", "struct_grid_block3_d_by_node.html#a758037080cbb338f9f706943859d8ca9", null ],
+    [ "deviceNames", "struct_grid_block3_d_by_node.html#a428d18bf1df21804995ef09ce34247f7", null ],
+    [ "gridBlock3DByDevices", "struct_grid_block3_d_by_node.html#a3e7b69dc7edb372f4e3668bed0823c22", null ],
+    [ "nodeIndex", "struct_grid_block3_d_by_node.html#a2fc59384b09edfc0f6e0db64933792ad", null ],
+    [ "nodeName", "struct_grid_block3_d_by_node.html#a8fc5a6371b8508c99ad30eae87777db4", null ],
+    [ "nodeNext", "struct_grid_block3_d_by_node.html#ae1f38df101b2fd94373a3dcabf23686a", null ],
+    [ "nodeNx", "struct_grid_block3_d_by_node.html#aa16ad0f39eeadd17e75449a6f4a62325", null ],
+    [ "nodeNy", "struct_grid_block3_d_by_node.html#aa480c0a21e00fc22544eda77e15a0423", null ],
+    [ "nodeNz", "struct_grid_block3_d_by_node.html#a77313bc950238ed5d0a244d8beb09f65", null ],
+    [ "nodeOffsetY", "struct_grid_block3_d_by_node.html#a89f565c6f1d61435571d6501664d6509", null ],
+    [ "nodePrev", "struct_grid_block3_d_by_node.html#af2643ca0673ffe35a318f9ed17d1ff40", null ]
+];

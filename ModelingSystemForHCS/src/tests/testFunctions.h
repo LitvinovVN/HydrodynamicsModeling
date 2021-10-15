@@ -7,4 +7,6 @@ void testFunction1(int a, int b);
 
 void testFunction4();
 
+void matmAlgsTesting();
+
 #endif

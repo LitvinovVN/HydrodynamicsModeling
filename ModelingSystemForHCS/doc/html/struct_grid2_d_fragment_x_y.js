@@ -1,0 +1,26 @@
+var struct_grid2_d_fragment_x_y =
+[
+    [ "Grid2DFragmentXY", "struct_grid2_d_fragment_x_y.html#a8f9eb6ece38306ffc7cc6aebbb068aab", null ],
+    [ "AssignData", "struct_grid2_d_fragment_x_y.html#a27697f077a041f971812da4e39843e54", null ],
+    [ "Compose", "struct_grid2_d_fragment_x_y.html#a0e3884ae19a7d1577a8658637387aa32", null ],
+    [ "GetDataSizeInMb", "struct_grid2_d_fragment_x_y.html#a2e45a90f649e11eab51d2850ba845f99", null ],
+    [ "GetLinearArray2D", "struct_grid2_d_fragment_x_y.html#a7e2a1e3217aa4c0be421e8b5e35cdfc3", null ],
+    [ "GetNodesNumber", "struct_grid2_d_fragment_x_y.html#a364b0b8bbb76df228d54d540194b5bc6", null ],
+    [ "LinearArrayCreate", "struct_grid2_d_fragment_x_y.html#ac000c7db5e261d9e44d6aa815154c936", null ],
+    [ "PrintFragment", "struct_grid2_d_fragment_x_y.html#a941e1dac2c8b368cf4b54f047a0807a8", null ],
+    [ "fragmentIndX", "struct_grid2_d_fragment_x_y.html#a2ecaf6ebe648e7fda1f883c164c7bdf7", null ],
+    [ "fragmentIndY", "struct_grid2_d_fragment_x_y.html#a68751b3ef3311ada7d858b47f85cd93f", null ],
+    [ "fragmentIndZ", "struct_grid2_d_fragment_x_y.html#a9a15262f3207092074f57d8faca1fdef", null ],
+    [ "fragmentNx", "struct_grid2_d_fragment_x_y.html#a4ea66a074a6e5bea10a4dbe5f0ec519a", null ],
+    [ "fragmentNy", "struct_grid2_d_fragment_x_y.html#ac363ef5228fd147aa080c99804bd1474", null ],
+    [ "fragmentOffsetX", "struct_grid2_d_fragment_x_y.html#aa48d9f4c243883aafecc63a4759adb47", null ],
+    [ "fragmentOffsetXByDevice", "struct_grid2_d_fragment_x_y.html#ac8f92f1b170f1094395aba724aa03b07", null ],
+    [ "fragmentOffsetXByNode", "struct_grid2_d_fragment_x_y.html#a44ac42375594cf830bc532cbd30539d0", null ],
+    [ "fragmentOffsetY", "struct_grid2_d_fragment_x_y.html#a96309470593a56c7aed4f081a42e1a27", null ],
+    [ "fragmentOffsetYByDevice", "struct_grid2_d_fragment_x_y.html#a066d852fb31d813226430b0941a8490b", null ],
+    [ "fragmentOffsetYByNode", "struct_grid2_d_fragment_x_y.html#a4dbf11f65672e3ed1095eabc17263eab", null ],
+    [ "fragmentOffsetZ", "struct_grid2_d_fragment_x_y.html#a9805f4a1b3131545c414568f40af46b2", null ],
+    [ "fragmentOffsetZByDevice", "struct_grid2_d_fragment_x_y.html#a2791cbb9a06fe951eedb5431a7b755e3", null ],
+    [ "fragmentOffsetZByNode", "struct_grid2_d_fragment_x_y.html#a8bb3ca4624351075abb5a534da096e5e", null ],
+    [ "linearArrays2D", "struct_grid2_d_fragment_x_y.html#a00c80134fd475355ae8cb56064640cdb", null ]
+];

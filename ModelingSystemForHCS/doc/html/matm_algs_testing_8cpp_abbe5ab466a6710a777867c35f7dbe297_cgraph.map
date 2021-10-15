@@ -1,0 +1,6 @@
+<map id="alg1" name="alg1">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,52,57"/>
+<area shape="rect" id="node2" href="$struct_linear_array3_d.html#a4bf71d4d7abd65c68edc96b782e4b87b" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="100,5,281,32"/>
+<area shape="rect" id="node4" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="101,56,281,83"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="329,31,493,57"/>
+</map>
