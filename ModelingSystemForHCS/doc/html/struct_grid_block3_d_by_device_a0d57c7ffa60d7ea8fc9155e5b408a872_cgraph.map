@@ -1,0 +1,4 @@
+<map id="GridBlock3DByDevice::Grid2DTransferPlanesXZLinearArrayPrint" name="GridBlock3DByDevice::Grid2DTransferPlanesXZLinearArrayPrint">
+<area shape="rect" id="node1" title="Выводит в консоль объект двумерной плоскости XZ для передачи данных" alt="" coords="5,5,211,61"/>
+<area shape="rect" id="node2" href="$struct_grid2_d_transfer_plane_x_z.html#a8de7fcefc09c4affb17fe0c3e04c8eb7" title="Вывод в консоль фрагмента переходного слоя заданного типа" alt="" coords="259,13,449,54"/>
+</map>

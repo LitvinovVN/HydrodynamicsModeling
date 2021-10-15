@@ -1,0 +1,4 @@
+<map id="Grid3D::GetDataSizeInMb" name="Grid3D::GetDataSizeInMb">
+<area shape="rect" id="node1" title="Возвращает объём оперативной памяти, занимаемый объектом Grid3D" alt="" coords="151,5,323,32"/>
+<area shape="rect" id="node2" href="$struct_grid3_d.html#a503fc5d38d72448cedb61e5da632e65c" title="Выводит в консоль параметры расчетной сетки" alt="" coords="5,5,103,32"/>
+</map>

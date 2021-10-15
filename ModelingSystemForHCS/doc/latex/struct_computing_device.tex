@@ -1,0 +1,105 @@
+\hypertarget{struct_computing_device}{}\doxysection{Computing\+Device Struct Reference}
+\label{struct_computing_device}\index{ComputingDevice@{ComputingDevice}}
+
+
+Абстрактный класс, описывает общие характеристики устройств  
+
+
+
+
+Inheritance diagram for Computing\+Device\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{struct_computing_device__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_computing_device_a98ef1c4710bee2bf5116f283f3149123}{Computing\+Device}} (std\+::string Device\+Id, double Device\+Perfomance)
+\item 
+virtual long \mbox{\hyperlink{struct_computing_device_a2d8f7075106bc9222adcf095520f2ea4}{Get\+Num\+Threads}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает количество потоков \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{struct_computing_device_ac227a03b119c3272de081604f46908f7}{Print\+Device}} ()
+\begin{DoxyCompactList}\small\item\em Выводит в консоль характеристики устройства \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{struct_computing_device_acfa2d952243d3d58c0309e7b33d4c3dc}{device\+Id}}
+\item 
+double \mbox{\hyperlink{struct_computing_device_a2bdd0d050ea94c96adc02b46f56b9fd4}{device\+Perfomance}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Абстрактный класс, описывает общие характеристики устройств 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_computing_device_a98ef1c4710bee2bf5116f283f3149123}\label{struct_computing_device_a98ef1c4710bee2bf5116f283f3149123}} 
+\index{ComputingDevice@{ComputingDevice}!ComputingDevice@{ComputingDevice}}
+\index{ComputingDevice@{ComputingDevice}!ComputingDevice@{ComputingDevice}}
+\doxysubsubsection{\texorpdfstring{ComputingDevice()}{ComputingDevice()}}
+{\footnotesize\ttfamily Computing\+Device\+::\+Computing\+Device (\begin{DoxyParamCaption}\item[{std\+::string}]{Device\+Id,  }\item[{double}]{Device\+Perfomance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_computing_device_a2d8f7075106bc9222adcf095520f2ea4}\label{struct_computing_device_a2d8f7075106bc9222adcf095520f2ea4}} 
+\index{ComputingDevice@{ComputingDevice}!GetNumThreads@{GetNumThreads}}
+\index{GetNumThreads@{GetNumThreads}!ComputingDevice@{ComputingDevice}}
+\doxysubsubsection{\texorpdfstring{GetNumThreads()}{GetNumThreads()}}
+{\footnotesize\ttfamily virtual long Computing\+Device\+::\+Get\+Num\+Threads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Возвращает количество потоков 
+
+\begin{DoxyReturn}{Returns}
+Количество потоков
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{struct_computing_device_c_p_u_a1154551c35f048aca270915fab3865fe}{Computing\+Device\+CPU}}, and \mbox{\hyperlink{struct_computing_device_g_p_u_a9ab189f61ec6ed466b9936d302f47b3d}{Computing\+Device\+GPU}}.
+
+\mbox{\Hypertarget{struct_computing_device_ac227a03b119c3272de081604f46908f7}\label{struct_computing_device_ac227a03b119c3272de081604f46908f7}} 
+\index{ComputingDevice@{ComputingDevice}!PrintDevice@{PrintDevice}}
+\index{PrintDevice@{PrintDevice}!ComputingDevice@{ComputingDevice}}
+\doxysubsubsection{\texorpdfstring{PrintDevice()}{PrintDevice()}}
+{\footnotesize\ttfamily virtual void Computing\+Device\+::\+Print\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Выводит в консоль характеристики устройства 
+
+
+
+Reimplemented in \mbox{\hyperlink{struct_computing_device_c_p_u_ad474f65b48d421f934ca97b53140a351}{Computing\+Device\+CPU}}, and \mbox{\hyperlink{struct_computing_device_g_p_u_abe9f58543296e80b1091bb9c0d95ca74}{Computing\+Device\+GPU}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_computing_device_ac227a03b119c3272de081604f46908f7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_computing_device_acfa2d952243d3d58c0309e7b33d4c3dc}\label{struct_computing_device_acfa2d952243d3d58c0309e7b33d4c3dc}} 
+\index{ComputingDevice@{ComputingDevice}!deviceId@{deviceId}}
+\index{deviceId@{deviceId}!ComputingDevice@{ComputingDevice}}
+\doxysubsubsection{\texorpdfstring{deviceId}{deviceId}}
+{\footnotesize\ttfamily std\+::string Computing\+Device\+::device\+Id}
+
+\mbox{\Hypertarget{struct_computing_device_a2bdd0d050ea94c96adc02b46f56b9fd4}\label{struct_computing_device_a2bdd0d050ea94c96adc02b46f56b9fd4}} 
+\index{ComputingDevice@{ComputingDevice}!devicePerfomance@{devicePerfomance}}
+\index{devicePerfomance@{devicePerfomance}!ComputingDevice@{ComputingDevice}}
+\doxysubsubsection{\texorpdfstring{devicePerfomance}{devicePerfomance}}
+{\footnotesize\ttfamily double Computing\+Device\+::device\+Perfomance}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Grid3\+DSrc/\mbox{\hyperlink{_computing_device_8cpp}{Computing\+Device.\+cpp}}\end{DoxyCompactItemize}

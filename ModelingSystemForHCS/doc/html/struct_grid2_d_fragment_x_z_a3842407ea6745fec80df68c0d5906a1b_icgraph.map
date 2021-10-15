@@ -1,0 +1,4 @@
+<map id="Grid2DFragmentXZ::GetDataSizeInMb" name="Grid2DFragmentXZ::GetDataSizeInMb">
+<area shape="rect" id="node1" title="Возвращает объём оперативной памяти, занимаемый фрагментом" alt="" coords="275,5,461,47"/>
+<area shape="rect" id="node2" href="$struct_grid2_d_fragment_x_z.html#a7c6ec0906e795b7fb39e102e98e7def8" title="$$$$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость XZ – грань трехмерного фрагмента)" alt="" coords="5,13,227,39"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="Grid3DFragment::GetLinearArray3D" name="Grid3DFragment::GetLinearArray3D">
+<area shape="rect" id="node1" title="$$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelD..." alt="" coords="840,67,1021,108"/>
+<area shape="rect" id="node2" href="$struct_grid3_d_fragment.html#ac7a248dcbe59964f73028e084a774bf6" title="$$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерно..." alt="" coords="593,17,785,43"/>
+<area shape="rect" id="node6" href="$struct_grid3_d_fragment.html#a87e6282d18167128a928184ed584a4f9" title="$$$$Заполняет одномерный массив исходных данных data данными из трехмерных массивов данных фрагментов..." alt="" coords="599,74,779,101"/>
+<area shape="rect" id="node10" href="$struct_grid3_d_fragment.html#ad85e99719e0d356cc897f3c74489a7aa" title="$$$$Выводит в консоль части элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDa..." alt="" coords="585,125,792,167"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_device.html#a17ab9df11d079a1f9fbbe6b663bcc1c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="388,5,537,47"/>
+<area shape="rect" id="node4" href="$struct_grid_block3_d_by_node.html#ab9784c0c66209712eeb48359613a785d" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="191,5,340,47"/>
+<area shape="rect" id="node5" href="$struct_grid3_d.html#a03f009444f2b6c37f6ed895313028360" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,13,143,39"/>
+<area shape="rect" id="node7" href="$struct_grid_block3_d_by_device.html#a0858df5417b9f679bfe44f08af60c2c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="388,71,537,112"/>
+<area shape="rect" id="node8" href="$struct_grid_block3_d_by_node.html#a0b2335fabdbd978e21b45e353c73d3fa" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="191,71,340,112"/>
+<area shape="rect" id="node9" href="$struct_grid3_d.html#a47b38c1c851787ee967451474e0d5195" title="Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки" alt="" coords="11,78,137,105"/>
+</map>

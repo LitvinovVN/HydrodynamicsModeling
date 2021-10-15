@@ -1,0 +1,5 @@
+<map id="Grid2DFragmentYZ::GetLinearArray2D" name="Grid2DFragmentYZ::GetLinearArray2D">
+<area shape="rect" id="node1" title="Возвращает указатель на объект linearArray2D по имени массива данных modelDataName" alt="" coords="264,23,461,65"/>
+<area shape="rect" id="node2" href="$struct_grid2_d_fragment_y_z.html#aa915702df9de1ddf6b75c541735e9f45" title="$$$$Возвращает значение элемента массива с указанным именем массива данных modelDataName по указанным..." alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node3" href="$struct_grid2_d_fragment_y_z.html#a2c7ef6b1339ebc5fb1565d7fa60d8319" title="$$$$Сохраняет значение элемента массива с указанным именем массива данных modelDataName по указанным ..." alt="" coords="6,56,215,83"/>
+</map>

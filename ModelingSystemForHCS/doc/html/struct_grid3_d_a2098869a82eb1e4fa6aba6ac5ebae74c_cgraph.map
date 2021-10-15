@@ -1,0 +1,9 @@
+<map id="Grid3D::GetDataSizeInMb" name="Grid3D::GetDataSizeInMb">
+<area shape="rect" id="node1" title="Возвращает объём оперативной памяти, занимаемый объектом Grid3D" alt="" coords="5,35,177,61"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a3315bfef05a205cf77dce526df53b842" title="Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByNode" alt="" coords="225,27,375,69"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_device.html#afffc37abdeb15510cf41306a672ac03c" title="Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByDevice" alt="" coords="423,27,572,69"/>
+<area shape="rect" id="node4" href="$struct_grid3_d_fragment.html#a6b5c39eeea0e5ae8aacbc52dc9bffc44" title="Возвращает объём оперативной памяти, занимаемый фрагментом" alt="" coords="620,5,847,32"/>
+<area shape="rect" id="node7" href="$struct_grid_block3_d_by_device.html#a7cf456e9eb7a11477e498d56e1899b1e" title="$$$$Возвращает указатель на трехмерный фрагмент типа Grid3DFragment по указанным индексам indX,..." alt="" coords="659,57,808,98"/>
+<area shape="rect" id="node5" href="$struct_linear_arrays3_d.html#a0409f68050d44aa840096c7411a163e0" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="895,5,1116,32"/>
+<area shape="rect" id="node6" href="$struct_linear_array3_d.html#a25b92f1c301b79b48b9b11b8fd7521d2" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="1164,5,1379,32"/>
+</map>

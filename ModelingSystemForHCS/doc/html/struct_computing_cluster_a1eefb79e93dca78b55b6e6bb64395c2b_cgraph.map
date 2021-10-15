@@ -1,0 +1,4 @@
+<map id="ComputingCluster::Print" name="ComputingCluster::Print">
+<area shape="rect" id="node1" title="Выводит в консоль характеристики кластера (характеристики вычислительных узлов и их устройств)" alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node2" href="$struct_computing_device.html#ac227a03b119c3272de081604f46908f7" title="Выводит в консоль характеристики устройства" alt="" coords="213,5,408,32"/>
+</map>

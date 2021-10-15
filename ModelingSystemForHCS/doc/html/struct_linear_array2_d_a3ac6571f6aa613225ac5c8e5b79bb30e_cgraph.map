@@ -1,0 +1,4 @@
+<map id="LinearArray2D::Print" name="LinearArray2D::Print">
+<area shape="rect" id="node1" title="Выводит элементы фрагмента по слоям XY в консоль" alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="192,5,356,32"/>
+</map>

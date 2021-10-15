@@ -1,0 +1,4 @@
+<map id="Grid3DFragment::LinearArrayCreate" name="Grid3DFragment::LinearArrayCreate">
+<area shape="rect" id="node1" title="$$$$Выделяет память и создает трехмерный массив LinearArray3D по указаннному имени массива данных mod..." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node2" href="$struct_linear_arrays3_d.html#a1670d381ef3531ce044b6d93e4a66e67" title="$$$$Создает трехмерный массив данных типа LinearArray3D(nx, ny, nz) для указанного имени массива данн..." alt="" coords="244,5,429,47"/>
+</map>

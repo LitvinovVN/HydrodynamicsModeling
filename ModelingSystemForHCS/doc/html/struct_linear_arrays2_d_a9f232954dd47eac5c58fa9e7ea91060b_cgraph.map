@@ -1,0 +1,4 @@
+<map id="LinearArrays2D::GetDataSizeInMb" name="LinearArrays2D::GetDataSizeInMb">
+<area shape="rect" id="node1" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArrays" alt="" coords="5,5,227,32"/>
+<area shape="rect" id="node2" href="$struct_linear_array2_d.html#a6240f035a005cd701dc8fe41f4adeeb5" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray2D" alt="" coords="275,5,489,32"/>
+</map>

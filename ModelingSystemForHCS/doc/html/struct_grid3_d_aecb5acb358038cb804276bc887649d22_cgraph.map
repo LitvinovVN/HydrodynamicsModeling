@@ -1,0 +1,6 @@
+<map id="Grid3D::SetPrevNextPointersForDeviceBlocks" name="Grid3D::SetPrevNextPointersForDeviceBlocks">
+<area shape="rect" id="node1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,51,196,93"/>
+<area shape="rect" id="node2" href="$struct_grid3_d.html#a1d45234170101a36ecc13e273397d2e7" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="244,29,455,56"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_node.html#a758037080cbb338f9f706943859d8ca9" title="Устанавливает указатели на соседние блоки" alt="" coords="275,81,424,122"/>
+<area shape="rect" id="node4" href="$struct_grid_block3_d_by_node.html#aaaba533a04bd25467fbec436fef028bd" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="503,81,673,122"/>
+</map>

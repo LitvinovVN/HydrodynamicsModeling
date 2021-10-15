@@ -1,0 +1,6 @@
+<map id="ComputingDevice::PrintDevice" name="ComputingDevice::PrintDevice">
+<area shape="rect" id="node1" title="Выводит в консоль характеристики устройства" alt="" coords="213,64,408,91"/>
+<area shape="rect" id="node2" href="$struct_computing_cluster.html#a1eefb79e93dca78b55b6e6bb64395c2b" title="Выводит в консоль характеристики кластера (характеристики вычислительных узлов и их устройств)" alt="" coords="5,5,165,32"/>
+<area shape="rect" id="node3" href="$struct_computing_device_c_p_u.html#ad474f65b48d421f934ca97b53140a351" title="Выводит в консоль характеристики устройства (CPU)" alt="" coords="11,57,160,98"/>
+<area shape="rect" id="node4" href="$struct_computing_device_g_p_u.html#abe9f58543296e80b1091bb9c0d95ca74" title="Выводит в консоль характеристики устройства (GPU)" alt="" coords="10,122,161,163"/>
+</map>

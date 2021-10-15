@@ -1,0 +1,4 @@
+<map id="SimpleStatistics::printData" name="SimpleStatistics::printData">
+<area shape="rect" id="node1" title="Выводит в стандартный поток вывода элементы массива данных, разделённые пробелами." alt="" coords="5,5,183,32"/>
+<area shape="rect" id="node2" href="$struct_simple_statistics.html#acee3acfeb29d148d5fa9c7f2e7c4e6ae" title="Сортирует массив данных" alt="" coords="231,5,377,32"/>
+</map>

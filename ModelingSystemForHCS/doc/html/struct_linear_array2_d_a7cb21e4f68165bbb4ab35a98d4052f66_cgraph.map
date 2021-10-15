@@ -1,0 +1,4 @@
+<map id="LinearArray2D::SetLineX" name="LinearArray2D::SetLineX">
+<area shape="rect" id="node1" title="Заполняет элементы объекта, расположенные вдоль оси Ox по указанной координате Oy,..." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="216,5,380,32"/>
+</map>

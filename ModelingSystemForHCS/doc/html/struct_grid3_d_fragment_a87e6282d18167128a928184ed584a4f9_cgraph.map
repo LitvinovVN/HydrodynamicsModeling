@@ -1,0 +1,6 @@
+<map id="Grid3DFragment::Compose" name="Grid3DFragment::Compose">
+<area shape="rect" id="node1" title="$$$$Заполняет одномерный массив исходных данных data данными из трехмерных массивов данных фрагментов..." alt="" coords="5,35,185,61"/>
+<area shape="rect" id="node2" href="$struct_linear_array3_d.html#a4bf71d4d7abd65c68edc96b782e4b87b" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="233,5,415,32"/>
+<area shape="rect" id="node4" href="$struct_grid3_d_fragment.html#a5b521f7ca604b2bfd0948e9462dc7245" title="$$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelD..." alt="" coords="233,57,415,98"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="463,5,627,32"/>
+</map>

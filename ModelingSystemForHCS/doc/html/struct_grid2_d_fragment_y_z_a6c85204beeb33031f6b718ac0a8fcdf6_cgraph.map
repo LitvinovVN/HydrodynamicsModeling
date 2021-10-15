@@ -1,0 +1,5 @@
+<map id="Grid2DFragmentYZ::GetDataSizeInMb" name="Grid2DFragmentYZ::GetDataSizeInMb">
+<area shape="rect" id="node1" title="Возвращает объём оперативной памяти, занимаемый фрагментом" alt="" coords="5,5,195,47"/>
+<area shape="rect" id="node2" href="$struct_linear_arrays2_d.html#a9f232954dd47eac5c58fa9e7ea91060b" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArrays" alt="" coords="243,13,464,39"/>
+<area shape="rect" id="node3" href="$struct_linear_array2_d.html#a6240f035a005cd701dc8fe41f4adeeb5" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray2D" alt="" coords="512,13,727,39"/>
+</map>

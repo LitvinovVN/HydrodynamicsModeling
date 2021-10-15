@@ -1,0 +1,5 @@
+<map id="ComputingNode::GetSumDevicePerformance" name="ComputingNode::GetSumDevicePerformance">
+<area shape="rect" id="node1" title="Возвращает суммарную производительность всех устройств на вычислительном узле" alt="" coords="389,5,597,47"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#ac130a90425517c8b2a3472f4a94cbeb0" title="Выполняет декомпозицию блока расчетной сетки вычислительного узла" alt="" coords="192,5,341,47"/>
+<area shape="rect" id="node3" href="$struct_grid3_d.html#acc66881f49bb6596fe2bc2ab94fcbcc9" title="Выполняет декомпозицию расчетной сетки: делит сетку Grid на блоки для выч.устройств кластера (Nodes)" alt="" coords="5,13,144,39"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="LinearArray2D::GetElement" name="LinearArray2D::GetElement">
+<area shape="rect" id="node1" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="5,5,187,32"/>
+<area shape="rect" id="node2" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="235,5,399,32"/>
+</map>

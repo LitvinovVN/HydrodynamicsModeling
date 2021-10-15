@@ -1,0 +1,5 @@
+<map id="Grid3D::CreateGrid2DTransferPlanesXZ" name="Grid3D::CreateGrid2DTransferPlanesXZ">
+<area shape="rect" id="node1" title="Создаёт двумерные плоскости XZ для передачи данных между вычислителями" alt="" coords="5,5,200,47"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a7dd0b59be692fec232511556f20f12dd" title="Создаёт двумерные плоскости XZ для передачи данных между вычислительными устройствами и вызывает функ..." alt="" coords="248,5,448,47"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_device.html#ac60663d0c9378e2cb6eb1a4a1399452c" title="Создаёт двумерные плоскости XZ для передачи данных между вычислителями" alt="" coords="496,5,704,47"/>
+</map>

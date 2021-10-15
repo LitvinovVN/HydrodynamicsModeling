@@ -1,0 +1,5 @@
+<map id="Grid3D::Grid2DTransferPlanesXZLinearArrayCreate" name="Grid3D::Grid2DTransferPlanesXZLinearArrayCreate">
+<area shape="rect" id="node1" title="Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа" alt="" coords="5,13,201,54"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a6fe4bc6180f1271bcc4599c92b9f0a74" title="Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа modelDataName" alt="" coords="249,5,447,61"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_device.html#acd907c2468215cbe330b84acdd2343eb" title="Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа" alt="" coords="495,5,700,61"/>
+</map>

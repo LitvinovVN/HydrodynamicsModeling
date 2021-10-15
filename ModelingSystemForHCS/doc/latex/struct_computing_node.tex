@@ -1,0 +1,130 @@
+\hypertarget{struct_computing_node}{}\doxysection{Computing\+Node Struct Reference}
+\label{struct_computing_node}\index{ComputingNode@{ComputingNode}}
+
+
+Описывает характеристики вычислительного узла  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_computing_node_a85b67d03f97c14bc5acee2a48803d041}{Computing\+Node}} (std\+::string Node\+Id, double Ram\+Memory\+Size, double Node\+Perfomance)
+\item 
+int \mbox{\hyperlink{struct_computing_node_a4fd62f63115b4df9e897646ece7f11d9}{Count\+Devices}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает количество устройств device на вычислительном узле \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_computing_node_a98dc55d90e0cd27d31aa3f7f064d15b8}{Get\+Sum\+Device\+Performance}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает суммарную производительность всех устройств на вычислительном узле \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{struct_computing_node_af24b4a38cd1d7eaeb423eb5eda0ff43d}{node\+Id}}
+\begin{DoxyCompactList}\small\item\em уид вычислительного узла \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_computing_node_a48d61727737fb1cbe931a895e1604bc3}{ram\+Memory\+Size}}
+\begin{DoxyCompactList}\small\item\em размер оперативной памяти вычислительного узла \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_computing_node_a646f1d5ed3fc4fad027eacd0dab55b32}{node\+Perfomance}}
+\begin{DoxyCompactList}\small\item\em производительность вычислительного узла \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{struct_computing_device}{Computing\+Device}} \& $>$ \mbox{\hyperlink{struct_computing_node_a3a7f18d3b9ce3f21a42f136803f9bea0}{computing\+Devices}}
+\begin{DoxyCompactList}\small\item\em массив объектов \mbox{\hyperlink{struct_computing_device}{Computing\+Device}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Описывает характеристики вычислительного узла 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_computing_node_a85b67d03f97c14bc5acee2a48803d041}\label{struct_computing_node_a85b67d03f97c14bc5acee2a48803d041}} 
+\index{ComputingNode@{ComputingNode}!ComputingNode@{ComputingNode}}
+\index{ComputingNode@{ComputingNode}!ComputingNode@{ComputingNode}}
+\doxysubsubsection{\texorpdfstring{ComputingNode()}{ComputingNode()}}
+{\footnotesize\ttfamily Computing\+Node\+::\+Computing\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{Node\+Id,  }\item[{double}]{Ram\+Memory\+Size,  }\item[{double}]{Node\+Perfomance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_computing_node_a4fd62f63115b4df9e897646ece7f11d9}\label{struct_computing_node_a4fd62f63115b4df9e897646ece7f11d9}} 
+\index{ComputingNode@{ComputingNode}!CountDevices@{CountDevices}}
+\index{CountDevices@{CountDevices}!ComputingNode@{ComputingNode}}
+\doxysubsubsection{\texorpdfstring{CountDevices()}{CountDevices()}}
+{\footnotesize\ttfamily int Computing\+Node\+::\+Count\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает количество устройств device на вычислительном узле 
+
+\begin{DoxyReturn}{Returns}
+Количество устройств device на вычислительном узле
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_computing_node_a4fd62f63115b4df9e897646ece7f11d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_computing_node_a98dc55d90e0cd27d31aa3f7f064d15b8}\label{struct_computing_node_a98dc55d90e0cd27d31aa3f7f064d15b8}} 
+\index{ComputingNode@{ComputingNode}!GetSumDevicePerformance@{GetSumDevicePerformance}}
+\index{GetSumDevicePerformance@{GetSumDevicePerformance}!ComputingNode@{ComputingNode}}
+\doxysubsubsection{\texorpdfstring{GetSumDevicePerformance()}{GetSumDevicePerformance()}}
+{\footnotesize\ttfamily double Computing\+Node\+::\+Get\+Sum\+Device\+Performance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает суммарную производительность всех устройств на вычислительном узле 
+
+\begin{DoxyReturn}{Returns}
+Суммарную производительность всех устройств на вычислительном узле
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_computing_node_a98dc55d90e0cd27d31aa3f7f064d15b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_computing_node_a3a7f18d3b9ce3f21a42f136803f9bea0}\label{struct_computing_node_a3a7f18d3b9ce3f21a42f136803f9bea0}} 
+\index{ComputingNode@{ComputingNode}!computingDevices@{computingDevices}}
+\index{computingDevices@{computingDevices}!ComputingNode@{ComputingNode}}
+\doxysubsubsection{\texorpdfstring{computingDevices}{computingDevices}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{struct_computing_device}{Computing\+Device}}\&$>$ Computing\+Node\+::computing\+Devices}
+
+
+
+массив объектов \mbox{\hyperlink{struct_computing_device}{Computing\+Device}} 
+
+\mbox{\Hypertarget{struct_computing_node_af24b4a38cd1d7eaeb423eb5eda0ff43d}\label{struct_computing_node_af24b4a38cd1d7eaeb423eb5eda0ff43d}} 
+\index{ComputingNode@{ComputingNode}!nodeId@{nodeId}}
+\index{nodeId@{nodeId}!ComputingNode@{ComputingNode}}
+\doxysubsubsection{\texorpdfstring{nodeId}{nodeId}}
+{\footnotesize\ttfamily std\+::string Computing\+Node\+::node\+Id}
+
+
+
+уид вычислительного узла 
+
+\mbox{\Hypertarget{struct_computing_node_a646f1d5ed3fc4fad027eacd0dab55b32}\label{struct_computing_node_a646f1d5ed3fc4fad027eacd0dab55b32}} 
+\index{ComputingNode@{ComputingNode}!nodePerfomance@{nodePerfomance}}
+\index{nodePerfomance@{nodePerfomance}!ComputingNode@{ComputingNode}}
+\doxysubsubsection{\texorpdfstring{nodePerfomance}{nodePerfomance}}
+{\footnotesize\ttfamily double Computing\+Node\+::node\+Perfomance}
+
+
+
+производительность вычислительного узла 
+
+\mbox{\Hypertarget{struct_computing_node_a48d61727737fb1cbe931a895e1604bc3}\label{struct_computing_node_a48d61727737fb1cbe931a895e1604bc3}} 
+\index{ComputingNode@{ComputingNode}!ramMemorySize@{ramMemorySize}}
+\index{ramMemorySize@{ramMemorySize}!ComputingNode@{ComputingNode}}
+\doxysubsubsection{\texorpdfstring{ramMemorySize}{ramMemorySize}}
+{\footnotesize\ttfamily double Computing\+Node\+::ram\+Memory\+Size}
+
+
+
+размер оперативной памяти вычислительного узла 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Grid3\+DSrc/\mbox{\hyperlink{_computing_node_8cpp}{Computing\+Node.\+cpp}}\end{DoxyCompactItemize}

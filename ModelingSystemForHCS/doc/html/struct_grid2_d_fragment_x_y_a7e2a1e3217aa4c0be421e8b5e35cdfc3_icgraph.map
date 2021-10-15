@@ -1,0 +1,5 @@
+<map id="Grid2DFragmentXY::GetLinearArray2D" name="Grid2DFragmentXY::GetLinearArray2D">
+<area shape="rect" id="node1" title="$$$$Возвращает указатель на двумерный массив LinearArray2D по указанному имени массива данных modelDa..." alt="" coords="261,23,459,65"/>
+<area shape="rect" id="node2" href="$struct_grid2_d_fragment_x_y.html#a27697f077a041f971812da4e39843e54" title="$$$$Заполняет двумерный массив данных фрагмента размером (nx, ny) элементами исходного одномерного ма..." alt="" coords="5,5,213,32"/>
+<area shape="rect" id="node3" href="$struct_grid2_d_fragment_x_y.html#a0e3884ae19a7d1577a8658637387aa32" title="$$$$Заполняет одномерный массив исходных данных data данными из двумерных массивов данных фрагментов ..." alt="" coords="11,56,207,83"/>
+</map>

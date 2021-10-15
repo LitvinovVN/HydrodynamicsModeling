@@ -1,0 +1,5 @@
+<map id="GridBlock3DByDevice::Compose" name="GridBlock3DByDevice::Compose">
+<area shape="rect" id="node1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="376,5,525,47"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a0b2335fabdbd978e21b45e353c73d3fa" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="179,5,328,47"/>
+<area shape="rect" id="node3" href="$struct_grid3_d.html#a47b38c1c851787ee967451474e0d5195" title="Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки" alt="" coords="5,13,131,39"/>
+</map>

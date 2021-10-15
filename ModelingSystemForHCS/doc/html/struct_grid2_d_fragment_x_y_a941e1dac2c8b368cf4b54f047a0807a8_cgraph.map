@@ -1,0 +1,9 @@
+<map id="Grid2DFragmentXY::PrintFragment" name="Grid2DFragmentXY::PrintFragment">
+<area shape="rect" id="node1" title="$$$$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость XY – грань трехмерного фрагмента)" alt="" coords="5,42,228,69"/>
+<area shape="rect" id="node2" href="$struct_grid2_d_fragment_x_y.html#a2e45a90f649e11eab51d2850ba845f99" title="Возвращает объём оперативной памяти, занимаемый фрагментом" alt="" coords="276,5,465,47"/>
+<area shape="rect" id="node5" href="$struct_linear_arrays2_d.html#aa010d4d566d3be1bfb6d6354216390b6" title="Выводит в консоль все объекты класса LinearArray2D" alt="" coords="297,71,444,98"/>
+<area shape="rect" id="node3" href="$struct_linear_arrays2_d.html#a9f232954dd47eac5c58fa9e7ea91060b" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArrays" alt="" coords="513,13,735,39"/>
+<area shape="rect" id="node4" href="$struct_linear_array2_d.html#a6240f035a005cd701dc8fe41f4adeeb5" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray2D" alt="" coords="783,13,997,39"/>
+<area shape="rect" id="node6" href="$struct_linear_array2_d.html#a3ac6571f6aa613225ac5c8e5b79bb30e" title="Выводит элементы фрагмента по слоям XY в консоль" alt="" coords="555,71,693,98"/>
+<area shape="rect" id="node7" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="808,71,972,98"/>
+</map>

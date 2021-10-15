@@ -1,0 +1,8 @@
+<map id="Grid3D::GetGridBlock3DByNode" name="Grid3D::GetGridBlock3DByNode">
+<area shape="rect" id="node1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="675,97,885,123"/>
+<area shape="rect" id="node2" href="$struct_grid3_d.html#a4db8233744296942d944f64b25588244" title="Выводит в консоль объект двумерной плоскости XZ для передачи данных" alt="" coords="431,5,627,47"/>
+<area shape="rect" id="node3" href="$struct_grid3_d.html#a503fc5d38d72448cedb61e5da632e65c" title="Выводит в консоль параметры расчетной сетки" alt="" coords="480,71,577,98"/>
+<area shape="rect" id="node4" href="$struct_grid3_d.html#a225b9cadd31910063ffa3e307854ca69" title=" " alt="" coords="192,151,383,178"/>
+<area shape="rect" id="node6" href="$struct_grid3_d.html#aecb5acb358038cb804276bc887649d22" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="433,173,624,215"/>
+<area shape="rect" id="node5" href="$struct_grid3_d.html#acc66881f49bb6596fe2bc2ab94fcbcc9" title="Выполняет декомпозицию расчетной сетки: делит сетку Grid на блоки для выч.устройств кластера (Nodes)" alt="" coords="5,151,144,178"/>
+</map>

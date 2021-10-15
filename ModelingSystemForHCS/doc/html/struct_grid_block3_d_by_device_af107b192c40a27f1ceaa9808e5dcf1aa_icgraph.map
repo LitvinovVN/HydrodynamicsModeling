@@ -1,0 +1,5 @@
+<map id="GridBlock3DByDevice::LinearArrayCreate" name="GridBlock3DByDevice::LinearArrayCreate">
+<area shape="rect" id="node1" title="Выделяет память и создает трехмерный массив данных размером (fragmentsNumX, fragmentsNumY,..." alt="" coords="425,5,575,47"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a84cbd90b6d346d748fd68f46d70d98cb" title="$$$$Создание массива данных по имени массива данных modelDataName" alt="" coords="228,5,377,47"/>
+<area shape="rect" id="node3" href="$struct_grid3_d.html#a6fd196575bf56fa197e4ac5238634f4e" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,13,180,39"/>
+</map>

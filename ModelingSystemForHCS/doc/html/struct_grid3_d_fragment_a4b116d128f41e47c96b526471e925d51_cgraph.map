@@ -1,0 +1,3 @@
+<map id="Grid3DFragment::PrintFragmentPlane" name="Grid3DFragment::PrintFragmentPlane">
+<area shape="rect" id="node1" title="Выводит в консоль все элементы плоскости Fragment3DPlane фрагмента для указанного типа ModelDataName" alt="" coords="5,29,212,71"/>
+</map>

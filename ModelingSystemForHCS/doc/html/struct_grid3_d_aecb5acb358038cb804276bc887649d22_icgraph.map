@@ -1,0 +1,5 @@
+<map id="Grid3D::SetPrevNextPointersForDeviceBlocks" name="Grid3D::SetPrevNextPointersForDeviceBlocks">
+<area shape="rect" id="node1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="431,5,621,47"/>
+<area shape="rect" id="node2" href="$struct_grid3_d.html#a225b9cadd31910063ffa3e307854ca69" title=" " alt="" coords="192,13,383,39"/>
+<area shape="rect" id="node3" href="$struct_grid3_d.html#acc66881f49bb6596fe2bc2ab94fcbcc9" title="Выполняет декомпозицию расчетной сетки: делит сетку Grid на блоки для выч.устройств кластера (Nodes)" alt="" coords="5,13,144,39"/>
+</map>

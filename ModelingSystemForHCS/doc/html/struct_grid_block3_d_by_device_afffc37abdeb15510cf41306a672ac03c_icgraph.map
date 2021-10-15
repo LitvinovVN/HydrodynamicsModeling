@@ -1,0 +1,8 @@
+<map id="GridBlock3DByDevice::GetDataSizeInMb" name="GridBlock3DByDevice::GetDataSizeInMb">
+<area shape="rect" id="node1" title="Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByDevice" alt="" coords="568,39,717,80"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a3315bfef05a205cf77dce526df53b842" title="Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByNode" alt="" coords="371,5,520,47"/>
+<area shape="rect" id="node6" href="$struct_grid_block3_d_by_device.html#a9c4be35cf6e9a663073178833b3f1f97" title="$$$$Выводит в консоль сведения о блоках устройства вычислительного узла по указанному уровню детализа..." alt="" coords="371,71,520,112"/>
+<area shape="rect" id="node3" href="$struct_grid3_d.html#a2098869a82eb1e4fa6aba6ac5ebae74c" title="Возвращает объём оперативной памяти, занимаемый объектом Grid3D" alt="" coords="151,13,323,39"/>
+<area shape="rect" id="node5" href="$struct_grid_block3_d_by_node.html#a31ea314d5ed7de33cd1476d5df0057a2" title="$$$$Выводит в консоль сведения о вычислительных узлах по указанному уровню детализации вывода grid3DP..." alt="" coords="162,64,311,105"/>
+<area shape="rect" id="node4" href="$struct_grid3_d.html#a503fc5d38d72448cedb61e5da632e65c" title="Выводит в консоль параметры расчетной сетки" alt="" coords="5,42,103,69"/>
+</map>

@@ -1,0 +1,167 @@
+\hypertarget{struct_grid2_d_transfer_plane_x_z}{}\doxysection{Grid2\+DTransfer\+Plane\+XZ Struct Reference}
+\label{struct_grid2_d_transfer_plane_x_z}\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+
+
+Описывает смежную двумерную плоскость XZ для передачи данных между устройствами  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_a2c7b87aa23317f0c103e464ea9af777e}{Grid2\+DTransfer\+Plane\+XZ}} (size\+\_\+t Fragments\+NumX, size\+\_\+t Fragments\+NumZ, size\+\_\+t Fragment\+Nx, size\+\_\+t Fragment\+Nz, size\+\_\+t Fragment\+Nxl, size\+\_\+t Fragment\+Nzl)
+\item 
+void \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_a3f1ae06fa9e544ac0fe0861cbb54e6f9}{Linear\+Array\+Create}} (\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Создание массива данных по имени массива данных model\+Data\+Name \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_a8de7fcefc09c4affb17fe0c3e04c8eb7}{Print\+Grid2\+DTransfer\+Plane\+XZ}} (size\+\_\+t fragment\+IndX, size\+\_\+t fragment\+IndZ, \mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Вывод в консоль фрагмента переходного слоя заданного типа \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_a71ec796e6c714a84b645bff222a0f4ae}{fragments\+NumX}}
+\begin{DoxyCompactList}\small\item\em Количество фрагментов в плоскости по оси Ox. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_a16d32b0706cc15ad363c76636becc346}{fragments\+NumZ}}
+\begin{DoxyCompactList}\small\item\em Количество фрагментов в плоскости по оси Oz. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_aafcfce80dcff30af6dfd0cdb6ad1e866}{fragment\+Nx}}
+\begin{DoxyCompactList}\small\item\em Количество узлов во фрагментах блока устройства вычислительного узла по оси Ox (кроме последнего) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_a6df749e731109db8ecb57af92e36fc3c}{fragment\+Nz}}
+\begin{DoxyCompactList}\small\item\em Количество узлов во фрагментах блока устройства вычислительного узла по оси Oz (кроме последнего) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_a62e90eb5fcbec9d62e910027a571f950}{fragment\+Nxl}}
+\begin{DoxyCompactList}\small\item\em Количество узлов во фрагментах блока устройства вычислительного узла по оси Ox (последний) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_a3f7fc600ded259ae4a3e74e2748ba893}{fragment\+Nzl}}
+\begin{DoxyCompactList}\small\item\em Количество узлов во фрагментах блока устройства вычислительного узла по оси Oz (последний) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_linear_arrays2_d}{Linear\+Arrays2D}} $>$ $>$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z_aa7962b6bfb5b4b4be2ad54c34885cafd}{linear\+Arrays2D}}
+\begin{DoxyCompactList}\small\item\em Хранилище двумерных массивов \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Описывает смежную двумерную плоскость XZ для передачи данных между устройствами 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_a2c7b87aa23317f0c103e464ea9af777e}\label{struct_grid2_d_transfer_plane_x_z_a2c7b87aa23317f0c103e464ea9af777e}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{Grid2DTransferPlaneXZ()}{Grid2DTransferPlaneXZ()}}
+{\footnotesize\ttfamily Grid2\+DTransfer\+Plane\+XZ\+::\+Grid2\+DTransfer\+Plane\+XZ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{Fragments\+NumX,  }\item[{size\+\_\+t}]{Fragments\+NumZ,  }\item[{size\+\_\+t}]{Fragment\+Nx,  }\item[{size\+\_\+t}]{Fragment\+Nz,  }\item[{size\+\_\+t}]{Fragment\+Nxl,  }\item[{size\+\_\+t}]{Fragment\+Nzl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_a3f1ae06fa9e544ac0fe0861cbb54e6f9}\label{struct_grid2_d_transfer_plane_x_z_a3f1ae06fa9e544ac0fe0861cbb54e6f9}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!LinearArrayCreate@{LinearArrayCreate}}
+\index{LinearArrayCreate@{LinearArrayCreate}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
+{\footnotesize\ttfamily void Grid2\+DTransfer\+Plane\+XZ\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Создание массива данных по имени массива данных model\+Data\+Name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_a8de7fcefc09c4affb17fe0c3e04c8eb7}\label{struct_grid2_d_transfer_plane_x_z_a8de7fcefc09c4affb17fe0c3e04c8eb7}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!PrintGrid2DTransferPlaneXZ@{PrintGrid2DTransferPlaneXZ}}
+\index{PrintGrid2DTransferPlaneXZ@{PrintGrid2DTransferPlaneXZ}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{PrintGrid2DTransferPlaneXZ()}{PrintGrid2DTransferPlaneXZ()}}
+{\footnotesize\ttfamily void Grid2\+DTransfer\+Plane\+XZ\+::\+Print\+Grid2\+DTransfer\+Plane\+XZ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{fragment\+IndX,  }\item[{size\+\_\+t}]{fragment\+IndZ,  }\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Вывод в консоль фрагмента переходного слоя заданного типа 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fragment\+IndX} & Индекс фрагмента переходного слоя по OX\\
+\hline
+{\em fragment\+IndZ} & Индекс фрагмента переходного слоя по OZ\\
+\hline
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid2_d_transfer_plane_x_z_a8de7fcefc09c4affb17fe0c3e04c8eb7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_aafcfce80dcff30af6dfd0cdb6ad1e866}\label{struct_grid2_d_transfer_plane_x_z_aafcfce80dcff30af6dfd0cdb6ad1e866}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!fragmentNx@{fragmentNx}}
+\index{fragmentNx@{fragmentNx}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentNx}{fragmentNx}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DTransfer\+Plane\+XZ\+::fragment\+Nx}
+
+
+
+Количество узлов во фрагментах блока устройства вычислительного узла по оси Ox (кроме последнего) 
+
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_a62e90eb5fcbec9d62e910027a571f950}\label{struct_grid2_d_transfer_plane_x_z_a62e90eb5fcbec9d62e910027a571f950}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!fragmentNxl@{fragmentNxl}}
+\index{fragmentNxl@{fragmentNxl}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentNxl}{fragmentNxl}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DTransfer\+Plane\+XZ\+::fragment\+Nxl}
+
+
+
+Количество узлов во фрагментах блока устройства вычислительного узла по оси Ox (последний) 
+
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_a6df749e731109db8ecb57af92e36fc3c}\label{struct_grid2_d_transfer_plane_x_z_a6df749e731109db8ecb57af92e36fc3c}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!fragmentNz@{fragmentNz}}
+\index{fragmentNz@{fragmentNz}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentNz}{fragmentNz}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DTransfer\+Plane\+XZ\+::fragment\+Nz}
+
+
+
+Количество узлов во фрагментах блока устройства вычислительного узла по оси Oz (кроме последнего) 
+
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_a3f7fc600ded259ae4a3e74e2748ba893}\label{struct_grid2_d_transfer_plane_x_z_a3f7fc600ded259ae4a3e74e2748ba893}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!fragmentNzl@{fragmentNzl}}
+\index{fragmentNzl@{fragmentNzl}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentNzl}{fragmentNzl}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DTransfer\+Plane\+XZ\+::fragment\+Nzl}
+
+
+
+Количество узлов во фрагментах блока устройства вычислительного узла по оси Oz (последний) 
+
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_a71ec796e6c714a84b645bff222a0f4ae}\label{struct_grid2_d_transfer_plane_x_z_a71ec796e6c714a84b645bff222a0f4ae}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!fragmentsNumX@{fragmentsNumX}}
+\index{fragmentsNumX@{fragmentsNumX}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentsNumX}{fragmentsNumX}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DTransfer\+Plane\+XZ\+::fragments\+NumX}
+
+
+
+Количество фрагментов в плоскости по оси Ox. 
+
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_a16d32b0706cc15ad363c76636becc346}\label{struct_grid2_d_transfer_plane_x_z_a16d32b0706cc15ad363c76636becc346}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!fragmentsNumZ@{fragmentsNumZ}}
+\index{fragmentsNumZ@{fragmentsNumZ}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentsNumZ}{fragmentsNumZ}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DTransfer\+Plane\+XZ\+::fragments\+NumZ}
+
+
+
+Количество фрагментов в плоскости по оси Oz. 
+
+\mbox{\Hypertarget{struct_grid2_d_transfer_plane_x_z_aa7962b6bfb5b4b4be2ad54c34885cafd}\label{struct_grid2_d_transfer_plane_x_z_aa7962b6bfb5b4b4be2ad54c34885cafd}} 
+\index{Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}!linearArrays2D@{linearArrays2D}}
+\index{linearArrays2D@{linearArrays2D}!Grid2DTransferPlaneXZ@{Grid2DTransferPlaneXZ}}
+\doxysubsubsection{\texorpdfstring{linearArrays2D}{linearArrays2D}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$\mbox{\hyperlink{struct_linear_arrays2_d}{Linear\+Arrays2D}}$>$ $>$ Grid2\+DTransfer\+Plane\+XZ\+::linear\+Arrays2D}
+
+
+
+Хранилище двумерных массивов 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Grid3\+DSrc/\mbox{\hyperlink{_grid2_d_transfer_plane_x_z_8cpp}{Grid2\+DTransfer\+Plane\+XZ.\+cpp}}\end{DoxyCompactItemize}

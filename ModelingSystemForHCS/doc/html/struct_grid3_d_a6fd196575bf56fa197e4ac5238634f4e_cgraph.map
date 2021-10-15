@@ -1,0 +1,8 @@
+<map id="Grid3D::LinearArrayCreate" name="Grid3D::LinearArrayCreate">
+<area shape="rect" id="node1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,46,180,73"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a84cbd90b6d346d748fd68f46d70d98cb" title="$$$$Создание массива данных по имени массива данных modelDataName" alt="" coords="228,39,377,80"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_device.html#af107b192c40a27f1ceaa9808e5dcf1aa" title="Выделяет память и создает трехмерный массив данных размером (fragmentsNumX, fragmentsNumY,..." alt="" coords="425,39,575,80"/>
+<area shape="rect" id="node4" href="$struct_grid_block3_d_by_device.html#a7cf456e9eb7a11477e498d56e1899b1e" title="$$$$Возвращает указатель на трехмерный фрагмент типа Grid3DFragment по указанным индексам indX,..." alt="" coords="643,5,793,47"/>
+<area shape="rect" id="node5" href="$struct_grid3_d_fragment.html#abba255be66da27e12b1f56ae9458f0af" title="$$$$Выделяет память и создает трехмерный массив LinearArray3D по указаннному имени массива данных mod..." alt="" coords="623,71,813,112"/>
+<area shape="rect" id="node6" href="$struct_linear_arrays3_d.html#a1670d381ef3531ce044b6d93e4a66e67" title="$$$$Создает трехмерный массив данных типа LinearArray3D(nx, ny, nz) для указанного имени массива данн..." alt="" coords="861,71,1047,112"/>
+</map>

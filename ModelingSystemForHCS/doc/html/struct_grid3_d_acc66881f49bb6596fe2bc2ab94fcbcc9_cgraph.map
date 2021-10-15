@@ -1,0 +1,13 @@
+<map id="Grid3D::Decompose" name="Grid3D::Decompose">
+<area shape="rect" id="node1" title="Выполняет декомпозицию расчетной сетки: делит сетку Grid на блоки для выч.устройств кластера (Nodes)" alt="" coords="5,97,144,124"/>
+<area shape="rect" id="node2" href="$struct_computing_cluster.html#a0563b75544e0488616eb8fcd5c584797" title="Возвращает количество вычислительных узлов computingNode на кластере" alt="" coords="192,5,396,32"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_node.html#ac130a90425517c8b2a3472f4a94cbeb0" title="Выполняет декомпозицию блока расчетной сетки вычислительного узла" alt="" coords="219,57,369,98"/>
+<area shape="rect" id="node6" href="$struct_computing_cluster.html#ac3bcc93db0fef87c0c43735c7dc9b450" title="Возвращает производительность кластера" alt="" coords="197,122,391,163"/>
+<area shape="rect" id="node7" href="$struct_grid3_d.html#a225b9cadd31910063ffa3e307854ca69" title=" " alt="" coords="199,188,389,215"/>
+<area shape="rect" id="node4" href="$struct_computing_node.html#a4fd62f63115b4df9e897646ece7f11d9" title="Возвращает количество устройств device на вычислительном узле" alt="" coords="447,21,649,48"/>
+<area shape="rect" id="node5" href="$struct_computing_node.html#a98dc55d90e0cd27d31aa3f7f064d15b8" title="Возвращает суммарную производительность всех устройств на вычислительном узле" alt="" coords="444,73,652,114"/>
+<area shape="rect" id="node8" href="$struct_grid3_d.html#a1d45234170101a36ecc13e273397d2e7" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="700,155,911,181"/>
+<area shape="rect" id="node9" href="$struct_grid3_d.html#aecb5acb358038cb804276bc887649d22" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="453,206,643,247"/>
+<area shape="rect" id="node10" href="$struct_grid_block3_d_by_node.html#a758037080cbb338f9f706943859d8ca9" title="Устанавливает указатели на соседние блоки" alt="" coords="731,206,880,247"/>
+<area shape="rect" id="node11" href="$struct_grid_block3_d_by_node.html#aaaba533a04bd25467fbec436fef028bd" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="959,206,1129,247"/>
+</map>

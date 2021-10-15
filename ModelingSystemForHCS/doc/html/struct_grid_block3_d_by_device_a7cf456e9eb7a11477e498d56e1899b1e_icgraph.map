@@ -1,0 +1,18 @@
+<map id="GridBlock3DByDevice::GetGrid3DFragment" name="GridBlock3DByDevice::GetGrid3DFragment">
+<area shape="rect" id="node1" title="$$$$Возвращает указатель на трехмерный фрагмент типа Grid3DFragment по указанным индексам indX,..." alt="" coords="768,104,917,145"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_device.html#a17ab9df11d079a1f9fbbe6b663bcc1c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="571,5,720,47"/>
+<area shape="rect" id="node5" href="$struct_grid_block3_d_by_device.html#a0858df5417b9f679bfe44f08af60c2c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="571,71,720,112"/>
+<area shape="rect" id="node8" href="$struct_grid_block3_d_by_device.html#afffc37abdeb15510cf41306a672ac03c" title="Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByDevice" alt="" coords="571,136,720,177"/>
+<area shape="rect" id="node14" href="$struct_grid_block3_d_by_device.html#af107b192c40a27f1ceaa9808e5dcf1aa" title="Выделяет память и создает трехмерный массив данных размером (fragmentsNumX, fragmentsNumY,..." alt="" coords="571,233,720,275"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_node.html#ab9784c0c66209712eeb48359613a785d" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="373,5,523,47"/>
+<area shape="rect" id="node4" href="$struct_grid3_d.html#a03f009444f2b6c37f6ed895313028360" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="169,13,307,39"/>
+<area shape="rect" id="node6" href="$struct_grid_block3_d_by_node.html#a0b2335fabdbd978e21b45e353c73d3fa" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="373,71,523,112"/>
+<area shape="rect" id="node7" href="$struct_grid3_d.html#a47b38c1c851787ee967451474e0d5195" title="Выполняет сборку элементов массива, разбросанных по узлам расчетной сетки" alt="" coords="175,78,301,105"/>
+<area shape="rect" id="node9" href="$struct_grid_block3_d_by_node.html#a3315bfef05a205cf77dce526df53b842" title="Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByNode" alt="" coords="373,136,523,177"/>
+<area shape="rect" id="node13" href="$struct_grid_block3_d_by_device.html#a9c4be35cf6e9a663073178833b3f1f97" title="$$$$Выводит в консоль сведения о блоках устройства вычислительного узла по указанному уровню детализа..." alt="" coords="373,201,523,243"/>
+<area shape="rect" id="node10" href="$struct_grid3_d.html#a2098869a82eb1e4fa6aba6ac5ebae74c" title="Возвращает объём оперативной памяти, занимаемый объектом Grid3D" alt="" coords="152,143,324,170"/>
+<area shape="rect" id="node12" href="$struct_grid_block3_d_by_node.html#a31ea314d5ed7de33cd1476d5df0057a2" title="$$$$Выводит в консоль сведения о вычислительных узлах по указанному уровню детализации вывода grid3DP..." alt="" coords="163,195,313,236"/>
+<area shape="rect" id="node11" href="$struct_grid3_d.html#a503fc5d38d72448cedb61e5da632e65c" title="Выводит в консоль параметры расчетной сетки" alt="" coords="5,173,103,199"/>
+<area shape="rect" id="node15" href="$struct_grid_block3_d_by_node.html#a84cbd90b6d346d748fd68f46d70d98cb" title="$$$$Создание массива данных по имени массива данных modelDataName" alt="" coords="373,267,523,308"/>
+<area shape="rect" id="node16" href="$struct_grid3_d.html#a6fd196575bf56fa197e4ac5238634f4e" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="151,274,325,301"/>
+</map>

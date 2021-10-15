@@ -1,0 +1,150 @@
+\hypertarget{struct_linear_arrays2_d}{}\doxysection{Linear\+Arrays2D Struct Reference}
+\label{struct_linear_arrays2_d}\index{LinearArrays2D@{LinearArrays2D}}
+
+
+Реализует хранение объектов класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} с доступом к данным по имени массива данных Model\+Data\+Name  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_linear_arrays2_d_a9a9522a80a9d5d47f3ab9fd19e9164a0}{Linear\+Array\+Create}} (size\+\_\+t nx, size\+\_\+t ny, \mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Создает указатель на объект \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} размером (nx, ny) по указанному имени массива данных model\+Data\+Name \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_linear_arrays2_d_a9f232954dd47eac5c58fa9e7ea91060b}{Get\+Data\+Size\+In\+Mb}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый объектом Linear\+Arrays \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_arrays2_d_aa010d4d566d3be1bfb6d6354216390b6}{Print}} ()
+\begin{DoxyCompactList}\small\item\em Выводит в консоль все объекты класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_linear_arrays2_d_a6c8c0c2ce19520ed3fd5db469ea63191}{Print}} (\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Выводит в консоль объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} по указанному имени массива данных model\+Data\+Name \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} $>$ \mbox{\hyperlink{struct_linear_arrays2_d_a422b83175701a51f82130e309b43e104}{model\+Data\+Names}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}, \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $>$ \mbox{\hyperlink{struct_linear_arrays2_d_a3ada7c2a54d8aa17a39cfc957365e68e}{linear\+Arrays}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализует хранение объектов класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} с доступом к данным по имени массива данных Model\+Data\+Name 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_linear_arrays2_d_a9f232954dd47eac5c58fa9e7ea91060b}\label{struct_linear_arrays2_d_a9f232954dd47eac5c58fa9e7ea91060b}} 
+\index{LinearArrays2D@{LinearArrays2D}!GetDataSizeInMb@{GetDataSizeInMb}}
+\index{GetDataSizeInMb@{GetDataSizeInMb}!LinearArrays2D@{LinearArrays2D}}
+\doxysubsubsection{\texorpdfstring{GetDataSizeInMb()}{GetDataSizeInMb()}}
+{\footnotesize\ttfamily double Linear\+Arrays2\+D\+::\+Get\+Data\+Size\+In\+Mb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает объём оперативной памяти, занимаемый объектом Linear\+Arrays 
+
+\begin{DoxyReturn}{Returns}
+Объём оперативной памяти, занимаемый объектом Linear\+Arrays
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_linear_arrays2_d_a9f232954dd47eac5c58fa9e7ea91060b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_linear_arrays2_d_a9f232954dd47eac5c58fa9e7ea91060b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_linear_arrays2_d_a9a9522a80a9d5d47f3ab9fd19e9164a0}\label{struct_linear_arrays2_d_a9a9522a80a9d5d47f3ab9fd19e9164a0}} 
+\index{LinearArrays2D@{LinearArrays2D}!LinearArrayCreate@{LinearArrayCreate}}
+\index{LinearArrayCreate@{LinearArrayCreate}!LinearArrays2D@{LinearArrays2D}}
+\doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
+{\footnotesize\ttfamily void Linear\+Arrays2\+D\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Создает указатель на объект \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} размером (nx, ny) по указанному имени массива данных model\+Data\+Name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nx} & Число узлов по первой оси\\
+\hline
+{\em ny} & Число узлов по второй оси\\
+\hline
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_linear_arrays2_d_a9a9522a80a9d5d47f3ab9fd19e9164a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_linear_arrays2_d_aa010d4d566d3be1bfb6d6354216390b6}\label{struct_linear_arrays2_d_aa010d4d566d3be1bfb6d6354216390b6}} 
+\index{LinearArrays2D@{LinearArrays2D}!Print@{Print}}
+\index{Print@{Print}!LinearArrays2D@{LinearArrays2D}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Linear\+Arrays2\+D\+::\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит в консоль все объекты класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_linear_arrays2_d_aa010d4d566d3be1bfb6d6354216390b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_linear_arrays2_d_aa010d4d566d3be1bfb6d6354216390b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_linear_arrays2_d_a6c8c0c2ce19520ed3fd5db469ea63191}\label{struct_linear_arrays2_d_a6c8c0c2ce19520ed3fd5db469ea63191}} 
+\index{LinearArrays2D@{LinearArrays2D}!Print@{Print}}
+\index{Print@{Print}!LinearArrays2D@{LinearArrays2D}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Linear\+Arrays2\+D\+::\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит в консоль объект класса \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} по указанному имени массива данных model\+Data\+Name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_linear_arrays2_d_a6c8c0c2ce19520ed3fd5db469ea63191_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_linear_arrays2_d_a3ada7c2a54d8aa17a39cfc957365e68e}\label{struct_linear_arrays2_d_a3ada7c2a54d8aa17a39cfc957365e68e}} 
+\index{LinearArrays2D@{LinearArrays2D}!linearArrays@{linearArrays}}
+\index{linearArrays@{linearArrays}!LinearArrays2D@{LinearArrays2D}}
+\doxysubsubsection{\texorpdfstring{linearArrays}{linearArrays}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}, \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}}$>$ Linear\+Arrays2\+D\+::linear\+Arrays}
+
+\mbox{\Hypertarget{struct_linear_arrays2_d_a422b83175701a51f82130e309b43e104}\label{struct_linear_arrays2_d_a422b83175701a51f82130e309b43e104}} 
+\index{LinearArrays2D@{LinearArrays2D}!modelDataNames@{modelDataNames}}
+\index{modelDataNames@{modelDataNames}!LinearArrays2D@{LinearArrays2D}}
+\doxysubsubsection{\texorpdfstring{modelDataNames}{modelDataNames}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}$>$ Linear\+Arrays2\+D\+::model\+Data\+Names}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Grid3\+DSrc/\mbox{\hyperlink{_linear_arrays2_d_8cpp}{Linear\+Arrays2\+D.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="Grid3DFragment::AssignData" name="Grid3DFragment::AssignData">
+<area shape="rect" id="node1" title="$$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерно..." alt="" coords="585,13,777,39"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_device.html#a17ab9df11d079a1f9fbbe6b663bcc1c1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="388,5,537,47"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_node.html#ab9784c0c66209712eeb48359613a785d" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="191,5,340,47"/>
+<area shape="rect" id="node4" href="$struct_grid3_d.html#a03f009444f2b6c37f6ed895313028360" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,13,143,39"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="LinearArray3D::SetPlaneXOZLast" name="LinearArray3D::SetPlaneXOZLast">
+<area shape="rect" id="node1" title="Передает массив данных фрагмента (последняя по оси OY плоскость XOZ) плоскости planeXOZ" alt="" coords="5,31,220,57"/>
+<area shape="rect" id="node2" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="268,5,432,32"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="268,56,432,83"/>
+</map>

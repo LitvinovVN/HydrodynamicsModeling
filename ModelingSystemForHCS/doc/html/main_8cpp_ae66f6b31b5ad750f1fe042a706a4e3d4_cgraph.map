@@ -1,0 +1,13 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,56,133"/>
+<area shape="rect" id="node2" href="$test_functions_8cpp.html#a0d164c409b8487a280d2973e16a303ba" title=" " alt="" coords="104,81,205,108"/>
+<area shape="rect" id="node3" href="$test_functions_8cpp.html#a65da81fb725a599a1ffd59262e8bfe63" title=" " alt="" coords="104,132,205,159"/>
+<area shape="rect" id="node4" href="$struct_linear_array1_d.html#ab90a1079fae16be1b48de68dd018cea5" title="Вывод элементов фрагмента по слоям XY в консоль" alt="" coords="257,5,396,32"/>
+<area shape="rect" id="node5" href="$struct_linear_array2_d.html#a3ac6571f6aa613225ac5c8e5b79bb30e" title="Выводит элементы фрагмента по слоям XY в консоль" alt="" coords="448,81,587,108"/>
+<area shape="rect" id="node7" href="$struct_linear_array3_d.html#a051ae0fd7c5c689052f8451989f12db2" title="Вывод элементов фрагмента по слоям XY в консоль" alt="" coords="448,183,587,209"/>
+<area shape="rect" id="node9" href="$struct_linear_arrays2_d.html#aa010d4d566d3be1bfb6d6354216390b6" title="Выводит в консоль все объекты класса LinearArray2D" alt="" coords="253,107,400,133"/>
+<area shape="rect" id="node10" href="$struct_linear_arrays3_d.html#a5d0743f5f7e8451b0f543c9033051461" title="$$$$Выводит в консоль все объекты класса LinearArray3D" alt="" coords="253,208,400,235"/>
+<area shape="rect" id="node11" href="$classtimer.html#a8cac498e9c17d70fade048c19cdecbd9" title=" " alt="" coords="284,259,369,285"/>
+<area shape="rect" id="node6" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="635,81,799,108"/>
+<area shape="rect" id="node8" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="635,183,799,209"/>
+</map>

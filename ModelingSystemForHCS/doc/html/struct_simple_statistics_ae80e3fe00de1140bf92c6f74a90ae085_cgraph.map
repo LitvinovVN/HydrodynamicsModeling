@@ -1,0 +1,4 @@
+<map id="SimpleStatistics::getMin" name="SimpleStatistics::getMin">
+<area shape="rect" id="node1" title="Возвращает минимальное значение" alt="" coords="5,5,169,32"/>
+<area shape="rect" id="node2" href="$struct_simple_statistics.html#acee3acfeb29d148d5fa9c7f2e7c4e6ae" title="Сортирует массив данных" alt="" coords="217,5,364,32"/>
+</map>

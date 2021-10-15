@@ -1,0 +1,12 @@
+<map id="GridBlock3DByNode::PrintNode" name="GridBlock3DByNode::PrintNode">
+<area shape="rect" id="node1" title="$$$$Выводит в консоль сведения о вычислительных узлах по указанному уровню детализации вывода grid3DP..." alt="" coords="5,128,155,169"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a3315bfef05a205cf77dce526df53b842" title="Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByNode" alt="" coords="213,5,363,47"/>
+<area shape="rect" id="node8" href="$struct_grid_block3_d_by_node.html#aaaba533a04bd25467fbec436fef028bd" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="203,95,373,136"/>
+<area shape="rect" id="node9" href="$struct_grid_block3_d_by_device.html#a9c4be35cf6e9a663073178833b3f1f97" title="$$$$Выводит в консоль сведения о блоках устройства вычислительного узла по указанному уровню детализа..." alt="" coords="213,160,363,201"/>
+<area shape="rect" id="node10" href="$struct_grid_block3_d_by_node.html#a78db920312e7cf1027a8214c84c30745" title="Выводит в консоль УИД и наименование вычислительного узла" alt="" coords="213,225,363,267"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_device.html#afffc37abdeb15510cf41306a672ac03c" title="Возвращает объём оперативной памяти, занимаемый объектом GridBlock3DByDevice" alt="" coords="421,83,571,124"/>
+<area shape="rect" id="node4" href="$struct_grid3_d_fragment.html#a6b5c39eeea0e5ae8aacbc52dc9bffc44" title="Возвращает объём оперативной памяти, занимаемый фрагментом" alt="" coords="619,61,845,87"/>
+<area shape="rect" id="node7" href="$struct_grid_block3_d_by_device.html#a7cf456e9eb7a11477e498d56e1899b1e" title="$$$$Возвращает указатель на трехмерный фрагмент типа Grid3DFragment по указанным индексам indX,..." alt="" coords="657,112,807,153"/>
+<area shape="rect" id="node5" href="$struct_linear_arrays3_d.html#a0409f68050d44aa840096c7411a163e0" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="893,61,1115,87"/>
+<area shape="rect" id="node6" href="$struct_linear_array3_d.html#a25b92f1c301b79b48b9b11b8fd7521d2" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="1163,61,1377,87"/>
+</map>

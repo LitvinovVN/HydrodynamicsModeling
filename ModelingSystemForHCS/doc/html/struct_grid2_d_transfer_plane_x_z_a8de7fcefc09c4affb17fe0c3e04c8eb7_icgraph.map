@@ -1,0 +1,4 @@
+<map id="Grid2DTransferPlaneXZ::PrintGrid2DTransferPlaneXZ" name="Grid2DTransferPlaneXZ::PrintGrid2DTransferPlaneXZ">
+<area shape="rect" id="node1" title="Вывод в консоль фрагмента переходного слоя заданного типа" alt="" coords="259,13,449,54"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_device.html#a0d57c7ffa60d7ea8fc9155e5b408a872" title="Выводит в консоль объект двумерной плоскости XZ для передачи данных" alt="" coords="5,5,211,61"/>
+</map>

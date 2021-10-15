@@ -1,0 +1,4 @@
+<map id="ComputingCluster::GetClusterPerfomance" name="ComputingCluster::GetClusterPerfomance">
+<area shape="rect" id="node1" title="Возвращает производительность кластера" alt="" coords="192,5,387,47"/>
+<area shape="rect" id="node2" href="$struct_grid3_d.html#acc66881f49bb6596fe2bc2ab94fcbcc9" title="Выполняет декомпозицию расчетной сетки: делит сетку Grid на блоки для выч.устройств кластера (Nodes)" alt="" coords="5,13,144,39"/>
+</map>

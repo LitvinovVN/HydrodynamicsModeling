@@ -1,0 +1,10 @@
+<map id="GridBlock3DByNode::GetGridBlock3DByDevice" name="GridBlock3DByNode::GetGridBlock3DByDevice">
+<area shape="rect" id="node1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="915,86,1085,127"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_node.html#a34f63b98334119725dac3d400f5fa735" title="Выводит в консоль объект двумерной плоскости XZ для передачи данных" alt="" coords="669,5,867,61"/>
+<area shape="rect" id="node3" href="$struct_grid_block3_d_by_node.html#a31ea314d5ed7de33cd1476d5df0057a2" title="$$$$Выводит в консоль сведения о вычислительных узлах по указанному уровню детализации вывода grid3DP..." alt="" coords="693,86,843,127"/>
+<area shape="rect" id="node5" href="$struct_grid_block3_d_by_node.html#a758037080cbb338f9f706943859d8ca9" title="Устанавливает указатели на соседние блоки" alt="" coords="693,151,843,193"/>
+<area shape="rect" id="node4" href="$struct_grid3_d.html#a503fc5d38d72448cedb61e5da632e65c" title="Выводит в консоль параметры расчетной сетки" alt="" coords="477,93,575,120"/>
+<area shape="rect" id="node6" href="$struct_grid3_d.html#aecb5acb358038cb804276bc887649d22" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="431,151,621,193"/>
+<area shape="rect" id="node7" href="$struct_grid3_d.html#a225b9cadd31910063ffa3e307854ca69" title=" " alt="" coords="192,159,383,185"/>
+<area shape="rect" id="node8" href="$struct_grid3_d.html#acc66881f49bb6596fe2bc2ab94fcbcc9" title="Выполняет декомпозицию расчетной сетки: делит сетку Grid на блоки для выч.устройств кластера (Nodes)" alt="" coords="5,159,144,185"/>
+</map>

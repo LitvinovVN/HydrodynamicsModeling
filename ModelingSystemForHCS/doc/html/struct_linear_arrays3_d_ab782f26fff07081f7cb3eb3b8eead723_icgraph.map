@@ -1,0 +1,4 @@
+<map id="LinearArrays3D::GetLinearArrays2DXYFirst" name="LinearArrays3D::GetLinearArrays2DXYFirst">
+<area shape="rect" id="node1" title="$$$$Создаёт в памяти и возвращает указатель на двумерный массив данных типа LinearArray2D по имени ма..." alt="" coords="231,5,405,47"/>
+<area shape="rect" id="node2" href="$struct_grid3_d_fragment.html#adba87598133dc5ceac23e4aea87c7b35" title="Возвращает указатель на первую плоскость XY фрагмента по оси Oz от начала координат по имени массива ..." alt="" coords="5,5,183,47"/>
+</map>

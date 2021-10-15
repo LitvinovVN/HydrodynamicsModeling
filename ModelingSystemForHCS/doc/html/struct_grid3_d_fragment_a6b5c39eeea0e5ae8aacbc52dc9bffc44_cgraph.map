@@ -1,0 +1,5 @@
+<map id="Grid3DFragment::GetDataSizeInMb" name="Grid3DFragment::GetDataSizeInMb">
+<area shape="rect" id="node1" title="Возвращает объём оперативной памяти, занимаемый фрагментом" alt="" coords="5,5,232,32"/>
+<area shape="rect" id="node2" href="$struct_linear_arrays3_d.html#a0409f68050d44aa840096c7411a163e0" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="280,5,501,32"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a25b92f1c301b79b48b9b11b8fd7521d2" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="549,5,764,32"/>
+</map>

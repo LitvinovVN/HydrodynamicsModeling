@@ -1,0 +1,4 @@
+<map id="GridBlock3DByNode::PrintNode" name="GridBlock3DByNode::PrintNode">
+<area shape="rect" id="node1" title="$$$$Выводит в консоль сведения о вычислительных узлах по указанному уровню детализации вывода grid3DP..." alt="" coords="151,5,300,47"/>
+<area shape="rect" id="node2" href="$struct_grid3_d.html#a503fc5d38d72448cedb61e5da632e65c" title="Выводит в консоль параметры расчетной сетки" alt="" coords="5,13,103,39"/>
+</map>

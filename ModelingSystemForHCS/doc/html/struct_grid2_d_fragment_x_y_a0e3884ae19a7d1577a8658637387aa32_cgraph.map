@@ -1,0 +1,6 @@
+<map id="Grid2DFragmentXY::Compose" name="Grid2DFragmentXY::Compose">
+<area shape="rect" id="node1" title="$$$$Заполняет одномерный массив исходных данных data данными из двумерных массивов данных фрагментов ..." alt="" coords="5,35,201,61"/>
+<area shape="rect" id="node2" href="$struct_linear_array2_d.html#ac038fe7cd30819c6c3c873f0f110f23e" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="257,5,439,32"/>
+<area shape="rect" id="node4" href="$struct_grid2_d_fragment_x_y.html#a7e2a1e3217aa4c0be421e8b5e35cdfc3" title="$$$$Возвращает указатель на двумерный массив LinearArray2D по указанному имени массива данных modelDa..." alt="" coords="249,57,447,98"/>
+<area shape="rect" id="node3" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="495,5,659,32"/>
+</map>

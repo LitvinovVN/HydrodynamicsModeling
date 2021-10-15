@@ -1,0 +1,7 @@
+<map id="Grid3DFragment::PrintFragment" name="Grid3DFragment::PrintFragment">
+<area shape="rect" id="node1" title="$$$$Выводит в консоль сведения о фрагменте в блоке устройства вычислительного узла по указанному уров..." alt="" coords="5,35,212,61"/>
+<area shape="rect" id="node2" href="$struct_grid3_d_fragment.html#a6b5c39eeea0e5ae8aacbc52dc9bffc44" title="Возвращает объём оперативной памяти, занимаемый фрагментом" alt="" coords="260,5,487,32"/>
+<area shape="rect" id="node5" href="$struct_grid3_d_fragment.html#ad490818c034cb28996783882bd268acd" title="$$$$Выводит в консоль индексы фрагмента в блоке устройства вычислительного узла" alt="" coords="282,57,465,98"/>
+<area shape="rect" id="node3" href="$struct_linear_arrays3_d.html#a0409f68050d44aa840096c7411a163e0" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="535,5,756,32"/>
+<area shape="rect" id="node4" href="$struct_linear_array3_d.html#a25b92f1c301b79b48b9b11b8fd7521d2" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="804,5,1019,32"/>
+</map>

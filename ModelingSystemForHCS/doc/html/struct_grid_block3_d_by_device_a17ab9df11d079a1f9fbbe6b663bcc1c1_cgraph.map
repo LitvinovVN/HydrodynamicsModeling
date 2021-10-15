@@ -1,0 +1,8 @@
+<map id="GridBlock3DByDevice::AssignData" name="GridBlock3DByDevice::AssignData">
+<area shape="rect" id="node1" title="$$$$&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—" alt="" coords="5,64,155,105"/>
+<area shape="rect" id="node2" href="$struct_grid3_d_fragment.html#ac7a248dcbe59964f73028e084a774bf6" title="$$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерно..." alt="" coords="203,42,395,69"/>
+<area shape="rect" id="node6" href="$struct_grid_block3_d_by_device.html#a7cf456e9eb7a11477e498d56e1899b1e" title="$$$$Возвращает указатель на трехмерный фрагмент типа Grid3DFragment по указанным индексам indX,..." alt="" coords="224,93,373,135"/>
+<area shape="rect" id="node3" href="$struct_grid3_d_fragment.html#a5b521f7ca604b2bfd0948e9462dc7245" title="$$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelD..." alt="" coords="443,5,624,47"/>
+<area shape="rect" id="node4" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="443,71,623,98"/>
+<area shape="rect" id="node5" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="672,71,836,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="LinearArrays2D::Print" name="LinearArrays2D::Print">
+<area shape="rect" id="node1" title="Выводит в консоль все объекты класса LinearArray2D" alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$struct_linear_array2_d.html#a3ac6571f6aa613225ac5c8e5b79bb30e" title="Выводит элементы фрагмента по слоям XY в консоль" alt="" coords="200,5,339,32"/>
+<area shape="rect" id="node3" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="387,5,551,32"/>
+</map>

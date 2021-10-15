@@ -1,0 +1,4 @@
+<map id="SimpleStatistics::getMax" name="SimpleStatistics::getMax">
+<area shape="rect" id="node1" title="Возвращает максимальное значение" alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node2" href="$struct_simple_statistics.html#acee3acfeb29d148d5fa9c7f2e7c4e6ae" title="Сортирует массив данных" alt="" coords="221,5,368,32"/>
+</map>

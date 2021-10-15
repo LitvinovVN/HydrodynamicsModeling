@@ -1,0 +1,6 @@
+<map id="Grid3DFragment::AssignData" name="Grid3DFragment::AssignData">
+<area shape="rect" id="node1" title="$$$$Заполняет трехмерный массив данных фрагмента размером (nx, ny, nz) элементами исходного одномерно..." alt="" coords="5,42,197,69"/>
+<area shape="rect" id="node2" href="$struct_grid3_d_fragment.html#a5b521f7ca604b2bfd0948e9462dc7245" title="$$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelD..." alt="" coords="245,5,427,47"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="246,71,426,98"/>
+<area shape="rect" id="node4" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="475,71,639,98"/>
+</map>

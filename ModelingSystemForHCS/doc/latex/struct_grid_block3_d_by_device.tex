@@ -1,0 +1,578 @@
+\hypertarget{struct_grid_block3_d_by_device}{}\doxysection{Grid\+Block3\+DBy\+Device Struct Reference}
+\label{struct_grid_block3_d_by_device}\index{GridBlock3DByDevice@{GridBlock3DByDevice}}
+
+
+Трехмерный блок расчетной сетки вычислительного устройства  
+
+
+
+
+Collaboration diagram for Grid\+Block3\+DBy\+Device\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{struct_grid_block3_d_by_device__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_grid_block3_d_by_device_a65d4a720d4a69018168f7e3bcc304ce9}{Grid\+Block3\+DBy\+Device}} (size\+\_\+t Block\+Nx, size\+\_\+t Block\+Ny, size\+\_\+t Block\+Nz, size\+\_\+t Device\+Index, std\+::string Device\+Name, size\+\_\+t Fragments\+NumX, size\+\_\+t Fragments\+NumY, size\+\_\+t Fragments\+NumZ, size\+\_\+t Device\+Offset\+YBy\+Node, size\+\_\+t Device\+OffsetY, \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$Device\+Prev=NULL, \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$Device\+Next=NULL)
+\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a1399452c}{Create\+Grid2\+DTransfer\+Planes\+XZ}} ()
+\begin{DoxyCompactList}\small\item\em Создаёт двумерные плоскости XZ для передачи данных между вычислителями \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}{Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Create}} (\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} $\ast$ \mbox{\hyperlink{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e}{Get\+Grid3\+DFragment}} (size\+\_\+t indX, size\+\_\+t indY, size\+\_\+t indZ)
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Возвращает указатель на трехмерный фрагмент типа \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} по указанным индексам indX, indY, indZ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa}{Linear\+Array\+Create}} (\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Выделяет память и создает трехмерный массив данных размером (fragments\+NumX, fragments\+NumY, fragments\+NumZ) по указанному имени массива данных model\+Data\+Name \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}{Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Print}} (size\+\_\+t transfer\+Plane\+XZIndex, size\+\_\+t fragment\+IndX, size\+\_\+t fragment\+IndZ, \mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Выводит в консоль объект двумерной плоскости XZ для передачи данных \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1}{Assign\+Data}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nz, \mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_a0858df5417b9f679bfe44f08af60c2c1}{Compose}} (double $\ast$data, size\+\_\+t nx, size\+\_\+t ny, size\+\_\+t nz, \mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em \$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c}{Get\+Data\+Size\+In\+Mb}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_a9c7cb50c07cd6b06c11272b0dd2a077e}{Print\+Device\+Name}} (\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$grid\+Block3\+DBy\+Device)
+\begin{DoxyCompactList}\small\item\em Выводит в консоль УИД и наименование вычислительного узла grid\+Block3\+DBy\+Device \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97}{Print\+Device}} (\mbox{\hyperlink{_enums_8cpp_a85710a4d27ce4a3fec67b009c8910ead}{Grid3\+DPrint\+Detalisation}} grid3\+DPrint\+Detalisation)
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Выводит в консоль сведения о блоках устройства вычислительного узла по указанному уровню детализации вывода grid3\+DPrint\+Detalisation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_ae25747d82190507e7134ad363c65e758}{block\+Nx}}
+\begin{DoxyCompactList}\small\item\em количество узлов в блоке устройства вычислительного узла по оси Ox \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_ab4c339d9f8519a1b83a98c807b0f4d29}{block\+Ny}}
+\begin{DoxyCompactList}\small\item\em количество узлов в блоке устройства вычислительного узла по оси Oy \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_aecd539b05ae53c0e28f4f96496ab0f75}{block\+Nz}}
+\begin{DoxyCompactList}\small\item\em количество узлов в блоке устройства вычислительного узла по оси Oz \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a8355c69faffe60d5506a2296931ef359}{device\+Index}}
+\begin{DoxyCompactList}\small\item\em номер вычислительного устройства в вычислительном узле \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_grid_block3_d_by_device_adf66f0b8da35e4860c720d4c382b7d72}{device\+Name}}
+\begin{DoxyCompactList}\small\item\em наименование вычислительного устройства, обрабатывающего блок \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a61edbadd98f1be9ebb9500ea710aa6f0}{fragments\+NumX}}
+\begin{DoxyCompactList}\small\item\em количество фрагментов в блоке устройства по оси Ox \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_ac50d1af068c6a907a243bcb7938d708e}{fragments\+NumY}}
+\begin{DoxyCompactList}\small\item\em количество фрагментов в блоке устройства по оси Oy \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a660d9be95afe3caf38d721f824bf8e00}{fragments\+NumZ}}
+\begin{DoxyCompactList}\small\item\em количество фрагментов в блоке устройства по оси Oz \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a90c3d94997c781b17862673d49566ccc}{device\+Offset\+YBy\+Node}}
+\begin{DoxyCompactList}\small\item\em смещение блока вычислительного устройства по оси Oy (относительно узла с координатами (0, 0, 0) вычислительного узла) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a9507d699102838b035c9b29eb24a55d9}{device\+OffsetY}}
+\begin{DoxyCompactList}\small\item\em смещение блока вычислительного устройства по оси Oy (относительно узла с координатами (0, 0, 0) глобальной расчетной сетки) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$ \mbox{\hyperlink{struct_grid_block3_d_by_device_ab448c919f7e659dc1cbba1fe238a3908}{device\+Prev}}
+\begin{DoxyCompactList}\small\item\em указатель на блок расчетной сетки, обрабатываемый предыдущим вычислительным устройством \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$ \mbox{\hyperlink{struct_grid_block3_d_by_device_a7f787a27764ee7ffcbf7cd164becdd86}{device\+Next}}
+\begin{DoxyCompactList}\small\item\em указатель на блок расчетной сетки, обрабатываемый следующим вычислительным устройством \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a48527d2bba9f068bd721914015661766}{fragment\+Nx}}
+\begin{DoxyCompactList}\small\item\em количество узлов во фрагментах блока устройства вычислительного узла по оси Ox (кроме последнего) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_ad94f255008969b401006658993505834}{fragment\+Ny}}
+\begin{DoxyCompactList}\small\item\em количество узлов во фрагментах блока устройства вычислительного узла по оси Oy (кроме последнего) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a493d5d0247a55a7fe507b973b9c36f3c}{fragment\+Nz}}
+\begin{DoxyCompactList}\small\item\em количество узлов во фрагментах блока устройства вычислительного узла по оси Oz (кроме последнего) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a292cf7543098a0e480f0fdc9c849c676}{fragment\+Nxl}}
+\begin{DoxyCompactList}\small\item\em количество узлов во фрагментах блока устройства вычислительного узла по оси Ox (последний) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_a40c17647ff2b48288fa3cd552806dc1b}{fragment\+Nyl}}
+\begin{DoxyCompactList}\small\item\em количество узлов во фрагментах блока устройства вычислительного узла по оси Oy (последний) \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid_block3_d_by_device_abb49ed4e4b74659dc0a9be1cb58d581e}{fragment\+Nzl}}
+\begin{DoxyCompactList}\small\item\em количество узлов во фрагментах блока устройства вычислительного узла по оси Oz (последний) \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} $>$ $>$ $>$ \mbox{\hyperlink{struct_grid_block3_d_by_device_af522dd79f2468d3360ed7f91ba57a93d}{fragments}}
+\begin{DoxyCompactList}\small\item\em трехмерный массив фрагментов блока расчетной сетки вычислительного устройства вычислительного узла \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTransfer\+Plane\+XZ}} $>$ \mbox{\hyperlink{struct_grid_block3_d_by_device_ae8b082b95ebc81cc9649a6587d15cf0f}{grid2\+DTransfer\+Planes\+XZ}}
+\begin{DoxyCompactList}\small\item\em Вектор двумерных плоскостей XZ для передачи данных между вычислителями \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Трехмерный блок расчетной сетки вычислительного устройства 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a65d4a720d4a69018168f7e3bcc304ce9}\label{struct_grid_block3_d_by_device_a65d4a720d4a69018168f7e3bcc304ce9}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{GridBlock3DByDevice()}{GridBlock3DByDevice()}}
+{\footnotesize\ttfamily Grid\+Block3\+DBy\+Device\+::\+Grid\+Block3\+DBy\+Device (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{Block\+Nx,  }\item[{size\+\_\+t}]{Block\+Ny,  }\item[{size\+\_\+t}]{Block\+Nz,  }\item[{size\+\_\+t}]{Device\+Index,  }\item[{std\+::string}]{Device\+Name,  }\item[{size\+\_\+t}]{Fragments\+NumX,  }\item[{size\+\_\+t}]{Fragments\+NumY,  }\item[{size\+\_\+t}]{Fragments\+NumZ,  }\item[{size\+\_\+t}]{Device\+Offset\+YBy\+Node,  }\item[{size\+\_\+t}]{Device\+OffsetY,  }\item[{\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$}]{Device\+Prev = {\ttfamily NULL},  }\item[{\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$}]{Device\+Next = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1}\label{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!AssignData@{AssignData}}
+\index{AssignData@{AssignData}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{AssignData()}{AssignData()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Assign\+Data (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nz,  }\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Массив исходных данных data\\
+\hline
+{\em nx} & Число узлов расчетной сетки по оси OX\\
+\hline
+{\em ny} & Число узлов расчетной сетки по оси OY\\
+\hline
+{\em nz} & Число узлов расчетной сетки по оси OZ\\
+\hline
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_a17ab9df11d079a1f9fbbe6b663bcc1c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a0858df5417b9f679bfe44f08af60c2c1}\label{struct_grid_block3_d_by_device_a0858df5417b9f679bfe44f08af60c2c1}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!Compose@{Compose}}
+\index{Compose@{Compose}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{Compose()}{Compose()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Compose (\begin{DoxyParamCaption}\item[{double $\ast$}]{data,  }\item[{size\+\_\+t}]{nx,  }\item[{size\+\_\+t}]{ny,  }\item[{size\+\_\+t}]{nz,  }\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Массив исходных данных data\\
+\hline
+{\em nx} & Число узлов расчетной сетки по оси OX\\
+\hline
+{\em ny} & Число узлов расчетной сетки по оси OY\\
+\hline
+{\em nz} & Число узлов расчетной сетки по оси OZ\\
+\hline
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_a0858df5417b9f679bfe44f08af60c2c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_a0858df5417b9f679bfe44f08af60c2c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a1399452c}\label{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a1399452c}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!CreateGrid2DTransferPlanesXZ@{CreateGrid2DTransferPlanesXZ}}
+\index{CreateGrid2DTransferPlanesXZ@{CreateGrid2DTransferPlanesXZ}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{CreateGrid2DTransferPlanesXZ()}{CreateGrid2DTransferPlanesXZ()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Create\+Grid2\+DTransfer\+Planes\+XZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Создаёт двумерные плоскости XZ для передачи данных между вычислителями 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_ac60663d0c9378e2cb6eb1a4a1399452c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c}\label{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!GetDataSizeInMb@{GetDataSizeInMb}}
+\index{GetDataSizeInMb@{GetDataSizeInMb}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{GetDataSizeInMb()}{GetDataSizeInMb()}}
+{\footnotesize\ttfamily double Grid\+Block3\+DBy\+Device\+::\+Get\+Data\+Size\+In\+Mb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} 
+
+\begin{DoxyReturn}{Returns}
+Объём оперативной памяти, занимаемый объектом \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}}
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_afffc37abdeb15510cf41306a672ac03c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e}\label{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!GetGrid3DFragment@{GetGrid3DFragment}}
+\index{GetGrid3DFragment@{GetGrid3DFragment}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{GetGrid3DFragment()}{GetGrid3DFragment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} $\ast$ Grid\+Block3\+DBy\+Device\+::\+Get\+Grid3\+DFragment (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{indX,  }\item[{size\+\_\+t}]{indY,  }\item[{size\+\_\+t}]{indZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$Возвращает указатель на трехмерный фрагмент типа \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} по указанным индексам indX, indY, indZ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indX} & Индекс фрагмента по оси OX\\
+\hline
+{\em indY} & Индекс фрагмента по оси OX\\
+\hline
+{\em indZ} & Индекс фрагмента по оси OX\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Указатель на трехмерный фрагмент типа \mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}} по указанным индексам indX, indY, indZ
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_a7cf456e9eb7a11477e498d56e1899b1e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}\label{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!Grid2DTransferPlanesXZLinearArrayCreate@{Grid2DTransferPlanesXZLinearArrayCreate}}
+\index{Grid2DTransferPlanesXZLinearArrayCreate@{Grid2DTransferPlanesXZLinearArrayCreate}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{Grid2DTransferPlanesXZLinearArrayCreate()}{Grid2DTransferPlanesXZLinearArrayCreate()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Добавляет в объект двумерной плоскости XZ для передачи данных массив требуемого типа 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_acd907c2468215cbe330b84acdd2343eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}\label{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!Grid2DTransferPlanesXZLinearArrayPrint@{Grid2DTransferPlanesXZLinearArrayPrint}}
+\index{Grid2DTransferPlanesXZLinearArrayPrint@{Grid2DTransferPlanesXZLinearArrayPrint}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{Grid2DTransferPlanesXZLinearArrayPrint()}{Grid2DTransferPlanesXZLinearArrayPrint()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Grid2\+DTransfer\+Planes\+XZLinear\+Array\+Print (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{transfer\+Plane\+XZIndex,  }\item[{size\+\_\+t}]{fragment\+IndX,  }\item[{size\+\_\+t}]{fragment\+IndZ,  }\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит в консоль объект двумерной плоскости XZ для передачи данных 
+
+~\newline
+ 
+\begin{DoxyParams}{Parameters}
+{\em transfer\+Plane\+XZIndex} & Индекс переходного слоя\\
+\hline
+{\em fragment\+IndX} & Индекс фрагмента переходного слоя по OX\\
+\hline
+{\em fragment\+IndZ} & Индекс фрагмента переходного слоя по OZ\\
+\hline
+{\em model\+Data\+Name} & Тип массива данных\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_a0d57c7ffa60d7ea8fc9155e5b408a872_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa}\label{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!LinearArrayCreate@{LinearArrayCreate}}
+\index{LinearArrayCreate@{LinearArrayCreate}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выделяет память и создает трехмерный массив данных размером (fragments\+NumX, fragments\+NumY, fragments\+NumZ) по указанному имени массива данных model\+Data\+Name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_af107b192c40a27f1ceaa9808e5dcf1aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97}\label{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!PrintDevice@{PrintDevice}}
+\index{PrintDevice@{PrintDevice}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{PrintDevice()}{PrintDevice()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Print\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_enums_8cpp_a85710a4d27ce4a3fec67b009c8910ead}{Grid3\+DPrint\+Detalisation}}}]{grid3\+DPrint\+Detalisation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$Выводит в консоль сведения о блоках устройства вычислительного узла по указанному уровню детализации вывода grid3\+DPrint\+Detalisation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid3\+DPrint\+Detalisation} & Уровень детализации вывода grid3\+DPrint\+Detalisation\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid_block3_d_by_device_a9c4be35cf6e9a663073178833b3f1f97_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a9c7cb50c07cd6b06c11272b0dd2a077e}\label{struct_grid_block3_d_by_device_a9c7cb50c07cd6b06c11272b0dd2a077e}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!PrintDeviceName@{PrintDeviceName}}
+\index{PrintDeviceName@{PrintDeviceName}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{PrintDeviceName()}{PrintDeviceName()}}
+{\footnotesize\ttfamily void Grid\+Block3\+DBy\+Device\+::\+Print\+Device\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}} $\ast$}]{grid\+Block3\+DBy\+Device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выводит в консоль УИД и наименование вычислительного узла grid\+Block3\+DBy\+Device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid\+Block3\+DBy\+Device} & Трехмерный блок расчетной сетки вычислительного узла\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ae25747d82190507e7134ad363c65e758}\label{struct_grid_block3_d_by_device_ae25747d82190507e7134ad363c65e758}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!blockNx@{blockNx}}
+\index{blockNx@{blockNx}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{blockNx}{blockNx}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::block\+Nx}
+
+
+
+количество узлов в блоке устройства вычислительного узла по оси Ox 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ab4c339d9f8519a1b83a98c807b0f4d29}\label{struct_grid_block3_d_by_device_ab4c339d9f8519a1b83a98c807b0f4d29}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!blockNy@{blockNy}}
+\index{blockNy@{blockNy}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{blockNy}{blockNy}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::block\+Ny}
+
+
+
+количество узлов в блоке устройства вычислительного узла по оси Oy 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_aecd539b05ae53c0e28f4f96496ab0f75}\label{struct_grid_block3_d_by_device_aecd539b05ae53c0e28f4f96496ab0f75}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!blockNz@{blockNz}}
+\index{blockNz@{blockNz}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{blockNz}{blockNz}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::block\+Nz}
+
+
+
+количество узлов в блоке устройства вычислительного узла по оси Oz 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a8355c69faffe60d5506a2296931ef359}\label{struct_grid_block3_d_by_device_a8355c69faffe60d5506a2296931ef359}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!deviceIndex@{deviceIndex}}
+\index{deviceIndex@{deviceIndex}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{deviceIndex}{deviceIndex}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::device\+Index}
+
+
+
+номер вычислительного устройства в вычислительном узле 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_adf66f0b8da35e4860c720d4c382b7d72}\label{struct_grid_block3_d_by_device_adf66f0b8da35e4860c720d4c382b7d72}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!deviceName@{deviceName}}
+\index{deviceName@{deviceName}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{deviceName}{deviceName}}
+{\footnotesize\ttfamily std\+::string Grid\+Block3\+DBy\+Device\+::device\+Name}
+
+
+
+наименование вычислительного устройства, обрабатывающего блок 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a7f787a27764ee7ffcbf7cd164becdd86}\label{struct_grid_block3_d_by_device_a7f787a27764ee7ffcbf7cd164becdd86}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!deviceNext@{deviceNext}}
+\index{deviceNext@{deviceNext}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{deviceNext}{deviceNext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}}$\ast$ Grid\+Block3\+DBy\+Device\+::device\+Next}
+
+
+
+указатель на блок расчетной сетки, обрабатываемый следующим вычислительным устройством 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a9507d699102838b035c9b29eb24a55d9}\label{struct_grid_block3_d_by_device_a9507d699102838b035c9b29eb24a55d9}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!deviceOffsetY@{deviceOffsetY}}
+\index{deviceOffsetY@{deviceOffsetY}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{deviceOffsetY}{deviceOffsetY}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::device\+OffsetY}
+
+
+
+смещение блока вычислительного устройства по оси Oy (относительно узла с координатами (0, 0, 0) глобальной расчетной сетки) 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a90c3d94997c781b17862673d49566ccc}\label{struct_grid_block3_d_by_device_a90c3d94997c781b17862673d49566ccc}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!deviceOffsetYByNode@{deviceOffsetYByNode}}
+\index{deviceOffsetYByNode@{deviceOffsetYByNode}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{deviceOffsetYByNode}{deviceOffsetYByNode}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::device\+Offset\+YBy\+Node}
+
+
+
+смещение блока вычислительного устройства по оси Oy (относительно узла с координатами (0, 0, 0) вычислительного узла) 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ab448c919f7e659dc1cbba1fe238a3908}\label{struct_grid_block3_d_by_device_ab448c919f7e659dc1cbba1fe238a3908}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!devicePrev@{devicePrev}}
+\index{devicePrev@{devicePrev}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{devicePrev}{devicePrev}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_grid_block3_d_by_device}{Grid\+Block3\+DBy\+Device}}$\ast$ Grid\+Block3\+DBy\+Device\+::device\+Prev}
+
+
+
+указатель на блок расчетной сетки, обрабатываемый предыдущим вычислительным устройством 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a48527d2bba9f068bd721914015661766}\label{struct_grid_block3_d_by_device_a48527d2bba9f068bd721914015661766}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentNx@{fragmentNx}}
+\index{fragmentNx@{fragmentNx}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentNx}{fragmentNx}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragment\+Nx}
+
+
+
+количество узлов во фрагментах блока устройства вычислительного узла по оси Ox (кроме последнего) 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a292cf7543098a0e480f0fdc9c849c676}\label{struct_grid_block3_d_by_device_a292cf7543098a0e480f0fdc9c849c676}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentNxl@{fragmentNxl}}
+\index{fragmentNxl@{fragmentNxl}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentNxl}{fragmentNxl}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragment\+Nxl}
+
+
+
+количество узлов во фрагментах блока устройства вычислительного узла по оси Ox (последний) 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ad94f255008969b401006658993505834}\label{struct_grid_block3_d_by_device_ad94f255008969b401006658993505834}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentNy@{fragmentNy}}
+\index{fragmentNy@{fragmentNy}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentNy}{fragmentNy}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragment\+Ny}
+
+
+
+количество узлов во фрагментах блока устройства вычислительного узла по оси Oy (кроме последнего) 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a40c17647ff2b48288fa3cd552806dc1b}\label{struct_grid_block3_d_by_device_a40c17647ff2b48288fa3cd552806dc1b}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentNyl@{fragmentNyl}}
+\index{fragmentNyl@{fragmentNyl}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentNyl}{fragmentNyl}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragment\+Nyl}
+
+
+
+количество узлов во фрагментах блока устройства вычислительного узла по оси Oy (последний) 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a493d5d0247a55a7fe507b973b9c36f3c}\label{struct_grid_block3_d_by_device_a493d5d0247a55a7fe507b973b9c36f3c}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentNz@{fragmentNz}}
+\index{fragmentNz@{fragmentNz}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentNz}{fragmentNz}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragment\+Nz}
+
+
+
+количество узлов во фрагментах блока устройства вычислительного узла по оси Oz (кроме последнего) 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_abb49ed4e4b74659dc0a9be1cb58d581e}\label{struct_grid_block3_d_by_device_abb49ed4e4b74659dc0a9be1cb58d581e}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentNzl@{fragmentNzl}}
+\index{fragmentNzl@{fragmentNzl}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentNzl}{fragmentNzl}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragment\+Nzl}
+
+
+
+количество узлов во фрагментах блока устройства вычислительного узла по оси Oz (последний) 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_af522dd79f2468d3360ed7f91ba57a93d}\label{struct_grid_block3_d_by_device_af522dd79f2468d3360ed7f91ba57a93d}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragments@{fragments}}
+\index{fragments@{fragments}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragments}{fragments}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector $<$std\+::vector$<$\mbox{\hyperlink{struct_grid3_d_fragment}{Grid3\+DFragment}}$>$ $>$ $>$ Grid\+Block3\+DBy\+Device\+::fragments}
+
+
+
+трехмерный массив фрагментов блока расчетной сетки вычислительного устройства вычислительного узла 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a61edbadd98f1be9ebb9500ea710aa6f0}\label{struct_grid_block3_d_by_device_a61edbadd98f1be9ebb9500ea710aa6f0}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentsNumX@{fragmentsNumX}}
+\index{fragmentsNumX@{fragmentsNumX}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentsNumX}{fragmentsNumX}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragments\+NumX}
+
+
+
+количество фрагментов в блоке устройства по оси Ox 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ac50d1af068c6a907a243bcb7938d708e}\label{struct_grid_block3_d_by_device_ac50d1af068c6a907a243bcb7938d708e}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentsNumY@{fragmentsNumY}}
+\index{fragmentsNumY@{fragmentsNumY}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentsNumY}{fragmentsNumY}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragments\+NumY}
+
+
+
+количество фрагментов в блоке устройства по оси Oy 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_a660d9be95afe3caf38d721f824bf8e00}\label{struct_grid_block3_d_by_device_a660d9be95afe3caf38d721f824bf8e00}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!fragmentsNumZ@{fragmentsNumZ}}
+\index{fragmentsNumZ@{fragmentsNumZ}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{fragmentsNumZ}{fragmentsNumZ}}
+{\footnotesize\ttfamily size\+\_\+t Grid\+Block3\+DBy\+Device\+::fragments\+NumZ}
+
+
+
+количество фрагментов в блоке устройства по оси Oz 
+
+\mbox{\Hypertarget{struct_grid_block3_d_by_device_ae8b082b95ebc81cc9649a6587d15cf0f}\label{struct_grid_block3_d_by_device_ae8b082b95ebc81cc9649a6587d15cf0f}} 
+\index{GridBlock3DByDevice@{GridBlock3DByDevice}!grid2DTransferPlanesXZ@{grid2DTransferPlanesXZ}}
+\index{grid2DTransferPlanesXZ@{grid2DTransferPlanesXZ}!GridBlock3DByDevice@{GridBlock3DByDevice}}
+\doxysubsubsection{\texorpdfstring{grid2DTransferPlanesXZ}{grid2DTransferPlanesXZ}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_grid2_d_transfer_plane_x_z}{Grid2\+DTransfer\+Plane\+XZ}}$>$ Grid\+Block3\+DBy\+Device\+::grid2\+DTransfer\+Planes\+XZ}
+
+
+
+Вектор двумерных плоскостей XZ для передачи данных между вычислителями 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Grid3\+DSrc/\mbox{\hyperlink{_grid_block3_d_by_device_8cpp}{Grid\+Block3\+DBy\+Device.\+cpp}}\end{DoxyCompactItemize}

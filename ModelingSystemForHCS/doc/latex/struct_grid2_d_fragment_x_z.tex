@@ -1,0 +1,274 @@
+\hypertarget{struct_grid2_d_fragment_x_z}{}\doxysection{Grid2\+DFragment\+XZ Struct Reference}
+\label{struct_grid2_d_fragment_x_z}\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+
+
+Описывает двумерный фрагмент расчетной сетки -\/ плоскость XZ(грань трехмерного фрагмента)  
+
+
+
+
+Collaboration diagram for Grid2\+DFragment\+XZ\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{struct_grid2_d_fragment_x_z__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_grid2_d_fragment_x_z_a1213092e0bf5d553bf38131e51b374ed}{Grid2\+DFragment\+XZ}} (size\+\_\+t Fragment\+Nx, size\+\_\+t Fragment\+Nz, size\+\_\+t Fragment\+IndX, size\+\_\+t Fragment\+IndY, size\+\_\+t Fragment\+IndZ, size\+\_\+t Fragment\+Offset\+XBy\+Device, size\+\_\+t Fragment\+Offset\+YBy\+Device, size\+\_\+t Fragment\+Offset\+ZBy\+Device, size\+\_\+t Fragment\+Offset\+XBy\+Node, size\+\_\+t Fragment\+Offset\+YBy\+Node, size\+\_\+t Fragment\+Offset\+ZBy\+Node, size\+\_\+t Fragment\+OffsetX, size\+\_\+t Fragment\+OffsetY, size\+\_\+t Fragment\+OffsetZ)
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a7c1aea63b7019475432148c0ebd1a3a8}{Get\+Nodes\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает число узлов в фрагменте расчетной сетки \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a66f94321717789c8770cfc4e032d457d}{Linear\+Array\+Create}} (\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Выделяет память и создает двумерный массив данных model\+Data\+Name размером (fragment\+Nx, fragment\+Nz) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ \mbox{\hyperlink{struct_grid2_d_fragment_x_z_ab4e9f2abbb1835b1ba6ec9ce152795b7}{Get\+Linear\+Array2D}} (\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}} model\+Data\+Name)
+\begin{DoxyCompactList}\small\item\em Возвращает указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a3842407ea6745fec80df68c0d5906a1b}{Get\+Data\+Size\+In\+Mb}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает объём оперативной памяти, занимаемый фрагментом \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a7c6ec0906e795b7fb39e102e98e7def8}{Print\+Fragment}} ()
+\begin{DoxyCompactList}\small\item\em \$\$\$\$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость XZ – грань трехмерного фрагмента) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a85f1e6a931166b59bfc9ce0a36855599}{fragment\+Nx}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a9b1c4041b7088a84f2372ae49ffe9f22}{fragment\+Nz}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_acd897b2122603b516fb9fa3b4d05205e}{fragment\+IndX}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a9fde96f05577a6218249a45316c65267}{fragment\+IndY}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a26afac99dea8a8507ca2e20152a8fe17}{fragment\+IndZ}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa709d90dd6aeb2f467a2431d74440292}{fragment\+Offset\+XBy\+Device}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa6675fedbaf4f4dbd74cb3731966f9ab}{fragment\+Offset\+YBy\+Device}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_acbfd5cfafeb17a1f6403f56b5b0f0c91}{fragment\+Offset\+ZBy\+Device}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_af48a3ac182feebe21ad31e1eff2f109f}{fragment\+Offset\+XBy\+Node}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a7c79e37dd42eba19bd5232b683c91ac5}{fragment\+Offset\+YBy\+Node}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a28d6d1737be70600006d079266df9515}{fragment\+Offset\+ZBy\+Node}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a3a97b053dfcb2e2ce40023c900c3be1a}{fragment\+OffsetX}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_afee42577faa129a660753e7b2f75d825}{fragment\+OffsetY}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_grid2_d_fragment_x_z_aa23507682965bb168535af5e71e33a72}{fragment\+OffsetZ}}
+\item 
+\mbox{\hyperlink{struct_linear_arrays2_d}{Linear\+Arrays2D}} \mbox{\hyperlink{struct_grid2_d_fragment_x_z_a3fa9e1ce8782434b722255310b8bfefa}{linear\+Arrays2D}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Описывает двумерный фрагмент расчетной сетки -\/ плоскость XZ(грань трехмерного фрагмента) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a1213092e0bf5d553bf38131e51b374ed}\label{struct_grid2_d_fragment_x_z_a1213092e0bf5d553bf38131e51b374ed}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{Grid2DFragmentXZ()}{Grid2DFragmentXZ()}}
+{\footnotesize\ttfamily Grid2\+DFragment\+XZ\+::\+Grid2\+DFragment\+XZ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{Fragment\+Nx,  }\item[{size\+\_\+t}]{Fragment\+Nz,  }\item[{size\+\_\+t}]{Fragment\+IndX,  }\item[{size\+\_\+t}]{Fragment\+IndY,  }\item[{size\+\_\+t}]{Fragment\+IndZ,  }\item[{size\+\_\+t}]{Fragment\+Offset\+XBy\+Device,  }\item[{size\+\_\+t}]{Fragment\+Offset\+YBy\+Device,  }\item[{size\+\_\+t}]{Fragment\+Offset\+ZBy\+Device,  }\item[{size\+\_\+t}]{Fragment\+Offset\+XBy\+Node,  }\item[{size\+\_\+t}]{Fragment\+Offset\+YBy\+Node,  }\item[{size\+\_\+t}]{Fragment\+Offset\+ZBy\+Node,  }\item[{size\+\_\+t}]{Fragment\+OffsetX,  }\item[{size\+\_\+t}]{Fragment\+OffsetY,  }\item[{size\+\_\+t}]{Fragment\+OffsetZ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a3842407ea6745fec80df68c0d5906a1b}\label{struct_grid2_d_fragment_x_z_a3842407ea6745fec80df68c0d5906a1b}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!GetDataSizeInMb@{GetDataSizeInMb}}
+\index{GetDataSizeInMb@{GetDataSizeInMb}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{GetDataSizeInMb()}{GetDataSizeInMb()}}
+{\footnotesize\ttfamily double Grid2\+DFragment\+XZ\+::\+Get\+Data\+Size\+In\+Mb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает объём оперативной памяти, занимаемый фрагментом 
+
+\begin{DoxyReturn}{Returns}
+Объём оперативной памяти, занимаемый фрагментом
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid2_d_fragment_x_z_a3842407ea6745fec80df68c0d5906a1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid2_d_fragment_x_z_a3842407ea6745fec80df68c0d5906a1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_ab4e9f2abbb1835b1ba6ec9ce152795b7}\label{struct_grid2_d_fragment_x_z_ab4e9f2abbb1835b1ba6ec9ce152795b7}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!GetLinearArray2D@{GetLinearArray2D}}
+\index{GetLinearArray2D@{GetLinearArray2D}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{GetLinearArray2D()}{GetLinearArray2D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linear_array2_d}{Linear\+Array2D}} $\ast$ Grid2\+DFragment\+XZ\+::\+Get\+Linear\+Array2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Указатель на объект linear\+Array2D по имени массива данных model\+Data\+Name
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a7c1aea63b7019475432148c0ebd1a3a8}\label{struct_grid2_d_fragment_x_z_a7c1aea63b7019475432148c0ebd1a3a8}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!GetNodesNumber@{GetNodesNumber}}
+\index{GetNodesNumber@{GetNodesNumber}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{GetNodesNumber()}{GetNodesNumber()}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::\+Get\+Nodes\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Возвращает число узлов в фрагменте расчетной сетки 
+
+\begin{DoxyReturn}{Returns}
+Число узлов в фрагменте расчетной сетки
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a66f94321717789c8770cfc4e032d457d}\label{struct_grid2_d_fragment_x_z_a66f94321717789c8770cfc4e032d457d}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!LinearArrayCreate@{LinearArrayCreate}}
+\index{LinearArrayCreate@{LinearArrayCreate}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{LinearArrayCreate()}{LinearArrayCreate()}}
+{\footnotesize\ttfamily void Grid2\+DFragment\+XZ\+::\+Linear\+Array\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_enums_8cpp_aab32bb3560559492481476c3581bdb4b}{Model\+Data\+Name}}}]{model\+Data\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Выделяет память и создает двумерный массив данных model\+Data\+Name размером (fragment\+Nx, fragment\+Nz) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Data\+Name} & Имя массива данных model\+Data\+Name\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid2_d_fragment_x_z_a66f94321717789c8770cfc4e032d457d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a7c6ec0906e795b7fb39e102e98e7def8}\label{struct_grid2_d_fragment_x_z_a7c6ec0906e795b7fb39e102e98e7def8}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!PrintFragment@{PrintFragment}}
+\index{PrintFragment@{PrintFragment}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{PrintFragment()}{PrintFragment()}}
+{\footnotesize\ttfamily void Grid2\+DFragment\+XZ\+::\+Print\+Fragment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\$\$\$\$Выводит в консоль двумерный фрагмент расчетной сетки (плоскость XZ – грань трехмерного фрагмента) 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_grid2_d_fragment_x_z_a7c6ec0906e795b7fb39e102e98e7def8_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_acd897b2122603b516fb9fa3b4d05205e}\label{struct_grid2_d_fragment_x_z_acd897b2122603b516fb9fa3b4d05205e}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentIndX@{fragmentIndX}}
+\index{fragmentIndX@{fragmentIndX}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentIndX}{fragmentIndX}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+IndX}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a9fde96f05577a6218249a45316c65267}\label{struct_grid2_d_fragment_x_z_a9fde96f05577a6218249a45316c65267}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentIndY@{fragmentIndY}}
+\index{fragmentIndY@{fragmentIndY}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentIndY}{fragmentIndY}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+IndY}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a26afac99dea8a8507ca2e20152a8fe17}\label{struct_grid2_d_fragment_x_z_a26afac99dea8a8507ca2e20152a8fe17}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentIndZ@{fragmentIndZ}}
+\index{fragmentIndZ@{fragmentIndZ}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentIndZ}{fragmentIndZ}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+IndZ}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a85f1e6a931166b59bfc9ce0a36855599}\label{struct_grid2_d_fragment_x_z_a85f1e6a931166b59bfc9ce0a36855599}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentNx@{fragmentNx}}
+\index{fragmentNx@{fragmentNx}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentNx}{fragmentNx}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+Nx}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a9b1c4041b7088a84f2372ae49ffe9f22}\label{struct_grid2_d_fragment_x_z_a9b1c4041b7088a84f2372ae49ffe9f22}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentNz@{fragmentNz}}
+\index{fragmentNz@{fragmentNz}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentNz}{fragmentNz}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+Nz}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a3a97b053dfcb2e2ce40023c900c3be1a}\label{struct_grid2_d_fragment_x_z_a3a97b053dfcb2e2ce40023c900c3be1a}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetX@{fragmentOffsetX}}
+\index{fragmentOffsetX@{fragmentOffsetX}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetX}{fragmentOffsetX}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+OffsetX}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_aa709d90dd6aeb2f467a2431d74440292}\label{struct_grid2_d_fragment_x_z_aa709d90dd6aeb2f467a2431d74440292}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetXByDevice@{fragmentOffsetXByDevice}}
+\index{fragmentOffsetXByDevice@{fragmentOffsetXByDevice}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetXByDevice}{fragmentOffsetXByDevice}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+Offset\+XBy\+Device}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_af48a3ac182feebe21ad31e1eff2f109f}\label{struct_grid2_d_fragment_x_z_af48a3ac182feebe21ad31e1eff2f109f}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetXByNode@{fragmentOffsetXByNode}}
+\index{fragmentOffsetXByNode@{fragmentOffsetXByNode}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetXByNode}{fragmentOffsetXByNode}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+Offset\+XBy\+Node}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_afee42577faa129a660753e7b2f75d825}\label{struct_grid2_d_fragment_x_z_afee42577faa129a660753e7b2f75d825}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetY@{fragmentOffsetY}}
+\index{fragmentOffsetY@{fragmentOffsetY}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetY}{fragmentOffsetY}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+OffsetY}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_aa6675fedbaf4f4dbd74cb3731966f9ab}\label{struct_grid2_d_fragment_x_z_aa6675fedbaf4f4dbd74cb3731966f9ab}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetYByDevice@{fragmentOffsetYByDevice}}
+\index{fragmentOffsetYByDevice@{fragmentOffsetYByDevice}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetYByDevice}{fragmentOffsetYByDevice}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+Offset\+YBy\+Device}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a7c79e37dd42eba19bd5232b683c91ac5}\label{struct_grid2_d_fragment_x_z_a7c79e37dd42eba19bd5232b683c91ac5}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetYByNode@{fragmentOffsetYByNode}}
+\index{fragmentOffsetYByNode@{fragmentOffsetYByNode}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetYByNode}{fragmentOffsetYByNode}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+Offset\+YBy\+Node}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_aa23507682965bb168535af5e71e33a72}\label{struct_grid2_d_fragment_x_z_aa23507682965bb168535af5e71e33a72}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetZ@{fragmentOffsetZ}}
+\index{fragmentOffsetZ@{fragmentOffsetZ}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetZ}{fragmentOffsetZ}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+OffsetZ}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_acbfd5cfafeb17a1f6403f56b5b0f0c91}\label{struct_grid2_d_fragment_x_z_acbfd5cfafeb17a1f6403f56b5b0f0c91}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetZByDevice@{fragmentOffsetZByDevice}}
+\index{fragmentOffsetZByDevice@{fragmentOffsetZByDevice}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetZByDevice}{fragmentOffsetZByDevice}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+Offset\+ZBy\+Device}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a28d6d1737be70600006d079266df9515}\label{struct_grid2_d_fragment_x_z_a28d6d1737be70600006d079266df9515}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!fragmentOffsetZByNode@{fragmentOffsetZByNode}}
+\index{fragmentOffsetZByNode@{fragmentOffsetZByNode}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{fragmentOffsetZByNode}{fragmentOffsetZByNode}}
+{\footnotesize\ttfamily size\+\_\+t Grid2\+DFragment\+XZ\+::fragment\+Offset\+ZBy\+Node}
+
+\mbox{\Hypertarget{struct_grid2_d_fragment_x_z_a3fa9e1ce8782434b722255310b8bfefa}\label{struct_grid2_d_fragment_x_z_a3fa9e1ce8782434b722255310b8bfefa}} 
+\index{Grid2DFragmentXZ@{Grid2DFragmentXZ}!linearArrays2D@{linearArrays2D}}
+\index{linearArrays2D@{linearArrays2D}!Grid2DFragmentXZ@{Grid2DFragmentXZ}}
+\doxysubsubsection{\texorpdfstring{linearArrays2D}{linearArrays2D}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linear_arrays2_d}{Linear\+Arrays2D}} Grid2\+DFragment\+XZ\+::linear\+Arrays2D}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Grid3\+DSrc/\mbox{\hyperlink{_grid2_d_fragment_x_z_8cpp}{Grid2\+DFragment\+XZ.\+cpp}}\end{DoxyCompactItemize}

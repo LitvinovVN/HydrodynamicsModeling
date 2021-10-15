@@ -1,0 +1,4 @@
+<map id="Grid2DFragmentXZ::LinearArrayCreate" name="Grid2DFragmentXZ::LinearArrayCreate">
+<area shape="rect" id="node1" title="Выделяет память и создает двумерный массив данных modelDataName размером (fragmentNx,..." alt="" coords="5,5,180,47"/>
+<area shape="rect" id="node2" href="$struct_linear_arrays2_d.html#a9a9522a80a9d5d47f3ab9fd19e9164a0" title="Создает указатель на объект LinearArray2D размером (nx, ny) по указанному имени массива данных modelD..." alt="" coords="228,5,413,47"/>
+</map>

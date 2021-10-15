@@ -1,0 +1,6 @@
+<map id="Grid3DFragment::PrintFragmentPlane" name="Grid3DFragment::PrintFragmentPlane">
+<area shape="rect" id="node1" title="$$$$Выводит в консоль части элементов плоскости Fragment3DPlane фрагмента для указанного типа ModelDa..." alt="" coords="5,35,212,76"/>
+<area shape="rect" id="node2" href="$struct_grid3_d_fragment.html#a5b521f7ca604b2bfd0948e9462dc7245" title="$$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelD..." alt="" coords="260,5,441,47"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a051ae0fd7c5c689052f8451989f12db2" title="Вывод элементов фрагмента по слоям XY в консоль" alt="" coords="281,71,420,98"/>
+<area shape="rect" id="node4" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="489,71,653,98"/>
+</map>

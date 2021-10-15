@@ -1,0 +1,6 @@
+<map id="LinearArrays2D::LinearArrayCreate" name="LinearArrays2D::LinearArrayCreate">
+<area shape="rect" id="node1" title="Создает указатель на объект LinearArray2D размером (nx, ny) по указанному имени массива данных modelD..." alt="" coords="229,71,415,112"/>
+<area shape="rect" id="node2" href="$struct_grid2_d_fragment_x_y.html#ac000c7db5e261d9e44d6aa815154c936" title="$$$$Выделяет память и создает двумерный массив данных modelDataName размером (fragmentNx,..." alt="" coords="5,5,181,47"/>
+<area shape="rect" id="node3" href="$struct_grid2_d_fragment_x_z.html#a66f94321717789c8770cfc4e032d457d" title="Выделяет память и создает двумерный массив данных modelDataName размером (fragmentNx,..." alt="" coords="6,71,181,112"/>
+<area shape="rect" id="node4" href="$struct_grid2_d_fragment_y_z.html#a2f164f95b6a296e6d8ba78ea4eff140f" title="Выделяет память и создает двумерный массив данных modelDataName размером (fragmentNy,..." alt="" coords="5,136,181,177"/>
+</map>

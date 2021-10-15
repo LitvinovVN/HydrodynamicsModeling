@@ -1,0 +1,5 @@
+<map id="LinearArray3D::GetPlaneYOZFirst" name="LinearArray3D::GetPlaneYOZFirst">
+<area shape="rect" id="node1" title="Передает массив данных от плоскости planeYOZ первой по оси OX плоскости фрагмента" alt="" coords="5,31,224,57"/>
+<area shape="rect" id="node2" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="272,5,436,32"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="272,56,436,83"/>
+</map>

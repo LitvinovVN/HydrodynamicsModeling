@@ -1,0 +1,4 @@
+<map id="GridBlock3DByNode::CreateGrid2DTransferPlanesXZ" name="GridBlock3DByNode::CreateGrid2DTransferPlanesXZ">
+<area shape="rect" id="node1" title="Создаёт двумерные плоскости XZ для передачи данных между вычислительными устройствами и вызывает функ..." alt="" coords="5,5,205,47"/>
+<area shape="rect" id="node2" href="$struct_grid_block3_d_by_device.html#ac60663d0c9378e2cb6eb1a4a1399452c" title="Создаёт двумерные плоскости XZ для передачи данных между вычислителями" alt="" coords="253,5,461,47"/>
+</map>

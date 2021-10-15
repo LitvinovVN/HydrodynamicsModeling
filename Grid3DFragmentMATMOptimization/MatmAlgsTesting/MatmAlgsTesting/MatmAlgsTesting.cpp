@@ -658,7 +658,7 @@ void algStart(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D*,
 	{
 		aTimer.start();
 		algFunPntr(r,c0,c2,c4,c6,s,w);
-		auto elapsed = aTimer.stop();		
+		auto elapsed = aTimer.stop();
 		bool isEqual = arrayForVerification->IsEqual(r);
 		if (isEqual) statistics.add(elapsed.get_time_as_double());
 	}
@@ -1009,24 +1009,6 @@ int main()
 	r->initLinearArray3DByValue(10);
 	algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 
-	/*std::cout << "---alg3---\n";
-	initLinearArray3DByGlobalIndexes(linAr1);
-	algStart(alg3, linAr1, arrayForVerification, numberOfLaunches);
-
-	std::cout << "---alg4---\n";
-	initLinearArray3DByGlobalIndexes(linAr1);
-	algStart(alg4, linAr1, arrayForVerification, numberOfLaunches);
-
-	std::cout << "---alg5---\n";
-	initLinearArray3DByGlobalIndexes(linAr1);
-	algStart(alg5, linAr1, arrayForVerification, numberOfLaunches);
-
-	std::cout << "---alg6---\n";
-	initLinearArray3DByGlobalIndexes(linAr1);
-	algStart(alg6, linAr1, arrayForVerification, numberOfLaunches);
-
-	std::cout << "---alg7---\n";
-	initLinearArray3DByGlobalIndexes(linAr1);
-	algStart(alg7, linAr1, arrayForVerification, numberOfLaunches);*/	
+		
 }
 

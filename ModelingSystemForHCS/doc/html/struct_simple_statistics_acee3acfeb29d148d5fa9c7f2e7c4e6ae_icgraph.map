@@ -1,0 +1,8 @@
+<map id="SimpleStatistics::sort" name="SimpleStatistics::sort">
+<area shape="rect" id="node1" title="Сортирует массив данных" alt="" coords="437,81,584,108"/>
+<area shape="rect" id="node2" href="$struct_simple_statistics.html#aaf8d6fe217b14dc60e8e06725e8a7bfe" title="Возвращает максимальное значение" alt="" coords="213,5,381,32"/>
+<area shape="rect" id="node4" href="$struct_simple_statistics.html#a97e074975bd800b6456b7b0c2f95a3ad" title="Возвращает медиану" alt="" coords="204,56,389,83"/>
+<area shape="rect" id="node5" href="$struct_simple_statistics.html#ae80e3fe00de1140bf92c6f74a90ae085" title="Возвращает минимальное значение" alt="" coords="215,107,379,133"/>
+<area shape="rect" id="node6" href="$struct_simple_statistics.html#afdc4f954463d3a928fafe0539f963bf1" title="Выводит в стандартный поток вывода элементы массива данных, разделённые пробелами." alt="" coords="208,157,385,184"/>
+<area shape="rect" id="node3" href="$struct_simple_statistics.html#ab44cce92bcfcab6b66607631c8fe6a26" title=" " alt="" coords="5,81,156,108"/>
+</map>

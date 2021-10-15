@@ -1,0 +1,4 @@
+<map id="LinearArrays3D::GetDataSizeInMb" name="LinearArrays3D::GetDataSizeInMb">
+<area shape="rect" id="node1" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="5,5,227,32"/>
+<area shape="rect" id="node2" href="$struct_linear_array3_d.html#a25b92f1c301b79b48b9b11b8fd7521d2" title="Возвращает объём оперативной памяти, занимаемый объектом LinearArray3D" alt="" coords="275,5,489,32"/>
+</map>
