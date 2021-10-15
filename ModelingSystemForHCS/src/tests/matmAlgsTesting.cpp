@@ -1,24 +1,24 @@
 #include "testFunctions.h"
 
-//void algStart(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, double),
-//	LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w,
-//	LinearArray3D* arrayForVerification, int numberOfLaunches)
-//{
-//	timer<std::chrono::microseconds> aTimer;
-//
-//	SimpleStatistics statistics{};
-//
-//	for (size_t i = 0; i < numberOfLaunches; i++)
-//	{
-//		aTimer.start();
-//		algFunPntr(r, c0, c2, c4, c6, s, w);
-//		auto elapsed = aTimer.stop();
-//		bool isEqual = arrayForVerification->IsEqual(r);
-//		if (isEqual) statistics.add(elapsed.get_time_as_double());
-//	}
-//
-//	statistics.print();
-//}
+void algStart(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, LinearArray3D*, double),
+	LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w,
+	LinearArray3D* arrayForVerification, int numberOfLaunches)
+{
+	timer<std::chrono::microseconds> aTimer;
+
+	SimpleStatistics statistics{};
+
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		aTimer.start();
+		algFunPntr(r, c0, c2, c4, c6, s, w);
+		auto elapsed = aTimer.stop();
+		bool isEqual = arrayForVerification->IsEqual(r);
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+
+	statistics.print();
+}
 
 // alg1
 void alg1(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
@@ -54,40 +54,40 @@ void alg1(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D*
 	}
 }
 
-//// alg2
-//void alg2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
-//{
-//	int nx = r->nx;
-//	int ny = r->ny;
-//	int nz = r->nz;
-//
-//	for (int k = 1; k < nz - 1; k++)
-//	{
-//		for (int j = 1; j < ny - 1; j++)
-//		{
-//			for (int i = 1; i < nx - 1; i++)
-//			{
-//				double s0 = s->GetElement(i, j, k);
-//				if (s0 > (1 - 0.001) && s0 < (1 + 0.001))
-//				{
-//					double rm0 = r->GetElement(i, j, k);
-//					double rm2 = r->GetElement(i - 1, j, k);
-//					double rm4 = r->GetElement(i, j - 1, k);
-//					double rm6 = r->GetElement(i, j, k - 1);
-//
-//					double c0m0 = c0->GetElement(i, j, k);
-//					double c2m0 = c2->GetElement(i, j, k);
-//					double c4m0 = c4->GetElement(i, j, k);
-//					double c6m0 = c6->GetElement(i, j, k);
-//
-//					double newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
-//					r->SetElement(i, j, k, newVal);
-//				}
-//			}
-//		}
-//	}
-//}
-//
+// alg2
+void alg2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
+{
+	int nx = r->nx;
+	int ny = r->ny;
+	int nz = r->nz;
+
+	for (int k = 1; k < nz - 1; k++)
+	{
+		for (int j = 1; j < ny - 1; j++)
+		{
+			for (int i = 1; i < nx - 1; i++)
+			{
+				double s0 = s->GetElement(i, j, k);
+				if (s0 > (1 - 0.001) && s0 < (1 + 0.001))
+				{
+					double rm0 = r->GetElement(i, j, k);
+					double rm2 = r->GetElement(i - 1, j, k);
+					double rm4 = r->GetElement(i, j - 1, k);
+					double rm6 = r->GetElement(i, j, k - 1);
+
+					double c0m0 = c0->GetElement(i, j, k);
+					double c2m0 = c2->GetElement(i, j, k);
+					double c4m0 = c4->GetElement(i, j, k);
+					double c6m0 = c6->GetElement(i, j, k);
+
+					double newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+					r->SetElement(i, j, k, newVal);
+				}
+			}
+		}
+	}
+}
+
 //// alg3
 //void alg3(LinearArray3D* linAr)
 //{
@@ -356,11 +356,11 @@ void matmAlgsTesting()
 	//arrayForVerification->Print();
 	///////////////////////////////////////////////////////////
 
-	//std::cout << "---alg1---\n";
-	//r->initLinearArray3DByValue(10);
-	//algStart(alg1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+	std::cout << "---alg1---\n";
+	r->InitLinearArray3DByValue(10);
+	algStart(alg1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 
-	//std::cout << "---alg2---\n";
-	//r->initLinearArray3DByValue(10);
-	//algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+	std::cout << "---alg2---\n";
+	r->InitLinearArray3DByValue(10);
+	algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 }

@@ -1,6 +1,6 @@
-project(test_cmake)
+project(ModelingSystemForHCS)
 
-set(CMAKE_CXX_FLAGS "-std=c++11 -O3")
+set(CMAKE_CXX_FLAGS "-std=c++11")
 
 file(GLOB source_files
             "*.h"
