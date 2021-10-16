@@ -9,6 +9,7 @@ file(GLOB source_files
             "tests/*.h"
             "tests/*/*.cpp"
             "tests/*/*.h"
+            "Grid3DSrc/Utils.cpp"
     )
 
 add_executable(myApp   ${source_files} )

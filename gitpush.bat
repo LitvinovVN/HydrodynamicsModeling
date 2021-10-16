@@ -1,7 +1,3 @@
-cd DecomposeGrid3D
-doxygen
-cd ..
-
 git status
 git add .
 git status
