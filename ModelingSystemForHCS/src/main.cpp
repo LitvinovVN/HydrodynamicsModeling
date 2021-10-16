@@ -12,11 +12,10 @@ int main(int argc, char* argv[])
 	
 	
 	app_init(argc, argv);
-	
-	printTime("Комментарии");
+		
 	printTime(); std::cout << std::endl;
 
-	//matmAlgsTesting();
+	matmAlgsTesting();
 
 	return 0;
 }

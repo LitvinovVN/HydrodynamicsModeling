@@ -10,6 +10,17 @@
 #include <ctime>   // localtime
 #include <iomanip> // put_time
 
+#ifdef _WIN32
+#elif _WIN64
+#elif WIN32
+#elif WIN64
+#else
+// code for linux
+#include <unistd.h>// getpid
+#endif
+
+
+
 
 void app_init(int argc, char* argv[]){
     auto pid = getpid();
@@ -26,17 +37,18 @@ void app_init(int argc, char* argv[]){
 }
 
 void printTime() {
-    auto now = std::chrono::system_clock::now();
+    // Закомментировано, т.к. std::put_time не реализован в gcc 4.x
+    /*auto now = std::chrono::system_clock::now();
     time_t tt = std::chrono::system_clock::to_time_t(now);
 
-    std::cout << std::put_time(std::localtime(&tt), "%X");
-}
+    std::cout << std::put_time(std::localtime(&tt), "%X");*/
+    //std::cout << std::localtime(&tt);
 
-void printTime(std::string timePointDescr){
-    auto now = std::chrono::system_clock::now();
-    time_t tt = std::chrono::system_clock::to_time_t(now);  
+    time_t t = time(0);
+    char buffer[9] = { 0 };
 
-    std::cout << std::put_time(std::localtime(&tt), "%X") << ": " << timePointDescr << std::endl;    
+    strftime(buffer, 9, "%H:%M:%S", localtime(&t));
+    std::cout << std::string(buffer);
 }
 
 #endif
