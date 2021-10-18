@@ -23,8 +23,9 @@
     #include <Windows.h>
     #include <tchar.h>
 #else
-// code for linux
-#include <unistd.h>// getpid
+    // code for linux
+    #include <unistd.h>// getpid
+    #include <cstring>// memset
 #endif
 
 
