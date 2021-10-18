@@ -82,6 +82,9 @@ void mpi_init(int argc, char* argv[], int mpi_thread_type, int& provided, int& r
     GetMachineName(hostname);
     auto pid = getpid();
     int nHardwareThreads = std::thread::hardware_concurrency();
+
+    if (&rank == nullptr) rank = -1;
+
     fprintf(stderr, "Hostname: %s. MPI rank: %d. Process ID: %d. Hardware threads: %d \n", hostname, rank, pid, nHardwareThreads);
 
     if (rank == 0) {
