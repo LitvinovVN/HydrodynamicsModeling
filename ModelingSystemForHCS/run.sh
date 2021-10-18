@@ -1,1 +1,1 @@
-mpirun -np 2 ./myApp
+mpirun -np 2 ./_build/myApp
