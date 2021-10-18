@@ -18,7 +18,7 @@ endif(ENABLE_MPI)
 file(GLOB source_files
             "*.h"
             "*.cpp"
-            "tests/*.cpp"
+            "tests/*.cpp"            
             "tests/*.h"
             "tests/*/*.cpp"
             "tests/*/*.h"

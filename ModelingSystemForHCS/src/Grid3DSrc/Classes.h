@@ -48,6 +48,6 @@
 #pragma endregion Grid
 
 #include "Utils.h"
-
+#include "LaunchSettings.cpp"
 
 #endif

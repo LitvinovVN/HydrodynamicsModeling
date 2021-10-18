@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\! MyProjects\HydrodynamicsModeling\ModelingSystemForHCS\src\build\CMakeFiles\a23666120eb2444784c4a5b6c38a1ca3\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{892A2811-6839-3233-A8FF-B62AA6F341A1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
