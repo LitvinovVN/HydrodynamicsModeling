@@ -6,19 +6,25 @@
 int main(int argc, char* argv[])
 {
 	setlocale(LC_CTYPE, "rus"); // вызов функции настройки локали
-	std::cout << "Modeling System for HCS" << std::endl;
-
+	std::cout << "Modeling System for HCS";
+	std::cout << " (launched at ";
+	printTime();
+	std::cout << ")";
+	std::cout << std::endl;
+	
 	LaunchSettings settings{argc, argv};
 	settings.Print();
 
-	
-	
-	
 	//////////
-	int rank, size, provided;
-	mpi_init(argc, argv, MPI_THREAD_FUNNELED, provided, rank, size);
-	MPI_Barrier(MPI_COMM_WORLD);		
+	if (settings.isMPI)
+	{		
+		int rank, size, provided;
+		mpi_init(argc, argv, MPI_THREAD_FUNNELED, provided, rank, size);
+		MPI_Barrier(MPI_COMM_WORLD);		
+	}
 	//////////
+	
+	
 
 
 
@@ -29,6 +35,6 @@ int main(int argc, char* argv[])
 	matmAlgsTesting();
 
 
-	MPI_Finalize();
+	if (settings.isMPI) MPI_Finalize();
 	return 0;
 }

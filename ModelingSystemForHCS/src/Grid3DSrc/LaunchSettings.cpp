@@ -8,6 +8,10 @@ struct LaunchSettings {
 	int numOfCommandLineParameters = 0;///< Число параметров командной строки
 	std::vector<std::string> commandLineParameters;///< Параметры командной строки
 
+	bool isMPI = false;
+	int mpi_rank = 0;
+	int mpi_size = 0;
+
 	/// <summary>
 	/// Конструктор. Инициализация из аргументов командной строки
 	/// </summary>
@@ -20,10 +24,20 @@ struct LaunchSettings {
 		{			
 			commandLineParameters.push_back(argv[count]);
 		}
-			
+
+		isMPI = IsMPI();
 	}
 
+	bool IsMPI()
+	{
+		for (int count = 0; count < numOfCommandLineParameters; ++count)
+		{
+			if (commandLineParameters[count] == "MPI") return true;
+			if (commandLineParameters[count] == "mpi") return true;
+		}
 
+		return false;
+	}
 
 	void Print()
 	{
@@ -35,6 +49,9 @@ struct LaunchSettings {
 		{			
 			std::cout << "  " << count << ": " << commandLineParameters[count] << '\n';
 		}
+
+		std::cout << "isMPI: " << isMPI << std::endl;
+		std::cout << "---------------------- " << std::endl;
 	}
 
 };
