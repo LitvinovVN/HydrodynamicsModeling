@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['grid_5f2d_5ffragment_5fxy_0',['GRID_2D_FRAGMENT_XY',['../_grid2_d_fragment_x_y_8cpp.html#a4dd7fc5cbce299e2343c386735ab9fbe',1,'Grid2DFragmentXY.cpp']]],
-  ['grid_5f2d_5ffragment_5fxz_1',['GRID_2D_FRAGMENT_XZ',['../_grid2_d_fragment_x_z_8cpp.html#a3913b4300755547dd606b48e3e1affc6',1,'Grid2DFragmentXZ.cpp']]],
-  ['grid_5f2d_5ffragment_5fyz_2',['GRID_2D_FRAGMENT_YZ',['../_grid2_d_fragment_y_z_8cpp.html#afd71058ffe4b581f3d7873d7fa7aee52',1,'Grid2DFragmentYZ.cpp']]],
-  ['grid_5f2d_5ftransfer_5fplane_5fxz_3',['GRID_2D_TRANSFER_PLANE_XZ',['../_grid2_d_transfer_plane_x_z_8cpp.html#a8c8b6443057d6bf9e7c50059a5da703a',1,'Grid2DTransferPlaneXZ.cpp']]],
-  ['grid_5f3d_4',['GRID_3D',['../_grid3_d_8cpp.html#a5f0ac357fc05311a607cedc04f4adaa9',1,'Grid3D.cpp']]],
-  ['grid_5f3d_5ffragment_5',['GRID_3D_FRAGMENT',['../_grid3_d_fragment_8cpp.html#a56bb363059c057cb211e173be65ca8e4',1,'Grid3DFragment.cpp']]],
-  ['grid_5fblock_5f3d_5fby_5fdevice_6',['GRID_BLOCK_3D_BY_DEVICE',['../_grid_block3_d_by_device_8cpp.html#aaa15c416a9e481fa8850bc2074f1a928',1,'GridBlock3DByDevice.cpp']]],
-  ['grid_5fblock_5f3d_5fby_5fnode_7',['GRID_BLOCK_3D_BY_NODE',['../_grid_block3_d_by_node_8cpp.html#a627cf8d114048a5cafbd2798584ffb53',1,'GridBlock3DByNode.cpp']]],
-  ['grid_5fhelper_8',['GRID_HELPER',['../_grid_helper_8cpp.html#a67573e3b04a4bd9757b43d357bca9361',1,'GridHelper.cpp']]]
+  ['c_5fdialect_0',['C_DIALECT',['../build_2_c_make_files_23_821_83_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#a07f8e5783674099cd7f5110e22a78cdb',1,'CMakeCCompilerId.c']]],
+  ['compiler_5fid_1',['COMPILER_ID',['../build_2_c_make_files_23_821_83_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCCompilerId.c'],['../build_2_c_make_files_23_821_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCXXCompilerId.cpp']]],
+  ['computing_5fcluster_2',['COMPUTING_CLUSTER',['../_computing_cluster_8cpp.html#ae0a6150e199066a98ed0fed62b9d9ef0',1,'ComputingCluster.cpp']]],
+  ['computing_5fdevice_3',['COMPUTING_DEVICE',['../_computing_device_8cpp.html#a79b438bb245aab9df0cf8193e73476c8',1,'ComputingDevice.cpp']]],
+  ['computing_5fdevice_5fcpu_4',['COMPUTING_DEVICE_CPU',['../_computing_device_c_p_u_8cpp.html#ad8b391fb9a0f781551564eabfe5d5abf',1,'ComputingDeviceCPU.cpp']]],
+  ['computing_5fdevice_5fgpu_5',['COMPUTING_DEVICE_GPU',['../_computing_device_g_p_u_8cpp.html#a4fa94d218dd8f382d3960427ca19b7d0',1,'ComputingDeviceGPU.cpp']]],
+  ['computing_5fnode_6',['COMPUTING_NODE',['../_computing_node_8cpp.html#a3c17de0cf439fec73eadce9125156cdf',1,'ComputingNode.cpp']]],
+  ['cxx_5fstd_7',['CXX_STD',['../build_2_c_make_files_23_821_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#a34cc889e576a1ae6c84ae9e0a851ba21',1,'CMakeCXXCompilerId.cpp']]]
 ];

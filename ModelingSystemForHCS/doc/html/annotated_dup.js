@@ -13,6 +13,7 @@ var annotated_dup =
     [ "Grid3DFragment", "struct_grid3_d_fragment.html", "struct_grid3_d_fragment" ],
     [ "GridBlock3DByDevice", "struct_grid_block3_d_by_device.html", "struct_grid_block3_d_by_device" ],
     [ "GridBlock3DByNode", "struct_grid_block3_d_by_node.html", "struct_grid_block3_d_by_node" ],
+    [ "LaunchSettings", "struct_launch_settings.html", "struct_launch_settings" ],
     [ "LinearArray1D", "struct_linear_array1_d.html", "struct_linear_array1_d" ],
     [ "LinearArray2D", "struct_linear_array2_d.html", "struct_linear_array2_d" ],
     [ "LinearArray3D", "struct_linear_array3_d.html", "struct_linear_array3_d" ],

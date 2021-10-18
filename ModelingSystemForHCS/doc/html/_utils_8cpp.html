@@ -91,23 +91,27 @@ $(document).ready(function(){initNavTree('_utils_8cpp.html',''); initResizable()
 <div class="textblock"><code>#include &quot;<a class="el" href="_utils_8h_source.html">Utils.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;mpi.h&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;ctime&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Utils.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_utils_8cpp__incl.png" border="0" usemap="#asrc_2_grid3_d_src_2_utils_8cpp" alt=""/></div>
 <map name="asrc_2_grid3_d_src_2_utils_8cpp" id="asrc_2_grid3_d_src_2_utils_8cpp">
-<area shape="rect" title=" " alt="" coords="173,5,331,32"/>
+<area shape="rect" title=" " alt="" coords="253,5,411,32"/>
 <area shape="rect" href="_utils_8h.html" title=" " alt="" coords="5,80,64,107"/>
 <area shape="rect" title=" " alt="" coords="32,155,104,181"/>
 <area shape="rect" title=" " alt="" coords="139,80,197,107"/>
-<area shape="rect" title=" " alt="" coords="221,80,283,107"/>
-<area shape="rect" title=" " alt="" coords="307,80,362,107"/>
-<area shape="rect" title=" " alt="" coords="387,80,453,107"/>
-<area shape="rect" title=" " alt="" coords="478,80,546,107"/>
+<area shape="rect" title=" " alt="" coords="222,80,277,107"/>
+<area shape="rect" title=" " alt="" coords="301,80,363,107"/>
+<area shape="rect" title=" " alt="" coords="387,80,442,107"/>
+<area shape="rect" title=" " alt="" coords="467,80,533,107"/>
+<area shape="rect" title=" " alt="" coords="558,80,626,107"/>
+<area shape="rect" title=" " alt="" coords="651,80,712,107"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -120,6 +124,11 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a6b43c01017a92ec6cbacd65e9b118d99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8cpp.html#a6b43c01017a92ec6cbacd65e9b118d99">app_init</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a6b43c01017a92ec6cbacd65e9b118d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f5a4e89ab1409493f64f58b5cc04242"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8cpp.html#a2f5a4e89ab1409493f64f58b5cc04242">GetMachineName</a> (char machineName[150])</td></tr>
+<tr class="memdesc:a2f5a4e89ab1409493f64f58b5cc04242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает имя хоста  <a href="_utils_8cpp.html#a2f5a4e89ab1409493f64f58b5cc04242">More...</a><br /></td></tr>
+<tr class="separator:a2f5a4e89ab1409493f64f58b5cc04242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d261b232c9701bcbeda7c046607db58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8cpp.html#a0d261b232c9701bcbeda7c046607db58">mpi_init</a> (int argc, char *argv[], int mpi_thread_type, int &amp;provided, int &amp;rank, int &amp;size)</td></tr>
+<tr class="separator:a0d261b232c9701bcbeda7c046607db58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac78edd18ba18ffa2288ef058728b6c18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_utils_8cpp.html#ac78edd18ba18ffa2288ef058728b6c18">printTime</a> ()</td></tr>
 <tr class="separator:ac78edd18ba18ffa2288ef058728b6c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -169,6 +178,106 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="_utils_8cpp_a6b43c01017a92ec6cbacd65e9b118d99_icgraph.png" border="0" usemap="#a_utils_8cpp_a6b43c01017a92ec6cbacd65e9b118d99_icgraph" alt=""/></div>
 <map name="a_utils_8cpp_a6b43c01017a92ec6cbacd65e9b118d99_icgraph" id="a_utils_8cpp_a6b43c01017a92ec6cbacd65e9b118d99_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,171,32"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2f5a4e89ab1409493f64f58b5cc04242" name="a2f5a4e89ab1409493f64f58b5cc04242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f5a4e89ab1409493f64f58b5cc04242">&#9670;&nbsp;</a></span>GetMachineName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetMachineName </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>machineName</em>[150]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает имя хоста </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_utils_8cpp_a2f5a4e89ab1409493f64f58b5cc04242_icgraph.png" border="0" usemap="#a_utils_8cpp_a2f5a4e89ab1409493f64f58b5cc04242_icgraph" alt=""/></div>
+<map name="a_utils_8cpp_a2f5a4e89ab1409493f64f58b5cc04242_icgraph" id="a_utils_8cpp_a2f5a4e89ab1409493f64f58b5cc04242_icgraph">
+<area shape="rect" title="Г‚Г®Г§ГўГ°Г Г№Г ГҐГІ ГЁГ¬Гї ГµГ®Г±ГІГ " alt="" coords="219,5,345,32"/>
+<area shape="rect" href="_utils_8cpp.html#a0d261b232c9701bcbeda7c046607db58" title=" " alt="" coords="104,5,171,32"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0d261b232c9701bcbeda7c046607db58" name="a0d261b232c9701bcbeda7c046607db58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d261b232c9701bcbeda7c046607db58">&#9670;&nbsp;</a></span>mpi_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mpi_init </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mpi_thread_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>provided</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>rank</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_utils_8cpp_a0d261b232c9701bcbeda7c046607db58_cgraph.png" border="0" usemap="#a_utils_8cpp_a0d261b232c9701bcbeda7c046607db58_cgraph" alt=""/></div>
+<map name="a_utils_8cpp_a0d261b232c9701bcbeda7c046607db58_cgraph" id="a_utils_8cpp_a0d261b232c9701bcbeda7c046607db58_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,72,32"/>
+<area shape="rect" href="_utils_8cpp.html#a2f5a4e89ab1409493f64f58b5cc04242" title="Г‚Г®Г§ГўГ°Г Г№Г ГҐГІ ГЁГ¬Гї ГµГ®Г±ГІГ " alt="" coords="120,5,247,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_utils_8cpp_a0d261b232c9701bcbeda7c046607db58_icgraph.png" border="0" usemap="#a_utils_8cpp_a0d261b232c9701bcbeda7c046607db58_icgraph" alt=""/></div>
+<map name="a_utils_8cpp_a0d261b232c9701bcbeda7c046607db58_icgraph" id="a_utils_8cpp_a0d261b232c9701bcbeda7c046607db58_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,171,32"/>
 <area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,56,32"/>
 </map>

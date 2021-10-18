@@ -16,6 +16,7 @@ var dir_61ffbd3fdfa0b0d185ebfa74a3bc5792 =
     [ "GridBlock3DByDevice.cpp", "_grid_block3_d_by_device_8cpp.html", "_grid_block3_d_by_device_8cpp" ],
     [ "GridBlock3DByNode.cpp", "_grid_block3_d_by_node_8cpp.html", "_grid_block3_d_by_node_8cpp" ],
     [ "GridHelper.cpp", "_grid_helper_8cpp.html", "_grid_helper_8cpp" ],
+    [ "LaunchSettings.cpp", "_launch_settings_8cpp.html", "_launch_settings_8cpp" ],
     [ "LinearArray1D.cpp", "_linear_array1_d_8cpp.html", "_linear_array1_d_8cpp" ],
     [ "LinearArray2D.cpp", "_linear_array2_d_8cpp.html", "_linear_array2_d_8cpp" ],
     [ "LinearArray3D.cpp", "_linear_array3_d_8cpp.html", "_linear_array3_d_8cpp" ],

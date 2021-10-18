@@ -2,18 +2,18 @@
 #define LAUNCH_SETTINGS_CPP
 
 /// <summary>
-/// Параметры запуска приложения
+/// РџР°СЂР°РјРµС‚СЂС‹ Р·Р°РїСѓСЃРєР° РїСЂРёР»РѕР¶РµРЅРёСЏ
 /// </summary>
 struct LaunchSettings {
-	int numOfCommandLineParameters = 0;///< Число параметров командной строки
-	std::vector<std::string> commandLineParameters;///< Параметры командной строки
+	int numOfCommandLineParameters = 0;///< Р§РёСЃР»Рѕ РїР°СЂР°РјРµС‚СЂРѕРІ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё
+	std::vector<std::string> commandLineParameters;///< РџР°СЂР°РјРµС‚СЂС‹ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё
 
 	bool isMPI = false;
 	int mpi_rank = 0;
 	int mpi_size = 0;
 
 	/// <summary>
-	/// Конструктор. Инициализация из аргументов командной строки
+	/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ. РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РёР· Р°СЂРіСѓРјРµРЅС‚РѕРІ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё
 	/// </summary>
 	LaunchSettings(int argc, char* argv[])
 	{

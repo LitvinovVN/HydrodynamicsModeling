@@ -14,6 +14,7 @@ var hierarchy =
     [ "Grid3DFragment", "struct_grid3_d_fragment.html", null ],
     [ "GridBlock3DByDevice", "struct_grid_block3_d_by_device.html", null ],
     [ "GridBlock3DByNode", "struct_grid_block3_d_by_node.html", null ],
+    [ "LaunchSettings", "struct_launch_settings.html", null ],
     [ "LinearArray1D", "struct_linear_array1_d.html", null ],
     [ "LinearArray2D", "struct_linear_array2_d.html", null ],
     [ "LinearArray3D", "struct_linear_array3_d.html", null ],

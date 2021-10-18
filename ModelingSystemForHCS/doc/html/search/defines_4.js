@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['simple_5fstatistics_0',['SIMPLE_STATISTICS',['../_simple_statistics_8cpp.html#a34a83707bf08e1b32d44c7ede5c34e43',1,'SimpleStatistics.cpp']]]
+  ['enums_0',['ENUMS',['../_enums_8cpp.html#aea5b29a8b32c473873eec73a683aeae0',1,'Enums.cpp']]]
 ];
