@@ -11,6 +11,7 @@ int main(int argc, char* argv[])
 	for (int count = 0; count < argc; ++count)
 		std::cout << count << " " << argv[count] << '\n';
 	
+
 	//////////
 	int rank, size, provided;
 	mpi_init(argc, argv, MPI_THREAD_FUNNELED, provided, rank, size);
