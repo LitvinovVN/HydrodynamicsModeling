@@ -22,5 +22,7 @@ var dir_61ffbd3fdfa0b0d185ebfa74a3bc5792 =
     [ "LinearArrays2D.cpp", "_linear_arrays2_d_8cpp.html", "_linear_arrays2_d_8cpp" ],
     [ "LinearArrays3D.cpp", "_linear_arrays3_d_8cpp.html", "_linear_arrays3_d_8cpp" ],
     [ "SimpleStatistics.cpp", "_simple_statistics_8cpp.html", "_simple_statistics_8cpp" ],
-    [ "Timer.cpp", "_timer_8cpp.html", "_timer_8cpp" ]
+    [ "Timer.cpp", "_timer_8cpp.html", "_timer_8cpp" ],
+    [ "Utils.cpp", "_utils_8cpp.html", "_utils_8cpp" ],
+    [ "Utils.h", "_utils_8h.html", "_utils_8h" ]
 ];

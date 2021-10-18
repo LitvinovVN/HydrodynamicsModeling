@@ -1,7 +1,12 @@
 <map id="matmAlgsTesting" name="matmAlgsTesting">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,128,57"/>
-<area shape="rect" id="node2" href="$matm_algs_testing_8cpp.html#abbe5ab466a6710a777867c35f7dbe297" title=" " alt="" coords="176,31,223,57"/>
-<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a4bf71d4d7abd65c68edc96b782e4b87b" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="271,5,452,32"/>
-<area shape="rect" id="node5" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="271,56,451,83"/>
-<area shape="rect" id="node4" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="500,31,664,57"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,128,83"/>
+<area shape="rect" id="node2" href="$matm_algs_testing_8cpp.html#abbe5ab466a6710a777867c35f7dbe297" title=" " alt="" coords="186,56,233,83"/>
+<area shape="rect" id="node6" href="$matm_algs_testing_8cpp.html#a12ec87ab6cff123786f24400219a01a5" title=" " alt="" coords="186,5,233,32"/>
+<area shape="rect" id="node7" href="$matm_algs_testing_8cpp.html#a37bbf3fd090a663fb08836a0b92fa486" title=" " alt="" coords="176,132,243,159"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a4bf71d4d7abd65c68edc96b782e4b87b" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="291,5,472,32"/>
+<area shape="rect" id="node5" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="291,56,471,83"/>
+<area shape="rect" id="node4" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="520,31,684,57"/>
+<area shape="rect" id="node8" href="$struct_linear_array3_d.html#ad93ba8b8757779f0fd84dac0e376fe94" title="Проверяет массивы на равенство (поэлементно)" alt="" coords="304,107,459,133"/>
+<area shape="rect" id="node9" href="$classtimer.html#a8cac498e9c17d70fade048c19cdecbd9" title=" " alt="" coords="339,157,424,184"/>
+<area shape="rect" id="node10" href="$classtimer.html#aed5aa53473af80aff2a9e04504c93227" title=" " alt="" coords="339,208,423,235"/>
 </map>

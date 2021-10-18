@@ -1,6 +1,8 @@
 #ifndef CLASSES
 #define CLASSES
 
+#include <mpi.h>
+
 #include <iostream>
 #include <functional> // std::ref
 #include <map>
