@@ -1,5 +1,3 @@
-run clear.bat
-
 git status
 git add .
 git status
