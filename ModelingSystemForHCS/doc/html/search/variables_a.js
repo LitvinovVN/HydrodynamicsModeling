@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rammemorysize_0',['ramMemorySize',['../struct_computing_node.html#a48d61727737fb1cbe931a895e1604bc3',1,'ComputingNode']]]
+  ['pid_0',['pid',['../struct_launch_settings.html#a292e59c179bb3573877f3e9b3726e039',1,'LaunchSettings']]]
 ];

@@ -7,8 +7,8 @@ var searchData=
   ['matmalgstesting_2ecpp_4',['matmAlgsTesting.cpp',['../matm_algs_testing_8cpp.html',1,'']]],
   ['modeldataname_5',['ModelDataName',['../_enums_8cpp.html#aab32bb3560559492481476c3581bdb4b',1,'Enums.cpp']]],
   ['modeldatanames_6',['modelDataNames',['../struct_linear_arrays2_d.html#a422b83175701a51f82130e309b43e104',1,'LinearArrays2D::modelDataNames()'],['../struct_linear_arrays3_d.html#a76d1ef2a43f28c890e793ff11540d5c6',1,'LinearArrays3D::modelDataNames()']]],
-  ['mpi_5finit_7',['mpi_init',['../_utils_8cpp.html#a0d261b232c9701bcbeda7c046607db58',1,'mpi_init(int argc, char *argv[], int mpi_thread_type, int &amp;provided, int &amp;rank, int &amp;size):&#160;Utils.cpp'],['../_utils_8h.html#a0d261b232c9701bcbeda7c046607db58',1,'mpi_init(int argc, char *argv[], int mpi_thread_type, int &amp;provided, int &amp;rank, int &amp;size):&#160;Utils.cpp']]],
-  ['mpi_5frank_8',['mpi_rank',['../struct_launch_settings.html#a0faec4e1c2dee29b174df3815dc090d4',1,'LaunchSettings']]],
-  ['mpi_5fsize_9',['mpi_size',['../struct_launch_settings.html#a548efeab94aaecc770eb55bb2876186e',1,'LaunchSettings']]],
+  ['mpi_5frank_7',['mpi_rank',['../struct_launch_settings.html#a0faec4e1c2dee29b174df3815dc090d4',1,'LaunchSettings']]],
+  ['mpi_5fsize_8',['mpi_size',['../struct_launch_settings.html#a548efeab94aaecc770eb55bb2876186e',1,'LaunchSettings']]],
+  ['mpi_5fthread_5fmode_9',['mpi_thread_mode',['../struct_launch_settings.html#a6b7d6499ae536a4fb2c36d5b2e90dcca',1,'LaunchSettings']]],
   ['mu_10',['MU',['../_enums_8cpp.html#aab32bb3560559492481476c3581bdb4baa1803642d3771f8cb9bf7b914c702a63',1,'Enums.cpp']]]
 ];

@@ -15,8 +15,9 @@ var searchData=
   ['nodeprev_12',['nodePrev',['../struct_grid_block3_d_by_node.html#af2643ca0673ffe35a318f9ed17d1ff40',1,'GridBlock3DByNode']]],
   ['nodes_13',['NODES',['../_enums_8cpp.html#a85710a4d27ce4a3fec67b009c8910eada0fe4c6464fdc5e7d04f0efd11d4ded8d',1,'Enums.cpp']]],
   ['nu_14',['NU',['../_enums_8cpp.html#aab32bb3560559492481476c3581bdb4baa34b618d8d56f50c859b67f66b508095',1,'Enums.cpp']]],
-  ['numofcommandlineparameters_15',['numOfCommandLineParameters',['../struct_launch_settings.html#a9827722ae1160188d4ebef1f4fcda056',1,'LaunchSettings']]],
-  ['nx_16',['nx',['../struct_linear_array1_d.html#a22ab376f38a1b5edbed600342e756e0a',1,'LinearArray1D::nx()'],['../struct_linear_array3_d.html#a24bf915713fe836739e225eb668c640a',1,'LinearArray3D::nx()']]],
-  ['ny_17',['ny',['../struct_linear_array3_d.html#a555ff840006b4f5ab75a4a99b95a44e5',1,'LinearArray3D']]],
-  ['nz_18',['nz',['../struct_linear_array3_d.html#a15c968b5cf739e8a6920e4afa73edebe',1,'LinearArray3D']]]
+  ['numberoftestlaunches_15',['numberOfTestLaunches',['../struct_launch_settings.html#a4cdc4740f909b38ea822eed700192e52',1,'LaunchSettings']]],
+  ['numofcommandlineparameters_16',['numOfCommandLineParameters',['../struct_launch_settings.html#a9827722ae1160188d4ebef1f4fcda056',1,'LaunchSettings']]],
+  ['nx_17',['nx',['../struct_linear_array1_d.html#a22ab376f38a1b5edbed600342e756e0a',1,'LinearArray1D::nx()'],['../struct_linear_array3_d.html#a24bf915713fe836739e225eb668c640a',1,'LinearArray3D::nx()']]],
+  ['ny_18',['ny',['../struct_linear_array3_d.html#a555ff840006b4f5ab75a4a99b95a44e5',1,'LinearArray3D']]],
+  ['nz_19',['nz',['../struct_linear_array3_d.html#a15c968b5cf739e8a6920e4afa73edebe',1,'LinearArray3D']]]
 ];

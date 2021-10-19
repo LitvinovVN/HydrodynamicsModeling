@@ -11,9 +11,9 @@
 \mbox{\hyperlink{struct_launch_settings_af867989c2590452b18c3a57d323892d0}{Launch\+Settings}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Конструктор. Инициализация из аргументов командной строки \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_launch_settings_a39996711b9ebc749ca056e0589aac702}{Is\+MPI}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Проверяет наличие параметра MPI в аргументах командной строки. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_launch_settings_a65967a5cde3a5fa874bfde564f4140a4}{Print}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Выводит в консоль подробный отчет о содержимом объекта \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,11 +22,21 @@ int \mbox{\hyperlink{struct_launch_settings_a9827722ae1160188d4ebef1f4fcda056}{n
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{struct_launch_settings_a11ecfc1c747ed1a199e18403912f6284}{command\+Line\+Parameters}}
 \begin{DoxyCompactList}\small\item\em Параметры командной строки \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_launch_settings_a397940f8badfe89341ef478f1da9d978}{is\+MPI}} = false
-\item 
+\begin{DoxyCompactList}\small\item\em Флаг использования MPI. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{struct_launch_settings_a0faec4e1c2dee29b174df3815dc090d4}{mpi\+\_\+rank}} = 0
-\item 
+\begin{DoxyCompactList}\small\item\em Ранг процесса MPI. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{struct_launch_settings_a548efeab94aaecc770eb55bb2876186e}{mpi\+\_\+size}} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Количество процессов MPI. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_launch_settings_a6b7d6499ae536a4fb2c36d5b2e90dcca}{mpi\+\_\+thread\+\_\+mode}} = 0
+\begin{DoxyCompactList}\small\item\em Режим многопоточности MPI. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_launch_settings_a292e59c179bb3573877f3e9b3726e039}{pid}} = 0
+\begin{DoxyCompactList}\small\item\em УИД процесса \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_launch_settings_a6abdff755802ba7789b66d7580141ff0}{hardware\+Concurrency}} = 0
+\begin{DoxyCompactList}\small\item\em Количество аппаратных потоков ЦПУ \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{struct_launch_settings_a1410720741fe579d889d30fe93bb8b9a}{test\+Numbers\+To\+Launch}}
+\begin{DoxyCompactList}\small\item\em Вектор номеров тестов для запуска \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_launch_settings_a4cdc4740f909b38ea822eed700192e52}{number\+Of\+Test\+Launches}} = 10
+\begin{DoxyCompactList}\small\item\em Число прогонов одного теста \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -60,6 +70,10 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{IsMPI()}{IsMPI()}}
 {\footnotesize\ttfamily bool Launch\+Settings\+::\+Is\+MPI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Проверяет наличие параметра MPI в аргументах командной строки. 
+
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -74,7 +88,12 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{Print()}{Print()}}
 {\footnotesize\ttfamily void Launch\+Settings\+::\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Выводит в консоль подробный отчет о содержимом объекта 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -94,11 +113,25 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Параметры командной строки 
 
+\mbox{\Hypertarget{struct_launch_settings_a6abdff755802ba7789b66d7580141ff0}\label{struct_launch_settings_a6abdff755802ba7789b66d7580141ff0}} 
+\index{LaunchSettings@{LaunchSettings}!hardwareConcurrency@{hardwareConcurrency}}
+\index{hardwareConcurrency@{hardwareConcurrency}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{hardwareConcurrency}{hardwareConcurrency}}
+{\footnotesize\ttfamily int Launch\+Settings\+::hardware\+Concurrency = 0}
+
+
+
+Количество аппаратных потоков ЦПУ 
+
 \mbox{\Hypertarget{struct_launch_settings_a397940f8badfe89341ef478f1da9d978}\label{struct_launch_settings_a397940f8badfe89341ef478f1da9d978}} 
 \index{LaunchSettings@{LaunchSettings}!isMPI@{isMPI}}
 \index{isMPI@{isMPI}!LaunchSettings@{LaunchSettings}}
 \doxysubsubsection{\texorpdfstring{isMPI}{isMPI}}
 {\footnotesize\ttfamily bool Launch\+Settings\+::is\+MPI = false}
+
+
+
+Флаг использования MPI. 
 
 \mbox{\Hypertarget{struct_launch_settings_a0faec4e1c2dee29b174df3815dc090d4}\label{struct_launch_settings_a0faec4e1c2dee29b174df3815dc090d4}} 
 \index{LaunchSettings@{LaunchSettings}!mpi\_rank@{mpi\_rank}}
@@ -106,11 +139,39 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{mpi\_rank}{mpi\_rank}}
 {\footnotesize\ttfamily int Launch\+Settings\+::mpi\+\_\+rank = 0}
 
+
+
+Ранг процесса MPI. 
+
 \mbox{\Hypertarget{struct_launch_settings_a548efeab94aaecc770eb55bb2876186e}\label{struct_launch_settings_a548efeab94aaecc770eb55bb2876186e}} 
 \index{LaunchSettings@{LaunchSettings}!mpi\_size@{mpi\_size}}
 \index{mpi\_size@{mpi\_size}!LaunchSettings@{LaunchSettings}}
 \doxysubsubsection{\texorpdfstring{mpi\_size}{mpi\_size}}
 {\footnotesize\ttfamily int Launch\+Settings\+::mpi\+\_\+size = 0}
+
+
+
+Количество процессов MPI. 
+
+\mbox{\Hypertarget{struct_launch_settings_a6b7d6499ae536a4fb2c36d5b2e90dcca}\label{struct_launch_settings_a6b7d6499ae536a4fb2c36d5b2e90dcca}} 
+\index{LaunchSettings@{LaunchSettings}!mpi\_thread\_mode@{mpi\_thread\_mode}}
+\index{mpi\_thread\_mode@{mpi\_thread\_mode}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{mpi\_thread\_mode}{mpi\_thread\_mode}}
+{\footnotesize\ttfamily int Launch\+Settings\+::mpi\+\_\+thread\+\_\+mode = 0}
+
+
+
+Режим многопоточности MPI. 
+
+\mbox{\Hypertarget{struct_launch_settings_a4cdc4740f909b38ea822eed700192e52}\label{struct_launch_settings_a4cdc4740f909b38ea822eed700192e52}} 
+\index{LaunchSettings@{LaunchSettings}!numberOfTestLaunches@{numberOfTestLaunches}}
+\index{numberOfTestLaunches@{numberOfTestLaunches}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{numberOfTestLaunches}{numberOfTestLaunches}}
+{\footnotesize\ttfamily int Launch\+Settings\+::number\+Of\+Test\+Launches = 10}
+
+
+
+Число прогонов одного теста 
 
 \mbox{\Hypertarget{struct_launch_settings_a9827722ae1160188d4ebef1f4fcda056}\label{struct_launch_settings_a9827722ae1160188d4ebef1f4fcda056}} 
 \index{LaunchSettings@{LaunchSettings}!numOfCommandLineParameters@{numOfCommandLineParameters}}
@@ -121,6 +182,26 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 Число параметров командной строки 
+
+\mbox{\Hypertarget{struct_launch_settings_a292e59c179bb3573877f3e9b3726e039}\label{struct_launch_settings_a292e59c179bb3573877f3e9b3726e039}} 
+\index{LaunchSettings@{LaunchSettings}!pid@{pid}}
+\index{pid@{pid}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{pid}{pid}}
+{\footnotesize\ttfamily int Launch\+Settings\+::pid = 0}
+
+
+
+УИД процесса 
+
+\mbox{\Hypertarget{struct_launch_settings_a1410720741fe579d889d30fe93bb8b9a}\label{struct_launch_settings_a1410720741fe579d889d30fe93bb8b9a}} 
+\index{LaunchSettings@{LaunchSettings}!testNumbersToLaunch@{testNumbersToLaunch}}
+\index{testNumbersToLaunch@{testNumbersToLaunch}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{testNumbersToLaunch}{testNumbersToLaunch}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Launch\+Settings\+::test\+Numbers\+To\+Launch}
+
+
+
+Вектор номеров тестов для запуска 
 
 
 

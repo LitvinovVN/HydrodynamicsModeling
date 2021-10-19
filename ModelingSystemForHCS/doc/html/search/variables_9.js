@@ -13,8 +13,9 @@ var searchData=
   ['nodeoffsety_10',['nodeOffsetY',['../struct_grid_block3_d_by_node.html#a89f565c6f1d61435571d6501664d6509',1,'GridBlock3DByNode']]],
   ['nodeperfomance_11',['nodePerfomance',['../struct_computing_node.html#a646f1d5ed3fc4fad027eacd0dab55b32',1,'ComputingNode']]],
   ['nodeprev_12',['nodePrev',['../struct_grid_block3_d_by_node.html#af2643ca0673ffe35a318f9ed17d1ff40',1,'GridBlock3DByNode']]],
-  ['numofcommandlineparameters_13',['numOfCommandLineParameters',['../struct_launch_settings.html#a9827722ae1160188d4ebef1f4fcda056',1,'LaunchSettings']]],
-  ['nx_14',['nx',['../struct_linear_array1_d.html#a22ab376f38a1b5edbed600342e756e0a',1,'LinearArray1D::nx()'],['../struct_linear_array3_d.html#a24bf915713fe836739e225eb668c640a',1,'LinearArray3D::nx()']]],
-  ['ny_15',['ny',['../struct_linear_array3_d.html#a555ff840006b4f5ab75a4a99b95a44e5',1,'LinearArray3D']]],
-  ['nz_16',['nz',['../struct_linear_array3_d.html#a15c968b5cf739e8a6920e4afa73edebe',1,'LinearArray3D']]]
+  ['numberoftestlaunches_13',['numberOfTestLaunches',['../struct_launch_settings.html#a4cdc4740f909b38ea822eed700192e52',1,'LaunchSettings']]],
+  ['numofcommandlineparameters_14',['numOfCommandLineParameters',['../struct_launch_settings.html#a9827722ae1160188d4ebef1f4fcda056',1,'LaunchSettings']]],
+  ['nx_15',['nx',['../struct_linear_array1_d.html#a22ab376f38a1b5edbed600342e756e0a',1,'LinearArray1D::nx()'],['../struct_linear_array3_d.html#a24bf915713fe836739e225eb668c640a',1,'LinearArray3D::nx()']]],
+  ['ny_16',['ny',['../struct_linear_array3_d.html#a555ff840006b4f5ab75a4a99b95a44e5',1,'LinearArray3D']]],
+  ['nz_17',['nz',['../struct_linear_array3_d.html#a15c968b5cf739e8a6920e4afa73edebe',1,'LinearArray3D']]]
 ];

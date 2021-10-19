@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['sharedmemory_0',['sharedMemory',['../struct_computing_device_g_p_u.html#abc7809947162566fd26488870a2144b3',1,'ComputingDeviceGPU']]],
-  ['spnumber_1',['spNumber',['../struct_computing_device_g_p_u.html#aca73480fecb13d9c7228327380933efb',1,'ComputingDeviceGPU']]]
+  ['rammemorysize_0',['ramMemorySize',['../struct_computing_node.html#a48d61727737fb1cbe931a895e1604bc3',1,'ComputingNode']]]
 ];
