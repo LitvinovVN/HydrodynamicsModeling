@@ -84,6 +84,8 @@ struct LaunchSettings {
 	/// </summary>
 	void Print()
 	{
+		if (isMPI && mpi_rank > 0) return;// Не выводим информацию, если MPI и ранг не 0
+
 		std::cout << "--- LaunchSettings --- " << std::endl;
 		std::cout << "numOfCommandLineParameters: " << numOfCommandLineParameters << std::endl;
 
