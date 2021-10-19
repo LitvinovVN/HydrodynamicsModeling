@@ -31,8 +31,8 @@
 
 LaunchSettings* app_init(int argc, char* argv[]){
     setlocale(LC_CTYPE, "rus"); // вызов функции настройки локали
-    std::cout << "Система моделирования для гетерогенных вычислительных систем";
-    std::cout << " (время запуска: "; printTime(); std::cout << ")";
+    std::cout << "--- Modeling System for HCS";
+    std::cout << " (launched at "; printTime(); std::cout << ") ---";
     std::cout << std::endl;
         
     auto settings = new LaunchSettings{ argc, argv };
