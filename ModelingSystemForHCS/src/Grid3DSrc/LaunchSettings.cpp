@@ -4,6 +4,7 @@
 #include <vector>
 #include <thread>
 #include <mpi.h>
+#include <string>
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -22,6 +23,7 @@
 #include <unistd.h>// getpid
 #endif
 
+
 /// <summary>
 /// Параметры запуска приложения
 /// </summary>
@@ -35,6 +37,9 @@ struct LaunchSettings {
 	int mpi_thread_mode = 0;///< Режим многопоточности MPI
 	int pid = 0;///< УИД процесса
 	int hardwareConcurrency = 0;///< Количество аппаратных потоков ЦПУ
+
+	std::vector<int> testNumbersToLaunch;///< Вектор номеров тестов для запуска
+	int numberOfTestLaunches = 10; ///< Число прогонов одного теста
 
 	/// <summary>
 	/// Конструктор. Инициализация из аргументов командной строки
@@ -89,6 +94,44 @@ struct LaunchSettings {
 					}
 
 					std::cout << " subString = " << subString << std::endl;
+
+					// Проверка на диапазон
+					if(subString.find("-") != std::string::npos)
+					{
+						int j = 0;
+						std::string firstNumStr = "";
+						curChar = std::string{ subString[0] };
+						while (curChar != "-" && j < subString.size())
+						{
+							firstNumStr.append(curChar);
+							j++;
+							curChar = std::string{ subString[j] };
+						}
+						int firstNum = stoi(firstNumStr);
+						std::cout << " firstNum = " << firstNum << std::endl;
+
+						j++;
+						std::string lastNumStr = "";
+						curChar = std::string{ subString[j] };
+						while (j < subString.size())
+						{
+							lastNumStr.append(curChar);
+							j++;
+							curChar = std::string{ subString[j] };
+						}
+						int lastNum = stoi(lastNumStr);
+						std::cout << " lastNum = " << lastNum << std::endl;
+
+						for (size_t i = firstNum; i <= lastNum; i++)
+						{
+							testNumbersToLaunch.emplace_back(i);
+						}
+					}
+					else
+					{
+						int testNumber = stoi(subString);
+						testNumbersToLaunch.emplace_back(testNumber);
+					}
 				}
 			}			
 		}
@@ -132,6 +175,16 @@ struct LaunchSettings {
 
 		std::cout << "pid: " << pid << std::endl;
 		std::cout << "hardwareConcurrency: " << hardwareConcurrency << std::endl;
+
+		std::cout << "testNumbersToLaunch: ";
+		for (size_t i = 0; i < testNumbersToLaunch.size(); i++)
+		{
+			std::cout << testNumbersToLaunch[i] << "; ";
+		}
+		std::cout << std::endl;
+
+		std::cout << "numberOfTestLaunches: " << numberOfTestLaunches << std::endl;
+
 		std::cout << "---------------------- " << std::endl;
 	}
 
