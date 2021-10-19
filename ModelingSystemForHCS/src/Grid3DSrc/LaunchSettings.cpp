@@ -74,8 +74,7 @@ struct LaunchSettings {
 		{
 			auto parameterString = commandLineParameters[i];
 			if (parameterString.find("--tests=") != std::string::npos)
-			{
-				std::cout << "--tests founded!" << std::endl;
+			{				
 				int parameterStringSize = parameterString.size();
 				for (size_t i = 8; i < parameterStringSize; i++)
 				{
@@ -91,9 +90,7 @@ struct LaunchSettings {
 						subString.append(curChar);
 						i++;
 						curChar = std::string{ parameterString[i] };
-					}
-
-					std::cout << " subString = " << subString << std::endl;
+					}										
 
 					// Проверка на диапазон
 					if(subString.find("-") != std::string::npos)
@@ -107,8 +104,7 @@ struct LaunchSettings {
 							j++;
 							curChar = std::string{ subString[j] };
 						}
-						int firstNum = stoi(firstNumStr);
-						std::cout << " firstNum = " << firstNum << std::endl;
+						int firstNum = stoi(firstNumStr);						
 
 						j++;
 						std::string lastNumStr = "";
@@ -119,8 +115,7 @@ struct LaunchSettings {
 							j++;
 							curChar = std::string{ subString[j] };
 						}
-						int lastNum = stoi(lastNumStr);
-						std::cout << " lastNum = " << lastNum << std::endl;
+						int lastNum = stoi(lastNumStr);						
 
 						for (size_t i = firstNum; i <= lastNum; i++)
 						{

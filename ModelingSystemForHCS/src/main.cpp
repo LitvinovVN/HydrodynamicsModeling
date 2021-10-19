@@ -6,7 +6,7 @@
 
 int main(int argc, char* argv[])
 {
-	auto* settings = app_init(argc, argv);		
+	LaunchSettings* settings = app_init(argc, argv);		
 	settings->Print();		
 
 	matmAlgsTesting();
