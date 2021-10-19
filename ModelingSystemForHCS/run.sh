@@ -1,1 +1,1 @@
-mpirun -np 2 ./_build/myApp MPI
+mpirun -np 2 ./_build/myApp MPI --tests=3,5,11-14
