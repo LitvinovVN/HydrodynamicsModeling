@@ -73,7 +73,7 @@ struct LaunchSettings {
 		for (size_t i = 0; i < numOfCommandLineParameters; i++)
 		{
 			auto parameterString = commandLineParameters[i];
-			if (parameterString.find("--tests:") != std::string::npos)
+			if (parameterString.find("--tests=") != std::string::npos)
 			{
 				std::cout << "--tests founded!" << std::endl;
 				int parameterStringSize = parameterString.size();
