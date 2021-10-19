@@ -5,6 +5,23 @@
 #include <thread>
 #include <mpi.h>
 
+#ifdef _WIN32
+#include <Windows.h>
+#include <tchar.h>
+#elif _WIN64
+#include <Windows.h>
+#include <tchar.h>
+#elif WIN32
+#include <Windows.h>
+#include <tchar.h>
+#elif WIN64
+#include <Windows.h>
+#include <tchar.h>
+#else
+// code for linux
+#include <unistd.h>// getpid
+#endif
+
 /// <summary>
 /// Параметры запуска приложения
 /// </summary>
