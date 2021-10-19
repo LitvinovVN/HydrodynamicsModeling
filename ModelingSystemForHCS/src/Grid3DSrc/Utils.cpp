@@ -35,9 +35,7 @@ LaunchSettings* app_init(int argc, char* argv[]){
     std::cout << " (launched at "; printTime(); std::cout << ") ---";
     std::cout << std::endl;
         
-    auto settings = new LaunchSettings{ argc, argv };
-
-    
+    auto settings = new LaunchSettings{ argc, argv };       
 
     return settings;
 }

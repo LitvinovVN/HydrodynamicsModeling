@@ -93,7 +93,11 @@ struct LaunchSettings {
 			std::cout << "  " << count << ": " << commandLineParameters[count] << '\n';
 		}
 
-		std::cout << "isMPI: " << isMPI << std::endl;
+		std::cout << "isMPI: "			 << isMPI			<< std::endl;
+		std::cout << "mpi_rank: "		 << mpi_rank		<< std::endl;
+		std::cout << "mpi_size: "		 << mpi_size		<< std::endl;
+		std::cout << "mpi_thread_mode: " << mpi_thread_mode << std::endl;
+
 		std::cout << "pid: " << pid << std::endl;
 		std::cout << "hardwareConcurrency: " << hardwareConcurrency << std::endl;
 		std::cout << "---------------------- " << std::endl;

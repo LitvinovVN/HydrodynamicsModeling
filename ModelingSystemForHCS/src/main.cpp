@@ -7,9 +7,7 @@
 int main(int argc, char* argv[])
 {
 	auto* settings = app_init(argc, argv);		
-	settings->Print();
-
-		
+	settings->Print();		
 
 	matmAlgsTesting();
 
