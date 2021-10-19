@@ -78,8 +78,6 @@ struct LaunchSettings {
 				int parameterStringSize = parameterString.size();
 				for (size_t i = 8; i < parameterStringSize; i++)
 				{
-					std::cout << i << ": " << parameterString[i] << std::endl;
-
 					int start = i;
 					int end = i;
 
