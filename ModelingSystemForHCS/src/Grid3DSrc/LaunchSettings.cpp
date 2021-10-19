@@ -29,10 +29,10 @@ struct LaunchSettings {
 	int numOfCommandLineParameters = 0;///< Число параметров командной строки
 	std::vector<std::string> commandLineParameters;///< Параметры командной строки
 
-	bool isMPI = false;
-	int mpi_rank = 0;
-	int mpi_size = 0;
-	int mpi_thread_mode = 0;
+	bool isMPI = false;///< Флаг использования MPI
+	int mpi_rank = 0;  ///< Ранг процесса MPI
+	int mpi_size = 0;  ///< Количество процессов MPI
+	int mpi_thread_mode = 0;///< Режим многопоточности MPI
 	int pid = 0;///< УИД процесса
 	int hardwareConcurrency = 0;///< Количество аппаратных потоков ЦПУ
 
@@ -63,6 +63,36 @@ struct LaunchSettings {
 
 		pid = getpid();
 		hardwareConcurrency = std::thread::hardware_concurrency();
+
+		//////// Определение запускаемых тестов //////////
+		for (size_t i = 0; i < numOfCommandLineParameters; i++)
+		{
+			auto parameterString = commandLineParameters[i];
+			if (parameterString.find("--tests:") != std::string::npos)
+			{
+				std::cout << "--tests founded!" << std::endl;
+				int parameterStringSize = parameterString.size();
+				for (size_t i = 8; i < parameterStringSize; i++)
+				{
+					std::cout << i << ": " << parameterString[i] << std::endl;
+
+					int start = i;
+					int end = i;
+
+					std::string subString = "";
+					std::string curChar = std::string{ parameterString[i] };
+					while (curChar != "," && i < parameterStringSize)
+					{						
+						subString.append(curChar);
+						i++;
+						curChar = std::string{ parameterString[i] };
+					}
+
+					std::cout << " subString = " << subString << std::endl;
+				}
+			}			
+		}
+
 	}
 
 	/// <summary>
