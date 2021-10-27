@@ -17,6 +17,12 @@ endif(ENABLE_MPI)
 
 if(ENABLE_CUDA)
     find_package(CUDA QUIET REQUIRED)
+    # Pass options to NVCC
+    set(
+    CUDA_NVCC_FLAGS
+    ${CUDA_NVCC_FLAGS};
+    -O3 -gencode arch=compute_22,code=sm_22
+    )
 endif(ENABLE_CUDA)
 
 file(GLOB source_files
