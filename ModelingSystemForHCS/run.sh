@@ -1,1 +1,1 @@
-mpirun -np 2 ./_build/myApp MPI --tests=1-3,5,11-14 --gridSize=10x20x30
+mpirun -np 1 ./_build/myApp MPI --tests=1-3,5,11-14 --gridSize=10x20x30
