@@ -41,6 +41,10 @@ struct LaunchSettings {
 	std::vector<int> testNumbersToLaunch;///< Вектор номеров тестов для запуска
 	int numberOfTestLaunches = 10; ///< Число прогонов одного теста
 
+	int gridSizeX = 0; ///< Размер расчетной сетки по оси Ox
+	int gridSizeY = 0; ///< Размер расчетной сетки по оси Oy
+	int gridSizeZ = 0; ///< Размер расчетной сетки по оси Oz
+
 	/// <summary>
 	/// Конструктор. Инициализация из аргументов командной строки
 	/// </summary>
@@ -129,6 +133,41 @@ struct LaunchSettings {
 			}			
 		}
 
+
+		//////// Размеры расчетной сетки
+		for (auto parameterString : commandLineParameters)
+		{
+			if (parameterString.find("--gridSize=") != std::string::npos)
+			{				
+				auto gridSizeSubstring = parameterString.substr(11);
+				std::cout << "--gridSize parameter: " << gridSizeSubstring << std::endl;
+
+				std::vector<int> gridSizeVector;
+				std::string valueStr;
+				for (int i = 0; i <= gridSizeSubstring.size(); i++)
+				{
+					auto curChar = gridSizeSubstring[i];
+					if (curChar == 'x' || i == gridSizeSubstring.size())
+					{
+						int gridSizeByAxis = stoi(valueStr);
+						gridSizeVector.emplace_back(gridSizeByAxis);
+						valueStr.clear();
+					}
+					else
+					{
+						valueStr.append(1, curChar);
+					}					
+				}
+
+				auto gridSizeVectorSize = gridSizeVector.size();
+				if (gridSizeVectorSize > 0)
+					gridSizeX = gridSizeVector[0];
+				if (gridSizeVectorSize > 1)
+					gridSizeY = gridSizeVector[1];
+				if (gridSizeVectorSize > 2)
+					gridSizeZ = gridSizeVector[2];
+			}
+		}
 	}
 
 	/// <summary>
@@ -177,6 +216,10 @@ struct LaunchSettings {
 		std::cout << std::endl;
 
 		std::cout << "numberOfTestLaunches: " << numberOfTestLaunches << std::endl;
+
+		std::cout << "gridSizeX: " << gridSizeX << std::endl;
+		std::cout << "gridSizeY: " << gridSizeY << std::endl;
+		std::cout << "gridSizeZ: " << gridSizeZ << std::endl;
 
 		std::cout << "---------------------- " << std::endl;
 	}

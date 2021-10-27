@@ -1,1 +1,1 @@
-mpiexec -np 2 ./_build/Debug/myApp.exe MPI --tests=1,3-5,23
+mpiexec -np 2 ./_build/Debug/myApp.exe MPI --tests=1,3-5,23 --gridSize=10x20x30

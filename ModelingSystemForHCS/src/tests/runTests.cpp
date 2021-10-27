@@ -1,5 +1,10 @@
 #include "testFunctions.h"
 
+/// <summary>
+/// Определяет необходимость запуска теста.
+/// Если список тестов пуст, возвращает true
+/// (для запуска всех тестов)
+/// </summary>
 bool isRun(LaunchSettings* settings, int testNum)
 {
 	auto tests = settings->testNumbersToLaunch;
@@ -20,6 +25,8 @@ bool isRun(LaunchSettings* settings, int testNum)
 /// </summary>
 void runTests(LaunchSettings* settings)
 {
+	// Запуск теста matmAlgsTesting(). Индекс теста: 1 
 	if( isRun(settings, 1) )
 		matmAlgsTesting();
+
 }
