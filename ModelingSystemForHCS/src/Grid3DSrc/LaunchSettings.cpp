@@ -32,6 +32,7 @@ struct LaunchSettings {
 	std::vector<std::string> commandLineParameters;///< Параметры командной строки
 
 	bool isMPI = false;///< Флаг использования MPI
+	bool isCUDA = false;///< Флаг использования CUDA
 	int mpi_rank = 0;  ///< Ранг процесса MPI
 	int mpi_size = 0;  ///< Количество процессов MPI
 	int mpi_thread_mode = 0;///< Режим многопоточности MPI
@@ -69,6 +70,8 @@ struct LaunchSettings {
 			MPI_Barrier(MPI_COMM_WORLD);
 		}
 		//////////
+		
+		isCUDA = IsCUDA();
 
 		pid = getpid();
 		hardwareConcurrency = std::thread::hardware_concurrency();
@@ -185,6 +188,20 @@ struct LaunchSettings {
 	}
 
 	/// <summary>
+	/// Проверяет наличие параметра CUDA в аргументах командной строки.
+	/// </summary>
+	bool IsCUDA()
+	{
+		for (int count = 0; count < numOfCommandLineParameters; ++count)
+		{
+			if (commandLineParameters[count] == "CUDA") return true;
+			if (commandLineParameters[count] == "cuda") return true;
+		}
+
+		return false;
+	}
+
+	/// <summary>
 	/// Выводит в консоль подробный отчет о содержимом объекта
 	/// </summary>
 	void Print()
@@ -201,6 +218,7 @@ struct LaunchSettings {
 		}
 
 		std::cout << "isMPI: "			 << isMPI			<< std::endl;
+		std::cout << "isCUDA: "			 << isCUDA			 << std::endl;
 		std::cout << "mpi_rank: "		 << mpi_rank		<< std::endl;
 		std::cout << "mpi_size: "		 << mpi_size		<< std::endl;
 		std::cout << "mpi_thread_mode: " << mpi_thread_mode << std::endl;
