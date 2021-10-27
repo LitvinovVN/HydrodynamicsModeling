@@ -3,6 +3,8 @@
 
 #include "../Grid3DSrc/Classes.h"
 
+void runTests(LaunchSettings* settings);
+
 void matmAlgsTesting();
 
 #endif
