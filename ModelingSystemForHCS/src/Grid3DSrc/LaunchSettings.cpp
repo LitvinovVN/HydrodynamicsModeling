@@ -140,7 +140,7 @@ struct LaunchSettings {
 			if (parameterString.find("--gridSize=") != std::string::npos)
 			{				
 				auto gridSizeSubstring = parameterString.substr(11);
-				std::cout << "--gridSize parameter: " << gridSizeSubstring << std::endl;
+				//std::cout << "--gridSize parameter: " << gridSizeSubstring << std::endl;
 
 				std::vector<int> gridSizeVector;
 				std::string valueStr;

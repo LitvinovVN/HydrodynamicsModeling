@@ -5,6 +5,7 @@ project(ModelingSystemForHCS)
 set(CMAKE_CXX_FLAGS "-std=c++11")
 
 option(ENABLE_MPI "Enable MPI parallelization" ON)
+option(ENABLE_CUDA "Enable CUDA axeleration" ON)
 
 if(ENABLE_MPI)
     find_package(MPI REQUIRED)
@@ -14,6 +15,9 @@ if(ENABLE_MPI)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${MPI_EXE_LINKER_FLAGS}")
 endif(ENABLE_MPI)
 
+if(ENABLE_CUDA)
+    find_package(CUDA QUIET REQUIRED)
+endif(ENABLE_CUDA)
 
 file(GLOB source_files
             "*.h"

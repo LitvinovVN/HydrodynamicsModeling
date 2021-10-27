@@ -28,7 +28,10 @@
     #include <cstring>// memset
 #endif
 
-
+/// <summary>
+/// Выполняет разбор параметров командной строки
+/// и инициализирует объект с настройками запуска приложения
+/// </summary>
 LaunchSettings* app_init(int argc, char* argv[]){
     setlocale(LC_CTYPE, "rus"); // вызов функции настройки локали
     std::cout << "--- Modeling System for HCS";
