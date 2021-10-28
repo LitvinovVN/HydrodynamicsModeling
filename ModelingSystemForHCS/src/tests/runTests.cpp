@@ -51,7 +51,7 @@ void runTests(LaunchSettings* settings)
 	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, напрямую
 	if (isRun(settings, 7))
 		transferFragmentYOZTesting06();
-	// Запуск теста transferFragmentPlaneXOYTesting05(). Индекс теста: 8.
+	// Запуск теста transferFragmentPlaneXOYTesting07(). Индекс теста: 8.
 	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, через плоскость
 	if (isRun(settings, 8))
 		transferFragmentPlaneYOZTesting07();
