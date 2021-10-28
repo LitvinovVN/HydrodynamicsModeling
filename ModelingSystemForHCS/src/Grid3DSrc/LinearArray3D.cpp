@@ -88,10 +88,13 @@ struct LinearArray3D
 	/// <returns>Значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте</returns>
 	double GetElement(size_t IndX, size_t IndY, size_t IndZ)
 	{
+#ifndef REMOVE_PROTECTIVE_CHECKS
 		if ((IndX > nx) || (IndY > ny) || (IndZ > nz))
 		{
 			throw - 1;
 		}
+#endif // !REMOVE_PROTECTIVE_CHECKS
+				
 		size_t indx = GetIndex(IndX, IndY, IndZ);
 
 		return data[indx];
@@ -107,10 +110,13 @@ struct LinearArray3D
 	/// <returns>Значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте</returns>
 	double SetElement(size_t IndX, size_t IndY, size_t IndZ, double Value)
 	{
+#ifndef REMOVE_PROTECTIVE_CHECKS
 		if ((IndX > nx) || (IndY > ny) || (IndZ > nz))
 		{
 			throw - 1;
 		}
+#endif // !REMOVE_PROTECTIVE_CHECKS
+		
 		size_t indx = GetIndex(IndX, IndY, IndZ);
 
 		data[indx] = Value;

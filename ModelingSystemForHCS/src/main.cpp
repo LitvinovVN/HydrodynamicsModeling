@@ -1,7 +1,8 @@
-﻿#include <iostream>
+﻿#define REMOVE_PROTECTIVE_CHECKS
+
+#include <iostream>
 #include "tests/testFunctions.h"
 #include "Grid3DSrc/Classes.h"
-
 
 
 int main(int argc, char* argv[])

@@ -341,6 +341,13 @@ void matmAlgsTesting()
 	double w = 0.5;
 	int numberOfLaunches = 10;// Количество запусков алгоритма
 
+	std::cout << std::endl;
+	std::cout << "-------------------------------------------------" << std::endl;
+	std::cout << "-------- Running test: matmAlgsTesting() --------" << std::endl;
+	std::cout << "nx = " << nx << std::endl;
+	std::cout << "ny = " << ny << std::endl;
+	std::cout << "nz = " << nz << std::endl;
+
 	// Инициализация массивов
 	r->InitLinearArray3DByValue(10);
 	c0->InitLinearArray3DByValue(1);
