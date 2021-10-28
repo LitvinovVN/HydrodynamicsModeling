@@ -7,4 +7,6 @@ void runTests(LaunchSettings* settings);
 
 void matmAlgsTesting();
 
+void CUDA_Devices_Info();
+
 #endif

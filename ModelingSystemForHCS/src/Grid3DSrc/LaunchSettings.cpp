@@ -72,6 +72,12 @@ struct LaunchSettings {
 		//////////
 		
 		isCUDA = IsCUDA();
+		/*if (isCUDA)
+		{
+			#ifndef CUDA
+			#define CUDA
+			#endif
+		}*/
 
 		pid = getpid();
 		hardwareConcurrency = std::thread::hardware_concurrency();

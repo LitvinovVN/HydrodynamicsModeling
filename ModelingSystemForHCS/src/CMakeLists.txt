@@ -5,7 +5,7 @@ project(ModelingSystemForHCS)
 set(CMAKE_CXX_FLAGS "-std=c++11")
 
 option(ENABLE_MPI "Enable MPI parallelization" ON)
-option(ENABLE_CUDA "Enable CUDA axeleration" ON)
+option(ENABLE_CUDA "Enable CUDA axeleration" OFF)
 
 if(ENABLE_MPI)
     find_package(MPI REQUIRED)
@@ -21,21 +21,27 @@ if(ENABLE_CUDA)
     set(
     CUDA_NVCC_FLAGS
     ${CUDA_NVCC_FLAGS};
-    -O3 -gencode arch=compute_22,code=sm_22
+    -O3 -gencode arch=compute_35,code=sm_35
     )
 endif(ENABLE_CUDA)
 
 file(GLOB source_files
             "*.h"
             "*.cpp"
-            "tests/*.cpp"            
+            "tests/*.cpp"
+            "tests/*.cu"
             "tests/*.h"
             "tests/*/*.cpp"
             "tests/*/*.h"
             "Grid3DSrc/Utils.cpp"
     )
 
-add_executable(myApp   ${source_files} )
+
+if(ENABLE_CUDA)
+    cuda_add_executable(myApp   ${source_files} )
+else()
+    add_executable(myApp   ${source_files} )
+endif(ENABLE_MPI)
 
 if(ENABLE_MPI)
     target_link_libraries(myApp ${MPI_LIBRARIES})

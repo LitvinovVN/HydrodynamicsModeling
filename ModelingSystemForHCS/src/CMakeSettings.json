@@ -8,7 +8,14 @@
       "buildRoot": "${projectDir}\\out\\build\\${name}",
       "installRoot": "${projectDir}\\out\\install\\${name}",
       "buildCommandArgs": "",
-      "ctestCommandArgs": ""
+      "ctestCommandArgs": "",
+      "variables": [
+        {
+          "name": "CUDA_SDK_ROOT_DIR",
+          "value": "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.2",
+          "type": "PATH"
+        }
+      ]
     },
     {
       "name": "Linux-GCC-Debug",
@@ -39,7 +46,14 @@
       "cmakeCommandArgs": "",
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
-      "inheritEnvironments": [ "msvc_x64_x64" ]
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "variables": [
+        {
+          "name": "CUDA_SDK_ROOT_DIR",
+          "value": "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.2",
+          "type": "PATH"
+        }
+      ]
     }
   ]
 }

@@ -28,5 +28,7 @@ void runTests(LaunchSettings* settings)
 	// Запуск теста matmAlgsTesting(). Индекс теста: 1 
 	if( isRun(settings, 1) )
 		matmAlgsTesting();
+	if (isRun(settings, 2) && settings->isCUDA)
+		CUDA_Devices_Info();
 
 }
