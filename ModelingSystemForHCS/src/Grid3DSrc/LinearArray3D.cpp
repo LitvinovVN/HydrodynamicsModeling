@@ -286,9 +286,9 @@ struct LinearArray3D
 	/// <param name="linearArray3DNext">Указатель на объект класса LinearArray3D</param>
 	void LinearArray3DTrasferXOZForward(LinearArray3D* linearArray3DNext)
 	{
-		for (int i = 0; i < nx; i++)
+		for (int k = 0; k < nz; k++)
 		{
-			for (int k = 0; k < nz; k++)
+			for (int i = 0; i < nx; i++)
 			{
 				linearArray3DNext->data[GetIndex(i, 0, k)] = data[GetIndex(i, ny - 1, k)];
 			}
@@ -301,9 +301,9 @@ struct LinearArray3D
 	/// <param name="linearArray3DPrev">Указатель на объект класса LinearArray3D</param>
 	void LinearArray3DTrasferXOZBack(LinearArray3D* linearArray3DPrev)
 	{
-		for (int i = 0; i < nx; i++)
+		for (int k = 0; k < nz; k++)
 		{
-			for (int k = 0; k < nz; k++)
+			for (int i = 0; i < nx; i++)
 			{
 				linearArray3DPrev->data[GetIndex(i, ny - 1, k)] = data[GetIndex(i, 0, k)];
 			}
@@ -376,9 +376,9 @@ struct LinearArray3D
 	/// <param name="planeXOZ">Указатель на объект класса LinearArray2D</param>
 	void SetPlaneXOZLast(LinearArray2D* planeXOZ)
 	{
-		for (int i = 0; i < nx; i++)
+		for (int k = 0; k < nz; k++)
 		{
-			for (int k = 0; k < nz; k++)
+			for (int i = 0; i < nx; i++)
 			{
 				planeXOZ->data[planeXOZ->GetIndex(i, k)] = data[GetIndex(i, ny - 1, k)];
 			}
@@ -481,9 +481,9 @@ struct LinearArray3D
 	/// <param name="planeXOZ">Указатель на объект класса LinearArray2D</param>
 	void GetPlaneXOZFirst(LinearArray2D* planeXOZ)
 	{
-		for (int i = 0; i < nx; i++)
+		for (int k = 0; k < nz; k++)
 		{
-			for (int k = 0; k < nz; k++)
+			for (int i = 0; i < nx; i++)
 			{
 				data[GetIndex(i, 0, k)] = planeXOZ->data[planeXOZ->GetIndex(i, k)];
 			}

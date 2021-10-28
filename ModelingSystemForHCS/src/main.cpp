@@ -6,8 +6,8 @@
 
 int main(int argc, char* argv[])
 {
-	LaunchSettings* settings = app_init(argc, argv);		
-	settings->Print();		
+	LaunchSettings* settings = app_init(argc, argv);
+	settings->Print();
 
 	runTests(settings);
 		

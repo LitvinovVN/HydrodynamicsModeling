@@ -9,4 +9,8 @@ void matmAlgsTesting();
 
 void CUDA_Devices_Info();
 
+void transferFragmentTesting02();
+
+void transferFragmentTesting03();
+
 #endif
