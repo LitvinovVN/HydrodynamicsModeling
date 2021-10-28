@@ -1,7 +1,6 @@
 #include "testFunctions.h"
 
-void algStartTransferFragmentTesting(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray2D*), LinearArray3D* linearArray_next,
-    LinearArray3D* linearArray_prev, LinearArray2D* planeXOZForward, int numberOfLaunches)
+void algStartTransferFragmentTesting(void (*algFunPntr)(LinearArray3D*, LinearArray3D*), LinearArray3D* linearArray_next, LinearArray3D* linearArray_prev, int numberOfLaunches)
 {
 	timer<std::chrono::microseconds> aTimer;
 
@@ -10,7 +9,7 @@ void algStartTransferFragmentTesting(void (*algFunPntr)(LinearArray3D*, LinearAr
 	for (size_t i = 0; i < numberOfLaunches; i++)
 	{
 		aTimer.start();
-		algFunPntr(linearArray_next, linearArray_prev, planeXOZForward);
+		algFunPntr(linearArray_next,linearArray_prev);
 		auto elapsed = aTimer.stop();		
 		statistics.add(elapsed.get_time_as_double());
 	}
@@ -18,31 +17,30 @@ void algStartTransferFragmentTesting(void (*algFunPntr)(LinearArray3D*, LinearAr
 	statistics.print();
 }
 
-#pragma region Тест создания плоскости элементов для передачи данных между соседними фрагментами
-void Grid2DTransferPlaneFragmentTest03(LinearArray3D* linearArray_next, LinearArray3D* linearArray_prev, LinearArray2D* planeXOZForward)
-{      
-    linearArray_prev->SetPlaneXOZLast(planeXOZForward);
-    linearArray_next->GetPlaneXOZFirst(planeXOZForward);
+#pragma region Тест прямая передача данных между соседними фрагментами
+void Grid2DTransferPlaneXOZFragmentTest02(LinearArray3D* linearArray_next, LinearArray3D* linearArray_prev)
+{
+    linearArray_prev->LinearArray3DTrasferXOZForward(linearArray_next);
 }
 #pragma endregion
 
-
-void transferFragmentTesting03()
-{    
+void transferFragmentXOZTesting02()
+{
     //int numberOfLaunches = 10;
 
-    std::cout << "--------------------Test03--------------------" << std::endl;
+    std::cout << "--------------------Test02--------------------" << std::endl;
+
     for (int fragmentNx_prev = 10; fragmentNx_prev <= 100; fragmentNx_prev = fragmentNx_prev + 10)
     {
         for (int fragmentNz_prev = 10; fragmentNz_prev <= 100; fragmentNz_prev = fragmentNz_prev + 10)
         {
-            std::cout << "-------------------------fragmentNx_prev = " << fragmentNx_prev << "    fragmentNz_prev = " << fragmentNz_prev << std::endl;
+            std::cout <<"-------------------------fragmentNx_prev = " << fragmentNx_prev << "    fragmentNz_prev = " << fragmentNz_prev << std::endl;
             // параметры fragment_prev
             //size_t fragmentNx_prev = 50;
             size_t fragmentNy_prev = 50;
             //size_t fragmentNz_prev = 50;
-            size_t fragmentIndX_prev = 1;
-            size_t fragmentIndY_prev = 2;
+            size_t fragmentIndX_prev = 2;
+            size_t fragmentIndY_prev = 1;
             size_t fragmentIndZ_prev = 2;
             size_t fragmentOffsetXByDevice_prev = 0;
             size_t fragmentOffsetYByDevice_prev = 0;
@@ -110,43 +108,15 @@ void transferFragmentTesting03()
                         globalIndx1 -= 1;
                     }
                 }
-            }
+            }                        
 
-            LinearArray2D* planeXOYForward = new LinearArray2D(fragmentNx_prev, fragmentNy_prev);
-            for (int j = 0; j < fragmentNy_prev; j++)
-            {
-                for (int i = 0; i < fragmentNx_prev; i++)
-                {
-                    planeXOYForward->SetElement(i, j, 0);
-                }
-            }
-
-            LinearArray2D* planeXOZForward = new LinearArray2D(fragmentNx_prev, fragmentNz_prev);
-            for (int k = 0; k < fragmentNz_prev; k++)
-            {
-                for (int i = 0; i < fragmentNx_prev; i++)
-                {
-                    planeXOZForward->SetElement(i, k, 0);
-                }
-            }
-
-            LinearArray2D* planeYOZForward = new LinearArray2D(fragmentNy_prev, fragmentNz_prev);
-            for (int k = 0; k < fragmentNz_prev; k++)
-            {
-                for (int j = 0; j < fragmentNy_prev; j++)
-                {
-                    planeYOZForward->SetElement(j, k, 0);
-                }
-            }
-
-            
-
-
-            algStartTransferFragmentTesting(Grid2DTransferPlaneFragmentTest03, linearArray_next, linearArray_prev, planeXOZForward, 20);
-            
+            algStartTransferFragmentTesting(Grid2DTransferPlaneXOZFragmentTest02, linearArray_next, linearArray_prev, 20);
         }
     }
-    
-    
-
+        
 }
+
+
+
+
+

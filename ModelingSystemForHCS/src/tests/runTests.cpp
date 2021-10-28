@@ -31,12 +31,28 @@ void runTests(LaunchSettings* settings)
 	// Запуск теста CUDA_Devices_Info(). Индекс теста: 2
 	if (isRun(settings, 2) && settings->isCUDA)
 		CUDA_Devices_Info();
-	// Запуск теста transferFragmentTesting02(). Индекс теста: 3.
+	// Запуск теста transferFragmentXOZTesting02(). Индекс теста: 3.
 	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, напрямую
 	if (isRun(settings, 3))
-		transferFragmentTesting02();
-	// Запуск теста transferFragmentTesting03(). Индекс теста: 4.
+		transferFragmentXOZTesting02();
+	// Запуск теста transferFragmentPlaneXOZTesting03(). Индекс теста: 4.
 	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, через плоскость
 	if (isRun(settings, 4))
-		transferFragmentTesting03();
+		transferFragmentPlaneXOZTesting03();
+	// Запуск теста transferFragmentXOYTesting04(). Индекс теста: 5.
+	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, напрямую
+	if (isRun(settings, 5))
+		transferFragmentXOYTesting04();
+	// Запуск теста transferFragmentPlaneXOYTesting05(). Индекс теста: 6.
+	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, через плоскость
+	if (isRun(settings, 6))
+		transferFragmentPlaneXOYTesting05();
+	// Запуск теста transferFragmentYOZTesting06(). Индекс теста: 7.
+	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, напрямую
+	if (isRun(settings, 7))
+		transferFragmentYOZTesting06();
+	// Запуск теста transferFragmentPlaneXOYTesting05(). Индекс теста: 8.
+	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, через плоскость
+	if (isRun(settings, 8))
+		transferFragmentPlaneYOZTesting07();
 }

@@ -9,8 +9,16 @@ void matmAlgsTesting();
 
 void CUDA_Devices_Info();
 
-void transferFragmentTesting02();
+void transferFragmentXOZTesting02();
 
-void transferFragmentTesting03();
+void transferFragmentPlaneXOZTesting03();
+
+void transferFragmentXOYTesting04();
+
+void transferFragmentPlaneXOYTesting05();
+
+void transferFragmentYOZTesting06();
+
+void transferFragmentPlaneYOZTesting07();
 
 #endif
