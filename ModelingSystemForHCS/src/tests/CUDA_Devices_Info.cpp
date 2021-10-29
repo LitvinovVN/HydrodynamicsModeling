@@ -9,9 +9,6 @@ void CUDA_Devices_Info()
 	std::cout << "------ CUDA_Devices_Info() -------" << std::endl;
 	int t = 5;
 	printGpuParameters("");
-#ifdef CUDA
-	printGpuParameters("");
-#endif // CUDA		
 }
 
 #endif

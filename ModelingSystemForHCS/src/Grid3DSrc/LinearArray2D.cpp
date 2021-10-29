@@ -50,11 +50,7 @@ struct LinearArray2D
 	/// <param name="Ind2">Второй индекс элемента в фрагменте</param>
 	/// <returns>Значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте</returns>
 	double GetElement(size_t Ind1, size_t Ind2)
-	{
-		if ((Ind1 > n1) || (Ind2 > n2))
-		{
-			throw - 1;
-		}
+	{		
 		size_t indx = GetIndex(Ind1, Ind2);
 
 		return data[indx];
@@ -67,12 +63,8 @@ struct LinearArray2D
 	/// <param name="Ind2">Второй индекс элемента в фрагменте</param>
 	/// <param name="Value">Значения элемента массива</param>
 	/// <returns></returns>
-	double SetElement(size_t Ind1, size_t Ind2, double Value)
-	{
-		if ((Ind1 > n1) || (Ind2 > n2))
-		{
-			throw - 1;
-		}
+	void SetElement(size_t Ind1, size_t Ind2, double Value)
+	{		
 		size_t indx = GetIndex(Ind1, Ind2);
 
 		data[indx] = Value;

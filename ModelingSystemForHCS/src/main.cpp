@@ -1,7 +1,4 @@
-﻿#define REMOVE_PROTECTIVE_CHECKS
-#define CUDA
-
-#include <iostream>
+﻿#include <iostream>
 #include "tests/testFunctions.h"
 #include "Grid3DSrc/Classes.h"
 
