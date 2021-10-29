@@ -1,4 +1,5 @@
 ﻿#define REMOVE_PROTECTIVE_CHECKS
+#define CUDA
 
 #include <iostream>
 #include "tests/testFunctions.h"

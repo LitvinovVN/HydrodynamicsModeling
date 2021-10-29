@@ -5,7 +5,7 @@ project(ModelingSystemForHCS)
 set(CMAKE_CXX_FLAGS "-std=c++11")
 
 option(ENABLE_MPI "Enable MPI parallelization" ON)
-option(ENABLE_CUDA "Enable CUDA axeleration" OFF)
+option(ENABLE_CUDA "Enable CUDA axeleration" ON)
 
 if(ENABLE_MPI)
     find_package(MPI REQUIRED)
@@ -21,7 +21,7 @@ if(ENABLE_CUDA)
     set(
     CUDA_NVCC_FLAGS
     ${CUDA_NVCC_FLAGS};
-    -O3 -gencode arch=compute_35,code=sm_35
+    -gencode arch=compute_35,code=sm_35
     )
 endif(ENABLE_CUDA)
 

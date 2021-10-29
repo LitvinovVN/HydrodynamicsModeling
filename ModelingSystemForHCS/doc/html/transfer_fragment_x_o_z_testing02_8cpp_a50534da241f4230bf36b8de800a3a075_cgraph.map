@@ -1,0 +1,13 @@
+<map id="transferFragmentXOZTesting02" name="transferFragmentXOZTesting02">
+<area shape="rect" id="node1" title=" " alt="" coords="5,187,205,213"/>
+<area shape="rect" id="node2" href="$transfer_fragment_x_o_z_testing02_8cpp.html#a2b4f7b7e4459840779159b386596bb6f" title=" " alt="" coords="279,49,447,90"/>
+<area shape="rect" id="node6" href="$struct_grid3_d_fragment.html#a5b521f7ca604b2bfd0948e9462dc7245" title="$$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelD..." alt="" coords="273,114,454,155"/>
+<area shape="rect" id="node7" href="$transfer_fragment_x_o_z_testing02_8cpp.html#ad9055d72cc956084c12d9f2068d30d8e" title=" " alt="" coords="253,179,473,221"/>
+<area shape="rect" id="node10" href="$struct_linear_arrays3_d.html#a1670d381ef3531ce044b6d93e4a66e67" title="$$$$Создает трехмерный массив данных типа LinearArray3D(nx, ny, nz) для указанного имени массива данн..." alt="" coords="271,245,456,286"/>
+<area shape="rect" id="node11" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="524,293,704,320"/>
+<area shape="rect" id="node3" href="$classtimer.html#af4100eb2e8e5b6cf73bc1679d4289506" title=" " alt="" coords="572,5,656,32"/>
+<area shape="rect" id="node4" href="$classtimer.html#a8cac498e9c17d70fade048c19cdecbd9" title=" " alt="" coords="571,56,657,83"/>
+<area shape="rect" id="node5" href="$classtimer.html#aed5aa53473af80aff2a9e04504c93227" title=" " alt="" coords="572,107,656,133"/>
+<area shape="rect" id="node8" href="$struct_linear_array3_d.html#a747c8f6b7561fd3a2c28f75ecbea6943" title="Передает массив данных (плоскость XOZ) между фрагментами вперед" alt="" coords="521,195,707,237"/>
+<area shape="rect" id="node9" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="755,264,919,291"/>
+</map>

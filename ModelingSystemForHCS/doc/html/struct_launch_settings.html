@@ -101,6 +101,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39996711b9ebc749ca056e0589aac702"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a39996711b9ebc749ca056e0589aac702">IsMPI</a> ()</td></tr>
 <tr class="memdesc:a39996711b9ebc749ca056e0589aac702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет наличие параметра MPI в аргументах командной строки.  <a href="struct_launch_settings.html#a39996711b9ebc749ca056e0589aac702">More...</a><br /></td></tr>
 <tr class="separator:a39996711b9ebc749ca056e0589aac702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d70493320534b3b94d8ec7b80f7a747"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a4d70493320534b3b94d8ec7b80f7a747">IsCUDA</a> ()</td></tr>
+<tr class="memdesc:a4d70493320534b3b94d8ec7b80f7a747"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет наличие параметра CUDA в аргументах командной строки.  <a href="struct_launch_settings.html#a4d70493320534b3b94d8ec7b80f7a747">More...</a><br /></td></tr>
+<tr class="separator:a4d70493320534b3b94d8ec7b80f7a747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65967a5cde3a5fa874bfde564f4140a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a65967a5cde3a5fa874bfde564f4140a4">Print</a> ()</td></tr>
 <tr class="memdesc:a65967a5cde3a5fa874bfde564f4140a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит в консоль подробный отчет о содержимом объекта  <a href="struct_launch_settings.html#a65967a5cde3a5fa874bfde564f4140a4">More...</a><br /></td></tr>
 <tr class="separator:a65967a5cde3a5fa874bfde564f4140a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,6 +119,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a397940f8badfe89341ef478f1da9d978"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a397940f8badfe89341ef478f1da9d978">isMPI</a> = false</td></tr>
 <tr class="memdesc:a397940f8badfe89341ef478f1da9d978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг использования MPI.  <a href="struct_launch_settings.html#a397940f8badfe89341ef478f1da9d978">More...</a><br /></td></tr>
 <tr class="separator:a397940f8badfe89341ef478f1da9d978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf37f06480e5be41f65cbcd92fdf239a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#abf37f06480e5be41f65cbcd92fdf239a">isCUDA</a> = false</td></tr>
+<tr class="memdesc:abf37f06480e5be41f65cbcd92fdf239a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаг использования CUDA.  <a href="struct_launch_settings.html#abf37f06480e5be41f65cbcd92fdf239a">More...</a><br /></td></tr>
+<tr class="separator:abf37f06480e5be41f65cbcd92fdf239a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0faec4e1c2dee29b174df3815dc090d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a0faec4e1c2dee29b174df3815dc090d4">mpi_rank</a> = 0</td></tr>
 <tr class="memdesc:a0faec4e1c2dee29b174df3815dc090d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ранг процесса MPI.  <a href="struct_launch_settings.html#a0faec4e1c2dee29b174df3815dc090d4">More...</a><br /></td></tr>
 <tr class="separator:a0faec4e1c2dee29b174df3815dc090d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +143,15 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4cdc4740f909b38ea822eed700192e52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a4cdc4740f909b38ea822eed700192e52">numberOfTestLaunches</a> = 10</td></tr>
 <tr class="memdesc:a4cdc4740f909b38ea822eed700192e52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Число прогонов одного теста  <a href="struct_launch_settings.html#a4cdc4740f909b38ea822eed700192e52">More...</a><br /></td></tr>
 <tr class="separator:a4cdc4740f909b38ea822eed700192e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935708bc96a46db1033dc7f63c852645"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a935708bc96a46db1033dc7f63c852645">gridSizeX</a> = 0</td></tr>
+<tr class="memdesc:a935708bc96a46db1033dc7f63c852645"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер расчетной сетки по оси Ox.  <a href="struct_launch_settings.html#a935708bc96a46db1033dc7f63c852645">More...</a><br /></td></tr>
+<tr class="separator:a935708bc96a46db1033dc7f63c852645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a671cd595996d88a8061c4a05425c5cd1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a671cd595996d88a8061c4a05425c5cd1">gridSizeY</a> = 0</td></tr>
+<tr class="memdesc:a671cd595996d88a8061c4a05425c5cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер расчетной сетки по оси Oy.  <a href="struct_launch_settings.html#a671cd595996d88a8061c4a05425c5cd1">More...</a><br /></td></tr>
+<tr class="separator:a671cd595996d88a8061c4a05425c5cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f881a70fabaf9060df0dbbb7b612b02"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_launch_settings.html#a3f881a70fabaf9060df0dbbb7b612b02">gridSizeZ</a> = 0</td></tr>
+<tr class="memdesc:a3f881a70fabaf9060df0dbbb7b612b02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Размер расчетной сетки по оси Oz.  <a href="struct_launch_settings.html#a3f881a70fabaf9060df0dbbb7b612b02">More...</a><br /></td></tr>
+<tr class="separator:a3f881a70fabaf9060df0dbbb7b612b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Параметры запуска приложения </p>
@@ -181,14 +196,51 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct_launch_settings_af867989c2590452b18c3a57d323892d0_cgraph.png" border="0" usemap="#astruct_launch_settings_af867989c2590452b18c3a57d323892d0_cgraph" alt=""/></div>
 <map name="astruct_launch_settings_af867989c2590452b18c3a57d323892d0_cgraph" id="astruct_launch_settings_af867989c2590452b18c3a57d323892d0_cgraph">
-<area shape="rect" title="Конструктор. Инициализация из аргументов командной строки" alt="" coords="5,5,216,32"/>
-<area shape="rect" href="struct_launch_settings.html#a39996711b9ebc749ca056e0589aac702" title="Проверяет наличие параметра MPI в аргументах командной строки." alt="" coords="264,5,417,32"/>
+<area shape="rect" title="Конструктор. Инициализация из аргументов командной строки" alt="" coords="5,31,216,57"/>
+<area shape="rect" href="struct_launch_settings.html#a4d70493320534b3b94d8ec7b80f7a747" title="Проверяет наличие параметра CUDA в аргументах командной строки." alt="" coords="264,5,431,32"/>
+<area shape="rect" href="struct_launch_settings.html#a39996711b9ebc749ca056e0589aac702" title="Проверяет наличие параметра MPI в аргументах командной строки." alt="" coords="271,56,424,83"/>
 </map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4d70493320534b3b94d8ec7b80f7a747" name="a4d70493320534b3b94d8ec7b80f7a747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d70493320534b3b94d8ec7b80f7a747">&#9670;&nbsp;</a></span>IsCUDA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LaunchSettings::IsCUDA </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверяет наличие параметра CUDA в аргументах командной строки. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_launch_settings_a4d70493320534b3b94d8ec7b80f7a747_icgraph.png" border="0" usemap="#astruct_launch_settings_a4d70493320534b3b94d8ec7b80f7a747_icgraph" alt=""/></div>
+<map name="astruct_launch_settings_a4d70493320534b3b94d8ec7b80f7a747_icgraph" id="astruct_launch_settings_a4d70493320534b3b94d8ec7b80f7a747_icgraph">
+<area shape="rect" title="Проверяет наличие параметра CUDA в аргументах командной строки." alt="" coords="264,5,431,32"/>
+<area shape="rect" href="struct_launch_settings.html#af867989c2590452b18c3a57d323892d0" title="Конструктор. Инициализация из аргументов командной строки" alt="" coords="5,5,216,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a39996711b9ebc749ca056e0589aac702" name="a39996711b9ebc749ca056e0589aac702"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39996711b9ebc749ca056e0589aac702">&#9670;&nbsp;</a></span>IsMPI()</h2>
 
@@ -278,6 +330,54 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a935708bc96a46db1033dc7f63c852645" name="a935708bc96a46db1033dc7f63c852645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935708bc96a46db1033dc7f63c852645">&#9670;&nbsp;</a></span>gridSizeX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LaunchSettings::gridSizeX = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Размер расчетной сетки по оси Ox. </p>
+
+</div>
+</div>
+<a id="a671cd595996d88a8061c4a05425c5cd1" name="a671cd595996d88a8061c4a05425c5cd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a671cd595996d88a8061c4a05425c5cd1">&#9670;&nbsp;</a></span>gridSizeY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LaunchSettings::gridSizeY = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Размер расчетной сетки по оси Oy. </p>
+
+</div>
+</div>
+<a id="a3f881a70fabaf9060df0dbbb7b612b02" name="a3f881a70fabaf9060df0dbbb7b612b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f881a70fabaf9060df0dbbb7b612b02">&#9670;&nbsp;</a></span>gridSizeZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LaunchSettings::gridSizeZ = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Размер расчетной сетки по оси Oz. </p>
+
+</div>
+</div>
 <a id="a6abdff755802ba7789b66d7580141ff0" name="a6abdff755802ba7789b66d7580141ff0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6abdff755802ba7789b66d7580141ff0">&#9670;&nbsp;</a></span>hardwareConcurrency</h2>
 
@@ -291,6 +391,22 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Количество аппаратных потоков ЦПУ </p>
+
+</div>
+</div>
+<a id="abf37f06480e5be41f65cbcd92fdf239a" name="abf37f06480e5be41f65cbcd92fdf239a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf37f06480e5be41f65cbcd92fdf239a">&#9670;&nbsp;</a></span>isCUDA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LaunchSettings::isCUDA = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Флаг использования CUDA. </p>
 
 </div>
 </div>

@@ -1,16 +1,52 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,132,56,159"/>
-<area shape="rect" id="node2" href="$_utils_8cpp.html#a18d05c72526c98b2846cd1f2777f0a93" title=" " alt="" coords="144,69,211,96"/>
-<area shape="rect" id="node4" href="$matm_algs_testing_8cpp.html#a6b27c2bfaf6e87436d50ffc3720a76b7" title=" " alt="" coords="116,132,239,159"/>
-<area shape="rect" id="node14" href="$struct_launch_settings.html#a65967a5cde3a5fa874bfde564f4140a4" title="Выводит в консоль подробный отчет о содержимом объекта" alt="" coords="104,183,251,209"/>
-<area shape="rect" id="node3" href="$_utils_8cpp.html#ac78edd18ba18ffa2288ef058728b6c18" title=" " alt="" coords="299,56,373,83"/>
-<area shape="rect" id="node5" href="$matm_algs_testing_8cpp.html#abbe5ab466a6710a777867c35f7dbe297" title=" " alt="" coords="313,157,359,184"/>
-<area shape="rect" id="node9" href="$matm_algs_testing_8cpp.html#a12ec87ab6cff123786f24400219a01a5" title=" " alt="" coords="313,208,359,235"/>
-<area shape="rect" id="node10" href="$matm_algs_testing_8cpp.html#a37bbf3fd090a663fb08836a0b92fa486" title=" " alt="" coords="303,107,369,133"/>
-<area shape="rect" id="node6" href="$struct_linear_array3_d.html#a4bf71d4d7abd65c68edc96b782e4b87b" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="421,208,603,235"/>
-<area shape="rect" id="node8" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="422,157,602,184"/>
-<area shape="rect" id="node7" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="651,183,815,209"/>
-<area shape="rect" id="node11" href="$struct_linear_array3_d.html#ad93ba8b8757779f0fd84dac0e376fe94" title="Проверяет массивы на равенство (поэлементно)" alt="" coords="435,107,589,133"/>
-<area shape="rect" id="node12" href="$classtimer.html#a8cac498e9c17d70fade048c19cdecbd9" title=" " alt="" coords="469,5,555,32"/>
-<area shape="rect" id="node13" href="$classtimer.html#aed5aa53473af80aff2a9e04504c93227" title=" " alt="" coords="470,56,554,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,679,56,705"/>
+<area shape="rect" id="node2" href="$_utils_8cpp.html#a18d05c72526c98b2846cd1f2777f0a93" title="Âûïîëíÿåò ðàçáîð ïàðàìåòðîâ êîìàíäíîé ñòðîêè è èíèöèàëèçèðóåò îáúåêò ñ íàñòðîéêàìè çàïóñêà ïðèëîæåíèÿ" alt="" coords="144,595,211,621"/>
+<area shape="rect" id="node4" href="$struct_launch_settings.html#a65967a5cde3a5fa874bfde564f4140a4" title="Выводит в консоль подробный отчет о содержимом объекта" alt="" coords="104,679,251,705"/>
+<area shape="rect" id="node5" href="$run_tests_8cpp.html#ac619db81e7b5ea6d896e9e626bea7114" title="Çàïóñê òåñòîâ" alt="" coords="141,796,213,823"/>
+<area shape="rect" id="node3" href="$_utils_8cpp.html#ac78edd18ba18ffa2288ef058728b6c18" title=" " alt="" coords="379,560,453,587"/>
+<area shape="rect" id="node6" href="$_c_u_d_a___devices___info_8cpp.html#a36636aa76ae25bcc2593c3afedfaf376" title=" " alt="" coords="347,611,485,637"/>
+<area shape="rect" id="node8" href="$run_tests_8cpp.html#a30ab155fdc3c47442fac7f70dda88351" title="Îïðåäåëÿåò íåîáõîäèìîñòü çàïóñêà òåñòà. Åñëè ñïèñîê òåñòîâ ïóñò, âîçâðàùàåò true (äëÿ çàïóñêà âñåõ òåñòîâ)" alt="" coords="389,821,443,848"/>
+<area shape="rect" id="node9" href="$matm_algs_testing_8cpp.html#a6b27c2bfaf6e87436d50ffc3720a76b7" title=" " alt="" coords="355,661,477,688"/>
+<area shape="rect" id="node19" href="$transfer_fragment_plane_x_o_y_testing05_8cpp.html#aef60af2028349d54e6c43d75c5d82054" title=" " alt="" coords="299,931,533,957"/>
+<area shape="rect" id="node29" href="$transfer_fragment_plane_x_o_z_testing03_8cpp.html#a71c8e8dab67b2a94b75ccea1308bd194" title=" " alt="" coords="299,981,533,1008"/>
+<area shape="rect" id="node34" href="$transfer_fragment_plane_y_o_z_testing07_8cpp.html#a5aa48f21fb0409c4fb5c9e7d9f284cc5" title=" " alt="" coords="299,1032,533,1059"/>
+<area shape="rect" id="node39" href="$transfer_fragment_x_o_y_testing04_8cpp.html#a218c8e90c0d1a7ac752b5823a9648281" title=" " alt="" coords="315,771,517,797"/>
+<area shape="rect" id="node43" href="$transfer_fragment_x_o_z_testing02_8cpp.html#a50534da241f4230bf36b8de800a3a075" title=" " alt="" coords="316,872,516,899"/>
+<area shape="rect" id="node47" href="$transfer_fragment_y_o_z_testing06_8cpp.html#aeadf0f1bbf9e7c94df2ee1e0ddca0769" title=" " alt="" coords="315,720,517,747"/>
+<area shape="rect" id="node7" href="$_c_u_d_a___devices___info_8h.html#ae691f4d2c3e721d3d233e0645b25393d" title=" " alt="" coords="623,5,762,32"/>
+<area shape="rect" id="node10" href="$matm_algs_testing_8cpp.html#abbe5ab466a6710a777867c35f7dbe297" title=" " alt="" coords="669,123,716,149"/>
+<area shape="rect" id="node14" href="$matm_algs_testing_8cpp.html#a12ec87ab6cff123786f24400219a01a5" title=" " alt="" coords="669,173,716,200"/>
+<area shape="rect" id="node15" href="$matm_algs_testing_8cpp.html#a37bbf3fd090a663fb08836a0b92fa486" title=" " alt="" coords="659,661,726,688"/>
+<area shape="rect" id="node11" href="$struct_linear_array3_d.html#a4bf71d4d7abd65c68edc96b782e4b87b" title="Возвращает значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="871,173,1052,200"/>
+<area shape="rect" id="node13" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="871,392,1051,419"/>
+<area shape="rect" id="node12" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="1119,1124,1283,1151"/>
+<area shape="rect" id="node16" href="$struct_linear_array3_d.html#ad93ba8b8757779f0fd84dac0e376fe94" title="Проверяет массивы на равенство (поэлементно)" alt="" coords="884,661,1039,688"/>
+<area shape="rect" id="node17" href="$classtimer.html#a8cac498e9c17d70fade048c19cdecbd9" title=" " alt="" coords="919,876,1004,903"/>
+<area shape="rect" id="node18" href="$classtimer.html#aed5aa53473af80aff2a9e04504c93227" title=" " alt="" coords="919,825,1003,852"/>
+<area shape="rect" id="node20" href="$transfer_fragment_plane_x_o_y_testing05_8cpp.html#a065ff30ca05cc147edfc67690ebc2881" title=" " alt="" coords="609,1039,777,1081"/>
+<area shape="rect" id="node22" href="$struct_grid3_d_fragment.html#a5b521f7ca604b2bfd0948e9462dc7245" title="$$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelD..." alt="" coords="602,974,783,1015"/>
+<area shape="rect" id="node23" href="$transfer_fragment_plane_x_o_y_testing05_8cpp.html#a813b2c5fdfcfcbb3248c432ea62ec349" title=" " alt="" coords="581,1235,804,1277"/>
+<area shape="rect" id="node27" href="$struct_linear_arrays3_d.html#a1670d381ef3531ce044b6d93e4a66e67" title="$$$$Создает трехмерный массив данных типа LinearArray3D(nx, ny, nz) для указанного имени массива данн..." alt="" coords="600,909,785,950"/>
+<area shape="rect" id="node28" href="$struct_linear_array2_d.html#a66950746a6b4db014d536fc4c1c7b1b2" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="603,1432,783,1459"/>
+<area shape="rect" id="node21" href="$classtimer.html#af4100eb2e8e5b6cf73bc1679d4289506" title=" " alt="" coords="919,1000,1003,1027"/>
+<area shape="rect" id="node24" href="$struct_linear_array3_d.html#ae130db9dca6bede6b88bfbe399f65b57" title="Передает массив данных от плоскости planeXOY первой по оси OZ плоскости фрагмента" alt="" coords="852,1124,1071,1151"/>
+<area shape="rect" id="node26" href="$struct_linear_array3_d.html#a2b22c06d1e4538c5359298e99fff8b7d" title="Передает массив данных фрагмента (последняя по оси OZ плоскость XOY) плоскости planeXOY" alt="" coords="853,1175,1069,1201"/>
+<area shape="rect" id="node25" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="1119,1276,1283,1303"/>
+<area shape="rect" id="node30" href="$transfer_fragment_plane_x_o_z_testing03_8cpp.html#a9f96a37a51379c59f344aec4779b0e83" title=" " alt="" coords="609,1105,777,1146"/>
+<area shape="rect" id="node31" href="$transfer_fragment_plane_x_o_z_testing03_8cpp.html#ac15997c5522d1a74cfb97280217b232d" title=" " alt="" coords="583,1301,803,1342"/>
+<area shape="rect" id="node32" href="$struct_linear_array3_d.html#a369b9a0df30659171569250838032e58" title="Передает массив данных от плоскости planeXOZ первой по оси OY плоскости фрагмента" alt="" coords="853,1276,1069,1303"/>
+<area shape="rect" id="node33" href="$struct_linear_array3_d.html#a360a8130de7a752f262ad3f04cbe43a3" title="Передает массив данных фрагмента (последняя по оси OY плоскость XOZ) плоскости planeXOZ" alt="" coords="854,1225,1069,1252"/>
+<area shape="rect" id="node35" href="$transfer_fragment_plane_y_o_z_testing07_8cpp.html#a22242d5a9e67d481d65ab2d957816012" title=" " alt="" coords="609,1170,777,1211"/>
+<area shape="rect" id="node36" href="$transfer_fragment_plane_y_o_z_testing07_8cpp.html#a5128c599db1cd004d54fa338312a14f5" title=" " alt="" coords="581,1366,804,1407"/>
+<area shape="rect" id="node37" href="$struct_linear_array3_d.html#a821810e8ce0ff56cfcc393c2f88381fa" title="Передает массив данных от плоскости planeYOZ первой по оси OX плоскости фрагмента" alt="" coords="852,1377,1071,1404"/>
+<area shape="rect" id="node38" href="$struct_linear_array3_d.html#aa627c8d40744fe943da24dd0352067a2" title="Передает массив данных фрагмента (последняя по оси OX плоскость YOZ) плоскости planeYOZ" alt="" coords="853,1327,1069,1353"/>
+<area shape="rect" id="node40" href="$transfer_fragment_x_o_y_testing04_8cpp.html#a2e42cd9bc48abbb9396fa35582e1b2e4" title=" " alt="" coords="609,778,777,819"/>
+<area shape="rect" id="node41" href="$transfer_fragment_x_o_y_testing04_8cpp.html#ac54d24f75dba4e153b5707a45c138cb7" title=" " alt="" coords="581,225,804,266"/>
+<area shape="rect" id="node42" href="$struct_linear_array3_d.html#ac5039a8b58b25c1831826ed25dad982e" title="Передает массив данных (плоскость XOY) между фрагментами вперед" alt="" coords="869,275,1054,317"/>
+<area shape="rect" id="node44" href="$transfer_fragment_x_o_z_testing02_8cpp.html#a2b4f7b7e4459840779159b386596bb6f" title=" " alt="" coords="609,843,777,885"/>
+<area shape="rect" id="node45" href="$transfer_fragment_x_o_z_testing02_8cpp.html#ad9055d72cc956084c12d9f2068d30d8e" title=" " alt="" coords="583,595,803,637"/>
+<area shape="rect" id="node46" href="$struct_linear_array3_d.html#a747c8f6b7561fd3a2c28f75ecbea6943" title="Передает массив данных (плоскость XOZ) между фрагментами вперед" alt="" coords="869,595,1054,637"/>
+<area shape="rect" id="node48" href="$transfer_fragment_y_o_z_testing06_8cpp.html#a191ff083149e54ce000b71c994c7feb3" title=" " alt="" coords="609,713,777,754"/>
+<area shape="rect" id="node49" href="$transfer_fragment_y_o_z_testing06_8cpp.html#a8ebe468acc9e7c0d9d18d1cdb266f4b3" title=" " alt="" coords="581,57,804,98"/>
+<area shape="rect" id="node50" href="$struct_linear_array3_d.html#a17d85c5ef525e4c9e2aaeaf5c391e115" title="Передает массив данных (плоскость YOZ) между фрагментами вперед" alt="" coords="869,82,1054,123"/>
 </map>

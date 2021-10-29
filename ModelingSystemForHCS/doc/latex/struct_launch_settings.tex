@@ -12,6 +12,8 @@
 \begin{DoxyCompactList}\small\item\em Конструктор. Инициализация из аргументов командной строки \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_launch_settings_a39996711b9ebc749ca056e0589aac702}{Is\+MPI}} ()
 \begin{DoxyCompactList}\small\item\em Проверяет наличие параметра MPI в аргументах командной строки. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_launch_settings_a4d70493320534b3b94d8ec7b80f7a747}{Is\+CUDA}} ()
+\begin{DoxyCompactList}\small\item\em Проверяет наличие параметра CUDA в аргументах командной строки. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{struct_launch_settings_a65967a5cde3a5fa874bfde564f4140a4}{Print}} ()
 \begin{DoxyCompactList}\small\item\em Выводит в консоль подробный отчет о содержимом объекта \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
@@ -23,6 +25,8 @@ std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{struct_launch_settings_a11ec
 \begin{DoxyCompactList}\small\item\em Параметры командной строки \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{struct_launch_settings_a397940f8badfe89341ef478f1da9d978}{is\+MPI}} = false
 \begin{DoxyCompactList}\small\item\em Флаг использования MPI. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_launch_settings_abf37f06480e5be41f65cbcd92fdf239a}{is\+CUDA}} = false
+\begin{DoxyCompactList}\small\item\em Флаг использования CUDA. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{struct_launch_settings_a0faec4e1c2dee29b174df3815dc090d4}{mpi\+\_\+rank}} = 0
 \begin{DoxyCompactList}\small\item\em Ранг процесса MPI. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{struct_launch_settings_a548efeab94aaecc770eb55bb2876186e}{mpi\+\_\+size}} = 0
@@ -36,7 +40,13 @@ int \mbox{\hyperlink{struct_launch_settings_a6abdff755802ba7789b66d7580141ff0}{h
 std\+::vector$<$ int $>$ \mbox{\hyperlink{struct_launch_settings_a1410720741fe579d889d30fe93bb8b9a}{test\+Numbers\+To\+Launch}}
 \begin{DoxyCompactList}\small\item\em Вектор номеров тестов для запуска \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{struct_launch_settings_a4cdc4740f909b38ea822eed700192e52}{number\+Of\+Test\+Launches}} = 10
-\begin{DoxyCompactList}\small\item\em Число прогонов одного теста \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Число прогонов одного теста \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_launch_settings_a935708bc96a46db1033dc7f63c852645}{grid\+SizeX}} = 0
+\begin{DoxyCompactList}\small\item\em Размер расчетной сетки по оси Ox. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_launch_settings_a671cd595996d88a8061c4a05425c5cd1}{grid\+SizeY}} = 0
+\begin{DoxyCompactList}\small\item\em Размер расчетной сетки по оси Oy. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_launch_settings_a3f881a70fabaf9060df0dbbb7b612b02}{grid\+SizeZ}} = 0
+\begin{DoxyCompactList}\small\item\em Размер расчетной сетки по оси Oz. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -64,6 +74,24 @@ Here is the call graph for this function\+:
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_launch_settings_a4d70493320534b3b94d8ec7b80f7a747}\label{struct_launch_settings_a4d70493320534b3b94d8ec7b80f7a747}} 
+\index{LaunchSettings@{LaunchSettings}!IsCUDA@{IsCUDA}}
+\index{IsCUDA@{IsCUDA}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{IsCUDA()}{IsCUDA()}}
+{\footnotesize\ttfamily bool Launch\+Settings\+::\+Is\+CUDA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Проверяет наличие параметра CUDA в аргументах командной строки. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_launch_settings_a4d70493320534b3b94d8ec7b80f7a747_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{struct_launch_settings_a39996711b9ebc749ca056e0589aac702}\label{struct_launch_settings_a39996711b9ebc749ca056e0589aac702}} 
 \index{LaunchSettings@{LaunchSettings}!IsMPI@{IsMPI}}
 \index{IsMPI@{IsMPI}!LaunchSettings@{LaunchSettings}}
@@ -74,8 +102,7 @@ Here is the call graph for this function\+:
 
 Проверяет наличие параметра MPI в аргументах командной строки. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -92,8 +119,7 @@ Here is the caller graph for this function\+:
 
 Выводит в консоль подробный отчет о содержимом объекта 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -113,6 +139,36 @@ Here is the caller graph for this function\+:
 
 Параметры командной строки 
 
+\mbox{\Hypertarget{struct_launch_settings_a935708bc96a46db1033dc7f63c852645}\label{struct_launch_settings_a935708bc96a46db1033dc7f63c852645}} 
+\index{LaunchSettings@{LaunchSettings}!gridSizeX@{gridSizeX}}
+\index{gridSizeX@{gridSizeX}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{gridSizeX}{gridSizeX}}
+{\footnotesize\ttfamily int Launch\+Settings\+::grid\+SizeX = 0}
+
+
+
+Размер расчетной сетки по оси Ox. 
+
+\mbox{\Hypertarget{struct_launch_settings_a671cd595996d88a8061c4a05425c5cd1}\label{struct_launch_settings_a671cd595996d88a8061c4a05425c5cd1}} 
+\index{LaunchSettings@{LaunchSettings}!gridSizeY@{gridSizeY}}
+\index{gridSizeY@{gridSizeY}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{gridSizeY}{gridSizeY}}
+{\footnotesize\ttfamily int Launch\+Settings\+::grid\+SizeY = 0}
+
+
+
+Размер расчетной сетки по оси Oy. 
+
+\mbox{\Hypertarget{struct_launch_settings_a3f881a70fabaf9060df0dbbb7b612b02}\label{struct_launch_settings_a3f881a70fabaf9060df0dbbb7b612b02}} 
+\index{LaunchSettings@{LaunchSettings}!gridSizeZ@{gridSizeZ}}
+\index{gridSizeZ@{gridSizeZ}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{gridSizeZ}{gridSizeZ}}
+{\footnotesize\ttfamily int Launch\+Settings\+::grid\+SizeZ = 0}
+
+
+
+Размер расчетной сетки по оси Oz. 
+
 \mbox{\Hypertarget{struct_launch_settings_a6abdff755802ba7789b66d7580141ff0}\label{struct_launch_settings_a6abdff755802ba7789b66d7580141ff0}} 
 \index{LaunchSettings@{LaunchSettings}!hardwareConcurrency@{hardwareConcurrency}}
 \index{hardwareConcurrency@{hardwareConcurrency}!LaunchSettings@{LaunchSettings}}
@@ -122,6 +178,16 @@ Here is the caller graph for this function\+:
 
 
 Количество аппаратных потоков ЦПУ 
+
+\mbox{\Hypertarget{struct_launch_settings_abf37f06480e5be41f65cbcd92fdf239a}\label{struct_launch_settings_abf37f06480e5be41f65cbcd92fdf239a}} 
+\index{LaunchSettings@{LaunchSettings}!isCUDA@{isCUDA}}
+\index{isCUDA@{isCUDA}!LaunchSettings@{LaunchSettings}}
+\doxysubsubsection{\texorpdfstring{isCUDA}{isCUDA}}
+{\footnotesize\ttfamily bool Launch\+Settings\+::is\+CUDA = false}
+
+
+
+Флаг использования CUDA. 
 
 \mbox{\Hypertarget{struct_launch_settings_a397940f8badfe89341ef478f1da9d978}\label{struct_launch_settings_a397940f8badfe89341ef478f1da9d978}} 
 \index{LaunchSettings@{LaunchSettings}!isMPI@{isMPI}}

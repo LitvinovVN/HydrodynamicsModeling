@@ -1,4 +1,5 @@
 <map id="LaunchSettings::LaunchSettings" name="LaunchSettings::LaunchSettings">
-<area shape="rect" id="node1" title="Конструктор. Инициализация из аргументов командной строки" alt="" coords="5,5,216,32"/>
-<area shape="rect" id="node2" href="$struct_launch_settings.html#a39996711b9ebc749ca056e0589aac702" title="Проверяет наличие параметра MPI в аргументах командной строки." alt="" coords="264,5,417,32"/>
+<area shape="rect" id="node1" title="Конструктор. Инициализация из аргументов командной строки" alt="" coords="5,31,216,57"/>
+<area shape="rect" id="node2" href="$struct_launch_settings.html#a4d70493320534b3b94d8ec7b80f7a747" title="Проверяет наличие параметра CUDA в аргументах командной строки." alt="" coords="264,5,431,32"/>
+<area shape="rect" id="node3" href="$struct_launch_settings.html#a39996711b9ebc749ca056e0589aac702" title="Проверяет наличие параметра MPI в аргументах командной строки." alt="" coords="271,56,424,83"/>
 </map>

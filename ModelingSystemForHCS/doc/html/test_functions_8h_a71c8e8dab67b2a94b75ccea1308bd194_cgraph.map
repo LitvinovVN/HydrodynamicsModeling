@@ -1,0 +1,16 @@
+<map id="transferFragmentPlaneXOZTesting03" name="transferFragmentPlaneXOZTesting03">
+<area shape="rect" id="node1" title=" " alt="" coords="5,209,239,236"/>
+<area shape="rect" id="node2" href="$transfer_fragment_plane_x_o_z_testing03_8cpp.html#a9f96a37a51379c59f344aec4779b0e83" title=" " alt="" coords="313,49,481,90"/>
+<area shape="rect" id="node6" href="$struct_grid3_d_fragment.html#a5b521f7ca604b2bfd0948e9462dc7245" title="$$$$Возвращает указатель на трехмерный массив LinearArray3D по указанному имени массива данных modelD..." alt="" coords="306,114,487,155"/>
+<area shape="rect" id="node7" href="$transfer_fragment_plane_x_o_z_testing03_8cpp.html#ac15997c5522d1a74cfb97280217b232d" title=" " alt="" coords="287,231,507,273"/>
+<area shape="rect" id="node12" href="$struct_linear_arrays3_d.html#a1670d381ef3531ce044b6d93e4a66e67" title="$$$$Создает трехмерный массив данных типа LinearArray3D(nx, ny, nz) для указанного имени массива данн..." alt="" coords="304,349,489,390"/>
+<area shape="rect" id="node13" href="$struct_linear_array2_d.html#a66950746a6b4db014d536fc4c1c7b1b2" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="573,169,753,196"/>
+<area shape="rect" id="node14" href="$struct_linear_array3_d.html#a9cccbfdc509fa40807ba9b0be9d3d494" title="Сохраняет значение элемента массива с индексом, вычисленным по индексам элемента в фрагменте" alt="" coords="307,297,487,324"/>
+<area shape="rect" id="node3" href="$classtimer.html#af4100eb2e8e5b6cf73bc1679d4289506" title=" " alt="" coords="621,5,705,32"/>
+<area shape="rect" id="node4" href="$classtimer.html#a8cac498e9c17d70fade048c19cdecbd9" title=" " alt="" coords="620,56,705,83"/>
+<area shape="rect" id="node5" href="$classtimer.html#aed5aa53473af80aff2a9e04504c93227" title=" " alt="" coords="621,107,705,133"/>
+<area shape="rect" id="node8" href="$struct_linear_array3_d.html#a369b9a0df30659171569250838032e58" title="Передает массив данных от плоскости planeXOZ первой по оси OY плоскости фрагмента" alt="" coords="555,271,771,297"/>
+<area shape="rect" id="node11" href="$struct_linear_array3_d.html#a360a8130de7a752f262ad3f04cbe43a3" title="Передает массив данных фрагмента (последняя по оси OY плоскость XOZ) плоскости planeXOZ" alt="" coords="555,220,770,247"/>
+<area shape="rect" id="node9" href="$struct_linear_array2_d.html#ad5aa1405e4702253fe59a5da6ffd976a" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="819,220,983,247"/>
+<area shape="rect" id="node10" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="819,271,983,297"/>
+</map>

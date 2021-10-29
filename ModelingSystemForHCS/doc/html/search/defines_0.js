@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5f_5fhas_5finclude_0',['__has_include',['../build_2_c_make_files_23_821_83_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#ae5510d82e4946f1656f4969911c54736',1,'__has_include():&#160;CMakeCCompilerId.c'],['../build_2_c_make_files_23_821_83_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#ae5510d82e4946f1656f4969911c54736',1,'__has_include():&#160;CMakeCXXCompilerId.cpp']]]
+  ['architecture_5fid_0',['ARCHITECTURE_ID',['../x64-_release_2_c_make_files_23_820_821032501-_m_s_v_c__2_2_compiler_id_c_2_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../x64-_release_2_c_make_files_23_820_821032501-_m_s_v_c__2_2_compiler_id_c_x_x_2_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]]
 ];

@@ -1,0 +1,5 @@
+<map id="Grid2DTransferPlaneXOYFragmentTest04" name="Grid2DTransferPlaneXOYFragmentTest04">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,228,47"/>
+<area shape="rect" id="node2" href="$struct_linear_array3_d.html#ac5039a8b58b25c1831826ed25dad982e" title="Передает массив данных (плоскость XOY) между фрагментами вперед" alt="" coords="276,5,461,47"/>
+<area shape="rect" id="node3" href="$struct_linear_array3_d.html#a45e4284f3fba85b6052c60a9a7987c60" title="Возвращает индекс элемента массива данных по индексам элемента в фрагменте" alt="" coords="509,13,673,39"/>
+</map>
