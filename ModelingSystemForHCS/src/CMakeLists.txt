@@ -41,7 +41,7 @@ if(ENABLE_CUDA)
     cuda_add_executable(myApp   ${source_files} )
 else()
     add_executable(myApp   ${source_files} )
-endif(ENABLE_MPI)
+endif(ENABLE_CUDA)
 
 if(ENABLE_MPI)
     target_link_libraries(myApp ${MPI_LIBRARIES})
