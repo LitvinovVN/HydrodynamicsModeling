@@ -329,45 +329,56 @@ void alg2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D*
 
 void matmAlgsTesting()
 {
-	int nx = 100;
-	int ny = 50;
-	int nz = 40;
-	auto r = new LinearArray3D(nx, ny, nz);
-	auto c0 = new LinearArray3D(nx, ny, nz);
-	auto c2 = new LinearArray3D(nx, ny, nz);
-	auto c4 = new LinearArray3D(nx, ny, nz);
-	auto c6 = new LinearArray3D(nx, ny, nz);
-	auto s = new LinearArray3D(nx, ny, nz);
-	double w = 0.5;
-	int numberOfLaunches = 10;// Количество запусков алгоритма
-
 	std::cout << std::endl;
 	std::cout << "-------------------------------------------------" << std::endl;
 	std::cout << "-------- Running test: matmAlgsTesting() --------" << std::endl;
-	std::cout << "nx = " << nx << std::endl;
-	std::cout << "ny = " << ny << std::endl;
-	std::cout << "nz = " << nz << std::endl;
 
-	// Инициализация массивов
-	r->InitLinearArray3DByValue(10);
-	c0->InitLinearArray3DByValue(1);
-	c2->InitLinearArray3DByValue(2);
-	c4->InitLinearArray3DByValue(4);
-	c6->InitLinearArray3DByValue(6);
-	s->InitLinearArray3DByValue(1);
+	for (size_t k = 10; k <= 100; k += 10)
+	{
+		for (size_t j = 10; j <= 100; j += 10)
+		{
+			for (size_t i = 10; i <= 100; i += 10)
+			{
+				int nx = i;
+				int ny = j;
+				int nz = k;
+				auto r = new LinearArray3D(nx, ny, nz);
+				auto c0 = new LinearArray3D(nx, ny, nz);
+				auto c2 = new LinearArray3D(nx, ny, nz);
+				auto c4 = new LinearArray3D(nx, ny, nz);
+				auto c6 = new LinearArray3D(nx, ny, nz);
+				auto s = new LinearArray3D(nx, ny, nz);
+				double w = 0.5;
+				int numberOfLaunches = 10;// Количество запусков алгоритма
 
-	// Массив для верификации
-	auto arrayForVerification = new LinearArray3D(nx, ny, nz);
-	arrayForVerification->InitLinearArray3DByValue(10);
-	alg1(arrayForVerification, c0, c2, c4, c6, s, w);
-	//arrayForVerification->Print();
-	///////////////////////////////////////////////////////////
+				std::cout << "-------------------------------------------------" << std::endl;
+				std::cout << "nx = " << nx << std::endl;
+				std::cout << "ny = " << ny << std::endl;
+				std::cout << "nz = " << nz << std::endl;
 
-	std::cout << "---alg1---\n";
-	r->InitLinearArray3DByValue(10);
-	algStart(alg1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+				// Инициализация массивов
+				r->InitLinearArray3DByValue(10);
+				c0->InitLinearArray3DByValue(1);
+				c2->InitLinearArray3DByValue(2);
+				c4->InitLinearArray3DByValue(4);
+				c6->InitLinearArray3DByValue(6);
+				s->InitLinearArray3DByValue(1);
 
-	std::cout << "---alg2---\n";
-	r->InitLinearArray3DByValue(10);
-	algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+				// Массив для верификации
+				auto arrayForVerification = new LinearArray3D(nx, ny, nz);
+				arrayForVerification->InitLinearArray3DByValue(10);
+				alg1(arrayForVerification, c0, c2, c4, c6, s, w);
+				//arrayForVerification->Print();
+				///////////////////////////////////////////////////////////
+
+				std::cout << "---alg1---\n";
+				r->InitLinearArray3DByValue(10);
+				algStart(alg1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+
+				std::cout << "---alg2---\n";
+				r->InitLinearArray3DByValue(10);
+				algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+			}
+		}
+	}	
 }

@@ -1,1 +1,1 @@
-mpirun -np 1 ./_build/myApp MPI --tests=1,3,4,5,6,7,8 --gridSize=10x20x30 CUDA
+mpirun -np 1 ./_build/myApp MPI --tests=1 --gridSize=10x20x30 CUDA
