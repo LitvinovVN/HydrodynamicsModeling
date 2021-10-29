@@ -21,7 +21,7 @@ if(ENABLE_CUDA)
     set(
     CUDA_NVCC_FLAGS
     ${CUDA_NVCC_FLAGS};
-    -gencode arch=compute_35,code=sm_35
+    -gencode arch=compute_35,code=sm_35 --std=c++11
     )
 endif(ENABLE_CUDA)
 

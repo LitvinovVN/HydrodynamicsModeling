@@ -1,7 +1,4 @@
 mkdir _build
 cd _build
-cmake ../src
+cmake ../src  -DCMAKE_BUILD_TYPE=Release
 cmake --build .
-
-cd Debug
-myApp.exe
