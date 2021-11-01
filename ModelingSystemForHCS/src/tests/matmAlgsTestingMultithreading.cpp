@@ -206,8 +206,8 @@ void matmAlgsTestingMultithreading()
 	std::cout << "-------------------------------------------------" << std::endl;
 	std::cout << "-------- Running test: matmAlgsTestingMultithreading() --------" << std::endl;
 		
-	int i = 100;
-	int j = 100;
+	int i = 1000;
+	int j = 200;
 	int k = 100;
 
 	int nx = i;

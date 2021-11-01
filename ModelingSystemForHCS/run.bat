@@ -1,1 +1,1 @@
-mpiexec -np 2 ./_build/Debug/myApp.exe MPI CUDA --tests=2 --gridSize=10x20x30
+mpiexec -np 1 ./_build/Debug/myApp.exe MPI CUDA --tests=9 --gridSize=10x20x30
