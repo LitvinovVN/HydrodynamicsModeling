@@ -13,6 +13,120 @@ void algStart_9(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D
 
 	SimpleStatistics statistics{};
 
+	// ѕоследовательное выполнение в основном потоке
+	std::cout << "--- Sequancial: Main thread ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		aTimer.start();
+		algFunPntr(r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);		
+		bool isEqual = isEqual_0;		
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// ѕоследовательное выполнение в новом потоке
+	std::cout << "--- Sequancial: New thread ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		aTimer.start();	
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);		
+		t0.join();
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);		
+		bool isEqual = isEqual_0;		
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// ѕараллельное выполнение в 2 потока
+	std::cout << "--- Parallel: 2 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		aTimer.start();		
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);		
+		t0.join();
+		t1.join();
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);		
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;		
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// ѕараллельное выполнение в 3 потока
+	std::cout << "--- Parallel: 3 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		aTimer.start();		
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);		
+
+		t0.join();
+		t1.join();
+		t2.join();		
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;		
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// ѕараллельное выполнение в 4 потока
+	std::cout << "--- Parallel: 4 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		aTimer.start();		
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;		
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// ѕараллельное выполнение в 5 потоков
+	std::cout << "--- Parallel: 5 threads ---" << std::endl;
 	for (size_t i = 0; i < numberOfLaunches; i++)
 	{
 		aTimer.start();
@@ -30,7 +144,7 @@ void algStart_9(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D
 		t3.join();
 		t4.join();
 
-		auto elapsed = aTimer.stop();
+		auto elapsed = aTimer.stop();			
 
 		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
 		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
