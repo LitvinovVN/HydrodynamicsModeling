@@ -866,271 +866,280 @@ void matmAlgsTestingMultithreading()
 	std::cout << "-------------------------------------------------" << std::endl;
 	std::cout << "-------- Running test: matmAlgsTestingMultithreading() --------" << std::endl;
 		
-	int i = 1000;
+	/*int i = 1000;
 	int j = 100;
-	int k = 100;
+	int k = 100;*/
 
-	int nx = i;
-	int ny = j;
-	int nz = k;
-	auto r_t0 = new LinearArray3D(nx, ny, nz);
-	auto c0_t0 = new LinearArray3D(nx, ny, nz);
-	auto c2_t0 = new LinearArray3D(nx, ny, nz);
-	auto c4_t0 = new LinearArray3D(nx, ny, nz);
-	auto c6_t0 = new LinearArray3D(nx, ny, nz);
-	auto s_t0 = new LinearArray3D(nx, ny, nz);
+	for (size_t k = 50; k <= 1000; k += 50)
+	{
+		for (size_t j = 50; j <= 1000; j += 50)
+		{
+			for (size_t i = 50; i <= 1000; i += 50)
+			{
+				int nx = i;
+				int ny = j;
+				int nz = k;
+				auto r_t0 = new LinearArray3D(nx, ny, nz);
+				auto c0_t0 = new LinearArray3D(nx, ny, nz);
+				auto c2_t0 = new LinearArray3D(nx, ny, nz);
+				auto c4_t0 = new LinearArray3D(nx, ny, nz);
+				auto c6_t0 = new LinearArray3D(nx, ny, nz);
+				auto s_t0 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t1 = new LinearArray3D(nx, ny, nz);
-	auto c0_t1 = new LinearArray3D(nx, ny, nz);
-	auto c2_t1 = new LinearArray3D(nx, ny, nz);
-	auto c4_t1 = new LinearArray3D(nx, ny, nz);
-	auto c6_t1 = new LinearArray3D(nx, ny, nz);
-	auto s_t1 = new LinearArray3D(nx, ny, nz);
+				auto r_t1 = new LinearArray3D(nx, ny, nz);
+				auto c0_t1 = new LinearArray3D(nx, ny, nz);
+				auto c2_t1 = new LinearArray3D(nx, ny, nz);
+				auto c4_t1 = new LinearArray3D(nx, ny, nz);
+				auto c6_t1 = new LinearArray3D(nx, ny, nz);
+				auto s_t1 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t2 = new LinearArray3D(nx, ny, nz);
-	auto c0_t2 = new LinearArray3D(nx, ny, nz);
-	auto c2_t2 = new LinearArray3D(nx, ny, nz);
-	auto c4_t2 = new LinearArray3D(nx, ny, nz);
-	auto c6_t2 = new LinearArray3D(nx, ny, nz);
-	auto s_t2 = new LinearArray3D(nx, ny, nz);
+				auto r_t2 = new LinearArray3D(nx, ny, nz);
+				auto c0_t2 = new LinearArray3D(nx, ny, nz);
+				auto c2_t2 = new LinearArray3D(nx, ny, nz);
+				auto c4_t2 = new LinearArray3D(nx, ny, nz);
+				auto c6_t2 = new LinearArray3D(nx, ny, nz);
+				auto s_t2 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t3 = new LinearArray3D(nx, ny, nz);
-	auto c0_t3 = new LinearArray3D(nx, ny, nz);
-	auto c2_t3 = new LinearArray3D(nx, ny, nz);
-	auto c4_t3 = new LinearArray3D(nx, ny, nz);
-	auto c6_t3 = new LinearArray3D(nx, ny, nz);
-	auto s_t3 = new LinearArray3D(nx, ny, nz);
+				auto r_t3 = new LinearArray3D(nx, ny, nz);
+				auto c0_t3 = new LinearArray3D(nx, ny, nz);
+				auto c2_t3 = new LinearArray3D(nx, ny, nz);
+				auto c4_t3 = new LinearArray3D(nx, ny, nz);
+				auto c6_t3 = new LinearArray3D(nx, ny, nz);
+				auto s_t3 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t4 = new LinearArray3D(nx, ny, nz);
-	auto c0_t4 = new LinearArray3D(nx, ny, nz);
-	auto c2_t4 = new LinearArray3D(nx, ny, nz);
-	auto c4_t4 = new LinearArray3D(nx, ny, nz);
-	auto c6_t4 = new LinearArray3D(nx, ny, nz);
-	auto s_t4 = new LinearArray3D(nx, ny, nz);
+				auto r_t4 = new LinearArray3D(nx, ny, nz);
+				auto c0_t4 = new LinearArray3D(nx, ny, nz);
+				auto c2_t4 = new LinearArray3D(nx, ny, nz);
+				auto c4_t4 = new LinearArray3D(nx, ny, nz);
+				auto c6_t4 = new LinearArray3D(nx, ny, nz);
+				auto s_t4 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t5 = new LinearArray3D(nx, ny, nz);
-	auto c0_t5 = new LinearArray3D(nx, ny, nz);
-	auto c2_t5 = new LinearArray3D(nx, ny, nz);
-	auto c4_t5 = new LinearArray3D(nx, ny, nz);
-	auto c6_t5 = new LinearArray3D(nx, ny, nz);
-	auto s_t5 = new LinearArray3D(nx, ny, nz);
+				auto r_t5 = new LinearArray3D(nx, ny, nz);
+				auto c0_t5 = new LinearArray3D(nx, ny, nz);
+				auto c2_t5 = new LinearArray3D(nx, ny, nz);
+				auto c4_t5 = new LinearArray3D(nx, ny, nz);
+				auto c6_t5 = new LinearArray3D(nx, ny, nz);
+				auto s_t5 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t6 = new LinearArray3D(nx, ny, nz);
-	auto c0_t6 = new LinearArray3D(nx, ny, nz);
-	auto c2_t6 = new LinearArray3D(nx, ny, nz);
-	auto c4_t6 = new LinearArray3D(nx, ny, nz);
-	auto c6_t6 = new LinearArray3D(nx, ny, nz);
-	auto s_t6 = new LinearArray3D(nx, ny, nz);
+				auto r_t6 = new LinearArray3D(nx, ny, nz);
+				auto c0_t6 = new LinearArray3D(nx, ny, nz);
+				auto c2_t6 = new LinearArray3D(nx, ny, nz);
+				auto c4_t6 = new LinearArray3D(nx, ny, nz);
+				auto c6_t6 = new LinearArray3D(nx, ny, nz);
+				auto s_t6 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t7 = new LinearArray3D(nx, ny, nz);
-	auto c0_t7 = new LinearArray3D(nx, ny, nz);
-	auto c2_t7 = new LinearArray3D(nx, ny, nz);
-	auto c4_t7 = new LinearArray3D(nx, ny, nz);
-	auto c6_t7 = new LinearArray3D(nx, ny, nz);
-	auto s_t7 = new LinearArray3D(nx, ny, nz);
+				auto r_t7 = new LinearArray3D(nx, ny, nz);
+				auto c0_t7 = new LinearArray3D(nx, ny, nz);
+				auto c2_t7 = new LinearArray3D(nx, ny, nz);
+				auto c4_t7 = new LinearArray3D(nx, ny, nz);
+				auto c6_t7 = new LinearArray3D(nx, ny, nz);
+				auto s_t7 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t8 = new LinearArray3D(nx, ny, nz);
-	auto c0_t8 = new LinearArray3D(nx, ny, nz);
-	auto c2_t8 = new LinearArray3D(nx, ny, nz);
-	auto c4_t8 = new LinearArray3D(nx, ny, nz);
-	auto c6_t8 = new LinearArray3D(nx, ny, nz);
-	auto s_t8 = new LinearArray3D(nx, ny, nz);
+				auto r_t8 = new LinearArray3D(nx, ny, nz);
+				auto c0_t8 = new LinearArray3D(nx, ny, nz);
+				auto c2_t8 = new LinearArray3D(nx, ny, nz);
+				auto c4_t8 = new LinearArray3D(nx, ny, nz);
+				auto c6_t8 = new LinearArray3D(nx, ny, nz);
+				auto s_t8 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t9 = new LinearArray3D(nx, ny, nz);
-	auto c0_t9 = new LinearArray3D(nx, ny, nz);
-	auto c2_t9 = new LinearArray3D(nx, ny, nz);
-	auto c4_t9 = new LinearArray3D(nx, ny, nz);
-	auto c6_t9 = new LinearArray3D(nx, ny, nz);
-	auto s_t9 = new LinearArray3D(nx, ny, nz);
+				auto r_t9 = new LinearArray3D(nx, ny, nz);
+				auto c0_t9 = new LinearArray3D(nx, ny, nz);
+				auto c2_t9 = new LinearArray3D(nx, ny, nz);
+				auto c4_t9 = new LinearArray3D(nx, ny, nz);
+				auto c6_t9 = new LinearArray3D(nx, ny, nz);
+				auto s_t9 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t10 = new LinearArray3D(nx, ny, nz);
-	auto c0_t10 = new LinearArray3D(nx, ny, nz);
-	auto c2_t10 = new LinearArray3D(nx, ny, nz);
-	auto c4_t10 = new LinearArray3D(nx, ny, nz);
-	auto c6_t10 = new LinearArray3D(nx, ny, nz);
-	auto s_t10 = new LinearArray3D(nx, ny, nz);
+				auto r_t10 = new LinearArray3D(nx, ny, nz);
+				auto c0_t10 = new LinearArray3D(nx, ny, nz);
+				auto c2_t10 = new LinearArray3D(nx, ny, nz);
+				auto c4_t10 = new LinearArray3D(nx, ny, nz);
+				auto c6_t10 = new LinearArray3D(nx, ny, nz);
+				auto s_t10 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t11 = new LinearArray3D(nx, ny, nz);
-	auto c0_t11 = new LinearArray3D(nx, ny, nz);
-	auto c2_t11 = new LinearArray3D(nx, ny, nz);
-	auto c4_t11 = new LinearArray3D(nx, ny, nz);
-	auto c6_t11 = new LinearArray3D(nx, ny, nz);
-	auto s_t11 = new LinearArray3D(nx, ny, nz);
+				auto r_t11 = new LinearArray3D(nx, ny, nz);
+				auto c0_t11 = new LinearArray3D(nx, ny, nz);
+				auto c2_t11 = new LinearArray3D(nx, ny, nz);
+				auto c4_t11 = new LinearArray3D(nx, ny, nz);
+				auto c6_t11 = new LinearArray3D(nx, ny, nz);
+				auto s_t11 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t12 = new LinearArray3D(nx, ny, nz);
-	auto c0_t12 = new LinearArray3D(nx, ny, nz);
-	auto c2_t12 = new LinearArray3D(nx, ny, nz);
-	auto c4_t12 = new LinearArray3D(nx, ny, nz);
-	auto c6_t12 = new LinearArray3D(nx, ny, nz);
-	auto s_t12 = new LinearArray3D(nx, ny, nz);
+				auto r_t12 = new LinearArray3D(nx, ny, nz);
+				auto c0_t12 = new LinearArray3D(nx, ny, nz);
+				auto c2_t12 = new LinearArray3D(nx, ny, nz);
+				auto c4_t12 = new LinearArray3D(nx, ny, nz);
+				auto c6_t12 = new LinearArray3D(nx, ny, nz);
+				auto s_t12 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t13 = new LinearArray3D(nx, ny, nz);
-	auto c0_t13 = new LinearArray3D(nx, ny, nz);
-	auto c2_t13 = new LinearArray3D(nx, ny, nz);
-	auto c4_t13 = new LinearArray3D(nx, ny, nz);
-	auto c6_t13 = new LinearArray3D(nx, ny, nz);
-	auto s_t13 = new LinearArray3D(nx, ny, nz);
+				auto r_t13 = new LinearArray3D(nx, ny, nz);
+				auto c0_t13 = new LinearArray3D(nx, ny, nz);
+				auto c2_t13 = new LinearArray3D(nx, ny, nz);
+				auto c4_t13 = new LinearArray3D(nx, ny, nz);
+				auto c6_t13 = new LinearArray3D(nx, ny, nz);
+				auto s_t13 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t14 = new LinearArray3D(nx, ny, nz);
-	auto c0_t14 = new LinearArray3D(nx, ny, nz);
-	auto c2_t14 = new LinearArray3D(nx, ny, nz);
-	auto c4_t14 = new LinearArray3D(nx, ny, nz);
-	auto c6_t14 = new LinearArray3D(nx, ny, nz);
-	auto s_t14 = new LinearArray3D(nx, ny, nz);
+				auto r_t14 = new LinearArray3D(nx, ny, nz);
+				auto c0_t14 = new LinearArray3D(nx, ny, nz);
+				auto c2_t14 = new LinearArray3D(nx, ny, nz);
+				auto c4_t14 = new LinearArray3D(nx, ny, nz);
+				auto c6_t14 = new LinearArray3D(nx, ny, nz);
+				auto s_t14 = new LinearArray3D(nx, ny, nz);
 
-	auto r_t15 = new LinearArray3D(nx, ny, nz);
-	auto c0_t15 = new LinearArray3D(nx, ny, nz);
-	auto c2_t15 = new LinearArray3D(nx, ny, nz);
-	auto c4_t15 = new LinearArray3D(nx, ny, nz);
-	auto c6_t15 = new LinearArray3D(nx, ny, nz);
-	auto s_t15 = new LinearArray3D(nx, ny, nz);
+				auto r_t15 = new LinearArray3D(nx, ny, nz);
+				auto c0_t15 = new LinearArray3D(nx, ny, nz);
+				auto c2_t15 = new LinearArray3D(nx, ny, nz);
+				auto c4_t15 = new LinearArray3D(nx, ny, nz);
+				auto c6_t15 = new LinearArray3D(nx, ny, nz);
+				auto s_t15 = new LinearArray3D(nx, ny, nz);
 
-	double w = 0.5;
-	int numberOfLaunches = 10;// Количество запусков алгоритма
+				double w = 0.5;
+				int numberOfLaunches = 10;// Количество запусков алгоритма
 
-	std::cout << "-------------------------------------------------" << std::endl;
-	std::cout << "nx = " << nx << std::endl;
-	std::cout << "ny = " << ny << std::endl;
-	std::cout << "nz = " << nz << std::endl;
+				std::cout << "-------------------------------------------------" << std::endl;
+				std::cout << "nx = " << nx << std::endl;
+				std::cout << "ny = " << ny << std::endl;
+				std::cout << "nz = " << nz << std::endl;
 
-	// Инициализация массивов
-	r_t0->InitLinearArray3DByValue(10);
-	c0_t0->InitLinearArray3DByValue(1);
-	c2_t0->InitLinearArray3DByValue(2);
-	c4_t0->InitLinearArray3DByValue(4);
-	c6_t0->InitLinearArray3DByValue(6);
-	s_t0->InitLinearArray3DByValue(1);
+				// Инициализация массивов
+				r_t0->InitLinearArray3DByValue(10);
+				c0_t0->InitLinearArray3DByValue(1);
+				c2_t0->InitLinearArray3DByValue(2);
+				c4_t0->InitLinearArray3DByValue(4);
+				c6_t0->InitLinearArray3DByValue(6);
+				s_t0->InitLinearArray3DByValue(1);
 
-	r_t1->InitLinearArray3DByValue(10);
-	c0_t1->InitLinearArray3DByValue(1);
-	c2_t1->InitLinearArray3DByValue(2);
-	c4_t1->InitLinearArray3DByValue(4);
-	c6_t1->InitLinearArray3DByValue(6);
-	s_t1->InitLinearArray3DByValue(1);
+				r_t1->InitLinearArray3DByValue(10);
+				c0_t1->InitLinearArray3DByValue(1);
+				c2_t1->InitLinearArray3DByValue(2);
+				c4_t1->InitLinearArray3DByValue(4);
+				c6_t1->InitLinearArray3DByValue(6);
+				s_t1->InitLinearArray3DByValue(1);
 
-	r_t2->InitLinearArray3DByValue(10);
-	c0_t2->InitLinearArray3DByValue(1);
-	c2_t2->InitLinearArray3DByValue(2);
-	c4_t2->InitLinearArray3DByValue(4);
-	c6_t2->InitLinearArray3DByValue(6);
-	s_t2->InitLinearArray3DByValue(1);
+				r_t2->InitLinearArray3DByValue(10);
+				c0_t2->InitLinearArray3DByValue(1);
+				c2_t2->InitLinearArray3DByValue(2);
+				c4_t2->InitLinearArray3DByValue(4);
+				c6_t2->InitLinearArray3DByValue(6);
+				s_t2->InitLinearArray3DByValue(1);
 
-	r_t3->InitLinearArray3DByValue(10);
-	c0_t3->InitLinearArray3DByValue(1);
-	c2_t3->InitLinearArray3DByValue(2);
-	c4_t3->InitLinearArray3DByValue(4);
-	c6_t3->InitLinearArray3DByValue(6);
-	s_t3->InitLinearArray3DByValue(1);
+				r_t3->InitLinearArray3DByValue(10);
+				c0_t3->InitLinearArray3DByValue(1);
+				c2_t3->InitLinearArray3DByValue(2);
+				c4_t3->InitLinearArray3DByValue(4);
+				c6_t3->InitLinearArray3DByValue(6);
+				s_t3->InitLinearArray3DByValue(1);
 
-	r_t4->InitLinearArray3DByValue(10);
-	c0_t4->InitLinearArray3DByValue(1);
-	c2_t4->InitLinearArray3DByValue(2);
-	c4_t4->InitLinearArray3DByValue(4);
-	c6_t4->InitLinearArray3DByValue(6);
-	s_t4->InitLinearArray3DByValue(1);
+				r_t4->InitLinearArray3DByValue(10);
+				c0_t4->InitLinearArray3DByValue(1);
+				c2_t4->InitLinearArray3DByValue(2);
+				c4_t4->InitLinearArray3DByValue(4);
+				c6_t4->InitLinearArray3DByValue(6);
+				s_t4->InitLinearArray3DByValue(1);
 
-	r_t5->InitLinearArray3DByValue(10);
-	c0_t5->InitLinearArray3DByValue(1);
-	c2_t5->InitLinearArray3DByValue(2);
-	c4_t5->InitLinearArray3DByValue(4);
-	c6_t5->InitLinearArray3DByValue(6);
-	s_t5->InitLinearArray3DByValue(1);
+				r_t5->InitLinearArray3DByValue(10);
+				c0_t5->InitLinearArray3DByValue(1);
+				c2_t5->InitLinearArray3DByValue(2);
+				c4_t5->InitLinearArray3DByValue(4);
+				c6_t5->InitLinearArray3DByValue(6);
+				s_t5->InitLinearArray3DByValue(1);
 
-	r_t6->InitLinearArray3DByValue(10);
-	c0_t6->InitLinearArray3DByValue(1);
-	c2_t6->InitLinearArray3DByValue(2);
-	c4_t6->InitLinearArray3DByValue(4);
-	c6_t6->InitLinearArray3DByValue(6);
-	s_t6->InitLinearArray3DByValue(1);
+				r_t6->InitLinearArray3DByValue(10);
+				c0_t6->InitLinearArray3DByValue(1);
+				c2_t6->InitLinearArray3DByValue(2);
+				c4_t6->InitLinearArray3DByValue(4);
+				c6_t6->InitLinearArray3DByValue(6);
+				s_t6->InitLinearArray3DByValue(1);
 
-	r_t7->InitLinearArray3DByValue(10);
-	c0_t7->InitLinearArray3DByValue(1);
-	c2_t7->InitLinearArray3DByValue(2);
-	c4_t7->InitLinearArray3DByValue(4);
-	c6_t7->InitLinearArray3DByValue(6);
-	s_t7->InitLinearArray3DByValue(1);
+				r_t7->InitLinearArray3DByValue(10);
+				c0_t7->InitLinearArray3DByValue(1);
+				c2_t7->InitLinearArray3DByValue(2);
+				c4_t7->InitLinearArray3DByValue(4);
+				c6_t7->InitLinearArray3DByValue(6);
+				s_t7->InitLinearArray3DByValue(1);
 
-	r_t8->InitLinearArray3DByValue(10);
-	c0_t8->InitLinearArray3DByValue(1);
-	c2_t8->InitLinearArray3DByValue(2);
-	c4_t8->InitLinearArray3DByValue(4);
-	c6_t8->InitLinearArray3DByValue(6);
-	s_t8->InitLinearArray3DByValue(1);
+				r_t8->InitLinearArray3DByValue(10);
+				c0_t8->InitLinearArray3DByValue(1);
+				c2_t8->InitLinearArray3DByValue(2);
+				c4_t8->InitLinearArray3DByValue(4);
+				c6_t8->InitLinearArray3DByValue(6);
+				s_t8->InitLinearArray3DByValue(1);
 
-	r_t9->InitLinearArray3DByValue(10);
-	c0_t9->InitLinearArray3DByValue(1);
-	c2_t9->InitLinearArray3DByValue(2);
-	c4_t9->InitLinearArray3DByValue(4);
-	c6_t9->InitLinearArray3DByValue(6);
-	s_t9->InitLinearArray3DByValue(1);
+				r_t9->InitLinearArray3DByValue(10);
+				c0_t9->InitLinearArray3DByValue(1);
+				c2_t9->InitLinearArray3DByValue(2);
+				c4_t9->InitLinearArray3DByValue(4);
+				c6_t9->InitLinearArray3DByValue(6);
+				s_t9->InitLinearArray3DByValue(1);
 
-	r_t10->InitLinearArray3DByValue(10);
-	c0_t10->InitLinearArray3DByValue(1);
-	c2_t10->InitLinearArray3DByValue(2);
-	c4_t10->InitLinearArray3DByValue(4);
-	c6_t10->InitLinearArray3DByValue(6);
-	s_t10->InitLinearArray3DByValue(1);
+				r_t10->InitLinearArray3DByValue(10);
+				c0_t10->InitLinearArray3DByValue(1);
+				c2_t10->InitLinearArray3DByValue(2);
+				c4_t10->InitLinearArray3DByValue(4);
+				c6_t10->InitLinearArray3DByValue(6);
+				s_t10->InitLinearArray3DByValue(1);
 
-	r_t11->InitLinearArray3DByValue(10);
-	c0_t11->InitLinearArray3DByValue(1);
-	c2_t11->InitLinearArray3DByValue(2);
-	c4_t11->InitLinearArray3DByValue(4);
-	c6_t11->InitLinearArray3DByValue(6);
-	s_t11->InitLinearArray3DByValue(1);
+				r_t11->InitLinearArray3DByValue(10);
+				c0_t11->InitLinearArray3DByValue(1);
+				c2_t11->InitLinearArray3DByValue(2);
+				c4_t11->InitLinearArray3DByValue(4);
+				c6_t11->InitLinearArray3DByValue(6);
+				s_t11->InitLinearArray3DByValue(1);
 
-	r_t12->InitLinearArray3DByValue(10);
-	c0_t12->InitLinearArray3DByValue(1);
-	c2_t12->InitLinearArray3DByValue(2);
-	c4_t12->InitLinearArray3DByValue(4);
-	c6_t12->InitLinearArray3DByValue(6);
-	s_t12->InitLinearArray3DByValue(1);
+				r_t12->InitLinearArray3DByValue(10);
+				c0_t12->InitLinearArray3DByValue(1);
+				c2_t12->InitLinearArray3DByValue(2);
+				c4_t12->InitLinearArray3DByValue(4);
+				c6_t12->InitLinearArray3DByValue(6);
+				s_t12->InitLinearArray3DByValue(1);
 
-	r_t13->InitLinearArray3DByValue(10);
-	c0_t13->InitLinearArray3DByValue(1);
-	c2_t13->InitLinearArray3DByValue(2);
-	c4_t13->InitLinearArray3DByValue(4);
-	c6_t13->InitLinearArray3DByValue(6);
-	s_t13->InitLinearArray3DByValue(1);
+				r_t13->InitLinearArray3DByValue(10);
+				c0_t13->InitLinearArray3DByValue(1);
+				c2_t13->InitLinearArray3DByValue(2);
+				c4_t13->InitLinearArray3DByValue(4);
+				c6_t13->InitLinearArray3DByValue(6);
+				s_t13->InitLinearArray3DByValue(1);
 
-	r_t14->InitLinearArray3DByValue(10);
-	c0_t14->InitLinearArray3DByValue(1);
-	c2_t14->InitLinearArray3DByValue(2);
-	c4_t14->InitLinearArray3DByValue(4);
-	c6_t14->InitLinearArray3DByValue(6);
-	s_t14->InitLinearArray3DByValue(1);
+				r_t14->InitLinearArray3DByValue(10);
+				c0_t14->InitLinearArray3DByValue(1);
+				c2_t14->InitLinearArray3DByValue(2);
+				c4_t14->InitLinearArray3DByValue(4);
+				c6_t14->InitLinearArray3DByValue(6);
+				s_t14->InitLinearArray3DByValue(1);
 
-	r_t15->InitLinearArray3DByValue(10);
-	c0_t15->InitLinearArray3DByValue(1);
-	c2_t15->InitLinearArray3DByValue(2);
-	c4_t15->InitLinearArray3DByValue(4);
-	c6_t15->InitLinearArray3DByValue(6);
-	s_t15->InitLinearArray3DByValue(1);
+				r_t15->InitLinearArray3DByValue(10);
+				c0_t15->InitLinearArray3DByValue(1);
+				c2_t15->InitLinearArray3DByValue(2);
+				c4_t15->InitLinearArray3DByValue(4);
+				c6_t15->InitLinearArray3DByValue(6);
+				s_t15->InitLinearArray3DByValue(1);
 
-	// Массив для верификации
-	auto arrayForVerification = new LinearArray3D(nx, ny, nz);
-	arrayForVerification->InitLinearArray3DByValue(10);
-	alg1_9(arrayForVerification, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
-	//arrayForVerification->Print();
-	///////////////////////////////////////////////////////////
+				// Массив для верификации
+				auto arrayForVerification = new LinearArray3D(nx, ny, nz);
+				arrayForVerification->InitLinearArray3DByValue(10);
+				alg1_9(arrayForVerification, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+				//arrayForVerification->Print();
+				///////////////////////////////////////////////////////////
 
-	std::cout << "---alg1---\n";
-	r_t0->InitLinearArray3DByValue(10);
-	algStart_9(alg1_9,
-		r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0,
-		r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1,
-		r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2,
-		r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3,
-		r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4,
-		r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5,
-		r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6,
-		r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7,
-		r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8,
-		r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t4,
-		r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10,
-		r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11,
-		r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12,
-		r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13,
-		r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14,
-		r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15,
-		w, arrayForVerification, numberOfLaunches);
+				std::cout << "---alg1---\n";
+				r_t0->InitLinearArray3DByValue(10);
+				algStart_9(alg1_9,
+					r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0,
+					r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1,
+					r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2,
+					r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3,
+					r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4,
+					r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5,
+					r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6,
+					r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7,
+					r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8,
+					r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t4,
+					r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10,
+					r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11,
+					r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12,
+					r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13,
+					r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14,
+					r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15,
+					w, arrayForVerification, numberOfLaunches);
+			}
+		}
+	}
 }
