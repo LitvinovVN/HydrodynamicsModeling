@@ -55,4 +55,9 @@ void runTests(LaunchSettings* settings)
 	// Тест скорости передачи данных, расположенных в смежной плоскости между двумя трёхмерными фрагментами, через плоскость
 	if (isRun(settings, 8))
 		transferFragmentPlaneYOZTesting07();
+
+	// Запуск теста matmAlgsTestingMultithreading(). Индекс теста: 9
+	// Использование многопоточности
+	if (isRun(settings, 9))
+		matmAlgsTestingMultithreading();
 }
