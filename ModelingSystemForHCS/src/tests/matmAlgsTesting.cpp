@@ -447,6 +447,199 @@ void alg3p2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3
 	}
 }
 
+// alg3p2_without_s
+void alg3p2_without_s(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
+{
+	auto nx = r->nx;
+	auto ny = r->ny;
+	auto nz = r->nz;
+
+	auto nxy = nx * ny;
+
+	int m0 = 0;
+	int m2 = 0;
+	int m4 = 0;
+	int m6 = 0;
+	double s0 = 0;
+	double rm2 = 0;
+	double rm0 = 0;
+	double rm4 = 0;
+	double rm6 = 0;
+	double c0m0 = 0;
+	double c2m0 = 0;
+	double c4m0 = 0;
+	double c6m0 = 0;
+	double newVal = 0;
+
+	int m0p1 = 0;
+	int m2p1 = 0;
+	int m4p1 = 0;
+	int m6p1 = 0;
+	double s0p1 = 0;
+	double rm2p1 = 0;
+	double rm0p1 = 0;
+	double rm4p1 = 0;
+	double rm6p1 = 0;
+	double c0m0p1 = 0;
+	double c2m0p1 = 0;
+	double c4m0p1 = 0;
+	double c6m0p1 = 0;
+	double newValp1 = 0;
+
+	int m0p2 = 0;
+	int m2p2 = 0;
+	int m4p2 = 0;
+	int m6p2 = 0;
+	double s0p2 = 0;
+	double rm2p2 = 0;
+	double rm0p2 = 0;
+	double rm4p2 = 0;
+	double rm6p2 = 0;
+	double c0m0p2 = 0;
+	double c2m0p2 = 0;
+	double c4m0p2 = 0;
+	double c6m0p2 = 0;
+	double newValp2 = 0;
+
+	int xStep = 3;
+	int xGroups = nx / xStep;
+	int xLast = nx % xStep;
+	if (xLast == 0)
+	{
+		xGroups--;
+	}
+
+	if (nx == 30)
+	{
+		bool pause = true;
+	}
+
+	for (auto k = 1; k < nz - 1; k++)
+	{
+		auto zOffset = k * nx * ny;
+		for (auto j = 1; j < ny - 1; j++)
+		{
+			auto yOffset = j * nx;
+			auto yzOffset = zOffset + yOffset;
+
+			m0 = yzOffset;
+			m2 = m0 - 1;
+			m4 = m0 - nx;
+			m6 = m0 - nxy;
+
+			for (auto i = 1; i < xStep; i++)
+			{
+				m0++;
+				m2++;
+				m4++;
+				m6++;
+
+				rm2 = r->data[m2];
+				rm0 = r->data[m0];
+				rm4 = r->data[m4];
+				rm6 = r->data[m6];
+
+				c0m0 = c0->data[m0];
+				c2m0 = c2->data[m0];
+				c4m0 = c4->data[m0];
+				c6m0 = c6->data[m0];
+
+				newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+				r->data[m0] = newVal;
+			}
+
+			for (auto xGroup = 1; xGroup < xGroups; xGroup++)
+			{
+				m0 = xGroup * xStep + yzOffset;
+				m0p1 = m0 + 1;
+				m0p2 = m0 + 2;
+
+				m2 = m0 - 1;
+				m2p1 = m2 + 1;
+				m2p2 = m2 + 2;
+
+				m4 = m0 - nx;
+				m4p1 = m4 + 1;
+				m4p2 = m4 + 2;
+
+				m6 = m0 - nxy;
+				m6p1 = m6 + 1;
+				m6p2 = m6 + 2;
+
+				s0 = s->data[m0];
+				s0p1 = s->data[m0p1];
+				s0p2 = s->data[m0p2];
+
+				rm2 = r->data[m2];
+				rm0 = r->data[m0];
+				rm4 = r->data[m4];
+				rm6 = r->data[m6];
+
+				c0m0 = c0->data[m0];
+				c2m0 = c2->data[m0];
+				c4m0 = c4->data[m0];
+				c6m0 = c6->data[m0];
+
+				newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+				r->data[m0] = newVal;
+
+				////////////////
+
+				//rm2p1 = r->data[m2p1];
+				rm2p1 = newVal;
+				rm0p1 = r->data[m0p1];
+				rm4p1 = r->data[m4p1];
+				rm6p1 = r->data[m6p1];
+
+				c0m0p1 = c0->data[m0p1];
+				c2m0p1 = c2->data[m0p1];
+				c4m0p1 = c4->data[m0p1];
+				c6m0p1 = c6->data[m0p1];
+
+				newValp1 = (w * (c2m0p1 * rm2p1 + c4m0p1 * rm4p1 + c6m0p1 * rm6p1) + rm0p1) / (w * c0m0p1 / 2 + 1);
+				r->data[m0p1] = newValp1;
+
+				////////////////
+
+				//rm2p2 = r->data[m2p2];
+				rm2p2 = newValp1;
+				rm0p2 = r->data[m0p2];
+				rm4p2 = r->data[m4p2];
+				rm6p2 = r->data[m6p2];
+
+				c0m0p2 = c0->data[m0p2];
+				c2m0p2 = c2->data[m0p2];
+				c4m0p2 = c4->data[m0p2];
+				c6m0p2 = c6->data[m0p2];
+
+				newValp2 = (w * (c2m0p2 * rm2p2 + c4m0p2 * rm4p2 + c6m0p2 * rm6p2) + rm0p2) / (w * c0m0p2 / 2 + 1);
+				r->data[m0p2] = newValp2;
+			}
+
+			for (auto il = xGroups * xStep; il < nx - 1; il++)
+			{
+				m0 = il + yzOffset;
+				m2 = m0 - 1;
+				m4 = m0 - nx;
+				m6 = m0 - nxy;
+
+				rm2 = r->data[m2];
+				rm0 = r->data[m0];
+				rm4 = r->data[m4];
+				rm6 = r->data[m6];
+
+				c0m0 = c0->data[m0];
+				c2m0 = c2->data[m0];
+				c4m0 = c4->data[m0];
+				c6m0 = c6->data[m0];
+
+				newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+				r->data[m0] = newVal;
+			}
+		}
+	}
+}
+
 
 //// alg4
 //void alg4(LinearArray3D* linAr)
@@ -711,6 +904,9 @@ void matmAlgsTesting()
 
 				std::cout << "---alg3p2---\n";				
 				algStart(alg3p2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+
+				std::cout << "---alg3p2_without_s---\n";
+				algStart(alg3p2_without_s, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);				
 			}
 		}
 	}	
