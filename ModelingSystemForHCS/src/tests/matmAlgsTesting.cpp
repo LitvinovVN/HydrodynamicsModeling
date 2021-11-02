@@ -88,41 +88,294 @@ void alg2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D*
 	}
 }
 
-//// alg3
-//void alg3(LinearArray3D* linAr)
-//{
-//	auto nx = linAr->nx;
-//	auto ny = linAr->ny;
-//	auto nz = linAr->nz;
-//
-//	auto nxy = nx * ny;
-//
-//	for (auto k = 1; k < nz - 1; k++)
-//	{
-//		auto zOffset = k * nx * ny;
-//		for (auto j = 1; j < ny - 1; j++)
-//		{
-//			auto yOffset = j * nx;
-//			auto yzOffset = zOffset + yOffset;
-//			for (auto i = 1; i < nx - 1; i++)
-//			{
-//				int m0 = i + yzOffset;
-//				int m2 = m0 - 1;
-//				int m4 = m0 - nx;
-//				int m6 = m0 - nxy;
-//
-//				double val2 = linAr->data[m2];
-//				double val0 = linAr->data[m0];
-//
-//				double val4 = linAr->data[m4];
-//				double val6 = linAr->data[m6];
-//				double newVal = val0 + val2 + val4 + val6;
-//				linAr->SetElement(i, j, k, newVal);
-//			}
-//		}
-//	}
-//}
-//
+// alg3
+void alg3(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
+{
+	auto nx = r->nx;
+	auto ny = r->ny;
+	auto nz = r->nz;
+
+	auto nxy = nx * ny;
+
+	for (auto k = 1; k < nz - 1; k++)
+	{
+		auto zOffset = k * nx * ny;
+		for (auto j = 1; j < ny - 1; j++)
+		{
+			auto yOffset = j * nx;
+			auto yzOffset = zOffset + yOffset;
+			for (auto i = 1; i < nx - 1; i++)
+			{
+				int m0 = i + yzOffset;
+				int m2 = m0 - 1;
+				int m4 = m0 - nx;
+				int m6 = m0 - nxy;
+								
+				double s0 = s->data[m0];
+				if (s0 > (1 - 0.001) && s0 < (1 + 0.001))
+				{
+					double rm2 = r->data[m2];
+					double rm0 = r->data[m0];					
+					double rm4 = r->data[m4];
+					double rm6 = r->data[m6];
+
+					double c0m0 = c0->data[m0];
+					double c2m0 = c2->data[m0];
+					double c4m0 = c4->data[m0];
+					double c6m0 = c6->data[m0];
+
+					double newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+					r->data[m0] = newVal;
+				}
+			}
+		}
+	}
+}
+
+// alg3p1
+void alg3p1(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
+{
+	auto nx = r->nx;
+	auto ny = r->ny;
+	auto nz = r->nz;
+
+	auto nxy = nx * ny;
+
+	int m0 = 0;
+	int m2 = 0;
+	int m4 = 0;
+	int m6 = 0;
+	double s0 = 0;
+	double rm2 = 0;
+	double rm0 = 0;
+	double rm4 = 0;
+	double rm6 = 0;
+	double c0m0 = 0;
+	double c2m0 = 0;
+	double c4m0 = 0;
+	double c6m0 = 0;
+	double newVal = 0;
+
+	int m0p1 = 0;
+	int m2p1 = 0;
+	int m4p1 = 0;
+	int m6p1 = 0;
+	double s0p1 = 0;
+	double rm2p1 = 0;
+	double rm0p1 = 0;
+	double rm4p1 = 0;
+	double rm6p1 = 0;
+	double c0m0p1 = 0;
+	double c2m0p1 = 0;
+	double c4m0p1 = 0;
+	double c6m0p1 = 0;
+	double newValp1 = 0;
+
+	for (auto k = 1; k < nz - 1; k++)
+	{
+		auto zOffset = k * nx * ny;
+		for (auto j = 1; j < ny - 1; j++)
+		{
+			auto yOffset = j * nx;
+			auto yzOffset = zOffset + yOffset;
+			for (auto i = 1; i < nx - 1; i+=2)
+			{
+				m0 = i + yzOffset;
+				m0p1 = m0 + 1;
+
+				m2 = m0 - 1;
+				m2p1 = m2 + 1;
+
+				m4 = m0 - nx;
+				m4p1 = m4 + 1;
+
+				m6 = m0 - nxy;
+				m6p1 = m6 + 1;
+
+				s0 = s->data[m0];
+				s0p1 = s->data[m0p1];
+
+				if (s0 > (1 - 0.001) && s0 < (1 + 0.001))
+				{
+					rm2 = r->data[m2];
+					rm0 = r->data[m0];
+					rm4 = r->data[m4];
+					rm6 = r->data[m6];
+
+					c0m0 = c0->data[m0];
+					c2m0 = c2->data[m0];
+					c4m0 = c4->data[m0];
+					c6m0 = c6->data[m0];
+
+					newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+					r->data[m0] = newVal;
+				}
+
+				////////////////
+				
+				if (s0p1 > (1 - 0.001) && s0p1 < (1 + 0.001))
+				{
+					//rm2p1 = r->data[m2p1];
+					rm2p1 = newVal;
+					rm0p1 = r->data[m0p1];
+					rm4p1 = r->data[m4p1];
+					rm6p1 = r->data[m6p1];
+
+					c0m0p1 = c0->data[m0p1];
+					c2m0p1 = c2->data[m0p1];
+					c4m0p1 = c4->data[m0p1];
+					c6m0p1 = c6->data[m0p1];
+
+					newValp1 = (w * (c2m0p1 * rm2p1 + c4m0p1 * rm4p1 + c6m0p1 * rm6p1) + rm0p1) / (w * c0m0p1 / 2 + 1);
+					r->data[m0p1] = newValp1;
+				}
+			}
+		}
+	}
+}
+
+// alg3p2
+void alg3p2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
+{
+	auto nx = r->nx;
+	auto ny = r->ny;
+	auto nz = r->nz;
+
+	auto nxy = nx * ny;
+
+	int m0 = 0;
+	int m2 = 0;
+	int m4 = 0;
+	int m6 = 0;
+	double s0 = 0;
+	double rm2 = 0;
+	double rm0 = 0;
+	double rm4 = 0;
+	double rm6 = 0;
+	double c0m0 = 0;
+	double c2m0 = 0;
+	double c4m0 = 0;
+	double c6m0 = 0;
+	double newVal = 0;
+
+	int m0p1 = 0;
+	int m2p1 = 0;
+	int m4p1 = 0;
+	int m6p1 = 0;
+	double s0p1 = 0;
+	double rm2p1 = 0;
+	double rm0p1 = 0;
+	double rm4p1 = 0;
+	double rm6p1 = 0;
+	double c0m0p1 = 0;
+	double c2m0p1 = 0;
+	double c4m0p1 = 0;
+	double c6m0p1 = 0;
+	double newValp1 = 0;
+
+	int m0p2 = 0;
+	int m2p2 = 0;
+	int m4p2 = 0;
+	int m6p2 = 0;
+	double s0p2 = 0;
+	double rm2p2 = 0;
+	double rm0p2 = 0;
+	double rm4p2 = 0;
+	double rm6p2 = 0;
+	double c0m0p2 = 0;
+	double c2m0p2 = 0;
+	double c4m0p2 = 0;
+	double c6m0p2 = 0;
+	double newValp2 = 0;
+
+	for (auto k = 1; k < nz - 1; k++)
+	{
+		auto zOffset = k * nx * ny;
+		for (auto j = 1; j < ny - 1; j++)
+		{
+			auto yOffset = j * nx;
+			auto yzOffset = zOffset + yOffset;
+			for (auto i = 1; i < nx - 1; i += 3)
+			{
+				m0 = i + yzOffset;
+				m0p1 = m0 + 1;
+				m0p1 = m0 + 2;
+
+				m2 = m0 - 1;
+				m2p1 = m2 + 1;
+				m2p2 = m2 + 2;
+
+				m4 = m0 - nx;
+				m4p1 = m4 + 1;
+				m4p2 = m4 + 2;
+
+				m6 = m0 - nxy;
+				m6p1 = m6 + 1;
+				m6p2 = m6 + 2;
+
+				s0 = s->data[m0];
+				s0p1 = s->data[m0p1];
+				s0p2 = s->data[m0p2];
+
+				if (s0 > (1 - 0.001) && s0 < (1 + 0.001))
+				{
+					rm2 = r->data[m2];
+					rm0 = r->data[m0];
+					rm4 = r->data[m4];
+					rm6 = r->data[m6];
+
+					c0m0 = c0->data[m0];
+					c2m0 = c2->data[m0];
+					c4m0 = c4->data[m0];
+					c6m0 = c6->data[m0];
+
+					newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+					r->data[m0] = newVal;
+				}
+
+				////////////////
+
+				if (s0p1 > (1 - 0.001) && s0p1 < (1 + 0.001))
+				{
+					//rm2p1 = r->data[m2p1];
+					rm2p1 = newVal;
+					rm0p1 = r->data[m0p1];
+					rm4p1 = r->data[m4p1];
+					rm6p1 = r->data[m6p1];
+
+					c0m0p1 = c0->data[m0p1];
+					c2m0p1 = c2->data[m0p1];
+					c4m0p1 = c4->data[m0p1];
+					c6m0p1 = c6->data[m0p1];
+
+					newValp1 = (w * (c2m0p1 * rm2p1 + c4m0p1 * rm4p1 + c6m0p1 * rm6p1) + rm0p1) / (w * c0m0p1 / 2 + 1);
+					r->data[m0p1] = newValp1;
+				}
+
+				////////////////
+
+				if (s0p2 > (1 - 0.001) && s0p2 < (1 + 0.001))
+				{
+					//rm2p2 = r->data[m2p2];
+					rm2p2 = newValp1;
+					rm0p2 = r->data[m0p2];
+					rm4p2 = r->data[m4p2];
+					rm6p2 = r->data[m6p2];
+
+					c0m0p2 = c0->data[m0p2];
+					c2m0p2 = c2->data[m0p2];
+					c4m0p2 = c4->data[m0p2];
+					c6m0p2 = c6->data[m0p2];
+
+					newValp2 = (w * (c2m0p2 * rm2p2 + c4m0p2 * rm4p2 + c6m0p2 * rm6p2) + rm0p2) / (w * c0m0p2 / 2 + 1);
+					r->data[m0p2] = newValp2;
+				}
+			}
+		}
+	}
+}
+
+
 //// alg4
 //void alg4(LinearArray3D* linAr)
 //{
@@ -377,7 +630,19 @@ void matmAlgsTesting()
 
 				std::cout << "---alg2---\n";
 				r->InitLinearArray3DByValue(10);
-				algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+				algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);						
+
+				std::cout << "---alg3---\n";
+				r->InitLinearArray3DByValue(10);
+				algStart(alg3, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+
+				std::cout << "---alg3p1---\n";
+				r->InitLinearArray3DByValue(10);
+				algStart(alg3p1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
+
+				/*std::cout << "---alg3p2---\n";
+				r->InitLinearArray3DByValue(10);
+				algStart(alg3p2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);*/
 			}
 		}
 	}	
