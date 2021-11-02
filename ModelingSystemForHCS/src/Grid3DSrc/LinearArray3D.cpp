@@ -62,7 +62,10 @@ struct LinearArray3D
 	{
 		for (size_t i = 0; i < nx * ny * nz; i++)
 		{
-			if ((data[i] - linAr->data[i]) > 0.000001)
+			auto data1 = data[i];
+			auto data2 = linAr->data[i];
+			auto delta = abs( data1 - data2);
+			if (delta > 0.000001)
 				return false;
 		}
 

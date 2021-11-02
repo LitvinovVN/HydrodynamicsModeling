@@ -10,6 +10,7 @@ void algStart(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D*,
 
 	for (size_t i = 0; i < numberOfLaunches; i++)
 	{
+		r->InitLinearArray3DByValue(10);
 		aTimer.start();
 		algFunPntr(r, c0, c2, c4, c6, s, w);
 		auto elapsed = aTimer.stop();
@@ -236,8 +237,8 @@ void alg3p1(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3
 
 // alg3p2
 void alg3p2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3D* c4, LinearArray3D* c6, LinearArray3D* s, double w)
-{
-	auto nx = r->nx;
+{	
+	auto nx = r->nx;	
 	auto ny = r->ny;
 	auto nz = r->nz;
 
@@ -288,18 +289,63 @@ void alg3p2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3
 	double c6m0p2 = 0;
 	double newValp2 = 0;
 
+	int xStep = 3;
+	int xGroups = nx / xStep;
+	int xLast = nx % xStep;
+	if (xLast == 0)
+	{
+		xGroups--;
+	}
+
+	if (nx == 30)
+	{
+		bool pause = true;
+	}
+
 	for (auto k = 1; k < nz - 1; k++)
 	{
 		auto zOffset = k * nx * ny;
 		for (auto j = 1; j < ny - 1; j++)
-		{
+		{			
 			auto yOffset = j * nx;
 			auto yzOffset = zOffset + yOffset;
-			for (auto i = 1; i < nx - 1; i += 3)
+			
+			m0 = yzOffset;
+			m2 = m0 - 1;
+			m4 = m0 - nx;
+			m6 = m0 - nxy;
+
+			for (auto i = 1; i < xStep; i++)
 			{
-				m0 = i + yzOffset;
+				m0++;
+				m2++;
+				m4++;
+				m6++;
+
+				s0 = s->data[m0];
+
+				if (s0 > (1 - 0.001) && s0 < (1 + 0.001))
+				{
+					rm2 = r->data[m2];
+					rm0 = r->data[m0];
+					rm4 = r->data[m4];
+					rm6 = r->data[m6];
+
+					c0m0 = c0->data[m0];
+					c2m0 = c2->data[m0];
+					c4m0 = c4->data[m0];
+					c6m0 = c6->data[m0];
+
+					newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+					r->data[m0] = newVal;
+				}
+			}
+						
+			for (auto xGroup = 1; xGroup < xGroups; xGroup++)
+			{
+				m0 = xGroup * xStep + yzOffset;
 				m0p1 = m0 + 1;
-				m0p1 = m0 + 2;
+				m0p2 = m0 + 2;
 
 				m2 = m0 - 1;
 				m2p1 = m2 + 1;
@@ -369,6 +415,32 @@ void alg3p2(LinearArray3D* r, LinearArray3D* c0, LinearArray3D* c2, LinearArray3
 
 					newValp2 = (w * (c2m0p2 * rm2p2 + c4m0p2 * rm4p2 + c6m0p2 * rm6p2) + rm0p2) / (w * c0m0p2 / 2 + 1);
 					r->data[m0p2] = newValp2;
+				}
+			}
+
+			for (auto il = xGroups * xStep; il < nx - 1; il++)
+			{
+				m0 = il + yzOffset;
+				m2 = m0 - 1;
+				m4 = m0 - nx;
+				m6 = m0 - nxy;
+
+				s0 = s->data[m0];
+
+				if (s0 > (1 - 0.001) && s0 < (1 + 0.001))
+				{
+					rm2 = r->data[m2];
+					rm0 = r->data[m0];
+					rm4 = r->data[m4];
+					rm6 = r->data[m6];
+
+					c0m0 = c0->data[m0];
+					c2m0 = c2->data[m0];
+					c4m0 = c4->data[m0];
+					c6m0 = c6->data[m0];
+
+					newVal = (w * (c2m0 * rm2 + c4m0 * rm4 + c6m0 * rm6) + rm0) / (w * c0m0 / 2 + 1);
+					r->data[m0] = newVal;
 				}
 			}
 		}
@@ -624,25 +696,21 @@ void matmAlgsTesting()
 				//arrayForVerification->Print();
 				///////////////////////////////////////////////////////////
 
-				std::cout << "---alg1---\n";
-				r->InitLinearArray3DByValue(10);
+				std::cout << "---alg1---\n";				
 				algStart(alg1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 
-				std::cout << "---alg2---\n";
-				r->InitLinearArray3DByValue(10);
+				std::cout << "---alg2---\n";				
 				algStart(alg2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);						
 
-				std::cout << "---alg3---\n";
-				r->InitLinearArray3DByValue(10);
+				std::cout << "---alg3---\n";				
 				algStart(alg3, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 
 				std::cout << "---alg3p1---\n";
 				r->InitLinearArray3DByValue(10);
 				algStart(alg3p1, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 
-				/*std::cout << "---alg3p2---\n";
-				r->InitLinearArray3DByValue(10);
-				algStart(alg3p2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);*/
+				std::cout << "---alg3p2---\n";				
+				algStart(alg3p2, r, c0, c2, c4, c6, s, w, arrayForVerification, numberOfLaunches);
 			}
 		}
 	}	
