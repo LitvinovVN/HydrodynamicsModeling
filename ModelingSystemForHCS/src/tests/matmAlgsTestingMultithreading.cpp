@@ -18,6 +18,22 @@ void algStart_9(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D
 	LinearArray3D* r_t13, LinearArray3D* c0_t13, LinearArray3D* c2_t13, LinearArray3D* c4_t13, LinearArray3D* c6_t13, LinearArray3D* s_t13,
 	LinearArray3D* r_t14, LinearArray3D* c0_t14, LinearArray3D* c2_t14, LinearArray3D* c4_t14, LinearArray3D* c6_t14, LinearArray3D* s_t14,
 	LinearArray3D* r_t15, LinearArray3D* c0_t15, LinearArray3D* c2_t15, LinearArray3D* c4_t15, LinearArray3D* c6_t15, LinearArray3D* s_t15,
+	LinearArray3D* r_t16, LinearArray3D* c0_t16, LinearArray3D* c2_t16, LinearArray3D* c4_t16, LinearArray3D* c6_t16, LinearArray3D* s_t16,
+	LinearArray3D* r_t17, LinearArray3D* c0_t17, LinearArray3D* c2_t17, LinearArray3D* c4_t17, LinearArray3D* c6_t17, LinearArray3D* s_t17,
+	LinearArray3D* r_t18, LinearArray3D* c0_t18, LinearArray3D* c2_t18, LinearArray3D* c4_t18, LinearArray3D* c6_t18, LinearArray3D* s_t18,
+	LinearArray3D* r_t19, LinearArray3D* c0_t19, LinearArray3D* c2_t19, LinearArray3D* c4_t19, LinearArray3D* c6_t19, LinearArray3D* s_t19,
+	LinearArray3D* r_t20, LinearArray3D* c0_t20, LinearArray3D* c2_t20, LinearArray3D* c4_t20, LinearArray3D* c6_t20, LinearArray3D* s_t20,
+	LinearArray3D* r_t21, LinearArray3D* c0_t21, LinearArray3D* c2_t21, LinearArray3D* c4_t21, LinearArray3D* c6_t21, LinearArray3D* s_t21,
+	LinearArray3D* r_t22, LinearArray3D* c0_t22, LinearArray3D* c2_t22, LinearArray3D* c4_t22, LinearArray3D* c6_t22, LinearArray3D* s_t22,
+	LinearArray3D* r_t23, LinearArray3D* c0_t23, LinearArray3D* c2_t23, LinearArray3D* c4_t23, LinearArray3D* c6_t23, LinearArray3D* s_t23,
+	LinearArray3D* r_t24, LinearArray3D* c0_t24, LinearArray3D* c2_t24, LinearArray3D* c4_t24, LinearArray3D* c6_t24, LinearArray3D* s_t24,
+	LinearArray3D* r_t25, LinearArray3D* c0_t25, LinearArray3D* c2_t25, LinearArray3D* c4_t25, LinearArray3D* c6_t25, LinearArray3D* s_t25,
+	LinearArray3D* r_t26, LinearArray3D* c0_t26, LinearArray3D* c2_t26, LinearArray3D* c4_t26, LinearArray3D* c6_t26, LinearArray3D* s_t26,
+	LinearArray3D* r_t27, LinearArray3D* c0_t27, LinearArray3D* c2_t27, LinearArray3D* c4_t27, LinearArray3D* c6_t27, LinearArray3D* s_t27,
+	LinearArray3D* r_t28, LinearArray3D* c0_t28, LinearArray3D* c2_t28, LinearArray3D* c4_t28, LinearArray3D* c6_t28, LinearArray3D* s_t28,
+	LinearArray3D* r_t29, LinearArray3D* c0_t29, LinearArray3D* c2_t29, LinearArray3D* c4_t29, LinearArray3D* c6_t29, LinearArray3D* s_t29,
+	LinearArray3D* r_t30, LinearArray3D* c0_t30, LinearArray3D* c2_t30, LinearArray3D* c4_t30, LinearArray3D* c6_t30, LinearArray3D* s_t30,
+	LinearArray3D* r_t31, LinearArray3D* c0_t31, LinearArray3D* c2_t31, LinearArray3D* c4_t31, LinearArray3D* c6_t31, LinearArray3D* s_t31,
 	double w, LinearArray3D* arrayForVerification, int numberOfLaunches)
 {
 	timer<std::chrono::microseconds> aTimer;
@@ -972,6 +988,2222 @@ void algStart_9(void (*algFunPntr)(LinearArray3D*, LinearArray3D*, LinearArray3D
 	}
 	statistics.print();
 	statistics.data.clear();
+
+	// Параллельное выполнение в 17 потоков
+	std::cout << "--- Parallel: 17 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 18 потоков
+	std::cout << "--- Parallel: 18 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 19 потоков
+	std::cout << "--- Parallel: 19 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 20 потоков
+	std::cout << "--- Parallel: 20 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 21 поток
+	std::cout << "--- Parallel: 21 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 22 потока
+	std::cout << "--- Parallel: 22 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 23 потока
+	std::cout << "--- Parallel: 23 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 24 потока
+	std::cout << "--- Parallel: 24 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 25 потоков
+	std::cout << "--- Parallel: 25 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+		r_t24->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+		std::thread t24(algFunPntr, r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+		t24.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual_24 = arrayForVerification->IsEqual(r_t24);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+		isEqual = isEqual && isEqual_24;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 26 потоков
+	std::cout << "--- Parallel: 26 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+		r_t24->InitLinearArray3DByValue(10);
+		r_t25->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+		std::thread t24(algFunPntr, r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24, w);
+		std::thread t25(algFunPntr, r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+		t24.join();
+		t25.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual_24 = arrayForVerification->IsEqual(r_t24);
+		bool isEqual_25 = arrayForVerification->IsEqual(r_t25);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+		isEqual = isEqual && isEqual_24;
+		isEqual = isEqual && isEqual_25;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 27 потоков
+	std::cout << "--- Parallel: 27 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+		r_t24->InitLinearArray3DByValue(10);
+		r_t25->InitLinearArray3DByValue(10);
+		r_t26->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+		std::thread t24(algFunPntr, r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24, w);
+		std::thread t25(algFunPntr, r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25, w);
+		std::thread t26(algFunPntr, r_t26, c0_t26, c2_t26, c4_t26, c6_t26, s_t26, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+		t24.join();
+		t25.join();
+		t26.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual_24 = arrayForVerification->IsEqual(r_t24);
+		bool isEqual_25 = arrayForVerification->IsEqual(r_t25);
+		bool isEqual_26 = arrayForVerification->IsEqual(r_t26);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+		isEqual = isEqual && isEqual_24;
+		isEqual = isEqual && isEqual_25;
+		isEqual = isEqual && isEqual_26;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 28 потоков
+	std::cout << "--- Parallel: 28 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+		r_t24->InitLinearArray3DByValue(10);
+		r_t25->InitLinearArray3DByValue(10);
+		r_t26->InitLinearArray3DByValue(10);
+		r_t27->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+		std::thread t24(algFunPntr, r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24, w);
+		std::thread t25(algFunPntr, r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25, w);
+		std::thread t26(algFunPntr, r_t26, c0_t26, c2_t26, c4_t26, c6_t26, s_t26, w);
+		std::thread t27(algFunPntr, r_t27, c0_t27, c2_t27, c4_t27, c6_t27, s_t27, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+		t24.join();
+		t25.join();
+		t26.join();
+		t27.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual_24 = arrayForVerification->IsEqual(r_t24);
+		bool isEqual_25 = arrayForVerification->IsEqual(r_t25);
+		bool isEqual_26 = arrayForVerification->IsEqual(r_t26);
+		bool isEqual_27 = arrayForVerification->IsEqual(r_t27);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+		isEqual = isEqual && isEqual_24;
+		isEqual = isEqual && isEqual_25;
+		isEqual = isEqual && isEqual_26;
+		isEqual = isEqual && isEqual_27;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 29 потоков
+	std::cout << "--- Parallel: 29 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+		r_t24->InitLinearArray3DByValue(10);
+		r_t25->InitLinearArray3DByValue(10);
+		r_t26->InitLinearArray3DByValue(10);
+		r_t27->InitLinearArray3DByValue(10);
+		r_t28->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+		std::thread t24(algFunPntr, r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24, w);
+		std::thread t25(algFunPntr, r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25, w);
+		std::thread t26(algFunPntr, r_t26, c0_t26, c2_t26, c4_t26, c6_t26, s_t26, w);
+		std::thread t27(algFunPntr, r_t27, c0_t27, c2_t27, c4_t27, c6_t27, s_t27, w);
+		std::thread t28(algFunPntr, r_t28, c0_t28, c2_t28, c4_t28, c6_t28, s_t28, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+		t24.join();
+		t25.join();
+		t26.join();
+		t27.join();
+		t28.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual_24 = arrayForVerification->IsEqual(r_t24);
+		bool isEqual_25 = arrayForVerification->IsEqual(r_t25);
+		bool isEqual_26 = arrayForVerification->IsEqual(r_t26);
+		bool isEqual_27 = arrayForVerification->IsEqual(r_t27);
+		bool isEqual_28 = arrayForVerification->IsEqual(r_t28);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+		isEqual = isEqual && isEqual_24;
+		isEqual = isEqual && isEqual_25;
+		isEqual = isEqual && isEqual_26;
+		isEqual = isEqual && isEqual_27;
+		isEqual = isEqual && isEqual_28;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 30 потоков
+	std::cout << "--- Parallel: 30 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+		r_t24->InitLinearArray3DByValue(10);
+		r_t25->InitLinearArray3DByValue(10);
+		r_t26->InitLinearArray3DByValue(10);
+		r_t27->InitLinearArray3DByValue(10);
+		r_t28->InitLinearArray3DByValue(10);
+		r_t29->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+		std::thread t24(algFunPntr, r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24, w);
+		std::thread t25(algFunPntr, r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25, w);
+		std::thread t26(algFunPntr, r_t26, c0_t26, c2_t26, c4_t26, c6_t26, s_t26, w);
+		std::thread t27(algFunPntr, r_t27, c0_t27, c2_t27, c4_t27, c6_t27, s_t27, w);
+		std::thread t28(algFunPntr, r_t28, c0_t28, c2_t28, c4_t28, c6_t28, s_t28, w);
+		std::thread t29(algFunPntr, r_t29, c0_t29, c2_t29, c4_t29, c6_t29, s_t29, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+		t24.join();
+		t25.join();
+		t26.join();
+		t27.join();
+		t28.join();
+		t29.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual_24 = arrayForVerification->IsEqual(r_t24);
+		bool isEqual_25 = arrayForVerification->IsEqual(r_t25);
+		bool isEqual_26 = arrayForVerification->IsEqual(r_t26);
+		bool isEqual_27 = arrayForVerification->IsEqual(r_t27);
+		bool isEqual_28 = arrayForVerification->IsEqual(r_t28);
+		bool isEqual_29 = arrayForVerification->IsEqual(r_t29);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+		isEqual = isEqual && isEqual_24;
+		isEqual = isEqual && isEqual_25;
+		isEqual = isEqual && isEqual_26;
+		isEqual = isEqual && isEqual_27;
+		isEqual = isEqual && isEqual_28;
+		isEqual = isEqual && isEqual_29;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 31 поток
+	std::cout << "--- Parallel: 31 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+		r_t24->InitLinearArray3DByValue(10);
+		r_t25->InitLinearArray3DByValue(10);
+		r_t26->InitLinearArray3DByValue(10);
+		r_t27->InitLinearArray3DByValue(10);
+		r_t28->InitLinearArray3DByValue(10);
+		r_t29->InitLinearArray3DByValue(10);
+		r_t30->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+		std::thread t24(algFunPntr, r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24, w);
+		std::thread t25(algFunPntr, r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25, w);
+		std::thread t26(algFunPntr, r_t26, c0_t26, c2_t26, c4_t26, c6_t26, s_t26, w);
+		std::thread t27(algFunPntr, r_t27, c0_t27, c2_t27, c4_t27, c6_t27, s_t27, w);
+		std::thread t28(algFunPntr, r_t28, c0_t28, c2_t28, c4_t28, c6_t28, s_t28, w);
+		std::thread t29(algFunPntr, r_t29, c0_t29, c2_t29, c4_t29, c6_t29, s_t29, w);
+		std::thread t30(algFunPntr, r_t30, c0_t30, c2_t30, c4_t30, c6_t30, s_t30, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+		t24.join();
+		t25.join();
+		t26.join();
+		t27.join();
+		t28.join();
+		t29.join();
+		t30.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual_24 = arrayForVerification->IsEqual(r_t24);
+		bool isEqual_25 = arrayForVerification->IsEqual(r_t25);
+		bool isEqual_26 = arrayForVerification->IsEqual(r_t26);
+		bool isEqual_27 = arrayForVerification->IsEqual(r_t27);
+		bool isEqual_28 = arrayForVerification->IsEqual(r_t28);
+		bool isEqual_29 = arrayForVerification->IsEqual(r_t29);
+		bool isEqual_30 = arrayForVerification->IsEqual(r_t30);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+		isEqual = isEqual && isEqual_24;
+		isEqual = isEqual && isEqual_25;
+		isEqual = isEqual && isEqual_26;
+		isEqual = isEqual && isEqual_27;
+		isEqual = isEqual && isEqual_28;
+		isEqual = isEqual && isEqual_29;
+		isEqual = isEqual && isEqual_30;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
+
+	// Параллельное выполнение в 32 потока
+	std::cout << "--- Parallel: 32 threads ---" << std::endl;
+	for (size_t i = 0; i < numberOfLaunches; i++)
+	{
+		r_t0->InitLinearArray3DByValue(10);
+		r_t1->InitLinearArray3DByValue(10);
+		r_t2->InitLinearArray3DByValue(10);
+		r_t3->InitLinearArray3DByValue(10);
+		r_t4->InitLinearArray3DByValue(10);
+		r_t5->InitLinearArray3DByValue(10);
+		r_t6->InitLinearArray3DByValue(10);
+		r_t7->InitLinearArray3DByValue(10);
+		r_t8->InitLinearArray3DByValue(10);
+		r_t9->InitLinearArray3DByValue(10);
+		r_t10->InitLinearArray3DByValue(10);
+		r_t11->InitLinearArray3DByValue(10);
+		r_t12->InitLinearArray3DByValue(10);
+		r_t13->InitLinearArray3DByValue(10);
+		r_t14->InitLinearArray3DByValue(10);
+		r_t15->InitLinearArray3DByValue(10);
+		r_t16->InitLinearArray3DByValue(10);
+		r_t17->InitLinearArray3DByValue(10);
+		r_t18->InitLinearArray3DByValue(10);
+		r_t19->InitLinearArray3DByValue(10);
+		r_t20->InitLinearArray3DByValue(10);
+		r_t21->InitLinearArray3DByValue(10);
+		r_t22->InitLinearArray3DByValue(10);
+		r_t23->InitLinearArray3DByValue(10);
+		r_t24->InitLinearArray3DByValue(10);
+		r_t25->InitLinearArray3DByValue(10);
+		r_t26->InitLinearArray3DByValue(10);
+		r_t27->InitLinearArray3DByValue(10);
+		r_t28->InitLinearArray3DByValue(10);
+		r_t29->InitLinearArray3DByValue(10);
+		r_t30->InitLinearArray3DByValue(10);
+		r_t31->InitLinearArray3DByValue(10);
+
+		aTimer.start();
+		std::thread t0(algFunPntr, r_t0, c0_t0, c2_t0, c4_t0, c6_t0, s_t0, w);
+		std::thread t1(algFunPntr, r_t1, c0_t1, c2_t1, c4_t1, c6_t1, s_t1, w);
+		std::thread t2(algFunPntr, r_t2, c0_t2, c2_t2, c4_t2, c6_t2, s_t2, w);
+		std::thread t3(algFunPntr, r_t3, c0_t3, c2_t3, c4_t3, c6_t3, s_t3, w);
+		std::thread t4(algFunPntr, r_t4, c0_t4, c2_t4, c4_t4, c6_t4, s_t4, w);
+		std::thread t5(algFunPntr, r_t5, c0_t5, c2_t5, c4_t5, c6_t5, s_t5, w);
+		std::thread t6(algFunPntr, r_t6, c0_t6, c2_t6, c4_t6, c6_t6, s_t6, w);
+		std::thread t7(algFunPntr, r_t7, c0_t7, c2_t7, c4_t7, c6_t7, s_t7, w);
+		std::thread t8(algFunPntr, r_t8, c0_t8, c2_t8, c4_t8, c6_t8, s_t8, w);
+		std::thread t9(algFunPntr, r_t9, c0_t9, c2_t9, c4_t9, c6_t9, s_t9, w);
+		std::thread t10(algFunPntr, r_t10, c0_t10, c2_t10, c4_t10, c6_t10, s_t10, w);
+		std::thread t11(algFunPntr, r_t11, c0_t11, c2_t11, c4_t11, c6_t11, s_t11, w);
+		std::thread t12(algFunPntr, r_t12, c0_t12, c2_t12, c4_t12, c6_t12, s_t12, w);
+		std::thread t13(algFunPntr, r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13, w);
+		std::thread t14(algFunPntr, r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14, w);
+		std::thread t15(algFunPntr, r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15, w);
+		std::thread t16(algFunPntr, r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16, w);
+		std::thread t17(algFunPntr, r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17, w);
+		std::thread t18(algFunPntr, r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18, w);
+		std::thread t19(algFunPntr, r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19, w);
+		std::thread t20(algFunPntr, r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20, w);
+		std::thread t21(algFunPntr, r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21, w);
+		std::thread t22(algFunPntr, r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22, w);
+		std::thread t23(algFunPntr, r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23, w);
+		std::thread t24(algFunPntr, r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24, w);
+		std::thread t25(algFunPntr, r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25, w);
+		std::thread t26(algFunPntr, r_t26, c0_t26, c2_t26, c4_t26, c6_t26, s_t26, w);
+		std::thread t27(algFunPntr, r_t27, c0_t27, c2_t27, c4_t27, c6_t27, s_t27, w);
+		std::thread t28(algFunPntr, r_t28, c0_t28, c2_t28, c4_t28, c6_t28, s_t28, w);
+		std::thread t29(algFunPntr, r_t29, c0_t29, c2_t29, c4_t29, c6_t29, s_t29, w);
+		std::thread t30(algFunPntr, r_t30, c0_t30, c2_t30, c4_t30, c6_t30, s_t30, w);
+		std::thread t31(algFunPntr, r_t31, c0_t31, c2_t31, c4_t31, c6_t31, s_t31, w);
+
+		t0.join();
+		t1.join();
+		t2.join();
+		t3.join();
+		t4.join();
+		t5.join();
+		t6.join();
+		t7.join();
+		t8.join();
+		t9.join();
+		t10.join();
+		t11.join();
+		t12.join();
+		t13.join();
+		t14.join();
+		t15.join();
+		t16.join();
+		t17.join();
+		t18.join();
+		t19.join();
+		t20.join();
+		t21.join();
+		t22.join();
+		t23.join();
+		t24.join();
+		t25.join();
+		t26.join();
+		t27.join();
+		t28.join();
+		t29.join();
+		t30.join();
+		t31.join();
+
+		auto elapsed = aTimer.stop();
+
+		bool isEqual_0 = arrayForVerification->IsEqual(r_t0);
+		bool isEqual_1 = arrayForVerification->IsEqual(r_t1);
+		bool isEqual_2 = arrayForVerification->IsEqual(r_t2);
+		bool isEqual_3 = arrayForVerification->IsEqual(r_t3);
+		bool isEqual_4 = arrayForVerification->IsEqual(r_t4);
+		bool isEqual_5 = arrayForVerification->IsEqual(r_t5);
+		bool isEqual_6 = arrayForVerification->IsEqual(r_t6);
+		bool isEqual_7 = arrayForVerification->IsEqual(r_t7);
+		bool isEqual_8 = arrayForVerification->IsEqual(r_t8);
+		bool isEqual_9 = arrayForVerification->IsEqual(r_t9);
+		bool isEqual_10 = arrayForVerification->IsEqual(r_t10);
+		bool isEqual_11 = arrayForVerification->IsEqual(r_t11);
+		bool isEqual_12 = arrayForVerification->IsEqual(r_t12);
+		bool isEqual_13 = arrayForVerification->IsEqual(r_t13);
+		bool isEqual_14 = arrayForVerification->IsEqual(r_t14);
+		bool isEqual_15 = arrayForVerification->IsEqual(r_t15);
+		bool isEqual_16 = arrayForVerification->IsEqual(r_t16);
+		bool isEqual_17 = arrayForVerification->IsEqual(r_t17);
+		bool isEqual_18 = arrayForVerification->IsEqual(r_t18);
+		bool isEqual_19 = arrayForVerification->IsEqual(r_t19);
+		bool isEqual_20 = arrayForVerification->IsEqual(r_t20);
+		bool isEqual_21 = arrayForVerification->IsEqual(r_t21);
+		bool isEqual_22 = arrayForVerification->IsEqual(r_t22);
+		bool isEqual_23 = arrayForVerification->IsEqual(r_t23);
+		bool isEqual_24 = arrayForVerification->IsEqual(r_t24);
+		bool isEqual_25 = arrayForVerification->IsEqual(r_t25);
+		bool isEqual_26 = arrayForVerification->IsEqual(r_t26);
+		bool isEqual_27 = arrayForVerification->IsEqual(r_t27);
+		bool isEqual_28 = arrayForVerification->IsEqual(r_t28);
+		bool isEqual_29 = arrayForVerification->IsEqual(r_t29);
+		bool isEqual_30 = arrayForVerification->IsEqual(r_t30);
+		bool isEqual_31 = arrayForVerification->IsEqual(r_t31);
+		bool isEqual = isEqual_0;
+		isEqual = isEqual && isEqual_1;
+		isEqual = isEqual && isEqual_2;
+		isEqual = isEqual && isEqual_3;
+		isEqual = isEqual && isEqual_4;
+		isEqual = isEqual && isEqual_5;
+		isEqual = isEqual && isEqual_6;
+		isEqual = isEqual && isEqual_7;
+		isEqual = isEqual && isEqual_8;
+		isEqual = isEqual && isEqual_9;
+		isEqual = isEqual && isEqual_10;
+		isEqual = isEqual && isEqual_11;
+		isEqual = isEqual && isEqual_12;
+		isEqual = isEqual && isEqual_13;
+		isEqual = isEqual && isEqual_14;
+		isEqual = isEqual && isEqual_15;
+		isEqual = isEqual && isEqual_16;
+		isEqual = isEqual && isEqual_17;
+		isEqual = isEqual && isEqual_18;
+		isEqual = isEqual && isEqual_19;
+		isEqual = isEqual && isEqual_20;
+		isEqual = isEqual && isEqual_21;
+		isEqual = isEqual && isEqual_22;
+		isEqual = isEqual && isEqual_23;
+		isEqual = isEqual && isEqual_24;
+		isEqual = isEqual && isEqual_25;
+		isEqual = isEqual && isEqual_26;
+		isEqual = isEqual && isEqual_27;
+		isEqual = isEqual && isEqual_28;
+		isEqual = isEqual && isEqual_29;
+		isEqual = isEqual && isEqual_30;
+		isEqual = isEqual && isEqual_31;
+
+		if (isEqual) statistics.add(elapsed.get_time_as_double());
+	}
+	statistics.print();
+	statistics.data.clear();
 }
 
 // alg1
@@ -1398,6 +3630,118 @@ void matmAlgsTestingMultithreading()
 				auto c6_t15 = new LinearArray3D(nx, ny, nz);
 				auto s_t15 = new LinearArray3D(nx, ny, nz);
 
+				auto r_t16 = new LinearArray3D(nx, ny, nz);
+				auto c0_t16 = new LinearArray3D(nx, ny, nz);
+				auto c2_t16 = new LinearArray3D(nx, ny, nz);
+				auto c4_t16 = new LinearArray3D(nx, ny, nz);
+				auto c6_t16 = new LinearArray3D(nx, ny, nz);
+				auto s_t16 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t17 = new LinearArray3D(nx, ny, nz);
+				auto c0_t17 = new LinearArray3D(nx, ny, nz);
+				auto c2_t17 = new LinearArray3D(nx, ny, nz);
+				auto c4_t17 = new LinearArray3D(nx, ny, nz);
+				auto c6_t17 = new LinearArray3D(nx, ny, nz);
+				auto s_t17 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t18 = new LinearArray3D(nx, ny, nz);
+				auto c0_t18 = new LinearArray3D(nx, ny, nz);
+				auto c2_t18 = new LinearArray3D(nx, ny, nz);
+				auto c4_t18 = new LinearArray3D(nx, ny, nz);
+				auto c6_t18 = new LinearArray3D(nx, ny, nz);
+				auto s_t18 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t19 = new LinearArray3D(nx, ny, nz);
+				auto c0_t19 = new LinearArray3D(nx, ny, nz);
+				auto c2_t19 = new LinearArray3D(nx, ny, nz);
+				auto c4_t19 = new LinearArray3D(nx, ny, nz);
+				auto c6_t19 = new LinearArray3D(nx, ny, nz);
+				auto s_t19 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t20 = new LinearArray3D(nx, ny, nz);
+				auto c0_t20 = new LinearArray3D(nx, ny, nz);
+				auto c2_t20 = new LinearArray3D(nx, ny, nz);
+				auto c4_t20 = new LinearArray3D(nx, ny, nz);
+				auto c6_t20 = new LinearArray3D(nx, ny, nz);
+				auto s_t20 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t21 = new LinearArray3D(nx, ny, nz);
+				auto c0_t21 = new LinearArray3D(nx, ny, nz);
+				auto c2_t21 = new LinearArray3D(nx, ny, nz);
+				auto c4_t21 = new LinearArray3D(nx, ny, nz);
+				auto c6_t21 = new LinearArray3D(nx, ny, nz);
+				auto s_t21 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t22 = new LinearArray3D(nx, ny, nz);
+				auto c0_t22 = new LinearArray3D(nx, ny, nz);
+				auto c2_t22 = new LinearArray3D(nx, ny, nz);
+				auto c4_t22 = new LinearArray3D(nx, ny, nz);
+				auto c6_t22 = new LinearArray3D(nx, ny, nz);
+				auto s_t22 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t23 = new LinearArray3D(nx, ny, nz);
+				auto c0_t23 = new LinearArray3D(nx, ny, nz);
+				auto c2_t23 = new LinearArray3D(nx, ny, nz);
+				auto c4_t23 = new LinearArray3D(nx, ny, nz);
+				auto c6_t23 = new LinearArray3D(nx, ny, nz);
+				auto s_t23 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t24 = new LinearArray3D(nx, ny, nz);
+				auto c0_t24 = new LinearArray3D(nx, ny, nz);
+				auto c2_t24 = new LinearArray3D(nx, ny, nz);
+				auto c4_t24 = new LinearArray3D(nx, ny, nz);
+				auto c6_t24 = new LinearArray3D(nx, ny, nz);
+				auto s_t24 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t25 = new LinearArray3D(nx, ny, nz);
+				auto c0_t25 = new LinearArray3D(nx, ny, nz);
+				auto c2_t25 = new LinearArray3D(nx, ny, nz);
+				auto c4_t25 = new LinearArray3D(nx, ny, nz);
+				auto c6_t25 = new LinearArray3D(nx, ny, nz);
+				auto s_t25 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t26 = new LinearArray3D(nx, ny, nz);
+				auto c0_t26 = new LinearArray3D(nx, ny, nz);
+				auto c2_t26 = new LinearArray3D(nx, ny, nz);
+				auto c4_t26 = new LinearArray3D(nx, ny, nz);
+				auto c6_t26 = new LinearArray3D(nx, ny, nz);
+				auto s_t26 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t27 = new LinearArray3D(nx, ny, nz);
+				auto c0_t27 = new LinearArray3D(nx, ny, nz);
+				auto c2_t27 = new LinearArray3D(nx, ny, nz);
+				auto c4_t27 = new LinearArray3D(nx, ny, nz);
+				auto c6_t27 = new LinearArray3D(nx, ny, nz);
+				auto s_t27 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t28 = new LinearArray3D(nx, ny, nz);
+				auto c0_t28 = new LinearArray3D(nx, ny, nz);
+				auto c2_t28 = new LinearArray3D(nx, ny, nz);
+				auto c4_t28 = new LinearArray3D(nx, ny, nz);
+				auto c6_t28 = new LinearArray3D(nx, ny, nz);
+				auto s_t28 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t29 = new LinearArray3D(nx, ny, nz);
+				auto c0_t29 = new LinearArray3D(nx, ny, nz);
+				auto c2_t29 = new LinearArray3D(nx, ny, nz);
+				auto c4_t29 = new LinearArray3D(nx, ny, nz);
+				auto c6_t29 = new LinearArray3D(nx, ny, nz);
+				auto s_t29 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t30 = new LinearArray3D(nx, ny, nz);
+				auto c0_t30 = new LinearArray3D(nx, ny, nz);
+				auto c2_t30 = new LinearArray3D(nx, ny, nz);
+				auto c4_t30 = new LinearArray3D(nx, ny, nz);
+				auto c6_t30 = new LinearArray3D(nx, ny, nz);
+				auto s_t30 = new LinearArray3D(nx, ny, nz);
+
+				auto r_t31 = new LinearArray3D(nx, ny, nz);
+				auto c0_t31 = new LinearArray3D(nx, ny, nz);
+				auto c2_t31 = new LinearArray3D(nx, ny, nz);
+				auto c4_t31 = new LinearArray3D(nx, ny, nz);
+				auto c6_t31 = new LinearArray3D(nx, ny, nz);
+				auto s_t31 = new LinearArray3D(nx, ny, nz);
+
 				double w = 0.5;
 				int numberOfLaunches = 10;// Количество запусков алгоритма
 
@@ -1519,6 +3863,118 @@ void matmAlgsTestingMultithreading()
 				c6_t15->InitLinearArray3DByValue(6);
 				s_t15->InitLinearArray3DByValue(1);
 
+				r_t16->InitLinearArray3DByValue(10);
+				c0_t16->InitLinearArray3DByValue(1);
+				c2_t16->InitLinearArray3DByValue(2);
+				c4_t16->InitLinearArray3DByValue(4);
+				c6_t16->InitLinearArray3DByValue(6);
+				s_t16->InitLinearArray3DByValue(1);
+
+				r_t17->InitLinearArray3DByValue(10);
+				c0_t17->InitLinearArray3DByValue(1);
+				c2_t17->InitLinearArray3DByValue(2);
+				c4_t17->InitLinearArray3DByValue(4);
+				c6_t17->InitLinearArray3DByValue(6);
+				s_t17->InitLinearArray3DByValue(1);
+
+				r_t18->InitLinearArray3DByValue(10);
+				c0_t18->InitLinearArray3DByValue(1);
+				c2_t18->InitLinearArray3DByValue(2);
+				c4_t18->InitLinearArray3DByValue(4);
+				c6_t18->InitLinearArray3DByValue(6);
+				s_t18->InitLinearArray3DByValue(1);
+
+				r_t19->InitLinearArray3DByValue(10);
+				c0_t19->InitLinearArray3DByValue(1);
+				c2_t19->InitLinearArray3DByValue(2);
+				c4_t19->InitLinearArray3DByValue(4);
+				c6_t19->InitLinearArray3DByValue(6);
+				s_t19->InitLinearArray3DByValue(1);
+
+				r_t20->InitLinearArray3DByValue(10);
+				c0_t20->InitLinearArray3DByValue(1);
+				c2_t20->InitLinearArray3DByValue(2);
+				c4_t20->InitLinearArray3DByValue(4);
+				c6_t20->InitLinearArray3DByValue(6);
+				s_t20->InitLinearArray3DByValue(1);
+
+				r_t21->InitLinearArray3DByValue(10);
+				c0_t21->InitLinearArray3DByValue(1);
+				c2_t21->InitLinearArray3DByValue(2);
+				c4_t21->InitLinearArray3DByValue(4);
+				c6_t21->InitLinearArray3DByValue(6);
+				s_t21->InitLinearArray3DByValue(1);
+
+				r_t22->InitLinearArray3DByValue(10);
+				c0_t22->InitLinearArray3DByValue(1);
+				c2_t22->InitLinearArray3DByValue(2);
+				c4_t22->InitLinearArray3DByValue(4);
+				c6_t22->InitLinearArray3DByValue(6);
+				s_t22->InitLinearArray3DByValue(1);
+
+				r_t23->InitLinearArray3DByValue(10);
+				c0_t23->InitLinearArray3DByValue(1);
+				c2_t23->InitLinearArray3DByValue(2);
+				c4_t23->InitLinearArray3DByValue(4);
+				c6_t23->InitLinearArray3DByValue(6);
+				s_t23->InitLinearArray3DByValue(1);
+
+				r_t24->InitLinearArray3DByValue(10);
+				c0_t24->InitLinearArray3DByValue(1);
+				c2_t24->InitLinearArray3DByValue(2);
+				c4_t24->InitLinearArray3DByValue(4);
+				c6_t24->InitLinearArray3DByValue(6);
+				s_t24->InitLinearArray3DByValue(1);
+
+				r_t25->InitLinearArray3DByValue(10);
+				c0_t25->InitLinearArray3DByValue(1);
+				c2_t25->InitLinearArray3DByValue(2);
+				c4_t25->InitLinearArray3DByValue(4);
+				c6_t25->InitLinearArray3DByValue(6);
+				s_t25->InitLinearArray3DByValue(1);
+
+				r_t26->InitLinearArray3DByValue(10);
+				c0_t26->InitLinearArray3DByValue(1);
+				c2_t26->InitLinearArray3DByValue(2);
+				c4_t26->InitLinearArray3DByValue(4);
+				c6_t26->InitLinearArray3DByValue(6);
+				s_t26->InitLinearArray3DByValue(1);
+
+				r_t27->InitLinearArray3DByValue(10);
+				c0_t27->InitLinearArray3DByValue(1);
+				c2_t27->InitLinearArray3DByValue(2);
+				c4_t27->InitLinearArray3DByValue(4);
+				c6_t27->InitLinearArray3DByValue(6);
+				s_t27->InitLinearArray3DByValue(1);
+
+				r_t28->InitLinearArray3DByValue(10);
+				c0_t28->InitLinearArray3DByValue(1);
+				c2_t28->InitLinearArray3DByValue(2);
+				c4_t28->InitLinearArray3DByValue(4);
+				c6_t28->InitLinearArray3DByValue(6);
+				s_t28->InitLinearArray3DByValue(1);
+
+				r_t29->InitLinearArray3DByValue(10);
+				c0_t29->InitLinearArray3DByValue(1);
+				c2_t29->InitLinearArray3DByValue(2);
+				c4_t29->InitLinearArray3DByValue(4);
+				c6_t29->InitLinearArray3DByValue(6);
+				s_t29->InitLinearArray3DByValue(1);
+
+				r_t30->InitLinearArray3DByValue(10);
+				c0_t30->InitLinearArray3DByValue(1);
+				c2_t30->InitLinearArray3DByValue(2);
+				c4_t30->InitLinearArray3DByValue(4);
+				c6_t30->InitLinearArray3DByValue(6);
+				s_t30->InitLinearArray3DByValue(1);
+
+				r_t31->InitLinearArray3DByValue(10);
+				c0_t31->InitLinearArray3DByValue(1);
+				c2_t31->InitLinearArray3DByValue(2);
+				c4_t31->InitLinearArray3DByValue(4);
+				c6_t31->InitLinearArray3DByValue(6);
+				s_t31->InitLinearArray3DByValue(1);
+
 				// Массив для верификации
 				auto arrayForVerification = new LinearArray3D(nx, ny, nz);
 				arrayForVerification->InitLinearArray3DByValue(10);
@@ -1545,6 +4001,22 @@ void matmAlgsTestingMultithreading()
 					r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13,
 					r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14,
 					r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15,
+					r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16,
+					r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17,
+					r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18,
+					r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19,
+					r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20,
+					r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21,
+					r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22,
+					r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23,
+					r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24,
+					r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25,
+					r_t26, c0_t26, c2_t26, c4_t26, c6_t26, s_t26,
+					r_t27, c0_t27, c2_t27, c4_t27, c6_t27, s_t27,
+					r_t28, c0_t28, c2_t28, c4_t28, c6_t28, s_t28,
+					r_t29, c0_t29, c2_t29, c4_t29, c6_t29, s_t29,
+					r_t30, c0_t30, c2_t30, c4_t30, c6_t30, s_t30,
+					r_t31, c0_t31, c2_t31, c4_t31, c6_t31, s_t31,
 					w, arrayForVerification, numberOfLaunches);
 
 				std::cout << "\n------------------------------------------------------------------\n";
@@ -1566,6 +4038,22 @@ void matmAlgsTestingMultithreading()
 					r_t13, c0_t13, c2_t13, c4_t13, c6_t13, s_t13,
 					r_t14, c0_t14, c2_t14, c4_t14, c6_t14, s_t14,
 					r_t15, c0_t15, c2_t15, c4_t15, c6_t15, s_t15,
+					r_t16, c0_t16, c2_t16, c4_t16, c6_t16, s_t16,
+					r_t17, c0_t17, c2_t17, c4_t17, c6_t17, s_t17,
+					r_t18, c0_t18, c2_t18, c4_t18, c6_t18, s_t18,
+					r_t19, c0_t19, c2_t19, c4_t19, c6_t19, s_t19,
+					r_t20, c0_t20, c2_t20, c4_t20, c6_t20, s_t20,
+					r_t21, c0_t21, c2_t21, c4_t21, c6_t21, s_t21,
+					r_t22, c0_t22, c2_t22, c4_t22, c6_t22, s_t22,
+					r_t23, c0_t23, c2_t23, c4_t23, c6_t23, s_t23,
+					r_t24, c0_t24, c2_t24, c4_t24, c6_t24, s_t24,
+					r_t25, c0_t25, c2_t25, c4_t25, c6_t25, s_t25,
+					r_t26, c0_t26, c2_t26, c4_t26, c6_t26, s_t26,
+					r_t27, c0_t27, c2_t27, c4_t27, c6_t27, s_t27,
+					r_t28, c0_t28, c2_t28, c4_t28, c6_t28, s_t28,
+					r_t29, c0_t29, c2_t29, c4_t29, c6_t29, s_t29,
+					r_t30, c0_t30, c2_t30, c4_t30, c6_t30, s_t30,
+					r_t31, c0_t31, c2_t31, c4_t31, c6_t31, s_t31,
 					w, arrayForVerification, numberOfLaunches);
 			}
 		}
