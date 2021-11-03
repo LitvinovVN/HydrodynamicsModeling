@@ -1590,9 +1590,9 @@ void matmAlgsTesting()
 	std::cout << "-------------------------------------------------" << std::endl;
 	std::cout << "-------- Running test: matmAlgsTesting() --------" << std::endl;
 
-	for (size_t k = 20; k <= 200; k += 20)
+	for (size_t k = 20; k <= 100; k += 20)
 	{
-		for (size_t j = 20; j <= 200; j += 20)
+		for (size_t j = 20; j <= 100; j += 20)
 		{
 			for (size_t i = 20; i <= 200; i += 20)
 			{
