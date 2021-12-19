@@ -1,0 +1,19 @@
+﻿@page "/"
+
+
+<PageTitle>Index</PageTitle>
+
+<p>Привет, @StringUtilities.CustomName(name)</p>
+
+<button class="btn btn-primary" @onclick="@WriteInLog">Нажми меня!</button>
+
+
+@code{
+    string name = "Владимир+++";
+       
+
+    void WriteInLog()
+    {
+        Console.WriteLine($"{DateTime.Now}: clicked!");
+    }
+}

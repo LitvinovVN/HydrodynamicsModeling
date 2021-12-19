@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  frontendblazor.server:
+    image: ${DOCKER_REGISTRY-}frontendblazorserver
+    build:
+      context: .
+      dockerfile: FrontendBlazor/Server/Dockerfile
