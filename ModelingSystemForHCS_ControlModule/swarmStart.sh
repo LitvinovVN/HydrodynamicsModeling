@@ -1,1 +1,1 @@
-docker stack deploy -c docker-compose.yml -c docker-compose.traefik.yml test
+docker stack deploy -c docker-compose.traefik.yml test
