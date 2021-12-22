@@ -22,3 +22,16 @@ services:
       - ./letsencrypt:/letsencrypt
       # Mounts the Traefik static configuration inside the Traefik container
       - ./traefik.metrics.yml:/etc/traefik/traefik.yml
+      
+
+
+##########################################################        
+############## Docker NETWORKS configuration #############
+##########################################################
+networks:
+  traefik:
+    driver: overlay
+    name: traefik
+  inbound:
+    driver: overlay
+    name: inbound

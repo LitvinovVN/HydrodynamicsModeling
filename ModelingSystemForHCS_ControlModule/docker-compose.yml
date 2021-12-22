@@ -6,15 +6,3 @@ services:
     build:
       context: .
       dockerfile: ModelingSystem/Server/Dockerfile
-
-
-##########################################################        
-############## Docker NETWORKS configuration #############
-##########################################################
-networks:
-  traefik:
-    driver: overlay
-    name: traefik
-  inbound:
-    driver: overlay
-    name: inbound
