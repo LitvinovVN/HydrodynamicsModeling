@@ -42,6 +42,8 @@ services:
        - "traefik.http.middlewares.test-errorpages.errors.query=/{status}.html"
        - "traefik.docker.network=inbound"
 
+  
+
 # Error Page service
   error:
     image: guillaumebriday/traefik-custom-error-pages
