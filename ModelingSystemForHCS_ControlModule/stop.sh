@@ -1,1 +1,1 @@
-docker-compose -f docker-compose.yml -f docker-compose.traefik.yml down
+docker-compose -f docker-compose.yml down
