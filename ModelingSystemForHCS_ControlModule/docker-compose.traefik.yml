@@ -42,7 +42,7 @@ services:
        - "traefik.http.middlewares.test-errorpages.errors.query=/{status}.html"
        - "traefik.docker.network=inbound"
 
-  modelingsystem.server:
+  modelingsystemserver:
      image: litvinovvn/modelingsystemserver
      networks:
       - inbound
