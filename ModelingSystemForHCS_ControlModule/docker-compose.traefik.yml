@@ -43,7 +43,7 @@ services:
        - "traefik.docker.network=inbound"
 
   modelingsystem.server:
-  image: litvinovvn/modelingsystemserver
+     image: litvinovvn/modelingsystemserver
      networks:
       - inbound
      deploy:
