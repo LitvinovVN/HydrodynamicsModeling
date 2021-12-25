@@ -1,0 +1,66 @@
+################################################################
+# API and dashboard configuration
+################################################################
+api:
+  # Dashboard
+  #
+  #
+  dashboard: true
+  insecure: true
+################################################################
+# Docker configuration backend
+################################################################
+providers:
+  docker:
+    swarmMode: true
+
+################################################################
+# Access Logging
+################################################################
+# enable Access logs
+accessLog: {}
+#Configuring Multiple Filters
+# accessLog:
+#   filters:    
+#     statusCodes:
+#       - "404"
+#     retryAttempts: true
+#     minDuration: "10ms"
+
+################################################################
+# Traefik Logging -  DEBUG, PANIC, FATAL, ERROR, WARN, and INFO (DEFAULT is ERROR)
+################################################################
+log:
+  level: INFO
+
+################################################################
+# Prometheus Metrics
+################################################################  
+metrics:
+  prometheus:
+    buckets:
+      - 0.1
+      - 0.3
+      - 1.2
+      - 5.0
+
+################################################################
+# Entrypoint
+################################################################
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+################################################################
+# Challenge TLS
+################################################################
+certificatesResolvers:
+  myresolver:
+    acme:
+      email: litvinovvn@rambler.ru  
+      storage: acme.json
+      tlsChallenge: true
+        # # used during the challenge
+        # entryPoint: web
