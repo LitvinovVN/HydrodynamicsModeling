@@ -42,7 +42,23 @@ services:
        - "traefik.http.middlewares.test-errorpages.errors.query=/{status}.html"
        - "traefik.docker.network=inbound"
 
-  
+  modelingsystem.server:
+  image: litvinovvn/modelingsystemserver
+     networks:
+      - inbound
+     deploy:
+      labels:
+       - "traefik.http.routers.modelingsystemserver.rule=Host(`modelingsystemserver.achii.fvds.ru`)"
+       - "traefik.http.routers.modelingsystemserver.service=modelingsystemserver"
+       - "traefik.http.routers.modelingsystemserver.entrypoints=websecure"
+       - "traefik.http.routers.modelingsystemserver.tls.certresolver=myresolver"
+       - "traefik.http.routers.modelingsystemserver.middlewares=test-compress,test-errorpages"
+       - "traefik.http.services.modelingsystemserver.loadbalancer.server.port=80"
+       - "traefik.http.middlewares.test-compress.compress=true"
+       - "traefik.http.middlewares.test-errorpages.errors.status=400-599"
+       - "traefik.http.middlewares.test-errorpages.errors.service=error"
+       - "traefik.http.middlewares.test-errorpages.errors.query=/{status}.html"
+       - "traefik.docker.network=inbound"
 
 # Error Page service
   error:

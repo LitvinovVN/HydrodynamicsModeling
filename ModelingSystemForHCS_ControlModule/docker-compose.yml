@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   modelingsystem.server:
-    image: ${DOCKER_REGISTRY-}modelingsystemserver
+    image: ${DOCKER_REGISTRY-}litvinovvn/modelingsystemserver
     build:
       context: .
       dockerfile: ModelingSystem/Server/Dockerfile
