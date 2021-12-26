@@ -1,4 +1,6 @@
-﻿<h3>Вычислительные кластеры</h3>
+﻿@inject IJSRuntime js
+
+<h3>Вычислительные кластеры</h3>
 
 <input type="checkbox" @bind="DisplayButtons" />
 
@@ -11,13 +13,39 @@
     </ElementTemplate>
 </GenericList>
 
+<Confirmation @ref="confirmation" onCancel="onCancel" onConfirm="onConfirm">
+    <div>Вы действительно хотите удалить кластер @clusterToBeDeleted.Name?</div>
+</Confirmation>
+
 @code {
+    Confirmation confirmation;
+
     [Parameter] public List<Cluster> Clusters { get; set; }
     [Parameter] public bool DisplayButtons { get; set; } = false;
-      
 
-    private void DeleteCluster(Cluster cluster)
+    Cluster clusterToBeDeleted;
+
+    private async Task DeleteCluster(Cluster cluster)
     {
-        Clusters.Remove(cluster);
+        clusterToBeDeleted = cluster;
+        confirmation.Show();
+        //await js.MyFunction("DeleteCluster");
+        //var confirmed = await js.Confirm($"Вы действительно хотите удалить {cluster.Name}?");
+
+        //if(confirmed)
+        //    Clusters.Remove(cluster);
+    }
+
+    void onConfirm()
+    {
+        Clusters.Remove(clusterToBeDeleted);
+        confirmation.Hide();
+        clusterToBeDeleted = null;
+    }
+
+    void onCancel()
+    {
+        confirmation.Hide();
+        clusterToBeDeleted = null;
     }
 }
