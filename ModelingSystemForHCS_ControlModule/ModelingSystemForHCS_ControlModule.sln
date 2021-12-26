@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingSystem.Server", "ModelingSystem\Server\ModelingSystem.Server.csproj", "{CA6C2E88-78C1-4E5B-A9D4-F38CD1692952}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelingSystem.Server", "ModelingSystem\Server\ModelingSystem.Server.csproj", "{CA6C2E88-78C1-4E5B-A9D4-F38CD1692952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingSystem.Client", "ModelingSystem\Client\ModelingSystem.Client.csproj", "{E41A45B9-2BF5-41DE-928C-CBCA5800A1CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelingSystem.Client", "ModelingSystem\Client\ModelingSystem.Client.csproj", "{E41A45B9-2BF5-41DE-928C-CBCA5800A1CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingSystem.Shared", "ModelingSystem\Shared\ModelingSystem.Shared.csproj", "{43DED4D5-5559-44BE-B114-4906394BB740}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelingSystem.Shared", "ModelingSystem\Shared\ModelingSystem.Shared.csproj", "{43DED4D5-5559-44BE-B114-4906394BB740}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5AFCC755-62EC-4537-A79A-72673C5E4061}"
 EndProject
