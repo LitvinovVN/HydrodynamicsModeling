@@ -1,5 +1,21 @@
 ﻿<h3>Вычислительные кластеры</h3>
 
-@code {
+<GenericList List=Clusters >
+    <ElementTemplate Context="cluster">
+        <ClusterIndividual Cluster="cluster"
+            DisplayButtons="displayButtons"
+            DeleteCluster="DeleteCluster"
+        />
+    </ElementTemplate>
+</GenericList>
 
+@code {
+    [Parameter] public List<Cluster> Clusters { get; set; }
+
+    bool displayButtons = true;
+
+    private void DeleteCluster(Cluster cluster)
+    {
+        Clusters.Remove(cluster);
+    }
 }

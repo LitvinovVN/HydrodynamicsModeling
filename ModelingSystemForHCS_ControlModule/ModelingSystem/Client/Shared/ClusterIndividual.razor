@@ -1,0 +1,16 @@
+﻿
+<div>
+    <h3>@Cluster.Name - @DisplayButtons</h3>
+    @if(DisplayButtons)
+    {
+        <button @onclick="@(() => DeleteCluster.InvokeAsync(Cluster))" class="btn btn-danger">Удалить</button>
+    }
+</div>
+
+
+
+@code {
+    [Parameter] public Cluster Cluster { get; set; }
+    [Parameter] public bool DisplayButtons { get; set; } = false;
+    [Parameter] public EventCallback<Cluster> DeleteCluster{ get; set; }
+}

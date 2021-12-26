@@ -1,0 +1,40 @@
+﻿@typeparam TItem
+
+<h3>GenericList</h3>
+
+@if (List == null)
+{
+    if(NullTemplate != null)
+    {
+        @NullTemplate
+    }
+    else
+    {
+        <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" />
+    }
+}
+else if (List.Count == 0)
+{
+    if(EmptyTemplate != null)
+    {
+        @EmptyTemplate
+    }
+    else
+    {
+        <text>Список пуст!</text>
+    }
+}
+else
+{
+    foreach(var element in List)
+    {
+        @ElementTemplate(element)
+    }
+}
+
+@code {
+    [Parameter] public RenderFragment NullTemplate { get; set; }
+    [Parameter] public RenderFragment EmptyTemplate { get; set; }
+    [Parameter] public RenderFragment<TItem> ElementTemplate{ get; set; }
+    [Parameter] public List<TItem> List { get; set; }
+}
