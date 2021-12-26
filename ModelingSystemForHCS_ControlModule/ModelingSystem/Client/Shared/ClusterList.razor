@@ -1,9 +1,11 @@
 ﻿<h3>Вычислительные кластеры</h3>
 
+<input type="checkbox" @bind="DisplayButtons" />
+
 <GenericList List=Clusters >
     <ElementTemplate Context="cluster">
         <ClusterIndividual Cluster="cluster"
-            DisplayButtons="displayButtons"
+            DisplayButtons="DisplayButtons"
             DeleteCluster="DeleteCluster"
         />
     </ElementTemplate>
@@ -11,8 +13,8 @@
 
 @code {
     [Parameter] public List<Cluster> Clusters { get; set; }
-
-    bool displayButtons = true;
+    [Parameter] public bool DisplayButtons { get; set; } = false;
+      
 
     private void DeleteCluster(Cluster cluster)
     {

@@ -2,16 +2,28 @@
 
 <PageTitle>Index</PageTitle>
 
+<button @onclick="AddNewCluster" class="btn btn-primary">Добавить</button>
 
-<ClusterList Clusters=clusters />
+<ClusterList Clusters="clusters" DisplayButtons="true" />
 
 @code{
-    List<Cluster> clusters = new List<Cluster> {
-        new Cluster { Guid=new Guid(), Name="1", Caption="11" },
-        new Cluster { Guid=new Guid(), Name="2", Caption="22" },
-        new Cluster { Guid=new Guid(), Name="3", Caption="33" },
-        new Cluster { Guid=new Guid(), Name="4", Caption="44" },
-        new Cluster { Guid=new Guid(), Name="5", Caption="55" },
-        new Cluster { Guid=new Guid(), Name="6", Caption="66" }
-    };
+    private List<Cluster> clusters;
+
+    protected async override Task OnInitializedAsync()
+    {
+        await Task.Delay(3000);
+        clusters = new List<Cluster> {
+            new Cluster { Guid=new Guid(), Name="1", Caption="11" },
+            new Cluster { Guid=new Guid(), Name="2", Caption="22" },
+            new Cluster { Guid=new Guid(), Name="3", Caption="33" },
+            new Cluster { Guid=new Guid(), Name="4", Caption="44" },
+            new Cluster { Guid=new Guid(), Name="5", Caption="55" },
+            new Cluster { Guid=new Guid(), Name="6", Caption="66" }
+        };
+    }
+
+    private void AddNewCluster()
+    {
+        clusters.Add(new Cluster { Guid = new Guid(), Name = clusters.Count.ToString(), Caption = clusters.Count.ToString() + "caption" });
+    }
 }
