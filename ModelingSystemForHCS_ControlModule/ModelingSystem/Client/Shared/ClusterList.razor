@@ -4,14 +4,18 @@
 
 <input type="checkbox" @bind="DisplayButtons" />
 
-<GenericList List=Clusters >
-    <ElementTemplate Context="cluster">
-        <ClusterIndividual Cluster="cluster"
-            DisplayButtons="DisplayButtons"
-            DeleteCluster="DeleteCluster"
-        />
-    </ElementTemplate>
-</GenericList>
+<div class="cluster-list-container">
+    <GenericList List=Clusters >
+        <ElementTemplate Context="cluster">
+            <ClusterIndividual Cluster="cluster"
+                DisplayButtons="DisplayButtons"
+                DeleteCluster="DeleteCluster"
+            />
+        </ElementTemplate>
+    </GenericList>
+</div>
+
+
 
 <Confirmation @ref="confirmation" onCancel="onCancel" onConfirm="onConfirm">
     <div>Вы действительно хотите удалить кластер @clusterToBeDeleted.Name?</div>

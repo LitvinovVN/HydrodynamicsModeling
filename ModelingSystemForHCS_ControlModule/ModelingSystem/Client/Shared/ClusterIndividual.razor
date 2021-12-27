@@ -1,9 +1,16 @@
 ﻿
-<div>
-    <h3>@Cluster.Name - @DisplayButtons</h3>
+<div class="cluster-individual-container">
+    <p>
+        @Cluster.Name (@Cluster.Guid: @Cluster.Caption)
+    </p>
+
     @if(DisplayButtons)
     {
-        <button @onclick="@(() => DeleteCluster.InvokeAsync(Cluster))" class="btn btn-danger">Удалить</button>
+        <div>
+            <a class="btn btn-info">Редактировать</a>
+            <button @onclick="@(() => DeleteCluster.InvokeAsync(Cluster))" class="btn btn-danger">Удалить</button>
+        </div>
+        
     }
 </div>
 

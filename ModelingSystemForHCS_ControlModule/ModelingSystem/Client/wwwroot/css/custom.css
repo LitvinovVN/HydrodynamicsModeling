@@ -1,0 +1,20 @@
+﻿.cluster-individual-container {
+    margin-right: 2%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cluster-individual-container p {
+    max-width: 225px;
+    height: 44px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*
+.cluster-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+    */
