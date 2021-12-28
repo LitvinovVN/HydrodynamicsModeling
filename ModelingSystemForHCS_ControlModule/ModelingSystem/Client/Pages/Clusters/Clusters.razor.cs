@@ -2,13 +2,13 @@
 using ModelingSystem.Client.Helpers;
 using ModelingSystem.Shared.Entities;
 
-namespace ModelingSystem.Client.Pages
+namespace ModelingSystem.Client.Pages.Clusters
 {
-    public partial class Index
+    public partial class Clusters
     {
         [Inject] IRepository repository { get; set; }
 
-        
+
         private List<Cluster> clusters;
 
         protected async override Task OnInitializedAsync()

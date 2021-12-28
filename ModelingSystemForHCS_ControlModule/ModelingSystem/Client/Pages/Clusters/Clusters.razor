@@ -1,0 +1,11 @@
+﻿@page "/clusters"
+
+<h3>Вычислительные кластеры</h3>
+
+<div class="form-group">
+    <a class="btn btn-info" href="clusters/create">Новый кластер</a>
+</div>
+
+<button @onclick="AddNewCluster" class="btn btn-primary">Добавить</button>
+
+<ClusterList Clusters="clusters" DisplayButtons="true" />

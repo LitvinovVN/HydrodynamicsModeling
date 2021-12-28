@@ -1,0 +1,14 @@
+﻿@page "/clusters/create"
+
+<h3>Создание кластера</h3>
+
+<ClusterForm Cluster="cluster" OnValidSubmit="Create" />
+
+@code {
+    private Cluster cluster = new Cluster();
+
+    private void Create()
+    {
+        Console.WriteLine($"Creating {cluster.Name} - {cluster.Caption}");
+    }
+}

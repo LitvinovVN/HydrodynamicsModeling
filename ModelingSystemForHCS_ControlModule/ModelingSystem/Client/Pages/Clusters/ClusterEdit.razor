@@ -1,0 +1,24 @@
+﻿@page "/clusters/edit/{ClusterGuid}"
+
+<h3>Редактирование кластера</h3>
+
+@if(cluster != null)
+{
+    <ClusterForm Cluster="cluster" OnValidSubmit="Edit" />
+}
+
+
+@code {
+    [Parameter] public string ClusterGuid{ get; set; }
+    private Cluster cluster;       
+
+    protected override void OnInitialized()
+    {
+        cluster = new Cluster() { Guid = new Guid(), Name = "Кластер", Caption = "Описание кластера" };
+    }
+
+    private void Edit()
+    {
+        Console.WriteLine($"Editing {cluster.Name} - {cluster.Caption}");
+    }
+}

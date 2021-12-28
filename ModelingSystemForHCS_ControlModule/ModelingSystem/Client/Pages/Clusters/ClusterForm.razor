@@ -1,0 +1,28 @@
+﻿<EditForm Model="Cluster" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label>Наименование кластера:</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@Cluster.Name" />
+            <ValidationMessage For="@(()=>Cluster.Name)" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Описание кластера:</label>
+        <div>
+            <InputText class="form-control" @bind-Value="@Cluster.Caption" />            
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success">Создать</button>
+        <a href="clusters" class="btn btn-secondary">Отмена</a>
+    </div>
+    
+</EditForm>
+
+
+@code {
+    [Parameter] public Cluster Cluster { get; set; }
+
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}
