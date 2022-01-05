@@ -4,3 +4,7 @@ Update-Database -StartupProject ModelingSystem.Server
 
 dotnet ef migrations bundle --self-contained -r linux-x64
 ./efbundle
+
+
+docker exec -ti <containerId> bash
+mysql -u admin -ppassword ModelingSystem < "migrate.sql"
