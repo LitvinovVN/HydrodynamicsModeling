@@ -87,7 +87,7 @@ services:
     environment:
       MYSQL_USER: admin
       MYSQL_PASSWORD: password
-      #MYSQL_DATABASE: test_db
+      MYSQL_DATABASE: ModelingSystem
       MYSQL_ROOT_PASSWORD: password    
 
 # PHP MyAdmin
