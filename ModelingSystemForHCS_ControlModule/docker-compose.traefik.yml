@@ -80,8 +80,7 @@ services:
     networks:
       - inbound
     ports:
-      - 3307:3306
-    name: mysql
+      - 3307:3306    
     volumes:
       - ./db/ModelingSystem-mysql-data:/var/lib/mysql
       - ./db/ModelingSystem-mysql-migrations:/var/mysql-migrations
