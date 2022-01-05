@@ -74,6 +74,30 @@ services:
         - "traefik.http.routers.error.entrypoints=web"
         - "traefik.docker.network=inbound"
 
+################################# Databases ######################################
+  mysql:
+    image: mysql:8.0.27
+    networks:
+      - inbound
+    ports:
+      - 3307:3306
+    volumes:
+      - ./db/ModelingSystem-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      #MYSQL_DATABASE: test_db
+      MYSQL_ROOT_PASSWORD: password    
+
+# PHP MyAdmin
+  phpmyadmin:
+    image: phpmyadmin
+    networks:
+      - inbound
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: mysql
 
 ##########################################################        
 ############## Docker NETWORKS configuration #############
