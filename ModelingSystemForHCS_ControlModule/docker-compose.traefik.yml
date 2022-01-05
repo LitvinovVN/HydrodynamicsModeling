@@ -83,6 +83,7 @@ services:
       - 3307:3306
     volumes:
       - ./db/ModelingSystem-mysql-data:/var/lib/mysql
+      - ./db/ModelingSystem-mysql-migrations:/var/mysql-migrations
     environment:
       MYSQL_USER: admin
       MYSQL_PASSWORD: password
