@@ -14,11 +14,11 @@ services:
       - 3307:3306
     volumes:
       - ./db/ModelingSystem-mysql-data:/var/lib/mysql
-      #- ./db/ModelingSystem-mysql-migrations:/var/mysql-migrations
+      - ./db/ModelingSystem-mysql-migrations:/var/mysql-migrations
     environment:
       MYSQL_USER: admin
       MYSQL_PASSWORD: password
-      #MYSQL_DATABASE: test_db
+      MYSQL_DATABASE: ModelingSystem
       MYSQL_ROOT_PASSWORD: password    
 
 # PHP MyAdmin

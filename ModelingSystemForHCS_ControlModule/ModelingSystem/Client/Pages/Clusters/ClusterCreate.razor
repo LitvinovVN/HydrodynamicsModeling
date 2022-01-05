@@ -1,4 +1,6 @@
 ﻿@page "/clusters/create"
+@inject IClusterRepository clusterRepository
+@inject NavigationManager navigationManager
 
 <h3>Создание кластера</h3>
 
@@ -7,8 +9,19 @@
 @code {
     private Cluster cluster = new Cluster();
 
-    private void Create()
+    private async Task Create()
     {
         Console.WriteLine($"Creating {cluster.Name} - {cluster.Caption}");
+
+        try
+        {
+            var clusterId = await clusterRepository.CreateCluster(cluster);
+            Console.WriteLine($"Created {cluster.Name} - {cluster.Caption} with id={clusterId}");
+            navigationManager.NavigateTo("clusters");
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
