@@ -6,3 +6,25 @@ services:
     build:
       context: .
       dockerfile: ModelingSystem/Server/Dockerfile
+
+################################# Databases ######################################
+  mysql:
+    image: mysql:8.0.27
+    ports:
+      - 3307:3306
+    volumes:
+      - ./db/ModelingSystem-mysql-data:/var/lib/mysql
+      #- ./db/ModelingSystem-mysql-migrations:/var/mysql-migrations
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      #MYSQL_DATABASE: test_db
+      MYSQL_ROOT_PASSWORD: password    
+
+# PHP MyAdmin
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: mysql

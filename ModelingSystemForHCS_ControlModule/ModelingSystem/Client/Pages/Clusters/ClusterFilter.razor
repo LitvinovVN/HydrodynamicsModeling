@@ -1,0 +1,50 @@
+﻿@page "/clusters/filter"
+@inject IRepository repository
+
+<h3>Поиск кластеров</h3>
+
+<div class="form">
+    <div class="form-group mb-2">
+        <label for="clusterName" class="sr-only">Наименование кластера: </label>
+        <input type="text" class="form-control" id="clusterName"
+            placeholder="Введите наименование кластера"
+            @bind-value="clusterName" @bind-value:event="oninput"
+            @onkeypress="@((KeyboardEventArgs e) => TitleKeyPress(e))"
+        />
+        <button type="button" class="btn btn-primary mb-2 mx-sm-3" @onclick="SearchForClusters">Поиск</button>
+        <button type="button" class="btn btn-danger mb-2" @onclick="Clear">Очистить</button>
+    </div>
+</div>
+
+<ClusterList Clusters="Clusters"></ClusterList>
+
+@code {
+    private List<Cluster> Clusters;
+    string clusterName = "";
+
+    protected override void OnInitialized()
+    {
+        Clusters = repository.GetClusters();
+        base.OnInitialized();
+    }
+
+    private void TitleKeyPress(KeyboardEventArgs e)
+    {
+        if(e.Key == "Enter")
+        {
+            SearchForClusters();
+        }
+    }
+
+    private void SearchForClusters()
+    {
+        Clusters = repository.GetClusters().Where(c=>c.Name.Contains(clusterName)).ToList();
+        Console.WriteLine($"Key: Enter. clusterName: {clusterName}");
+    }
+
+    private void Clear()
+    {
+        clusterName = "";
+        Clusters = repository.GetClusters();
+    }
+}

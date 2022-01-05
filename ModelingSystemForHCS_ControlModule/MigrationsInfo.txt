@@ -1,0 +1,6 @@
+Add-Migration Initial -StartupProject ModelingSystem.Server
+Update-Database -StartupProject ModelingSystem.Server
+
+
+dotnet ef migrations bundle --self-contained -r linux-x64
+./efbundle

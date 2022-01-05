@@ -12,6 +12,7 @@ namespace ModelingSystem.Shared.Entities
     /// </summary>
     public class Cluster
     {
+        public int ClusterId { get; set; }
         //tex:
         //$$a=b + \alpha\tau^2$$
         public Guid Guid { get; set; }
