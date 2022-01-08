@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using ModelingSystem.Server;
@@ -10,6 +11,10 @@ var connectionStringMySql = builder.Configuration.GetConnectionString("mysql_con
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
 builder.Services.AddDbContext<AppDbContextMysql>(options =>
     options.UseMySql(connectionStringMySql, serverVersion));
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContextMysql>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddAutoMapper(typeof(Program));
 

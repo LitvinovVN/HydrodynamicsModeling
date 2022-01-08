@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ModelingSystem.Server;
 
@@ -10,9 +11,10 @@ using ModelingSystem.Server;
 namespace ModelingSystem.Server.Migrations
 {
     [DbContext(typeof(AppDbContextMysql))]
-    partial class AppDbContextMysqlModelSnapshot : ModelSnapshot
+    [Migration("20220108121840_IdentityTables")]
+    partial class IdentityTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
