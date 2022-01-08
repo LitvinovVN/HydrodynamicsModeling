@@ -1,50 +1,103 @@
 ﻿@page "/clusters/filter"
-@inject IRepository repository
+@inject IClusterRepository clusterRepository
+@inject NavigationManager navigationManager
+@attribute [Authorize]
 
 <h3>Поиск кластеров</h3>
-
-<div class="form">
-    <div class="form-group mb-2">
-        <label for="clusterName" class="sr-only">Наименование кластера: </label>
-        <input type="text" class="form-control" id="clusterName"
-            placeholder="Введите наименование кластера"
-            @bind-value="clusterName" @bind-value:event="oninput"
-            @onkeypress="@((KeyboardEventArgs e) => TitleKeyPress(e))"
-        />
-        <button type="button" class="btn btn-primary mb-2 mx-sm-3" @onclick="SearchForClusters">Поиск</button>
-        <button type="button" class="btn btn-danger mb-2" @onclick="Clear">Очистить</button>
+<EditForm Model="filterClustersDTO">
+    <div class="form">
+        <div class="form-group mb-2">
+            <label for="clusterName" class="sr-only">Наименование кластера: </label>
+            <input type="text" class="form-control" id="clusterName"
+                placeholder="Введите наименование кластера"
+                @bind-value="filterClustersDTO.Name" @bind-value:event="oninput"
+                @onkeypress="@((KeyboardEventArgs e) => TitleKeyPress(e))"
+            />
+            <button type="button" class="btn btn-primary mb-2 mx-sm-3" @onclick="SearchForClusters">Поиск</button>
+            <button type="button" class="btn btn-danger mb-2" @onclick="Clear">Очистить</button>
+        </div>
     </div>
-</div>
+</EditForm>
+
 
 <ClusterList Clusters="Clusters"></ClusterList>
 
+<Pagination CurrentPage="filterClustersDTO.Page" TotalAmountPages="totalAmountPages"
+    SelectedPage="SelectedPage" />
+
 @code {
     private List<Cluster> Clusters;
-    string clusterName = "";
+    private FilterClustersDTO filterClustersDTO = new FilterClustersDTO();
+    private int totalAmountPages;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Clusters = repository.GetClusters();
-        base.OnInitialized();
+        var queryStrings = navigationManager.GetQueryStrings(navigationManager.Uri);
+
+        if(queryStrings != null)
+        {
+            FillFilterWithQueryStrings(queryStrings);
+        }
+        await LoadClusters();       
     }
 
-    private void TitleKeyPress(KeyboardEventArgs e)
+    private void FillFilterWithQueryStrings(Dictionary<string,string> queryStrings)
     {
-        if(e.Key == "Enter")
+        if (queryStrings.ContainsKey("name"))
         {
-            SearchForClusters();
+            filterClustersDTO.Name = queryStrings["name"];
         }
     }
 
-    private void SearchForClusters()
+    private async Task LoadClusters()
     {
-        Clusters = repository.GetClusters().Where(c=>c.Name.Contains(clusterName)).ToList();
-        Console.WriteLine($"Key: Enter. clusterName: {clusterName}");
+        var queryString = GenerateQueryString();
+        if (!string.IsNullOrWhiteSpace(queryString))
+        {
+            queryString = $"?{queryString}";
+            navigationManager.NavigateTo($"clusters/filter{queryString}");
+        }
+
+        var paginatedResponse = await clusterRepository.GetClustersFiltered(filterClustersDTO);
+        Clusters = paginatedResponse.Response;
+        totalAmountPages = paginatedResponse.TotalAmountPages;
     }
 
-    private void Clear()
+    private string GenerateQueryString()
     {
-        clusterName = "";
-        Clusters = repository.GetClusters();
+        var queryStringsDict = new Dictionary<string, string>();
+        queryStringsDict["name"] = filterClustersDTO.Name ?? "";
+
+        var defaultValues = new List<string>() {"", "0", "false"};
+
+        return string.Join("&", queryStringsDict
+            .Where(x => !defaultValues.Contains(x.Value.ToLower()))
+            .Select(x => $"{x.Key}={System.Web.HttpUtility.UrlEncode(x.Value)}")
+            .ToArray());
+    }
+
+    private async Task SelectedPage(int page)
+    {
+        filterClustersDTO.Page = page;
+        await LoadClusters();
+    }
+
+    private async Task TitleKeyPress(KeyboardEventArgs e)
+    {
+        if(e.Key == "Enter")
+        {
+            await SearchForClusters();
+        }
+    }
+
+    private async Task SearchForClusters()
+    {
+        await LoadClusters();
+    }
+
+    private async Task Clear()
+    {
+        filterClustersDTO.Name = "";
+        await LoadClusters();
     }
 }

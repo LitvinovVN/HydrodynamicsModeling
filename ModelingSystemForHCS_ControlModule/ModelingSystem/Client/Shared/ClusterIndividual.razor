@@ -8,7 +8,14 @@
     {
         <div>
             <a class="btn btn-info">Редактировать</a>
-            <button @onclick="@(() => DeleteCluster.InvokeAsync(Cluster))" class="btn btn-danger">Удалить</button>
+
+            <AuthorizeView>
+                <Authorized>
+                    <button @onclick="@(() => DeleteCluster.InvokeAsync(Cluster))" class="btn btn-danger">Удалить</button>
+                </Authorized>                
+            </AuthorizeView>
+
+            
         </div>
         
     }

@@ -1,4 +1,6 @@
-﻿@page "/clusters/edit/{ClusterGuid}"
+﻿@page "/clusters/edit/{ClusterId:int}"
+@inject IClusterRepository clusterRepository
+@inject NavigationManager navigationManager
 
 <h3>Редактирование кластера</h3>
 
@@ -9,16 +11,17 @@
 
 
 @code {
-    [Parameter] public string ClusterGuid{ get; set; }
+    [Parameter] public int ClusterId{ get; set; }
     private Cluster cluster;       
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        cluster = new Cluster() { Guid = new Guid(), Name = "Кластер", Caption = "Описание кластера" };
+        cluster = await clusterRepository.GetCluster(ClusterId);
     }
 
-    private void Edit()
+    private async Task Edit()
     {
-        Console.WriteLine($"Editing {cluster.Name} - {cluster.Caption}");
+        await clusterRepository.UpdateCluster(cluster);
+        navigationManager.NavigateTo("clusters");
     }
 }

@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ModelingSystem.Server.Helpers;
+using ModelingSystem.Shared.DTOs;
 using ModelingSystem.Shared.Entities;
 
 namespace ModelingSystem.Server.Controllers
@@ -14,6 +17,37 @@ namespace ModelingSystem.Server.Controllers
             this.context = context;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<List<Cluster>>> Get([FromQuery]PaginationDTO paginationDTO)
+        {
+            var queryable = context.Clusters.AsQueryable();
+            await HttpContext.InsertPaginationParametersInResponse(queryable, paginationDTO.RecordsPerPage);
+
+            return await queryable.Paginate(paginationDTO).ToListAsync();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Cluster>> Get(int id)
+        {
+            var cluster = await context.Clusters.FindAsync(id);
+            if (cluster == null) return NotFound();
+
+            return cluster;
+        }
+
+        [HttpGet("search/{searchText}")]
+        public async Task<ActionResult<List<Cluster>>> FilterByName(string searchText)
+        {
+            if(string.IsNullOrWhiteSpace(searchText))
+            {
+                return new List<Cluster>();
+            }
+
+            return await context.Clusters
+                .Where(x => x.Name.Contains(searchText))
+                .ToListAsync();
+        }
+
         [HttpPost]
         public async Task<ActionResult<int>> Post(Cluster cluster)
         {            
@@ -21,5 +55,41 @@ namespace ModelingSystem.Server.Controllers
             await context.SaveChangesAsync();
             return cluster.ClusterId;
         }
+
+        [HttpPost("filter")]
+        public async Task<ActionResult<List<Cluster>>> Filter(FilterClustersDTO filterClustersDTO)
+        {
+            var clustersQueryable = context.Clusters.AsQueryable();
+            if(!string.IsNullOrWhiteSpace(filterClustersDTO.Name))
+            {
+                clustersQueryable = clustersQueryable.Where(x => x.Name.Contains(filterClustersDTO.Name));
+            }
+
+            await HttpContext.InsertPaginationParametersInResponse(clustersQueryable,
+                filterClustersDTO.RecordsPerPage);
+
+            var clusters = await clustersQueryable.Paginate(filterClustersDTO.Pagination).ToListAsync();
+
+            return clusters;
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Put(Cluster cluster)
+        {
+            context.Attach(cluster).State = EntityState.Modified;
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var entry = await context.Clusters.FindAsync(id);
+            if (entry == null) return NotFound();
+            context.Remove(entry);
+            await context.SaveChangesAsync();
+            return NoContent();
+        }
+
     }
 }

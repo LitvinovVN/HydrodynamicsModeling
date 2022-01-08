@@ -13,6 +13,19 @@ namespace ModelingSystem.Client.Helpers
             this.httpClient = httpClient;
         }
 
+        public async Task<HttpResponseWrapper<T>> Get<T>(string url)
+        {
+            var responseHttp = await httpClient.GetAsync(url);
+            if (responseHttp.IsSuccessStatusCode)
+            {
+                var response = await Deserialize<T>(responseHttp, defaultJsonSerializerOptions);
+                return new HttpResponseWrapper<T>(response, true, responseHttp);
+            }
+            else
+            {                
+                return new HttpResponseWrapper<T>(default, false, responseHttp);
+            }
+        }
         public async Task<HttpResponseWrapper<object>> Post<T>(string url, T data)
         {
             var dataJson = JsonSerializer.Serialize(data);
@@ -39,9 +52,26 @@ namespace ModelingSystem.Client.Helpers
             }            
         }
 
+        public async Task<HttpResponseWrapper<object>> Put<T>(string url, T data)
+        {
+            var dataJson = JsonSerializer.Serialize(data);
+            var stringContent = new StringContent(dataJson, Encoding.UTF8, "application/json");
+            var response = await httpClient.PutAsync(url, stringContent);
+
+            return new HttpResponseWrapper<object>(null, response.IsSuccessStatusCode, response);
+        }
+
+        public async Task<HttpResponseWrapper<object>> Delete(string url)
+        {
+            var responseHttp = await httpClient.DeleteAsync(url);
+            return new HttpResponseWrapper<object>(null, responseHttp.IsSuccessStatusCode, responseHttp);
+        }
+
         private async Task<T> Deserialize<T>(HttpResponseMessage httpResponse, JsonSerializerOptions options)
         {
+            Console.WriteLine("Deserialize<T>");
             var responseString = await httpResponse.Content.ReadAsStringAsync();
+            Console.WriteLine($"Deserialize<T>: responseString = {responseString}");
             return JsonSerializer.Deserialize<T>(responseString, options);
         }
     }

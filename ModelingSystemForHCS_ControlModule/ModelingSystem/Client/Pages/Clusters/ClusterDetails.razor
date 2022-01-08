@@ -1,0 +1,29 @@
+﻿@page "/clusters/{ClusterId:int}"
+@inject IClusterRepository clusterRepository
+
+<h3>ClusterDetails</h3>
+
+@if(cluster==null)
+{
+    <div>Загрузка данных...</div>
+}
+else
+{
+    <div>
+        <p>@cluster.ClusterId</p>
+        <p>@cluster.Guid</p>
+        <p>@cluster.Name</p>
+        <p>@cluster.Caption</p>
+    </div>
+}
+
+
+@code {
+    [Parameter] public int ClusterId{ get; set; }
+    Cluster cluster;
+
+    protected override async Task OnInitializedAsync()
+    {
+        cluster = await clusterRepository.GetCluster(ClusterId);
+    }
+}

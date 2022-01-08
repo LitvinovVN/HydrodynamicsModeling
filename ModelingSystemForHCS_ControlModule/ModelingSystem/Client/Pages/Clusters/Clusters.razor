@@ -8,4 +8,42 @@
 
 <button @onclick="AddNewCluster" class="btn btn-primary">Добавить</button>
 
+<Pagination CurrentPage="@paginationDTO.Page" TotalAmountPages="totalAmountPages"
+    SelectedPage="SelectedPage" />
+
+<GenericList List="clusters">
+    <WholeListTemplate>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ClusterId</th>
+                    <th>Guid</th>
+                    <th>Name</th>
+                    <th>Caption</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var cluster in clusters)
+                {
+                    <tr>
+                        <td>@cluster.ClusterId</td>
+                        <td>@cluster.Guid</td>
+                        <td>@cluster.Name</td>
+                        <td>@cluster.Caption</td>
+                        <td>
+                            <a class="btn btn-success" href="/clusters/edit/@cluster.ClusterId">Редактировать</a>
+                            <a class="btn btn-info" href="/clusters/@cluster.ClusterId">Сведения</a>
+                            <button class="btn btn-danger" @onclick="@(()=>DeleteCluster(cluster.ClusterId))">Удалить</button>
+                        </td>
+                    </tr>
+                    
+                }
+            </tbody>
+        </table>
+    </WholeListTemplate>
+</GenericList>
+
+<hr />
+
 <ClusterList Clusters="clusters" DisplayButtons="true" />

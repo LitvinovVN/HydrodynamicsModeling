@@ -11,7 +11,10 @@ var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
 builder.Services.AddDbContext<AppDbContextMysql>(options =>
     options.UseMySql(connectionStringMySql, serverVersion));
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
