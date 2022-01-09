@@ -355,3 +355,6 @@ MigrationBackup/
 *.log
 *.out
 *.gz
+
+**/db
+**/efbundle
