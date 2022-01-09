@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ModelingSystem.Server.Helpers;
 using ModelingSystem.Shared.DTOs;
@@ -18,6 +20,7 @@ namespace ModelingSystem.Server.Controllers
         }
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<List<Cluster>>> Get([FromQuery]PaginationDTO paginationDTO)
         {
             var queryable = context.Clusters.AsQueryable();

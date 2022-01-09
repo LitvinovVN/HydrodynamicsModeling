@@ -15,7 +15,7 @@ namespace ModelingSystem.Client.Auth
                     new Claim("key1", "value 1"),
                     new Claim(ClaimTypes.Name, "Владимир"),
                     new Claim(ClaimTypes.Role, "Admin")
-                },"");
+                },"test");
             return await Task.FromResult(new AuthenticationState(new ClaimsPrincipal(anonymous)));
         }
     }
