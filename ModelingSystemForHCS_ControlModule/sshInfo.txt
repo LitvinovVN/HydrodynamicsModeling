@@ -1,0 +1,2 @@
+ssh-keygen
+cat ~/.ssh/92_63_111_155.pub | ssh root@92.63.111.155 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
