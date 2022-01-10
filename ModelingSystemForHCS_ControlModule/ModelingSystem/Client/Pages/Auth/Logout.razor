@@ -1,0 +1,16 @@
+﻿@page "/logout"
+
+@inject ILoginService loginService
+@inject NavigationManager navigationManager
+
+@using ModelingSystem.Client.Auth
+
+<text>Выйти</text>
+
+@code {
+    protected async override Task OnInitializedAsync()
+    {
+        await loginService.Logout();
+        navigationManager.NavigateTo("");
+    }
+}

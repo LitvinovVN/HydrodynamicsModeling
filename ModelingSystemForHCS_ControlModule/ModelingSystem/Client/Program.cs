@@ -14,6 +14,7 @@ builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri(build
 builder.Services.AddTransient<IRepository, RepositoryInMemory>();
 builder.Services.AddScoped<IHttpService, HttpService>();
 builder.Services.AddScoped<IClusterRepository, ClusterRepository>();
+builder.Services.AddScoped<IAccountsRepository, AccountsRepository>();
 
 builder.Services.AddAuthorizationCore();
 

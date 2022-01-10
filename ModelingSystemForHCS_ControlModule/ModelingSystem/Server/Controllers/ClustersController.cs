@@ -10,6 +10,7 @@ namespace ModelingSystem.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ClustersController : ControllerBase
     {
         private readonly AppDbContextMysql context;
@@ -20,7 +21,7 @@ namespace ModelingSystem.Server.Controllers
         }
 
         [HttpGet]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Cluster>>> Get([FromQuery]PaginationDTO paginationDTO)
         {
             var queryable = context.Clusters.AsQueryable();
@@ -30,6 +31,7 @@ namespace ModelingSystem.Server.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Cluster>> Get(int id)
         {
             var cluster = await context.Clusters.FindAsync(id);
@@ -39,6 +41,7 @@ namespace ModelingSystem.Server.Controllers
         }
 
         [HttpGet("search/{searchText}")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<Cluster>>> FilterByName(string searchText)
         {
             if(string.IsNullOrWhiteSpace(searchText))
