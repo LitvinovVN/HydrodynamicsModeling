@@ -1,0 +1,112 @@
+version: '3.7'
+
+services:
+  traefik:
+    # The latest official supported Traefik docker image
+    image: traefik:v2.3
+    networks:
+      - traefik
+      - inbound
+    # Enables the Traefik Dashboard and tells Traefik to listen to docker
+    # enable --log.level=INFO so we can see what Traefik is doing in the log files
+    ports:
+      # Exposes port 80 for incomming web requests
+      - "80:80"
+      - "443:443"
+      # The Web UI port http://0.0.0.0:8080 (enabled by --api.insecure=true)
+      - "8080:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Copies the Let's Encrypt certificate locally for ease of backing up
+      - ./letsencrypt:/letsencrypt
+      # Mounts the Traefik static configuration inside the Traefik container
+      - ./traefik.metrics.yml:/etc/traefik/traefik.yml
+      
+# Add the blazorapp test service http
+  blazorapp1:
+     image: litvinovvn/blazorapp1
+     networks:
+      - inbound
+     deploy:
+      labels:
+       - "traefik.http.routers.blazorapp1.rule=Host(`blazor.storage.achii.fvds.ru`)"
+       - "traefik.http.routers.blazorapp1.service=blazorapp1"
+       - "traefik.http.routers.blazorapp1.entrypoints=websecure"
+       - "traefik.http.routers.blazorapp1.tls.certresolver=myresolver"
+       - "traefik.http.routers.blazorapp1.middlewares=test-compress,test-errorpages"
+       - "traefik.http.services.blazorapp1.loadbalancer.server.port=80"
+       - "traefik.http.middlewares.test-compress.compress=true"
+       - "traefik.http.middlewares.test-errorpages.errors.status=400-599"
+       - "traefik.http.middlewares.test-errorpages.errors.service=error"
+       - "traefik.http.middlewares.test-errorpages.errors.query=/{status}.html"
+       - "traefik.docker.network=inbound"
+
+  modelingsystemserver:
+     image: litvinovvn/modelingsystemserver
+     networks:
+      - inbound
+     deploy:
+      labels:
+       - "traefik.http.routers.modelingsystemserver.rule=Host(`modelingsystemserver.achii.fvds.ru`)"
+       - "traefik.http.routers.modelingsystemserver.service=modelingsystemserver"
+       - "traefik.http.routers.modelingsystemserver.entrypoints=websecure"
+       - "traefik.http.routers.modelingsystemserver.tls.certresolver=myresolver"
+       - "traefik.http.routers.modelingsystemserver.middlewares=test-compress,test-errorpages"
+       - "traefik.http.services.modelingsystemserver.loadbalancer.server.port=80"
+       - "traefik.http.middlewares.test-compress.compress=true"
+       - "traefik.http.middlewares.test-errorpages.errors.status=400-599"
+       - "traefik.http.middlewares.test-errorpages.errors.service=error"
+       - "traefik.http.middlewares.test-errorpages.errors.query=/{status}.html"
+       - "traefik.docker.network=inbound"
+
+# Error Page service
+  error:
+    image: guillaumebriday/traefik-custom-error-pages
+    networks:
+      - inbound
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.error.rule=Host(`error.storage.achii.fvds.ru`)"
+        - "traefik.http.routers.error.service=error"
+        - "traefik.http.services.error.loadbalancer.server.port=80"
+        - "traefik.http.routers.error.entrypoints=web"
+        - "traefik.docker.network=inbound"
+
+################################# Databases ######################################
+  mysql:
+    image: mysql:8.0.27
+    networks:
+      - inbound
+    ports:
+      - 3307:3306    
+    volumes:
+      - ./db/ModelingSystem-mysql-data:/var/lib/mysql
+      - ./db/ModelingSystem-mysql-migrations:/var/mysql-migrations
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: ModelingSystem
+      MYSQL_ROOT_PASSWORD: password    
+
+# PHP MyAdmin
+  phpmyadmin:
+    image: phpmyadmin
+    networks:
+      - inbound
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: mysql
+
+##########################################################        
+############## Docker NETWORKS configuration #############
+##########################################################
+networks:
+  traefik:
+    driver: overlay
+    name: traefik
+  inbound:
+    driver: overlay
+    name: inbound

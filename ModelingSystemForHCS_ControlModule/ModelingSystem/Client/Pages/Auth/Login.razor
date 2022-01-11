@@ -3,12 +3,13 @@
 @inject IAccountsRepository accountsRepository
 @inject NavigationManager navigationManager
 @inject ILoginService loginService
+@inject IDisplayMessage displayMessage
 
 @using ModelingSystem.Client.Auth
 
 <h3>Вход в систему</h3>
 
-<EditForm Model="userInfo" OnValidSubmit="CreateUser">
+<EditForm Model="userInfo" OnValidSubmit="DoLogin">
     <DataAnnotationsValidator />
 
     <div class="form-group">
@@ -34,10 +35,19 @@
 @code {
     private UserInfo userInfo = new UserInfo();
 
-    private async Task CreateUser()
+    private async Task DoLogin()
     {
-        var userToken = await accountsRepository.Login(userInfo);
-        await loginService.Login(userToken.Token);
-        navigationManager.NavigateTo("");
+        try
+        {
+            var userToken = await accountsRepository.Login(userInfo);
+            await loginService.Login(userToken.Token);
+            await displayMessage.DisplaySuccessMessage("Вход выполнен!");
+            navigationManager.NavigateTo("");
+        }
+        catch(Exception ex)
+        {
+            await displayMessage.DisplayErrorMessage("Ошибка входа!");
+        }               
+        
     }
 }
