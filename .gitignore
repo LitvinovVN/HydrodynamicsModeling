@@ -358,3 +358,4 @@ MigrationBackup/
 
 **/db
 **/efbundle
+**/docker-compose.traefik.yml
