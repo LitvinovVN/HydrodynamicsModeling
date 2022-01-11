@@ -99,6 +99,19 @@ services:
       - 8081:80
     environment:
       PMA_HOST: mysql
+    deploy:
+      labels:
+       - "traefik.http.routers.phpmyadmin.rule=Host(`http://phpmyadmin.storage.achii.fvds.ru`)"
+       - "traefik.http.routers.phpmyadmin.service=phpmyadmin"
+       - "traefik.http.routers.phpmyadmin.entrypoints=websecure"
+       - "traefik.http.routers.phpmyadmin.tls.certresolver=myresolver"
+       - "traefik.http.routers.phpmyadmin.middlewares=test-compress,test-errorpages"
+       - "traefik.http.services.phpmyadmin.loadbalancer.server.port=80"
+       - "traefik.http.middlewares.test-compress.compress=true"
+       - "traefik.http.middlewares.test-errorpages.errors.status=400-599"
+       - "traefik.http.middlewares.test-errorpages.errors.service=error"
+       - "traefik.http.middlewares.test-errorpages.errors.query=/{status}.html"
+       - "traefik.docker.network=inbound"
 
 ##########################################################        
 ############## Docker NETWORKS configuration #############
