@@ -101,7 +101,7 @@ services:
       PMA_HOST: mysql
     deploy:
       labels:
-       - "traefik.http.routers.phpmyadmin.rule=Host(`http://phpmyadmin.storage.achii.fvds.ru`)"
+       - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.storage.achii.fvds.ru`)"
        - "traefik.http.routers.phpmyadmin.service=phpmyadmin"
        - "traefik.http.routers.phpmyadmin.entrypoints=websecure"
        - "traefik.http.routers.phpmyadmin.tls.certresolver=myresolver"
