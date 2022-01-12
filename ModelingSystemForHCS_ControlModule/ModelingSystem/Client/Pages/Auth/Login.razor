@@ -40,7 +40,7 @@
         try
         {
             var userToken = await accountsRepository.Login(userInfo);
-            await loginService.Login(userToken.Token);
+            await loginService.Login(userToken);
             await displayMessage.DisplaySuccessMessage("Вход выполнен!");
             navigationManager.NavigateTo("");
         }

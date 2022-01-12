@@ -1,4 +1,7 @@
 ﻿@inherits LayoutComponentBase
+@inject ModelingSystem.Client.Auth.TokenRenewer tokenRenewer
+@inject NavigationManager navigationManager
+@inject IJSRuntime js
 
 <div class="page">
     <div class="sidebar">
@@ -21,11 +24,29 @@
 </div>
 
 @code{
+    [CascadingParameter] public Task<AuthenticationState> AuthenticationState { get; set; }
+
     AppState appState = new AppState { Color = "green", Size = "26px" };
 
     public class AppState
     {
         public string Color { get; set; } = "blue";
         public string Size { get; set; } = "12px";
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //await js.InitializeInactivityTimer(DotNetObjectReference.Create(this));
+        tokenRenewer.Initiate();
+    }
+
+    [JSInvokable]
+    public async Task Logout()
+    {
+        var authState = await AuthenticationState;
+        if (authState.User.Identity.IsAuthenticated)
+        {
+            navigationManager.NavigateTo("logout");
+        }
     }
 }

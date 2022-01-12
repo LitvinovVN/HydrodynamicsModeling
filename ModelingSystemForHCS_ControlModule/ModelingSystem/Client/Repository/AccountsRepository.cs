@@ -36,5 +36,17 @@ namespace ModelingSystem.Client.Repository
 
             return httpResponse.Response;
         }
+
+        public async Task<UserToken> RenewToken()
+        {
+            var httpResponse = await httpService.Get<UserToken>($"{baseURL}/RenewToken");
+
+            if (!httpResponse.Success)
+            {
+                throw new ApplicationException(await httpResponse.GetBody());
+            }
+
+            return httpResponse.Response;
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace ModelingSystem.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
     public class ClustersController : ControllerBase
     {
         private readonly AppDbContextMysql context;

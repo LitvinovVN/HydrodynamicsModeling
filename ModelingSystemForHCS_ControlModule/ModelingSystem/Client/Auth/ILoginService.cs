@@ -1,8 +1,11 @@
-﻿namespace ModelingSystem.Client.Auth
+﻿using ModelingSystem.Shared.DTOs;
+
+namespace ModelingSystem.Client.Auth
 {
     public interface ILoginService
     {
-        Task Login(string token);
+        Task Login(UserToken userToken);
         Task Logout();
+        Task TryRenewToken();
     }
 }

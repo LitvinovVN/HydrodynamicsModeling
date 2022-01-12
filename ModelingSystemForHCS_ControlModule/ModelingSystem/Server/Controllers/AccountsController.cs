@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ModelingSystem.Shared.DTOs;
@@ -33,7 +35,7 @@ namespace ModelingSystem.Server.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                return BuildToken(model);
+                return await BuildToken(model);
             }
             else
             {
@@ -49,7 +51,7 @@ namespace ModelingSystem.Server.Controllers
 
             if (result.Succeeded)
             {
-                return BuildToken(userInfo);
+                return await BuildToken(userInfo);
             }
             else
             {
@@ -57,7 +59,19 @@ namespace ModelingSystem.Server.Controllers
             }
         }
 
-        private UserToken BuildToken(UserInfo userInfo)
+        [HttpGet("RenewToken")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<ActionResult<UserToken>> Renew()
+        {
+            var userInfo = new UserInfo()
+            {
+                Email = HttpContext.User.Identity.Name
+            };
+
+            return await BuildToken(userInfo);
+        }
+
+        private async Task<UserToken> BuildToken(UserInfo userInfo)
         {
             var claims = new List<Claim>()
             {
@@ -66,10 +80,14 @@ namespace ModelingSystem.Server.Controllers
                 new Claim("key1", "qqq 1111 qqq")
             };
 
+            var identityUser = await _userManager.FindByEmailAsync(userInfo.Email);
+            var claimsDB = await _userManager.GetClaimsAsync(identityUser);
+            claims.AddRange(claimsDB);
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["jwt:key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var expiration = DateTime.UtcNow.AddYears(1);
+            var expiration = DateTime.UtcNow.AddYears(4);
 
             JwtSecurityToken token = new JwtSecurityToken(
                 issuer: null,

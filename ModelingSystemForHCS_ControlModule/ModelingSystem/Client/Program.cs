@@ -16,6 +16,7 @@ builder.Services.AddScoped<IHttpService, HttpService>();
 builder.Services.AddScoped<IClusterRepository, ClusterRepository>();
 builder.Services.AddScoped<IAccountsRepository, AccountsRepository>();
 builder.Services.AddScoped<IDisplayMessage, DisplayMessage>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddAuthorizationCore();
 
@@ -24,5 +25,7 @@ builder.Services.AddScoped<AuthenticationStateProvider, JwtAuthenticationStatePr
     provider => provider.GetRequiredService<JwtAuthenticationStateProvider>());
 builder.Services.AddScoped<ILoginService, JwtAuthenticationStateProvider>(
     provider => provider.GetRequiredService<JwtAuthenticationStateProvider>());
+
+builder.Services.AddScoped<TokenRenewer>();
 
 await builder.Build().RunAsync();
