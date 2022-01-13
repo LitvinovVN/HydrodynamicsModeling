@@ -5,3 +5,4 @@ ssh root@92.63.111.155
 
 for container_id in $(docker ps  -f "name=mysql" -q);do docker exec -ti $container_id bash;done
 mysql -u admin -pPASSWORD ModelingSystem < "/var/mysql-migrations/migrate.sql"
+mysql -u root -ppassword BlazorAuthentication < "/var/mysql-migrations/migrateBlazorAuthentication.sql"

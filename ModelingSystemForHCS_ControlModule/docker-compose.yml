@@ -7,6 +7,12 @@ services:
       context: .
       dockerfile: ModelingSystem/Server/Dockerfile
 
+  blazorauthentication.server:
+    image: ${DOCKER_REGISTRY-}litvinovvn/blazorauthenticationserver
+    build:
+      context: .
+      dockerfile: BlazorAuthentication/Server/Dockerfile
+
 ################################# Databases ######################################
   mysql:
     image: mysql:8.0.27
@@ -28,3 +34,4 @@ services:
       - 8081:80
     environment:
       PMA_HOST: mysql
+
