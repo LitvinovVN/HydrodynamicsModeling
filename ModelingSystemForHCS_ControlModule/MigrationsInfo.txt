@@ -12,4 +12,4 @@ docker ps -f "name=mysql" --format "{{.ID}}"
 docker exec -ti <containerId> bash
 docker exec -ti (docker ps -f "name=mysql" --format "{{.ID}}") bash
 
-mysql -u admin -ppassword ModelingSystem < "/var/mysql-migrations/migrate.sql"
+mysql -u admin -ppassword ModelingSystem < "/var/mysql-migrations/migrateModelingSystem.sql"
